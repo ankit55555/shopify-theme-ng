@@ -1,0 +1,18 @@
+{% if settings.goBuynowEnable %}
+  {% if product.available %}
+    <button type="button" style="top:10px;border-radius:40px" class="" onclick="onBuyNowClick(this)" id="gokwik-buy-now" {% if settings.hideFlow %} style="display:none !important;" {% endif %}>
+      {{ settings.buynow-titile }}
+      <span class="pay-opt-icon visible" style="margin-left: 5px;">
+        <img width="auto" height="auto" src="https://cdn.gokwik.co/v4/images/upi-icons.svg" alt="UPI Icon">
+      </span>
+      <div style="display:none"><div class="cir-loader">Loading..</div></div>
+    </button>
+  {% else %}
+    <span class="pay-opt-icon visible" style="margin-left: 5px;">
+      <img width="auto" height="auto" src="https://cdn.gokwik.co/v4/images/upi-icons.svg" alt="UPI Icon">
+    </span>
+    <div style="display:none"><div class="cir-loader">Loading..</div></div>
+  {% endif %}
+{% endif %}
+
+

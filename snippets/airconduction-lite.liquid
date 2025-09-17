@@ -1,0 +1,73 @@
+
+
+   <div class="wrapper_scroll_airCond video_pause-section">
+        <section class="section_scroll_airCond sticky_airCond section--drivers1">
+          <video id="desktop_vid" class="video_pause" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/videoframe_0_11.png?v=1733501670" playsinline autoplay muted loop>
+		<source src="https://cdn.shopify.com/videos/c/o/v/e4af853262dc4a86b7a8fdaf561c14cc.mp4" type="video/mp4">
+	</video>
+
+    <video id="mobile_vid" class="video_pause" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/videoframe_0_12.png?v=1733501713" playsinline autoplay muted loop>
+		<source src="https://cdn.shopify.com/videos/c/o/v/af9c7a0012e44e01af8b92a35fa99004.mp4" type="video/mp4">
+	</video>
+        </section>
+        <section class="section_scroll_airCond sticky_airCond section--drivers2">
+          <div class="caption_scroll_airCond">
+            <div class="contents_2_airCond">
+               <h2>Air Conduction <br>Open-Ear Technology</h2>
+     <p>
+   NG EarSafe Lite uses air conduction technology to deliver sound without blocking your ear canal, keeping you aware of your surroundings. Its open-ear design promotes airflow and reduces bacterial growth, offering both comfort and hearing protection. Ideal for outdoor activities, it lets you enjoy your favorite audio while staying connected to the world around you.
+     </p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+ <style>
+        .wrapper_scroll_airCond{margin:0;padding:0;font-size:18px;line-height:1.9em;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}
+        .wrapper_scroll_airCond{width:100%;background:url('');background-size:cover;background-attachment:fixed;z-index:1}
+        .section_scroll_airCond{width:100%;box-sizing:border-box;position:relative;z-index:99}
+        .wrapper_scroll_airCond .sticky_airCond{min-height:100vh;max-height:100vh;height:100vh;position:-webkit-sticky;position:sticky;top:20px;z-index:9;overflow: hidden;}
+        .section_scroll_airCond{color:#fff}
+        .section--drivers1{top:20px;max-height:calc(100vh - 40px)}
+        .section--drivers2{top:40px;max-height:calc(100vh - 80px)}
+        #mobile_vid{display:none}
+        .section_scroll_airCond video{width:100%;object-fit:cover;position:relative;height: 100%;filter: brightness(70%);}
+        .caption_scroll_airCond{display:flex;justify-content:center;align-items:center;height:100%}
+        .caption_scroll_airCond .contents_2_airCond{width:400px;position:absolute;right:50px;top:80px}
+        .caption_scroll_airCond .contents_2_airCond h2{color: #fff;font-size: 3rem;text-align: right;margin-bottom: 12px;}
+        .caption_scroll_airCond .contents_2_airCond p{width: 400px;text-align: right;color: #d5d5d5;line-height: 3rem;}
+        
+        @media only screen and (max-width:768px){
+        #desktop_vid{display:none}
+        #mobile_vid{display:block}
+        .caption_scroll_airCond .contents_2_airCond{width:350px!important;position:absolute!important;right:unset!important;top:50px!important}
+        .caption_scroll_airCond .contents_2_airCond p{width: 100%;text-align: center;color: #d5d5d5;font-size: 17px;}
+        .caption_scroll_airCond .contents_2_airCond h2{color: #fff;font-size: 3rem;text-align: center;margin-bottom: 0px;padding:20px;}
+        }
+        
+        </style>
+
+
+   <script>
+        // Select the video element using class
+        const video = document.querySelector('.video_pause');
+        
+        // Create an Intersection Observer to track visibility of the video section
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Play the video when the section is in view
+                    video.play();
+                } else {
+                    // Pause the video when the section is out of view
+                    video.pause();
+                }
+            });
+        }, {
+            threshold: 0.5  // Video will start playing when 50% of it is in view
+        });
+        
+        // Observe the video section by class
+        observer.observe(document.querySelector('.video_pause-section'));
+    </script>

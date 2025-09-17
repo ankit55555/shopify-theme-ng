@@ -1,0 +1,143 @@
+<div id="videoWrapper_quadMic">
+  <video id="desktop_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/download_19.png?v=1723534166" playsinline autoplay muted loop>
+		<source src="https://cdn.shopify.com/videos/c/o/v/9382b32c27fd4334a94df54b2642f007.mp4" type="video/mp4">
+	</video>
+
+    <video id="mobile_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/download_20.png?v=1723534166" playsinline autoplay muted loop>
+		<source src="https://cdn.shopify.com/videos/c/o/v/9f25d87c2dd949919d8dcefdcab06d4e.mp4" type="video/mp4">
+	</video>
+  
+   <div class="caption_quadMic">
+    <!-- <div class="contents_driver1">
+      <h2 class="anm_mod left fast">12x17mm Dynamic <br>Rectangle Drivers</h2>    
+    </div> -->
+  <div class="contents_quadMic">
+<h2 >Quad MIC <br>ENC Calling</h2>
+     <p>
+      Achieve crystal-clear calls with quad-microphone ENC technology featuring dual MEMS microphones on each side. This setup ensures precise voice capture and effective background noise reduction. Ideal for clear conversations in any environment.
+     </p>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<style>
+  #videoWrapper_quadMic {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+ .caption_quadMic .contents_quadMic {
+    position: absolute;
+    left: 70px;
+    top: 70px;
+}
+
+.caption_quadMic .contents_quadMic p {
+    width: 400px;
+    text-align: left;
+    color: #d5d5d5;
+}
+
+ .caption_quadMic .contents_quadMic h2 {
+    color: #fff;
+    font-size: 3rem;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+
+ 
+
+#videoWrapper_quadMic video {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover; 
+  z-index: -100;
+
+  top: 50%;
+  left: 50%;
+  transform: translateX(-60%) translateY(-50%);
+}
+
+#videoWrapper_quadMic .caption_quadMic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+
+  /* background-color: rgba(0, 0, 0, 0.3); */
+}
+
+#videoWrapper_quadMic .caption_quadMic .contents_quadMic {
+    width: 33%;
+    color: #fff;
+    text-align: left;
+    padding: 2rem;
+    /* background-color: rgba(0, 0, 0, 0.8); */
+}
+
+
+#mobile_vid{display:none;}
+
+  @media only screen and (max-width: 768px) {
+  #desktop_vid{display:none;}
+    #mobile_vid{display:block;}
+
+.caption_quadMic .contents_quadMic h2 {
+    color: #fff;
+    font-size: 4rem;
+    text-align: center;
+  padding:20px;
+  margin-bottom: 0px;
+}
+ 
+
+    #videoWrapper_quadMic video {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    z-index: -100;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) !important;
+}
+
+   .caption_quadMic .contents_quadMic {
+        position: absolute;
+        left: unset;
+        top: 10px;
+        bottom: unset;
+    }
+    .caption_quadMic .contents_quadMic p {
+    width: 100%;
+    text-align: center;
+    color: #d5d5d5;
+    font-size: 13px;
+}
+
+    #videoWrapper_quadMic .caption_quadMic .contents_quadMic {
+    width: 100%;
+    color: #fff;
+    text-align: left;
+    padding: 2rem;
+    /* background-color: rgba(0, 0, 0, 0.8); */
+}
+    
+  }
+  
+</style>
+
+
+      

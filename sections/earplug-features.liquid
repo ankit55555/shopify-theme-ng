@@ -1,0 +1,393 @@
+<!-- NG EarPlugs Features Section -->
+<section id="ng-earplugs-features" class="ng-features-section">
+  <div class="video-background">
+    {% if section.settings.background_video %}
+      <video autoplay muted loop playsinline class="background-video">
+        <source src="{{ section.settings.background_video }}" type="video/mp4">
+      </video>
+    {% endif %}
+    <div class="video-overlay"></div>
+  </div>
+  
+  <div class="container">
+    <div class="features-content">
+      <h2 class="section-title">{{ section.settings.title | default: "What makes NG EarPlugs truly useful?" }}</h2>
+      
+      <div class="features-grid">
+        {% for block in section.blocks %}
+          <div class="feature-item" {{ block.shopify_attributes }}>
+            <div class="feature-icon">
+              {% if block.settings.icon_image %}
+                <img src="{{ block.settings.icon_image | img_url: '80x80' }}" alt="{{ block.settings.title }}" loading="lazy">
+              {% else %}
+                <div class="default-icon">
+                  {% case block.settings.icon_type %}
+                    {% when 'noise' %}
+                      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" fill="currentColor"/>
+                      </svg>
+                    {% when 'silicone' %}
+                      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <text x="12" y="16" text-anchor="middle" fill="currentColor" font-size="8">Si</text>
+                      </svg>
+                    {% when 'waterproof' %}
+                      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8z" fill="none" stroke="currentColor" stroke-width="2"/>
+                      </svg>
+                    {% when 'sizes' %}
+                      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="6" cy="12" r="2" fill="currentColor"/>
+                        <circle cx="10" cy="12" r="3" fill="currentColor"/>
+                        <circle cx="15" cy="12" r="4" fill="currentColor"/>
+                        <circle cx="20" cy="12" r="1" fill="currentColor"/>
+                      </svg>
+                    {% when 'reusable' %}
+                      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6z" fill="currentColor"/>
+                        <path d="M18.76 7.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z" fill="currentColor"/>
+                      </svg>
+                    {% when 'travel' %}
+                      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 11H7l3-7 3 7h-2v8h-2v-8z" fill="currentColor"/>
+                        <rect x="4" y="20" width="16" height="2" rx="1" fill="currentColor"/>
+                      </svg>
+                  {% endcase %}
+                </div>
+              {% endif %}
+            </div>
+            
+            <h3 class="feature-title">{{ block.settings.title }}</h3>
+            <p class="feature-description">{{ block.settings.description }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.ng-features-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.container {
+  position: relative;
+  z-index: 3;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  width: 100%;
+}
+
+.features-content {
+  text-align: center;
+}
+
+.section-title {
+ font-size: clamp(32px, 5vw, 39px);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0px;
+    line-height: 1.2;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.feature-item {
+  text-align: center;
+  padding: 30px 20px;
+  /* border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1); */
+  transition: all 0.3s ease;
+}
+
+/* .feature-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  border-color: rgba(212, 175, 55, 0.3);
+} */
+
+.feature-icon {
+  /* width: 80px;
+  height: 80px;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.1));
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  color: #d4af37; */
+}
+
+.feature-icon img {
+  width: 150px;
+    height: auto;
+  /* width: 40px;
+  height: 40px; */
+  /* filter: brightness(0) saturate(100%) invert(73%) sepia(58%) saturate(466%) hue-rotate(18deg) brightness(95%) contrast(88%); */
+}
+
+.default-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.feature-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.feature-description {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 60px 15px;
+  }
+  
+  .section-title {
+    margin-bottom: 50px;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  
+  .feature-item {
+    padding: 25px 15px;
+  }
+  
+  .feature-icon {
+    /* width: 70px;
+    height: 70px;
+    margin-bottom: 20px; */
+  }
+  
+  .feature-title {
+    font-size: 20px;
+  }
+  
+  .feature-description {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    margin-bottom: 40px;
+  }
+  
+  .features-grid {
+    gap: 0px;
+  }
+  
+  .feature-item {
+    padding: 20px 15px;
+  }
+  
+  /* .feature-icon {
+    width: 60px;
+    height: 60px;
+  } */
+  
+  .feature-title {
+    font-size: 18px;
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feature-item {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.feature-item:nth-child(1) { animation-delay: 0.1s; }
+.feature-item:nth-child(2) { animation-delay: 0.2s; }
+.feature-item:nth-child(3) { animation-delay: 0.3s; }
+.feature-item:nth-child(4) { animation-delay: 0.4s; }
+.feature-item:nth-child(5) { animation-delay: 0.5s; }
+.feature-item:nth-child(6) { animation-delay: 0.6s; }
+</style>
+
+{% schema %}
+{
+  "name": "NG EarPlugs Features",
+  "tag": "section",
+  "class": "section ng-earplugs-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "What makes NG EarPlugs truly useful?"
+    },
+    {
+      "type": "url",
+      "id": "background_video",
+      "label": "Background Video URL",
+      "info": "Upload video to Shopify files and paste the URL here"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Feature Title",
+          "default": "Feature Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Feature Description",
+          "default": "Feature description goes here."
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Custom Icon Image"
+        },
+        {
+          "type": "select",
+          "id": "icon_type",
+          "label": "Default Icon Type",
+          "info": "Used if no custom icon image is selected",
+          "options": [
+            {"value": "noise", "label": "Noise Reduction"},
+            {"value": "silicone", "label": "Silicone"},
+            {"value": "waterproof", "label": "Waterproof"},
+            {"value": "sizes", "label": "Multiple Sizes"},
+            {"value": "reusable", "label": "Reusable"},
+            {"value": "travel", "label": "Travel Case"}
+          ],
+          "default": "noise"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "NG EarPlugs Features",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Reduces Noise by 25dB",
+            "description": "Ideal for sleep, travel, concerts & more.",
+            "icon_type": "noise"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Soft Silicone Fit",
+            "description": "Comfortable even for side sleepers and small ear canals.",
+            "icon_type": "silicone"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "IP68 Waterproof Rated",
+            "description": "Ready for showers, swims, or sweat.",
+            "icon_type": "waterproof"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "4 Different Sizes Included",
+            "description": "Ideal for sleep, travel, concerts & more.",
+            "icon_type": "sizes"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Reusable & Washable",
+            "description": "Eco-friendly and long-lasting.",
+            "icon_type": "reusable"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Compact Travel Case",
+            "description": "Slip it into your bag, pocket, or bedside drawer.",
+            "icon_type": "travel"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,47 @@
+<div id="videoWrapper_switchModes">
+  <video id="desktop_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Switch_modes_Description_desktop_copy_1.webp?v=1745394517">
+		<source src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Switch_modes_Description_desktop_copy_1.webp?v=1745394517" type="video/mp4">
+	</video>
+
+    <video id="mobile_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Switch_modes_Description_mobile_1.webp?v=1745394517">
+		<source src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Switch_modes_Description_mobile_1.webp?v=1745394517" type="video/mp4">
+	</video>
+  
+   <div class="caption_switchModes">
+    <!-- <div class="contents_driver1">
+      <h2 class="anm_mod left fast">12x17mm Dynamic <br>Rectangle Drivers</h2>    
+    </div> -->
+  <div class="contents_switchModes">
+<h2 >Dual Mode Switch</h2>
+     <p>
+    Seamlessly toggle between two optimized modes:
+Communication Mode enhances voice clarity and mic sensitivity for professional-grade calls.
+Music Mode boosts bass and widens the soundstage for an immersive listening experience.
+     </p>
+
+    </div>
+  </div>
+</div>
+
+<style>
+#videoWrapper_switchModes{height:100vh;overflow:hidden;position:relative}
+.caption_switchModes .contents_switchModes{position:absolute;left:70px;top:70px}
+.caption_switchModes .contents_switchModes p{width:400px;text-align:left;color:#d5d5d5}
+.caption_switchModes .contents_switchModes h2{color:#fff;font-size:3rem;text-align:left;margin-bottom:20px}
+#videoWrapper_switchModes video{position:absolute;min-width:100%;min-height:100%;width:auto;height:auto;object-fit:cover;z-index:-100;top:50%;left:50%;transform:translateX(-60%) translateY(-50%)}
+#videoWrapper_switchModes .caption_switchModes{display:flex;justify-content:center;align-items:center;height:100%}
+#videoWrapper_switchModes .caption_switchModes .contents_switchModes{width:33%;color:#fff;text-align:left;padding:2rem}
+#mobile_vid{display:none}
+@media only screen and (max-width:768px){
+#desktop_vid{display:none}
+#mobile_vid{display:block}
+.caption_switchModes .contents_switchModes h2{color:#fff;font-size:4rem;text-align:center;padding:20px;margin-bottom:0}
+#videoWrapper_switchModes video{position:absolute;min-width:100%;min-height:100%;width:auto;height:auto;object-fit:cover;z-index:-100;top:50%;left:50%;transform:translateX(-50%) translateY(-50%)!important}
+.caption_switchModes .contents_switchModes{position:absolute;left:unset;top:10px;bottom:unset}
+.caption_switchModes .contents_switchModes p{width:100%;text-align:center;color:#d5d5d5;font-size:13px}
+#videoWrapper_switchModes .caption_switchModes .contents_switchModes{width:100%;color:#fff;text-align:left;padding:2rem}
+}
+</style>
+
+
+      

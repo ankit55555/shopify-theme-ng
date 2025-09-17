@@ -1,0 +1,168 @@
+<!-- Scroll Animation Section -->
+<style>
+    .scroll-progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: #ddd;
+        z-index: 999;
+      display:none;
+    }
+
+    .scroll-progress {
+        width: 0%;
+        height: 100%;
+        background: #007bff;
+        transition: width 0.1s ease;
+    }
+
+    .scroll-section-wrapper {
+        height: 200vh;
+        position: relative;
+    }
+
+    .scroll-sticky-container {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: white;
+        z-index: 2;
+    }
+
+    .scroll-text-container {
+        font-size: 42px;
+        line-height: 1.4;
+        text-align: center;
+        width: 90%;
+        max-width: 800px;
+        font-weight: 500;
+        color: #333;
+    }
+
+    .scroll-word {
+        display: inline-block;
+        opacity: 0.2;
+        transition: opacity 0.4s ease;
+        margin: 0 2px;
+    }
+
+    .scroll-word.visible {
+        opacity: 1;
+    }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+        .scroll-text-container {
+            font-size: 32px;
+            width: 95%;
+            padding: 0 15px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .scroll-text-container {
+            font-size: 24px;
+            width: 100%;
+            padding: 0 20px;
+            line-height: 1.5;
+        }
+    }
+
+    @media (max-width: 375px) {
+        .scroll-text-container {
+            font-size: 22px;
+        }
+    }
+
+    @media (max-height: 480px) and (orientation: landscape) {
+        .scroll-text-container {
+            font-size: 20px;
+        }
+    }
+</style>
+
+<div class="scroll-progress-bar">
+    <div class="scroll-progress" id="scrollProgress"></div>
+</div>
+
+<div id="scrollSectionWrapper" class="scroll-section-wrapper">
+    <div class="scroll-sticky-container" id="scrollStickyContainer">
+        <div class="scroll-text-container" id="scrollTextContainer">
+            With our open ear buds, your ears will thank you for the perfect mix of safety and sound—because you deserve both.
+        </div>
+    </div>
+</div>
+
+<script>
+    // Immediately invoked function expression to avoid global scope pollution
+    (function() {
+        const container = document.getElementById('scrollTextContainer');
+        const progressBar = document.getElementById('scrollProgress');
+        const wrapper = document.getElementById('scrollSectionWrapper');
+
+        // Only initialize if elements exist
+        if (!container || !progressBar || !wrapper) return;
+
+        // Split text into words and wrap each in a span
+        const text = container.textContent.trim();
+        const words = text.split(/\s+/);
+        container.innerHTML = words
+            .map(word => `<span class="scroll-word">${word}</span>`)
+            .join(' ');
+
+        const wordSpans = container.querySelectorAll('.scroll-word');
+
+        function updateWords() {
+            // Get the wrapper's position relative to the viewport
+            const rect = wrapper.getBoundingClientRect();
+            const wrapperTop = rect.top;
+            const wrapperHeight = wrapper.offsetHeight - window.innerHeight;
+            
+            // Calculate scroll percentage based on wrapper position
+            let scrollPercent;
+            if (wrapperTop > 0) {
+                scrollPercent = 0;
+            } else if (Math.abs(wrapperTop) > wrapperHeight) {
+                scrollPercent = 1;
+            } else {
+                scrollPercent = Math.abs(wrapperTop) / wrapperHeight;
+            }
+
+            // Update progress bar
+            progressBar.style.width = `${scrollPercent * 100}%`;
+
+            // Update word visibility
+            const wordsToShow = Math.floor(scrollPercent * wordSpans.length);
+            wordSpans.forEach((span, index) => {
+                span.classList.toggle('visible', index <= wordsToShow);
+            });
+        }
+
+        // Add scroll event listener with throttling
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    updateWords();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Update on resize with debouncing
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(updateWords, 100);
+        });
+
+        // Initial update
+        updateWords();
+    })();
+</script>

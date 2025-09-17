@@ -1,0 +1,18 @@
+{%- liquid
+    assign se_stts = section.settings
+ -%}
+
+{%- if article -%}
+    <!-- Display Article Title -->
+    <h1 class="article-title">
+        {{ article.title }}
+    </h1>
+    
+    <!-- Display Published Date -->
+    <time class="article-date" datetime="{{ article.published_at }}">
+        {{ article.published_at | date: "%B %d, %Y" }}
+    </time>
+{%- else -%}
+    <!-- Fallback Message if No Article -->
+    <p>No article data available.</p>
+{%- endif -%}

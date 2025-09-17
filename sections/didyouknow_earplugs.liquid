@@ -1,0 +1,312 @@
+{% comment %}
+  Statistics Counter Section
+  Author: Shubham Kushwaha
+  Version: 1.0
+{% endcomment %}
+
+<div class="ear_plugs_statistics-section" id="ear_plugs_statistics-{{ section.id }}">
+  <div class="ear_plugs_container">
+    {% if section.settings.heading != blank %}
+      <h2 class="ear_plugs_statistics-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+    
+    <div class="ear_plugs_statistics-grid">
+      {% for block in section.blocks %}
+        <div class="ear_plugs_statistic-item" {{ block.shopify_attributes }}>
+          <div class="ear_plugs_statistic-number" data-target="{{ block.settings.number }}">0%</div>
+          <p class="ear_plugs_statistic-description">{{ block.settings.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .ear_plugs_statistics-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #161213 100%);
+    padding: 80px 20px;
+    margin-top:50px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ear_plugs_statistics-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.02)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.02)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.02)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.5;
+  }
+  
+  .ear_plugs_container {
+    max-width: 1250px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .ear_plugs_statistics-heading {
+    font-size: clamp(12.5rem, 5vw, 4rem);
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 20px;
+    color: rgb(255 255 255 / 12%);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    text-align:center;
+  }
+  
+  .ear_plugs_statistics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 60px 40px;
+    align-items: start;
+    justify-items:center;
+  }
+  
+  .ear_plugs_statistic-item {
+    text-align: left;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .ear_plugs_statistic-item:nth-child(1) { animation-delay: 0.4s; }
+  .ear_plugs_statistic-item:nth-child(2) { animation-delay: 0.6s; }
+  .ear_plugs_statistic-item:nth-child(3) { animation-delay: 0.8s; }
+  .ear_plugs_statistic-item:nth-child(4) { animation-delay: 1s; }
+  
+  .ear_plugs_statistic-item:hover {
+    transform: translateY(-2px);
+  }
+  
+  .ear_plugs_statistic-number {
+   font-size: clamp(8.5rem, 8vw, 6rem);
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 10px;
+    line-height: 1;
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; */
+  }
+  
+  .ear_plugs_statistic-description {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    color: rgb(255 255 255 / 86%);
+    margin: 0;
+    font-weight: 300;
+    max-width: 280px;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes countUp {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .ear_plugs_statistics-section {
+      padding: 60px 15px;
+    }
+    
+    .ear_plugs_statistics-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 30px;
+    }
+    
+    .ear_plugs_statistics-heading {
+      margin-bottom: 20px;
+    }
+    .ear_plugs_statistics-heading {
+    font-size: clamp(4.5rem, 5vw, 4rem);
+    text-align: center;
+    margin-bottom: 20px;;
+}
+  }
+  
+  @media (max-width: 480px) {
+    .ear_plugs_statistics-section {
+      padding: 40px 10px;
+    }
+    
+    .ear_plugs_statistics-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+        padding: 0px 20px;
+    }
+    
+    .ear_plugs_statistic-description {
+      font-size: 0.9rem;
+      text-align:center;
+    }
+    .ear_plugs_statistics-heading {
+    /* font-size: clamp(4.5rem, 5vw, 4rem); */
+    text-align: center;
+    margin-bottom: 20px;
+      text-align: center;
+}
+.ear_plugs_statistic-number {
+       font-size: clamp(4.5rem, 8vw, 6rem);
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 10px;
+    line-height: 1;
+  text-align: center;
+  }
+               
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const counters = document.querySelectorAll('#ear_plugs_statistics-{{ section.id }} .ear_plugs_statistic-number');
+    const section = document.getElementById('ear_plugs_statistics-{{ section.id }}');
+    let animated = false;
+    
+    function animateCounters() {
+      if (animated) return;
+      animated = true;
+      
+      counters.forEach((counter, index) => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const duration = 2000; // 2 seconds
+        const startTime = performance.now() + (index * 200); // Stagger animation
+        
+        function updateCounter(currentTime) {
+          if (currentTime < startTime) {
+            requestAnimationFrame(updateCounter);
+            return;
+          }
+          
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          
+          // Easing function for smooth animation
+          const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+          const current = Math.floor(easeOutQuart * target);
+          
+          counter.textContent = current + '%';
+          counter.style.animation = 'countUp 0.3s ease-out';
+          
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = target + '%';
+          }
+        }
+        
+        requestAnimationFrame(updateCounter);
+      });
+    }
+    
+    // Intersection Observer for scroll-triggered animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
+          animateCounters();
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+    
+    if (section) {
+      observer.observe(section);
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Statistics Counter",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Did you know?"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "statistic",
+      "name": "Statistic",
+      "settings": [
+        {
+          "type": "number",
+          "id": "number",
+          "label": "Percentage",
+          "default": 50
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Enter your statistic description here"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Statistics Counter",
+      "blocks": [
+        {
+          "type": "statistic",
+          "settings": {
+            "number": 53,
+            "description": "of noise-exposed workers report not wearing hearing protection."
+          }
+        },
+        {
+          "type": "statistic",
+          "settings": {
+            "number": 13,
+            "description": "of noise-exposed tested workers have hearing impairment in both ears."
+          }
+        },
+        {
+          "type": "statistic",
+          "settings": {
+            "number": 25,
+            "description": "of all workers have been exposed to hazardous noise."
+          }
+        },
+        {
+          "type": "statistic",
+          "settings": {
+            "number": 12,
+            "description": "of all workers have hearing difficulty."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

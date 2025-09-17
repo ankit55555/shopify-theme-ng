@@ -1,0 +1,143 @@
+<div id="videoWrapper_typecCharging">
+  <video id="desktop_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Type_C_Description_desktop_copy.webp?v=1745353339">
+		<source src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Type_C_Description_desktop_copy.webp?v=1745353339" type="video/mp4">
+	</video>
+
+    <video id="mobile_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Type_C_Description_mobile.webp?v=1745353338">
+		<source src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Type_C_Description_mobile.webp?v=1745353338" type="video/mp4">
+	</video>
+  
+   <div class="caption_typecCharging">
+    <!-- <div class="contents_driver1">
+      <h2 class="anm_mod left fast">12x17mm Dynamic <br>Rectangle Drivers</h2>    
+    </div> -->
+  <div class="contents_typecCharging">
+<h2 >Type C<br>Charging</h2>
+     <p>
+     Go the distance with an extended 17+ hours of continuous use. Low on power? Just 10 minutes of fast charging via USB-C gives you hours of playtime — because your time matters.
+     </p>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<style>
+  #videoWrapper_typecCharging {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+ .caption_typecCharging .contents_typecCharging {
+    position: absolute;
+    left: 70px;
+    top: 70px;
+}
+
+.caption_typecCharging .contents_typecCharging p {
+    width: 400px;
+    text-align: left;
+    color: #d5d5d5;
+}
+
+ .caption_typecCharging .contents_typecCharging h2 {
+    color: #fff;
+    font-size: 3rem;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+
+ 
+
+#videoWrapper_typecCharging video {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover; 
+  z-index: -100;
+
+  top: 50%;
+  left: 50%;
+  transform: translateX(-60%) translateY(-50%);
+}
+
+#videoWrapper_typecCharging .caption_typecCharging {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+
+  /* background-color: rgba(0, 0, 0, 0.3); */
+}
+
+#videoWrapper_typecCharging .caption_typecCharging .contents_typecCharging {
+    width: 33%;
+    color: #fff;
+    text-align: left;
+    padding: 2rem;
+    /* background-color: rgba(0, 0, 0, 0.8); */
+}
+
+
+#mobile_vid{display:none;}
+
+  @media only screen and (max-width: 768px) {
+  #desktop_vid{display:none;}
+    #mobile_vid{display:block;}
+
+.caption_typecCharging .contents_typecCharging h2 {
+    color: #fff;
+    font-size: 4rem;
+    text-align: center;
+  padding:20px;
+  margin-bottom: 0px;
+}
+ 
+
+    #videoWrapper_typecCharging video {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    z-index: -100;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) !important;
+}
+
+   .caption_typecCharging .contents_typecCharging {
+        position: absolute;
+        left: unset;
+        top: 10px;
+        bottom: unset;
+    }
+    .caption_typecCharging .contents_typecCharging p {
+    width: 100%;
+    text-align: center;
+    color: #d5d5d5;
+    font-size: 13px;
+}
+
+    #videoWrapper_typecCharging .caption_typecCharging .contents_typecCharging {
+    width: 100%;
+    color: #fff;
+    text-align: left;
+    padding: 2rem;
+    /* background-color: rgba(0, 0, 0, 0.8); */
+}
+    
+  }
+  
+</style>
+
+
+      

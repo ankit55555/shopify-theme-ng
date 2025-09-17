@@ -1,0 +1,89 @@
+{% if request.path contains 'return_prime' %}
+<style>
+  .rp_error_block {
+    max-width: 700px;
+    margin: 24px auto;
+    background: #f5e5e7;
+    padding: 28px;
+    border-radius: 10px;
+  }
+  .rp_error_block p {
+    margin: 0;
+    font-size: 23px;
+    text-align: center;
+  }
+  .not__delivered {
+    background: #d7122b;
+    padding: 4px 10px;
+    border-radius: 8px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+</style>
+<script>
+  function showErrorMessage() {
+    var returnprimeDiv = document.querySelector(".returnprime__app");        
+    let divWrapper = document.createElement('div');
+    divWrapper.classList.add("rp_error_block");
+    let nonEligibleheading = document.createElement('p');
+    nonEligibleheading.append('The order is not delivered yet, Please try again after delivery.');
+    divWrapper.appendChild(nonEligibleheading);
+    if(document.getElementsByClassName('rp_error_block').length === 0) {
+      returnprimeDiv.appendChild(divWrapper);
+    }
+  
+    setTimeout(() => {
+      const orderListElement = document.querySelector('.order_list');
+      if (orderListElement) {
+        orderListElement.remove();
+      }
+      const sidenavElement = document.querySelector('.returnprime__app .customer .sidenav');
+      if (sidenavElement) {
+        sidenavElement.remove();
+      }
+    }, 5);
+  }
+
+  function checkForDeliveryStatus(obj) {
+    const delivered_fullfilled_items = obj.order[0].fulfillments.filter(el => el.shipment_status === "delivered");
+    let delivered_line_items = [];
+    if (delivered_fullfilled_items && delivered_fullfilled_items.length > 0) {
+      delivered_line_items = delivered_fullfilled_items.flatMap(el => el.line_items);
+    } else {
+      return showErrorMessage();
+    }
+    
+    const items__card = document.querySelectorAll('.returnprime__app .fullfiled_orders .order__card');
+    items__card.forEach((item) => {
+      let data_item_id = item.getAttribute('data-item-id');
+      const targetFulfillment = delivered_line_items.find(each => each.id == data_item_id);
+      if (!targetFulfillment || targetFulfillment.id != data_item_id) {
+        item.style.opacity = '0.6';
+        item.style.pointerEvents = 'none';
+        item.style.cursor = 'none';
+        item.style.position = 'relative';
+        const paragraphElement = document.createElement('p');
+        paragraphElement.textContent = 'Not delivered';
+        paragraphElement.classList.add('not__delivered');
+        item.appendChild(paragraphElement);
+      }
+    });
+  }
+
+  if (window.location.pathname.includes('return_prime')) {
+      let detailsData = null;
+
+    document.addEventListener("returnprime_orderlist_page", (e) => { 
+      detailsData = e.detail;
+      checkForDeliveryStatus(e.detail);
+    });
+     document.addEventListener('click', (e) => {
+      if (e.target.closest('.fullfiled_orders .title__wrapper')) {
+        checkForDeliveryStatus(detailsData);
+      }
+    });
+  }
+</script>
+{% endif %}

@@ -1,0 +1,191 @@
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .bumper {
+            height: 800px; /* Add height for scrollable content */
+            background-color: #f3f3f3;
+        }
+
+        .video-section {
+            position: sticky; /* Make the video section sticky */
+            top: 0; /* Stick to the top */
+            height: 100vh; /* Full viewport height */
+            overflow: hidden;
+        }
+
+        .video-section video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .img-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* background: url("https://cdn.shopify.com/s/files/1/0804/5762/9975/files/product_colour_1details.webp?v=1731631729"); */
+            clip-path: circle(0 at center);
+            transition: clip-path 0.3s ease-out;
+            z-index: 2;
+        }
+
+        .content {
+            position: absolute;
+            bottom: 0%;
+            left: 50%;
+            width: 80%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: white;
+            z-index: 3;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.3s ease-out;
+        }
+
+        .content h2 {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+        }
+        .content p {
+            color: #383838;
+        }
+
+        .content.visible {
+            opacity: 1; /* Show when visible class is added */
+            background: rgba(213, 212, 215, 0.9);
+            padding: 30px;
+            border-radius: 15px 15px 0px 0px;
+        }
+
+@media only screen and (max-width:768px){
+.content {
+    width: 100%;
+}
+   .content.visible {
+            padding: 25px 10px;
+        }
+  
+}
+
+      
+    </style>
+
+    <!-- <div class="bumper"></div> -->
+
+    <div class="video-section" id="video-section">
+        <video id="background-video" autoplay muted playsinline></video>
+        <div class="img-bg"></div>
+        <div class="content" id="content">
+            <h2>Meet NG EarSafe Pro: Your Ultimate Companion for Safe, Open-Ear, and Adventure-Ready Sound</h2>
+            <p>Engineered with advanced bone conduction technology, NG EarSafe Pro delivers crystal-clear audio while keeping your ears open to the world around you. These waterproof headphones are designed to handle it all—rain, sweat, and rugged conditions. Experience unparalleled comfort, stay aware of your surroundings, and enjoy sound without compromise. With NG EarSafe Pro, embrace the freedom to move, listen, and explore, knowing your ears are protected.</p>
+        </div>
+    </div>
+
+    <!-- <div class="bumper"></div> -->
+
+<script>
+    let delayFactor; // To hold delay factor for mobile and desktop
+    const content = document.getElementById("content");
+    let isClipPathActive = false; // Tracks if the clip-path effect is active
+    let scrollTimeout; // Reference to the timeout
+
+    // Function to set the video and background image based on device type
+    function setBackground() {
+        const overlay = document.querySelector(".img-bg");
+        const video = document.getElementById("background-video");
+
+        // Check device type based on window width
+        if (window.innerWidth <= 768) {
+            // Mobile Video and Background
+            video.src = "https://cdn.shopify.com/videos/c/o/v/79147570c5f04206bc608fa61219f5ef.mp4";
+            overlay.style.backgroundImage = "url('https://cdn.shopify.com/s/files/1/0804/5762/9975/files/productcolouranddetailsmobilev2.webp?v=1732537146')";
+
+            // Set mobile-specific values
+            delayFactor = 0.1; // Adjust delay factor for mobile
+        } else {
+            // Desktop Video and Background
+            video.src = "https://cdn.shopify.com/videos/c/o/v/bbae54bd7768451f9fce43260ff331da.mp4";
+            overlay.style.backgroundImage = "url('https://cdn.shopify.com/s/files/1/0804/5762/9975/files/product_colour_1details.webp?v=1731631729')";
+
+            // Set desktop-specific values
+            delayFactor = 0.9; // Delay factor for desktop
+        }
+
+        // Common background properties for both mobile and desktop
+        overlay.style.backgroundRepeat = "no-repeat";
+        overlay.style.backgroundSize = "cover";
+        overlay.style.backgroundPosition = "center";
+    }
+
+    // Call the function on page load
+    setBackground();
+
+    // Optional: Call the function on resize
+    window.addEventListener('resize', setBackground);
+
+    document.addEventListener("scroll", () => {
+        const section = document.getElementById("video-section");
+        const overlay = document.querySelector(".img-bg");
+
+        // Get the height of the video section
+        const sectionHeight = section.offsetHeight;
+        const scrollY = window.scrollY;
+        const sectionOffsetTop = section.offsetTop;
+
+        // Check if we should activate the clip-path
+        if (!isClipPathActive) {
+            // Set a timeout to start the clip-path behavior
+            scrollTimeout = setTimeout(() => {
+                isClipPathActive = true; // Activate clip-path after 8 seconds
+            }, 8000); // 8 second delay
+            return; // Exit the function until the timeout is complete
+        }
+
+        // Calculate scroll progress
+        const progress = Math.min(
+            Math.max((scrollY - sectionOffsetTop) / sectionHeight, 0),
+            1
+        );
+
+        // Introduce a delay to the progress
+        const delayedProgress = Math.pow(progress, delayFactor); // Adjusts the sensitivity of the progress
+
+        // Update the clip-path size based on delayed scroll progress
+        const maxClipSize = Math.max(window.innerWidth, window.innerHeight);
+        const clipSize = delayedProgress * maxClipSize; // Adjust size based on delayed progress
+        overlay.style.clipPath = `circle(${clipSize}px at center)`;
+
+        // Reveal content when scrolled past 10% of the section's height for mobile
+        // and 20% for desktop
+        if (window.innerWidth <= 768) {
+            // Mobile specific threshold
+            if (progress > 0.1) {
+                content.classList.add("visible");
+            } else {
+                content.classList.remove("visible");
+            }
+        } else {
+            // Desktop specific threshold
+            if (progress > 0.2) {
+                content.classList.add("visible");
+            } else {
+                content.classList.remove("visible");
+            }
+        }
+    });
+</script>

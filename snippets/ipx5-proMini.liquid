@@ -1,0 +1,93 @@
+
+    <style>
+
+        .bannerIPX5 {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Full screen height */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; /* Align content to the right */
+            padding: 0 5%;
+        }
+
+        .bannerIPX5-content {
+            max-width: 40%;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .bannerIPX5 h4 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+          font-weight:700;
+          color:#fff;
+        }
+
+        .bannerIPX5 p {
+            font-size: 1.5rem;
+            line-height: 1.5;
+          font-weight:500;
+          color:#e3e3e3;
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+               .bannerIPX5 {
+        height: 100vh !important;
+        padding: 0px 0px;
+        justify-content: center;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: block;
+        margin: 0 auto;
+    }
+
+            .bannerIPX5-content {
+        max-width: 100%;
+        text-align: center;
+        padding: 45px 25px;
+    }
+          .bannerIPX5 h4 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+          .bannerIPX5 p {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #e3e3e3;
+}
+        }
+    </style>
+
+    <div class="bannerIPX5">
+        <div class="bannerIPX5-content">
+            <h4>IPX6 Sweat & Dustproof</h4>
+            <p>
+               Built to keep up with your toughest workouts and daily adventures, the NG EarSafe Pro Mini comes with an IPX6-rated sweat and dustproof design. Whether you're hitting the gym, cycling through dusty trails, or powering through an intense training session, your audio experience stays uninterrupted. Designed for durability and comfort, it ensures you stay focused on what matters—without worrying about sweat or dust slowing you down.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function updateBackground() {
+            const bannerIPX = document.querySelector(".bannerIPX5");
+            const desktopImgIPX = "https://cdn.shopify.com/s/files/1/0804/5762/9975/files/IPx6_Description_desktop_banner.webp?v=1739551014";
+            const mobileImgIPX = "https://cdn.shopify.com/s/files/1/0804/5762/9975/files/IPx6_Description_mobile_banner.webp?v=1739551013";
+
+            if (window.innerWidth <= 768) {
+                bannerIPX.style.backgroundImage = `url('${mobileImgIPX}')`;
+            } else {
+                bannerIPX.style.backgroundImage = `url('${desktopImgIPX}')`;
+            }
+        }
+
+        window.addEventListener("load", updateBackground);
+        window.addEventListener("resize", updateBackground);
+    </script>

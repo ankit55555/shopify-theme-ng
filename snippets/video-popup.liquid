@@ -1,0 +1,85 @@
+{% comment %} 
+<div id="popup" class="popup-overlay">
+  <div class="popup-content">
+    <span id="video_pause" class="close-btn1" onclick="closePopup()">&times;</span>
+    <video class="video" controls poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/rachna_website_video_5_3-0.webp?v=1720613049" id="myMovie" playsinline style="width: 100%;    
+    border-radius: 15px;
+    clip-path: inset(2px 0px 5px 2px);max-width: 100%; cursor: pointer;border-radius: 20px; 
+    overflow: hidden;
+    -webkit-transform: translateZ(0);">
+        <source src="https://cdn.shopify.com/videos/c/o/v/93a84a246121484095301ed3c5359a23.mp4"/>
+    </video>
+    <button id="view_cert" onclick="window.open('https://cdn.shopify.com/s/files/1/0804/5762/9975/files/certificate_1_edited.pdf?v=1719473283')" style="position: relative;
+    top: -20px;
+    border-radius: 0px 0px 10px 10px;width: 99.60%;">View Certificate</button>
+  </div>
+</div>
+
+<style>
+.popup-overlay {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: auto;
+  height: auto;
+  background: none;
+  display: none;
+  justify-content: end;
+  align-items: center;
+  z-index: 999; 
+  pointer-events: none; 
+}
+
+.popup-content {
+  text-align: center;
+  position: relative;
+  width: 30%;
+  border-radius: 10px;
+  pointer-events: all;
+}
+
+.close-btn1 {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 1px rgba(63, 63, 68, 0.05);
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  line-height: 20px;
+  right: -5px;
+  top: -5px;
+  z-index: 88;
+  font-size: 22px;
+  padding: 4px 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  .popup-content { width: 70%; }
+  #view_cert { width: 99% !important; }
+  video#myMovie { clip-path: inset(2px 0px 4px 3px) !important; }
+  .popup-overlay {
+  bottom: 40px;}
+}
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    function openPopup() {
+      document.getElementById('popup').style.display = 'flex';
+    }
+
+    window.closePopup = function() {
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    setTimeout(openPopup, 5000);
+  });
+</script>
+
+
+
+ {% endcomment %}

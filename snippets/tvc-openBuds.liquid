@@ -1,0 +1,139 @@
+<div id="videoWrapper_tvc">
+  <video id="desktop_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/download_21.png?v=1723538599" playsinline autoplay muted loop>
+		<source src="https://cdn.shopify.com/videos/c/o/v/46318e0fc82c4183a0632470750af920.mp4" type="video/mp4">
+	</video>
+
+    <video id="mobile_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/download_22.png?v=1723538598" playsinline autoplay muted loop>
+		<source src="https://cdn.shopify.com/videos/c/o/v/c724e9529edd4874aff04840385f5276.mp4" type="video/mp4">
+	</video>
+  
+   <!-- <div class="caption_tvc">
+  <div class="contents_tvc">
+<h2 >12x17mm Dynamic <br>Rectangle Drivers</h2>
+     <p>
+       Experience dynamic sound with our 12x17mm rectangle drivers. These advanced drivers produce deep bass and crisp treble for a superior sound experience.
+
+     </p>
+
+    </div>
+  </div> -->
+</div>
+
+
+
+
+<style>
+  #videoWrapper_tvc {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+  .caption_tvc .contents_tvc {
+    position: absolute;
+    right: 70px;
+        top: 70px;
+}
+
+  .caption_tvc .contents_tvc p{
+  width: 400px;
+    text-align: right;
+    color: #d5d5d5;
+}  
+
+ .caption_tvc .contents_tvc h2{color: #fff;
+    font-size: 3rem;
+ text-align: right;
+    margin-bottom: 20px;                             
+}
+
+
+ 
+
+#videoWrapper_tvc video {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover; 
+  z-index: -100;
+
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#videoWrapper_tvc .caption_tvc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+
+  /* background-color: rgba(0, 0, 0, 0.3); */
+}
+
+#videoWrapper_tvc .caption_tvc .contents_tvc {
+  width:50%;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  /* background-color: rgba(0, 0, 0, 0.8); */
+}
+
+
+#mobile_vid{display:none;}
+
+  @media only screen and (max-width: 768px) {
+  #desktop_vid{display:none;}
+    #mobile_vid{display:block;}
+
+    .caption_tvc .contents_tvc h2 {
+        color: #fff;
+        font-size: 3rem;
+        text-align: center;
+        padding: 20px;
+      margin-bottom: 0px;
+    }
+ 
+
+    #videoWrapper_tvc video {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    z-index: -100;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-60%);
+}
+
+     .caption_tvc .contents_tvc {
+        position: absolute;
+        right: unset;
+        bottom: 30px;
+        top: unset;
+    }
+    .caption_tvc .contents_tvc p {
+        width: 100%;
+        text-align: center;
+        color: #d5d5d5;
+        font-size: 13px;
+    }
+    #videoWrapper_tvc .caption_tvc .contents_tvc {
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    /* background-color: rgba(0, 0, 0, 0.8); */
+}
+    
+  }
+  
+</style>
+
+
+      

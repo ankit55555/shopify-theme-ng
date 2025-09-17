@@ -1,0 +1,458 @@
+<!doctype html>
+{%- liquid
+  assign t_name     = request.page_type
+  assign iso_code   = request.locale.iso_code
+  assign use_rtl    = settings.use_rtl
+  if use_rtl == '3'
+    assign lis_rtl  = 'ar; dv; ha; he; ku; fa; ur; ug; ps; yi'
+    assign iso_code_ck = iso_code | split: '-' | first
+  else 
+    assign lis_rtl = settings.list_rtl
+    assign iso_code_ck = iso_code
+  endif
+  if use_rtl == '1'
+    assign isRTL = true
+  elsif lis_rtl contains iso_code_ck and use_rtl == '2' or use_rtl == '3'
+    assign isRTL = true
+  else
+    assign isRTL = false
+  endif
+  assign body_img = settings.body_bg_image
+  if body_img != blank and settings.general_layout == 'boxed'
+    assign class_lazy = 'lazyloadt4s'
+  endif -%}
+{%- capture class_html -%}
+t4sp-theme t4s-wrapper__{{ settings.general_layout }} rtl_{{ isRTL }} swatch_color_style_{{ settings.swatch_color_style }} pr_border_style_{{ settings.pr_border_style }} pr_img_effect_{{ settings.pr_img_effect }} enable_eff_img1_{{ settings.enable_eff_img1 }} badge_shape_{{ settings.badge_shape }} css_for_wis_app_{{ settings.enable_css_wis }}{% if settings.use_cus_lz and settings.cus_lz %} t4s-lzcus-true{% endif %} shadow_round_img_{{ settings.enable_shadow_round_img }} t4s-header__{{ settings.header_design }} is-remove-unavai-{{ settings.variant_remove }} t4_compare_{{ settings.enable_compe }}{% if settings.type_qv == '1' %} t4s-sidebar-qv{% endif %} t4s-cart-count-{{ cart.item_count }} t4s-pr-ellipsis-{{ settings.enable_pr_ellipsis }}
+{%- endcapture -%}
+<html class="{{ class_html }} no-js" lang="{{ iso_code }}"{% if isRTL %} dir="rtl"{% endif %}>
+  <head>
+        <!-- Gokwik code block -->
+        <link rel="preload" href="https://pdp.gokwik.co/merchant-integration/build/merchant.integration.js?v4" as="script">
+        <link rel="preload" href="https://pdp.gokwik.co/build/gokwik.js" as="script">
+        <link rel="preload" href="https://pdp.gokwik.co/build/checkout.js" as="script">
+         {% render 'gokwik' %}
+    
+    <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFR4GDXWY2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config','G-NFR4GDXWY2',{ 'groups': 'GA4'});
+</script> 
+    <!-- End gokwik code block -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="4hoxQWnCpeIiiNFoijuwjUCOtEpTnRNtA1rxbxjfK2M" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, height=device-height, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="{{ settings.body_bg }}">
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+    <meta name="p:domain_verify" content="9f35f10a58b338dcbed85027f0fbf13d"/>
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    
+    {%- if settings.favicon != blank %}<link rel="shortcut icon" type="image/png" href="{{ settings.favicon | image_url: width: 32 }}">{% endif -%}
+    {%- if settings.favicon_apple != blank %}<link rel="apple-touch-icon-precomposed" type="image/png" sizes="152x152" href="{{ settings.favicon_apple | image_url: width: 152 }}">{% endif -%}
+
+    {%- if settings.font_source == '1' and settings.fnt_fm_sp1.system? == false or settings.fnt_fm_sp2.system? == false or settings.fnt_fm_sp3.system? == false -%}
+      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {%- endif -%}
+    
+    {%- if t_name != 'list-collections' -%}
+    {%- capture seo_title -%}
+      {%- if template == 'search' and search.performed == true -%}{{ 'search.general.heading' | t: count: search.results_count }}: {{ 'search.results_with_count_and_term' | t: terms: search.terms, count: search.results_count }}{%- elsif template == 'search.wishlist' %}{{ 'wishlist_page.meta' | t }}{%- elsif template == 'search.compare' %}{{ 'compare_page.meta' | t }}{%- else -%}{{ page_title }}{%- endif -%}
+      {%- if current_tags -%}{%- assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}{%- endif -%}
+      {%- if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{%- endif -%}
+      {%- assign escaped_page_title = page_title | escape -%}
+      {%- unless escaped_page_title contains shop.name %} &ndash; {{ shop.name }}{%- endunless -%}
+    {%- endcapture -%}
+{%- assign seo_title_clean = seo_title | split: "&ndash;" | first -%}
+  <title>{{ seo_title_clean | strip }}</title>
+    <meta name="description" content="{{ page_description | default: shop.description | default: shop.name | escape }}">
+    {%- else -%}
+    <title>{{ 'list_collections.meta_title' | t | escape }}</title><meta name="description" content="{{ 'list_collections.meta_description' | t | escape }}">
+    {%- endif -%}
+
+    {%- render 'meta-tags', t_name: t_name -%}
+    
+    <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
+    <script src="{{ 'global.min.js' | asset_url }}" defer="defer"></script>
+    {{ content_for_header }}
+    {%- render 'head_assets', t_name: t_name, isRTL: isRTL -%}
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WXNNKDP');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1434102801337892');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1434102801337892&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "rs9j7mlczw");
+</script>    
+<!-- Microsoft Clarity -->
+    
+<!-- Organization Schema -->     
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "NG EarSafe",
+  "url": "https://ngearsafe.com",
+  "logo": "https://cdn.shopify.com/s/files/1/0804/5762/9975/files/ngcorp-logo.svg?v=1695640610",
+  "description": "NG EarSafe is an innovative open-ear Bluetooth headphone brand offering crystal-clear sound with environmental awareness.",
+  "sameAs": [
+    "https://www.facebook.com/ngearsafe",
+    "https://www.youtube.com/@ngindia223",
+    "https://www.instagram.com/n.g.india/",
+    "https://www.linkedin.com/company/ngindia/"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+918047165643",
+    "contactType": "customer service",
+    "email": "support@ngearsafe.com",
+    "availableLanguage": ["English", "Hindi"]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Tel Exchange, Kedar, Tulsi Park Street 1 Raiya, 150 Feet Ring Rd",
+    "addressLocality": "Rajkot",
+    "addressRegion": "Gujarat",
+    "postalCode": "360001",
+    "addressCountry": "IN"
+  }
+}
+</script>  
+
+ <!-- Website Schema -->    
+
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "NG EarSafe",
+  "url": "https://ngearsafe.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://ngearsafe.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Are Open-Ear Headphones Safe? An ENT Specialist Explains!",
+  "description": "Are open-ear headphones truly safe? Dr. Rachana Mehta, an ENT specialist, explains the impact of traditional earphones on ear health and why NG EarSafe open-ear headphones are a smarter choice. Unlike regular headphones that cause earwax buildup, irritation, and infections, NG EarSafe keeps your ears open and comfortable while ensuring awareness of your surroundings. Learn how to prevent noise-induced hearing loss by managing volume and usage time. Experience the difference today!",
+  "thumbnailUrl": "https://cdn.shopify.com/s/files/1/0804/5762/9975/files/rachna_website_video_5_3-0.webp",
+  "uploadDate": "2024-09-03",
+  "contentUrl": "https://www.youtube.com/watch?v=FXtxuPDEKyE",
+  "embedUrl": "https://www.youtube.com/watch?v=FXtxuPDEKyE"
+}
+</script>    
+
+ {% if collection.url == '/collections/all' %}
+<meta name="robots" content="noindex,nofollow">
+{% endif %} 
+
+{% if collection.url == '/collections/all' %}
+  <script type="text/javascript">
+    window.location = "https://ngearsafe.com/collections/open-ear-headphones";
+  </script>
+  {% endif %}  
+
+ {% if request.path == '/products/ng-earsafe-comm-open-ear-headphones-with-noise-canceling-boom-mic' %}
+  <script>
+    window.location.href = '/products/open-ear-headphones-with-mic-2-0-ng-earsafe';
+  </script>
+{% endif %} 
+    
+
+  </head>
+
+  <body class="template-{{ request.page_type | handle }} {{ class_lazy }}"{% if body_img != blank %} data-bgset="{{ body_img | image_url: width: 1 }}" data-optimumx="2" data-sizes="auto"{% endif -%}>{% if isRTL %}<script type="text/javascript" id="t4s-flicker-fix">// Flicker fix.</script>{% endif -%}
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXNNKDP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+    <a class="skip-to-content-link visually-hidden" href="#MainContent">{{ "accessibility.skip_to_text" | t }}</a>
+    <div class="t4s-close-overlay t4s-op-0"></div>
+
+    <div class="t4s-website-wrapper">
+      {%- render 'header', t_name: t_name -%}
+
+      <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+        {{ content_for_layout }}
+      </main>
+
+      <footer id="t4s-footer">
+        {%- section 'footer' -%}
+        {%- section 'bottom-bar' -%}
+      </footer>
+    </div>
+
+      <ul hidden class="t4s-d-none">
+        <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
+      </ul>
+    {%- render 'render_bottom' -%}
+    {% render 'returnprime_js' %} 
+
+ <style>
+   .bg_color_blue {
+    --t4s-bg-color: #19366A;
+}
+   .t4s_nt_se_template--22100092911895__fcc64674-be8f-4eb2-8f04-0bacf8de5771 .t4s-section-title span { color:white !important;}
+   .t4s_nt_se_template--22100092977431__fcc64674-be8f-4eb2-8f04-0bacf8de5771 .t4s-section-title span { color:white !important;}
+   .t4s_nt_se_template--22100092879127__fcc64674-be8f-4eb2-8f04-0bacf8de5771 .t4s-section-title span { color:white !important;}
+ @media only screen and (max-width: 768px) {
+    #shopify-section-template--22100092354839__6289d42b-4e78-4875-99bc-afaebf75ddc0, #shopify-section-template--22100092977431__fcc64674-be8f-4eb2-8f04-0bacf8de5771, #shopify-section-template--22100092879127__fcc64674-be8f-4eb2-8f04-0bacf8de5771 {
+    display: none;
+}   
+ </style>   
+   <!-- Begin Shopify–payment-cart JavaScript -->
+<script type="text/javascript">
+
+  var mid = '3718';
+
+  //1. Add this if need to show popup on cart page
+      var snapCartPrice = {{ cart.total_price | json }}
+  //This will be the element class name where we want to insert the UI
+      var snapCartElName = '.t4s-btn-group__checkout-update'
+
+  //2. Add this if need to show popup on sidebar cart
+      var snapCartPrice = {{ cart.total_price | json }}
+  //This will be the element class name where we want to insert the UI
+      var snapCart = '.is--opend-drawer .t4s-cart__tax'
+
+  //3. Add this if need to show popup on product page
+      var snapProdDetail = {{ product | json }}
+  //This will be the element class name where we want to insert the UI    
+  var snapProdElName = '.t4s-product__info-container .t4s-product__policies'
+
+  //targeted price 
+  var productTargetedPrice = '.t4s-product__info-container .t4s-product__policies'
+  var productTargetedPriceVariant = '.t4s-product__info-container .t4s-product__policies'
+
+</script>
+<script src="https://checkout-merchant.snapmint.com/js/v1/3718" defer></script>
+<!-- End Shopify-payment JavaScript --> 
+ 
+
+ <style>
+.Click-here {
+  cursor: pointer;
+  /* background-image: linear-gradient(190deg, #f83600 0%, #fee140 100%);
+  color: #fff;
+  width: 180px;
+  text-align: center;
+  font-size:16px;
+  padding: 18px 0;
+  margin: 0 auto; */
+  transition:background-image 3s ease-in-out;
+}
+.Click-here:hover{
+  transition:background-image 3s ease-in-out;
+  background-image: linear-gradient(90deg, #fee140 0%, #f83600 100%);
+}
+.custom-model-main {
+  text-align: center;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; /* z-index: 1050; */
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear, z-index 0.15;
+  -o-transition: opacity 0.15s linear, z-index 0.15;
+  transition: opacity 0.15s linear, z-index 0.15;
+  z-index: -1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.model-open {
+  z-index: 99999;
+  opacity: 1;
+  overflow: hidden;
+}
+.custom-model-inner {
+  -webkit-transform: translate(0, -25%);
+  -ms-transform: translate(0, -25%);
+  transform: translate(0, -25%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  display: inline-block;
+  vertical-align: middle;
+  width: 600px;
+  margin: 30px auto;
+  max-width: 97%;
+}
+.custom-model-wrap {
+  display: block;
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+  outline: 0;
+  text-align: left;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  max-height: calc(100vh - 70px);
+	overflow-y: auto;
+}
+.model-open .custom-model-inner {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  position: relative;
+  z-index: 999;
+}
+.model-open .bg-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+}
+.bg-overlay {
+  background: rgba(0, 0, 0, 0);
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  -webkit-transition: background 0.15s linear;
+  -o-transition: background 0.15s linear;
+  transition: background 0.15s linear;
+}
+.close-btn {
+  position: absolute;
+  right: 0;
+  top: -30px;
+  cursor: pointer;
+  z-index: 99;
+  font-size: 30px;
+  color: #fff;
+}
+.shopify-payment-button{margin-top: 0px !important;}
+
+@media screen and (min-width:800px){
+	.custom-model-main:before {
+	  content: "";
+	  display: inline-block;
+	  height: auto;
+	  vertical-align: middle;
+	  margin-right: -0px;
+	  height: 100%;
+	}
+}
+@media screen and (max-width:799px){
+  .custom-model-inner{margin-top: 45px;}
+}
+</style>
+
+
+  
+<!-- Exchange Sale Code -->
+      <!-- <div class="custom-model-main">
+    <div class="custom-model-inner">        
+    <div class="close-btn">×</div>
+        <div class="custom-model-wrap">
+            <div class="pop-up-content-wrap">
+               <iframe id="B" name="myiFrame" style="border: none; width: 100%; height: 100vh;" src="https://help.ngearsafe.com/exchange" allowfullscreen="" scrolling="no"></iframe>
+            </div>
+        </div>  
+    </div>  
+    <div class="bg-overlay"></div>
+</div>  -->
+<!-- Exchange Sale Code -->
+    
+
+     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+<script>
+var $vid = jQuery.noConflict();
+  $vid(".Click-here").on('click', function() {
+  $vid(".custom-model-main").addClass('model-open');
+}); 
+$vid(".close-btn, .bg-overlay").click(function(){
+  $vid(".custom-model-main").removeClass('model-open');
+});
+
+</script> 
+
+   <script>
+$vid('#video_pause').click(function () {
+   var mediaVideo = $vid("#myMovie").get(0);
+   if (mediaVideo.paused) {
+       // mediaVideo.play();
+     mediaVideo.pause();
+   } else {
+       mediaVideo.pause();
+  }
+});
+
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var atcText = document.querySelector(".t4s-btn-atc_text");
+    var upiIcon = document.querySelector('img[src*="upi-icons.svg"]');
+
+    if (atcText && atcText.textContent.trim().toLowerCase() === "out of stock") {
+      if (upiIcon) {
+        upiIcon.style.display = "none";
+      }
+    }
+  });
+</script>
+
+
+<script type="text/javascript"> _linkedin_partner_id = "8507817"; window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || []; window._linkedin_data_partner_ids.push(_linkedin_partner_id); </script><script type="text/javascript"> (function(l) { if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])}; window.lintrk.q=[]} var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})(window.lintrk); </script> <noscript> <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8507817&fmt=gif" /> </noscript>    
+    
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<section class="main-container">
+  <div class="space-holder">
+    <div class="sticky">
+      <div class="horizontal">
+        <section role="feed" class="cards">
+          <article class="sample-card">
+            <div class="cont-benefit">
+              <div class="image-benefit">
+                <img loading="earger" height="auto" width="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/gino.webp?v=1702544110">
+              </div>
+              <div class="text-benefit" style="padding-left: 30px;">
+                <h2>Open Ear comfort</h2>
+                <p>NG EarSafe Open Ear Headphones provide comfy, open-ear listening with 2nd Gen Air Conduction Tech. Stay aware, lightweight, and enjoy clear sound without ear-canal blockage.</p>
+              </div>
+              
+            </div>
+          </article>
+          <article class="sample-card">
+            <div class="cont-benefit">
+               <div class="image-benefit">
+                <img loading="earger" height="auto" width="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/ldc.webp?v=1701415585">
+              </div>
+              <div class="text-benefit">
+                <h2>Stay aware of surroundings</h2>
+                <p>NG EarSafe Open Ear Headphones prioritize your safety, allowing you to be aware of your surroundings while enjoying your audio. Made for security and comfort, these headphones offer a reliable and alert listening experience for various activities.</p>
+              </div>
+             
+            </div>
+          </article>
+          <article class="sample-card">
+            <div class="cont-benefit">
+
+               <div class="image-benefit">
+                <img loading="earger" height="auto" width="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/pec.webp?v=1701415776">
+              </div>
+              
+              <div class="text-benefit">
+                <h2>Prevents damage to ear canal</h2>
+                <p>Think about it if your ears aren't enclosed in a tiny box. You will be much more comfortable if they can get nice fresh air circulating through them. By using open-back headphones, you can mitigate a build-up of heat and enjoy longer, more comfortable listening sessions.</p>
+              </div>
+             
+            </div>
+          </article>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .main-container{background: #25313c;position:relative;width:100%;min-height:100vh}
+.space-holder{position:relative;width:100%}
+.sticky{position:sticky;top:0;height:100vh;width:100%;overflow-x:hidden}
+.horizontal{position:absolute;height:70%;will-change:transform}
+.cards{position:relative;height:100%;padding:0 0 0 150px;display:flex;flex-flow:row nowrap;justify-content:flex-start;align-items:center}
+.sample-card{position:relative;height:500px;width:900px;margin-right:75px;flex-shrink:0;border-right:1px solid #000204;padding:30px}
+.cont-benefit{display:flex;align-items:center;justify-content:center}
+.image-benefit{
+  width:1032px;
+margin-top:85px}
+.image-benefit img{border-radius: 50px 20px;max-width:100%;max-height:100%}
+.text-benefit{font-size:20px;
+/* padding-left:20px */
+padding-left: 100px;
+margin-top: 100px;              
+}
+.text-benefit h2{font-size: 25px !important;margin-bottom:20px;color:#ffffff;text-transform:capitalize}
+.text-benefit p{color:#f5f5f5;font-size: 16px !important}  
+@media only screen and (max-width:768px){.cards {padding:0;} .sample-card {padding:0px;
+/* width:470px; */
+width: 500px;                                                                           
+height: 450px;padding-right: 10px !important;} .cont-benefit {display:block;}
+.text-benefit p {font-size: 14px !important;padding:0;} .image-benefit{width:unset;margin-top: 20px;} .text-benefit h2{font-size: 20px !important;
+margin-bottom: 15px;color: #ffffff;text-transform: capitalize;} .image-benefit img{margin: 0 75px;}
+ .sticky{height:105vh;} 
+.cards{align-items:center;height:80%;}
+.text-benefit {
+    padding: 30px 60px !important;
+    text-align: center;
+  margin-top: unset !important;
+}                                         
+}  
+</style>
+
+      <script>
+
+        const spaceHolder = document.querySelector('.space-holder');
+        const horizontal = document.querySelector('.horizontal');
+        spaceHolder.style.height = `${calcDynamicHeight(horizontal)}px`;
+        
+        function calcDynamicHeight(ref) {
+          const vw = window.innerWidth;
+          const vh = window.innerHeight;
+          const objectWidth = ref.scrollWidth;
+          return objectWidth - vw + vh + 0; // 150 is the padding (in pixels) desired on the right side of the .cards container. This can be set to whatever your styles dictate
+        }
+        window.addEventListener('scroll', () => {
+          const sticky = document.querySelector('.sticky');
+          horizontal.style.transform = `translateX(-${sticky.offsetTop}px)`;
+        });       
+        window.addEventListener('resize', () => {
+          spaceHolder.style.height = `${calcDynamicHeight(horizontal)}px`;
+        });
+        
+        </script>

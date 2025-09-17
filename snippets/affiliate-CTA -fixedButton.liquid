@@ -1,0 +1,42 @@
+<a href="https://help.ngearsafe.com/affiliate-collaboration" target="_blank" id="fixed-button">Join Our Affiliate Program</a>
+
+<style>
+  #fixed-button {
+    position: fixed;
+    bottom: 25%; /* Center vertically */
+    left: 15px; /* Ensure visibility on the left side */
+    transform: translateY(50%) rotate(-90deg); /* Rotate and center */
+    transform-origin: left center; /* Rotation point */
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text */
+    font-size: 16px; /* Adjust font size */
+    font-weight:700;
+    padding: 8px 20px; /* Adjust padding */
+    text-decoration: none;
+    z-index: 999; /* Ensure it stays on top */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: all 0.3s ease; /* Smooth hover effect */
+  }
+
+  #fixed-button:hover {
+    background-color: #333333; /* Lighter background on hover */
+  }
+
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    #fixed-button {
+      font-size: 16px; /* Smaller text for smaller screens */
+      padding: 6px 15px; /* Adjust padding */
+      left: 12px; /* Keep closer to the screen edge */
+bottom: 30%;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    #fixed-button {
+      font-size: 14px; /* Further reduce text size */
+      padding: 5px 20px; /* Smaller padding */
+    }
+  }
+</style>

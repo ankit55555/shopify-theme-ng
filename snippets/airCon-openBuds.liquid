@@ -1,0 +1,57 @@
+
+  <div class="wrapper_scroll">
+    <section class="section_scroll sticky section--s1">
+      <video id="desktop_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/download_13.png?v=1723458371" playsinline autoplay muted loop>
+        <source src="https://cdn.shopify.com/videos/c/o/v/9cbbf72cda8d4389b505ee058edfb693.mp4" type="video/mp4">
+      </video>
+      <video id="mobile_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/download_14.png?v=1723460931" playsinline autoplay muted loop>
+        <source src="https://cdn.shopify.com/videos/c/o/v/6e6ce79a7f9e41fcbd51ab00390130f7.mp4" type="video/mp4">
+      </video>
+    </section>
+    <section class="section_scroll sticky section--s2">
+      <div class="caption_scroll">
+        <div class="contents_1">
+          <h2 class="">Open Ear <br>Air Conduction <br>Technology</h2>
+        </div>
+        <div class="contents_2">
+          <p class="">
+            Experience superior sound with open ear air conduction technology. Enjoy clear, immersive audio while staying aware of your surroundings and ensuring ear safety. Stay connected and protected.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+<style>
+
+
+
+
+.wrapper_scroll{margin:0;padding:0;font-size:18px;line-height:1.9em;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}
+.wrapper_scroll{width:100%;background:url('');background-size:cover;background-attachment:fixed;z-index:1}
+.section_scroll{width:100%;box-sizing:border-box;position:relative;z-index:99}
+.wrapper_scroll .sticky{min-height:100vh;max-height:100vh;height:100vh;position:-webkit-sticky;position:sticky;top:20px;z-index:9;overflow: hidden;}
+
+.section_scroll{color:#fff}
+.section--s1{top:20px;max-height:calc(100vh - 40px)}
+.section--s2{top:40px;max-height:calc(100vh - 80px)}
+
+#mobile_vid{display:none}
+.section_scroll video{width:100%;object-fit:cover;position:relative;height: 100%;}
+.caption_scroll{display:flex;justify-content:center;align-items:center;height:100%}
+.caption_scroll .contents_1{width:400px;position:absolute;left:150px;top:150px}
+.caption_scroll .contents_1 h2{color:#fff;font-size:3.5rem;line-height:4.5rem}
+.caption_scroll .contents_2{width:400px;position:absolute;right:50px;top:80px}
+.caption_scroll .contents_2 p{color:#fff;font-size:2rem;font-weight:400;text-align:right}
+
+@media only screen and (max-width:768px){
+#desktop_vid{display:none}
+#mobile_vid{display:block}
+.caption_scroll .contents_1{width:400px!important;position:absolute!important;left:unset!important;top:0px!important;text-align:center!important}
+.caption_scroll .contents_1 h2{color:#fff!important;font-size:4rem!important;line-height:55px!important;padding:0;margin:0}
+.caption_scroll .contents_2{width:350px!important;position:absolute!important;right:unset!important;top:190px!important}
+.caption_scroll .contents_2 p{color:#fff;font-size:1.8rem!important;font-weight:400!important;text-align:center!important;padding:0;margin:0}
+}
+
+</style>

@@ -1,0 +1,138 @@
+
+<article id="art_1" class="article_scroll group animation">
+        <img width="auto" height="auto" class="image anm_mod right fast" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/benefit_hearing_aid_desktop1.webp?v=1723316975" alt="Image">
+        <div class="content">
+        <div class="col_side">
+          <p class="anm_mod full">BENEFITS OF NG EARSAFE</p>
+          <h2 class="headline anm_mod left fast">Aid for Hearing <br>Impaired</h2>
+          <span class="anm_mod full fast">Bone conduction technology can potentially be beneficial 
+for some types of conductive hearing loss. This type of hearing loss affects 
+how sound waves reach the inner ear, and bone conduction headphones transmit 
+sound vibrations through the skull directly to the inner ear, bypassing the outer and middle ear.</span>
+        </div>
+        </div>
+      </article>
+      <article id="art_2" class="article_scroll group">
+        <div class="content">
+        <div>
+          <p class="anm_mod full">BENEFITS OF NG EARSAFE</p>
+          <h2 class="headline anm_mod left fast">Aid for Hearing <br>Impaired</h2>
+          <span class="anm_mod full fast">Bone conduction technology can potentially be beneficial 
+for some types of conductive hearing loss. This type of hearing loss affects 
+how sound waves reach the inner ear, and bone conduction headphones transmit 
+sound vibrations through the skull directly to the inner ear, bypassing the outer and middle ear.</span>
+        </div>
+        </div>
+        <img width="auto" height="auto" class="image anm_mod right fast" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Benefit_hearing_aid_mobile.webp?v=1723316975" alt="Image">
+      </article>
+
+<style>
+.col_side{position: absolute; margin-top: 40px;left: 5%;}
+.article_scroll{width:100%;margin:0;background:#282b2e;padding-top: 40px;}
+.image{background:silver;width:60%;border-radius:15px;color:#efefef;font-size:8rem;margin-top:60px}
+.image.right{float:right;margin-left:20px}
+.image.left{float:left;margin-right:30px}
+.content{padding:0 20px;color:#444}
+.content h2{line-height: 10rem !important;color:#fff;font-size:90px;font-weight:700;font-family:system-ui;overflow:hidden;margin-bottom:30px}
+.content p{color: #686a6b;font-size: 12px;font-weight: 400;width: 500px;letter-spacing: 5px;margin-left: 20px;}
+.content span{color: #c1c3c4;font-size: 14px;font-weight: 400;width: 400px;display: inline-block;}
+.group:after,.group:before{content:"";display:table}
+.group:after{clear:both}
+#art_2{display:none}
+@media only screen and (max-width:768px){
+#art_1{display:none}
+#art_2{display:block}
+.content p{color:#686a6b;font-size:15px;font-weight:400;width:100%;letter-spacing:5px;text-align:center}
+.content span{color:#c1c3c4;font-size:16px;font-weight:400;width:100%;display:inline-block;text-align:center}
+.image{background:silver;width:100%;border-radius:0px;color:#efefef;font-size:8rem;margin-top:30px}
+.content h2{line-height: 5rem !important;color:#fff;font-size:40px;font-weight:700;font-family:system-ui;overflow:hidden;margin-bottom:30px;text-align:center}
+}
+
+/* body {
+	 background: #121927;
+}
+ .animation {
+	 display: flex;
+	 justify-content: center;
+	 margin-top: 10vh;
+	 padding: 2rem 40px;
+} */
+ .animation .anm_mod {
+	 opacity: 0;
+	 transform: translate3d(0, 100%, 0);
+	 transition: all 1s ease;
+	 /* display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 text-align: center;
+	 margin: 10px;
+	 width: 50%;
+	 height: 40vh;
+	 border-radius: 10px;
+	 font-size: 2rem;
+	 color: white;
+	 text-shadow: 2px 2px 2px rgba(20, 20, 20, 0.5);
+	 background: rgba(250, 250, 250, 0.5);
+	 box-shadow: 0px 4px 8px rgba(250, 250, 250, 0.3); */
+}
+ /* .animation .anm_mod.full {
+	 width: 100%;
+	 font-size: 3rem;
+} */
+ .animation .anm_mod.left {
+	 transform: translate3d(-100%, 0, 0);
+}
+ .animation .anm_mod.right {
+	 transform: translate3d(100%, 0, 0);
+}
+ .animation .anm_mod.delay {
+	 transition: all 2s ease;
+}
+ .animation .anm_mod.fast {
+	 transition: all 0.8 ease;
+}
+ .animation .anm_mod.active {
+	 opacity: 1;
+	 transform: translate3d(0, 0, 0);
+}
+ .org_to_top {
+	 position: fixed;
+	 bottom: 20px;
+	 right: 20px;
+}
+ 
+
+  
+</style>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+
+<script>
+  var $jqu = jQuery.noConflict();
+  $jqu(window).scroll(function() {
+ $jqu(".animation .anm_mod").each(function() {
+  const position = $jqu(this).offset().top;
+  const scroll = $jqu(window).scrollTop();
+  const windowHeight = $jqu(window).height();
+  if (scroll > position - windowHeight) {
+   $jqu(this).addClass("active");
+  }
+  if (scroll < 100) {
+   $jqu(this).removeClass("active");
+  }
+ });
+});
+
+$jqu(function() {
+ $jqu('a[href^="#"]').click(function() {
+  const speed = 800;
+  const href = $jqu(this).attr("href");
+  const target = $jqu(href == "#" || href == "" ? "html" : href);
+  const position = target.offset().top;
+ $jqu("html, body").animate({ scrollTop: position }, speed, "swing");
+  return false;
+ });
+});
+
+</script>
+      

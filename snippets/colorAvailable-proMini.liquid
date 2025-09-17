@@ -1,0 +1,158 @@
+    <style>
+        .container_compare {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url(https://cdn.shopify.com/s/files/1/0804/5762/9975/files/orange_Pro_mini_colouravailable.svg?v=1739789917);
+            background-position: center center;
+            background-size: cover;
+            overflow: hidden;
+            /* touch-action: none;  */
+ touch-action: pan-y; /* Allow vertical scrolling */
+        }
+        .mask-container_compare {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 50%;
+            overflow: hidden;
+            transition: width 0.05s ease-out;
+        }
+        .mask-image-container_compare {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background-image: url(https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Black_Pro_mini_colouravailable.svg?v=1739789917);
+            background-position: center center;
+            background-size: cover;
+        }
+        .border_compare {
+            position: absolute;
+            width: 4px;
+            height: 100vh;
+            left: 50%;
+            margin-left: -2px;
+            /* background-color: rgba(0,0,0,0.4); */
+            transition: left 0.05s ease-out;
+        }
+        .circle_compare {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: steelblue;
+            top: 50%;
+            margin-top: -25px;
+            left: 50%;
+            margin-left: -25px;
+            opacity: 0.9;
+            cursor: ew-resize;
+            transition: left 0.05s ease-out;
+            touch-action: none;
+
+          width: 50px;
+    height: 50px;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex
+;
+    align-items: center;
+    justify-content: space-evenly;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+          rgb(34 151 174)
+        }
+
+@media only screen and (max-width: 768px) {
+.mask-image-container_compare {
+    background-size: cover;
+    background-repeat: no-repeat;
+  height: 32vh;
+}
+  .container_compare {
+     background-size: cover;
+    background-repeat: no-repeat;
+    height: 32vh;
+}
+  .circle_compare {
+    margin-left: -18px;
+    width: 35px;
+    height: 35px;
+}
+}
+      
+    </style>
+    <div class="container_compare">
+        <div class="mask-container_compare">
+            <div class="mask-image-container_compare">
+            </div>
+        </div>
+        <div class="border_compare"></div>
+        <!-- <div class="circle_compare"></div> -->
+      <div class="circle_compare" style="left: 675px;">
+
+      <i class="las la-chevron-left"></i>
+      <i class="las la-chevron-right"></i>
+</div>
+    </div>
+
+    <script>
+        const container = document.querySelector(".container_compare");
+        const maskContainer = document.querySelector(".mask-container_compare");
+        const border = document.querySelector(".border_compare");
+        const circle = document.querySelector(".circle_compare");
+        
+        let isDragging = false;
+        let startX;
+        let circleLeft;
+
+        function updatePositions(pageX) {
+            const containerRect = container.getBoundingClientRect();
+            let newLeft = Math.max(0, Math.min(containerRect.width, pageX - containerRect.left));
+            
+            maskContainer.style.width = `${newLeft}px`;
+            border.style.left = `${newLeft}px`;
+            circle.style.left = `${newLeft}px`;
+        }
+
+        // Mouse Events
+        circle.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - circle.offsetLeft;
+            container.style.cursor = 'ew-resize';
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            updatePositions(e.pageX - startX);
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            container.style.cursor = 'default';
+        });
+
+        // Touch Events
+        circle.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            startX = e.touches[0].pageX - circle.offsetLeft;
+            e.preventDefault(); // Prevent scrolling while dragging
+        });
+
+        document.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            updatePositions(e.touches[0].pageX - startX);
+        });
+
+        document.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+
+        // Initialize position
+        updatePositions(window.innerWidth / 2);
+    </script>

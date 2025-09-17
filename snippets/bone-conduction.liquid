@@ -1,0 +1,78 @@
+
+    <div class="wrapper_scroll_sound">
+        <section class="section_scroll_sound sticky_sound section--sounds1">
+            <video id="desktop_vid_water" class="view-to-playD" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/videoframe_0.png?v=1730810476" playsinline muted loop>
+                <source src="https://cdn.shopify.com/videos/c/o/v/82eac7408bcf45ba920835420e9352c2.mp4" type="video/mp4">
+            </video>
+        
+            <video id="mobile_vid_water" class="view-to-playM" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/videoframe_0_1.png?v=1730810476" playsinline muted loop>
+                <source src="https://cdn.shopify.com/videos/c/o/v/c6382fdcd7724815b7283c565227efd8.mp4" type="video/mp4">
+            </video>
+<button class="tap_to_experience" id="audioToggle_water">Tap To Experience 🔇</button>
+        </section>
+        <section class="section_scroll_sound sticky_sound section--sounds2">
+          <div class="caption_scroll_sound">
+            <div class="contents_2_sound">
+                <h2 class="">Ip68 fully Waterproof</h2>
+                <p style="color: #c2c2c2;text-align: center;">Dive into uninterrupted underwater music with our IP68 waterproof open-ear headphones. <br>Featuring bone conduction technology and 8GB inbuilt memory which can store 1000 songs, <br>swim with seamless tunes and stay aware of your surroundings. Elevate your aquatic adventures <br>with this waterproof innovation.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    
+
+   <style>
+        .wrapper_scroll_sound{margin:0;padding:0;font-size:18px;line-height:1.9em;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}
+        .wrapper_scroll_sound{width:100%;background:url('');background-size:cover;background-attachment:fixed;z-index:1}
+        .section_scroll_sound{width:100%;box-sizing:border-box;position:relative;z-index:99}
+        .wrapper_scroll_sound .sticky_sound{min-height:100vh;max-height:100vh;height:100vh;position:-webkit-sticky;position:sticky;top:20px;z-index:9;overflow: hidden;}
+        .section_scroll_sound{color:#fff}
+        .section--sounds1{top:20px;max-height:calc(100vh - 40px)}
+        .section--sounds2{top:40px;max-height:calc(100vh - 80px)}
+        #mobile_vid_water{display:none}
+        .section_scroll_sound video{width:100%;object-fit:cover;position:relative;height: 100%;filter: brightness(70%);}
+        .caption_scroll_sound{display:flex;justify-content:center;align-items:center;height:100%}
+        /* .caption_scroll_sound .contents_2_sound{width:400px;position:absolute;right:50px;top:80px} */
+        .caption_scroll_sound .contents_2_sound h2{color: #fff;font-size: 7rem;text-align: center;}
+        .caption_scroll_sound .contents_2_sound p{font-size: 18px;}
+        
+        @media only screen and (max-width:768px){
+        #desktop_vid_water{display:none}
+        #mobile_vid_water{display:block}
+        .caption_scroll_sound .contents_2_sound{width:350px!important;position:absolute!important;right:unset!important;top:190px!important}
+        .caption_scroll_sound .contents_2_sound p{width: 100%;text-align: center;color: #d5d5d5;font-size: 16px !important}
+        .caption_scroll_sound .contents_2_sound h2{color: #fff;font-size: 3rem;text-align: center;margin-bottom: 0px;padding:20px;}
+      
+    #audioToggle_water {
+    position: absolute !important;
+    top: 80px !important;
+    right: 28% !important;
+    padding: 8px 16px;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: block;
+}      
+        
+        }
+
+        #audioToggle_water {
+          position: absolute;
+    top: 80px;
+    right: 43%;
+    padding: 8px 16px;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: block;
+        }
+        
+        </style>

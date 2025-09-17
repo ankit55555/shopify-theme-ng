@@ -1,0 +1,138 @@
+
+ <div id="videoWrapper_battery2">
+  <video id="desktop_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/videoframe_0_9f8489cc-9cd9-4993-8e72-8f0696c1e2fd.png?v=1730822817" playsinline autoplay muted loop>
+		<source src="https://cdn.shopify.com/videos/c/o/v/7290c07619314dedaef182302a47d65a.mp4" type="video/mp4">
+	</video>
+
+    <video id="mobile_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/videoframe_0_4_0239d453-a8cb-4641-aca9-e964009d34d1.png?v=1730822816" playsinline autoplay muted loop>
+		<source src="https://cdn.shopify.com/videos/c/o/v/44128af20e424df09d29446127884745.mp4" type="video/mp4">
+	</video>
+  
+   <div class="caption_battery2">
+
+  <div class="contents_battery2">
+<h2>Dual Mic With ENC</h2>
+     <p>
+      NG EarSafe Pro Simplifies Calls with One Click-Enjoy Extended Conversations with clarity powered by dual mic with ENC. Talk to your loved ones for hours without damaging your ears and protecting yourself from ear infection.
+     </p>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<style>
+  #videoWrapper_battery2 {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+  .caption_battery2 .contents_battery2 {
+    position: absolute;
+    right: 70px;
+        top: 70px;
+}
+
+  .caption_battery2 .contents_battery2 p{
+  width: 400px;
+    text-align: right;
+    color: #d5d5d5;
+}  
+
+ .caption_battery2 .contents_battery2 h2{color: #fff;
+    font-size: 3rem;
+ text-align: right;
+    margin-bottom: 20px;                             
+}
+
+
+ 
+
+#videoWrapper_battery2 video {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover; 
+  z-index: -100;
+
+  top: 50%;
+  left: 50%;
+  
+    transform: translateX(-40%) translateY(-50%);
+filter: brightness(50%);
+}
+
+#videoWrapper_battery2 .caption_battery2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+
+  
+}
+
+#videoWrapper_battery2 .caption_battery2 .contents_battery2 {
+  width:33%;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  
+}
+
+
+#mobile_vid{display:none;}
+
+  @media only screen and (max-width: 768px) {
+  #desktop_vid{display:none;}
+    #mobile_vid{display:block;}
+
+    .caption_battery2 .contents_battery2 h2 {
+        color: #fff;
+        font-size: 3rem;
+        text-align: center;
+        padding: 20px;
+      margin-bottom: 0px;
+    }
+ 
+
+    #videoWrapper_battery2 video {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    z-index: -100;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-55%);
+}
+
+     .caption_battery2 .contents_battery2 {
+        position: absolute;
+        right: unset;
+      
+        top: 30px;
+    }
+    .caption_battery2 .contents_battery2 p {
+        width: 100%;
+        text-align: center;
+        color: #d5d5d5;
+        font-size: 13px;
+    }
+    #videoWrapper_battery2 .caption_battery2 .contents_battery2 {
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+}
+    
+  }
+  
+</style>

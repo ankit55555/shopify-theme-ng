@@ -1,0 +1,138 @@
+
+ <div id="videoWrapper_battery2">
+  <video id="desktop_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/download_23.png?v=1724751313" playsinline autoplay muted loop>
+		<source src="https://cdn.shopify.com/videos/c/o/v/3c6262361d6a498293b563a4597cc87a.mp4" type="video/mp4">
+	</video>
+
+    <video id="mobile_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/download_24.png?v=1724751312" playsinline autoplay muted loop>
+		<source src="https://cdn.shopify.com/videos/c/o/v/6a4a0b725b094a29af02b44918aa0463.mp4" type="video/mp4">
+	</video>
+  
+   <div class="caption_battery2">
+
+  <div class="contents_battery2">
+<h2 >Up to 48 hours Battery life</h2>
+     <p>
+      Power through your day with up to 48 hours of battery life. Whether you're working or on all-day adventures, enjoy continuous music and calls. And with just 1 hour of charging time, you're ready for hours of reliable, long-lasting performance.
+     </p>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<style>
+  #videoWrapper_battery2 {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+  .caption_battery2 .contents_battery2 {
+    position: absolute;
+    right: 70px;
+        top: 70px;
+}
+
+  .caption_battery2 .contents_battery2 p{
+  width: 400px;
+    text-align: right;
+    color: #d5d5d5;
+}  
+
+ .caption_battery2 .contents_battery2 h2{color: #fff;
+    font-size: 3rem;
+ text-align: right;
+    margin-bottom: 20px;                             
+}
+
+
+ 
+
+#videoWrapper_battery2 video {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover; 
+  z-index: -100;
+
+  top: 50%;
+  left: 50%;
+  
+    transform: translateX(-40%) translateY(-50%);
+}
+
+#videoWrapper_battery2 .caption_battery2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+
+  
+}
+
+#videoWrapper_battery2 .caption_battery2 .contents_battery2 {
+  width:33%;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  
+}
+
+
+#mobile_vid{display:none;}
+
+  @media only screen and (max-width: 768px) {
+  #desktop_vid{display:none;}
+    #mobile_vid{display:block;}
+
+    .caption_battery2 .contents_battery2 h2 {
+        color: #fff;
+        font-size: 3rem;
+        text-align: center;
+        padding: 20px;
+      margin-bottom: 0px;
+    }
+ 
+
+    #videoWrapper_battery2 video {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    z-index: -100;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-55%);
+}
+
+     .caption_battery2 .contents_battery2 {
+        position: absolute;
+        right: unset;
+      
+        top: 30px;
+    }
+    .caption_battery2 .contents_battery2 p {
+        width: 100%;
+        text-align: center;
+        color: #d5d5d5;
+        font-size: 13px;
+    }
+    #videoWrapper_battery2 .caption_battery2 .contents_battery2 {
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+}
+    
+  }
+  
+</style>
+ 

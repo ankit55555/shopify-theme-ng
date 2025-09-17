@@ -1,0 +1,42 @@
+<div id="videoWrapper_noiseCanc">
+  <video id="desktop_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Boom_mic_Description_desktop_copy.webp?v=1745351864">
+		<source src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Boom_mic_Description_desktop_copy.webp?v=1745351864" type="video/mp4">
+	</video>
+
+    <video id="mobile_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Boom_mic_Description_mobile.webp?v=1745351863">
+		<source src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Boom_mic_Description_mobile.webp?v=1745351863" type="video/mp4">
+	</video>
+  
+   <div class="caption_noiseCanc">
+
+  <div class="contents_noiseCanc">
+<h2 >Noise Canceling <br> Boom Mic</h2>
+     <p>
+    Be heard, not the noise. The adjustable boom microphone with advanced noise cancellation ensures your voice comes through loud and clear — even in busy environments.
+     </p>
+
+    </div>
+  </div>
+</div>
+
+
+<style>
+#videoWrapper_noiseCanc{height:100vh;overflow:hidden;position:relative}
+.caption_noiseCanc .contents_noiseCanc{position:absolute;right:70px;top:70px}
+.caption_noiseCanc .contents_noiseCanc p{width:400px;text-align:right;color:#d5d5d5}
+.caption_noiseCanc .contents_noiseCanc h2{color:#fff;font-size:3rem;text-align:right;margin-bottom:20px}
+#videoWrapper_noiseCanc video{position:absolute;min-width:100%;min-height:100%;width:auto;height:auto;object-fit:cover;z-index:-100;top:50%;left:50%;transform:translateX(-40%) translateY(-50%)}
+#videoWrapper_noiseCanc .caption_noiseCanc{display:flex;justify-content:center;align-items:center;height:100%}
+#videoWrapper_noiseCanc .caption_noiseCanc .contents_noiseCanc{width:33%;color:#fff;text-align:center;padding:2rem}
+#mobile_vid{display:none}
+@media only screen and (max-width:768px){
+#desktop_vid{display:none}
+#mobile_vid{display:block}
+.caption_noiseCanc .contents_noiseCanc h2{color:#fff;font-size:3rem;text-align:center;padding:20px;margin-bottom:0}
+#videoWrapper_noiseCanc video{position:absolute;min-width:100%;min-height:100%;width:auto;height:auto;object-fit:cover;z-index:-100;top:50%;left:50%;transform:translateX(-50%) translateY(-55%)}
+.caption_noiseCanc .contents_noiseCanc{position:absolute;right:unset;top:30px}
+.caption_noiseCanc .contents_noiseCanc p{width:100%;text-align:center;color:#d5d5d5;font-size:13px}
+#videoWrapper_noiseCanc .caption_noiseCanc .contents_noiseCanc{width:100%;color:#fff;text-align:center;padding:2rem}
+}
+</style>
+ 

@@ -1,0 +1,124 @@
+{%- comment -%}
+Template to display all authors on a grid layout.
+{%- endcomment -%}
+
+<div class="authors-grid-container">
+  <h1 class="authors-title">Meet Our Authors</h1>
+
+  <div class="authors-grid">
+    {%- assign author_list = '' -%}
+
+    {%- for blog in blogs -%}
+      {%- for article in blog.articles -%}
+        {%- if article.author != blank -%}
+          {%- assign existing_author = author_list | split: ',' | where: 'author', article.author -%}
+          {%- unless existing_author.size > 0 -%}
+            {%- assign author_list = author_list | append: article.author | append: ',' -%}
+
+            <div class="author-card">
+              <div class="author-image">
+                {%- assign author_image = article.metafields.custom.author_image -%}
+                <img width="auto" height="auto" 
+                  src="{{ author_image.value | image_url: '200x200' | default: 'https://cdn.shopify.com/s/files/1/0804/5762/9975/files/default-author.png' }}" 
+                  alt="{{ article.author }}" 
+                  loading="lazy" 
+                />
+              </div>
+              <div class="author-details">
+                <h3 class="author-name">{{ article.author }}</h3>
+                <p class="author-bio">{{ article.excerpt | strip_html | truncate: 100 }}</p>
+              </div>
+            </div>
+          {%- endunless -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endfor -%}
+
+    {%- if author_list == blank -%}
+      <p class="no-authors">No authors found. Please add articles with author information.</p>
+    {%- endif -%}
+  </div>
+</div>
+
+<style>
+  /* Container styles */
+  .authors-grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Title styles */
+  .authors-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  /* Grid layout */
+  .authors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  /* Author card */
+  .author-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .author-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Author image */
+  .author-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+
+  /* Author name */
+  .author-name {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  /* Author bio */
+  .author-bio {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  /* No authors message */
+  .no-authors {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #888;
+    margin-top: 20px;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .authors-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }
+
+  @media (max-width: 480px) {
+    .authors-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

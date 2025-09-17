@@ -1,0 +1,108 @@
+<div class="wrapper-d">
+    <div class="heading-testimonials-star ">
+      <h3 class="t4s-section-title t4s-title" style="padding-top: 50px;color: #fff;text-align:center;"><span>Did You Know?</span></h3>
+    </div>
+    <div class="outer">
+      <div class="card-ugc" style="--delay:-1;">
+        <div class="content">
+          <div class="img"><img loading="eager" width="auto" height="auto"  src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/cnn-logo-0.jpg?v=1699452033" alt=""></div>
+          <div class="details">
+            <p>1 Billion people are at risk from unsafe listening</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-ugc" style="--delay:0;">
+        <div class="content">
+          <div class="img"><img loading="eager" width="auto" height="auto"  src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/130_who_logo.jpg?v=1699452033" alt=""></div>
+          <div class="details">
+            <p>1 in 4 people are projected to have hearing problems by 2050</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-ugc" style="--delay:1;">
+        <div class="content">
+          <div class="img"><img loading="eager" width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/1563293797280.jpg?v=1699452058" alt=""></div>
+          <div class="details">
+            <p>37 Million People are at Risk of Distraction Danger When Wearing Headphones</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-ugc" style="--delay:2;">
+        <div class="content">
+          <div class="img"><img loading="eager" width="auto" height="auto"  src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/livemint-logo.webp?v=1699451182" alt=""></div>
+          <div class="details">
+            <p>Use of earphones for long hours while working online causes infections</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-ugc" style="--delay:2;">
+        <div class="content">
+          <div class="img"><img loading="eager" width="auto" height="auto"  src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/ettimes.webp?v=1699451483" alt=""></div>
+          <div class="details">
+            <p>Increased usage of plugged-in earphones may lead to ear infection during WFH.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<style>
+.wrapper-d {display:none;}
+
+
+     section#shopify-section-template--20627090637079__6289d42b-4e78-4875-99bc-afaebf75ddc0 {
+    display: block;
+}
+
+  @media only screen and (max-width: 768px) {
+    section#shopify-section-template--20627090637079__6289d42b-4e78-4875-99bc-afaebf75ddc0 {
+    display: none;
+}
+    .wrapper-d {display:block;
+width: 100%;
+  height: 50vh !important; 
+/* background: #25313c; */
+               }
+
+
+.details p{margin-bottom: 0px;font-size: 12px;}
+.wrapper-d .outer{display:flex;
+/* align-items:center;justify-content:center; */
+}
+.wrapper-d .card-ugc{background:#fff;width:100%;margin-top:120px;display:flex;align-items:center;padding:26px;opacity:0;pointer-events:none;position:absolute;justify-content:space-between;border-radius:100px 20px 20px 100px;box-shadow:0 10px 15px rgba(0,0,0,.1);animation:animate 15s linear infinite;animation-delay:calc(3s * var(--delay))}
+.outer:hover .card-ugc{animation-play-state:paused}
+.wrapper-d .card-ugc:last-child{animation-delay:calc(-3s * var(--delay))}
+@keyframes animate {
+  0%{
+    opacity: 0;
+    transform: translateY(100%) scale(0.5);
+  }
+  5%, 20%{
+    opacity: 0.4;
+    transform: translateY(100%) scale(0.7);
+  }
+  25%, 40%{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0%) scale(1);
+  }
+  45%, 60%{
+    opacity: 0.4;
+    transform: translateY(-100%) scale(0.7);
+  }
+  65%, 100%{
+    opacity: 0;
+    transform: translateY(-100%) scale(0.5);
+  }
+}
+.card-ugc .content{display:flex;align-items:center}
+.wrapper-d .card-ugc .img{height:90px;width:90px;position:absolute;left:-5px;border-radius:50%;padding:5px;box-shadow:0 0 5px rgba(0,0,0,.2)}
+.card-ugc .img img{height:100%;width:100%;border-radius:50%;object-fit:cover}
+.card-ugc .details{margin-left:80px}
+.details span{font-weight:600;font-size:18px}
+.card-ugc a{text-decoration:none;padding:7px 18px;border-radius:25px;color:#fff;background:linear-gradient(to bottom,#bea2e7 0,#86b7e7 100%);transition:all .3s ease}
+.card-ugc a:hover{transform:scale(.94)}
+    
+  }
+</style>

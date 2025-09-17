@@ -1,0 +1,80 @@
+<link rel="stylesheet" type="text/css" media="all" href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css'>
+<link rel="stylesheet" type="text/css" media="all" href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css'>
+
+<div class="container">
+    <div class="wrapper_buds">
+      <div class="section_head">
+        <p>FACTS</p>
+        <h2>Did you know?</h2>
+      </div>
+        <div class="my-slider_new" hdt-reveal="slide-in">
+            <div>
+              <img id="first_cnn" width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Cnn_Fact_desktop_v2.webp?v=1723183786" alt="">
+            </div>
+            <div>
+              <img id="second_who" width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/WHO_Fact_desktop_v2.webp?v=1723183786" alt="">
+            </div>
+            <div>
+              <img id="third_rw" width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/RW_Fact_gjgv2.webp?v=1752156331" alt="">
+            </div>
+          </div>
+      </div>
+</div>
+
+<style>
+.wrapper_buds{padding:50px 0;overflow-x:hidden;background:url("did you know BG Desktop.webp");background-size:cover;background:#151515}
+.slick-slide img{display:block;width:100%}
+ .slick-slide #first_cnn{margin-left:10px;z-index:1;margin-top:15px}
+ .slick-slide #third_rw{margin-right:20px;z-index:-1;margin-top:10px;position: relative;}
+ .my-slider_new{padding:30px 70px}
+ .slick-initialized .slick-slide{color:#fff;margin:0;display:flex;align-items:center;justify-content:center}
+ .section_head h2{text-align:center;color:#fff;font-family:Poppins,sans-serif;font-weight:600;font-style:normal;font-size:12.3rem;margin-bottom:-60px;margin-top:0;opacity:.1;}
+.section_head p{text-align:center;color:#fff;font-family:Poppins,sans-serif;font-style:normal;font-size:2rem;margin-top:0;opacity:.2;letter-spacing:12px}
+.slick-slide{float:left;height:100%;min-height:1px;margin:0 -10px!important}
+.slick-prev,.slick-next{z-index:5}
+.slick-next{right:15px}
+ .slick-prev{left:15px}
+.slick-prev:before, .slick-next:before{color:#000;font-size:26px}
+@media only screen and (max-width:768px){
+ .section_head h2{text-align:center;color:#fff;font-family:Poppins,sans-serif;font-weight:600;font-style:normal;font-size:4.5rem;margin-bottom:-20px;margin-top:0;opacity:.1;margin-right:0}
+.slick-slide #first_cnn{margin-left:0;z-index:0;margin-top:0}
+ .slick-slide #third_rw{margin-right:0;z-index:0;margin-top:0}
+ /* .slick-slide #second_who{width:90%} */
+ .slick-list{padding:30px}
+ .my-slider_new{padding:0 0}
+}
+</style>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js' ></script>  
+
+<script>
+var $jq = jQuery.noConflict();
+    $jq(document).ready(function(){
+      $jq('.my-slider_new').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: false,
+        speed: 2000,
+        infinite: true,
+        // centerMode: false,
+        autoplaySpeed: 1000,
+        autoplay: true,
+        responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
+      });
+    });
+</script>  

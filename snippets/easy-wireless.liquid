@@ -1,0 +1,346 @@
+
+
+    <div class="wrapper_scroll_stayAware">
+        <section class="section_scroll_stayAware sticky_sound section--sounds1">
+            <video id="desktop_vid_stayAware" class="view-to-play_stayAwareD" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/videoframe_0_6.png?v=1730822250" playsinline muted loop>
+                <source src="https://cdn.shopify.com/videos/c/o/v/82d6db4b2f6d4599b955d00e76db7459.mp4" type="video/mp4">
+            </video>
+        
+            <video id="mobile_vid_stayAware" class="view-to-play_stayAwareM" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/videoframe_0_7.png?v=1730822249" playsinline muted loop>
+                <source src="https://cdn.shopify.com/videos/c/o/v/e402f8db400e4b77b933b415a462d618.mp4" type="video/mp4">
+            </video>
+<button class="tap_to_experience" id="audioToggle_stayAware">Tap To Experience 🔇</button>
+        </section>
+        <section class="section_scroll_stayAware sticky_sound section--sounds2">
+          <div class="caption_scroll_stayAware">
+            <div class="contents_2_sound">
+                <h2 class="">Stay Aware of <br>your surroundings</h2>
+                <p style="color: #c2c2c2;text-align: center;">NG EarSafe Pro allows you to hear ambient sounds around you, <br>such as traffic, conversations, or approaching vehicles, which is crucial for safety in situations <br>like running, cycling, or even just walking on busy streets.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    
+
+   <style>
+        .wrapper_scroll_stayAware{margin:0;padding:0;font-size:18px;line-height:1.9em;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}
+        .wrapper_scroll_stayAware{width:100%;background:url('');background-size:cover;background-attachment:fixed;z-index:1}
+        .section_scroll_stayAware{width:100%;box-sizing:border-box;position:relative;z-index:99}
+        .wrapper_scroll_stayAware .sticky_sound{min-height:100vh;max-height:100vh;height:100vh;position:-webkit-sticky;position:sticky;top:20px;z-index:9;overflow: hidden;}
+        .section_scroll_stayAware{color:#fff}
+        .section--sounds1{top:20px;max-height:calc(100vh - 40px)}
+        .section--sounds2{top:40px;max-height:calc(100vh - 80px)}
+        #mobile_vid_stayAware{display:none}
+        .section_scroll_stayAware video{width:100%;object-fit:cover;position:relative;height: 100%;filter: brightness(70%);}
+        .caption_scroll_stayAware{display:flex;justify-content:center;align-items:center;height:100%}
+        /* .caption_scroll_stayAware .contents_2_sound{width:400px;position:absolute;right:50px;top:80px} */
+        .caption_scroll_stayAware .contents_2_sound h2{color: #fff;font-size: 7rem;text-align: center;}
+        .caption_scroll_stayAware .contents_2_sound p{font-size: 18px;}
+        
+        @media only screen and (max-width:768px){
+        #desktop_vid_stayAware{display:none}
+        #mobile_vid_stayAware{display:block}
+        .caption_scroll_stayAware .contents_2_sound{width:350px!important;position:absolute!important;right:unset!important;top:190px!important}
+        .caption_scroll_stayAware .contents_2_sound p{width: 100%;text-align: center;color: #d5d5d5;font-size: 17px;}
+        .caption_scroll_stayAware .contents_2_sound h2{color: #fff;font-size: 3rem;text-align: center;margin-bottom: 0px;padding:20px;}
+       
+       #audioToggle_stayAware {
+    position: absolute !important;
+    top: 80px !important;
+    right: 28% !important;
+    padding: 8px 16px;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: block;
+} 
+        
+        }
+
+      #audioToggle_stayAware {
+          position: absolute;
+    top: 80px;
+    right: 43%;
+    padding: 8px 16px;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: block;
+        }
+
+     
+        .tap_to_experience{letter-spacing: 1px;font-weight:500;font-size:16px;color:#25313c;text-align:left;margin:0;border:0 solid #000;position:relative;justify-content:center;display:flex;align-items:center;padding:0 10px;
+background:linear-gradient(270deg, #00b3cca6 23.86%, #000000 47.06%, #00000080 66.05%);
+margin-top:7px;margin-bottom:20px;border-radius:5px;border:1px dashed #56cfe1;width:max-content;overflow:hidden;animation:5s linear 0s infinite normal none running bgstrip}
+@keyframes bgstrip{
+0%{background-position:-1000px 0}
+}
+    
+        
+        </style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+        
+     <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>-->
+<script>
+var $jqn = jQuery.noConflict();
+
+  if(window.innerWidth > 480) {
+  
+    var controller = new ScrollMagic.Controller(),
+    myVideo = $jqn('.view-to-playD')[0],
+    videoHeight = $jqn(window).height() + $jqn(".view-to-playD").height();
+
+var scene = new ScrollMagic.Scene({
+  triggerElement: myVideo,
+  triggerHook: "onEnter",
+  duration: videoHeight
+})
+.on("enter", function(e) {
+  myVideo.play();
+})
+.on("leave", function(e) {
+  myVideo.pause();
+})
+.addTo(controller); 
+
+} else{
+
+      var controller = new ScrollMagic.Controller(),
+    myVideo = $jqn('.view-to-playM')[0],
+    videoHeight = $jqn(window).height() + $jqn(".view-to-playM").height();
+
+var scene = new ScrollMagic.Scene({
+  triggerElement: myVideo,
+  triggerHook: "onEnter",
+  duration: videoHeight
+})
+.on("enter", function(e) {
+  myVideo.play();
+})
+.on("leave", function(e) {
+  myVideo.pause();
+})
+.addTo(controller); 
+    
+}
+    
+  
+</script>    
+
+<script>
+
+  
+var $jqn = jQuery.noConflict();
+
+ if(window.innerWidth > 480) {  
+
+    var controllers = new ScrollMagic.Controller(),
+    myVideos = $jqn('.view-to-play_stayAwareD')[0],
+    videoHeights = $jqn(window).height() + $jqn(".view-to-play_stayAwareD").height();
+
+var scene = new ScrollMagic.Scene({
+  triggerElement: myVideos,
+  triggerHook: "onEnter",
+  duration: videoHeights
+})
+.on("enter", function(e) {
+  myVideos.play();
+})
+.on("leave", function(e) {
+  myVideos.pause();
+})
+.addTo(controllers); 
+
+ } else {
+
+      var controllers = new ScrollMagic.Controller(),
+    myVideos = $jqn('.view-to-play_stayAwareM')[0],
+    videoHeights = $jqn(window).height() + $jqn(".view-to-play_stayAwareM").height();
+
+var scene = new ScrollMagic.Scene({
+  triggerElement: myVideos,
+  triggerHook: "onEnter",
+  duration: videoHeights
+})
+.on("enter", function(e) {
+  myVideos.play();
+})
+.on("leave", function(e) {
+  myVideos.pause();
+})
+.addTo(controllers); 
+   
+ }  
+  
+</script>    
+
+<!-- <script>
+    document.getElementById("desktop_vid_stayAware").addEventListener("click", function() {
+        this.muted = !this.muted;
+    });
+
+</script>
+
+<script>
+    document.getElementById("mobile_vid_stayAware").addEventListener("click", function() {
+        this.muted = !this.muted;   
+    });
+
+</script> -->
+
+
+<script>
+    const videod = document.getElementById("desktop_vid_stayAware");
+    const audioToggled = document.getElementById("audioToggle_stayAware");
+
+    audioToggled.addEventListener("click", () => {
+        if (videod.muted || videod.volume === 0) {
+            videod.muted = false;
+            fadeInAudio(videod);
+            audioToggled.textContent = "Tap To Experience 🔊";
+        } else {
+            videod.volume = 0;  
+            videod.muted = true;
+            audioToggled.textContent = "Tap To Experience 🔇";
+        }
+    });
+
+  
+    function fadeInAudio(videod) {
+        videod.volume = 0;
+        let volume = 0;
+        const fadeIn = setInterval(() => {
+            if (volume < 1) {
+                volume += 0.01;
+                videod.volume = volume;
+            } else {
+                clearInterval(fadeIn);
+            }
+        }, 50);
+    }
+</script>
+
+
+<script>
+    const videom = document.getElementById("mobile_vid_stayAware");
+    const audioTogglem = document.getElementById("audioToggle_stayAware");
+
+   
+    audioTogglem.addEventListener("click", () => {
+        if (videom.muted || videom.volume === 0) {
+            videom.muted = false;
+            fadeInAudio(videom);
+            audioTogglem.textContent = "Tap To Experience 🔊";
+        } else {
+            videom.volume = 0;  
+            videom.muted = true;
+            audioTogglem.textContent = "Tap To Experience 🔇";
+        }
+    });
+
+   
+    function fadeInAudio(videom) {
+        videom.volume = 0;
+        let volume = 0;
+        const fadeIn = setInterval(() => {
+            if (volume < 1) {
+                volume += 0.01;
+                videom.volume = volume;
+            } else {
+                clearInterval(fadeIn);
+            }
+        }, 50);
+    }
+</script>
+
+
+
+
+<script>
+    const videowd = document.getElementById("desktop_vid_water");
+    const audioTogglewd = document.getElementById("audioToggle_water");
+
+    audioTogglewd.addEventListener("click", () => {
+        if (videowd.muted || videowd.volume === 0) {
+            videowd.muted = false;
+            fadeInAudio(videowd);
+            audioTogglewd.textContent = "Tap To Experience 🔊";
+        } else {
+            videowd.volume = 0;  
+            videowd.muted = true;
+            audioTogglewd.textContent = "Tap To Experience 🔇";
+        }
+    });
+
+  
+    function fadeInAudio(videowd) {
+        videowd.volume = 0;
+        let volume = 0;
+        const fadeIn = setInterval(() => {
+            if (volume < 1) {
+                volume += 0.01;
+                videowd.volume = volume;
+            } else {
+                clearInterval(fadeIn);
+            }
+        }, 50);
+    }
+</script>
+
+
+<script>
+    const videowm = document.getElementById("mobile_vid_water");
+    const audioTogglewm = document.getElementById("audioToggle_water");
+
+   
+    audioTogglewm.addEventListener("click", () => {
+        if (videowm.muted || videowm.volume === 0) {
+            videowm.muted = false;
+            fadeInAudio(videowm);
+            audioTogglewm.textContent = "Tap To Experience 🔊";
+        } else {
+            videowm.volume = 0;  
+            videowm.muted = true;
+            audioTogglewm.textContent = "Tap To Experience 🔇";
+        }
+    });
+
+   
+    function fadeInAudio(videowm) {
+        videowm.volume = 0;
+        let volume = 0;
+        const fadeIn = setInterval(() => {
+            if (volume < 1) {
+                volume += 0.01;
+                videowm.volume = volume;
+            } else {
+                clearInterval(fadeIn);
+            }
+        }, 50);
+    }
+
+//   function fadeInAudio(video) {
+//     video.volume = 0;
+//     let volume = 0;
+//     video.play();  
+
+//     const fadeIn = setInterval(() => {
+//         if (volume < 1) {
+//             volume += 0.01;
+//             video.volume = volume;
+//         } else {
+//             clearInterval(fadeIn);
+//         }
+//     }, 50);
+// }
+</script>
+

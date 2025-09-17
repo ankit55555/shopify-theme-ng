@@ -1,0 +1,184 @@
+{%- liquid
+    assign se_stts = section.settings
+ -%}
+
+
+{%- if article.author -%}
+  <div class="author-profile">
+    <h2 class="author-heading">About the Author</h2>
+    <div class="author-content">
+      <div class="author-image">
+
+      {%- assign author_image = article.metafields.custom.author_image -%}
+  <img width="auto" height="auto" 
+       src="https://cdn.shopify.com/s/files/1/0804/5762/9975/{{ author_image.value | default: 'files/ng-logo1.webp?v=1731930523' }}" 
+       alt="{{ article.author }}'s profile picture" 
+       class="author-photo" />
+        
+      </div>
+      <div class="author-details">
+        <h3><strong>{{ article.author }}</strong></h3>
+        <p>
+          Hi, I’m {{ article.author }}! I love writing and sharing my thoughts with you.&nbsp;
+          {%- assign author_bio = article.metafields.custom.author_bio -%}
+          {%- if author_bio -%}
+            {{ author_bio }}
+          {%- else -%}
+            Stay tuned for more exciting content!
+          {%- endif -%}
+        </p>
+        <p>
+          Follow me on:&nbsp;
+          <a href="URL_TO_INSTAGRAM" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+          <a href="URL_TO_PINTEREST" target="_blank" aria-label="Pinterest"><i class="fa fa-pinterest"></i></a>
+          <a href="URL_TO_FACEBOOK" target="_blank" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+          <a href="URL_TO_TWITTER" target="_blank" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+        </p>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+
+
+
+<style>
+.author-profile {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+    max-width: 832px;
+    margin: 0px auto;
+  
+}
+
+/* .author-heading {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: left;
+  color: #333;
+  
+} */
+
+
+h2.author-heading {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: left;
+    color: #25313c;
+    margin: 0px 0px 24px;
+    color: #25313c;
+    font-size: calc(12px + .416666vw);
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: unset;
+    font-weight: 600;
+    text-transform: none;
+    margin: 0px 0px 32px !important;
+    line-height: 1.3;
+  font-style: italic;
+}
+  
+
+.author-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.author-image {
+  flex: 0 0 auto;
+      background: #050505;
+  max-width: 120px;
+  margin-right: 20px;
+
+      width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: contain;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* padding: 15px; */
+    overflow: hidden;
+  position: relative;
+}
+
+.author-image img {
+  display: block;
+    position: absolute;
+    margin: auto;
+    top: -100%;
+    right: -100%;
+    bottom: -100%;
+    left: -100%;
+    /* padding: 20px; */
+}
+
+.author-details {
+  flex: 1 1 auto;
+  max-width: 600px;
+}
+
+.author-details h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #25313c;
+}
+
+.author-details p {
+  margin-bottom: 10px;
+  font-size: 1em;
+  line-height: 1.6;
+  color: #555;
+}
+
+.author-details p strong {
+  color: #333;
+}
+
+.author-details a {
+  margin-right: 10px;
+  color: #25313c;
+  font-size: 1.2em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.author-details a:hover {
+  color: #000;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .author-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .author-image {
+    margin-right: 0;
+    margin-bottom: 0px;
+  }
+
+  .author-details {
+    text-align: center;
+  }
+
+  .author-profile {
+    border-top: 2px solid #ddd;
+    max-width: 100%;
+    margin: 0px auto;
+    padding: 20px;
+}
+  h2.author-heading {
+
+    text-align: center;}
+  
+}
+
+  
+</style>

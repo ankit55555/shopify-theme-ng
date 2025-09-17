@@ -1,0 +1,388 @@
+<section class="use_cases-life-play-section">
+  <div class="use_cases-life-play-container">
+    <!-- Header Content -->
+    <div class="use_cases-life-play-header">
+      <h2 class="use_cases-life-play-title">{{ section.settings.title }}</h2>
+      <p class="use_cases-life-play-subtitle">{{ section.settings.subtitle }}</p>
+    </div>
+
+    <!-- Scrollable Cards Container -->
+    <div class="use_cases-cards-wrapper">
+      <div class="use_cases-cards-container" id="useCasesCardsContainer">
+        {% for block in section.blocks %}
+          {% if block.type == 'feature_card' %}
+            <div class="use_cases-feature-card" {{ block.shopify_attributes }}>
+              <div class="use_cases-card-image">
+                {% if block.settings.image %}
+                  <img width="auto" height="auto" src="{{ block.settings.image | img_url: '400x400' }}" 
+                       alt="{{ block.settings.title }}"
+                       loading="lazy">
+                {% else %}
+                  <div class="use_cases-placeholder-image">
+                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                      <rect width="100" height="100" fill="#f3f4f6"/>
+                      <path d="M30 70V30h40v40H30z" stroke="#9ca3af" stroke-width="2" fill="none"/>
+                      <circle cx="40" cy="45" r="3" fill="#9ca3af"/>
+                      <path d="m47 55-5-5-5 5h10z" fill="#9ca3af"/>
+                    </svg>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="use_cases-card-content">
+                <h3 class="use_cases-card-title">{{ block.settings.title }}</h3>
+                <p class="use_cases-card-description">{{ block.settings.description }}</p>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Optional scroll indicators -->
+    <div class="use_cases-scroll-indicators">
+      <button class="use_cases-scroll-btn use_cases-scroll-left" id="useCasesScrollLeft" aria-label="Scroll left">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="use_cases-scroll-btn use_cases-scroll-right" id="useCasesScrollRight" aria-label="Scroll right">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.getElementById('useCasesCardsContainer');
+  const scrollLeftBtn = document.getElementById('useCasesScrollLeft');
+  const scrollRightBtn = document.getElementById('useCasesScrollRight');
+  
+  if (container && scrollLeftBtn && scrollRightBtn) {
+    const scrollAmount = 320; // Width of one card plus gap
+    
+    scrollLeftBtn.addEventListener('click', function() {
+      container.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth'
+      });
+    });
+    
+    scrollRightBtn.addEventListener('click', function() {
+      container.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Update button states based on scroll position
+    function updateScrollButtons() {
+      const scrollLeft = container.scrollLeft;
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      
+      scrollLeftBtn.style.opacity = scrollLeft <= 0 ? '0.3' : '1';
+      scrollRightBtn.style.opacity = scrollLeft >= maxScroll ? '0.3' : '1';
+    }
+    
+    container.addEventListener('scroll', updateScrollButtons);
+    updateScrollButtons(); // Initial state
+  }
+});
+</script>
+
+<style>
+.use_cases-life-play-section {
+  background-color: #000;
+  color: white;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.use_cases-life-play-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.use_cases-life-play-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.use_cases-life-play-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color:#fff;
+}
+
+.use_cases-life-play-subtitle {
+  font-size: 1.125rem;
+  color: #a1a1aa;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.use_cases-cards-wrapper {
+  position: relative;
+  margin: 0 -20px;
+}
+
+.use_cases-cards-container {
+  display: flex;
+  gap: 30px;
+  padding: 0 100px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-right: 0vw; /* Creates the off-screen effect */
+}
+
+.use_cases-cards-container::-webkit-scrollbar {
+  display: none;
+}
+
+.use_cases-feature-card {
+    flex: 0 0 380px;
+    /* background: rgb(16 16 16); */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color:#000000;
+}
+
+.use_cases-feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.use_cases-card-image {
+  width: 100%;
+  /* height: 240px; */
+  overflow: hidden;
+  position: relative;
+}
+
+.use_cases-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.use_cases-feature-card:hover .use_cases-card-image img {
+  transform: scale(1.05);
+}
+
+.use_cases-placeholder-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.use_cases-card-content {
+ background: #000000;
+}
+
+.use_cases-card-title {
+  font-size: 2.5rem;
+    font-weight: 400;
+    margin: 18px 0 10px 0px;
+    color: white;
+    line-height: 1.3;
+}
+
+.use_cases-card-description {
+  font-size: 1.5rem;
+  color: #b4b4b4;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.use_cases-scroll-indicators {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+}
+
+.use_cases-scroll-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.use_cases-scroll-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.use_cases-scroll-btn:active {
+  transform: scale(0.95);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .use_cases-life-play-section {
+    padding: 60px 0;
+  }
+  
+  .use_cases-life-play-container {
+    padding: 0 15px;
+  }
+
+  .use_cases-feature-card {
+    flex: 0 0 300px;
+    background: rgb(0 0 0);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #000000;
+}
+  
+  .use_cases-feature-card {
+    flex: 0 0 280px;
+  }
+  
+  .use_cases-cards-container {
+    gap: 20px;
+    padding-right: 30vw;
+  }
+  
+  .use_cases-scroll-indicators {
+    right: 15px;
+  }
+  
+  .use_cases-scroll-btn {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .use_cases-card-content {
+    padding: 0;
+  }
+  
+  .use_cases-card-title {
+    font-size: 2rem;
+  }
+  
+  .use_cases-card-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .use_cases-feature-card {
+    flex: 0 0 260px;
+  }
+  
+  .use_cases-cards-container {
+    padding-right: 20vw;
+    padding-left: 20vw;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Life Play Softer",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Let life play on — just a little softer"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Section Subtitle",
+      "default": "tNo matter where life gets noisy, sleep, travel, work, or play — NG EarPlugs bring back your quiet."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature_card",
+      "name": "Feature Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Card Title",
+          "default": "Better Sleep"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Card Description",
+          "default": "Helps you sleep undisturbed in noisy environments"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Life Play Softer",
+      "blocks": [
+        {
+          "type": "feature_card",
+          "settings": {
+            "title": "Better Sleep",
+            "description": "Helps you sleep undisturbed in noisy environments"
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "title": "Bone Conduction",
+            "description": "Enhance your Pro series experience"
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "title": "More Focus, Less Distraction",
+            "description": "Reduces background noise to improve concentration."
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "title": "Swimming (IP68 Fully Waterproof)",
+            "description": "Keeps water out of your ears"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

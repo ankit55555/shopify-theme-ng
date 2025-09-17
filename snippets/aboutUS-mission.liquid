@@ -1,0 +1,157 @@
+<div id="btn-container">
+
+<div Class="button-wrap">
+  <a href="javascript:void(0);" class="button">
+    Our Mission
+  </a>
+  <a href="javascript:void(0);" class="button">
+    Our Vision
+  </a>
+</div>
+  
+<div id="button-wrap" class="content">
+  <div class="content-1 active">
+    <p>To become a globally recognized brand, delivering safe, high-quality audio experiences through innovative open-ear technology.</p>
+  <img width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/mission-cropped.svg?v=1726817516">
+  </div>
+  <div class="content-2">
+    <p>To create a world where everyone can enjoy superior sound quality in any environment, while prioritizing safety and ear health.</p>
+   <img width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/vision-cropped.svg?v=1726817516">
+ </div>
+</div>
+
+  </div>
+
+<style>
+
+  #btn-container {
+    min-height: 50vh;
+    padding: 100px 80px;
+}
+  .button-wrap {
+    width: 400px;
+    display: inline-grid;
+    gap: 22px;
+}
+  
+ .button-wrap a.button {
+    display: inline-block;
+    color: #6c6c6c;
+    line-height: 50px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.button-wrap a.active {
+    color: #fff;
+}
+
+.button-wrap .content {
+  margin-top:30px;
+}
+
+#button-wrap div[class*="content-"] { 
+  display:none;
+}
+
+#button-wrap div.active { 
+  /* display:block; */
+     display: flex;
+    justify-content: space-between;
+}
+
+.content-1  p{font-size: 25px;
+    color: #fff;
+    font-weight: 600;
+    width: 450px;
+    padding-top: 50px;}
+
+.content-1 img{
+width: 35%;
+    position: absolute;
+    top: 20px;
+    right: 10%;
+bottom:0;
+  overflow:hidden;
+}
+  
+.content-2  p{font-size: 25px;
+    color: #fff;
+    font-weight: 600;
+    width: 450px;
+    padding-top: 50px;}
+
+  .content-2 img{
+width: 35%;
+    position: absolute;
+    top: 20px;
+    right: 10%;
+    bottom:0;
+  overflow:hidden;
+}
+@media only screen and (max-width:768px){
+  #btn-container {
+    min-height: 100vh;
+    padding: 50px 20px;
+}
+  #button-wrap div.active {
+    display: block;
+}
+  .content-1 img {
+    width: 100%;
+    position: unset;
+    overflow: hidden;
+}
+   .content-2 img {
+    width: 100%;
+    position: unset;
+    overflow: hidden;
+}
+  .content-1 p {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    width: 100%;
+    padding-top: 30px;
+    text-align: center;
+}
+   .content-2 p {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    width: 100%;
+    padding-top: 30px;
+    text-align: center;
+}
+  .button-wrap {
+    width: 100%;
+    display: inline-grid;
+    gap: 22px;
+    text-align: center;
+    justify-content: center;
+justify-items: center;
+}
+}
+
+</style>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+
+<script>
+   var $jque = jQuery.noConflict();
+$jque('.button').first().addClass('active');
+
+$jque('.button').click(function(){
+  var $this = $jque(this);
+  $siblings = $this.parent().children(),
+  position = $siblings.index($this);
+  console.log (position);
+  
+  $jque('.content div').removeClass('active').eq(position).addClass('active');
+  
+  $siblings.removeClass('active');
+  $this.addClass('active');
+})
+</script>

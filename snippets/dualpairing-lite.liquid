@@ -1,0 +1,57 @@
+
+  <div class="wrapper_scroll_Dualparing">
+    <section class="section_scroll_Dualparing sticky section--s1">
+      <video id="desktop_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/videoframe_0_13.png?v=1733503963" playsinline autoplay muted loop>
+        <source src="https://cdn.shopify.com/videos/c/o/v/0989713eb1b1470ca545ecfb9ee1c865.mp4" type="video/mp4">
+      </video>
+      <video id="mobile_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/videoframe_0_14.png?v=1733503962" playsinline autoplay muted loop>
+        <source src="https://cdn.shopify.com/videos/c/o/v/f5ef4b06fa584e9fac33e03409219ba7.mp4" type="video/mp4">
+      </video>
+    </section>
+    <section class="section_scroll_Dualparing sticky section--s2">
+      <div class="caption_scroll_Dualparing">
+        <div class="contents_1">
+          <h2 class="">Dual<br>Pairing</h2>
+        </div>
+        <div class="contents_2">
+          <p class="">
+        The NG EarSafe Lite offers dual pairing, allowing you to connect to both your smartphone and laptop at once. Switch seamlessly between work calls and music without reconnecting, perfect for those balancing work and play.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+<style>
+
+
+
+
+.wrapper_scroll_Dualparing{margin:0;padding:0;font-size:18px;line-height:1.9em;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}
+.wrapper_scroll_Dualparing{width:100%;background:url('');background-size:cover;background-attachment:fixed;z-index:1}
+.section_scroll_Dualparing{width:100%;box-sizing:border-box;position:relative;z-index:99}
+.wrapper_scroll_Dualparing .sticky{min-height:100vh;max-height:100vh;height:100vh;position:-webkit-sticky;position:sticky;top:20px;z-index:9;overflow: hidden;}
+
+.section_scroll_Dualparing{color:#fff}
+.section--s1{top:20px;max-height:calc(100vh - 40px)}
+.section--s2{top:40px;max-height:calc(100vh - 80px)}
+
+#mobile_vid{display:none}
+.section_scroll_Dualparing video{width:100%;object-fit:cover;position:relative;height: 100%;}
+.caption_scroll_Dualparing{display:flex;justify-content:center;align-items:center;height:100%}
+.caption_scroll_Dualparing .contents_1{width:400px;position:absolute;left:150px;top:30px}
+.caption_scroll_Dualparing .contents_1 h2{color:#fff;font-size: 7.5rem;line-height: 8.5rem;}
+.caption_scroll_Dualparing .contents_2{width:400px;position:absolute;right:50px;top:50px}
+.caption_scroll_Dualparing .contents_2 p{color:#fff;font-size:1.8rem;font-weight:400;text-align:right}
+
+@media only screen and (max-width:768px){
+#desktop_vid{display:none}
+#mobile_vid{display:block}
+.caption_scroll_Dualparing .contents_1{width:400px!important;position:absolute!important;left:unset!important;top:0px!important;text-align:center!important}
+.caption_scroll_Dualparing .contents_1 h2{color:#fff!important;font-size:4rem!important;line-height:55px!important;padding:0;margin:0}
+.caption_scroll_Dualparing .contents_2{width:350px!important;position:absolute!important;right:unset!important;top:130px!important}
+.caption_scroll_Dualparing .contents_2 p{color:#fff;font-size:1.8rem!important;font-weight:400!important;text-align:center!important;padding:0;margin:0}
+}
+
+</style>

@@ -1,0 +1,226 @@
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 300vh; /* Ensure enough scroll space */
+      overflow-x: hidden; /* Prevent horizontal scrollbars */
+    }
+
+    .section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      /* background-color: #f0f0f0; */
+      border-bottom: 1px solid #ddd;
+    }
+
+    .sticky-container {
+      position: relative;
+      height: 200vh; /* Total duration for sticky section */
+    }
+
+    .sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* background-color: #ff5722; */
+      color: white;
+      z-index: 10;
+    }
+
+    /* .video-section {
+      position: relative;
+    } */
+
+    .video-section video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .img-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      clip-path: circle(0 at center);
+      transition: clip-path 0.3s ease-out;
+      z-index: 2;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .content {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 80%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: white;
+      z-index: 3;
+      opacity: 0; /* Initially hidden */
+      transition: opacity 0.3s ease-out;
+    }
+
+    .content h2 {
+      font-size: 1.4em;
+      margin-bottom: 20px;
+      color:#222;
+    }
+
+    .content p{
+        color:#383838;
+    }
+
+    .content.visible {
+      opacity: 1;
+      background: rgba(213, 212, 215, 0.9);
+      padding: 30px;
+      border-radius: 15px 15px 0px 0px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .content {
+        width: 100%;
+      }
+
+      .content.visible {
+        padding: 25px 10px;
+      }
+    }
+  </style>
+  <!-- <section class="section">Section 1</section> -->
+
+  <div class="sticky-container">
+    <section class="sticky">
+      <div class="video-section" id="video-section">
+        <video id="background-video" autoplay muted playsinline></video>
+        <div class="img-bg"></div>
+        <div class="content" id="content">
+          <h2>Meet NG EarSafe Pro: Your Ultimate Companion for Safe, Open-Ear, and Adventure-Ready Sound</h2>
+          <p>Engineered with advanced bone conduction technology, NG EarSafe Pro delivers crystal-clear audio while keeping your ears open to the world around you. These waterproof headphones are designed to handle it all—rain, sweat, and rugged conditions. Experience unparalleled comfort, stay aware of your surroundings, and enjoy sound without compromise. With NG EarSafe Pro, embrace the freedom to move, listen, and explore, knowing your ears are protected.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- <section class="section">Section 3</section> -->
+
+  <script>
+    // Function to set background based on screen size
+    const setBackground = () => {
+      const video = document.getElementById("background-video");
+      const overlay = document.querySelector(".img-bg");
+
+      if (window.innerWidth <= 768) {
+        video.src = "https://cdn.shopify.com/videos/c/o/v/79147570c5f04206bc608fa61219f5ef.mp4";
+        overlay.style.backgroundImage = "url('https://cdn.shopify.com/s/files/1/0804/5762/9975/files/productcolouranddetailsmobilev2.webp?v=1732537146')";
+      } else {
+        video.src = "https://cdn.shopify.com/videos/c/o/v/bbae54bd7768451f9fce43260ff331da.mp4";
+        overlay.style.backgroundImage = "url('https://cdn.shopify.com/s/files/1/0804/5762/9975/files/product_colour_1details.webp?v=1731631729')";
+      }
+
+      overlay.style.backgroundSize = "cover";
+      overlay.style.backgroundPosition = "center";
+    };
+
+    // Handle scroll behavior for clip-path and content visibility
+    const handleScroll = (isSticky, videoStartScroll, lastScrollY) => {
+      const overlay = document.querySelector(".img-bg");
+      const content = document.getElementById("content");
+
+      if (!isSticky || videoStartScroll === null) return;
+
+      const viewportHeight = window.innerHeight;
+      const totalScrollDistance = viewportHeight * 2; // 2 scroll counts (half the previous scroll)
+      const scrollY = window.scrollY;
+
+      let progress;
+      if (scrollY > lastScrollY) {
+        // Scrolling down - expanding clip-path
+        progress = Math.min(
+          Math.max((scrollY - videoStartScroll) / totalScrollDistance, 0),
+          1
+        );
+      } else {
+        // Scrolling up - contracting clip-path
+        progress = Math.min(
+          Math.max((videoStartScroll - scrollY) / totalScrollDistance, 0),
+          1
+        );
+      }
+
+      // Calculate clip size proportional to the progress
+      const maxClipSize = Math.sqrt(
+        Math.pow(window.innerWidth, 2) + Math.pow(window.innerHeight, 2)
+      ); // Full diagonal
+      const clipSize = progress * maxClipSize;
+
+      overlay.style.clipPath = `circle(${clipSize}px at center)`;
+
+      // Show content when progress reaches 20%
+      if (progress > 0.2) {
+        content.classList.add("visible");
+      } else {
+        content.classList.remove("visible");
+      }
+
+      // Allow sticky section to move once overlay has covered the full viewport
+      if (progress >= 1) {
+        document.querySelector(".sticky").style.position = "absolute"; // Allow it to release
+      } else {
+        document.querySelector(".sticky").style.position = "sticky"; // Keep it sticky while not released
+      }
+
+      // Update lastScrollY for next scroll direction check
+      lastScrollY = scrollY;
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setBackground();
+      window.addEventListener("resize", setBackground);
+
+      const stickySection = document.querySelector(".sticky");
+      const video = document.getElementById("background-video");
+      let isSticky = false;
+      let videoStartScroll = null; // To store when the video section scroll starts
+      let lastScrollY = 0; // To track the last scroll position
+
+      // Ensure video doesn't loop
+      video.loop = false;      
+
+      // Intersection Observer for sticky video section
+      const observerr = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            video.play(); // Play the video when sticky section is in view
+            isSticky = true;
+            videoStartScroll = window.scrollY; // Set start point for scroll count
+          } else {
+            video.pause(); // Pause the video when sticky section leaves view
+            isSticky = false;
+            videoStartScroll = null; // Reset scroll start
+          }
+        },
+        { threshold: 1 } // Trigger only when fully in view
+      );
+
+      observerr.observe(stickySection);
+
+      // Scroll event listener to handle the clip-path animation
+      window.addEventListener("scroll", () => handleScroll(isSticky, videoStartScroll, lastScrollY));
+    });
+  </script>

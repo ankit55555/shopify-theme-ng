@@ -1,0 +1,907 @@
+{% comment %}
+  Enhanced Sticky video section for Shopify with tap-to-play functionality
+  Save as sections/enhanced-scroll-video.liquid
+{% endcomment %}
+
+<div class="vid_enhance-scroll-video-section" data-section-id="{{ section.id }}">
+  <div class="vid_enhance-scroll-video-container">
+    <div class="vid_enhance-video-wrapper">
+      <video 
+        class="vid_enhance-scroll-video"
+        muted
+        playsinline
+        preload="metadata"
+        loop
+        data-desktop-src="{{ section.settings.desktop_video_url | default: section.settings.video_url }}"
+        data-mobile-src="{{ section.settings.mobile_video_url | default: section.settings.desktop_video_url | default: section.settings.video_url }}"
+      >
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      
+      <!-- Mute/Unmute button -->
+      <div class="vid_enhance-mute-button-container">
+        <button class="vid_enhance-mute-button" aria-label="Toggle sound">
+          <svg class="vid_enhance-unmute-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+          </svg>
+          <svg class="vid_enhance-mute-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Play button overlay -->
+      <div class="vid_enhance-play-button-overlay">
+        <button class="vid_enhance-play-button paused" aria-label="Play video with sound">
+          <svg class="vid_enhance-play-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+          <svg class="vid_enhance-pause-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+          </svg>
+          <span class="vid_enhance-play-text">{{ section.settings.play_button_text | default: '' }}</span>
+        </button>
+      </div>
+      
+      <!-- Video overlay content -->
+      {% if section.settings.show_video_overlay %}
+        <div class="vid_enhance-video-content-overlay">
+          {% if section.settings.video_overlay_title != blank %}
+            <h2 class="vid_enhance-video-overlay-title">{{ section.settings.video_overlay_title }}</h2>
+          {% endif %}
+          {% if section.settings.video_overlay_description != blank %}
+            <p class="vid_enhance-video-overlay-description">{{ section.settings.video_overlay_description }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+      
+      {% if section.settings.show_overlay %}
+        <div class="vid_enhance-video-overlay">
+          {% if section.settings.overlay_title != blank %}
+            <h2 class="vid_enhance-overlay-title">{{ section.settings.overlay_title }}</h2>
+          {% endif %}
+          {% if section.settings.overlay_text != blank %}
+            <p class="vid_enhance-overlay-text">{{ section.settings.overlay_text }}</p>
+          {% endif %}
+          {% if section.settings.button_text != blank and section.settings.button_url != blank %}
+            <a href="{{ section.settings.button_url }}" class="vid_enhance-overlay-button">
+              {{ section.settings.button_text }}
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  
+  <!-- Spacer to maintain section height -->
+  <div class="vid_enhance-scroll-spacer"></div>
+</div>
+
+<style>
+  .vid_enhance-scroll-video-section {
+    position: relative;
+    height: calc(100vh + {{ section.settings.scroll_distance }}px);
+  }
+  
+  .vid_enhance-scroll-video-container {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .vid_enhance-video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+  }
+  
+  .vid_enhance-scroll-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .vid_enhance-scroll-video.loaded {
+    opacity: 1;
+  }
+  
+  /* Mute/Unmute button */
+  .vid_enhance-mute-button-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 4;
+  }
+  
+  .vid_enhance-mute-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .vid_enhance-mute-button.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .vid_enhance-mute-button:hover {
+    background: rgba(0, 0, 0, 0.9) !important;
+    transform: scale(1.1);
+  }
+  
+  .vid_enhance-mute-button:active {
+    transform: scale(0.95);
+  }
+  
+  .vid_enhance-mute-button svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .vid_enhance-mute-button.muted .vid_enhance-unmute-icon {
+    display: none;
+  }
+  
+  .vid_enhance-mute-button.muted .vid_enhance-mute-icon {
+    display: block;
+  }
+  
+  .vid_enhance-mute-button:not(.muted) .vid_enhance-unmute-icon {
+    display: block;
+  }
+  
+  .vid_enhance-mute-button:not(.muted) .vid_enhance-mute-icon {
+    display: none;
+  }
+  
+  /* Play button overlay */
+  .vid_enhance-play-button-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    transition: opacity 0.3s ease;
+  }
+  
+  .vid_enhance-play-button-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .vid_enhance-play-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba({{ section.settings.play_button_bg_color | color_extract: 'red' }}, {{ section.settings.play_button_bg_color | color_extract: 'green' }}, {{ section.settings.play_button_bg_color | color_extract: 'unset' }}, 0.9);
+    color: {{ section.settings.play_button_text_color }};
+    border: none;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position:relative;
+    left:47%;
+    top:-32%;
+    background:unset;
+    left: 0;
+    top: -0.5%;
+    color: #000000;
+  }
+  
+  .vid_enhance-play-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+  
+  .vid_enhance-play-button:active {
+    transform: scale(0.95);
+  }
+  
+  .vid_enhance-play-button.paused .vid_enhance-play-icon {
+    display: block;
+    color:#fff;
+  }
+  
+  .vid_enhance-play-button.paused .vid_enhance-pause-icon {
+    display: none;
+  }
+  
+  .vid_enhance-play-button.playing .vid_enhance-play-icon {
+    display: none;
+  }
+  
+  .vid_enhance-play-button.playing .vid_enhance-pause-icon {
+    display: block;
+  }
+  
+  .vid_enhance-play-icon,
+  .vid_enhance-pause-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0px;
+  }
+  
+  .vid_enhance-play-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Video content overlay */
+  .vid_enhance-video-content-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: {{ section.settings.video_overlay_text_color }};
+    z-index: 2;
+    padding: 20px;
+    max-width: 800px;
+    width: 90%;
+    pointer-events: none;
+  }
+  
+  .vid_enhance-video-overlay-title {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    line-height: 1.1;
+  }
+  
+  .vid_enhance-video-overlay-description {
+    font-size: clamp(1.1rem, 3vw, 1.8rem);
+    margin-bottom: 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    line-height: 1.4;
+    font-weight: 400;
+  }
+  
+  .vid_enhance-video-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: {{ section.settings.text_color }};
+    z-index: 2;
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .vid_enhance-video-overlay.show {
+    opacity: 0;
+  }
+  
+  .vid_enhance-overlay-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    line-height: 1.2;
+  }
+  
+  .vid_enhance-overlay-text {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    line-height: 1.4;
+  }
+  
+  .vid_enhance-overlay-button {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: {{ section.settings.button_color }};
+    color: {{ section.settings.button_text_color }};
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1rem;
+  }
+  
+  .vid_enhance-overlay-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    filter: brightness(1.1);
+  }
+  
+  .vid_enhance-scroll-spacer {
+    height: {{ section.settings.scroll_distance }}px;
+    pointer-events: none;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .vid_enhance-scroll-video-section {
+      height: calc(100vh + {{ section.settings.mobile_scroll_distance }}px);
+    }
+    
+    .vid_enhance-scroll-spacer {
+      height: {{ section.settings.mobile_scroll_distance }}px;
+    }
+    
+    .vid_enhance-mute-button-container {
+      top: 15px;
+      right: 15px;
+    }
+    
+    .vid_enhance-mute-button {
+      width: 45px;
+      height: 45px;
+    }
+    
+    .vid_enhance-mute-button svg {
+      width: 20px;
+      height: 20px;
+    }
+    
+    .vid_enhance-play-button {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .vid_enhance-play-icon,
+    .vid_enhance-pause-icon {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 0px;
+    }
+    
+    .vid_enhance-play-text {
+      font-size: 0.8rem;
+    }
+    
+    .vid_enhance-video-content-overlay,
+    .vid_enhance-video-overlay {
+      padding: 15px;
+    }
+    
+    .vid_enhance-video-overlay-title {
+      margin-bottom: 0.8rem;
+    }
+    
+    .vid_enhance-video-overlay-description {
+      margin-bottom: 0;
+    }
+    
+    .vid_enhance-overlay-title {
+      margin-bottom: 0.8rem;
+    }
+    
+    .vid_enhance-overlay-text {
+      margin-bottom: 1.5rem;
+    }
+    
+    .vid_enhance-overlay-button {
+      padding: 12px 28px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .vid_enhance-mute-button-container {
+      top: 10px;
+      right: 10px;
+    }
+    
+    .vid_enhance-mute-button {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .vid_enhance-mute-button svg {
+      width: 18px;
+      height: 18px;
+    }
+    
+    .vid_enhance-play-button {
+      width: 50px;
+      height: 50px;
+      left: 0;
+    top: -0.5%;
+    color: #000000;
+    }
+
+    .vid_enhance-play-button.paused .vid_enhance-play-icon {
+    color: #fff;
+}
+    
+    .vid_enhance-play-icon,
+    .vid_enhance-pause-icon {
+      width: 28px;
+      height: 28px;
+    }
+    
+    .vid_enhance-play-text {
+      font-size: 0.7rem;
+    }
+    
+    .vid_enhance-video-content-overlay,
+    .vid_enhance-video-overlay {
+      padding: 10px;
+      max-width: 95%;
+    }
+    
+    .vid_enhance-overlay-button {
+      padding: 10px 25px;
+      font-size: 0.85rem;
+    }
+  }
+  
+  /* Loading state */
+  .vid_enhance-scroll-video-container.loading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-top: 3px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 3;
+  }
+  
+  @keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const videoSection = document.querySelector('[data-section-id="{{ section.id }}"]');
+  const videoContainer = videoSection.querySelector('.vid_enhance-scroll-video-container');
+  const video = videoSection.querySelector('.vid_enhance-scroll-video');
+  const overlay = videoSection.querySelector('.vid_enhance-video-overlay');
+  const playButtonOverlay = videoSection.querySelector('.vid_enhance-play-button-overlay');
+  const playButton = videoSection.querySelector('.vid_enhance-play-button');
+  const muteButton = videoSection.querySelector('.vid_enhance-mute-button');
+  
+  if (!video) return;
+  
+  let isVideoLoaded = false;
+  let isPlaying = false;
+  let hasInteracted = false;
+  let isMuted = true;
+  
+  // Show loading state
+  videoContainer.classList.add('loading');
+  
+  // Detect device type and load appropriate video
+  function getVideoSource() {
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile && video.dataset.mobileSrc) {
+      return video.dataset.mobileSrc;
+    }
+    return video.dataset.desktopSrc || video.dataset.mobileSrc;
+  }
+  
+  // Load video source
+  function loadVideo() {
+    if (!isVideoLoaded) {
+      const videoSrc = getVideoSource();
+      if (videoSrc) {
+        video.src = videoSrc;
+        isVideoLoaded = true;
+      }
+    }
+  }
+  
+  // Update mute button state
+  function updateMuteButton() {
+    if (muteButton) {
+      muteButton.classList.toggle('muted', isMuted);
+      if (hasInteracted) {
+        muteButton.classList.add('show');
+      }
+    }
+  }
+  
+  // Intersection Observer to load video when in view and control playback
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        loadVideo();
+        
+        // Auto-play video silently when in view (if not already interacted)
+        if (isVideoLoaded && !hasInteracted) {
+          video.play().catch(e => {
+            console.log('Auto-play failed:', e);
+          });
+        } else if (hasInteracted && isPlaying) {
+          // Resume playing if user was already interacting and video was playing
+          video.play().catch(e => {
+            console.log('Resume play failed:', e);
+          });
+        }
+      } else {
+        // Pause video when out of view
+        if (isVideoLoaded) {
+          video.pause();
+          
+          // Show pause button if user has interacted
+          if (hasInteracted && isPlaying) {
+            showPauseButton();
+          }
+        }
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+  
+  observer.observe(videoSection);
+  
+  // Show/hide pause button functions
+  function showPauseButton() {
+    playButton.classList.remove('paused');
+    playButton.classList.add('playing');
+    playButtonOverlay.classList.remove('hidden');
+    playButton.querySelector('.vid_enhance-play-text').textContent = 'Tap to Pause';
+  }
+  
+  function hidePauseButton() {
+    playButtonOverlay.classList.add('hidden');
+  }
+  
+  function showPlayButton() {
+    playButton.classList.remove('playing');
+    playButton.classList.add('paused');
+    playButtonOverlay.classList.remove('hidden');
+    playButton.querySelector('.vid_enhance-play-text').textContent = '{{ section.settings.play_button_text | default: "Tap to Experience" }}';
+  }
+  
+  // Play button click handler
+  function handlePlayButtonClick() {
+    if (!isVideoLoaded) return;
+    
+    hasInteracted = true;
+    updateMuteButton();
+    
+    if (isPlaying) {
+      // Pause the video
+      video.pause();
+      isPlaying = false;
+      showPlayButton();
+    } else {
+      // Unmute and play video
+      video.muted = false;
+      isMuted = false;
+      updateMuteButton();
+      
+      video.play().then(() => {
+        isPlaying = true;
+        hidePauseButton();
+        
+        // Show overlay content if configured (keeping it hidden as requested)
+        if (overlay && {{ section.settings.show_overlay_on_play | default: false }}) {
+          setTimeout(() => {
+            overlay.classList.add('show');
+          }, 1000);
+        }
+      }).catch(e => {
+        console.error('Failed to play video with sound:', e);
+        // Fallback: play muted
+        video.muted = true;
+        isMuted = true;
+        updateMuteButton();
+        video.play().then(() => {
+          isPlaying = true;
+          hidePauseButton();
+        });
+      });
+    }
+  }
+  
+  // Mute button click handler
+  function handleMuteButtonClick() {
+    if (!hasInteracted || !isVideoLoaded) return;
+    
+    isMuted = !isMuted;
+    video.muted = isMuted;
+    updateMuteButton();
+  }
+  
+  // Video event handlers
+  video.addEventListener('loadedmetadata', () => {
+    videoContainer.classList.remove('loading');
+    video.classList.add('loaded');
+    console.log('Video loaded, duration:', video.duration);
+  });
+  
+  video.addEventListener('ended', () => {
+    isPlaying = false;
+    if (hasInteracted) {
+      // Show play button again after video ends
+      showPlayButton();
+      overlay.classList.remove('show');
+    }
+  });
+  
+  video.addEventListener('pause', () => {
+    if (hasInteracted && video.currentTime > 0 && video.currentTime < video.duration) {
+      // Video was paused (not ended), show pause button
+      showPauseButton();
+    }
+  });
+  
+  video.addEventListener('play', () => {
+    if (hasInteracted) {
+      hidePauseButton();
+    }
+  });
+  
+  video.addEventListener('error', (e) => {
+    console.error('Video failed to load:', e);
+    videoContainer.classList.remove('loading');
+    videoContainer.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:white;text-align:center;"><p>Video could not be loaded.<br>Please check the video URL.</p></div>';
+  });
+  
+  // Event listeners
+  if (playButton) {
+    playButton.addEventListener('click', handlePlayButtonClick);
+  }
+  
+  if (muteButton) {
+    muteButton.addEventListener('click', handleMuteButtonClick);
+  }
+  
+  // Handle visibility change (tab switching)
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden && isPlaying) {
+      video.pause();
+    } else if (!document.hidden && isPlaying && hasInteracted) {
+      video.play().catch(e => {
+        console.log('Resume play failed:', e);
+      });
+    }
+  });
+  
+  // Handle window resize for responsive video loading
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      if (isVideoLoaded) {
+        const newVideoSrc = getVideoSource();
+        if (newVideoSrc !== video.src) {
+          const currentTime = video.currentTime;
+          const wasPlaying = !video.paused;
+          
+          video.src = newVideoSrc;
+          video.addEventListener('loadedmetadata', function onLoad() {
+            video.currentTime = currentTime;
+            if (wasPlaying) {
+              video.play();
+            }
+            video.removeEventListener('loadedmetadata', onLoad);
+          });
+        }
+      }
+    }, 250);
+  });
+  
+  // Initial setup
+  updateMuteButton();
+  loadVideo();
+});
+</script>
+
+{% schema %}
+{
+  "name": "Enhanced Scroll Video",
+  "tag": "section",
+  "class": "vid_enhance-scroll-video-section-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Video Sources"
+    },
+    {
+      "type": "url",
+      "id": "desktop_video_url",
+      "label": "Desktop Video URL",
+      "info": "Upload your desktop video to Shopify files or use a direct URL"
+    },
+    {
+      "type": "url",
+      "id": "mobile_video_url",
+      "label": "Mobile Video URL (Optional)",
+      "info": "Optional: Upload a mobile-optimized video. If not provided, desktop video will be used"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Fallback Video URL",
+      "info": "Fallback video URL for backward compatibility"
+    },
+    {
+      "type": "header",
+      "content": "Video Overlay Content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_video_overlay",
+      "label": "Show heading and description over video",
+      "default": true,
+      "info": "Display content directly over the video (always visible)"
+    },
+    {
+      "type": "text",
+      "id": "video_overlay_title",
+      "label": "Video overlay heading",
+      "default": "Your Heading Here"
+    },
+    {
+      "type": "textarea",
+      "id": "video_overlay_description",
+      "label": "Video overlay description",
+      "default": "Add your compelling description here"
+    },
+    {
+      "type": "color",
+      "id": "video_overlay_text_color",
+      "label": "Video overlay text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Scroll Settings"
+    },
+    {
+      "type": "range",
+      "id": "scroll_distance",
+      "min": 1000,
+      "max": 5000,
+      "step": 100,
+      "unit": "px",
+      "label": "Scroll distance (desktop)",
+      "default": 3000,
+      "info": "Distance to scroll past the video section"
+    },
+    {
+      "type": "range",
+      "id": "mobile_scroll_distance",
+      "min": 800,
+      "max": 3000,
+      "step": 100,
+      "unit": "px",
+      "label": "Scroll distance (mobile)",
+      "default": 2000,
+      "info": "Distance to scroll past the video section on mobile"
+    },
+    {
+      "type": "header",
+      "content": "Play Button"
+    },
+    {
+      "type": "text",
+      "id": "play_button_text",
+      "label": "Play button text",
+      "default": "Tap to Experience"
+    },
+    {
+      "type": "color",
+      "id": "play_button_bg_color",
+      "label": "Play button background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "play_button_text_color",
+      "label": "Play button text color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Overlay Content (Legacy)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": "Show overlay content",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay_on_play",
+      "label": "Show overlay when video plays",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "overlay_title",
+      "label": "Overlay title",
+      "default": "Your Title Here"
+    },
+    {
+      "type": "textarea",
+      "id": "overlay_text",
+      "label": "Overlay text",
+      "default": "Add your compelling message here"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Enhanced Scroll Video"
+    }
+  ]
+}
+{% endschema %}

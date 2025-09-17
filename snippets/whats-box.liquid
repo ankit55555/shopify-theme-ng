@@ -1,0 +1,55 @@
+<div class="grid-box">
+  <section class="side-box">
+    <!-- <h1>Box Images</h1>
+    <p>
+      The Little Prince (French: Le Petit Prince), first published in 1943, is a novella and the most famous work of the French aristocrat, writer, poet and pioneering aviator Antoine de Saint-Exupéry (1900–1944).
+    </p> -->
+    <img loading="eager" width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Product_Mockup_CC_2.png?v=1703177123">
+  </section>
+  <article class="main-box">
+    <div class="parent-box">
+      <div class="child-box">
+<span>
+      The Little Prince 
+    </span>
+         <img loading="eager" width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/ear1.webp?v=1703137455">
+        
+      </div>
+      <div class="child-box">
+        <span>
+      The Little Prince 
+    </span>
+        <img loading="eager" width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/cable1.webp?v=1703137689">
+      </div>
+      <div class="child-box">
+       <span>
+      The Little Prince 
+    </span>
+        <img loading="eager" width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/manua1.webp?v=1703138141">
+      </div>
+      <div class="child-box">
+     <span>
+      The Little Prince 
+    </span>
+        <img loading="eager" width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/pouch_1.webp?v=1703138246">
+      </div>
+    </div>
+  </article>
+</div>
+
+<style>
+.grid-box{display:grid;gap:10px;grid-template-columns:2fr 1fr}
+/* .main-box{background:#F2F2F2} */
+.side-box img{width: 90%;margin: 0 auto;display: block;}  
+.side-box{background:#F2F2F2}
+.main-box,.side-box{border-radius:10px}
+.child-box img{border-radius: 10px;}
+/* @media only screen and (min-width:380px){.grid-box{grid-template-columns:repeat(1,minmax(100px,1fr))}} */
+  @media only screen and (max-width:768px){
+.grid-box{grid-template-columns:repeat(1,minmax(100px,1fr))}
+}
+.parent-box{display:flex;font-size:0;flex-wrap:wrap;margin:-10px 0 0 -10px}
+.child-box{display:inline-block;background:#fff;margin:10px 0 0 10px;flex-grow:1;
+           /* height:100px; */
+           width:calc(100% * (1/2) - 10px - 1px)}
+</style>

@@ -1,0 +1,51 @@
+<div class="grid-box">
+  <section class="side-box">
+    <img loading="eager" width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Product_1.webp?v=1708586626">
+  </section>
+  <article class="main-box">
+    <div class="parent-box">
+      <div class="child-box">
+<span>
+      The Little Prince 
+    </span>
+         <img loading="eager" width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/cable1_4_ffe42d19-0a2f-4ecb-85fa-de7a748ddeac.webp?v=1708587463">
+        
+      </div>
+      <div class="child-box">
+        <span>
+      The Little Prince 
+    </span>
+        <img loading="eager" width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/mag-ctype.webp?v=1708608386">
+      </div>
+      <div class="child-box">
+       <span>
+      The Little Prince 
+    </span>
+        <img loading="eager" width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/eartip_1.webp?v=1708587748">
+      </div>
+      <div class="child-box">
+     <span>
+      The Little Prince 
+    </span>
+        <img loading="eager" width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/usb-ctype.webp?v=1708587920">
+      </div>
+    </div>
+  </article>
+</div>
+
+<style>
+.grid-box{display:grid;gap:10px;grid-template-columns:2fr 1fr}
+/* .main-box{background:#F2F2F2} */
+.side-box img{width: 90%;margin: 0 auto;display: block;}  
+.side-box{background:#F2F2F2}
+.main-box,.side-box{border-radius:10px}
+.child-box img{border-radius: 10px;}
+/* @media only screen and (min-width:380px){.grid-box{grid-template-columns:repeat(1,minmax(100px,1fr))}} */
+  @media only screen and (max-width:768px){
+.grid-box{grid-template-columns:repeat(1,minmax(100px,1fr))}
+}
+.parent-box{display:flex;font-size:0;flex-wrap:wrap;margin:-10px 0 0 -10px}
+.child-box{display:inline-block;background:#fff;margin:10px 0 0 10px;flex-grow:1;
+           /* height:100px; */
+           width:calc(100% * (1/2) - 10px - 1px)}
+</style>

@@ -1,0 +1,203 @@
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}
+
+ <div class="container">
+      <div class="table-wrapper">
+        <div class="scrollable">
+          <table class="responsive">
+            <tbody>
+              <tr>
+                <th class="hide-mobile">Product</th>
+                <th>EarSafe</th>
+                <th>EarSafe Comm</th>
+                <th>EarSafe Pro</th>
+              </tr>
+              <tr>
+                <td class="hide-mobile">Technology</td>
+                <td>Air Conduction</td>
+                <td>Air Conduction</td>
+                <td>Bone Conduction</td>
+              </tr>
+              <tr>
+                <td class="hide-mobile">Water-proof rating</td>
+                <td>Ipx4 Water Resistant & Sweat proof</td>
+                <td>Ipx5 Water Resistant & Sweat proof</td>
+                <td>Ip68 Waterproof</td>
+              </tr>
+              <tr>
+                <td class="hide-mobile">Mic</td>
+                <td>Inbuilt Mic</td>
+                <td>Noise cancelling Boom Mic for Crystal clear calling</td>
+                <td>Inbuilt Mic</td>
+              </tr>
+              <tr>
+                <td class="hide-mobile">Weight</td>
+                <td>24g</td>
+                <td>29g</td>
+                <td>35g</td>
+              </tr>
+              <tr>
+                <td class="hide-mobile">Dual Connectivity</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td class="hide-mobile">Battery Life</td>
+                <td>8 hours continuous talk time</td>
+                <td>8 hours continuous talk time</td>
+                <td>8 hours continuous talk time</td>
+              </tr>
+              <tr>
+                <td class="hide-mobile">BT Version</td>
+                <td>5.2</td>
+                <td>5.3</td>
+                <td>5.3</td>
+              </tr>
+              <tr>
+                <td class="hide-mobile">Charging Type</td>
+                <td>USB</td>
+                <td>Magnetic Charging</td>
+                <td>Magnetic Charging</td>
+              </tr>
+              <tr>
+                <td class="hide-mobile">Voice Assistance</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td class="hide-mobile">Color Options</td>
+                <td>Black, Green, Red</td>
+                <td>Black</td>
+                <td>Black, Blue</td>
+              </tr>
+              <tr>
+                <td class="hide-mobile">360 Bend Free</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td class="hide-mobile">Model Year</td>
+                <td>2021</td>
+                <td>2023</td>
+                <td>2024</td>
+              </tr>
+              <tr>
+                <td class="hide-mobile">Application</td>
+                <td>
+                  <ul style="margin-right: 56px;text-align: left;">
+                    <li>Sports</li>
+                    <li>Music</li>
+                    <li>Yoga</li>
+                    <li>Entertainment</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul style="text-align: left;">
+                    <li>Working Professional</li>
+                    <li>Sports</li>
+                    <li>Online Teaching/Studies</li>
+                    <li>Yoga</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul style="text-align: left;">
+                    <li>Hearing aid</li>
+                    <li>Underwater Swimming</li>
+                    <li>Sports</li>
+                    <li>Jogging</li>
+                    <li>Yoga</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td class="hide-mobile">Link</td>
+                <td>EarSafe<br><a href="">Buy Now</a></td>
+                <td>EarSafe Comm<br><a href="">Buy Now</a></td>
+                <td>EarSafe Pro<br><a href="">Buy Now</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pinned">
+          <table>
+            <tbody>
+              <tr>
+                <th>Product</th>
+              </tr>
+              <tr>
+                <td>Technology</td>
+              </tr>
+              <tr>
+                <td>Water-proof rating</td>
+              </tr>
+              <tr>
+                <td>Mic</td>
+              </tr>
+              <tr>
+                <td>Weight</td>
+              </tr>
+              <tr>
+                <td>Dual Connectivity</td>
+              </tr>
+              <tr>
+                <td>Battery Life</td>
+              </tr>
+              <tr>
+                <td>BT Version</td>
+              </tr>
+              <tr>
+                <td>Charging Type</td>
+              </tr>
+              <tr>
+                <td>Voice Assistance</td>
+              </tr>
+              <tr>
+                <td>Color Options</td>
+              </tr>
+              <tr>
+                <td>360 Bend Free</td>
+              </tr>
+              <tr>
+                <td>Model Year</td>
+              </tr>
+              <tr>
+                <td>Application</td>
+              </tr>
+              <tr>
+                <td>Link</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+        <style>
+      .table-wrapper{position:relative;margin-bottom:20px;overflow:hidden}
+      .table-wrapper td,.table-wrapper th{padding:9px 10px;text-align:left}
+      .table-wrapper .pinned{display:none}
+      .table-wrapper .scrollable table{width:100%}
+      .hide-mobile{font-weight:600}
+      @media (max-width:1100px){
+      .table-wrapper{border-right:1px solid #ccc}
+      .table-wrapper .scrollable{overflow:scroll;overflow-y:hidden}
+      .table-wrapper .scrollable table{margin-left:20%}
+      .table-wrapper .scrollable table td,.table-wrapper .scrollable table th{white-space:nowrap}
+      .table-wrapper .scrollable table .hide-mobile{display:none}
+      .table-wrapper .pinned{display:block;position:absolute;left:0;top:0;background:#fff;width:20%;overflow:hidden;overflow-x:scroll;border-right:1px solid #ccc;border-left:1px solid #ccc}
+      .table-wrapper .pinned table{border-right:none;border-left:none;width:100%}
+      .table-wrapper td,.table-wrapper th{padding:9px 10px;text-align:left;font-size:12px}
+      .pinned table td{font-weight:600}
+      }
+      td,th{border:1px solid #ddd;padding:8px}
+      tr:nth-child(2n){background-color:#f2f2f2}
+      tr:hover{background-color:#ddd}
+      th{padding-top:12px;padding-bottom:12px;text-align:left;background-color:#009ab1;color:#fff}
+    </style>

@@ -1,0 +1,195 @@
+    <style>
+.media-container{display:flex;height:100vh;padding:0 5%;position:relative;background-color:#282C2F}
+.media-header{position:sticky;top:0;align-self:center;width:25%;padding-right:5%;z-index:10;color:#fff}
+.media-header h2{    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #c9ecff;}
+.media-header p{font-size:2rem}
+.media-slider-wrapper{flex:1;overflow-x:auto;position:relative;display:flex;align-items:center;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none}
+.media-slider-wrapper::-webkit-scrollbar{display:none}
+.media-slider{display:flex;gap:20px;padding-bottom:20px;cursor:grab}
+.media-slider:active{cursor:grabbing}
+.media-card{flex:0 0 calc(33.33% - 14px);background:#fff;border-radius:12px;transition:all .3s ease;scroll-snap-align:start}
+.media-card:hover{transform:scale(1.03)}
+.media-card img.main-image{border-top-left-radius:12px;border-top-right-radius:12px;width:100%;
+/* height:12rem; */
+object-fit:cover}
+.media-card .content{padding:1.5rem;}
+.media-card .date{color:#6b7280;margin-bottom:.5rem}
+.media-card .title{font-size:1.8rem;font-weight:700;margin-bottom:1rem}
+.media-card .description{color:#4b5563;margin-bottom:1rem}
+.media-logo{position: relative;
+    bottom: 8px;
+    max-width: 100px;
+    margin-left: auto;
+    margin-right: 0;
+    display: block;}
+.media-navigation{display:flex;justify-content:end;align-items:center;gap:20px;padding:20px 0;margin-right:50px}
+.nav-arrow{background:rgba(255,255,255,.2);border-radius:50%;width:40px;height:40px;display:flex;justify-content:center;align-items:center;cursor:pointer;transition:background .3s ease}
+.nav-arrow:hover{background:rgba(255,255,255,.4)}
+@media (max-width:768px){
+.media-container{flex-direction:column;height:auto;padding:5%}
+.media-header{position:static;width:100%;text-align:center;padding-right:0;margin-bottom:20px}
+.media-slider-wrapper{width:100%;overflow-x:auto}
+.media-slider{flex-wrap:nowrap}
+.media-card{flex:0 0 calc(50% - 20px)}
+.media-navigation{display:none}
+.media-header h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0rem;
+    color: #c9ecff;
+    margin-top: 20px;
+}
+}
+    </style>   
+<div class="media-container">
+        <div class="media-header">
+            <h2>We are in Media</h2>
+            <p>Covering March to April</p>
+        </div>
+        
+        <div class="media-slider-wrapper" id="mediaSliderWrapper">
+            <div class="media-slider" id="mediaSlider">
+                <!-- First Card -->
+                <div class="media-card">
+                    <img width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Entrepreneur-india_image.webp?v=1743150331" alt="NG EarSafe Team" class="main-image">
+                    <div class="content">
+<img width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Entrepreneur-india.webp?v=1743150277" alt="Entrepreneur Logo" class="media-logo">
+                        <p class="date">24 Oct 2024</p>
+                        <h2 class="title">NG EarSafe Raises INR 1.06 Cr Funding to Revolutionise Safe Listening Solutions</h2>
+                        <p class="description">The fresh funds will be used for brand and category awareness, expanding reach, and developing new products.</p>
+                    </div>
+                    
+                </div>
+
+                <!-- Second Card -->
+                <div class="media-card">
+                    <img width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Itvar_news_omage.webp?v=1743150331" alt="Money in Jar" class="main-image">
+                    <div class="content">
+                           <img width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Itcar_news.webp?v=1743150277" alt="IVNews Logo" class="media-logo">
+<p class="date">24 Oct 2024</p>
+                        <h2 class="title">NG EarSafe Raises INR 1.06 Crore in Seed Funding Led by Inflection Point Ventures</h2>
+                        <p class="description">NG EarSafe, India's first ENT-certified premium open-ear headphone brand, has secured INR 1.06 Crore.</p>
+                    </div>
+                 
+</div>
+
+                <!-- Third Card -->
+                <div class="media-card">
+                    <img width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/VC_circle_image.webp?v=1743150331" alt="NG EarSafe Team" class="main-image">
+                    <div class="content">
+                         <img width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/VC_cuircle.webp?v=1743150277" alt="Entrepreneur Logo" class="media-logo">
+  <p class="date">24 Oct 2024</p>
+                        <h2 class="title">NG Earsafe has raised Rs 1.06 crore by Inflection Point Ventures (IPV)</h2>
+                        <p class="description">The round was led by Yaletown Partners, Exposition Ventures, George Kaiser Family Foundation & Carya Ventures.</p>
+                    </div>
+                 
+ </div>
+
+                <!-- Fourth Card -->
+                <div class="media-card">
+                    <img width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/ISN_image.webp?v=1743150331" alt="NG EarSafe Team" class="main-image">
+                    <div class="content">
+       <img width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/ISN.webp?v=1743150277" alt="Entrepreneur Logo" class="media-logo">
+                                 
+  <p class="date">24 Oct 2024</p>
+                        <h2 class="title">ENT-certified premium open-ear headphone brand NG Earsafe raises Rs 1.06 crore</h2>
+                        <p class="description">NG Earsafe has raised Rs 1.06 crore in a Seed funding round led by Inflection Point Ventures.</p>
+                    </div>
+                  
+</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="media-navigation" style="display:none;">
+        <div class="nav-arrow nav-prev" id="prevBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </div>
+        <div class="nav-arrow nav-next" id="nextBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18l6-6-6-6"/>
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.getElementById('mediaSlider');
+            const sliderWrapper = document.getElementById('mediaSliderWrapper');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            // Mouse drag functionality
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            sliderWrapper.addEventListener('mousedown', (e) => {
+                isDown = true;
+                sliderWrapper.classList.add('active');
+                startX = e.pageX - sliderWrapper.offsetLeft;
+                scrollLeft = sliderWrapper.scrollLeft;
+            });
+
+            sliderWrapper.addEventListener('mouseleave', () => {
+                isDown = false;
+                sliderWrapper.classList.remove('active');
+            });
+
+            sliderWrapper.addEventListener('mouseup', () => {
+                isDown = false;
+                sliderWrapper.classList.remove('active');
+            });
+
+            sliderWrapper.addEventListener('mousemove', (e) => {
+                if(!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - sliderWrapper.offsetLeft;
+                const walk = (x - startX) * 2;
+                sliderWrapper.scrollLeft = scrollLeft - walk;
+            });
+
+            // Mouse wheel scrolling
+            sliderWrapper.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                sliderWrapper.scrollLeft += e.deltaY;
+            });
+
+            // Navigation buttons
+            const cardWidth = slider.querySelector('.media-card').offsetWidth + 20;
+
+            nextBtn.addEventListener('click', () => {
+                sliderWrapper.scrollLeft += cardWidth;
+            });
+
+            prevBtn.addEventListener('click', () => {
+                sliderWrapper.scrollLeft -= cardWidth;
+            });
+
+            // Auto-scrolling
+            let autoScrollInterval;
+            const startAutoScroll = () => {
+                autoScrollInterval = setInterval(() => {
+                    if (sliderWrapper.scrollLeft + sliderWrapper.clientWidth >= slider.scrollWidth) {
+                        sliderWrapper.scrollLeft = 0;
+                    } else {
+                        sliderWrapper.scrollLeft += cardWidth;
+                    }
+                }, 5000);
+            };
+
+            const stopAutoScroll = () => {
+                clearInterval(autoScrollInterval);
+            };
+
+            startAutoScroll();
+
+            sliderWrapper.addEventListener('mouseenter', stopAutoScroll);
+            sliderWrapper.addEventListener('mouseleave', startAutoScroll);
+        });
+    </script>

@@ -1,0 +1,28 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "{{ product.title | escape }}",
+  "image": "{{ product.featured_image | image_url }}",
+  "description": "{{ product.description | strip_html | escape }}",
+  "sku": "{{ product.sku }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "{{ product.vendor | escape }}"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ shop.url }}{{ product.url }}",
+    "priceCurrency": "{{ cart.currency.iso_code }}",
+    "price": "{% if product.compare_at_price > product.price %}{{ product.price | divided_by: 100.0 }}{% else %}{{ product.price | divided_by: 100.0 }}{% endif %}",
+    "availability": "{% if product.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+    "itemCondition": "https://schema.org/NewCondition",
+    "validFrom": "{{ 'now' | date: '%Y-%m-%d' }}",
+    "validThrough": "{% if product.metafields.custom.offer_end_date %}{{ product.metafields.custom.offer_end_date }}{% else %}null{% endif %}",
+    "seller": {
+      "@type": "Organization",
+      "name": "{{ shop.name }}"
+    }
+  }
+}
+</script>

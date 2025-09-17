@@ -1,0 +1,55 @@
+<div class="grid-box">
+  <section class="side-box">
+    <!-- <h1>Box Images</h1>
+    <p>
+      The Little Prince (French: Le Petit Prince), first published in 1943, is a novella and the most famous work of the French aristocrat, writer, poet and pioneering aviator Antoine de Saint-Exupéry (1900–1944).
+    </p> -->
+    <img loading="eager" width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Product11.webp?v=1714653573">
+  </section>
+  <article class="main-box">
+    <div class="parent-box">
+      <div class="child-box">
+<span>
+      The Little Prince 
+    </span>
+         <img loading="eager" width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/cable1_4_8497babb-4c2a-42f1-aa0f-1bdc77c47b7a.webp?v=1714653571">
+        
+      </div>
+      <div class="child-box">
+        <span>
+      The Little Prince 
+    </span>
+        <img loading="eager" width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/cable1_4_ffe42d19-0a2f-4ecb-85fa-de7a748ddeac_2.webp?v=1714653572">
+      </div>
+      <div class="child-box">
+       <span>
+      The Little Prince 
+    </span>
+        <img loading="eager" width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/cable1_4_ffe42d19-0a2f-4ecb-85fa-de7a748ddeac_3.webp?v=1714653572">
+      </div>
+      <div class="child-box">
+     <span>
+      The Little Prince 
+    </span>
+        <img loading="eager" width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/cable1_4_ffe42d19-0a2f-4ecb-85fa-de7a748ddeac_1.webp?v=1714654408">
+      </div>
+    </div>
+  </article>
+</div>
+
+<style>
+.grid-box{display:grid;gap:10px;grid-template-columns:2fr 1fr}
+/* .main-box{background:#F2F2F2} */
+.side-box img{width: 90%;margin: 0 auto;display: block;}  
+.side-box{background:#F2F2F2}
+.main-box,.side-box{border-radius:10px}
+.child-box img{border-radius: 10px;}
+/* @media only screen and (min-width:380px){.grid-box{grid-template-columns:repeat(1,minmax(100px,1fr))}} */
+  @media only screen and (max-width:768px){
+.grid-box{grid-template-columns:repeat(1,minmax(100px,1fr))}
+}
+.parent-box{display:flex;font-size:0;flex-wrap:wrap;margin:-10px 0 0 -10px}
+.child-box{display:inline-block;background:#fff;margin:10px 0 0 10px;flex-grow:1;
+           /* height:100px; */
+           width:calc(100% * (1/2) - 10px - 1px)}
+</style>

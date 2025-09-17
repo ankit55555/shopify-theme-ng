@@ -1,0 +1,118 @@
+<div id="some-box">
+  <article class="row" id="idea-one">
+   
+    <div>
+      <h3>Open Ear Technology</h3>
+      <p>Open-ear technology provides a comfortable and safer alternative to in-ear headphones, eliminating the risk of ear infections and hearing loss from prolonged use. The open design allows for a natural sound experience while ensuring users remain connected to their environment.
+</p>
+      <!-- <a href="#">Link to read more</a> -->
+    </div>
+     <div>
+
+       <video style="width:100%;max-height:100%" autoplay loop muted playsinline ><source src="https://cdn.shopify.com/videos/c/o/v/648901e609694c71bb3d8fdc263d5da3.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+       
+       <!-- <img loading="earger" height="auto" width="auto" src="http://placekitten.com/g/240/210"/> -->
+     </div>
+  </article>
+
+<center>
+  <div class="wrapper">
+  <div class="card">
+    <div class="card-text">
+      <div class="air-con1">
+      </div>
+      <div class="title-total">
+        <div class="title"></div>
+        <h2>Air Conduction Technology</h2>
+        <div class="actions">
+          <a target="_blank" href="https://ngearsafe.com/pages/air-conduction">LEARN MORE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-text">
+      <div class="bone-con1">
+      </div>
+      <div class="title-total">
+        <div class="title"></div>
+        <h2>Bone Conduction Technology</h2>
+        <div class="actions">
+          <a target="_blank" href="https://ngearsafe.com/pages/bone-conduction">LEARN MORE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div></center>
+  
+</div>
+
+<style>
+  video::-webkit-media-controls {
+  display: none;
+}
+
+ #some-box video{clip-path: inset(1px 1px);} 
+  #idea-one h3{color:#fff;margin-bottom: 15px;}
+   #idea-one p{color:#d9d9d9;margin-bottom: 50px;}
+#some-box h1{text-align:center}
+#some-box h3{font-size:26px}
+#some-box a{color:#70bcb8;text-decoration:none;display:block;font-weight:700}
+article.row{width:80%;margin:0 auto;border-bottom: 1px solid #2197ac38;}
+article.row div{vertical-align: middle;width:49.4%;display:inline-block;position:relative;}
+
+#idea-one img,#idea-three img,#idea-two img{position:absolute;bottom:-20px;left:50px}
+@media(max-width:750px){
+article.row div{min-width:300px;width:100%;text-align:center;display:block}
+#some-other-box h3{text-align:center}
+#idea-one img,#idea-three img,#idea-two img{position:relative;margin:auto;left:inherit;bottom:inherit}
+#idea-two{display:-webkit-box;display:-moz-box;display:box;-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical}
+#idea-two div:first-of-type{-webkit-box-ordinal-group:2;-moz-box-ordinal-group:2;box-ordinal-group:2}
+article.row {display: flex;flex-direction: column-reverse;}
+}
+
+
+  .card{background:#dadada;border-radius:4px;box-shadow:0 14px 80px rgba(34,35,58,.5);max-width:400px;display:inline-flex;flex-direction:row;border-radius:10px;position:relative;margin:5px}
+  .card h2{margin:0;padding:0 1rem;font-size: 16px;}
+  .card .title{padding:1rem;text-align:right;color:green;font-weight:700;font-size:12px}
+  .card .desc{padding:.5rem 1rem;font-size:12px}
+  .card .actions{display:grid;grid-template-columns:repeat(1,1fr);align-items:center;padding:1.5rem 1rem}
+  .card svg{width:85px;height:85px;margin:0 auto}
+  .img-avatar{width:80px;height:80px;position:absolute;border-radius:50%;border:6px solid #fff;background-image:linear-gradient(-60deg,#16a085 0,#f4d03f 100%);top:15px;left:85px}
+  .card-text{display:grid;grid-template-columns:2fr 2fr}
+  /* path{fill:white} */
+  .img-portada{width:100%}
+  .air-con1{width:100%;height:100%;border-top-left-radius:10px;border-bottom-left-radius:10px;background-image:url("https://cdn.shopify.com/s/files/1/0804/5762/9975/files/air-con.gif?v=1701719836");background-position:bottom center;background-size:cover}
+  .bone-con1{width:100%;height:100%;border-top-left-radius:10px;border-bottom-left-radius:10px;background-image:url("https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Final.gif?v=1709019972");background-position:bottom center;background-size:cover}
+  .title-total {padding: 16px;}
+  .wrapper {padding-bottom: 50px !important;margin-bottom: 0 !important;}  
+
+  .actions a {
+    letter-spacing: 1px;
+    font-size: 12px;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    background: #00a5b4;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+  
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  var videoElements = document.querySelectorAll('video');
+
+  videoElements.forEach(function(videoElement) {
+    videoElement.controls = false;
+
+    // videoElement.addEventListener('play', function () {
+    //   this.controls = true;
+    // });
+
+    // videoElement.addEventListener('pause', function () {
+    //   this.controls = true;
+    // });
+  });
+});
+</script>

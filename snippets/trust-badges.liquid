@@ -1,0 +1,67 @@
+<style>
+.scrolling-words-container{display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:600;background-color:#fff;padding:1rem 1.5rem;border-radius:0px;box-shadow:0 10px 30px rgba(0,0,0,.08);position:relative;overflow:hidden;width:100%;text-align:center}
+.scrolling-words-container::before{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:linear-gradient(90deg,#ea4335,#4285f4,#34a853,#fbbc04,#ea4335)}
+.static-text{color:#333;white-space:nowrap;display:inline-block;margin-right:.5rem}
+.scrolling-words-box{height:3rem;overflow:hidden;position:relative;display:inline-block;vertical-align:top}
+.scrolling-words-box ul{padding:0;margin:0;position:relative;animation:scroll 8s linear infinite;text-align:left}
+.scrolling-words-box:hover ul{animation-play-state:paused}
+.scrolling-words-box ul li{display:flex;align-items:center;justify-content:left;height:3rem;list-style:none}
+.scrolling-words-box ul li img{width:28px;height:28px;margin-right:12px;
+/* filter:drop-shadow(0 2px 3px rgba(0, 0, 0, .1)); */
+/* animation:iconPulse 3s infinite */
+}
+.highlight{display:inline-block;padding:0 5px;border-radius:4px;font-weight:700}
+@keyframes iconPulse{
+0%{filter:drop-shadow(0 2px 3px rgba(0, 0, 0, .1))}
+50%{filter:drop-shadow(0 4px 8px rgba(0, 0, 0, .2))}
+100%{filter:drop-shadow(0 2px 3px rgba(0, 0, 0, .1))}
+}
+@keyframes scroll{
+0%,15%{transform:translateY(0)}
+30%,45%{transform:translateY(-3rem)}
+60%,75%{transform:translateY(-6rem)}
+100%{transform:translateY(0)}
+}
+@media (max-width:768px){
+.scrolling-words-container{padding:1.25rem 1.5rem;font-size:1.2rem}
+.static-text{margin-right:.3rem}
+.scrolling-words-box{height:2.5rem}
+.scrolling-words-box ul li{height:2.5rem;flex-wrap:nowrap;white-space:nowrap}
+.scrolling-words-box ul li img{width:22px;height:22px;margin-right:8px}
+@keyframes scroll{
+0%,15%{transform:translateY(0)}
+30%,45%{transform:translateY(-2.5rem)}
+60%,75%{transform:translateY(-5rem)}
+100%{transform:translateY(0)}
+}
+}
+@media (max-width:480px){
+.scrolling-words-container{padding:1rem .8rem;font-size:1.5rem}
+.scrolling-words-box{height:2.2rem}
+.scrolling-words-box ul li{height:2.2rem}
+.scrolling-words-box ul li img{width:18px;height:18px;margin-right:6px}
+.highlight{padding:0 3px}
+@keyframes scroll{
+0%,15%{transform:translateY(0)}
+30%,45%{transform:translateY(-2.2rem)}
+60%,75%{transform:translateY(-4.4rem)}
+100%{transform:translateY(0)}
+}
+}
+</style>
+<div class="scrolling-words-container">
+    <div class="static-text">We're</div>
+    <div class="scrolling-words-box">
+        <ul>
+            <li style="color: #567776;">
+                <img width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Trust.svg?v=1740583427" alt="Trusted Icon"> Trusted by <span class="highlight">100k+</span> customers
+            </li>
+            <li style="color: #918f68">
+                <img width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Store.svg?v=1740583427" alt="Available Icon"> Available in <span class="highlight">200+</span> stores
+            </li>
+            <li style="color: #9b6e69">
+                <img width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Ear_protect.svg?v=1740583427" alt="Safe Hearing Icon"> Protecting ears for <span class="highlight">5+</span> years
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,100 @@
+<div class="text-gradient-scrolling">
+      <div class="effect-area">
+        <p>
+          <span>With our open ear buds, your ears will thank you for the perfect mix of safety and sound—because you deserve both.</span>
+        </p>
+      </div>
+    </div>
+
+  <style>
+
+.effect-area p {
+  resize: both;
+    max-width: 100vw;
+    overflow: hidden;
+    padding: 10ch;
+    margin: 0;
+    font-weight: 600;
+    /* font-size: 0rem; */
+    width: 80%;
+  text-align:center;
+}
+
+.effect-area p > span {
+	outline-color: hsl(10 80% 50%);
+	outline-offset: 1ch;
+	font-size: clamp(3rem, 3vw + 0rem, 10rem);
+  color: hsl(0 0% 100% / 0.1) !important;
+  text-decoration: none;
+  background-image: /* First one is the highlight */ linear-gradient(90deg, #000 calc(100% - 50ch), #000 calc(100% - 8ch)), linear-gradient(90deg, hsl(0 0% 50%), hsl(0 0% 50%)), linear-gradient(90deg, #B8B8B8, #B8B8B8);
+  background-size: 240vmax 1lh, 240vmax 1lh, 100% 1lh;
+  background-repeat: no-repeat;
+  background-position-x: 0;
+  background-position-y: 100%;
+  background-clip: text;
+  color: hsl(0 0% 100%);
+}
+
+.text-gradient-scrolling {
+  height: 200vh;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.effect-area {
+position: -webkit-sticky;
+position: -moz-sticky;
+position: -ms-sticky;
+position: -o-sticky;
+  position: sticky;
+  top: 0;
+	height: 100vh;
+	width: 100vw;
+  display: grid;
+  place-items: center;
+
+}
+
+
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .text-gradient-scrolling {
+      view-timeline-name: --section;
+    }
+    
+    .effect-area p > span {
+      background-position-x:
+        calc(240vmax * -1),
+        calc(240vmax * -1),
+        0;
+      color: transparent;
+      animation-name: fill-up, color-in;
+      animation-fill-mode: both;
+      animation-timing-function: linear;
+    	animation-timeline: --section;
+    	animation-range: entry 100% cover 50%, cover 50% exit 0%;
+    }
+
+    @keyframes fill-up {
+    	to { background-position-x: 0, 0, 0; }
+    }
+
+    @keyframes color-in {
+    	to { color: hsl(0 0% 100%); }
+    }
+  }
+}
+
+@media only screen and (max-width:768px){
+  .effect-area p {
+    width: 100%;
+    padding: 2ch;
+}
+
+  .effect-area p > span {
+    font-size:clamp(3rem, 3vw + 1rem, 10rem);
+  }
+  
+}
+    
+</style>  
+

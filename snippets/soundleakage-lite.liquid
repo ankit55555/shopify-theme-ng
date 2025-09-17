@@ -1,0 +1,138 @@
+
+ <div id="videoWrapper_soundLeakage">
+  <video id="desktop_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/videoframe_5112.png?v=1733505840" playsinline autoplay muted loop>
+		<source src="https://cdn.shopify.com/videos/c/o/v/d32b03993dec438cb24070b40a3a4dd7.mp4" type="video/mp4">
+	</video>
+
+    <video id="mobile_vid" poster="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/videoframe_0_15.png?v=1733505840" playsinline autoplay muted loop>
+		<source src="https://cdn.shopify.com/videos/c/o/v/a857542fd8ca4a80adbccdf29987f956.mp4" type="video/mp4">
+	</video>
+  
+   <div class="caption_soundLeakage">
+
+  <div class="contents_soundLeakage">
+<h2 >No sound leakage</h2>
+     <p>
+    Preserve your personal audio space with the NG EarSafe Lite. The unique design prevents sound from leaking out, so you can immerse yourself in music or podcasts without disturbing those around you. This feature is especially useful in shared spaces like offices or public transport, offering a private listening experience without sacrificing the quality of your audio.
+     </p>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<style>
+  #videoWrapper_soundLeakage {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+  .caption_soundLeakage .contents_soundLeakage {
+    position: absolute;
+    right: 70px;
+        top: 70px;
+}
+
+  .caption_soundLeakage .contents_soundLeakage p{
+  width: 400px;
+    text-align: right;
+    color: #d5d5d5;
+}  
+
+ .caption_soundLeakage .contents_soundLeakage h2{color: #fff;
+    font-size: 3rem;
+ text-align: right;
+    margin-bottom: 20px;                             
+}
+
+
+ 
+
+#videoWrapper_soundLeakage video {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover; 
+  z-index: -100;
+
+  top: 50%;
+  left: 50%;
+  
+    transform: translateX(-40%) translateY(-50%);
+}
+
+#videoWrapper_soundLeakage .caption_soundLeakage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+
+  
+}
+
+#videoWrapper_soundLeakage .caption_soundLeakage .contents_soundLeakage {
+  width:33%;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  
+}
+
+
+#mobile_vid{display:none;}
+
+  @media only screen and (max-width: 768px) {
+  #desktop_vid{display:none;}
+    #mobile_vid{display:block;}
+
+    .caption_soundLeakage .contents_soundLeakage h2 {
+        color: #fff;
+        font-size: 3rem;
+        text-align: center;
+        padding: 20px;
+      margin-bottom: 0px;
+    }
+ 
+
+    #videoWrapper_soundLeakage video {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    z-index: -100;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-55%);
+}
+
+     .caption_soundLeakage .contents_soundLeakage {
+        position: absolute;
+        right: unset;
+      
+        top: 30px;
+    }
+    .caption_soundLeakage .contents_soundLeakage p {
+        width: 100%;
+        text-align: center;
+        color: #d5d5d5;
+        font-size: 13px;
+    }
+    #videoWrapper_soundLeakage .caption_soundLeakage .contents_soundLeakage {
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+}
+    
+  }
+  
+</style>
+ 

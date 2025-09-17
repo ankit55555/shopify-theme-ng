@@ -1,0 +1,92 @@
+
+
+
+
+<section class="main-container">
+    <div class="space-holder">
+      <div class="sticky">
+        <div class="horizontal">
+          <section role="feed" class="cards">
+            <article class="sample-card">
+         
+                
+                <div class="image-benefit">
+                  <img loading="earger" height="auto" width="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/Why_Pro-All_caps-01.svg?v=1731422611">
+                </div>
+
+            </article>
+
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    .main-container{
+      
+        position:relative;width:100%;min-height:0vh}
+  .space-holder{position:relative;width:100%}
+  .sticky{position:sticky;top:0;height:100vh;width:100%;overflow-x:hidden}
+  .horizontal{position:absolute;height:100vh;will-change:transform}
+  .cards{position:relative;height:100%;
+  
+    display:flex;flex-flow:row nowrap;justify-content:flex-start;align-items:center}
+  .sample-card{position:relative;
+ 
+    flex-shrink:0;
+   
+}
+  .cont-benefit{display:flex;align-items:center;justify-content:center}
+  .image-benefit{
+  
+  margin-top:85px}
+  .image-benefit img{border-radius: 50px 20px;width: 150vw;
+   
+}
+  .text-benefit{margin-top: 100px;font-size:20px;
+  
+  }
+  .text-benefit h2{font-size: 25px !important;margin-bottom:20px;color:#ffffff;text-transform:capitalize}
+  .text-benefit p{color:#f5f5f5;padding-right: 100px;font-size: 16px !important}  
+  @media only screen and (max-width:768px){.cards {padding:0;} 
+
+.cont-benefit {display:block;}
+  .text-benefit p {font-size: 14px !important;padding:0;} .image-benefit{width:unset;margin-top: 20px;} .text-benefit h2{font-size: 20px !important;
+  margin-bottom: 15px;color: #ffffff;text-transform: capitalize;} 
+.image-benefit img{
+
+width: 400vw !important;
+}
+   .sticky{height:100vh;top: 20px !important;} 
+  .cards{align-items:center;height:100%;}
+  .text-benefit {
+      padding: 30px 100px !important;
+      text-align: center;
+        margin-top: unset !important;
+        margin-left: -60px;
+  }                                          
+  }  
+  </style>
+  
+        <script>
+  
+          const spaceHolder = document.querySelector('.space-holder');
+          const horizontal = document.querySelector('.horizontal');
+          spaceHolder.style.height = `${calcDynamicHeight(horizontal)}px`;
+          
+          function calcDynamicHeight(ref) {
+            const vw = window.innerWidth;
+            const vh = window.innerHeight;
+            const objectWidth = ref.scrollWidth;
+            return objectWidth - vw + vh + 0; 
+          }
+          window.addEventListener('scroll', () => {
+            const sticky = document.querySelector('.sticky');
+            horizontal.style.transform = `translateX(-${sticky.offsetTop}px)`;
+          });       
+          window.addEventListener('resize', () => {
+            spaceHolder.style.height = `${calcDynamicHeight(horizontal)}px`;
+          });
+          
+          </script> 

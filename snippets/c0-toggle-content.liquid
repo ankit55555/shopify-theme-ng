@@ -1,0 +1,34 @@
+<p id="txt-justify"><strong>Open ear headphones,</strong> are a unique type of headphones that don't cover or block the ear canal.  An air conduction earphone operates by transmitting sound through vibrations in the air. Bone Conduction rest on the cheekbones in front of the ears, sending sound vibrations through the bones of the skull directly to the inner ear. This bypasses the eardrum, which is how traditional headphones deliver sound. <span id="dots"></span>
+<span id="more">
+One of the key benefits of open ear headphones is safety. Since they don't block the ear canal, users are more aware of their surroundings, making them popular among runners, cyclists, and others who need to stay alert while listening to music or taking calls.
+These headphones use Bluetooth technology to wirelessly connect to devices like smartphones or tablets, allowing users to enjoy music, podcasts, or calls without the hassle of cords.
+Open ear headphones are especially popular among athletes and outdoor enthusiasts. They provide a comfortable and secure fit without the risk of falling out during physical activities. They also allow users to hear ambient sounds like traffic or conversations, enhancing situational awareness and safety.
+Explore our range of innovative audio solutions at NG EarSafe. With four distinct product options, including one pair of bone conduction headphones and three pairs of air conduction headphones, there's a perfect fit for every lifestyle and need.
+In summary, open ear headphones offer a safe and comfortable listening experience, making them a popular choice for those who prioritize both audio quality and situational awareness.</span></p>
+<button onclick="myFunction()" id="myBtn">Read more</button>
+
+
+
+
+<style>
+#more {display: none;}
+#txt-justify{text-align:justify;}  
+</style>
+
+<script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
