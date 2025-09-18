@@ -119,7 +119,7 @@
 {% endunless %}
 
   <style>
-.banner-container{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to right,#a8e0ff,#7fd8f8);border-radius:12px;padding:15px 20px;max-width:350px;box-shadow:0 4px 8px rgba(0,0,0,.1);font-family:Arial,sans-serif;overflow:hidden}
+.banner-container{display: none;justify-content:space-between;align-items:center;background:linear-gradient(to right,#a8e0ff,#7fd8f8);border-radius:12px;padding:15px 20px;max-width:350px;box-shadow:0 4px 8px rgba(0,0,0,.1);font-family:Arial,sans-serif;overflow:hidden}
 .banner-text{color: #333;font-size: 14px;line-height: 1.4;flex: 1;margin-right: 10px;font-weight: 700;}
 .flip-container{perspective:1000px;width:120px;height:40px}
 .flipper{width:100%;height:100%;position:relative;transform-style:preserve-3d;animation:flip 6s infinite}
@@ -137,7 +137,7 @@
 }
   </style>
  {% unless product.handle == 'ng-ear-safe-ear-plugs-1-0-waterproof-noise-reduction' %}
-  <div class="banner-container">
+  {% comment %} <div class="banner-container">
     <div class="banner-text">
       Flat ₹200 instant discount<br>
       on prepaid orders
@@ -148,7 +148,7 @@
         <div class="back">₹200 OFF</div>
       </div>
     </div>
-  </div>
+  </div> {% endcomment %}
 {% endunless %}
 
 
