@@ -24,7 +24,7 @@
     <div class="buy-button-wrapper-m">
     <div class="buy-text-m">Buy now at</div>
     <div class="buy-button-m">
-      <a class="buyNowLink flipkartLink" href="#" target="_blank" onclick="trackBuyNowClick('flipkart')">
+      <a class="buyNowLink flipkartLink" href="https://www.flipkart.com/ng-earplugs-waterproof-noise-reduction-25-db-swimming-sleeping-travel-ear-plug/p/itma0160f3d28f11?pid=ENPHEW9FFPBGEBYZ&lid=LSTENPHEW9FFPBGEBYZKPSZ5R&marketplace=FLIPKART&q=NG+EarPlug&store=abc%2Fbyq%2Fp7q&srno=s_1_3&otracker=search&otracker1=search&fm=Search&iid=8999e2e7-db33-4fb4-a76a-079537462a3e.ENPHEW9FFPBGEBYZ.SEARCH&ppt=sp&ppn=sp&ssid=51qcmglmsw0000001758260954272&qH=9eaf909cce3da1b2" target="_blank" onclick="trackBuyNowClick('flipkart')">
         <img width="auto" height="auto" src="https://cdn.freebiesupply.com/logos/large/2x/flipkart-logo-png-transparent.png" alt="Flipkart logo" class="logo-m">
       </a>
       <span class="arrow-m">›</span>
@@ -82,6 +82,10 @@
             flipkartUrl = "#";
             productName = "ng-earsafe-comm2point0";
         }
+         // Default Amazon URL fallback
+      if (!amazonUrl) {
+        amazonUrl = 'https://www.amazon.in/dp/B0FQP6Q6KW/ref=sr_1_5?crid=137QOKWUQ0ECY&dib=eyJ2IjoiMSJ9.sVKbyAXf9u4MTVKOp-n1elnH8a2Ktv_bA7IpSWxu4GHRzkjGMFB2WRKNcQwqGX2AUGhMcyK7I1Lft41vjwy6BiUIcjFy9jCj5ZfRQ6HlFOMUJ9rmZ4ZSDLqNE5zw1ypDeVUL1iMRwzYXeOTyVCod2GHkeqBtB4r-qGjhMath-QhIFzfSBnAAkT1AUIo7I3yTRlDib1SyRCY8CwW3Uad3P-mUD0-srZioa_ILfyDFaEPLHMkQq3c68sX71ljK0shSzdazPAQtobqR7dTJbuIo5MIurD5njQeJHUD7EmQpUoY.PATgTpzaKgWb4k8O-Db1aT3WebhrbFCnx8Bl3rYx69w&dib_tag=se&keywords=ng+earplugs&nsdOptOutParam=true&qid=1758260900&sprefix=%2Caps%2C248&sr=8-5';
+      }
 
         // Set URLs for both stores
         if (amazonUrl) {
@@ -92,6 +96,11 @@
             });
         }
         
+        
+      // Default Flipkart URL fallback
+      if (!flipkartUrl || flipkartUrl === '#') {
+        flipkartUrl = 'https://www.flipkart.com/ng-earplugs-waterproof-noise-reduction-25-db-swimming-sleeping-travel-ear-plug/p/itma0160f3d28f11?pid=ENPHEW9FFPBGEBYZ&lid=LSTENPHEW9FFPBGEBYZKPSZ5R&marketplace=FLIPKART&q=NG+EarPlug&store=abc%2Fbyq%2Fp7q&srno=s_1_3&otracker=search&otracker1=search&fm=Search&iid=8999e2e7-db33-4fb4-a76a-079537462a3e.ENPHEW9FFPBGEBYZ.SEARCH&ppt=sp&ppn=sp&ssid=51qcmglmsw0000001758260954272&qH=9eaf909cce3da1b2';
+      }
         if (flipkartUrl) {
             document.querySelectorAll(".flipkartLink").forEach(link => {
                 link.href = flipkartUrl;
