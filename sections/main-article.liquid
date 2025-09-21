@@ -62,6 +62,14 @@
                     {%- when 'title' -%}
                         <div class="t4s-article-title" timeline hdt-reveal="slide-in">
                             {% if bk_stts.show_title_first %}<h1>{{ article_title }}</h1>{% endif %}
+                            {% if bk_stts.show_follow %}
+                                {{ 'icon-social.css' | asset_url | stylesheet_tag }}
+                                <div class="t4s-article-follow t4s-text-start" style="margin:10px 0 15px; --cl:{{ bk_stts.follow_icon_cl }}; --bg-cl:{{ bk_stts.follow_bg_cl }}; --bd-radius:{{ bk_stts.follow_bd_radius }}px;">
+                                    {% if bk_stts.follow_label != blank %}<span class="t4s-dib" style="margin-right:10px; font-weight:600;">{{ bk_stts.follow_label }}</span>{% endif %}
+                                    {%- assign follow_social = true -%}
+                                    {%- render 'social_sharing', style: bk_stts.follow_social_style, use_color_set: bk_stts.follow_use_color_set, size: bk_stts.follow_social_size, space_h_item: 15, space_h_item_mb: 10, space_v_item: 0, space_v_item_mb: 0, follow_social: follow_social -%}
+                                </div>
+                            {% endif %}
                             {% if bk_stts.show_au or bk_stts.show_dt or bk_stts.show_cm %}
                                 <ul style="display: inline-block;">
                                     {%- if bk_stts.show_au -%}<li><span>{{ 'blogs.article.by' | t }} {{ article.author | replace_first: 'ad clnt', 'admin' }}</span></li>{%- endif -%}
@@ -334,7 +342,8 @@
         z-index: 5;
         margin-bottom: 10px;
     }
-    .t4s-main-article .t4s-line-space{margin: 55px 0;border-bottom: 1px solid var(--border-color);}
+    .t4s-main-article .t4s-line-space{margin: 55px 0;border-bottom: 1px solid var(--border-color);} 
+    .t4s-article-title .t4s-article-follow .t4s-socials{justify-content:flex-start;}
     .t4s-comments-heading{font-size:24px;margin-bottom:30px;}
     .t4s-comments-title{font-size:16px;text-transform:uppercase;margin-bottom:5px;}
     .t4s-comments-notes{margin-bottom:30px;}
@@ -592,6 +601,70 @@
                 },
                 {
                     "type": "checkbox",
+                    "id": "show_follow",
+                    "label": "Show follow icons between title and date",
+                    "default": false
+                },
+                {
+                    "type": "text",
+                    "id": "follow_label",
+                    "label": "Follow label",
+                    "default": "Follow us:"
+                },
+                { "type": "header", "content": "Follow icons styling" },
+                {
+                    "type": "select",
+                    "id": "follow_social_style",
+                    "label": "Icons style",
+                    "default": "2",
+                    "options": [
+                        { "value": "1", "label": "Style 1" },
+                        { "value": "2", "label": "Style 2 (Has background)" },
+                        { "value": "3", "label": "Style 3 (Has border)" },
+                        { "value": "4", "label": "Style 4 (Border & background)" }
+                    ]
+                },
+                {
+                    "type": "select",
+                    "id": "follow_social_size",
+                    "label": "Icons size",
+                    "default": "medium",
+                    "options": [
+                        { "value": "small", "label": "Small" },
+                        { "value": "medium", "label": "Medium" },
+                        { "value": "large", "label": "Large" }
+                    ]
+                },
+                {
+                    "type": "checkbox",
+                    "id": "follow_use_color_set",
+                    "label": "Use custom colors",
+                    "default": true
+                },
+                {
+                    "type": "color",
+                    "id": "follow_icon_cl",
+                    "label": "Icon color",
+                    "default": "#25313c"
+                },
+                {
+                    "type": "color",
+                    "id": "follow_bg_cl",
+                    "label": "Icon background",
+                    "default": "#ffffff"
+                },
+                {
+                    "type": "range",
+                    "id": "follow_bd_radius",
+                    "label": "Icon border radius",
+                    "unit": "px",
+                    "min": 0,
+                    "max": 30,
+                    "default": 12,
+                    "step": 1
+                },
+                {
+                    "type": "checkbox",
                     "id": "show_au",
                     "label": "Show author",
                     "default": true
@@ -606,8 +679,7 @@
                     "type": "checkbox",
                     "id": "show_cm",
                     "label": "Show comment",
-                    "default": false,
-                    "default": true
+                    "default": false
                 }
             ]
         },
