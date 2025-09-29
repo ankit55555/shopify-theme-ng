@@ -1,0 +1,58 @@
+<div id="dushera-offer-{{ block_id }}" class="t4s-pr__dushera-offer" {{ shopify_attributes }}>
+  <div class="t4s-dushera-offer__inner t4s-flex t4s-align-center t4s-flex-wrap" style="gap:8px">
+    <span class="t4s-dushera-offer__title t4s-fwm">{{ title | default: 'Dushera offer ends in' }}</span>
+    <div id="dushera-offer-time-{{ block_id }}" class="t4s-dushera-offer__time" data-target="{{ target_datetime | escape }}" data-fallback="{{ time_text | default: '2 days 2 hrs left' }}" data-ended="{{ ended_text | default: 'Offer ended' }}">
+      <span class="t4s-dushera-offer__unit" aria-label="Days"><span class="t4s-dushera-offer__num" data-part="d">0</span><span class="t4s-dushera-offer__lbl">days</span></span>
+      <span class="t4s-dushera-offer__unit" aria-label="Hours"><span class="t4s-dushera-offer__num" data-part="h">0</span><span class="t4s-dushera-offer__lbl">hours</span></span>
+      <span class="t4s-dushera-offer__unit" aria-label="Minutes"><span class="t4s-dushera-offer__num" data-part="m">0</span><span class="t4s-dushera-offer__lbl">minutes</span></span>
+      <span class="t4s-dushera-offer__unit" aria-label="Seconds"><span class="t4s-dushera-offer__num" data-part="s">0</span><span class="t4s-dushera-offer__lbl">seconds</span></span>
+    </div>
+  </div>
+</div>
+<style>
+  #dushera-offer-{{ block_id }} .t4s-dushera-offer__time{display:inline-flex;gap:6px;align-items:center;background:#fff4e0;border:1px dashed #ffa321;padding:6px 10px;border-radius:999px}
+  #dushera-offer-{{ block_id }} .t4s-dushera-offer__unit{display:inline-flex;gap:6px;align-items:baseline;background:#ffe8cc;color:#c45500;padding:4px 8px;border-radius:6px}
+  #dushera-offer-{{ block_id }} .t4s-dushera-offer__num{font-weight:700;font-size:14px;line-height:1}
+  #dushera-offer-{{ block_id }} .t4s-dushera-offer__lbl{font-size:12px;opacity:.95}
+  @media(min-width:768px){
+    #dushera-offer-{{ block_id }} .t4s-dushera-offer__num{font-size:16px}
+    #dushera-offer-{{ block_id }} .t4s-dushera-offer__lbl{font-size:13px}
+  }
+</style>
+<script>
+  (function(){
+    var el = document.getElementById('dushera-offer-time-{{ block_id }}');
+    if(!el){ return; }
+    var targetStr = el.getAttribute('data-target');
+    var endedText = el.getAttribute('data-ended') || 'Offer ended';
+    if(!targetStr){ return; }
+    function parseLocal(dateTimeStr){
+      var m = (dateTimeStr||'').match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})(?::(\d{2}))?$/);
+      if(!m){ return null; }
+      return new Date(parseInt(m[1],10), parseInt(m[2],10)-1, parseInt(m[3],10), parseInt(m[4],10), parseInt(m[5],10), m[6]?parseInt(m[6],10):0);
+    }
+    var target = parseLocal(targetStr);
+    if(!target){ return; }
+    function update(){
+      var now = new Date();
+      var diff = target - now;
+      if(diff <= 0){ el.innerHTML = '<span>'+endedText+'</span>'; clearInterval(timer); return; }
+      var sec = Math.floor(diff/1000);
+      var days = Math.floor(sec/86400); sec -= days*86400;
+      var hrs = Math.floor(sec/3600); sec -= hrs*3600;
+      var mins = Math.floor(sec/60); sec -= mins*60;
+      var secs = sec;
+      var pad = function(n){ return n<10 ? '0'+n : ''+n; };
+      var dEl = el.querySelector('[data-part="d"]');
+      var hEl = el.querySelector('[data-part="h"]');
+      var mEl = el.querySelector('[data-part="m"]');
+      var sEl = el.querySelector('[data-part="s"]');
+      if(dEl){ dEl.textContent = days; }
+      if(hEl){ hEl.textContent = pad(hrs); }
+      if(mEl){ mEl.textContent = pad(mins); }
+      if(sEl){ sEl.textContent = pad(secs); }
+    }
+    update();
+    var timer = setInterval(update, 1000);
+  })();
+</script>

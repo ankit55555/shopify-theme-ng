@@ -748,6 +748,9 @@ endif -%}
                   {%- when 'text' -%}{% if bk_stts.text == blank %}{% continue %}{% endif -%}
                   <div class="t4s-richtext_{{ bk_id }} t4s-pr__richtext t4s-rte" {{ block.shopify_attributes }}>{{ bk_stts.text }}</div>
 
+                {%- when 'dushera_offer_timer' -%}
+                  {%- render 'dushera-offer-timer', title: bk_stts.title_text, time_text: bk_stts.time_text, target_datetime: bk_stts.target_datetime, ended_text: bk_stts.ended_text, block_id: bk_id, shopify_attributes: block.shopify_attributes -%}
+
                 {%- when 'custom_liquid' -%}
                   <div class="t4s-liquid_{{ bk_id }} t4s-pr__custom-liquid t4s-rte" {{ block.shopify_attributes }}>{{ bk_stts.custom_liquid }}</div>
 
@@ -4399,6 +4402,37 @@ endif -%}
           "id": "product_based",
           "label": "Product list",
           "info": "Maximum choose: 50 products"
+        }
+      ]
+    },
+    {
+      "type": "dushera_offer_timer",
+      "name": "Dushera Offer Timer",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title_text",
+          "label": "Title",
+          "default": "Dushera offer ends in"
+        },
+        {
+          "type": "text",
+          "id": "time_text",
+          "label": "Time text",
+          "default": "2 days 2 hrs left"
+        },
+        {
+          "type": "text",
+          "id": "target_datetime",
+          "label": "Target date/time (YYYY-MM-DD HH:MM)",
+          "info": "Local time of your store. Example: 2025-10-31 23:59"
+        },
+        {
+          "type": "text",
+          "id": "ended_text",
+          "label": "Ended text",
+          "default": "Offer ended"
         }
       ]
     }
