@@ -152,6 +152,10 @@
             "bg_cl": "#000000"
           }
         },
+        "bundler_bundler_target_element_eAtgJ9": {
+          "type": "shopify://apps/bundler/blocks/bundler-target-element/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
+          "settings": {}
+        },
         "form": {
           "type": "form",
           "settings": {
@@ -324,6 +328,7 @@
         "dushera_offer_timer_tNBJT3",
         "custom_liquid_N3PtUB",
         "countdown_QA6E8T",
+        "bundler_bundler_target_element_eAtgJ9",
         "form",
         "pareto_order_limit_app_block_ajBT6X",
         "dc23d79a-673c-43c9-9b8c-bb7243be8cfc",

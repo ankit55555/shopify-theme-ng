@@ -135,6 +135,10 @@
             "ended_text": "Offer ended"
           }
         },
+        "bundler_bundler_target_element_gewktp": {
+          "type": "shopify://apps/bundler/blocks/bundler-target-element/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
+          "settings": {}
+        },
         "custom_liquid_iYkKAT": {
           "type": "custom_liquid",
           "settings": {
@@ -353,6 +357,7 @@
         "price_review",
         "custom_liquid_TihUAe",
         "dushera_offer_timer_JppFzd",
+        "bundler_bundler_target_element_gewktp",
         "custom_liquid_iYkKAT",
         "countdown_QA6E8T",
         "text_F3f74q",
