@@ -156,6 +156,10 @@
           "type": "shopify://apps/bundler/blocks/bundler-target-element/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
           "settings": {}
         },
+        "barn2_bundles_bulk_discounts_barn2_bundles_app_block_zXAb3b": {
+          "type": "shopify://apps/barn2-bundles-bulk-discounts/blocks/barn2-bundles-app-block/9093802f-ebea-4e54-8d68-a9e2eaad7180",
+          "settings": {}
+        },
         "form": {
           "type": "form",
           "settings": {
@@ -329,6 +333,7 @@
         "custom_liquid_N3PtUB",
         "countdown_QA6E8T",
         "bundler_bundler_target_element_eAtgJ9",
+        "barn2_bundles_bulk_discounts_barn2_bundles_app_block_zXAb3b",
         "form",
         "pareto_order_limit_app_block_ajBT6X",
         "dc23d79a-673c-43c9-9b8c-bb7243be8cfc",
