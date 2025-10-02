@@ -2105,6 +2105,7 @@
             "type": "product",
             "settings": {
               "link_product": "shopify://products/ng-earsafe-pro-open-ear-bone-conduction-headphones",
+              "image": "shopify://shop_images/Pro-back-Listing-image-1.jpg",
               "title": "NG EarSafe Pro Open Ear Bone Conduction Headphones",
               "pr_price": 4999,
               "desc": "",
@@ -2116,6 +2117,7 @@
             "type": "product",
             "settings": {
               "link_product": "shopify://products/ng-earsafe-pro-mini-open-ear-bone-conduction-headphones-wireless",
+              "image": "shopify://shop_images/Black_Pro_Mini_Listing_image_1.webp",
               "title": "NG EarSafe Pro Mini Open Ear Bone Conduction Headphones",
               "pr_price": 3999,
               "desc": "",
