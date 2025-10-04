@@ -138,7 +138,7 @@
         "custom_liquid_rDQaib": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{% render 'offercard-earsafe' %}"
+            "custom_liquid": "{% render 'offer-card-earsafe-ng-lite' %}"
           }
         },
         "countdown_QA6E8T": {
