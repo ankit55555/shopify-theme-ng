@@ -126,15 +126,6 @@
             "custom_liquid": "{% render 'exchange-sale' %}"
           }
         },
-        "dushera_offer_timer_76PiHk": {
-          "type": "dushera_offer_timer",
-          "settings": {
-            "title_text": "Dushera offer ends in",
-            "time_text": "2 days 2 hrs left",
-            "target_datetime": "2025-10-05 23:55",
-            "ended_text": "Offer ended"
-          }
-        },
         "custom_liquid_rDQaib": {
           "type": "custom_liquid",
           "settings": {
@@ -349,7 +340,6 @@
         "bold_discounts_the_sales_app_sale_clock_WPhG76",
         "price_review",
         "custom_liquid_6zXh6J",
-        "dushera_offer_timer_76PiHk",
         "custom_liquid_rDQaib",
         "countdown_QA6E8T",
         "form",
