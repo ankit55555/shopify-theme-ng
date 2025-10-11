@@ -181,6 +181,10 @@ src="https://www.facebook.com/tr?id=1434102801337892&ev=PageView&noscript=1"
 
  {% if collection.url == '/collections/all' %}
 <meta name="robots" content="noindex,nofollow">
+{% endif %}
+
+{% if template contains 'blog' and request.query.page or request.path contains '/blogs/' and request.query.page %}
+  <meta name="robots" content="noindex, follow">
 {% endif %} 
 
 {% if collection.url == '/collections/all' %}
