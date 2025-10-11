@@ -183,7 +183,7 @@ src="https://www.facebook.com/tr?id=1434102801337892&ev=PageView&noscript=1"
 <meta name="robots" content="noindex,nofollow">
 {% endif %}
 
-{% if template contains 'blog' and request.query.page or request.path contains '/blogs/' and request.query.page %}
+{% if template contains 'blog' and request.query.page or request.path contains '/blogs/' and request.query.page or request.path == '/pages/authors' %}
   <meta name="robots" content="noindex, follow">
 {% endif %} 
 
