@@ -2035,6 +2035,38 @@
         "padding_top": 64,
         "padding_bottom": 64
       }
+    },
+    "ng_insights_trends_3xrAU4": {
+      "type": "ng-insights-trends",
+      "name": "NG Insights & Trends",
+      "settings": {
+        "heading": "Insights & Trends",
+        "subheading": "The Future of Open Ear. This is just a dummy copy.",
+        "blog": "earplugs",
+        "article_limit": 6,
+        "slides_desktop": 2,
+        "slides_mobile": 1,
+        "show_arrows": true,
+        "show_dots": false,
+        "autoplay": false,
+        "autoplay_interval": 5,
+        "loop": true,
+        "gap": 24,
+        "show_read_time": true,
+        "show_date": true,
+        "view_all_button": true,
+        "view_all_label": "VIEW ALL",
+        "view_all_link": "",
+        "bg_color": "#0f0f0f",
+        "heading_color": "#eaeaea",
+        "text_color": "#eaeaea",
+        "muted_color": "#9e9e9e",
+        "accent_color": "#E4B44A",
+        "card_bg": "#1a1a1a",
+        "card_text": "#eaeaea",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
     }
   },
   "order": [
@@ -2061,6 +2093,7 @@
     "accordion_wWymTR",
     "image_text_ha3Vhx",
     "custom_html_d9mBdG",
-    "ng_why_earsafe_nDa6AL"
+    "ng_why_earsafe_nDa6AL",
+    "ng_insights_trends_3xrAU4"
   ]
 }
