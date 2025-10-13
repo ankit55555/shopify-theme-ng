@@ -1244,7 +1244,7 @@
     "68aa9a69-864f-4a21-a7b8-def3b0741000": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{% render 'open-earhome' %}",
+        "custom_liquid": "{% render 'open-earhome-new' %}",
         "layout": "t4s-container-fluid",
         "cl_bg": "#181718",
         "cl_bg_gradient": "",
