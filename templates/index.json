@@ -1983,6 +1983,7 @@
           "type": "feature",
           "settings": {
             "title": "Connectivity",
+            "image": "shopify://shop_images/Connecticity_Why_NG_earsafe.webp",
             "caption": "Latency Free Bluetooth Connectivity"
           }
         },
