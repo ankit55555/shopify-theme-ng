@@ -1469,26 +1469,6 @@
       ],
       "settings": {}
     },
-    "5f09b44e-b1f4-44d1-9d77-c1a64563b690": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "custom_css": [
-        ".half-color-box {margin-left: 60px;}",
-        "@media only screen and (max-width: 768px) {.half-color-box {margin-left: 0px; }}"
-      ],
-      "settings": {
-        "custom_liquid": "{% render 'cust-review' %}\n{% if product.url == 'https://ngearsafe.com/' %}\n {% render 'video-popup'  %}\n{% endif %}",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,0px,",
-        "pd": "50px,,30px",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,0px,",
-        "pd_mb": ""
-      }
-    },
     "e680ed45-4f33-4868-b30a-8f5f0c16e2a0": {
       "type": "blog-post",
       "settings": {
@@ -1557,59 +1537,6 @@
         "mg_tb": "",
         "pd_tb": "",
         "mg_mb": ",,30px,",
-        "pd_mb": "",
-        "use_cus_css": false,
-        "code_cus_css": ""
-      }
-    },
-    "bb2d7936-c543-4bb8-954e-c8ef8a48f855": {
-      "type": "top_heading",
-      "blocks": {
-        "template--20627090637079__bb2d7936-c543-4bb8-954e-c8ef8a48f855-bl_heading-1": {
-          "type": "bl_heading",
-          "settings": {
-            "top_heading": "Why buy direct from website ?"
-          }
-        },
-        "8f4249da-8d7a-4aab-b484-29141f4d6754": {
-          "type": "bl_icon",
-          "settings": {
-            "source": "get_image",
-            "icon_themes": "car",
-            "theme_icon_width": 20,
-            "image_icon": "shopify://shop_images/satisfaction-guarantee-secure-ordering-premium-600nw-1929266792_2_-removebg-preview.png",
-            "icon_image_width": 500,
-            "icon": "las la-gem",
-            "icon_awesome_fs": 20,
-            "design_icon_awesome": false,
-            "mgb": 5,
-            "mgb_mb": 5
-          }
-        },
-        "0ba128ef-57b4-480b-9949-b428d99c27ea": {
-          "type": "bl_subheading",
-          "settings": {
-            "top_subheading": "<div class=\"t4s-text-center\"><a href=\"https://ngearsafe.com/pages/why-buy-direct-from-website\" target=\"_self\" class=\"t4s-bl-item t4s-animation-none t4s-btn t4s-btn-custom t4s-pe-auto t4s-fnt-fm-inherit t4s-animation-none t4s-hidden-mobile-false t4s-btn-style-default t4s-btn-effect-sweep-to-top\" id=\"b_c950f808-1c93-4457-ae6f-2e04d898c3a2\" style=\"--animation:none ;--delay-animation:0s;--button-icon-w:15px;--button-icon-w-mb:0px;--pri-cl:#00a5b4;--second-cl:#ffffff;--pri-cl-hover:#222222;--second-cl-hover:#ffffff;--button-fs:16px;--button-fw:600; --button-pd-lr:36px;--button-bdr:5px;--button-ls:0px;--button-mh:40px;--button-mgb:0px;--button-mgb-mb:0px;--button-fs-mb:15px;--button-mh-mb:36px;--button-pd-lr-mb:50px;--button-ls-mb:0px;\">Know More <svg class=\"t4s-btn-icon\"><use xlink:href=\"#t4s-icon-btn\"></use></svg></a></div>"
-          }
-        }
-      },
-      "block_order": [
-        "template--20627090637079__bb2d7936-c543-4bb8-954e-c8ef8a48f855-bl_heading-1",
-        "8f4249da-8d7a-4aab-b484-29141f4d6754",
-        "0ba128ef-57b4-480b-9949-b428d99c27ea"
-      ],
-      "disabled": true,
-      "settings": {
-        "design_heading": "1",
-        "heading_align": "t4s-text-center",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "#dfdfdf",
-        "cl_bg_gradient": "",
-        "mg": ",,0px,",
-        "pd": "50px,,50px",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,0px,",
         "pd_mb": "",
         "use_cus_css": false,
         "code_cus_css": ""
@@ -2067,6 +1994,61 @@
         "padding_top": 64,
         "padding_bottom": 64
       }
+    },
+    "ng_product_range_njWDCP": {
+      "type": "ng-product-range",
+      "blocks": {
+        "product_r7pMgB": {
+          "type": "product",
+          "settings": {
+            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
+          }
+        },
+        "product_B4yKTh": {
+          "type": "product",
+          "settings": {
+            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
+          }
+        },
+        "product_GHcWWq": {
+          "type": "product",
+          "settings": {
+            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
+          }
+        },
+        "product_7cKN9a": {
+          "type": "product",
+          "settings": {
+            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
+          }
+        },
+        "product_zEftQC": {
+          "type": "product",
+          "settings": {
+            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
+          }
+        }
+      },
+      "block_order": [
+        "product_r7pMgB",
+        "product_B4yKTh",
+        "product_GHcWWq",
+        "product_7cKN9a",
+        "product_zEftQC"
+      ],
+      "name": "NG Product Range",
+      "settings": {
+        "heading": "Our Product Range",
+        "subheading": "Open-ear technology provides a comfortable and safer alternative to in-ear headphones",
+        "heading_fs": 59,
+        "desc_fs": 19,
+        "cta_label": "View all",
+        "cta_link": "shopify://pages/about-us",
+        "cta_style": "outline",
+        "cta_size": "lg",
+        "bg_style": "none",
+        "layout": "t4s-container-wrap"
+      }
     }
   },
   "order": [
@@ -2085,15 +2067,14 @@
     "3708fb84-c884-4080-b264-7b65ba109a2f",
     "5b93a0f7-3cc5-4049-a999-21cb1671ee78",
     "174420476751dd4252",
-    "5f09b44e-b1f4-44d1-9d77-c1a64563b690",
     "e680ed45-4f33-4868-b30a-8f5f0c16e2a0",
-    "bb2d7936-c543-4bb8-954e-c8ef8a48f855",
     "logo_list_QKq4XP",
     "custom_liquid_xtYi4e",
     "accordion_wWymTR",
     "image_text_ha3Vhx",
     "custom_html_d9mBdG",
     "ng_why_earsafe_nDa6AL",
-    "ng_insights_trends_3xrAU4"
+    "ng_insights_trends_3xrAU4",
+    "ng_product_range_njWDCP"
   ]
 }
