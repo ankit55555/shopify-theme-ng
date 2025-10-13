@@ -1101,7 +1101,7 @@
               "title": "Shop",
               "url": "https://ngearsafe.com/collections/open-ear-headphones",
               "open_link": "_self",
-              "icon": "las la-shopping-bag",
+              "icon": "",
               "cus_cl": false,
               "cl": "#ec0101",
               "lb": "",
@@ -1121,7 +1121,7 @@
               "title": "Support",
               "url": "https://help.ngearsafe.com/",
               "open_link": "_blank",
-              "icon": "las la-headphones",
+              "icon": "",
               "cus_cl": false,
               "cl": "#ec0101",
               "lb": "",
@@ -1134,7 +1134,7 @@
               "title": "Track Your Order",
               "url": "shopify://pages/track-your-order",
               "open_link": "_blank",
-              "icon": "las la-shipping-fast",
+              "icon": "",
               "cus_cl": false,
               "cl": "#ec0101",
               "lb": "",
@@ -1147,7 +1147,7 @@
               "title": "Stores Near You",
               "url": "shopify://pages/store-locator",
               "open_link": "_self",
-              "icon": "las la-map-marker",
+              "icon": "",
               "cus_cl": false,
               "cl": "#ec0101",
               "lb": "",
@@ -1268,9 +1268,9 @@
           "7f62b0c4-be73-42ca-bf6d-2f64bce97506"
         ],
         "settings": {
-          "layout": "logo_left",
+          "layout": "logo_center",
           "full_header": false,
-          "height": 70,
+          "height": 84,
           "arrow": false,
           "align": "center",
           "hover": "hover_sideup",
@@ -1294,7 +1294,7 @@
           "opnavst": 100,
           "clnavst": "#ffffff",
           "clnavst_hover": "#0063d1",
-          "transparent_header": false,
+          "transparent_header": true,
           "space_transparent_header": false,
           "bgnavtr": "#000000",
           "opnavtr": 40,
@@ -2575,11 +2575,6 @@
       },
       "13386407466480679122": {
         "type": "shopify://apps/interakt-whatsapp-marketing/blocks/app_embed/8ae4eea6-7869-4909-8446-2f9389fe7a63",
-        "disabled": false,
-        "settings": {}
-      },
-      "11077559776736408198": {
-        "type": "shopify://apps/wheelio-spin-popup-email-sms/blocks/wheelio/f45cb831-26a4-40d6-92e9-b57362611b34",
         "disabled": false,
         "settings": {}
       },
