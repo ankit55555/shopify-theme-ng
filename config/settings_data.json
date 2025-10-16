@@ -224,7 +224,7 @@
           "top-bar-1": {
             "type": "text",
             "settings": {
-              "text": "<p>7 Days Return and 1 Year Replacement Warranty</p>",
+              "text": "<p>Diwali Sale is Live Now | Limited Time Offer</p>",
               "adding_border": false,
               "countdown": "2022/04/19",
               "txt_day": "days",
@@ -2575,11 +2575,6 @@
       },
       "13386407466480679122": {
         "type": "shopify://apps/interakt-whatsapp-marketing/blocks/app_embed/8ae4eea6-7869-4909-8446-2f9389fe7a63",
-        "disabled": false,
-        "settings": {}
-      },
-      "11077559776736408198": {
-        "type": "shopify://apps/wheelio-spin-popup-email-sms/blocks/wheelio/f45cb831-26a4-40d6-92e9-b57362611b34",
         "disabled": false,
         "settings": {}
       },
