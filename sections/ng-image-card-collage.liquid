@@ -1,0 +1,351 @@
+{{ 'section.css' | asset_url | stylesheet_tag }}
+{{ 'ng-image-card-collage.css' | asset_url | stylesheet_tag }}
+{{ 't4s-animation.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign sid = section.id
+  assign se_stts = section.settings
+  assign se_blocks = section.blocks
+  assign stt_layout = se_stts.layout
+  assign stt_image_bg = se_stts.image_bg
+  if stt_layout == 't4s-se-container'
+    assign html_layout = '<div class="t4s-container">__</div></div>' | split: '__'
+  elsif stt_layout == 't4s-container-wrap'
+    assign html_layout = '<div class="t4s-container">__</div>' | split: '__'
+  else
+    assign html_layout = '__' | split: '__'
+  endif
+
+  assign t4s_se_class = 't4s_nt_se_' | append: sid
+  if se_stts.use_cus_css and se_stts.code_cus_css != blank
+    render 'se_cus_css', code_cus_css: se_stts.code_cus_css, t4s_se_class: t4s_se_class
+  endif
+-%}
+
+<div
+  class="t4s-section-inner t4s_nt_se_{{ sid }} t4s_se_{{ sid }} {{ stt_layout }}{% if stt_image_bg != blank and stt_layout != 't4s-se-container' %} t4s-has-imgbg lazyloadt4s{% endif %}"
+  {% if stt_image_bg != blank and stt_layout != 't4s-se-container' %}
+    data-bgset="{{ stt_image_bg | image_url: width: 1 }}" data-sizes="auto" data-optimumx="2"
+  {% endif %}
+  {% render 'section_style', se_stts: se_stts -%}
+>
+  {{- html_layout[0] -}}
+  {%- if stt_layout == 't4s-se-container' -%}
+    <div
+      class="t4s-container-inner{% if stt_image_bg != blank %} t4s-has-imgbg lazyloadt4s{% endif %}"
+      {% if stt_image_bg != blank %}
+        data-bgset="{{ stt_image_bg | image_url: width: 1 }}" data-sizes="auto" data-optimumx="2"
+      {% endif %}
+    >
+  {%- endif -%}
+
+  <div
+    class="ng-image-card-collage t4s-row"
+    style="--ng-image-card-collage-heading-color: {{ se_stts.heading_color }}; --ng-image-card-collage-heading-size: {{ se_stts.heading_size }}px; --ng-image-card-collage-heading-size-mb: {{ se_stts.heading_size_mb }}px; --ng-image-card-collage-body-color: {{ se_stts.body_color }}; --ng-image-card-collage-body-size: {{ se_stts.body_size }}px; --ng-image-card-collage-body-size-mb: {{ se_stts.body_size_mb }}px; --ng-image-card-collage-stage-minh: {{ se_stts.stage_min_height }}px; --ng-image-card-collage-stage-minh-mb: {{ se_stts.stage_min_height_mb }}px;"
+  >
+    <div class="ng-image-card-collage__content {{ se_stts.text_align }}" hdt-reveal="slide-in">
+      {%- if se_stts.heading != blank -%}
+        <h2 class="ng-image-card-collage__heading t4s-title">{{ se_stts.heading }}</h2>
+      {%- endif -%}
+      {%- if se_stts.subtext != blank -%}
+        <div class="ng-image-card-collage__text t4s-rte">{{ se_stts.subtext }}</div>
+      {%- endif -%}
+    </div>
+    <div class="ng-image-card-collage__stage" hdt-reveal="slide-in">
+      {%- for block in se_blocks -%}
+        {%- if block.type == 'card' -%}
+          {%- assign bk = block.settings -%}
+          {%- if bk.image != blank -%}
+            <div
+              class="ng-image-card-collage-card"
+              {{ block.shopify_attributes }}
+              style="--card-w: {{ bk.image_width }}px; --card-w-mb: {{ bk.image_width_mb }}px; --card-rotate: {{ bk.rotate }}deg; --card-x: {{ bk.offset_x }}px; --card-y: {{ bk.offset_y }}px; --card-x-mb: {{ bk.offset_x_mb }}px; --card-y-mb: {{ bk.offset_y_mb }}px; --card-z: {{ bk.z_index }};"
+            >
+              <div class="ng-dyk-card__inner t4s-pr">
+                <img
+                  class="lazyloadt4s"
+                  data-src="{{ bk.image | image_url: width: 1 }}"
+                  data-widths="[400,600,800,1000,1200,1400]"
+                  data-optimumx="2"
+                  data-sizes="auto"
+                  src="{% render 'img_svg', w: bk.image.width, h: bk.image.height %}"
+                  width="{{ bk.image.width }}"
+                  height="{{ bk.image.height }}"
+                  alt="{{ bk.image.alt | escape }}"
+                >
+                <span class="lazyloadt4s-loader"></span>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+  {%- if stt_layout == 't4s-se-container' -%}</div>{%- endif -%}
+  {{- html_layout[1] -}}
+</div>
+
+{%- schema -%}
+{
+  "name": "NG Image Card Collage",
+  "tag": "section",
+  "class": "t4s-section t4s-section-all ng-did-you-know",
+  "settings": [
+    { "type": "header", "content": "1. General options" },
+    {
+      "type": "select",
+      "id": "layout",
+      "default": "t4s-container-fluid",
+      "label": "Layout",
+      "options": [
+        { "value": "t4s-se-container", "label": "Container" },
+        { "value": "t4s-container-wrap", "label": "Wrapped container" },
+        { "value": "t4s-container-fluid", "label": "Full width" }
+      ]
+    },
+    { "type": "color", "id": "cl_bg", "label": "Background" },
+    { "type": "color_background", "id": "cl_bg_gradient", "label": "Background gradient" },
+    { "type": "image_picker", "id": "image_bg", "label": "Background image" },
+
+    {
+      "type": "text",
+      "id": "mg",
+      "label": "Margin",
+      "info": "top,right,bottom,left",
+      "default": ",,60px,",
+      "placeholder": ",,60px,"
+    },
+    {
+      "type": "text",
+      "id": "pd",
+      "label": "Padding",
+      "info": "top,right,bottom,left",
+      "default": "80px,,80px,",
+      "placeholder": "80px,,80px,"
+    },
+    { "type": "header", "content": "+ Design Tablet Options" },
+    { "type": "text", "id": "mg_tb", "label": "Margin", "placeholder": ",,40px," },
+    { "type": "text", "id": "pd_tb", "label": "Padding", "placeholder": ",,60px," },
+    { "type": "header", "content": "+ Design Mobile Options" },
+    { "type": "text", "id": "mg_mb", "label": "Margin", "default": ",,40px,", "placeholder": ",,40px," },
+    { "type": "text", "id": "pd_mb", "label": "Padding", "placeholder": ",,40px," },
+
+    { "type": "header", "content": "2. Content" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Did you know?" },
+    {
+      "type": "richtext",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text align",
+      "default": "t4s-text-start",
+      "options": [
+        { "value": "t4s-text-start", "label": "Left" },
+        { "value": "t4s-text-center", "label": "Center" },
+        { "value": "t4s-text-end", "label": "Right" }
+      ]
+    },
+    { "type": "color", "id": "heading_color", "label": "Heading color", "default": "#2a3642" },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 16,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mb",
+      "label": "Heading size (mobile)",
+      "min": 14,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 36
+    },
+    { "type": "color", "id": "body_color", "label": "Subtext color", "default": "#5d6b78" },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Subtext size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "body_size_mb",
+      "label": "Subtext size (mobile)",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "stage_min_height",
+      "label": "Stage min height",
+      "min": 200,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "default": 520
+    },
+    {
+      "type": "range",
+      "id": "stage_min_height_mb",
+      "label": "Stage min height (mobile)",
+      "min": 200,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "default": 620
+    },
+
+    { "type": "header", "content": "3. Custom css" },
+    { "id": "use_cus_css", "type": "checkbox", "label": "Use custom css", "default": false },
+    {
+      "id": "code_cus_css",
+      "type": "textarea",
+      "label": "Code custom css",
+      "info": "Use selector .SectionID to style css"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card image",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        {
+          "type": "range",
+          "id": "image_width",
+          "label": "Image width",
+          "min": 120,
+          "max": 640,
+          "step": 10,
+          "unit": "px",
+          "default": 360
+        },
+        {
+          "type": "range",
+          "id": "image_width_mb",
+          "label": "Image width (mobile)",
+          "min": 120,
+          "max": 420,
+          "step": 10,
+          "unit": "px",
+          "default": 260
+        },
+        {
+          "type": "range",
+          "id": "rotate",
+          "label": "Rotation",
+          "min": -25,
+          "max": 25,
+          "step": 1,
+          "unit": "deg",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "offset_x",
+          "label": "Offset X",
+          "min": -400,
+          "max": 400,
+          "step": 10,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "offset_y",
+          "label": "Offset Y",
+          "min": -400,
+          "max": 400,
+          "step": 10,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "offset_x_mb",
+          "label": "Offset X (mobile)",
+          "min": -400,
+          "max": 400,
+          "step": 10,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "offset_y_mb",
+          "label": "Offset Y (mobile)",
+          "min": -400,
+          "max": 400,
+          "step": 10,
+          "unit": "px",
+          "default": 0
+        },
+        { "type": "range", "id": "z_index", "label": "Z-index", "min": 1, "max": 10, "step": 1, "default": 5 }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [
+    {
+      "name": "NG Image Card Collage",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "image_width": 360,
+            "rotate": -6,
+            "offset_x": -220,
+            "offset_y": 80,
+            "image_width_mb": 260,
+            "offset_x_mb": -60,
+            "offset_y_mb": -40,
+            "z_index": 6
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "image_width": 420,
+            "rotate": 0,
+            "offset_x": 0,
+            "offset_y": 0,
+            "image_width_mb": 280,
+            "offset_x_mb": 0,
+            "offset_y_mb": 40,
+            "z_index": 7
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "image_width": 360,
+            "rotate": 6,
+            "offset_x": 220,
+            "offset_y": 40,
+            "image_width_mb": 250,
+            "offset_x_mb": 40,
+            "offset_y_mb": 120,
+            "z_index": 6
+          }
+        }
+      ]
+    }
+  ]
+}
+{%- endschema -%}
