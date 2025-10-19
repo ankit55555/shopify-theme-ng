@@ -50,7 +50,13 @@
         <div class="ng-image-card-collage__text t4s-rte">{{ se_stts.subtext }}</div>
       {%- endif -%}
     </div>
-    <div class="ng-image-card-collage__stage" hdt-reveal="slide-in">
+    <div
+      class="ng-image-card-collage__stage"
+      hdt-reveal="slide-in"
+      {% if se_stts.display_mode == 'image' %}
+        style="--ng-image-card-collage-stage-minh:auto;--ng-image-card-collage-stage-minh-mb:auto;"
+      {% endif %}
+    >
       {%- if se_stts.display_mode == 'image' -%}
         <div class="ng-image-card-collage__img-wrap">
           {%- if se_stts.image_desktop != blank -%}
@@ -130,6 +136,11 @@
         { "value": "t4s-container-wrap", "label": "Wrapped container" },
         { "value": "t4s-container-fluid", "label": "Full width" }
       ]
+    },
+    {
+      "type": "paragraph",
+      "content": "Cards mode: First set the Stage min height (desktop/mobile) so the cards have enough canvas. Then add Card image blocks and position them with Offset X/Y (desktop/mobile). Use Z-index to control stacking (higher = in front).",
+      "visible_if": "{{ section.settings.display_mode == 'cards' }}"
     },
     { "type": "color", "id": "cl_bg", "label": "Background" },
     { "type": "color_background", "id": "cl_bg_gradient", "label": "Background gradient" },
@@ -250,14 +261,21 @@
       "default": 14
     },
     {
+      "type": "header",
+      "content": "Cards canvas height",
+      "visible_if": "{{ section.settings.display_mode == 'cards' }}"
+    },
+    {
       "type": "range",
       "id": "stage_min_height",
-      "label": "Stage min height",
+      "label": "Stage min height (desktop)",
       "min": 200,
       "max": 950,
       "step": 10,
       "unit": "px",
-      "default": 520
+      "default": 520,
+      "info": "Increase until no card is clipped (desktop).",
+      "visible_if": "{{ section.settings.display_mode == 'cards' }}"
     },
     {
       "type": "range",
@@ -267,7 +285,9 @@
       "max": 950,
       "step": 10,
       "unit": "px",
-      "default": 620
+      "default": 620,
+      "info": "Increase until no card is clipped (mobile ≤1024px).",
+      "visible_if": "{{ section.settings.display_mode == 'cards' }}"
     },
 
     { "type": "header", "content": "3. Custom css" },
