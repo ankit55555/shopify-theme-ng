@@ -93,7 +93,14 @@
 	border-color: var(--border-color);
 	background-color: var(--text-color);
 }
-.t4s-socials-style-4.t4s-setts-color-true a {
+.t4s-socials-style-5 a,
+.t4s-footer .t4s-socials-style-5 a {
+	border:solid 1px;
+	color: var(--link-cl);
+	border-color: var(--border-color);
+	/* background-color: var(--text-color); */
+}
+.t4s-socials-style-4.t4s-setts-color-true a, .t4s-socials-style-5.t4s-setts-color-true a {
 	background-color: var(--cl);
 	border-color: var(--bg-cl);
 	color: var(--bg-cl);
@@ -230,29 +237,29 @@
 	.t4s-socials.t4s-socials-style-3 a.email:hover {color: var(--email-cl);border-color: var(--email-cl);}
 	.t4s-socials.t4s-socials-style-3 a.telegram:hover {color: var(--telegram-cl);border-color: var(--telegram-cl);}
 
-	.t4s-socials.t4s-socials-style-4 a:hover {
+	.t4s-socials.t4s-socials-style-4 a:hover, .t4s-socials.t4s-socials-style-5 a:hover {
 		color: var(--t4s-light-color);
 	}
 
-	.t4s-socials-style-4.t4s-setts-color-true a:hover {
+	.t4s-socials-style-4.t4s-setts-color-true a:hover, .t4s-socials-style-5.t4s-setts-color-true a:hover {
 		background-color: var(--bg-cl) !important;
 		background: var(--bg-cl) !important;
 		border-color: var(--cl) !important;
 		color: var(--cl) !important;
 	}
-	.t4s-socials.t4s-socials-style-4 a.facebook:hover {border-color: var(--facebook-cl);background-color: var(--facebook-cl);}
-	.t4s-socials.t4s-socials-style-4 a.twitter:hover {border-color: var(--twitter-cl);background-color: var(--twitter-cl);}
-	.t4s-socials.t4s-socials-style-4 a.instagram:hover {border-color: var(--instagram-cl);background: linear-gradient(#8a3ab9,#e95950,#fccc63);}
-	.t4s-socials.t4s-socials-style-4 a.dribbble:hover {border-color: var(--dribbble-cl);background-color: var(--dribbble-cl);}
-	.t4s-socials.t4s-socials-style-4 a.linkedin:hover {border-color: var(--linkedin-cl);background-color: var(--linkedin-cl);}
-	.t4s-socials.t4s-socials-style-4 a.pinterest:hover {border-color: var(--pinterest-cl);background-color: var(--pinterest-cl);}
-	.t4s-socials.t4s-socials-style-4 a.tumblr:hover {border-color: var(--tumblr-cl);background-color: var(--tumblr-cl);}
-	.t4s-socials.t4s-socials-style-4 a.snapchat:hover {border-color: var(--snapchat-cl);background-color: var(--snapchat-cl);}
-	.t4s-socials.t4s-socials-style-4 a.youtube:hover {border-color: var(--youtube-cl);background-color: var(--youtube-cl);}
-	.t4s-socials.t4s-socials-style-4 a.vimeo:hover {border-color: var(--vimeo-cl);background-color: var(--vimeo-cl);}
-	.t4s-socials.t4s-socials-style-4 a.behance:hover {border-color: var(--behance-cl);background-color: var(--behance-cl);}
-	.t4s-socials.t4s-socials-style-4 a.soundcloud:hover {border-color: var(--soundcloud-cl);background-color: var(--soundcloud-cl);}
-	.t4s-socials.t4s-socials-style-4 a.tiktok:hover {border-color: var(--tiktok-cl);background: linear-gradient(#25F4EE,#000000,#FE2C55);}
-	.t4s-socials.t4s-socials-style-4 a.email:hover {border-color: var(--email-cl);background: linear-gradient(rgb(219, 68, 55),#EFA134,#E4D81B,#2DBF19);}
-	.t4s-socials.t4s-socials-style-4 a.telegram:hover {border-color: var(--telegram-cl);background-color: var(--telegram-cl);}
+	.t4s-socials:is(.t4s-socials-style-4, .t4s-socials-style-5) a.facebook:hover {border-color: var(--facebook-cl);background-color: var(--facebook-cl);}
+	.t4s-socials:is(.t4s-socials-style-4, .t4s-socials-style-5) a.twitter:hover {border-color: var(--twitter-cl);background-color: var(--twitter-cl);}
+	.t4s-socials:is(.t4s-socials-style-4, .t4s-socials-style-5) a.instagram:hover {border-color: var(--instagram-cl);background: linear-gradient(#8a3ab9,#e95950,#fccc63);}
+	.t4s-socials:is(.t4s-socials-style-4, .t4s-socials-style-5) a.dribbble:hover {border-color: var(--dribbble-cl);background-color: var(--dribbble-cl);}
+	.t4s-socials:is(.t4s-socials-style-4, .t4s-socials-style-5) a.linkedin:hover {border-color: var(--linkedin-cl);background-color: var(--linkedin-cl);}
+	.t4s-socials:is(.t4s-socials-style-4, .t4s-socials-style-5) a.pinterest:hover {border-color: var(--pinterest-cl);background-color: var(--pinterest-cl);}
+	.t4s-socials:is(.t4s-socials-style-4, .t4s-socials-style-5) a.tumblr:hover {border-color: var(--tumblr-cl);background-color: var(--tumblr-cl);}
+	.t4s-socials:is(.t4s-socials-style-4, .t4s-socials-style-5) a.snapchat:hover {border-color: var(--snapchat-cl);background-color: var(--snapchat-cl);}
+	.t4s-socials:is(.t4s-socials-style-4, .t4s-socials-style-5) a.youtube:hover {border-color: var(--youtube-cl);background-color: var(--youtube-cl);}
+	.t4s-socials:is(.t4s-socials-style-4, .t4s-socials-style-5) a.vimeo:hover {border-color: var(--vimeo-cl);background-color: var(--vimeo-cl);}
+	.t4s-socials:is(.t4s-socials-style-4, .t4s-socials-style-5) a.behance:hover {border-color: var(--behance-cl);background-color: var(--behance-cl);}
+	.t4s-socials:is(.t4s-socials-style-4, .t4s-socials-style-5) a.soundcloud:hover {border-color: var(--soundcloud-cl);background-color: var(--soundcloud-cl);}
+	.t4s-socials:is(.t4s-socials-style-4, .t4s-socials-style-5) a.tiktok:hover {border-color: var(--tiktok-cl);background: linear-gradient(#25F4EE,#000000,#FE2C55);}
+	.t4s-socials:is(.t4s-socials-style-4, .t4s-socials-style-5) a.email:hover {border-color: var(--email-cl);background: linear-gradient(rgb(219, 68, 55),#EFA134,#E4D81B,#2DBF19);}
+	.t4s-socials:is(.t4s-socials-style-4, .t4s-socials-style-5) a.telegram:hover {border-color: var(--telegram-cl);background-color: var(--telegram-cl);}
 }

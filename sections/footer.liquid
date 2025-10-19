@@ -4,13 +4,13 @@
 {{ 'newsletter.css' | asset_url | stylesheet_tag }}
 {{ 'icon-social.css' | asset_url | stylesheet_tag }}
 {{ 'footer.css' | asset_url | stylesheet_tag }}
-{%- liquid 
+{%- liquid
   assign sid = section.id
-  assign se_stts = section.settings 
+  assign se_stts = section.settings
   assign se_blocks = section.blocks
   assign stt_layout = se_stts.layout
-  assign stt_image_bg = se_stts.image_bg 
-  if stt_layout == 't4s-se-container' 
+  assign stt_image_bg = se_stts.image_bg
+  if stt_layout == 't4s-se-container'
     assign html_layout = '<div class="t4s-container">__</div></div>' | split: '__'
   elsif stt_layout == 't4s-container-wrap'
     assign html_layout = '<div class="t4s-container">__</div>' | split: '__'
@@ -19,77 +19,126 @@
   endif
   assign index = 0
   assign index2 = 1
-  assign arr_item = se_blocks | where: "type", 'bl_col'  
-  assign sticky   = se_stts.sticky
+  assign arr_item = se_blocks | where: 'type', 'bl_col'
+  assign sticky = se_stts.sticky
   assign collapse = se_stts.collapse
- -%} 
-<div role="contentinfo" class="t4s-section-inner t4s_nt_se_{{ sid }} t4s_se_{{ sid }} {{ stt_layout }} {%- if  se_stts.border_top == true -%} t4s-footer-has-border t4s-footer-border-{{ se_stts.border_pos }} {%- endif -%}  {%- if stt_image_bg != blank and stt_layout != 't4s-se-container' -%}  t4s-has-imgbg lazyloadt4s {%- endif -%} "  {% if stt_image_bg != blank and stt_layout != 't4s-se-container' %} data-bgset="{{ stt_image_bg | image_url: width: 1 }}" data-sizes="auto"  data-optimumx="2" {% endif %}   {% render 'section_style', se_stts: se_stts %}>
-    {{- html_layout[0] -}}
-    {%- if stt_layout == 't4s-se-container' -%}<div class="t4s-container-inner {% if stt_image_bg != blank %} t4s-has-imgbg lazyloadt4s {% endif %} "  {% if stt_image_bg != blank %}  data-bgset="{{ stt_image_bg | image_url: width: 1 }}" data-sizes="auto"  data-optimumx="2" {% endif %} > {%- endif -%}
-    <div class="t4s-footer-wrap t4s-row is--footer-sticky-{{ sticky }} is--footer-collapse-{{ collapse }} t4s-gx-lg-{{ se_stts.space_h_item }} t4s-gy-lg-{{ se_stts.space_v_item }} t4s-gx-md-{{ se_stts.space_h_item_tb }} t4s-gy-md-{{ se_stts.space_v_item_tb }} t4s-gx-{{ se_stts.space_h_item_mb }} t4s-gy-{{ se_stts.space_v_item_mb }}" style="--heading-fs:{{ se_stts.heading_fs }}px;--heading-fw:{{ se_stts.heading_fw }};--heading-lh:{{ se_stts.heading_lh }}px;--heading-ls: {{ se_stts.heading_ls }}px;--heading-cl:{{ se_stts.heading_cl }};--text-fs:{{ se_stts.text_fs }}px;--text-fw:{{ se_stts.text_fw }};--text-cl:{{ se_stts.text_cl }};--link-cl:{{ se_stts.link_cl }};--link-hover-cl:{{ se_stts.link_hover_cl }};--border-cl:{{ se_stts.border_cl }};--heading-mgb:{{ se_stts.mgb }}px;--heading-mgbm:{{ se_stts.mgb_mb }}px;">   
-        {%- for block in arr_item offset: index -%}
-            {%- assign bk_stts = block.settings -%}
-            {%- assign index = index | plus: 1 -%}
-            {%- assign pd_item = bk_stts.padding_inner | remove: ' ' | split: ',' -%}
-            {%- assign pd_item_tb = bk_stts.padding_inner_tb | remove: ' ' | split: ',' -%}
-            {%- assign pd_item_mb = bk_stts.padding_inner_mb | remove: ' ' | split: ',' -%}
-            <div class="t4s-custom-col t4s-col-border-{{ bk_stts.col_border }} t4s-col-item t4s-col-lg-{{ bk_stts.col_dk }} t4s-col-md-{{ bk_stts.col_tb }} t4s-col-{{ bk_stts.col_mb }} bl-{{ block.id }}">
-                <div class="t4s-col-inner {{ bk_stts.content_align }} {{ bk_stts.content_align_tb }} {{ bk_stts.content_align_mb }} {%- if bk_stts.bg_image != blank -%}  lazyloadt4s t4s-has-imgbg  {%- endif -%} "  {%- if bk_stts.bg_image != blank -%}  data-bgset="{{ bk_stts.bg_image | image_url: width: 1 }}" data-sizes="auto"  data-optimumx="2" {%- endif -%}  style="--pd: {{ pd_item[0] | default: 0 }} {{ pd_item[1] | default: 0 }} {{ pd_item[2] | default: 0 }} {{ pd_item[3] | default: 0 }};--pd-tb: {{ pd_item_tb[0] | default: 0 }} {{ pd_item_tb[1] | default: 0 }} {{ pd_item_tb[2] | default: 0 }} {{ pd_item_tb[3] | default: 0 }};--pd-mb: {{ pd_item_mb[0] | default: 0 }} {{ pd_item_mb[1] | default: 0 }} {{ pd_item_mb[2] | default: 0 }} {{ pd_item_mb[3] | default: 0 }};" timeline hdt-reveal="slide-in">
-                    {% if bk_stts.col_heading != blank %}  
-                      <div class="t4s-footer-heading t4s-d-flex t4s-align-items-center t4s-justify-content-between t4s-d-md-block t4s-d-none">
-                          <h3 class="t4s-col-heading t4s-fnt-fm-{{ se_stts.heading_fontf }}">{{ bk_stts.col_heading }}</h3>
-                      </div>
-                    {%- endif -%} 
-                    {%- if bk_stts.col_heading_mobile != blank or bk_stts.col_heading != blank -%}   
-                    <div data-footer-open class="t4s-footer-heading t4s-footer-heading-mobile t4s-d-flex t4s-align-items-center t4s-justify-content-between t4s-d-md-none">
-                      {% if bk_stts.col_heading_mobile != blank %}  
-                          <h3 class="t4s-col-heading t4s-fnt-fm-{{ se_stts.heading_fontf }}">{{ bk_stts.col_heading_mobile }}</h3> 
-                      {%- else -%}     
-                          <h3 class="t4s-col-heading t4s-fnt-fm-{{ se_stts.heading_fontf }}">{{ bk_stts.col_heading }}</h3> 
-                      {%- endif -%}     
-                          <span class="t4s-footer-collapse-icon"></span>
-                      </div>
-                    {%- endif -%} 
-                    <div {% if bk_stts.col_heading != blank or bk_stts.col_heading_mobile != blank %}data-footer-content{% endif %} class="t4s-footer-content">
-                        {%- if bk_stts.menu !=blank -%} 
-                            <div class="t4s-footer-menu t4s-footer-menu-style{{ bk_stts.menu_style }}" style="--menu-mgb:{{ bk_stts.mgb }}px;--menu-mgb-mb:{{ bk_stts.mgb_mb }}px;">
-                            <ul class="t4s-footer-linklist">
-                                {%- for link in bk_stts.menu.links -%}
-                                <li>
-                                    <a href="{{ link.url }}" class="t4s-footer-link {% if link.current %}t4s-footer-link-active{% endif %}" {% if link.current%}  aria-current="page" {% endif %}>
-                                    {{ link.title | escape }}
-                                    </a>
-                                </li>
-                                {%- endfor -%} 
-                            </ul>
-                            </div> 
-                        {%- endif -%}    
-                        {%- for block in se_blocks offset: index2 -%}
-                        {%- assign index2 = index2| plus: 1 -%}
-                        {%- assign bk_stts = block.settings -%}
-                        {%- if  block.type != "bl_col" -%}
-                            {%- render 'footer_content', block: block, bk_stts: bk_stts -%}  
-                        {%- else -%} 
-                            {%- break -%}
-                        {%- endif -%}
-                        {%- endfor -%}
-                    </div>
-                </div>
+-%}
+<div
+  role="contentinfo"
+  class="t4s-section-inner t4s_nt_se_{{ sid }} t4s_se_{{ sid }} {{ stt_layout }} {%- if  se_stts.border_top == true -%} t4s-footer-has-border t4s-footer-border-{{ se_stts.border_pos }} {%- endif -%}  {%- if stt_image_bg != blank and stt_layout != 't4s-se-container' -%}  t4s-has-imgbg lazyloadt4s {%- endif -%} "
+  {% if stt_image_bg != blank and stt_layout != 't4s-se-container' %}
+    data-bgset="{{ stt_image_bg | image_url: width: 1 }}" data-sizes="auto" data-optimumx="2"
+  {% endif %}
+  {% render 'section_style', se_stts: se_stts %}
+>
+  {{- html_layout[0] -}}
+  {%- if stt_layout == 't4s-se-container' -%}
+    <div
+      class="t4s-container-inner {% if stt_image_bg != blank %} t4s-has-imgbg lazyloadt4s {% endif %} "
+      {% if stt_image_bg != blank %}
+        data-bgset="{{ stt_image_bg | image_url: width: 1 }}" data-sizes="auto" data-optimumx="2"
+      {% endif %}
+    >
+  {%- endif -%}
+  <div
+    class="t4s-footer-wrap t4s-row is--footer-sticky-{{ sticky }} is--footer-collapse-{{ collapse }} t4s-gx-lg-{{ se_stts.space_h_item }} t4s-gy-lg-{{ se_stts.space_v_item }} t4s-gx-md-{{ se_stts.space_h_item_tb }} t4s-gy-md-{{ se_stts.space_v_item_tb }} t4s-gx-{{ se_stts.space_h_item_mb }} t4s-gy-{{ se_stts.space_v_item_mb }}"
+    style="--heading-fs:{{ se_stts.heading_fs }}px;--heading-fw:{{ se_stts.heading_fw }};--heading-lh:{{ se_stts.heading_lh }}px;--heading-ls: {{ se_stts.heading_ls }}px;--heading-cl:{{ se_stts.heading_cl }};--text-fs:{{ se_stts.text_fs }}px;--text-fw:{{ se_stts.text_fw }};--text-cl:{{ se_stts.text_cl }};--link-cl:{{ se_stts.link_cl }};--link-hover-cl:{{ se_stts.link_hover_cl }};--border-cl:{{ se_stts.border_cl }};--heading-mgb:{{ se_stts.mgb }}px;--heading-mgbm:{{ se_stts.mgb_mb }}px;"
+  >
+    {%- for block in arr_item offset: index -%}
+      {%- assign bk_stts = block.settings -%}
+      {%- assign index = index | plus: 1 -%}
+      {%- assign pd_item = bk_stts.padding_inner | remove: ' ' | split: ',' -%}
+      {%- assign pd_item_tb = bk_stts.padding_inner_tb | remove: ' ' | split: ',' -%}
+      {%- assign pd_item_mb = bk_stts.padding_inner_mb | remove: ' ' | split: ',' -%}
+      <div
+        class="t4s-custom-col t4s-col-border-{{ bk_stts.col_border }} t4s-col-item t4s-col-lg-{{ bk_stts.col_dk }} t4s-col-md-{{ bk_stts.col_tb }} t4s-col-{{ bk_stts.col_mb }} bl-{{ block.id }}"
+        {{ block.shopify_attributes }}
+      >
+        <div
+          class="t4s-col-inner {{ bk_stts.content_align }} {{ bk_stts.content_align_tb }} {{ bk_stts.content_align_mb }} {%- if bk_stts.bg_image != blank -%}  lazyloadt4s t4s-has-imgbg  {%- endif -%} "
+          {%- if bk_stts.bg_image != blank -%}
+            data-bgset="{{ bk_stts.bg_image | image_url: width: 1 }}" data-sizes="auto" data-optimumx="2"
+          {%- endif -%}
+          style="--pd: {{ pd_item[0] | default: 0 }} {{ pd_item[1] | default: 0 }} {{ pd_item[2] | default: 0 }} {{ pd_item[3] | default: 0 }};--pd-tb: {{ pd_item_tb[0] | default: 0 }} {{ pd_item_tb[1] | default: 0 }} {{ pd_item_tb[2] | default: 0 }} {{ pd_item_tb[3] | default: 0 }};--pd-mb: {{ pd_item_mb[0] | default: 0 }} {{ pd_item_mb[1] | default: 0 }} {{ pd_item_mb[2] | default: 0 }} {{ pd_item_mb[3] | default: 0 }};"
+          timeline
+          hdt-reveal="slide-in"
+        >
+          {% if bk_stts.col_heading != blank %}
+            <div class="t4s-footer-heading t4s-d-flex t4s-align-items-center t4s-justify-content-between t4s-d-md-block t4s-d-none">
+              <h3 class="t4s-col-heading t4s-fnt-fm-{{ se_stts.heading_fontf }}">{{ bk_stts.col_heading }}</h3>
             </div>
-        {%- endfor -%}
-        
-        {%- if section.enable_follow_on_shop -%}
-          <div class="t4s-follow_shop t4s-w-100 t4s-d-block">
-            {% comment %} TODO: enable theme-check once `login_button` is accepted as valid filter {% endcomment %}
-            {% # theme-check-disable %}
-            {{ shop | login_button: action: 'follow' }}
-            {% # theme-check-enable %}
+          {%- endif -%}
+          {%- if bk_stts.col_heading_mobile != blank or bk_stts.col_heading != blank -%}
+            <div
+              data-footer-open
+              class="t4s-footer-heading t4s-footer-heading-mobile t4s-d-flex t4s-align-items-center t4s-justify-content-between t4s-d-md-none"
+            >
+              {% if bk_stts.col_heading_mobile != blank %}
+                <h3 class="t4s-col-heading t4s-fnt-fm-{{ se_stts.heading_fontf }}">{{ bk_stts.col_heading_mobile }}</h3>
+              {%- else -%}
+                <h3 class="t4s-col-heading t4s-fnt-fm-{{ se_stts.heading_fontf }}">{{ bk_stts.col_heading }}</h3>
+              {%- endif -%}
+              <span class="t4s-footer-collapse-icon"></span>
+            </div>
+          {%- endif -%}
+          <div
+            {% if bk_stts.col_heading != blank or bk_stts.col_heading_mobile != blank %}
+              data-footer-content
+            {% endif %}
+            class="t4s-footer-content"
+          >
+            {%- if bk_stts.menu != blank -%}
+              <div
+                class="t4s-footer-menu t4s-footer-menu-style{{ bk_stts.menu_style }}"
+                style="--menu-mgb:{{ bk_stts.mgb }}px;--menu-mgb-mb:{{ bk_stts.mgb_mb }}px;"
+              >
+                <ul class="t4s-footer-linklist">
+                  {%- for link in bk_stts.menu.links -%}
+                    <li>
+                      <a
+                        href="{{ link.url }}"
+                        class="t4s-footer-link {% if link.current %}t4s-footer-link-active{% endif %}"
+                        {% if link.current %}
+                          aria-current="page"
+                        {% endif %}
+                      >
+                        {{ link.title | escape }}
+                      </a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </div>
+            {%- endif -%}
+            {%- for block in se_blocks offset: index2 -%}
+              {%- assign index2 = index2 | plus: 1 -%}
+              {%- assign bk_stts = block.settings -%}
+              {%- if block.type != 'bl_col' -%}
+                {%- render 'footer_content', block: block, bk_stts: bk_stts -%}
+              {%- else -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
           </div>
-        {%- endif -%}
-    </div>
-    {{- html_layout[1] -}}
+        </div>
+      </div>
+    {%- endfor -%}
+
+    {%- if section.enable_follow_on_shop -%}
+      <div class="t4s-follow_shop t4s-w-100 t4s-d-block">
+        {% comment %} TODO: enable theme-check once `login_button` is accepted as valid filter {% endcomment %}
+        {% # theme-check-disable %}
+        {{ shop | login_button: action: 'follow' }}
+        {% # theme-check-enable %}
+      </div>
+    {%- endif -%}
+  </div>
+  {{- html_layout[1] -}}
 </div>
-{%- if sticky %}<style>@media (min-width: 1025px) { #MainContent,#shopify-section-announcement-bar,#shopify-section-top-bar,#t4s-header,.t4s-prefooter,.t4s-section-header{position:relative;z-index:4}#shopify-section-top-bar {z-index: 466;} #MainContent { z-index: 2;background-color: {%- if settings.body_bg != blank and settings.body_bg != 'rgba(0,0,0,0)' %}{{ settings.body_bg }}{% else %}#fff{% endif -%};}  .t4s-prefooter{z-index:1}#t4s-footer{position:sticky;position:-webkit-sticky;bottom:0;left:0;right:0;width:100%} }</style>{% endif -%}
+{%- if sticky %}
+  <style>
+    @media (min-width: 1025px) { #MainContent,#shopify-section-announcement-bar,#shopify-section-top-bar,#t4s-header,.t4s-prefooter,.t4s-section-header{position:relative;z-index:4}#shopify-section-top-bar {z-index: 466;} #MainContent { z-index: 2;background-color: {%- if settings.body_bg != blank and settings.body_bg != 'rgba(0,0,0,0)' %}{{ settings.body_bg }}{% else %}#fff{% endif -%};}  .t4s-prefooter{z-index:1}#t4s-footer{position:sticky;position:-webkit-sticky;bottom:0;left:0;right:0;width:100%} }
+  </style>
+{% endif -%}
 {%- schema -%}
 {
   "name": "Footer",
@@ -122,11 +171,11 @@
     {
       "type": "header",
       "content": "Follow on Shop"
-    },  
+    },
     {
       "type": "paragraph",
       "content": "To allow customers to follow your store on the Shop app from your storefront, Shop Pay must be enabled. [Learn more](https://help.shopify.com/manual/online-store/themes/customizing-themes/follow-on-shop)"
-    },  
+    },
     {
       "type": "checkbox",
       "id": "enable_follow_on_shop",
@@ -1519,6 +1568,10 @@
             {
               "value": "4",
               "label": "Style 4 (Has border & background)"
+            },
+            {
+              "value": "5",
+              "label": "Style 5 (Transparent hover fill)"
             }
           ],
           "default": "3"
