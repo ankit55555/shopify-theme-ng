@@ -51,33 +51,62 @@
       {%- endif -%}
     </div>
     <div class="ng-image-card-collage__stage" hdt-reveal="slide-in">
-      {%- for block in se_blocks -%}
-        {%- if block.type == 'card' -%}
-          {%- assign bk = block.settings -%}
-          {%- if bk.image != blank -%}
-            <div
-              class="ng-image-card-collage-card"
-              {{ block.shopify_attributes }}
-              style="--card-w: {{ bk.image_width }}px; --card-w-mb: {{ bk.image_width_mb }}px; --card-rotate: 0deg; --card-x: {{ bk.offset_x }}px; --card-y: {{ bk.offset_y }}px; --card-x-mb: {{ bk.offset_x_mb }}px; --card-y-mb: {{ bk.offset_y_mb }}px; --card-z: {{ bk.z_index }};"
+      {%- if se_stts.display_mode == 'image' -%}
+        <div class="ng-image-card-collage__img-wrap">
+          {%- if se_stts.image_desktop != blank -%}
+            <img
+              class="ngicc-img ngicc-img--desktop lazyloadt4s"
+              data-src="{{ se_stts.image_desktop | image_url: width: 1 }}"
+              data-sizes="auto"
+              data-optimumx="2"
+              src="{% render 'img_svg', w: se_stts.image_desktop.width, h: se_stts.image_desktop.height %}"
+              width="{{ se_stts.image_desktop.width }}"
+              height="{{ se_stts.image_desktop.height }}"
+              alt="{{ se_stts.image_desktop.alt | escape }}"
             >
-              <div class="ng-dyk-card__inner t4s-pr">
-                <img
-                  class="lazyloadt4s"
-                  data-src="{{ bk.image | image_url: width: 1 }}"
-                  data-widths="[400,600,800,1000,1200,1400]"
-                  data-optimumx="2"
-                  data-sizes="auto"
-                  src="{% render 'img_svg', w: bk.image.width, h: bk.image.height %}"
-                  width="{{ bk.image.width }}"
-                  height="{{ bk.image.height }}"
-                  alt="{{ bk.image.alt | escape }}"
-                >
-                <span class="lazyloadt4s-loader"></span>
-              </div>
-            </div>
           {%- endif -%}
-        {%- endif -%}
-      {%- endfor -%}
+          {%- if se_stts.image_mobile != blank -%}
+            <img
+              class="ngicc-img ngicc-img--mobile lazyloadt4s"
+              data-src="{{ se_stts.image_mobile | image_url: width: 1 }}"
+              data-sizes="auto"
+              data-optimumx="2"
+              src="{% render 'img_svg', w: se_stts.image_mobile.width, h: se_stts.image_mobile.height %}"
+              width="{{ se_stts.image_mobile.width }}"
+              height="{{ se_stts.image_mobile.height }}"
+              alt="{{ se_stts.image_mobile.alt | escape }}"
+            >
+          {%- endif -%}
+        </div>
+      {%- else -%}
+        {%- for block in se_blocks -%}
+          {%- if block.type == 'card' -%}
+            {%- assign bk = block.settings -%}
+            {%- if bk.image != blank -%}
+              <div
+                class="ng-image-card-collage-card"
+                {{ block.shopify_attributes }}
+                style="--card-w: {{ bk.image_width }}px; --card-w-mb: {{ bk.image_width_mb }}px; --card-rotate: 0deg; --card-x: {{ bk.offset_x }}px; --card-y: {{ bk.offset_y }}px; --card-x-mb: {{ bk.offset_x_mb }}px; --card-y-mb: {{ bk.offset_y_mb }}px; --card-z: {{ bk.z_index }};"
+              >
+                <div class="ng-dyk-card__inner t4s-pr">
+                  <img
+                    class="lazyloadt4s"
+                    data-src="{{ bk.image | image_url: width: 1 }}"
+                    data-widths="[400,600,800,1000,1200,1400]"
+                    data-optimumx="2"
+                    data-sizes="auto"
+                    src="{% render 'img_svg', w: bk.image.width, h: bk.image.height %}"
+                    width="{{ bk.image.width }}"
+                    height="{{ bk.image.height }}"
+                    alt="{{ bk.image.alt | escape }}"
+                  >
+                  <span class="lazyloadt4s-loader"></span>
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
     </div>
   </div>
   {%- if stt_layout == 't4s-se-container' -%}</div>{%- endif -%}
@@ -137,6 +166,36 @@
       "label": "Subtext",
       "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>"
     },
+    { "type": "header", "content": "Right column content" },
+    {
+      "type": "select",
+      "id": "display_mode",
+      "label": "Display on right",
+      "default": "cards",
+      "options": [
+        { "value": "cards", "label": "Card images (stack of images)" },
+        { "value": "image", "label": "Single image" }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "Choose ‘Single image’ to upload one image for desktop and mobile instead of adjusting individual cards.",
+      "visible_if": "{{ section.settings.display_mode == 'image' }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Single image (desktop)",
+      "info": "Shown when Display on right = Single image",
+      "visible_if": "{{ section.settings.display_mode == 'image' }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Single image (mobile)",
+      "info": "Shown at 1024px and below when Display on right = Single image",
+      "visible_if": "{{ section.settings.display_mode == 'image' }}"
+    },
     {
       "type": "select",
       "id": "text_align",
@@ -195,7 +254,7 @@
       "id": "stage_min_height",
       "label": "Stage min height",
       "min": 200,
-      "max": 900,
+      "max": 950,
       "step": 10,
       "unit": "px",
       "default": 520
@@ -205,7 +264,7 @@
       "id": "stage_min_height_mb",
       "label": "Stage min height (mobile)",
       "min": 200,
-      "max": 900,
+      "max": 950,
       "step": 10,
       "unit": "px",
       "default": 620
