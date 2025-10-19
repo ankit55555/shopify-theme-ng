@@ -39,7 +39,7 @@
   {%- endif -%}
 
   <div
-    class="ng-image-card-collage t4s-row"
+    class="ng-image-card-collage"
     style="--ng-image-card-collage-heading-color: {{ se_stts.heading_color }}; --ng-image-card-collage-heading-size: {{ se_stts.heading_size }}px; --ng-image-card-collage-heading-size-mb: {{ se_stts.heading_size_mb }}px; --ng-image-card-collage-body-color: {{ se_stts.body_color }}; --ng-image-card-collage-body-size: {{ se_stts.body_size }}px; --ng-image-card-collage-body-size-mb: {{ se_stts.body_size_mb }}px; --ng-image-card-collage-stage-minh: {{ se_stts.stage_min_height }}px; --ng-image-card-collage-stage-minh-mb: {{ se_stts.stage_min_height_mb }}px;"
   >
     <div class="ng-image-card-collage__content {{ se_stts.text_align }}" hdt-reveal="slide-in">
@@ -58,7 +58,7 @@
             <div
               class="ng-image-card-collage-card"
               {{ block.shopify_attributes }}
-              style="--card-w: {{ bk.image_width }}px; --card-w-mb: {{ bk.image_width_mb }}px; --card-rotate: {{ bk.rotate }}deg; --card-x: {{ bk.offset_x }}px; --card-y: {{ bk.offset_y }}px; --card-x-mb: {{ bk.offset_x_mb }}px; --card-y-mb: {{ bk.offset_y_mb }}px; --card-z: {{ bk.z_index }};"
+              style="--card-w: {{ bk.image_width }}px; --card-w-mb: {{ bk.image_width_mb }}px; --card-rotate: 0deg; --card-x: {{ bk.offset_x }}px; --card-y: {{ bk.offset_y }}px; --card-x-mb: {{ bk.offset_x_mb }}px; --card-y-mb: {{ bk.offset_y_mb }}px; --card-z: {{ bk.z_index }};"
             >
               <div class="ng-dyk-card__inner t4s-pr">
                 <img
@@ -119,8 +119,8 @@
       "id": "pd",
       "label": "Padding",
       "info": "top,right,bottom,left",
-      "default": "80px,,80px,",
-      "placeholder": "80px,,80px,"
+      "default": "80px,0px,80px,0px",
+      "placeholder": "80px,0px,80px,0px"
     },
     { "type": "header", "content": "+ Design Tablet Options" },
     { "type": "text", "id": "mg_tb", "label": "Margin", "placeholder": ",,40px," },
@@ -247,14 +247,8 @@
           "default": 260
         },
         {
-          "type": "range",
-          "id": "rotate",
-          "label": "Rotation",
-          "min": -25,
-          "max": 25,
-          "step": 1,
-          "unit": "deg",
-          "default": 0
+          "type": "paragraph",
+          "content": "Note: Card images can include their own tilt. Rotation is visually applied by the asset; use X/Y offsets here to position."
         },
         {
           "type": "range",
@@ -309,7 +303,6 @@
           "type": "card",
           "settings": {
             "image_width": 360,
-            "rotate": -6,
             "offset_x": -220,
             "offset_y": 80,
             "image_width_mb": 260,
@@ -322,7 +315,6 @@
           "type": "card",
           "settings": {
             "image_width": 420,
-            "rotate": 0,
             "offset_x": 0,
             "offset_y": 0,
             "image_width_mb": 280,
@@ -335,7 +327,6 @@
           "type": "card",
           "settings": {
             "image_width": 360,
-            "rotate": 6,
             "offset_x": 220,
             "offset_y": 40,
             "image_width_mb": 250,
