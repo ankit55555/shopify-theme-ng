@@ -15,7 +15,7 @@
   color: var(--ng-image-card-collage-heading-color, inherit);
   font-size: var(--ng-image-card-collage-heading-size, 48px);
   line-height: 1.1;
-  font-weight: 600;
+  font-weight: 400;
 }
 .ng-image-card-collage__text {
   color: var(--ng-image-card-collage-body-color, inherit);

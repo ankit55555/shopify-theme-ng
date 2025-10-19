@@ -92,7 +92,7 @@
               <div
                 class="ng-image-card-collage-card"
                 {{ block.shopify_attributes }}
-                style="--card-w: {{ bk.image_width }}px; --card-w-mb: {{ bk.image_width_mb }}px; --card-rotate: 0deg; --card-x: {{ bk.offset_x }}px; --card-y: {{ bk.offset_y }}px; --card-x-mb: {{ bk.offset_x_mb }}px; --card-y-mb: {{ bk.offset_y_mb }}px; --card-z: {{ bk.z_index }};"
+                style="--card-w: {{ bk.image_width }}px; --card-w-mb: {{ bk.image_width_mb }}px; --card-rotate: {{ bk.rotate }}deg; --card-x: {{ bk.offset_x }}px; --card-y: {{ bk.offset_y }}px; --card-x-mb: {{ bk.offset_x_mb }}px; --card-y-mb: {{ bk.offset_y_mb }}px; --card-z: {{ bk.z_index }};"
               >
                 <div class="ng-dyk-card__inner t4s-pr">
                   <img
@@ -326,8 +326,18 @@
           "default": 260
         },
         {
+          "type": "range",
+          "id": "rotate",
+          "label": "Rotation",
+          "min": -25,
+          "max": 25,
+          "step": 1,
+          "unit": "deg",
+          "default": 0
+        },
+        {
           "type": "paragraph",
-          "content": "Note: Card images can include their own tilt. Rotation is visually applied by the asset; use X/Y offsets here to position."
+          "content": "Rotate the card slightly for visual energy. Keep values small (−10 to 10) for realism."
         },
         {
           "type": "range",
