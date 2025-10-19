@@ -131,6 +131,142 @@
         {% # theme-check-enable %}
       </div>
     {%- endif -%}
+    
+    {%- assign legal_blocks = se_blocks | where: 'type', 'legal_bar' -%}
+    {%- for block in legal_blocks -%}
+      {%- assign lb = block.settings -%}
+      {%- assign now_y = 'now' | date: '%Y' -%}
+
+      <div class="t4s-legal-bar t4s-w-100">
+        <div class="t4s-container">
+          {%- if lb.back_to_top_label != blank -%}
+            <div class="t4s-legal-top">
+              <div class="ng-legal-top-row">
+                <div class="ng-legal-top-cell">
+                  <a
+                    href="#"
+                    class="t4s-footer-link t4s-backtotop"
+                    onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;"
+                  >
+                    <span>{{- lb.back_to_top_label -}}</span>
+                    <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                      <path d="M8 3.2l4.4 4.4-.9.9L8.7 5.6V13h-1.4V5.6L4.5 8.5l-.9-.9L8 3.2z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+          <div
+            class="t4s-legal-inner"
+            style="{% if lb.show_border %}border-top:1px solid var(--border-cl);{% endif %} font-size:{{ lb.text_fs }}px;"
+          >
+            <style>
+              /* Scoped to the legal bar only */
+              .t4s-legal-bar {
+                padding: 12px 0;
+              }
+              .t4s-legal-bar .t4s-legal-top {
+                padding-bottom: 8px;
+              }
+              .t4s-legal-bar .t4s-legal-bottom {
+                padding-top: 12px;
+              }
+              .t4s-legal-bar .ng-legal-top-row {
+                display: flex;
+                justify-content: flex-end;
+              }
+              .t4s-legal-bar .ng-legal-bottom-row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 16px;
+              }
+              .t4s-legal-bar .ng-legal-left {
+                flex: 1 1 auto;
+              }
+              .t4s-legal-bar .ng-legal-right {
+                flex: 0 0 auto;
+                text-align: right;
+              }
+              .t4s-legal-inner[style*='border-top'] {
+              }
+              .t4s-legal-bar .t4s-footer-linklist {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 28px;
+                margin: 0;
+                padding: 0;
+              }
+              .t4s-legal-bar .t4s-footer-linklist li {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+              }
+              .t4s-legal-bar .t4s-coppy-right {
+                margin-left: 0;
+                opacity: 0.9;
+              }
+              .t4s-legal-bar .t4s-backtotop {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                margin-left: 18px;
+              }
+              .t4s-legal-bar .t4s-backtotop svg {
+                width: 14px;
+                height: 14px;
+                opacity: 0.8;
+              }
+              @media (max-width: 767px) {
+                {% comment %} .t4s-legal-bar .ng-legal-top-row {
+                  justify-content: flex-start;
+                } {% endcomment %}
+                .t4s-legal-bar .ng-legal-bottom-row {
+                  flex-direction: column;
+                  align-items: flex-start;
+                }
+                .t4s-legal-bar .ng-legal-right {
+                  text-align: left;
+                  margin-top: 8px;
+                }
+              }
+              @media (max-width: 767px) {
+                .t4s-legal-bar {
+                  padding: 10px 0;
+                }
+                .t4s-legal-bar .t4s-footer-linklist {
+                  gap: 16px;
+                }
+              }
+            </style>
+
+            <div class="t4s-legal-bottom">
+              <div class="ng-legal-bottom-row">
+                <div class="ng-legal-left">
+                  {%- if lb.menu != blank -%}
+                    <div class="t4s-footer-menu t4s-footer-menu-style1">
+                      <ul class="t4s-footer-linklist">
+                        {%- for link in lb.menu.links -%}
+                          <li>
+                            <a href="{{ link.url }}" class="t4s-footer-link">{{ link.title | escape }}</a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    </div>
+                  {%- endif -%}
+                </div>
+                <div class="ng-legal-right">
+                  {%- if lb.copy_text != blank -%}
+                    <div class="t4s-coppy-right">{{ lb.copy_text | replace: '[year]', now_y }}</div>
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- endfor -%}
   </div>
   {{- html_layout[1] -}}
 </div>
@@ -1797,6 +1933,46 @@
           "type": "number",
           "id": "mgb_mb",
           "label": "Margin bottom on mobile (Unit:px)"
+        }
+      ]
+    },
+    {
+      "type": "legal_bar",
+      "name": "Legal & copyright bar",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Legal menu"
+        },
+        {
+          "type": "html",
+          "id": "copy_text",
+          "label": "Copyright text",
+          "default": "Copyright © [year] <span class=\"t4s-cp\"><a href=\"https://ngearsafe.com/\">NG Earsafe</a></span> | All Rights Reserved."
+        },
+        {
+          "type": "text",
+          "id": "back_to_top_label",
+          "label": "Back to top label",
+          "default": "Back to top"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_border",
+          "label": "Show top border",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "text_fs",
+          "label": "Font size",
+          "min": 10,
+          "max": 20,
+          "step": 1,
+          "unit": "px",
+          "default": 12
         }
       ]
     }
