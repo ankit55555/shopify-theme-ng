@@ -71,10 +71,10 @@
                                 </div>
                             {% endif %}
                             {% if bk_stts.show_au or bk_stts.show_dt or bk_stts.show_cm %}
-                                <ul style="display: inline-block;">
+                                <ul style="display: inline-block;margin: 0px;padding: 0px;list-style: none;padding-inline-start: 0;">
                                     {%- if bk_stts.show_au -%}<li><span>{{ 'blogs.article.by' | t }} {{ article.author | replace_first: 'ad clnt', 'admin' }}</span></li>{%- endif -%}
-                                    {%- if bk_stts.show_dt -%}<li style="margin: 0px 0px;list-style: none;"><span><strong>Published On</strong>: {{ article.created_at | date: "%d %B, %Y" }}</span></li>{%- endif -%}
-                                    {%- if article.created_at != article.updated_at -%}<li style="margin: 0px 0px;list-style: none;"><span><strong>Last updated</strong>: {{ article.updated_at | date: "%d %B, %Y" }}</span></li>{%- endif -%}
+                                    {%- if bk_stts.show_dt -%}<li style="margin: 0px 0px;padding: 0px;list-style: none;"><span><strong>Published On</strong>: {{ article.metafields.custom.published_date | default: article.created_at | date: "%d %B, %Y" }}</span></li>{%- endif -%}
+                                    {%- if article.created_at != article.updated_at -%}<li style="margin: 0px 0px;padding: 0px;list-style: none;"><span><strong>Last updated</strong>: {{ article.updated_at | date: "%d %B, %Y" }}</span></li>{%- endif -%}
                                     {%- if bk_stts.show_cm -%}
                                         {%- if number_of_comments > 0 -%}{%- assign cm_link = '#comments' -%}{%- else -%}{%- assign cm_link = '#comment_form' -%}{%- endif -%}
                                         <li><a href="{{ article.url }}{{ cm_link }}">{{ 'blogs.comments.with_count_2.other' | t: count: number_of_comments }}</a></li>
