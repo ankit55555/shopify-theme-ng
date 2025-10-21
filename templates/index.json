@@ -1895,6 +1895,61 @@
         "code_cus_css": ""
       }
     },
+    "ng_product_range_njWDCP": {
+      "type": "ng-product-range",
+      "blocks": {
+        "product_r7pMgB": {
+          "type": "product",
+          "settings": {
+            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
+          }
+        },
+        "product_B4yKTh": {
+          "type": "product",
+          "settings": {
+            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
+          }
+        },
+        "product_GHcWWq": {
+          "type": "product",
+          "settings": {
+            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
+          }
+        },
+        "product_7cKN9a": {
+          "type": "product",
+          "settings": {
+            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
+          }
+        },
+        "product_zEftQC": {
+          "type": "product",
+          "settings": {
+            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
+          }
+        }
+      },
+      "block_order": [
+        "product_r7pMgB",
+        "product_B4yKTh",
+        "product_GHcWWq",
+        "product_7cKN9a",
+        "product_zEftQC"
+      ],
+      "name": "NG Product Range",
+      "settings": {
+        "heading": "Our Product Range",
+        "subheading": "Open-ear technology provides a comfortable and safer alternative to in-ear headphones",
+        "heading_fs": 59,
+        "desc_fs": 19,
+        "cta_label": "View all",
+        "cta_link": "shopify://pages/about-us",
+        "cta_style": "outline",
+        "cta_size": "lg",
+        "bg_style": "none",
+        "layout": "t4s-container-wrap"
+      }
+    },
     "ng_why_earsafe_nDa6AL": {
       "type": "ng-why-earsafe",
       "blocks": {
@@ -1988,66 +2043,11 @@
         "heading_color": "#eaeaea",
         "text_color": "#eaeaea",
         "muted_color": "#9e9e9e",
-        "accent_color": "#E4B44A",
+        "accent_color": "#e4b44a",
         "card_bg": "#1a1a1a",
         "card_text": "#eaeaea",
         "padding_top": 64,
         "padding_bottom": 64
-      }
-    },
-    "ng_product_range_njWDCP": {
-      "type": "ng-product-range",
-      "blocks": {
-        "product_r7pMgB": {
-          "type": "product",
-          "settings": {
-            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
-          }
-        },
-        "product_B4yKTh": {
-          "type": "product",
-          "settings": {
-            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
-          }
-        },
-        "product_GHcWWq": {
-          "type": "product",
-          "settings": {
-            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
-          }
-        },
-        "product_7cKN9a": {
-          "type": "product",
-          "settings": {
-            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
-          }
-        },
-        "product_zEftQC": {
-          "type": "product",
-          "settings": {
-            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
-          }
-        }
-      },
-      "block_order": [
-        "product_r7pMgB",
-        "product_B4yKTh",
-        "product_GHcWWq",
-        "product_7cKN9a",
-        "product_zEftQC"
-      ],
-      "name": "NG Product Range",
-      "settings": {
-        "heading": "Our Product Range",
-        "subheading": "Open-ear technology provides a comfortable and safer alternative to in-ear headphones",
-        "heading_fs": 59,
-        "desc_fs": 19,
-        "cta_label": "View all",
-        "cta_link": "shopify://pages/about-us",
-        "cta_style": "outline",
-        "cta_size": "lg",
-        "bg_style": "none",
-        "layout": "t4s-container-wrap"
       }
     }
   },
@@ -2073,8 +2073,8 @@
     "accordion_wWymTR",
     "image_text_ha3Vhx",
     "custom_html_d9mBdG",
+    "ng_product_range_njWDCP",
     "ng_why_earsafe_nDa6AL",
-    "ng_insights_trends_3xrAU4",
-    "ng_product_range_njWDCP"
+    "ng_insights_trends_3xrAU4"
   ]
 }
