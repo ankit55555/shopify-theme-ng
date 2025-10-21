@@ -1,0 +1,98 @@
+.ng-media {
+  position: relative;
+  width: 100%;
+  background: var(--ng-media-bg, #000); /* rest black */
+  color: #fff;
+  overflow: hidden;
+}
+.ng-media__inner { padding: var(--ng-media-pt, 56px) 0 var(--ng-media-pb, 48px); }
+.ng-media__heading {
+  text-align: center;
+  font-size: clamp(var(--ng-media-heading-size-mobile, 24px), 5vw, var(--ng-media-heading-size-desktop, 56px));
+  line-height: 1.05;
+  margin: 0 0 32px;
+  color: var(--ng-media-heading-color, #cfd3d6);
+}
+
+/* track */
+.ng-media__viewport {
+  overflow: hidden;
+  padding: 12px 0; /* keep logos vertically comfortable */
+}
+.ng-media__track {
+  display: flex;
+  align-items: center;
+  gap: var(--ng-media-gap, 64px);
+  will-change: transform;
+}
+.ng-media__item {
+  flex: 0 0 auto;
+  /* Exactly N items visible in viewport (desktop/mobile override via --ng-media-visible) */
+  flex-basis: calc((100% / var(--ng-media-visible-final, var(--ng-media-visible, 6))) - (var(--ng-media-gap, 64px) * (var(--ng-media-visible-final, var(--ng-media-visible, 6)) - 1) / var(--ng-media-visible-final, var(--ng-media-visible, 6))));
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  filter: grayscale(100%);
+  opacity: var(--ng-media-inactive-opacity, 0.8);
+  transition: transform .35s ease, opacity .35s ease, filter .35s ease;
+}
+.ng-media__item img { 
+  display: block; 
+  height: var(--ng-media-logo-h, 60px); 
+  width: auto; 
+  object-fit: contain;
+}
+
+/* center highlight */
+.ng-media__center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--ng-media-center-w, 180px);
+  height: calc(var(--ng-media-logo-h, 60px) + 20px);
+  display: grid;
+  place-items: center;
+  border: var(--ng-media-center-bw, 2px) solid var(--ng-media-center-color, #d50000);
+  border-radius: var(--ng-media-center-br, 8px);
+  pointer-events: none;
+}
+
+/* Responsive: set visible count for mobile */
+@media (max-width: 768px){
+  .ng-media { --ng-media-visible-final: var(--ng-media-visible-m, 3); }
+  .ng-media__track { gap: var(--ng-media-gap-m, var(--ng-media-gap, 64px)); }
+  .ng-media__item img { height: var(--ng-media-logo-h-m, var(--ng-media-logo-h, 60px)); }
+}
+.ng-media__item.is-active { filter: none; opacity: 1; transform: scale(1.04); }
+
+/* nav */
+.ng-media__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px; height: 44px;
+  border-radius: 50%; border: 0;
+  background: rgba(255,255,255,.15);
+  cursor: pointer; z-index: 2;
+}
+.ng-media__nav:hover { background: rgba(255,255,255,.28); }
+.ng-media__prev { left: 8px; }
+.ng-media__next { right: 8px; }
+.ng-media__nav:after {
+  content:""; position:absolute; left:50%; top:50%; width:12px; height:12px;
+  border-top:2px solid #fff; border-right:2px solid #fff;
+  transform: translate(-50%,-50%) rotate(135deg);
+}
+.ng-media__next:after { transform: translate(-50%,-50%) rotate(-45deg); }
+
+/* dots */
+.ng-media__dots { display:flex; gap:8px; justify-content:center; margin-top:16px; }
+.ng-media__dot { width:7px; height:7px; border-radius:50%; background:#555; cursor:pointer; }
+.ng-media__dot.is-active { background:#fff; }
+
+@media (max-width: 768px){
+  .ng-media__inner { padding: 40px 0 36px; }
+}
+
+
