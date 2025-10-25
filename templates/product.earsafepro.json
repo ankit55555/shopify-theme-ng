@@ -126,15 +126,6 @@
             "custom_liquid": "{% render 'exchange-sale' %}"
           }
         },
-        "dushera_offer_timer_BgrgMc": {
-          "type": "dushera_offer_timer",
-          "settings": {
-            "title_text": "Dushera offer ends in",
-            "time_text": "2 days 2 hrs left",
-            "target_datetime": "2025-10-05 23:55",
-            "ended_text": "Offer ended"
-          }
-        },
         "custom_liquid_HLrtV8": {
           "type": "custom_liquid",
           "settings": {
@@ -360,7 +351,6 @@
         "bold_discounts_the_sales_app_sale_clock_NQPrMQ",
         "price_review",
         "custom_liquid_4mPcj6",
-        "dushera_offer_timer_BgrgMc",
         "custom_liquid_HLrtV8",
         "countdown_QA6E8T",
         "text_cJtCgp",
@@ -1075,6 +1065,8 @@
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
             "review_data": "sample_data",
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget",
             "max_width": 1200
           }
         }
@@ -1326,7 +1318,7 @@
             "txt_align": "start",
             "sub_heading": "",
             "heading": "",
-            "text": "<h4><br/>Trending Searches By Readers<strong><br/></strong></h4><p></p><p><a href=\"https://ngearsafe.com/blogs/open-ear-headphones/headphone-for-glasses-wearers\">Best Headphones For Glasses</a> | <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/bone-conduction-headphones-side-effects\">Bone Conduction Headphones Safe</a> | <a href=\"https://ngearsafe.com/products/ng-earsafe-comm-open-ear-headphones-with-noise-canceling-boom-mic\">Office Headsets</a> | <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/headphones-for-meditation-the-new-way-to-relax-and-focus\">Best Headphones For Meditation</a> | <a href=\"https://ngearsafe.com/pages/bone-conduction\">How Do Bone Conduction Headphones Work</a> | <a href=\"https://ngearsafe.com/collections/open-ear-headphones\">Bluetooth Safety Headphones</a> | <a href=\"https://ngearsafe.com/products/ng-earsafe-openbuds-with-air-conduction-technology\">Safety Earbuds</a> | <a href=\"https://ngearsafe.com/products/ng-earsafe-lite-open-ear-headphones\">Neckband Headphones Bluetooth</a> | <a href=\"https://ngearsafe.com/pages/air-conduction\">Best Headphones To Avoid Ear Infections</a> | <a href=\"https://ngearsafe.com/pages/bulk-orders\">Wholesale Headphones</a><a href=\"https://ngearsafe.com/collections/open-ear-headphones\" target=\"_blank\" title=\"https://ngearsafe.com/collections/open-ear-headphones\"><br/><br/></a></p>",
+            "text": "<h4><br/>Trending Searches By Readers<strong><br/></strong></h4><p></p><p><a href=\"https://ngearsafe.com/blogs/open-ear-headphones/headphone-for-glasses-wearers\">Best Headphones For Glasses</a> | <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/bone-conduction-headphones-side-effects\">Bone Conduction Headphones Safe</a> | <a href=\"/products/noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0\" target=\"_blank\" title=\"NG EarSafe Comm 2.0 Noise Cancelling Open Ear Headphones With Mic\">Office Headsets</a> | <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/headphones-for-meditation-the-new-way-to-relax-and-focus\">Best Headphones For Meditation</a> | <a href=\"https://ngearsafe.com/pages/bone-conduction\">How Do Bone Conduction Headphones Work</a> | <a href=\"https://ngearsafe.com/collections/open-ear-headphones\">Bluetooth Safety Headphones</a> | <a href=\"https://ngearsafe.com/products/ng-earsafe-openbuds-with-air-conduction-technology\">Safety Earbuds</a> | <a href=\"https://ngearsafe.com/products/ng-earsafe-lite-open-ear-headphones\">Neckband Headphones Bluetooth</a> | <a href=\"https://ngearsafe.com/pages/air-conduction\">Best Headphones To Avoid Ear Infections</a> | <a href=\"https://ngearsafe.com/pages/bulk-orders\">Wholesale Headphones</a><a href=\"https://ngearsafe.com/collections/open-ear-headphones\" target=\"_blank\" title=\"https://ngearsafe.com/collections/open-ear-headphones\"><br/><br/></a></p>",
             "subhd_color": "#222222",
             "hd_color": "#222222",
             "des_color": "#878787",

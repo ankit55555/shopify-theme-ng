@@ -126,15 +126,6 @@
             "custom_liquid": "{% render 'exchange-sale' %}"
           }
         },
-        "dushera_offer_timer_JppFzd": {
-          "type": "dushera_offer_timer",
-          "settings": {
-            "title_text": "Dushera offer ends in",
-            "time_text": "2 days 2 hrs left",
-            "target_datetime": "2025-10-05 23:55",
-            "ended_text": "Offer ended"
-          }
-        },
         "bundler_bundler_target_element_gewktp": {
           "type": "shopify://apps/bundler/blocks/bundler-target-element/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
           "settings": {}
@@ -356,7 +347,6 @@
         "bold_discounts_the_sales_app_sale_clock_eKPWxA",
         "price_review",
         "custom_liquid_TihUAe",
-        "dushera_offer_timer_JppFzd",
         "bundler_bundler_target_element_gewktp",
         "custom_liquid_iYkKAT",
         "countdown_QA6E8T",
@@ -1358,7 +1348,7 @@
             "txt_align": "start",
             "sub_heading": "",
             "heading": "",
-            "text": "<h4><br/>Trending Searches By Readers<strong><br/></strong></h4><p></p><p><a href=\"https://ngearsafe.com/\">Premium Headphone Brands</a> | <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/headphones-vs-earphones\">Headphones Vs Earphones</a> | <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/is-bluetooth-headphones-harmful\">Are Bluetooth Headphones Safe</a> | <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/open-ear-vs-in-ear-vs-over-ear-headphones\">Over Ear Vs On Ear Headphones</a> | <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/what-is-active-noise-cancellation\">What Is ANC</a> | <a href=\"https://ngearsafe.com/products/ng-earsafe-pro-open-ear-bone-conduction-headphones\">Best Swimming Headphones</a> | <a href=\"https://ngearsafe.com/products/ng-earsafe-comm-open-ear-headphones-with-noise-canceling-boom-mic\">Bluetooth Headphones With Microphone</a> | <a href=\"https://ngearsafe.com/pages/bone-conduction\">Bone Earphones</a> | <a href=\"https://ngearsafe.com/products/ng-earsafe-lite-open-ear-headphones\">Running Headphones</a> | <a href=\"https://ngearsafe.com/pages/air-conduction\">Air Conduction Wireless Headphones</a><a href=\"https://ngearsafe.com/collections/open-ear-headphones\" target=\"_blank\" title=\"https://ngearsafe.com/collections/open-ear-headphones\"><br/><br/></a></p>",
+            "text": "<h4><br/>Trending Searches By Readers<strong><br/></strong></h4><p></p><p><a href=\"https://ngearsafe.com/\">Premium Headphone Brands</a> | <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/headphones-vs-earphones\">Headphones Vs Earphones</a> | <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/is-bluetooth-headphones-harmful\">Are Bluetooth Headphones Safe</a> | <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/open-ear-vs-in-ear-vs-over-ear-headphones\">Over Ear Vs On Ear Headphones</a> | <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/what-is-active-noise-cancellation\">What Is ANC</a> | <a href=\"https://ngearsafe.com/products/ng-earsafe-pro-open-ear-bone-conduction-headphones\">Best Swimming Headphones</a> | <a href=\"/products/noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0\" title=\"NG EarSafe Comm 2.0 Noise Cancelling Open Ear Headphones With Mic\">Bluetooth Headphones With Microphone</a> | <a href=\"https://ngearsafe.com/pages/bone-conduction\">Bone Earphones</a> | <a href=\"https://ngearsafe.com/products/ng-earsafe-lite-open-ear-headphones\">Running Headphones</a> | <a href=\"https://ngearsafe.com/pages/air-conduction\">Air Conduction Wireless Headphones</a><a href=\"https://ngearsafe.com/collections/open-ear-headphones\" target=\"_blank\" title=\"https://ngearsafe.com/collections/open-ear-headphones\"><br/><br/></a></p>",
             "subhd_color": "#222222",
             "hd_color": "#222222",
             "des_color": "#878787",

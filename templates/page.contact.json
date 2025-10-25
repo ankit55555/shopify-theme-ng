@@ -1,1 +1,110 @@
-{"sections":{"heading":{"type":"heading-template","disabled":true,"settings":{"heading_fullwidth":false,"use_specify_image":true,"parallax":false,"color":"#000000","overlay":54,"padding":50,"paddingmb":50,"mg_b":50,"mg_bmb":50,"content_align":"t4s-text-center","bg_pos":"center center","bg_repeat":"no-repeat","bg_size":"cover","use_cus_css":false,"code_cus_css":".SectionID {\nbackground-color:red\n}"}},"main":{"type":"main-page","disabled":true,"settings":{"layout":"t4s-container-wrap","cl_bg":"","cl_bg_gradient":"","mg":"60px,,60px,","pd":"","mg_tb":"","pd_tb":"","mg_mb":",,30px,","pd_mb":""}},"1648884254eae8e0bd":{"type":"contact-form","blocks":{"1648884254cd155bea-0":{"type":"bl_form","settings":{"heading":"DROP US A LINE","enable_phone":true,"enable_full_btn":true,"button_style":"outline","btn_size":"medium","btn_cl":"dark"}},"1648884254cd155bea-1":{"type":"bl_info","settings":{"heading":"CONTACT INFORMATION","text":"<p>We love to hear from you on our customer service, merchandise, website or any topics you want to share with us. Your comments and suggestions will be appreciated. Please complete the form below.<\/p><p><i class=\"las la-home fs__16\"><\/i> KEDAR, TULSI PARK STREET 1, RAIYA TEL EXCHANGE, 150FT ROAD, 360005 RAJKOT Gujarat, India<\/p><p><i class=\"las la-phone fs__16\"><\/i> <b>Toll free number: <\/b>08047165643<\/p><p><i class=\"las la-envelope fs__16\"><\/i> support@ngearsafe.com<\/p><i class=\"las la-clock fs__16\"><\/i> <b>Monday to Saturay<\/b> 10:00am - 07:00pm"}}},"block_order":["1648884254cd155bea-0","1648884254cd155bea-1"],"settings":{"enable_map":true,"map":"<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d59064.88020437284!2d70.6968610216797!3d22.294840100000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959cbda560ab003%3A0x6b8839660c5a5eb!2sNG%20ConsumerTech%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1702935033642!5m2!1sen!2sin\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"><\/iframe>","layout":"t4s-container-wrap","cl_bg":"","cl_bg_gradient":"","mg":"50px,,50px,","pd":"","mg_tb":"","pd_tb":"","mg_mb":",,30px,","pd_mb":"","use_cus_css":false,"code_cus_css":".SectionID {\nbackground-color:red\n}"}},"sidebar-page":{"type":"sidebar-page","disabled":true,"settings":{"enable_drawer":true,"space":50,"size":"medium","br_style":"none","brcolor":"#222222","sidebar_bdr":5,"sidebar_pd":10}}},"order":["heading","main","1648884254eae8e0bd","sidebar-page"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "heading": {
+      "type": "heading-template",
+      "disabled": true,
+      "settings": {
+        "heading_fullwidth": false,
+        "use_specify_image": true,
+        "parallax": false,
+        "color": "#000000",
+        "overlay": 54,
+        "padding": 50,
+        "paddingmb": 50,
+        "mg_b": 50,
+        "mg_bmb": 50,
+        "content_align": "t4s-text-center",
+        "bg_pos": "center center",
+        "bg_repeat": "no-repeat",
+        "bg_size": "cover",
+        "use_cus_css": false,
+        "code_cus_css": ".SectionID {\nbackground-color:red\n}"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "60px,,60px,",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": ""
+      }
+    },
+    "1648884254eae8e0bd": {
+      "type": "contact-form",
+      "blocks": {
+        "1648884254cd155bea-0": {
+          "type": "bl_form",
+          "settings": {
+            "heading": "DROP US A LINE",
+            "enable_phone": true,
+            "enable_full_btn": true,
+            "button_style": "outline",
+            "btn_size": "medium",
+            "btn_cl": "dark"
+          }
+        },
+        "1648884254cd155bea-1": {
+          "type": "bl_info",
+          "settings": {
+            "heading": "CONTACT INFORMATION",
+            "text": "<p>We love to hear from you on our customer service, merchandise, website or any topics you want to share with us. Your comments and suggestions will be appreciated. Please complete the form below.</p>\n\n<p>\n  <i class=\"las la-home fs__16\"></i> \n  <b>RAJKOT (Gujarat):</b> \n  Kedar, Tulsi Park Street 1, Raiya Tel Exchange, 150ft Road, 360005 Rajkot, Gujarat, India\n</p>\n\n<p><i class=\"las la-home fs__16\"></i> <b>HYDERABAD (Telangana):</b> Phase 4, The Botanika, 101 HIG-90 A, Above ICICI Bank, Jayabheri Enclave, Gachibowli, Hyderabad, Telangana 500032, India</p>\n\n<p><i class=\"las la-phone fs__16\"></i> <b>Toll free number:</b> 08047165643</p>\n\n<p><i class=\"las la-envelope fs__16\"></i> support@ngearsafe.com</p>\n\n<p><i class=\"las la-clock fs__16\"></i> <b>Monday to Saturday</b> 10:00am - 07:00pm</p>"
+          }
+        }
+      },
+      "block_order": [
+        "1648884254cd155bea-0",
+        "1648884254cd155bea-1"
+      ],
+      "settings": {
+        "enable_map": true,
+        "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59064.88020437284!2d70.6968610216797!3d22.294840100000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959cbda560ab003%3A0x6b8839660c5a5eb!2sNG%20ConsumerTech%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1702935033642!5m2!1sen!2sin\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "50px,,50px,",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": "",
+        "use_cus_css": false,
+        "code_cus_css": ".SectionID {\nbackground-color:red\n}"
+      }
+    },
+    "sidebar-page": {
+      "type": "sidebar-page",
+      "disabled": true,
+      "settings": {
+        "enable_drawer": true,
+        "space": 50,
+        "size": "medium",
+        "br_style": "none",
+        "brcolor": "#222222",
+        "sidebar_bdr": 5,
+        "sidebar_pd": 10
+      }
+    }
+  },
+  "order": [
+    "heading",
+    "main",
+    "1648884254eae8e0bd",
+    "sidebar-page"
+  ]
+}
