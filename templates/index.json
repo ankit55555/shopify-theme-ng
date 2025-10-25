@@ -928,118 +928,6 @@
         "code_cus_css": ".SectionID {\nbackground-color:red\n}"
       }
     },
-    "ng_image_card_collage_nCmNbr": {
-      "type": "ng-image-card-collage",
-      "name": "NG Image Card Collage",
-      "settings": {
-        "layout": "t4s-container-fluid",
-        "cl_bg": "",
-        "cl_bg_gradient": "linear-gradient(35deg, rgba(221, 222, 216, 1), rgba(155, 174, 181, 1) 100%)",
-        "mg": ",,,",
-        "pd": "40px,40px,40px,80px",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,,",
-        "pd_mb": "40px,20px,40px,20px",
-        "heading": "Did you know?",
-        "subtext": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>",
-        "display_mode": "image",
-        "image_desktop": "shopify://shop_images/Screenshot_2025-10-19_171146-removebg-preview.png",
-        "image_mobile": "shopify://shop_images/Screenshot_2025-10-19_171752-removebg-preview.png",
-        "text_align": "t4s-text-start",
-        "heading_color": "#2a3642",
-        "heading_size": 56,
-        "heading_size_mb": 36,
-        "body_color": "#5d6b78",
-        "body_size": 16,
-        "body_size_mb": 14,
-        "stage_min_height": 520,
-        "stage_min_height_mb": 920,
-        "use_cus_css": false,
-        "code_cus_css": ""
-      }
-    },
-    "ng_image_card_collage_HrqpdT": {
-      "type": "ng-image-card-collage",
-      "blocks": {
-        "card_YNP9tH": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/Cnn__Did_You_Know.webp",
-            "image_width": 220,
-            "image_width_mb": 200,
-            "rotate": 0,
-            "offset_x": -220,
-            "offset_y": 0,
-            "offset_x_mb": -60,
-            "offset_y_mb": -190,
-            "z_index": 6
-          }
-        },
-        "card_eJdnDW": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/WHO__Did_You_Know.webp",
-            "image_width": 220,
-            "image_width_mb": 200,
-            "rotate": 0,
-            "offset_x": -10,
-            "offset_y": -70,
-            "offset_x_mb": 60,
-            "offset_y_mb": 30,
-            "z_index": 7
-          }
-        },
-        "card_mp3PiP": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/RW__Did_You_Know.webp",
-            "image_width": 220,
-            "image_width_mb": 200,
-            "rotate": 0,
-            "offset_x": 210,
-            "offset_y": 40,
-            "offset_x_mb": -70,
-            "offset_y_mb": 210,
-            "z_index": 6
-          }
-        }
-      },
-      "block_order": [
-        "card_YNP9tH",
-        "card_eJdnDW",
-        "card_mp3PiP"
-      ],
-      "disabled": true,
-      "name": "NG Image Card Collage",
-      "settings": {
-        "layout": "t4s-container-fluid",
-        "cl_bg": "",
-        "cl_bg_gradient": "linear-gradient(35deg, rgba(221, 222, 216, 1), rgba(155, 174, 181, 1) 100%)",
-        "mg": ",,,",
-        "pd": "40px,40px,40px,80px",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,,",
-        "pd_mb": "40px,20px,40px,20px",
-        "heading": "Did you know?",
-        "subtext": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>",
-        "display_mode": "cards",
-        "image_desktop": "shopify://shop_images/Screenshot_2025-10-19_171146-removebg-preview.png",
-        "image_mobile": "shopify://shop_images/Screenshot_2025-10-19_171752-removebg-preview.png",
-        "text_align": "t4s-text-start",
-        "heading_color": "#2a3642",
-        "heading_size": 56,
-        "heading_size_mb": 36,
-        "body_color": "#5d6b78",
-        "body_size": 16,
-        "body_size_mb": 14,
-        "stage_min_height": 520,
-        "stage_min_height_mb": 700,
-        "use_cus_css": false,
-        "code_cus_css": ""
-      }
-    },
     "6289d42b-4e78-4875-99bc-afaebf75ddc0": {
       "type": "feature_columns2",
       "blocks": {
@@ -1528,214 +1416,6 @@
         "code_cus_css": ""
       }
     },
-    "5b93a0f7-3cc5-4049-a999-21cb1671ee78": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "settings": {
-        "custom_liquid": "{% render 'ng-squad' %}",
-        "layout": "t4s-container-fluid",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,0px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,0px,",
-        "pd_mb": ""
-      }
-    },
-    "174420476751dd4252": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_featured_carousel_r3kF6T": {
-          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "maxwidth": 1080
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_featured_carousel_r3kF6T"
-      ],
-      "disabled": true,
-      "settings": {}
-    },
-    "e680ed45-4f33-4868-b30a-8f5f0c16e2a0": {
-      "type": "blog-post",
-      "disabled": true,
-      "settings": {
-        "design_heading": "1",
-        "heading_align": "t4s-text-center",
-        "top_heading": "Blog post",
-        "bt_lb": "Button label",
-        "icon_heading": "las la-gem",
-        "top_subheading": "",
-        "tophead_mb": 30,
-        "blog": "open-ear-headphones",
-        "post_des": "1",
-        "show_cate": false,
-        "show_tags": false,
-        "show_cnt": false,
-        "show_au": false,
-        "show_dt": false,
-        "show_cm": false,
-        "show_rm": false,
-        "show_irm": false,
-        "date": "date",
-        "content_align": "t4s-text-center",
-        "limit": 8,
-        "img_effect": "none",
-        "b_effect": "none",
-        "image_ratio": "ratioadapt",
-        "image_size": "cover",
-        "image_position": "8",
-        "col_dk": "3",
-        "col_tb": "2",
-        "col_mb": "1",
-        "space_h_item": "30",
-        "space_v_item": "30",
-        "space_h_item_mb": "10",
-        "space_v_item_mb": "10",
-        "layout_des": "2",
-        "loop": true,
-        "au_time": 2,
-        "au_hover": true,
-        "nav_btn": true,
-        "btn_vi": "always",
-        "btn_owl": "default",
-        "btn_shape": "none",
-        "btn_cl": "dark",
-        "btn_size": "small",
-        "btn_hidden_mobile": false,
-        "nav_dot": false,
-        "dot_owl": "default",
-        "dots_cl": "dark",
-        "dots_round": true,
-        "dots_space": 10,
-        "dots_hidden_mobile": false,
-        "use_pagination": "none",
-        "enable_bar_lm": true,
-        "btn_icon": false,
-        "button_style": "default",
-        "btns_size": "large",
-        "btns_cl": "dark",
-        "button_effect": "default",
-        "btn_pos": "t4s-text-center",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,50px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": "",
-        "use_cus_css": false,
-        "code_cus_css": ""
-      }
-    },
-    "logo_list_QKq4XP": {
-      "type": "logo_list",
-      "blocks": {
-        "logo_item_EjkpX8": {
-          "type": "logo_item",
-          "settings": {
-            "image": "shopify://shop_images/En_trackerr_4ce5ddb5-f2fa-41b6-a113-6b485a9aa3b2.webp",
-            "url": ""
-          }
-        },
-        "logo_item_Xyr8XX": {
-          "type": "logo_item",
-          "settings": {
-            "image": "shopify://shop_images/headerV3_YS_2d67bedf-72a6-4df0-9a1b-6292738122ae.webp",
-            "url": ""
-          }
-        },
-        "logo_item_etNtip": {
-          "type": "logo_item",
-          "settings": {
-            "image": "shopify://shop_images/IANS_dca1b360-a55f-4400-826f-6734cb2e7c10.webp",
-            "url": ""
-          }
-        },
-        "logo_item_7RP8UQ": {
-          "type": "logo_item",
-          "settings": {
-            "image": "shopify://shop_images/ISN_4059a653-9ad0-4d54-b98d-a5a782c8ee98.webp",
-            "url": ""
-          }
-        },
-        "logo_item_MBqpcM": {
-          "type": "logo_item",
-          "settings": {
-            "image": "shopify://shop_images/Entrepreneur-india_c7a17147-75b2-4b57-a613-d3df5bc957f7.webp",
-            "url": ""
-          }
-        },
-        "logo_item_gEBzVT": {
-          "type": "logo_item",
-          "settings": {
-            "image": "shopify://shop_images/VC_cuircle_df28ec66-8389-427d-baa6-52cf49bdcb20.webp",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_item_EjkpX8",
-        "logo_item_Xyr8XX",
-        "logo_item_etNtip",
-        "logo_item_7RP8UQ",
-        "logo_item_MBqpcM",
-        "logo_item_gEBzVT"
-      ],
-      "disabled": true,
-      "settings": {
-        "design_heading": "1",
-        "heading_align": "t4s-text-center",
-        "top_heading": "We are in Media",
-        "icon_heading": "las la-gem",
-        "top_subheading": "",
-        "tophead_mb": 30,
-        "img_effect": "none",
-        "b_effect": "none",
-        "open_link": "_blank",
-        "layout_des": "2",
-        "click_image": "data-goto",
-        "nav_thumbs": true,
-        "col_dk": "6",
-        "col_tb": "2",
-        "col_mb": "2",
-        "space_item": "30",
-        "space_item_mb": "30",
-        "loop": true,
-        "au_time": 2,
-        "au_hover": true,
-        "nav_btn": false,
-        "btn_vi": "hover",
-        "btn_owl": "default",
-        "btn_shape": "none",
-        "btn_cl": "dark",
-        "btn_size": "small",
-        "btn_hidden_mobile": true,
-        "nav_dot": false,
-        "dot_owl": "default",
-        "dots_cl": "dark",
-        "dots_round": true,
-        "dots_space": 10,
-        "dots_hidden_mobile": false,
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": "60px,,50px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": "60px,,30px,",
-        "pd_mb": "",
-        "use_cus_css": false,
-        "code_cus_css": ""
-      }
-    },
     "custom_liquid_xtYi4e": {
       "type": "custom-liquid",
       "disabled": true,
@@ -1929,9 +1609,9 @@
             "button_label": "SHOP NOW",
             "button_link": "",
             "text_align": "left",
-            "heading_color": "#FFFFFF",
-            "subheading_color": "#FFFFFF",
-            "button_text_color": "#FFFFFF",
+            "heading_color": "#ffffff",
+            "subheading_color": "#ffffff",
+            "button_text_color": "#ffffff",
             "button_bg_color": "#222222",
             "overlay_color": "#000000",
             "overlay_opacity": 30,
@@ -1949,9 +1629,9 @@
             "button_label": "SHOP NOW",
             "button_link": "",
             "text_align": "left",
-            "heading_color": "#FFFFFF",
-            "subheading_color": "#FFFFFF",
-            "button_text_color": "#FFFFFF",
+            "heading_color": "#ffffff",
+            "subheading_color": "#ffffff",
+            "button_text_color": "#ffffff",
             "button_bg_color": "#222222",
             "overlay_color": "#000000",
             "overlay_opacity": 30,
@@ -2256,7 +1936,7 @@
         "logo_gap_mobile": 40,
         "show_center_frame": false,
         "center_width": 180,
-        "center_color": "#D50000",
+        "center_color": "#d50000",
         "center_border_width": 2,
         "center_border_radius": 8,
         "visible_desktop": 6,
@@ -2273,8 +1953,6 @@
   "order": [
     "custom_html_WpnMxb",
     "16475370619b8de674",
-    "ng_image_card_collage_nCmNbr",
-    "ng_image_card_collage_HrqpdT",
     "6289d42b-4e78-4875-99bc-afaebf75ddc0",
     "6a03183b-47a2-42a2-8b78-7ca42e39a9f6",
     "custom_liquid_icnB89",
@@ -2284,10 +1962,6 @@
     "d2e855b9-2f9e-417a-9dba-00bce1f76bd9",
     "16475405032640277b",
     "3708fb84-c884-4080-b264-7b65ba109a2f",
-    "5b93a0f7-3cc5-4049-a999-21cb1671ee78",
-    "174420476751dd4252",
-    "e680ed45-4f33-4868-b30a-8f5f0c16e2a0",
-    "logo_list_QKq4XP",
     "custom_liquid_xtYi4e",
     "accordion_wWymTR",
     "ng_hero_slideshow_Edej3j",
