@@ -2057,7 +2057,7 @@
         "autoplay_interval": 3000,
         "loop": true,
         "direction": "ltr",
-        "show_arrows": true,
+        "show_arrows": false,
         "show_dots": false
       }
     }
