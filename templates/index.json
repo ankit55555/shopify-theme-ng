@@ -2081,6 +2081,81 @@
         "padding_top": 64,
         "padding_bottom": 64
       }
+    },
+    "ng_media_carousel_XRJawM": {
+      "type": "ng-media-carousel",
+      "blocks": {
+        "logo_APiMdN": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/ISN_Og_color.svg",
+            "alt": ""
+          }
+        },
+        "logo_EX9KyQ": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/VCCIRCLE_grey.svg",
+            "alt": ""
+          }
+        },
+        "logo_UDbHNT": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/ENTracker_grey.svg",
+            "alt": ""
+          }
+        },
+        "logo_M8XRhd": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Your_story_OG_color.svg",
+            "alt": ""
+          }
+        },
+        "logo_zJf4Xh": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Your_story_OG_color.svg",
+            "alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_APiMdN",
+        "logo_EX9KyQ",
+        "logo_UDbHNT",
+        "logo_M8XRhd",
+        "logo_zJf4Xh"
+      ],
+      "name": "Media Carousel",
+      "settings": {
+        "heading": "We are in Media",
+        "heading_color": "#cfd3d6",
+        "heading_size_desktop": 56,
+        "heading_size_mobile": 24,
+        "bg_color": "#000000",
+        "padding_top": 56,
+        "padding_bottom": 48,
+        "inactive_opacity": 80,
+        "logo_height": 60,
+        "logo_gap": 64,
+        "logo_height_mobile": 72,
+        "logo_gap_mobile": 40,
+        "show_center_frame": false,
+        "center_width": 180,
+        "center_color": "#D50000",
+        "center_border_width": 2,
+        "center_border_radius": 8,
+        "visible_desktop": 6,
+        "visible_mobile": 3,
+        "autoplay": true,
+        "autoplay_interval": 3000,
+        "loop": true,
+        "direction": "ltr",
+        "show_arrows": true,
+        "show_dots": false
+      }
     }
   },
   "order": [
@@ -2107,6 +2182,7 @@
     "ng_why_earsafe_nDa6AL",
     "hero_bg_banner_bjQYTE",
     "17358085378c9a29a5",
-    "ng_insights_trends_3xrAU4"
+    "ng_insights_trends_3xrAU4",
+    "ng_media_carousel_XRJawM"
   ]
 }
