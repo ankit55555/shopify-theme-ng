@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "current": {
     "purchase_code": "a4f677fa-4f16-43f2-853b-3888600b1522",
     "general_layout": "cus",
@@ -1114,7 +1114,7 @@
               "title": "Shop",
               "url": "https://ngearsafe.com/collections/open-ear-headphones",
               "open_link": "_self",
-              "icon": "las la-shopping-bag",
+              "icon": "",
               "cus_cl": false,
               "cl": "#ec0101",
               "lb": "",
@@ -1134,7 +1134,7 @@
               "title": "Support",
               "url": "https://help.ngearsafe.com/",
               "open_link": "_blank",
-              "icon": "las la-headphones",
+              "icon": "",
               "cus_cl": false,
               "cl": "#ec0101",
               "lb": "",
@@ -1147,7 +1147,7 @@
               "title": "Track Your Order",
               "url": "shopify://pages/track-your-order",
               "open_link": "_blank",
-              "icon": "las la-shipping-fast",
+              "icon": "",
               "cus_cl": false,
               "cl": "#ec0101",
               "lb": "",
@@ -1160,7 +1160,7 @@
               "title": "Stores Near You",
               "url": "shopify://pages/store-locator",
               "open_link": "_self",
-              "icon": "las la-map-marker",
+              "icon": "",
               "cus_cl": false,
               "cl": "#ec0101",
               "lb": "",
@@ -1281,9 +1281,9 @@
           "7f62b0c4-be73-42ca-bf6d-2f64bce97506"
         ],
         "settings": {
-          "layout": "logo_left",
+          "layout": "logo_center",
           "full_header": false,
-          "height": 70,
+          "height": 84,
           "arrow": false,
           "align": "center",
           "hover": "hover_sideup",
