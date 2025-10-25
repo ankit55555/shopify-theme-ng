@@ -1,0 +1,526 @@
+{%- assign s = section.settings -%}
+
+<section class="hero-banner hero-banner--{{ section.id }}{% if s.contain_content %} hero-banner--contained{% endif %}">
+  <div class="hero-banner__inner hero-banner__inner--h-{{ s.horizontal_align }} hero-banner__inner--v-{{ s.vertical_align }}">
+    <div class="hero-banner__container">
+      <div class="hero-banner__content" style="max-width: {{ s.content_max_width }}px; color: {{ s.text_color }};">
+        {%- if s.heading != blank -%}
+          <div class="hero-banner__heading rte">{{ s.heading }}</div>
+        {%- endif -%}
+        {%- if s.subheading != blank -%}
+          <div class="hero-banner__subheading rte">{{ s.subheading }}</div>
+        {%- endif -%}
+        {%- if s.cta_label != blank and s.cta_link != blank -%}
+          <a
+            href="{{ s.cta_link }}"
+            class="hero-banner__cta hero-banner__cta--{{ s.cta_style }}"
+            style="--cta-color: {{ s.button_color }}; --cta-text: {{ s.button_text_color }};">
+            <span>{{ s.cta_label }}</span>
+            <svg
+              class="hero-banner__cta-icon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <path
+                d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20Z"
+                fill="currentColor"
+                opacity=".15" />
+              <path
+                d="M10 8l4 4-4 4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  {%- style -%}
+    #shopify-section-{{ section.id }} .hero-banner {
+      position: relative;
+      isolation: isolate;
+      padding-top: {{ s.padding_top }}px;
+      padding-bottom: {{ s.padding_bottom }}px;
+      min-height: {{ s.height_desktop }}px;
+      background-color: #000;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: {{ s.bg_position_desktop }};
+      {% if s.image_desktop != blank %}
+        background-image: url('{{ s.image_desktop | img_url: '2000x' }}');
+      {% endif %}
+    }
+
+    #shopify-section-{{ section.id }}.hero-banner:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: {{ s.overlay_color }};
+      opacity: {{ s.overlay_opacity | divided_by: 100.0 }};
+      z-index: 0;
+    }
+
+    #shopify-section-{{ section.id }}
+    .hero-banner__inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+    }
+
+    #shopify-section-{{ section.id }}
+    .hero-banner--contained .hero-banner__container {
+      width: 100%;
+      max-width: {{ s.container_max_width }}px;
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    /* Ensure contained layout honors horizontal alignment */
+    #shopify-section-{{ section.id }} .hero-banner--contained .hero-banner__inner--h-left .hero-banner__container {
+      margin-left: 0;
+      margin-right: auto;
+    }
+    #shopify-section-{{ section.id }}
+    .hero-banner--contained .hero-banner__inner--h-center .hero-banner__container {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #shopify-section-{{ section.id }}
+    .hero-banner--contained .hero-banner__inner--h-right .hero-banner__container {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    #shopify-section-{{ section.id }}
+    .hero-banner__container {
+      width: 100%;
+    }
+
+    #shopify-section-{{ section.id }}
+    .hero-banner__content {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    #shopify-section-{{ section.id }}
+    .hero-banner__inner--h-left {
+      justify-content: flex-start;
+    }
+    #shopify-section-{{ section.id }}
+    .hero-banner__inner--h-center {
+      justify-content: center;
+    }
+    #shopify-section-{{ section.id }}
+    .hero-banner__inner--h-right {
+      justify-content: flex-end;
+    }
+    /* Move the content block itself based on horizontal alignment */
+    #shopify-section-{{ section.id }} .hero-banner__inner--h-right .hero-banner__content {
+      margin-left: auto;
+    }
+    #shopify-section-{{ section.id }}
+    .hero-banner__inner--h-center .hero-banner__content {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #shopify-section-{{ section.id }}
+    .hero-banner__inner--v-top {
+      align-items: flex-start;
+    }
+    #shopify-section-{{ section.id }}
+    .hero-banner__inner--v-middle {
+      align-items: center;
+    }
+    #shopify-section-{{ section.id }}
+    .hero-banner__inner--v-bottom {
+      align-items: flex-end;
+    }
+
+    #shopify-section-{{ section.id }}
+    .hero-banner__heading {
+      font-size: 56px;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    #shopify-section-{{ section.id }}
+    .hero-banner__subheading {
+      font-size: 16px;
+      line-height: 1.6;
+      opacity: .9;
+    }
+
+    #shopify-section-{{ section.id }}
+    .hero-banner__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: max-content;
+      text-decoration: none;
+      color: var(--cta-text);
+    }
+
+    #shopify-section-{{ section.id }}
+    .hero-banner__cta--solid {
+      background: var(--cta-color);
+      color: var(--cta-text);
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    #shopify-section-{{ section.id }}
+    .hero-banner__cta--outline {
+      background: transparent;
+      color: var(--cta-color);
+      border: 2px solid var(--cta-color);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    #shopify-section-{{ section.id }}
+    .hero-banner__cta--link {
+      color: var(--cta-color);
+      font-weight: 600;
+    }
+
+    #shopify-section-{{ section.id }}
+    .hero-banner__cta-icon {
+      display: inline-block;
+    }
+
+    @media (max-width: 749px) {
+      #shopify-section-{{ section.id }} .hero-banner {
+        min-height: {{ s.height_mobile }}px;
+        background-position: {{ s.bg_position_mobile }};
+        {% if s.image_mobile != blank %}
+          background-image: url('{{ s.image_mobile | img_url: '1200x' }}');
+        {% endif %}
+      }
+      /* Mobile-specific vertical alignment */
+      #shopify-section-{{ section.id }} .hero-banner__inner {
+        {% if s.vertical_align_mobile == 'top' %}
+          align-items: flex-start;
+        {% elsif s.vertical_align_mobile == 'middle' %}
+          align-items: center;
+        {% else %}
+          align-items: flex-end;
+        {% endif %}
+      }
+      {% if s.vertical_align_mobile == 'bottom' %}
+        #shopify-section-{{ section.id }}
+        .hero-banner__content {
+          margin-bottom: {{ s.mobile_bottom_offset }}px;
+        }
+      {% endif %}
+      #shopify-section-{{ section.id }}
+      .hero-banner__heading {
+        font-size: 34px;
+      }
+      #shopify-section-{{ section.id }}
+      .hero-banner__subheading {
+        font-size: 15px;
+      }
+    }
+  {%- endstyle -%}
+</section>
+
+{% schema %}
+  {
+    "name": "Hero banner - BG image",
+    "tag": "section",
+    "class": "section hero-bg-banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Background image (desktop)"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Background image (mobile)"
+      },
+      {
+        "type": "range",
+        "id": "height_desktop",
+        "label": "Height on desktop",
+        "min": 360,
+        "max": 900,
+        "step": 10,
+        "unit": "px",
+        "default": 560
+      },
+      {
+        "type": "range",
+        "id": "height_mobile",
+        "label": "Height on mobile",
+        "min": 320,
+        "max": 800,
+        "step": 10,
+        "unit": "px",
+        "default": 520
+      }, {
+        "type": "select",
+        "id": "vertical_align_mobile",
+        "label": "Vertical content position (mobile)",
+        "default": "bottom",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          }, {
+            "value": "middle",
+            "label": "Middle"
+          }, {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ]
+      }, {
+        "type": "range",
+        "id": "mobile_bottom_offset",
+        "label": "Bottom offset on mobile",
+        "min": 0,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 24
+      }, {
+        "type": "color",
+        "id": "overlay_color",
+        "label": "Overlay color",
+        "default": "#000000"
+      }, {
+        "type": "range",
+        "id": "overlay_opacity",
+        "label": "Overlay opacity",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "default": 45
+      }, {
+        "type": "select",
+        "id": "bg_position_desktop",
+        "label": "Background focal (desktop)",
+        "default": "center center",
+        "options": [
+          {
+            "value": "left top",
+            "label": "Left top"
+          },
+          {
+            "value": "center top",
+            "label": "Center top"
+          },
+          {
+            "value": "right top",
+            "label": "Right top"
+          },
+          {
+            "value": "left center",
+            "label": "Left center"
+          }, {
+            "value": "center center",
+            "label": "Center"
+          }, {
+            "value": "right center",
+            "label": "Right center"
+          }, {
+            "value": "left bottom",
+            "label": "Left bottom"
+          }, {
+            "value": "center bottom",
+            "label": "Center bottom"
+          }, {
+            "value": "right bottom",
+            "label": "Right bottom"
+          }
+        ]
+      }, {
+        "type": "select",
+        "id": "bg_position_mobile",
+        "label": "Background focal (mobile)",
+        "default": "center center",
+        "options": [
+          {
+            "value": "left top",
+            "label": "Left top"
+          },
+          {
+            "value": "center top",
+            "label": "Center top"
+          },
+          {
+            "value": "right top",
+            "label": "Right top"
+          },
+          {
+            "value": "left center",
+            "label": "Left center"
+          }, {
+            "value": "center center",
+            "label": "Center"
+          }, {
+            "value": "right center",
+            "label": "Right center"
+          }, {
+            "value": "left bottom",
+            "label": "Left bottom"
+          }, {
+            "value": "center bottom",
+            "label": "Center bottom"
+          }, {
+            "value": "right bottom",
+            "label": "Right bottom"
+          }
+        ]
+      }, {
+        "type": "select",
+        "id": "horizontal_align",
+        "label": "Horizontal content position",
+        "default": "center",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          }, {
+            "value": "center",
+            "label": "Center"
+          }, {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      }, {
+        "type": "select",
+        "id": "vertical_align",
+        "label": "Vertical content position",
+        "default": "middle",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          }, {
+            "value": "middle",
+            "label": "Middle"
+          }, {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ]
+      }, {
+        "type": "checkbox",
+        "id": "contain_content",
+        "label": "Contain content to page width",
+        "default": true
+      }, {
+        "type": "range",
+        "id": "container_max_width",
+        "label": "Container max width",
+        "min": 960,
+        "max": 1600,
+        "step": 20,
+        "unit": "px",
+        "default": 1280
+      }, {
+        "type": "range",
+        "id": "content_max_width",
+        "label": "Text max width",
+        "min": 320,
+        "max": 900,
+        "step": 10,
+        "unit": "px",
+        "default": 640
+      }, {
+        "type": "richtext",
+        "id": "heading",
+        "label": "Heading",
+        "default": "<p>Find the <strong>Right EarSafe</strong> for you.</p>"
+      }, {
+        "type": "richtext",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "<p>Compare from a best products and choose what is best suited for you.</p>"
+      }, {
+        "type": "text",
+        "id": "cta_label",
+        "label": "CTA label",
+        "default": "Know the difference"
+      }, {
+        "type": "url",
+        "id": "cta_link",
+        "label": "CTA link"
+      }, {
+        "type": "select",
+        "id": "cta_style",
+        "label": "CTA style",
+        "default": "link",
+        "options": [
+          {
+            "value": "solid",
+            "label": "Solid button"
+          }, {
+            "value": "outline",
+            "label": "Outline button"
+          }, {
+            "value": "link",
+            "label": "Text link"
+          }
+        ]
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#ffffff"
+      }, {
+        "type": "color",
+        "id": "button_color",
+        "label": "CTA color",
+        "default": "#44e1e6"
+      }, {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "CTA text color",
+        "default": "#0b2a2d"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding top",
+        "min": 0,
+        "max": 120,
+        "step": 4,
+        "unit": "px",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 120,
+        "step": 4,
+        "unit": "px",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero banner - BG image",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

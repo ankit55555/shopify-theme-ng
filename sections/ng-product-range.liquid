@@ -1,0 +1,217 @@
+{%- comment -%} 
+  NG Product Range section 
+  - Responsive carousel of product cards 
+  - Separate CSS (`assets/ng-product-range.css`) and JS (`assets/ng-product-range.js`) 
+{%- endcomment -%}
+
+{%- liquid
+  assign section_id = section.id
+  assign stt_layout = section.settings.layout
+  if stt_layout == 't4s-se-container'
+    assign html_layout = '<div class="t4s-container">__</div></div>' | split: '__'
+  elsif stt_layout == 't4s-container-wrap'
+    assign html_layout = '<div class="t4s-container">__</div>' | split: '__'
+  else
+    assign html_layout = '__' | split: '__'
+  endif
+-%}
+
+{{- html_layout[0] -}}
+<div
+  class="ng-pr ng-pr--bg-{{ section.settings.bg_style }} ng-pr--cta-{{ section.settings.cta_style }} ng-pr--cta-size-{{ section.settings.cta_size }}"
+  id="ng-pr-{{ section_id }}"
+  data-section-id="{{ section_id }}">
+  <style>
+    #ng-pr-{{ section_id }} .ng-pr__title{font-size: {{ section.settings.heading_fs | default: 28 }}px}
+    #ng-pr-{{ section_id }} .ng-pr__desc{font-size: {{ section.settings.desc_fs | default: 14 }}px}
+  </style>
+  <div class="ng-pr__row">
+    <div class="ng-pr__intro">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="ng-pr__title">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="ng-pr__desc">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+      {%- if section.settings.cta_label != blank and section.settings.cta_link != blank -%}
+        <a class="ng-pr__cta" href="{{ section.settings.cta_link }}">{{ section.settings.cta_label }}</a>
+      {%- endif -%}
+    </div>
+
+    <div class="ng-pr__viewport">
+      <button class="ng-pr__nav ng-pr__nav--prev" type="button" aria-label="Previous"></button>
+      <div class="ng-pr__track" data-carousel>
+    {%- for block in section.blocks -%}
+      {%- assign prod = all_products[block.settings.product] -%}
+      <article class="ng-pr__card" id="ng-pr-card-{{ block.id }}" data-product-handle="{{ prod.handle }}" {{ block.shopify_attributes }}>
+        {%- if prod -%}
+          {%- assign sel_var = prod.selected_or_first_available_variant -%}
+          {%- assign featured = sel_var.featured_image | default: prod.featured_image -%}
+          <a
+            class="ng-pr__image"
+            href="{{ prod.url }}"
+            aria-label="{{ prod.title | escape }}">
+            {%- if featured -%}
+              <img
+                src="{{ featured | image_url: width: 900 }}"
+                alt="{{ featured.alt | escape }}"
+                loading="lazy">
+            {%- endif -%}
+          </a>
+          <div class="ng-pr__meta">
+            <h3 class="ng-pr__name">
+              <a class="ng-pr__link" href="{{ prod.url }}">{{ prod.title }}</a>
+            </h3>
+            {%- assign subtitle = prod.type -%}
+            {%- if prod.metafields.custom.subtitle != blank -%}
+              {%- assign subtitle = prod.metafields.custom.subtitle -%}
+            {%- endif -%}
+            {%- if subtitle != blank -%}
+              <div class="ng-pr__sub">{{ subtitle }}</div>
+            {%- endif -%}
+            <div class="ng-pr__bottom">
+              <div class="ng-pr__price" data-price>
+                <span class="ng-pr__price-current" data-price-current>{{ sel_var.price | money }}</span>
+                {%- if sel_var.compare_at_price > sel_var.price -%}
+                  <span class="ng-pr__price-compare" data-price-compare>{{ sel_var.compare_at_price | money }}</span>
+                {%- else -%}
+                  <span class="ng-pr__price-compare" data-price-compare style="display:none"></span>
+                {%- endif -%}
+              </div>
+              {%- if prod.has_only_default_variant == false and prod.options.size > 0 -%}
+                {%- assign first_option = prod.options_with_values | first -%}
+                <ul class="ng-pr__swatches" role="list">
+                  {%- for value in first_option.values -%}
+                    <li>
+                      <button type="button" class="ng-pr__swatch{% if value == sel_var.option1 %} is-active{% endif %}" data-option1="{{ value | escape }}" aria-label="{{ value | escape }}">
+                        <span class="ng-pr__swatch-dot"></span>
+                      </button>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+            </div>
+          <script type="application/json" class="ng-pr__data">{{ prod | json }}</script>
+        {%- else -%}
+          <div class="ng-pr__placeholder">
+            <div class="ng-pr__ph-img"></div>
+            <div class="ng-pr__ph-text"></div>
+          </div>
+        {%- endif -%}
+      </article>
+    {%- endfor -%}
+      </div>
+      <button class="ng-pr__nav ng-pr__nav--next" type="button" aria-label="Next"></button>
+    </div>
+  </div>
+  </div>
+  {{- html_layout[1] -}}
+
+ {%- comment -%} Assets {%- endcomment -%}
+{%- assign css_key = 'ng-product-range.css' -%}
+{%- assign js_key = 'ng-product-range.js' -%}
+<link rel="stylesheet" href="{{ css_key | asset_url }}">
+<script src="{{ js_key | asset_url }}" defer="defer"></script>
+
+{% schema %}
+  {
+    "name": "NG Product Range",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Our Product Range"
+      }, {
+        "type": "textarea",
+        "id": "subheading",
+        "label": "Description",
+        "default": "Open-ear technology provides a comfortable and safer alternative to in-ear headphones"
+      }, {
+        "type": "range",
+        "id": "heading_fs",
+        "label": "Heading font size (px)",
+        "min": 18,
+        "max": 64,
+        "step": 1,
+        "default": 28
+      }, {
+        "type": "range",
+        "id": "desc_fs",
+        "label": "Description font size (px)",
+        "min": 12,
+        "max": 24,
+        "step": 1,
+        "default": 14
+      }, {
+        "type": "text",
+        "id": "cta_label",
+        "label": "CTA label",
+        "default": "View all"
+      }, {
+        "type": "url",
+        "id": "cta_link",
+        "label": "CTA link"
+      }, {
+        "type": "select",
+        "id": "cta_style",
+        "label": "CTA style",
+        "default": "outline",
+        "options": [
+          {"value":"outline","label":"Outline"},
+          {"value":"primary","label":"Primary"}
+        ]
+      }, {
+        "type": "select",
+        "id": "cta_size",
+        "label": "CTA size",
+        "default": "lg",
+        "options": [
+          {"value":"sm","label":"Small"},
+          {"value":"md","label":"Medium"},
+          {"value":"lg","label":"Large"}
+        ]
+      }, {
+        "type": "select",
+        "id": "bg_style",
+        "label": "Background style",
+        "default": "none",
+        "options": [
+          {"value":"none","label":"None"},
+          {"value":"light","label":"Light"},
+          {"value":"dark","label":"Dark"}
+        ]
+      }, {
+        "type": "select",
+        "id": "layout",
+        "label": "Layout",
+        "default": "t4s-container-wrap",
+        "options": [
+          { "value": "t4s-se-container", "label": "Container" },
+          { "value": "t4s-container-wrap", "label": "Wrapped container" },
+          { "value": "t4s-container-fluid", "label": "Full width" }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product card",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 12,
+    "presets": [
+      {
+        "name": "NG Product Range",
+        "category": "Products"
+      }
+    ]
+  }
+{% endschema %}

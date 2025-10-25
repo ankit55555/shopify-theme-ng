@@ -1,0 +1,95 @@
+{{ 'ng-media.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="ng-media"
+  data-autoplay="{{ section.settings.autoplay }}"
+  data-interval="{{ section.settings.autoplay_interval }}"
+  data-loop="{{ section.settings.loop }}"
+  data-direction="{{ section.settings.direction }}"
+  data-show-arrows="{{ section.settings.show_arrows }}"
+  data-show-dots="{{ section.settings.show_dots }}"
+  style="--ng-media-bg: {{ section.settings.bg_color }}; --ng-media-pt: {{ section.settings.padding_top }}px; --ng-media-pb: {{ section.settings.padding_bottom }}px; --ng-media-inactive-opacity: {{ section.settings.inactive_opacity | divided_by: 100.0 }}; --ng-media-logo-h: {{ section.settings.logo_height }}px; --ng-media-gap: {{ section.settings.logo_gap }}px; --ng-media-logo-h-m: {{ section.settings.logo_height_mobile }}px; --ng-media-gap-m: {{ section.settings.logo_gap_mobile }}px; --ng-media-center-w: {{ section.settings.center_width }}px; --ng-media-center-color: {{ section.settings.center_color }}; --ng-media-center-bw: {{ section.settings.center_border_width }}px; --ng-media-center-br: {{ section.settings.center_border_radius }}px; --ng-media-visible: {{ section.settings.visible_desktop }}; --ng-media-visible-m: {{ section.settings.visible_mobile }}; --ng-media-heading-color: {{ section.settings.heading_color }}; --ng-media-heading-size-desktop: {{ section.settings.heading_size_desktop }}px; --ng-media-heading-size-mobile: {{ section.settings.heading_size_mobile }}px;">
+  <div class="ng-media__inner">
+    {% if section.settings.heading != blank %}
+      <h2 class="ng-media__heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    <button class="ng-media__nav ng-media__prev" aria-label="Previous"></button>
+    <button class="ng-media__nav ng-media__next" aria-label="Next"></button>
+
+    <div class="ng-media__viewport">
+      <div class="ng-media__track" style="gap: clamp(32px, 6vw, 80px);">
+        {% for block in section.blocks %}
+          {% case block.type %}
+          {% when 'logo' %}
+            <div class="ng-media__item" {{ block.shopify_attributes }}>
+              {% if block.settings.image != blank %}
+                <img src="{{ block.settings.image | image_url: width: 400 }}" alt="{{ block.settings.alt | escape }}" loading="lazy" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}">
+              {% endif %}
+            </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+
+    {% if section.settings.show_center_frame %}
+      <!-- optional center highlight frame -->
+      <div class="ng-media__center" aria-hidden="true"></div>
+    {% endif %}
+
+    <div class="ng-media__dots"></div>
+  </div>
+</section>
+
+<script src="{{ 'ng-media.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Media Carousel",
+  "tag": "section",
+  "class": "ng-media-section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "We are in Media" },
+    { "type": "color", "id": "heading_color", "label": "Heading color", "default": "#cfd3d6" },
+    { "type": "range", "id": "heading_size_desktop", "label": "Heading size desktop (px)", "min": 20, "max": 120, "step": 2, "default": 56 },
+    { "type": "range", "id": "heading_size_mobile", "label": "Heading size mobile (px)", "min": 16, "max": 60, "step": 1, "default": 24 },
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#000000" },
+    { "type": "range", "id": "padding_top", "label": "Padding top (px)", "min": 0, "max": 160, "step": 4, "default": 56 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding bottom (px)", "min": 0, "max": 160, "step": 4, "default": 48 },
+    { "type": "range", "id": "inactive_opacity", "label": "Inactive logo opacity (%)", "min": 20, "max": 100, "step": 5, "default": 80 },
+    { "type": "range", "id": "logo_height", "label": "Logo height desktop (px)", "min": 24, "max": 160, "step": 2, "default": 60 },
+    { "type": "range", "id": "logo_gap", "label": "Logo spacing desktop (px)", "min": 16, "max": 150, "step": 2, "default": 64 },
+    { "type": "range", "id": "logo_height_mobile", "label": "Logo height mobile (px)", "min": 24, "max": 160, "step": 2, "default": 72 },
+    { "type": "range", "id": "logo_gap_mobile", "label": "Logo spacing mobile (px)", "min": 8, "max": 120, "step": 2, "default": 40 },
+    { "type": "checkbox", "id": "show_center_frame", "label": "Show center frame highlight", "default": false },
+    { "type": "range", "id": "center_width", "label": "Center frame width (px)", "min": 80, "max": 360, "step": 4, "default": 180 },
+    { "type": "color", "id": "center_color", "label": "Center frame color", "default": "#D50000" },
+    { "type": "range", "id": "center_border_width", "label": "Center border width (px)", "min": 1, "max": 6, "step": 1, "default": 2 },
+    { "type": "range", "id": "center_border_radius", "label": "Center border radius (px)", "min": 0, "max": 24, "step": 1, "default": 8 },
+    { "type": "range", "id": "visible_desktop", "label": "Visible logos on desktop", "min": 3, "max": 8, "step": 1, "default": 6 },
+    { "type": "range", "id": "visible_mobile", "label": "Visible logos on mobile", "min": 1, "max": 5, "step": 1, "default": 3 },
+    { "type": "checkbox", "id": "autoplay", "label": "Autoplay", "default": true },
+    { "type": "range", "id": "autoplay_interval", "label": "Autoplay interval (ms)", "min": 1500, "max": 8000, "step": 500, "default": 3000 },
+    { "type": "checkbox", "id": "loop", "label": "Loop", "default": true },
+    { "type": "select", "id": "direction", "label": "Scroll direction", "options": [ {"value":"ltr","label":"Left to Right"}, {"value":"rtl","label":"Right to Left"} ], "default": "ltr" },
+    { "type": "checkbox", "id": "show_arrows", "label": "Show arrows", "default": true },
+    { "type": "checkbox", "id": "show_dots", "label": "Show dots", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "limit": 20,
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Logo image" },
+        { "type": "text", "id": "alt", "label": "Alt text" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "Media Carousel", "category": "Homepage", "blocks": [ {"type":"logo"}, {"type":"logo"}, {"type":"logo"}, {"type":"logo"} ] }
+  ]
+}
+{% endschema %}
+
+

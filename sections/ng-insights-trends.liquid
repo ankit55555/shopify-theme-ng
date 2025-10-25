@@ -1,0 +1,163 @@
+{%- comment -%}
+  NG – Insights & Trends (Blog Carousel)
+  - Desktop/Mobile responsive per provided designs
+  - Uses separate assets: ng-insights.css, ng-insights.js
+  - Pulls latest articles from a selected blog
+  - Accessible keyboard/ARIA, scroll-snap carousel with JS enhancements
+{%- endcomment -%}
+
+{%- liquid
+  assign section_id = section.id
+  assign st = section.settings
+  assign blog_ref = st.blog
+  assign article_limit = st.article_limit | default: 6
+  if blog_ref
+    assign articles = blogs[blog_ref].articles | slice: 0, article_limit
+  endif
+-%}
+
+{{ 'ng-insights.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="ng-insights-{{ section_id }}"
+  class="ng-insights"
+  style="--pt: {{ st.padding_top }}px; --pb: {{ st.padding_bottom }}px; --bg: {{ st.bg_color }}; --heading: {{ st.heading_color }}; --text: {{ st.text_color }}; --muted: {{ st.muted_color }}; --accent: {{ st.accent_color }}; --card-bg: {{ st.card_bg }}; --card-text: {{ st.card_text }}; --gap: {{ st.gap }}px; --slides-dk: {{ st.slides_desktop }}; --slides-mb: {{ st.slides_mobile }};"
+  data-autoplay="{{ st.autoplay }}"
+  data-interval="{{ st.autoplay_interval | times: 1000 }}"
+  data-loop="{{ st.loop }}"
+  data-show-dots="{{ st.show_dots }}"
+>
+  <div class="ngi-container">
+    {%- if st.heading != blank -%}
+      <h2 class="ngi-heading">{{ st.heading }}</h2>
+    {%- endif -%}
+    {%- if st.subheading != blank -%}
+      <p class="ngi-subheading">{{ st.subheading }}</p>
+    {%- endif -%}
+
+    <div class="ngi-carousel">
+      <div class="ngi-scroller" role="region" aria-label="{{ st.heading | default: 'Insights carousel' }}">
+        {%- if articles and articles.size > 0 -%}
+          {%- for article in articles -%}
+            {%- assign content_len = article.content | strip_html | size -%}
+            {%- assign est_min = content_len | divided_by: 1200 | ceil -%}
+            <article class="ngi-slide">
+              <a class="ngi-card" href="{{ article.url }}">
+                <div class="ngi-media">
+                  {%- if article.image -%}
+                    <img
+                      class="ngi-image"
+                      srcset="{{ article.image | image_url: width: 480 }} 480w, {{ article.image | image_url: width: 800 }} 800w, {{ article.image | image_url: width: 1200 }} 1200w"
+                      sizes="(max-width: 749px) 90vw, 50vw"
+                      src="{{ article.image | image_url: width: 800 }}"
+                      alt="{{ article.image.alt | default: article.title | escape }}"
+                      width="{{ article.image.width }}"
+                      height="{{ article.image.height }}"
+                      loading="lazy"
+                    >
+                  {%- else -%}
+                    {{ 'image' | placeholder_svg_tag: 'ngi-image placeholder' }}
+                  {%- endif -%}
+                </div>
+                <div class="ngi-content">
+                  <h3 class="ngi-title">{{ article.title }}</h3>
+                  <div class="ngi-meta">
+                    {%- if st.show_read_time -%}
+                      <span class="ngi-meta-item">{{ est_min | at_least: 1 }} min</span>
+                    {%- endif -%}
+                    {%- if st.show_date -%}
+                      <span class="ngi-meta-item">{{ article.published_at | date: "%B %e, %Y" }}</span>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </a>
+            </article>
+          {%- endfor -%}
+        {%- else -%}
+          <div class="ngi-empty">Select a blog with articles to display.</div>
+        {%- endif -%}
+      </div>
+
+      {%- if st.show_arrows -%}
+      <div class="ngi-controls" aria-hidden="false">
+        <button class="ngi-btn ngi-prev" aria-label="Previous" type="button">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <button class="ngi-btn ngi-next" aria-label="Next" type="button">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="m8.59 16.59 1.41 1.41 6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+        </button>
+      </div>
+      {%- endif -%}
+
+      {%- if st.show_dots -%}
+        <div class="ngi-dots" role="tablist" aria-label="Carousel pagination"></div>
+      {%- endif -%}
+    </div>
+
+    {%- assign view_url = blogs[blog_ref].url | default: st.view_all_link -%}
+    {%- if st.view_all_button and view_url != blank -%}
+      <div class="ngi-actions">
+        <a class="ngi-viewall" href="{{ view_url }}">{{ st.view_all_label }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+
+  <script src="{{ 'ng-insights.js' | asset_url }}" defer></script>
+</section>
+
+{%- schema -%}
+{
+  "name": "NG Insights & Trends",
+  "tag": "section",
+  "class": "section-ng-insights",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Insights & Trends" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "The Future of Open Ear. This is just a dummy copy." },
+    { "type": "blog", "id": "blog", "label": "Blog" },
+    { "type": "range", "id": "article_limit", "label": "Articles to show", "min": 2, "max": 12, "step": 1, "default": 6 },
+
+    { "type": "header", "content": "Carousel" },
+    { "type": "range", "id": "slides_desktop", "label": "Slides visible (desktop)", "min": 1, "max": 4, "step": 1, "default": 2 },
+    { "type": "range", "id": "slides_mobile", "label": "Slides visible (mobile)", "min": 1, "max": 3, "step": 1, "default": 1 },
+    { "type": "checkbox", "id": "show_arrows", "label": "Show arrows", "default": true },
+    { "type": "checkbox", "id": "show_dots", "label": "Show dots", "default": false },
+    { "type": "checkbox", "id": "autoplay", "label": "Autoplay", "default": false },
+    { "type": "range", "id": "autoplay_interval", "label": "Autoplay interval", "min": 2, "max": 20, "step": 1, "unit": "s", "default": 5 },
+    { "type": "checkbox", "id": "loop", "label": "Loop slides", "default": true },
+    { "type": "range", "id": "gap", "label": "Gap between slides", "min": 0, "max": 40, "step": 2, "unit": "px", "default": 24 },
+
+    { "type": "header", "content": "Meta" },
+    { "type": "checkbox", "id": "show_read_time", "label": "Show estimated read time", "default": true },
+    { "type": "checkbox", "id": "show_date", "label": "Show publish date", "default": true },
+
+    { "type": "header", "content": "View all" },
+    { "type": "checkbox", "id": "view_all_button", "label": "Show View all button", "default": true },
+    { "type": "text", "id": "view_all_label", "label": "View all label", "default": "VIEW ALL" },
+    { "type": "url", "id": "view_all_link", "label": "Override View all link (optional)" },
+
+    { "type": "header", "content": "Design" },
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#0f0f0f" },
+    { "type": "color", "id": "heading_color", "label": "Heading color", "default": "#eaeaea" },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#eaeaea" },
+    { "type": "color", "id": "muted_color", "label": "Muted text color", "default": "#9e9e9e" },
+    { "type": "color", "id": "accent_color", "label": "Accent color", "default": "#E4B44A" },
+    { "type": "color", "id": "card_bg", "label": "Card background", "default": "#1a1a1a" },
+    { "type": "color", "id": "card_text", "label": "Card text", "default": "#eaeaea" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 200, "step": 4, "unit": "px", "label": "Padding top", "default": 64 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 200, "step": 4, "unit": "px", "label": "Padding bottom", "default": 64 }
+  ],
+  "presets": [
+    { "name": "NG Insights & Trends", "category": "Blog" }
+  ]
+}
+{%- endschema -%}
+
+{%- stylesheet -%}
+/* Reserved for theme editors that don't allow asset CSS; primary styles in assets/ng-insights.css */
+{%- endstylesheet -%}
+
+{%- javascript -%}
+/* Behavior is in assets/ng-insights.js */
+{%- endjavascript -%}
+
+

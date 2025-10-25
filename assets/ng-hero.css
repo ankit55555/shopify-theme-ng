@@ -1,0 +1,192 @@
+.ng-hero {
+  position: relative;
+  width: 100%;
+  height: var(--ng-hero-height-desktop, 90vh);
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .ng-hero {
+    height: var(--ng-hero-height-mobile, 90vh);
+  }
+}
+.ng-hero__slides {
+  position: relative;
+  height: 100%;
+}
+.ng-hero__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.ng-hero__slide.is-active {
+  opacity: 1;
+}
+.ng-hero__image,
+.ng-hero__image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ng-hero__overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.ng-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ng-hero__content--center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.ng-hero__content--right {
+  margin-left: auto;
+  margin-right: 5vw;
+  text-align: right;
+}
+.ng-hero__heading {
+  font-size: clamp(28px, 6vw, 72px);
+  line-height: 1.1;
+  margin: 0 0 12px;
+}
+.ng-hero__subheading {
+  font-size: clamp(14px, 2.2vw, 20px);
+  margin: 0 0 22px;
+  opacity: 0.9;
+}
+.ng-hero__btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 28px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Navigation */
+.ng-hero__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+  cursor: pointer;
+  z-index: 3;
+}
+.ng-hero__nav:after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+.ng-hero__prev {
+  left: 12px;
+}
+.ng-hero__next {
+  right: 12px;
+}
+.ng-hero__next:after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.ng-hero__nav:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Dots */
+.ng-hero__dots {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+.ng-hero__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+.ng-hero__dot.is-active {
+  background: #fff;
+}
+
+/* Counter indicator */
+.ng-hero__counter {
+  position: absolute;
+  left: 5vw;
+  bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+  z-index: 3;
+}
+.ng-hero__counter-current,
+.ng-hero__counter-total {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+}
+.ng-hero__counter-bar {
+  width: 120px;
+  height: 2px;
+  background: rgba(255,255,255,0.3);
+  display: inline-block;
+}
+
+/* Scroll hint */
+.ng-hero__scroll-hint {
+  position: absolute;
+  right: 4vw;
+  bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  opacity: 0.9;
+  z-index: 4;
+}
+.ng-hero__scroll-text { text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; }
+.ng-hero__scroll-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  position: relative;
+}
+.ng-hero__scroll-icon:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: translate(-50%, -35%) rotate(45deg);
+}
+@media (max-width: 768px) {
+  .ng-hero__scroll-hint { display: none; }
+}
