@@ -1915,7 +1915,7 @@
         "image_desktop": "shopify://shop_images/earsafe_compare_abnner_desktop_a41ae375-ea5c-4192-a680-14acf98290ee.webp",
         "image_mobile": "shopify://shop_images/Compare_Mobile_7cb6e16c-7ae1-40cb-afcc-bb09da132495.webp",
         "height_desktop": 560,
-        "height_mobile": 520,
+        "height_mobile": 690,
         "vertical_align_mobile": "bottom",
         "mobile_bottom_offset": 24,
         "overlay_color": "#000000",
