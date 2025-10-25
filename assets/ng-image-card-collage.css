@@ -1,0 +1,119 @@
+.ng-image-card-collage {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  align-items: center;
+  gap: 20px;
+  margin-left: 0;
+  margin-right: 0;
+}
+.ng-image-card-collage__content {
+  max-width: 560px;
+  padding-right: 8px;
+}
+.ng-image-card-collage__heading {
+  margin: 0 0 12px;
+  color: var(--ng-image-card-collage-heading-color, inherit);
+  font-size: var(--ng-image-card-collage-heading-size, 48px);
+  line-height: 1.1;
+  font-weight: 400;
+}
+.ng-image-card-collage__text {
+  color: var(--ng-image-card-collage-body-color, inherit);
+  font-size: var(--ng-image-card-collage-body-size, 16px);
+  line-height: 1.7;
+}
+.ng-image-card-collage__stage {
+  position: relative;
+  min-height: var(--ng-image-card-collage-stage-minh, 520px);
+  overflow: visible;
+}
+.ng-image-card-collage-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(
+      calc(-50% + var(--card-x, 0px)),
+      calc(-50% + var(--card-y, 0px))
+    )
+    rotate(var(--card-rotate, 0deg));
+  width: var(--card-w, 320px);
+  z-index: var(--card-z, 5);
+  will-change: transform;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.25));
+}
+.ng-image-card-collage-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+/* Single image mode */
+.ng-image-card-collage__img-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ngicc-img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 16px;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.25));
+}
+.ngicc-img--mobile {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .ngicc-img--desktop {
+    display: none;
+  }
+  .ngicc-img--mobile {
+    display: block;
+  }
+}
+
+@media (max-width: 1024px) {
+  .ng-image-card-collage {
+    grid-template-columns: 1fr;
+  }
+  .ng-image-card-collage__heading {
+    font-size: var(--ng-image-card-collage-heading-size-mb, 32px);
+  }
+  .ng-image-card-collage__text {
+    font-size: var(--ng-image-card-collage-body-size-mb, 14px);
+  }
+  .ng-image-card-collage__stage {
+    min-height: var(--ng-image-card-collage-stage-minh-mb, 620px);
+  }
+  .ng-image-card-collage-card {
+    transform: translate(
+        calc(-50% + var(--card-x-mb, 0px)),
+        calc(-50% + var(--card-y-mb, 0px))
+      )
+      rotate(var(--card-rotate, 0deg));
+    width: var(--card-w-mb, 240px);
+  }
+}
+@media (max-width: 767px) {
+  .ng-image-card-collage {
+    grid-template-columns: 1fr;
+  }
+  .ng-image-card-collage__heading {
+    font-size: var(--ng-image-card-collage-heading-size-mb, 32px);
+  }
+  .ng-image-card-collage__text {
+    font-size: var(--ng-image-card-collage-body-size-mb, 14px);
+  }
+  .ng-image-card-collage__stage {
+    min-height: var(--ng-image-card-collage-stage-minh-mb, 620px);
+  }
+  .ng-image-card-collage-card {
+    transform: translate(
+        calc(-50% + var(--card-x-mb, 0px)),
+        calc(-50% + var(--card-y-mb, 0px))
+      )
+      rotate(var(--card-rotate, 0deg));
+    width: var(--card-w-mb, 240px);
+  }
+}

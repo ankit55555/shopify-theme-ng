@@ -443,7 +443,7 @@
           "d7a1e5b7-569d-4021-a0cf-e3b3af9bff8c": {
             "type": "html",
             "settings": {
-              "html_content": "<div style=\"font-size:16px;color:#fff;font-weight:500;margin-bottom:30px;\">\n  <img width=\"55\" src=\"https://cdn.shopify.com/s/files/1/0804/5762/9975/files/ngcorp-logo.svg?v=1695640610\" alt=\"footer-logo\">\n</div>\n\n<!-- Rajkot Address -->\n<p style=\"display:flex;align-items:center;margin-bottom:8px;\">\n  <svg style=\"width: 30px;height: 30px;vertical-align: middle;margin-right: 8px;\" viewbox=\"0 0 32 32\" width=\"32\" height=\"32\">\n    <path fill=\"currentColor\" d=\"M16.001 1.072c5.291 0 9.596 4.305 9.596 9.597 0 1.683-.446 3.341-1.29 4.799l-8.307 14.394-8.308-14.395c-.843-1.456-1.289-3.115-1.289-4.798 0-5.292 4.305-9.597 9.597-9.597zm0 13.328c2.058 0 3.731-1.674 3.731-3.731s-1.674-3.731-3.731-3.731c-2.058 0-3.732 1.674-3.732 3.731s1.674 3.731 3.732 3.731zm0-14.394c-5.889 0-10.663 4.775-10.663 10.663 0 1.945.523 3.762 1.432 5.332l9.23 15.994 9.23-15.994c.909-1.57 1.432-3.387 1.432-5.332 0-5.888-4.774-10.663-10.662-10.663zM16.001 13.334c-1.472 0-2.666-1.193-2.666-2.665 0-1.471 1.194-2.665 2.666-2.665s2.665 1.194 2.665 2.665c0 1.472-1.193 2.665-2.665 2.665z\"></path>\n  </svg>\n  <span>Kedar, Tulsi Park Street 1, Raiya Tel Exchange, 150ft Road, 360005 Rajkot, Gujarat, India</span>\n</p>\n\n<!-- Hyderabad Address -->\n<p style=\"display:flex;align-items:center;margin-bottom:8px;\">\n  <svg style=\"width: 30px;height: 30px;vertical-align: middle;margin-right: 8px;\" viewbox=\"0 0 32 32\" width=\"32\" height=\"32\">\n    <path fill=\"currentColor\" d=\"M16.001 1.072c5.291 0 9.596 4.305 9.596 9.597 0 1.683-.446 3.341-1.29 4.799l-8.307 14.394-8.308-14.395c-.843-1.456-1.289-3.115-1.289-4.798 0-5.292 4.305-9.597 9.597-9.597zm0 13.328c2.058 0 3.731-1.674 3.731-3.731s-1.674-3.731-3.731-3.731c-2.058 0-3.732 1.674-3.732 3.731s1.674 3.731 3.732 3.731zm0-14.394c-5.889 0-10.663 4.775-10.663 10.663 0 1.945.523 3.762 1.432 5.332l9.23 15.994 9.23-15.994c.909-1.57 1.432-3.387 1.432-5.332 0-5.888-4.774-10.663-10.662-10.663zM16.001 13.334c-1.472 0-2.666-1.193-2.666-2.665 0-1.471 1.194-2.665 2.666-2.665s2.665 1.194 2.665 2.665c0 1.472-1.193 2.665-2.665 2.665z\"></path>\n  </svg>\n  <span>Phase 4, The Botanika, 101 HIG-90 A, Above ICICI Bank, Jayabheri Enclave, Gachibowli, Hyderabad, Telangana 500032, India</span>\n</p>\n\n<!-- Email -->\n<p style=\"display:flex;align-items:center;\">\n  <svg style=\"width: 24px;height: 24px;vertical-align: middle;margin-right: 8px;\" viewbox=\"0 0 32 32\" width=\"32\" height=\"32\">\n    <path fill=\"currentColor\" d=\"M28.244 7.47H2.672v17.06h26.656v-17.06h-1.084zM27.177 8.536l-10.298 10.298c-.47.47-1.289.47-1.759 0L4.82 8.536h22.357zM3.738 8.961l6.923 6.922-6.923 6.923V8.961zm.851 14.503l6.827-6.826 2.951 2.95c.436.436 1.016.677 1.633.677s1.197-.241 1.633-.677l2.951-2.951 6.826 6.826H4.589zm23.673-.657l-6.923-6.924 6.923-6.924v13.848z\"></path>\n  </svg>\n  <span><a href=\"mailto:support@ngearsafe.com\" style=\"color:#fff;text-decoration:none;\">support@ngearsafe.com</a></span>\n</p>",
+              "html_content": "<div style=\"font-size:16px;color:#fff;font-weight:500;margin-bottom:30px;\">\n  <img width=\"155\" src=\"https://cdn.shopify.com/s/files/1/0804/5762/9975/files/ngcorp-logo.svg?v=1695640610\" alt=\"footer-logo\">\n</div>\n\n<!-- Rajkot Address -->\n<p style=\"display:flex;align-items:center;margin-bottom:8px;\">\n  <svg style=\"width: 30px;height: 30px;vertical-align: middle;margin-right: 8px;\" viewbox=\"0 0 32 32\" width=\"32\" height=\"32\">\n    <path fill=\"currentColor\" d=\"M16.001 1.072c5.291 0 9.596 4.305 9.596 9.597 0 1.683-.446 3.341-1.29 4.799l-8.307 14.394-8.308-14.395c-.843-1.456-1.289-3.115-1.289-4.798 0-5.292 4.305-9.597 9.597-9.597zm0 13.328c2.058 0 3.731-1.674 3.731-3.731s-1.674-3.731-3.731-3.731c-2.058 0-3.732 1.674-3.732 3.731s1.674 3.731 3.732 3.731zm0-14.394c-5.889 0-10.663 4.775-10.663 10.663 0 1.945.523 3.762 1.432 5.332l9.23 15.994 9.23-15.994c.909-1.57 1.432-3.387 1.432-5.332 0-5.888-4.774-10.663-10.662-10.663zM16.001 13.334c-1.472 0-2.666-1.193-2.666-2.665 0-1.471 1.194-2.665 2.666-2.665s2.665 1.194 2.665 2.665c0 1.472-1.193 2.665-2.665 2.665z\"></path>\n  </svg>\n  <span>Kedar, Tulsi Park Street 1, Raiya Tel Exchange, 150ft Road, 360005 Rajkot, Gujarat, India</span>\n</p>\n\n<!-- Hyderabad Address -->\n<p style=\"display:flex;align-items:center;margin-bottom:8px;\">\n  <svg style=\"width: 30px;height: 30px;vertical-align: middle;margin-right: 8px;\" viewbox=\"0 0 32 32\" width=\"32\" height=\"32\">\n    <path fill=\"currentColor\" d=\"M16.001 1.072c5.291 0 9.596 4.305 9.596 9.597 0 1.683-.446 3.341-1.29 4.799l-8.307 14.394-8.308-14.395c-.843-1.456-1.289-3.115-1.289-4.798 0-5.292 4.305-9.597 9.597-9.597zm0 13.328c2.058 0 3.731-1.674 3.731-3.731s-1.674-3.731-3.731-3.731c-2.058 0-3.732 1.674-3.732 3.731s1.674 3.731 3.732 3.731zm0-14.394c-5.889 0-10.663 4.775-10.663 10.663 0 1.945.523 3.762 1.432 5.332l9.23 15.994 9.23-15.994c.909-1.57 1.432-3.387 1.432-5.332 0-5.888-4.774-10.663-10.662-10.663zM16.001 13.334c-1.472 0-2.666-1.193-2.666-2.665 0-1.471 1.194-2.665 2.666-2.665s2.665 1.194 2.665 2.665c0 1.472-1.193 2.665-2.665 2.665z\"></path>\n  </svg>\n  <span>Phase 4, The Botanika, 101 HIG-90 A, Above ICICI Bank, Jayabheri Enclave, Gachibowli, Hyderabad, Telangana 500032, India</span>\n</p>\n\n<!-- Email -->\n<p style=\"display:flex;align-items:center;\">\n  <svg style=\"width: 24px;height: 24px;vertical-align: middle;margin-right: 8px;\" viewbox=\"0 0 32 32\" width=\"32\" height=\"32\">\n    <path fill=\"currentColor\" d=\"M28.244 7.47H2.672v17.06h26.656v-17.06h-1.084zM27.177 8.536l-10.298 10.298c-.47.47-1.289.47-1.759 0L4.82 8.536h22.357zM3.738 8.961l6.923 6.922-6.923 6.923V8.961zm.851 14.503l6.827-6.826 2.951 2.95c.436.436 1.016.677 1.633.677s1.197-.241 1.633-.677l2.951-2.951 6.826 6.826H4.589zm23.673-.657l-6.923-6.924 6.923-6.924v13.848z\"></path>\n  </svg>\n  <span><a href=\"mailto:support@ngearsafe.com\" style=\"color:#bebcbc;text-decoration:none;\">support@ngearsafe.com</a></span>\n</p>",
               "hidden_mobile": false
             }
           },
@@ -505,7 +505,7 @@
             "type": "bl_col",
             "settings": {
               "col_heading": "",
-              "menu": "legal",
+              "menu": "",
               "menu_style": "1",
               "col_border": "none",
               "col_dk": "15",
@@ -535,7 +535,7 @@
               "remove_br_tag": false,
               "tag": "p",
               "fontf": "inherit",
-              "text_cl": "#ffffff",
+              "text_cl": "#bebcbc",
               "text_fs": 16,
               "text_lh": 0,
               "text_fw": 400,
@@ -555,9 +555,9 @@
             "settings": {
               "title": "",
               "social_mode": "1",
-              "social_style": "2",
+              "social_style": "5",
               "social_size": "small",
-              "bd_radius": 0,
+              "bd_radius": 30,
               "use_color_set": false,
               "icon_cl": "#878787",
               "bg_cl": "#222222",
@@ -565,6 +565,16 @@
               "space_v_item": "5",
               "space_h_item_mb": "2",
               "space_v_item_mb": "2"
+            }
+          },
+          "legal_bar_wtQBEN": {
+            "type": "legal_bar",
+            "settings": {
+              "menu": "legal",
+              "copy_text": "Copyright © [year] <span class=\"t4s-cp\"><a href=\"https://ngearsafe.com/\">NG Earsafe</a></span> | All Rights Reserved.",
+              "back_to_top_label": "Back to top",
+              "show_border": true,
+              "text_fs": 12
             }
           }
         },
@@ -578,7 +588,8 @@
           "bl_col_q7UAhK",
           "cus_menu_N4xTrd",
           "custom_text_g3VDPw",
-          "af5781d4-e8bb-4ebd-b578-5e8bdedab661"
+          "af5781d4-e8bb-4ebd-b578-5e8bdedab661",
+          "legal_bar_wtQBEN"
         ],
         "settings": {
           "sticky": false,
@@ -593,13 +604,13 @@
           "space_h_item_mb": "10",
           "space_v_item_mb": "30",
           "heading_fontf": "inherit",
-          "heading_fs": 16,
+          "heading_fs": 12,
           "heading_lh": 22,
           "heading_fw": 500,
           "heading_ls": 0,
           "mgb": 30,
           "mgb_mb": 20,
-          "text_fs": 14,
+          "text_fs": 12,
           "text_fw": 400,
           "heading_cl": "#ffffff",
           "text_cl": "#a7a7a7",
@@ -608,7 +619,7 @@
           "border_cl": "#e6e6e6",
           "layout": "t4s-container-wrap",
           "cl_bg": "#25313c",
-          "cl_bg_gradient": "",
+          "cl_bg_gradient": "linear-gradient(127deg, rgba(97, 129, 140, 1) 11%, rgba(50, 66, 89, 1) 81%)",
           "mg": ",,,",
           "pd": "80px,,80px,",
           "mg_tb": "",
@@ -622,6 +633,7 @@
         "blocks": {
           "bottom-bar-0": {
             "type": "bl_col",
+            "disabled": true,
             "settings": {
               "col_heading": "",
               "menu": "",
@@ -637,6 +649,7 @@
           },
           "bottom-bar-1": {
             "type": "copyR",
+            "disabled": true,
             "settings": {
               "text": "Copyright © [year] <span class=\"t4s-cp\"><a href=\"https://ngearsafe.com/\">NG Earsafe</a></span> | All Rights Reserved.",
               "mgb": 0,
