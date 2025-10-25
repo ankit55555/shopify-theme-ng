@@ -1256,6 +1256,118 @@
         "code_cus_css": ""
       }
     },
+    "ng_image_card_collage_nCmNbr": {
+      "type": "ng-image-card-collage",
+      "name": "NG Image Card Collage",
+      "settings": {
+        "layout": "t4s-container-fluid",
+        "cl_bg": "",
+        "cl_bg_gradient": "linear-gradient(35deg, rgba(221, 222, 216, 1), rgba(155, 174, 181, 1) 100%)",
+        "mg": ",,,",
+        "pd": "40px,40px,40px,80px",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,,",
+        "pd_mb": "40px,20px,40px,20px",
+        "heading": "Did you know?",
+        "subtext": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>",
+        "display_mode": "image",
+        "image_desktop": "shopify://shop_images/Screenshot_2025-10-19_171146-removebg-preview.png",
+        "image_mobile": "shopify://shop_images/Screenshot_2025-10-19_171752-removebg-preview.png",
+        "text_align": "t4s-text-start",
+        "heading_color": "#2a3642",
+        "heading_size": 56,
+        "heading_size_mb": 36,
+        "body_color": "#5d6b78",
+        "body_size": 16,
+        "body_size_mb": 14,
+        "stage_min_height": 520,
+        "stage_min_height_mb": 920,
+        "use_cus_css": false,
+        "code_cus_css": ""
+      }
+    },
+    "ng_image_card_collage_HrqpdT": {
+      "type": "ng-image-card-collage",
+      "blocks": {
+        "card_YNP9tH": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Cnn__Did_You_Know.webp",
+            "image_width": 220,
+            "image_width_mb": 200,
+            "rotate": 0,
+            "offset_x": -220,
+            "offset_y": 0,
+            "offset_x_mb": -60,
+            "offset_y_mb": -190,
+            "z_index": 6
+          }
+        },
+        "card_eJdnDW": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/WHO__Did_You_Know.webp",
+            "image_width": 220,
+            "image_width_mb": 200,
+            "rotate": 0,
+            "offset_x": -10,
+            "offset_y": -70,
+            "offset_x_mb": 60,
+            "offset_y_mb": 30,
+            "z_index": 7
+          }
+        },
+        "card_mp3PiP": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/RW__Did_You_Know.webp",
+            "image_width": 220,
+            "image_width_mb": 200,
+            "rotate": 0,
+            "offset_x": 210,
+            "offset_y": 40,
+            "offset_x_mb": -70,
+            "offset_y_mb": 210,
+            "z_index": 6
+          }
+        }
+      },
+      "block_order": [
+        "card_YNP9tH",
+        "card_eJdnDW",
+        "card_mp3PiP"
+      ],
+      "disabled": true,
+      "name": "NG Image Card Collage",
+      "settings": {
+        "layout": "t4s-container-fluid",
+        "cl_bg": "",
+        "cl_bg_gradient": "linear-gradient(35deg, rgba(221, 222, 216, 1), rgba(155, 174, 181, 1) 100%)",
+        "mg": ",,,",
+        "pd": "40px,40px,40px,80px",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,,",
+        "pd_mb": "40px,20px,40px,20px",
+        "heading": "Did you know?",
+        "subtext": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>",
+        "display_mode": "cards",
+        "image_desktop": "shopify://shop_images/Screenshot_2025-10-19_171146-removebg-preview.png",
+        "image_mobile": "shopify://shop_images/Screenshot_2025-10-19_171752-removebg-preview.png",
+        "text_align": "t4s-text-start",
+        "heading_color": "#2a3642",
+        "heading_size": 56,
+        "heading_size_mb": 36,
+        "body_color": "#5d6b78",
+        "body_size": 16,
+        "body_size_mb": 14,
+        "stage_min_height": 520,
+        "stage_min_height_mb": 700,
+        "use_cus_css": false,
+        "code_cus_css": ""
+      }
+    },
     "16475405032640277b": {
       "type": "featured-collection",
       "disabled": true,
@@ -1963,6 +2075,8 @@
     "16475405032640277b",
     "3708fb84-c884-4080-b264-7b65ba109a2f",
     "custom_liquid_xtYi4e",
+    "ng_image_card_collage_nCmNbr",
+    "ng_image_card_collage_HrqpdT",
     "accordion_wWymTR",
     "ng_hero_slideshow_Edej3j",
     "ng_product_range_njWDCP",
