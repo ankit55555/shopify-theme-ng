@@ -1710,7 +1710,7 @@
         "cta_style": "outline",
         "cta_size": "lg",
         "bg_style": "dark",
-        "layout": "t4s-container-wrap"
+        "layout": "t4s-container-fluid"
       }
     },
     "ng_image_card_collage_nCmNbr": {
