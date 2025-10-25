@@ -1664,7 +1664,7 @@
         "product_r7pMgB": {
           "type": "product",
           "settings": {
-            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
+            "product": "open-ear-bone-conduction-headphones-ng-ear-safe-pro-swimming"
           }
         },
         "product_B4yKTh": {
@@ -1709,7 +1709,7 @@
         "cta_link": "shopify://pages/about-us",
         "cta_style": "outline",
         "cta_size": "lg",
-        "bg_style": "none",
+        "bg_style": "dark",
         "layout": "t4s-container-wrap"
       }
     },
@@ -2057,7 +2057,7 @@
         "autoplay_interval": 3000,
         "loop": true,
         "direction": "ltr",
-        "show_arrows": false,
+        "show_arrows": true,
         "show_dots": false
       }
     }
