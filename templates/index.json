@@ -2009,7 +2009,7 @@
         "show_date": true,
         "view_all_button": true,
         "view_all_label": "VIEW ALL",
-        "view_all_link": "",
+        "view_all_link": "shopify://blogs/open-ear-headphones",
         "heading_font_size": 32,
         "subheading_font_size": 16,
         "bg_color": "#0f0f0f",
