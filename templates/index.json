@@ -1711,7 +1711,7 @@
         "heading_fs_mobile": 24,
         "desc_fs_mobile": 12,
         "cta_label": "View all",
-        "cta_link": "shopify://pages/about-us",
+        "cta_link": "shopify://collections/all",
         "cta_style": "outline",
         "cta_size": "lg",
         "bg_style": "dark",
@@ -1722,10 +1722,10 @@
         "card_bg_color": "#ffffff0a",
         "card_border_color": "#ffffff14",
         "price_color": "#ffd700",
-        "cta_bg_color": "rgba(0,0,0,0)",
-        "cta_text_color": "#ffffff",
+        "cta_bg_color": "#56cfe1",
+        "cta_text_color": "#222222",
         "cta_border_color": "#ffffff40",
-        "card_bg_style": "white",
+        "card_bg_style": "transparent",
         "card_custom_bg_color": "#ffffff"
       }
     },
