@@ -1304,7 +1304,7 @@
           "sticky_header": true,
           "scroll_header": false,
           "bgnavst": "#25313c",
-          "opnavst": 0,
+          "opnavst": 100,
           "clnavst": "#ffffff",
           "clnavst_hover": "#0063d1",
           "transparent_header": true,
