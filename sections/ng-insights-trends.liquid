@@ -21,7 +21,7 @@
 <section
   id="ng-insights-{{ section_id }}"
   class="ng-insights"
-  style="--pt: {{ st.padding_top }}px; --pb: {{ st.padding_bottom }}px; --bg: {{ st.bg_color }}; --heading: {{ st.heading_color }}; --text: {{ st.text_color }}; --muted: {{ st.muted_color }}; --accent: {{ st.accent_color }}; --card-bg: {{ st.card_bg }}; --card-text: {{ st.card_text }}; --gap: {{ st.gap }}px; --slides-dk: {{ st.slides_desktop }}; --slides-mb: {{ st.slides_mobile }}; --heading-size: {{ st.heading_font_size }}px; --subheading-size: {{ st.subheading_font_size }}px;"
+  style="--pt: {{ st.padding_top }}px; --pb: {{ st.padding_bottom }}px; --bg: {{ st.bg_color }}; --heading: {{ st.heading_color }}; --text: {{ st.text_color }}; --muted: {{ st.muted_color }}; --accent: {{ st.accent_color }}; --card-bg: {{ st.card_bg }}; --card-text: {{ st.card_text }}; --button-color: {{ st.button_color }}; --gap: {{ st.gap }}px; --slides-dk: {{ st.slides_desktop }}; --slides-mb: {{ st.slides_mobile }}; --heading-size: {{ st.heading_font_size }}px; --subheading-size: {{ st.subheading_font_size }}px;"
   data-autoplay="{{ st.autoplay }}"
   data-interval="{{ st.autoplay_interval | times: 1000 }}"
   data-loop="{{ st.loop }}"
@@ -135,6 +135,7 @@
     { "type": "checkbox", "id": "view_all_button", "label": "Show View all button", "default": true },
     { "type": "text", "id": "view_all_label", "label": "View all label", "default": "VIEW ALL" },
     { "type": "url", "id": "view_all_link", "label": "Override View all link (optional)" },
+    { "type": "color", "id": "button_color", "label": "Button color", "default": "#E4B44A" },
 
     { "type": "header", "content": "Typography" },
     { "type": "range", "id": "heading_font_size", "label": "Heading font size", "min": 16, "max": 72, "step": 2, "unit": "px", "default": 32 },

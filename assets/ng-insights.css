@@ -180,11 +180,12 @@
   height: 44px;
   padding: 0 22px;
   border-radius: 28px;
-  color: var(--text, #eaeaea);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--button-color, #E4B44A);
+  border: 1px solid var(--button-color, #E4B44A);
   text-decoration: none;
   letter-spacing: 0.04em;
 }
 .ng-insights .ngi-viewall:hover {
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: var(--button-color, #E4B44A);
+  opacity: 0.8;
 }
