@@ -1612,10 +1612,10 @@
             "heading_color": "#ffffff",
             "subheading_color": "#ffffff",
             "button_text_color": "#ffffff",
-            "button_bg_color": "#222222",
+            "button_bg_color": "#56cfe1",
             "overlay_color": "#000000",
             "overlay_opacity": 30,
-            "show_scroll_hint": false,
+            "show_scroll_hint": true,
             "scroll_text": "SCROLL TO DISCOVER"
           }
         },
@@ -1632,10 +1632,10 @@
             "heading_color": "#ffffff",
             "subheading_color": "#ffffff",
             "button_text_color": "#ffffff",
-            "button_bg_color": "#222222",
+            "button_bg_color": "#56cfe1",
             "overlay_color": "#000000",
             "overlay_opacity": 30,
-            "show_scroll_hint": false,
+            "show_scroll_hint": true,
             "scroll_text": "SCROLL TO DISCOVER"
           }
         }
@@ -1711,7 +1711,7 @@
         "heading_fs_mobile": 24,
         "desc_fs_mobile": 12,
         "cta_label": "View all",
-        "cta_link": "shopify://pages/about-us",
+        "cta_link": "shopify://collections/all",
         "cta_style": "outline",
         "cta_size": "lg",
         "bg_style": "dark",
@@ -1722,10 +1722,10 @@
         "card_bg_color": "#ffffff0a",
         "card_border_color": "#ffffff14",
         "price_color": "#ffd700",
-        "cta_bg_color": "rgba(0,0,0,0)",
-        "cta_text_color": "#ffffff",
+        "cta_bg_color": "#56cfe1",
+        "cta_text_color": "#222222",
         "cta_border_color": "#ffffff40",
-        "card_bg_style": "white",
+        "card_bg_style": "transparent",
         "card_custom_bg_color": "#ffffff"
       }
     },
@@ -1871,7 +1871,7 @@
         "pd": "",
         "mg_tb": "",
         "pd_tb": "",
-        "mg_mb": ",,30px,",
+        "mg_mb": "",
         "pd_mb": ""
       }
     },
@@ -2009,7 +2009,7 @@
         "show_date": true,
         "view_all_button": true,
         "view_all_label": "VIEW ALL",
-        "view_all_link": "",
+        "view_all_link": "shopify://blogs/open-ear-headphones",
         "heading_font_size": 32,
         "subheading_font_size": 16,
         "bg_color": "#0f0f0f",
@@ -2040,10 +2040,24 @@
             "alt": ""
           }
         },
+        "logo_zJf4Xh": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Your_story_OG_color.svg",
+            "alt": ""
+          }
+        },
         "logo_UDbHNT": {
           "type": "logo",
           "settings": {
             "image": "shopify://shop_images/ENTracker_grey.svg",
+            "alt": ""
+          }
+        },
+        "logo_ze6rrY": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/IANS_OG_color.svg",
             "alt": ""
           }
         },
@@ -2054,10 +2068,10 @@
             "alt": ""
           }
         },
-        "logo_zJf4Xh": {
+        "logo_XyGF7Y": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/Your_story_OG_color.svg",
+            "image": "shopify://shop_images/Entreprenuur_grey.svg",
             "alt": ""
           }
         }
@@ -2065,24 +2079,26 @@
       "block_order": [
         "logo_APiMdN",
         "logo_EX9KyQ",
+        "logo_zJf4Xh",
         "logo_UDbHNT",
+        "logo_ze6rrY",
         "logo_M8XRhd",
-        "logo_zJf4Xh"
+        "logo_XyGF7Y"
       ],
       "name": "Media Carousel",
       "settings": {
         "heading": "We are in Media",
-        "heading_color": "#cfd3d6",
+        "heading_color": "#222222",
         "heading_size_desktop": 56,
         "heading_size_mobile": 34,
-        "bg_color": "#000000",
+        "bg_color": "#fff",
         "padding_top": 96,
         "padding_bottom": 100,
         "inactive_opacity": 80,
-        "logo_height": 94,
+        "logo_height": 100,
         "logo_gap": 80,
         "logo_height_mobile": 72,
-        "logo_gap_mobile": 40,
+        "logo_gap_mobile": 54,
         "show_center_frame": false,
         "center_width": 224,
         "center_color": "#d50000",
