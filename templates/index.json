@@ -1832,6 +1832,7 @@
         "layout": "t4s-container-fluid",
         "cl_bg": "#181718",
         "cl_bg_gradient": "",
+        "image_bg": "shopify://shop_images/Open_Ear_main_image.webp",
         "mg": ",,0px,",
         "pd": "",
         "mg_tb": "",
