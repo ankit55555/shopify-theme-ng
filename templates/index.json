@@ -2084,7 +2084,7 @@
         "logo_height_mobile": 72,
         "logo_gap_mobile": 40,
         "show_center_frame": false,
-        "center_width": 180,
+        "center_width": 224,
         "center_color": "#d50000",
         "center_border_width": 2,
         "center_border_radius": 8,
