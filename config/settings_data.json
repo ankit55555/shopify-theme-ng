@@ -1282,7 +1282,7 @@
         ],
         "settings": {
           "layout": "logo_center",
-          "full_header": false,
+          "full_header": true,
           "height": 122,
           "arrow": false,
           "align": "center",
