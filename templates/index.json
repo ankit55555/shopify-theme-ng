@@ -2080,7 +2080,7 @@
         "padding_bottom": 100,
         "inactive_opacity": 80,
         "logo_height": 94,
-        "logo_gap": 64,
+        "logo_gap": 80,
         "logo_height_mobile": 72,
         "logo_gap_mobile": 40,
         "show_center_frame": false,
