@@ -189,4 +189,7 @@
 }
 @media (max-width: 768px) {
   .ng-hero__scroll-hint { display: none; }
+  .ng-hero__content {
+    top: 66%;
+  }
 }

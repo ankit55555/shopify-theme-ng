@@ -24,6 +24,22 @@
   <style>
     #ng-pr-{{ section_id }} .ng-pr__title{font-size: {{ section.settings.heading_fs | default: 28 }}px}
     #ng-pr-{{ section_id }} .ng-pr__desc{font-size: {{ section.settings.desc_fs | default: 14 }}px}
+    {%- if section.settings.card_bg_style == 'white' -%}
+      #ng-pr-{{ section_id }} .ng-pr__card{background-color: #ffffff;border-color: rgba(0,0,0,0.08)}
+    {%- elsif section.settings.card_bg_style == 'custom' -%}
+      #ng-pr-{{ section_id }} .ng-pr__card{background-color: {{ section.settings.card_custom_bg_color | default: '#ffffff' }};border-color: {{ section.settings.card_border_color | default: 'rgba(0,0,0,0.08)' }}}
+    {%- else -%}
+      #ng-pr-{{ section_id }} .ng-pr__card{background-color: {{ section.settings.card_bg_color | default: 'rgba(255,255,255,0.04)' }};border-color: {{ section.settings.card_border_color | default: 'rgba(255,255,255,0.08)' }}}
+    {%- endif -%}
+    #ng-pr-{{ section_id }} .ng-pr__cta{background-color: {{ section.settings.cta_bg_color | default: 'transparent' }};color: {{ section.settings.cta_text_color | default: '#fff' }};border-color: {{ section.settings.cta_border_color | default: 'rgba(255,255,255,0.25)' }}}
+    #ng-pr-{{ section_id }} .ng-pr__intro{background-color: {{ section.settings.intro_bg_color | default: 'rgba(255,255,255,0.04)' }}}
+    #ng-pr-{{ section_id }} .ng-pr__price-current{color: {{ section.settings.price_color | default: '#ffd700' }}}
+    #ng-pr-{{ section_id }} .ng-pr__title{color: {{ section.settings.heading_color | default: 'inherit' }}}
+    #ng-pr-{{ section_id }} .ng-pr__desc{color: {{ section.settings.desc_color | default: 'inherit' }}}
+    @media (max-width: 767.98px) {
+      #ng-pr-{{ section_id }} .ng-pr__title{font-size: {{ section.settings.heading_fs_mobile | default: 24 }}px}
+      #ng-pr-{{ section_id }} .ng-pr__desc{font-size: {{ section.settings.desc_fs_mobile | default: 12 }}px}
+    }
   </style>
   <div class="ng-pr__row">
     <div class="ng-pr__intro">
@@ -38,12 +54,14 @@
       {%- endif -%}
     </div>
 
-    <div class="ng-pr__viewport">
+    <div class="ng-pr__viewport" data-autoplay="{{ section.settings.autoplay }}" data-autoplay-interval="{{ section.settings.autoplay_interval }}" data-show-arrows="{{ section.settings.show_arrows }}">
+      {%- if section.settings.show_arrows -%}
       <button class="ng-pr__nav ng-pr__nav--prev" type="button" aria-label="Previous"></button>
+      {%- endif -%}
       <div class="ng-pr__track" data-carousel>
     {%- for block in section.blocks -%}
       {%- assign prod = all_products[block.settings.product] -%}
-      <article class="ng-pr__card" id="ng-pr-card-{{ block.id }}" data-product-handle="{{ prod.handle }}" {{ block.shopify_attributes }}>
+      <article class="ng-pr__card" id="ng-pr-card-{{ block.id }}" data-product-handle="{{ prod.handle }}" data-product-url="{{ prod.url }}" {{ block.shopify_attributes }}>
         {%- if prod -%}
           {%- assign sel_var = prod.selected_or_first_available_variant -%}
           {%- assign featured = sel_var.featured_image | default: prod.featured_image -%}
@@ -55,6 +73,8 @@
               <img
                 src="{{ featured | image_url: width: 900 }}"
                 alt="{{ featured.alt | escape }}"
+                width="900"
+                height="675"
                 loading="lazy">
             {%- endif -%}
           </a>
@@ -79,18 +99,30 @@
                 {%- endif -%}
               </div>
               {%- if prod.has_only_default_variant == false and prod.options.size > 0 -%}
-                {%- assign first_option = prod.options_with_values | first -%}
+                {%- assign first_option_name = prod.options | first | downcase -%}
+                {%- if first_option_name == 'color' or first_option_name == 'colour' -%}{% assign is_color = true %}{% else %}{% assign is_color = false %}{% endif -%}
+                {%- assign values_csv = '' -%}
+                {%- for v in prod.variants -%}
+                  {%- if v.available -%}
+                    {%- capture token -%},{{ v.option1 | strip }}{%- endcapture -%}
+                    {%- unless values_csv contains token -%}
+                      {%- assign values_csv = values_csv | append: token -%}
+                    {%- endunless -%}
+                  {%- endif -%}
+                {%- endfor -%}
+                {%- assign available_values = values_csv | remove_first: ',' | split: ',' -%}
                 <ul class="ng-pr__swatches" role="list">
-                  {%- for value in first_option.values -%}
+                  {%- for value in available_values -%}
                     <li>
                       <button type="button" class="ng-pr__swatch{% if value == sel_var.option1 %} is-active{% endif %}" data-option1="{{ value | escape }}" aria-label="{{ value | escape }}">
-                        <span class="ng-pr__swatch-dot"></span>
+                        <span class="ng-pr__swatch-dot" {% if is_color %}style="background: {{ value | escape }}"{% endif %}></span>
                       </button>
                     </li>
                   {%- endfor -%}
                 </ul>
               {%- endif -%}
             </div>
+          </div>
           <script type="application/json" class="ng-pr__data">{{ prod | json }}</script>
         {%- else -%}
           <div class="ng-pr__placeholder">
@@ -101,7 +133,9 @@
       </article>
     {%- endfor -%}
       </div>
+      {%- if section.settings.show_arrows -%}
       <button class="ng-pr__nav ng-pr__nav--next" type="button" aria-label="Next"></button>
+      {%- endif -%}
     </div>
   </div>
   </div>
@@ -117,6 +151,27 @@
   {
     "name": "NG Product Range",
     "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_arrows",
+        "label": "Show navigation arrows",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "autoplay",
+        "label": "Enable autoplay (used when arrows hidden)",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "autoplay_interval",
+        "label": "Autoplay interval (ms)",
+        "min": 2000,
+        "max": 9500,
+        "step": 500,
+        "default": 4000
+      },
       {
         "type": "text",
         "id": "heading",
@@ -143,6 +198,22 @@
         "max": 24,
         "step": 1,
         "default": 14
+      }, {
+        "type": "range",
+        "id": "heading_fs_mobile",
+        "label": "Heading font size - Mobile (px)",
+        "min": 16,
+        "max": 48,
+        "step": 1,
+        "default": 24
+      }, {
+        "type": "range",
+        "id": "desc_fs_mobile",
+        "label": "Description font size - Mobile (px)",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "default": 12
       }, {
         "type": "text",
         "id": "cta_label",
@@ -191,6 +262,72 @@
           { "value": "t4s-container-wrap", "label": "Wrapped container" },
           { "value": "t4s-container-fluid", "label": "Full width" }
         ]
+      }, {
+        "type": "header",
+        "content": "Colors & Backgrounds"
+      }, {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading color",
+        "default": "#ffffff"
+      }, {
+        "type": "color",
+        "id": "desc_color",
+        "label": "Description color",
+        "default": "#ffffff"
+      }, {
+        "type": "color",
+        "id": "intro_bg_color",
+        "label": "Intro section background",
+        "default": "rgba(255,255,255,0.04)"
+      }, {
+        "type": "color",
+        "id": "card_bg_color",
+        "label": "Card background",
+        "default": "rgba(255,255,255,0.04)"
+      }, {
+        "type": "color",
+        "id": "card_border_color",
+        "label": "Card border color",
+        "default": "rgba(255,255,255,0.08)"
+      }, {
+        "type": "color",
+        "id": "price_color",
+        "label": "Price color",
+        "default": "#ffd700"
+      }, {
+        "type": "color",
+        "id": "cta_bg_color",
+        "label": "CTA background color",
+        "default": "transparent"
+      }, {
+        "type": "color",
+        "id": "cta_text_color",
+        "label": "CTA text color",
+        "default": "#ffffff"
+      }, {
+        "type": "color",
+        "id": "cta_border_color",
+        "label": "CTA border color",
+        "default": "rgba(255,255,255,0.25)"
+      }, {
+        "type": "header",
+        "content": "Product Card Background Options"
+      }, {
+        "type": "select",
+        "id": "card_bg_style",
+        "label": "Card background style",
+        "default": "white",
+        "options": [
+          {"value":"white","label":"White"},
+          {"value":"transparent","label":"Transparent"},
+          {"value":"custom","label":"Custom Color"}
+        ]
+      }, {
+        "type": "color",
+        "id": "card_custom_bg_color",
+        "label": "Custom card background color",
+        "default": "#ffffff"
       }
     ],
     "blocks": [

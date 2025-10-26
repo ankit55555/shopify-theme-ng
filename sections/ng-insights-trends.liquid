@@ -21,7 +21,7 @@
 <section
   id="ng-insights-{{ section_id }}"
   class="ng-insights"
-  style="--pt: {{ st.padding_top }}px; --pb: {{ st.padding_bottom }}px; --bg: {{ st.bg_color }}; --heading: {{ st.heading_color }}; --text: {{ st.text_color }}; --muted: {{ st.muted_color }}; --accent: {{ st.accent_color }}; --card-bg: {{ st.card_bg }}; --card-text: {{ st.card_text }}; --gap: {{ st.gap }}px; --slides-dk: {{ st.slides_desktop }}; --slides-mb: {{ st.slides_mobile }};"
+  style="--pt: {{ st.padding_top }}px; --pb: {{ st.padding_bottom }}px; --bg: {{ st.bg_color }}; --heading: {{ st.heading_color }}; --text: {{ st.text_color }}; --muted: {{ st.muted_color }}; --accent: {{ st.accent_color }}; --card-bg: {{ st.card_bg }}; --card-text: {{ st.card_text }}; --gap: {{ st.gap }}px; --slides-dk: {{ st.slides_desktop }}; --slides-mb: {{ st.slides_mobile }}; --heading-size: {{ st.heading_font_size }}px; --subheading-size: {{ st.subheading_font_size }}px;"
   data-autoplay="{{ st.autoplay }}"
   data-interval="{{ st.autoplay_interval | times: 1000 }}"
   data-loop="{{ st.loop }}"
@@ -111,6 +111,7 @@
   "tag": "section",
   "class": "section-ng-insights",
   "settings": [
+    { "type": "header", "content": "Content" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Insights & Trends" },
     { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "The Future of Open Ear. This is just a dummy copy." },
     { "type": "blog", "id": "blog", "label": "Blog" },
@@ -134,6 +135,10 @@
     { "type": "checkbox", "id": "view_all_button", "label": "Show View all button", "default": true },
     { "type": "text", "id": "view_all_label", "label": "View all label", "default": "VIEW ALL" },
     { "type": "url", "id": "view_all_link", "label": "Override View all link (optional)" },
+
+    { "type": "header", "content": "Typography" },
+    { "type": "range", "id": "heading_font_size", "label": "Heading font size", "min": 16, "max": 72, "step": 2, "unit": "px", "default": 32 },
+    { "type": "range", "id": "subheading_font_size", "label": "Subheading font size", "min": 12, "max": 24, "step": 1, "unit": "px", "default": 16 },
 
     { "type": "header", "content": "Design" },
     { "type": "color", "id": "bg_color", "label": "Background", "default": "#0f0f0f" },
