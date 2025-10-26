@@ -1843,6 +1843,7 @@
     },
     "68aa9a69-864f-4a21-a7b8-def3b0741000": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "{% render 'open-earhome-new' %}",
         "layout": "t4s-container-fluid",
@@ -1854,6 +1855,23 @@
         "mg_tb": "",
         "pd_tb": "",
         "mg_mb": ",,0px,",
+        "pd_mb": ""
+      }
+    },
+    "custom_liquid_open_earphone_H8K9NG": {
+      "type": "custom-liquid-open-earphone",
+      "name": "Custom Liquid Open Earphone",
+      "settings": {
+        "custom_liquid": "{% render 'open-earhome-new' %}",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "image_bg": "shopify://shop_images/Open_Ear_main_image.webp",
+        "mg": "",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
         "pd_mb": ""
       }
     },
@@ -2100,6 +2118,7 @@
     "ng_image_card_collage_nCmNbr",
     "ng_image_card_collage_HrqpdT",
     "68aa9a69-864f-4a21-a7b8-def3b0741000",
+    "custom_liquid_open_earphone_H8K9NG",
     "ng_why_earsafe_nDa6AL",
     "hero_bg_banner_bjQYTE",
     "17358085378c9a29a5",
