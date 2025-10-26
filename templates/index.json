@@ -1701,8 +1701,8 @@
       ],
       "name": "NG Product Range",
       "settings": {
-        "show_arrows": true,
-        "autoplay": false,
+        "show_arrows": false,
+        "autoplay": true,
         "autoplay_interval": 4000,
         "heading": "Our Product Range",
         "subheading": "Open-ear technology provides a comfortable and safer alternative to in-ear headphones",
