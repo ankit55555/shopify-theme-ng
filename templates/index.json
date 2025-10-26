@@ -1612,10 +1612,10 @@
             "heading_color": "#ffffff",
             "subheading_color": "#ffffff",
             "button_text_color": "#ffffff",
-            "button_bg_color": "#222222",
+            "button_bg_color": "#56cfe1",
             "overlay_color": "#000000",
             "overlay_opacity": 30,
-            "show_scroll_hint": false,
+            "show_scroll_hint": true,
             "scroll_text": "SCROLL TO DISCOVER"
           }
         },
@@ -1632,10 +1632,10 @@
             "heading_color": "#ffffff",
             "subheading_color": "#ffffff",
             "button_text_color": "#ffffff",
-            "button_bg_color": "#222222",
+            "button_bg_color": "#56cfe1",
             "overlay_color": "#000000",
             "overlay_opacity": 30,
-            "show_scroll_hint": false,
+            "show_scroll_hint": true,
             "scroll_text": "SCROLL TO DISCOVER"
           }
         }
