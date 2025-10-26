@@ -2040,10 +2040,24 @@
             "alt": ""
           }
         },
+        "logo_zJf4Xh": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Your_story_OG_color.svg",
+            "alt": ""
+          }
+        },
         "logo_UDbHNT": {
           "type": "logo",
           "settings": {
             "image": "shopify://shop_images/ENTracker_grey.svg",
+            "alt": ""
+          }
+        },
+        "logo_ze6rrY": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/IANS_OG_color.svg",
             "alt": ""
           }
         },
@@ -2054,10 +2068,10 @@
             "alt": ""
           }
         },
-        "logo_zJf4Xh": {
+        "logo_XyGF7Y": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/Your_story_OG_color.svg",
+            "image": "shopify://shop_images/Entreprenuur_grey.svg",
             "alt": ""
           }
         }
@@ -2065,17 +2079,19 @@
       "block_order": [
         "logo_APiMdN",
         "logo_EX9KyQ",
+        "logo_zJf4Xh",
         "logo_UDbHNT",
+        "logo_ze6rrY",
         "logo_M8XRhd",
-        "logo_zJf4Xh"
+        "logo_XyGF7Y"
       ],
       "name": "Media Carousel",
       "settings": {
         "heading": "We are in Media",
-        "heading_color": "#cfd3d6",
+        "heading_color": "#222222",
         "heading_size_desktop": 56,
         "heading_size_mobile": 34,
-        "bg_color": "#000000",
+        "bg_color": "#fff",
         "padding_top": 96,
         "padding_bottom": 100,
         "inactive_opacity": 80,
