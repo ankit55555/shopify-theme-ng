@@ -3,7 +3,11 @@
     <div class="content-wrapper">
       <div class="text-content">
         <h1 class="main-title">Open Ear Technology</h1>
-        <p class="description">Open-ear technology provides a comfortable and safer alternative to in-ear headphones, eliminating the risk of ear infections and hearing loss from prolonged use. The open design allows for a natural sound experience while ensuring users remain connected to their environment.</p>
+        <p class="description">
+          Open-ear technology provides a comfortable and safer alternative to in-ear headphones, eliminating the risk of
+          ear infections and hearing loss from prolonged use. The open design allows for a natural sound experience
+          while ensuring users remain connected to their environment.
+        </p>
       </div>
       <div class="visual-content">
         <video style="" autoplay loop muted playsinline>
@@ -14,38 +18,34 @@
     </div>
   </div>
 
-
-<center>
-  <div class="wrapper">
-  <div class="card">
-    <div class="card-text">
-      <div class="air-con1">
+  <center>
+    <div class="wrapper">
+      <div class="card">
+        <div class="card-text">
+          <div class="air-con1"></div>
+          <div class="title-total">
+            <div class="title"></div>
+            <h2>Air Conduction Technology</h2>
+            <div class="actions">
+              <a target="_blank" href="https://ngearsafe.com/pages/air-conduction">LEARN MORE</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="title-total">
-        <div class="title"></div>
-        <h2>Air Conduction Technology</h2>
-        <div class="actions">
-          <a target="_blank" href="https://ngearsafe.com/pages/air-conduction">LEARN MORE</a>
+      <div class="card">
+        <div class="card-text">
+          <div class="bone-con1"></div>
+          <div class="title-total">
+            <div class="title"></div>
+            <h2>Bone Conduction Technology</h2>
+            <div class="actions">
+              <a target="_blank" href="https://ngearsafe.com/pages/bone-conduction">LEARN MORE</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="card">
-    <div class="card-text">
-      <div class="bone-con1">
-      </div>
-      <div class="title-total">
-        <div class="title"></div>
-        <h2>Bone Conduction Technology</h2>
-        <div class="actions">
-          <a target="_blank" href="https://ngearsafe.com/pages/bone-conduction">LEARN MORE</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
   </center>
-  
 </div>
 
 <style>
@@ -129,7 +129,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
+    background-image:
       linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
     background-size: 50px 50px;
@@ -139,8 +139,21 @@
 
   /* Responsive Design */
   @media (max-width: 768px) {
+
+    .visual-content video{
+      width: 100%;
+      border-radius: 0;
+      box-shadow: none;
+    }
     .open-ear-container {
-      padding: 0 20px;
+      padding: 0;
+    }
+    .t4s_nt_se_{{ section.id }}{
+      background-image: none !important;
+    }
+
+    .t4s_nt_se_{{ section.id }} .t4s-container{
+      padding: 0;
     }
 
     .content-wrapper {
@@ -158,8 +171,9 @@
     }
 
     .visual-content {
-      height: 250px;
+      {% comment %} height: 250px; {% endcomment %}
       max-width: 100%;
+      opacity: 1;
     }
 
     .text-content {
@@ -190,7 +204,7 @@
     overflow: hidden;
     border: 1px solid #3a3a3a;
   }
-  
+
   .card h2 {
     margin: 0;
     padding: 0 1rem;
@@ -198,7 +212,7 @@
     color: #ffffff;
     font-weight: 600;
   }
-  
+
   .card .title {
     padding: 1rem;
     text-align: right;
@@ -206,25 +220,25 @@
     font-weight: 700;
     font-size: 12px;
   }
-  
+
   .card .desc {
     padding: .5rem 1rem;
     font-size: 12px;
   }
-  
+
   .card .actions {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     align-items: center;
     padding: 1.5rem 1rem;
   }
-  
+
   .card svg {
     width: 85px;
     height: 85px;
     margin: 0 auto;
   }
-  
+
   .img-avatar {
     width: 80px;
     height: 80px;
@@ -235,13 +249,13 @@
     top: 15px;
     left: 85px;
   }
-  
+
   .card-text {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     width: 100%;
   }
-  
+
   .air-con1 {
     width: 100%;
     height: 100%;
@@ -252,7 +266,7 @@
     background-size: cover;
     background-color: #1a1a1a;
   }
-  
+
   .bone-con1 {
     width: 100%;
     height: 100%;
@@ -263,14 +277,14 @@
     background-size: cover;
     background-color: #1a1a1a;
   }
-  
+
   .title-total {
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  
+
   .wrapper {
     padding: 30px 0;
     margin: 0;
@@ -298,23 +312,22 @@
     background: #d4af37;
     color: #000000 !important;
   }
-  
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-  var videoElements = document.querySelectorAll('video');
+    var videoElements = document.querySelectorAll('video');
 
-  videoElements.forEach(function(videoElement) {
-    videoElement.controls = false;
+    videoElements.forEach(function (videoElement) {
+      videoElement.controls = false;
 
-    // videoElement.addEventListener('play', function () {
-    //   this.controls = true;
-    // });
+      // videoElement.addEventListener('play', function () {
+      //   this.controls = true;
+      // });
 
-    // videoElement.addEventListener('pause', function () {
-    //   this.controls = true;
-    // });
+      // videoElement.addEventListener('pause', function () {
+      //   this.controls = true;
+      // });
+    });
   });
-});
 </script>
