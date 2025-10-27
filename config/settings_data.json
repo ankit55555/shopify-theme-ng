@@ -1310,7 +1310,7 @@
           "transparent_header": true,
           "space_transparent_header": false,
           "bgnavtr": "#000000",
-          "opnavtr": 59,
+          "opnavtr": 0,
           "clnavtr": "#ffffff",
           "clnavtr_hover": "#ffffff",
           "fm_nav": "1",
