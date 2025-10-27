@@ -1283,7 +1283,7 @@
         "settings": {
           "layout": "logo_center",
           "full_header": true,
-          "height": 122,
+          "height": 100,
           "arrow": false,
           "align": "center",
           "hover": "hover_sideup",
