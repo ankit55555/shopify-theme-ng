@@ -1291,7 +1291,7 @@
           "h_navmb": 62,
           "bgnav": "#25313c",
           "opnav": 0,
-          "clnav": "#ffffff",
+          "clnav": "#222",
           "clnav_hover": "#63ba47",
           "h_icon": "kalles",
           "hover_icon": "2",
