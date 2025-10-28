@@ -1991,6 +1991,7 @@
     },
     "ng_insights_trends_3xrAU4": {
       "type": "ng-insights-trends",
+      "disabled": true,
       "name": "NG Insights & Trends",
       "settings": {
         "heading": "Insights & Trends",
