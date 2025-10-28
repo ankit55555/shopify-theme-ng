@@ -1890,7 +1890,7 @@
           "type": "feature",
           "settings": {
             "title": "Connectivity",
-            "image": "shopify://shop_images/Connecticity_Why_NG_earsafe.webp",
+            "image": "shopify://shop_images/ng-earsafe-open-ear-headphones-boom-mic_webp.webp",
             "caption": "Latency Free Bluetooth Connectivity"
           }
         },
@@ -2010,6 +2010,7 @@
         "view_all_button": true,
         "view_all_label": "VIEW ALL",
         "view_all_link": "shopify://blogs/open-ear-headphones",
+        "button_color": "#e4b44a",
         "heading_font_size": 32,
         "subheading_font_size": 16,
         "bg_color": "#0f0f0f",
@@ -2091,7 +2092,7 @@
         "heading_color": "#222222",
         "heading_size_desktop": 56,
         "heading_size_mobile": 34,
-        "bg_color": "#fff",
+        "bg_color": "#ffffff",
         "padding_top": 96,
         "padding_bottom": 100,
         "inactive_opacity": 80,
