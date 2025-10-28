@@ -1879,40 +1879,41 @@
     "ng_why_earsafe_nDa6AL": {
       "type": "ng-why-earsafe",
       "blocks": {
-        "feature_HKUk7r": {
-          "type": "feature",
-          "settings": {
-            "title": "Safety",
-            "image": "shopify://shop_images/Connecticity_Why_NG_earsafe.webp",
-            "caption": "Latency Free Bluetooth Connectivity"
-          }
-        },
         "feature_gty9Np": {
           "type": "feature",
           "settings": {
             "title": "Connectivity",
-            "image": "shopify://shop_images/ng-earsafe-open-ear-headphones-boom-mic_webp.webp",
-            "caption": "Latency Free Bluetooth Connectivity"
+            "image": "shopify://shop_images/Comfort_Why_NG_earsafe.webp",
+            "caption": ""
+          }
+        },
+        "feature_HKUk7r": {
+          "type": "feature",
+          "settings": {
+            "title": "Safety",
+            "image": "shopify://shop_images/Connecticity_Why_NG_earsafe_5da4bb0c-7e83-431d-85e0-71ca35070e03.webp",
+            "caption": ""
           }
         },
         "feature_r6LLtm": {
           "type": "feature",
           "settings": {
             "title": "comfort",
-            "image": "shopify://shop_images/Connecticity_Why_NG_earsafe.webp",
-            "caption": "Latency Free Bluetooth Connectivity"
+            "image": "shopify://shop_images/Doctor_ciertified_Why_NG_earsafe.webp",
+            "caption": ""
           }
         },
         "feature_8LNCmd": {
           "type": "feature",
           "settings": {
             "title": "ENT Doctor Certified",
-            "image": "shopify://shop_images/Connecticity_Why_NG_earsafe.webp",
-            "caption": "Latency Free Bluetooth Connectivity"
+            "image": "shopify://shop_images/Safeftry_Why_NG_earsafe.webp",
+            "caption": ""
           }
         },
         "feature_TKKAMR": {
           "type": "feature",
+          "disabled": true,
           "settings": {
             "title": "Aid for hearing impaired",
             "image": "shopify://shop_images/Connecticity_Why_NG_earsafe.webp",
@@ -1921,8 +1922,8 @@
         }
       },
       "block_order": [
-        "feature_HKUk7r",
         "feature_gty9Np",
+        "feature_HKUk7r",
         "feature_r6LLtm",
         "feature_8LNCmd",
         "feature_TKKAMR"
