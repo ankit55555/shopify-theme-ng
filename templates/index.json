@@ -1601,13 +1601,13 @@
         "slide_aK96WT": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify://shop_images/Pro_Homepage_top_Banner_for_earsfae_PRO_Desktop_1e9f5bb2-f9bd-4e2a-b134-d12f088f3a1a.webp",
-            "image_mobile": "shopify://shop_images/Untitled-3Homepage_top_banner_PRO_mobile.webp",
+            "image_desktop": "shopify://shop_images/Comm_Homepage_top_Banner_for_earsfae_Comm_Desktop.webp",
+            "image_mobile": "shopify://shop_images/Comm_Homepage_top_banner_Comm_mobile.webp",
             "alt": "",
             "heading": "NG EarSafe Pro",
             "subheading": "Bone Conduction Waterproof headphones. Beneficial for conductive hearing loss",
             "button_label": "SHOP NOW",
-            "button_link": "",
+            "button_link": "shopify://collections/all",
             "text_align": "left",
             "heading_color": "#ffffff",
             "subheading_color": "#ffffff",
@@ -1622,12 +1622,13 @@
         "slide_nTnyyy": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify://shop_images/ng-earsafe-open-ear-headphones-boom-mic_webp.webp",
+            "image_desktop": "shopify://shop_images/buds_Homepage_top_Banner_for_earsfae_Buds_Desktop.webp",
+            "image_mobile": "shopify://shop_images/Buds_Homepage_top_banner_Buds_mobile.webp",
             "alt": "",
             "heading": "NG EarSafe Pro",
             "subheading": "Bone Conduction Waterproof headphones. Beneficial for conductive hearing loss",
             "button_label": "SHOP NOW",
-            "button_link": "",
+            "button_link": "shopify://collections/all",
             "text_align": "left",
             "heading_color": "#ffffff",
             "subheading_color": "#ffffff",
