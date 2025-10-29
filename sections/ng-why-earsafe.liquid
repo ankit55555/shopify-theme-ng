@@ -14,7 +14,7 @@
 
 <section
   id="ng-why-earsafe-{{ section_id }}"
-  class="ng-why-earsafe {{ classes }}"
+  class="ng-why-earsafe {{ classes }}{% if section.settings.hide_on_mobile %} ngwe-hide-mobile{% endif %}"
   style="--pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px; --bg: {{ section.settings.bg_color }}; --heading: {{ section.settings.heading_color }}; --text: {{ section.settings.text_color }}; --subdued: {{ section.settings.subdued_text_color }}; --accent: {{ section.settings.accent_color }}; --feature-inactive: {{ section.settings.feature_inactive_color }}; --feature-active-bg: {{ section.settings.feature_active_bg }}; --border: {{ section.settings.border_color }}; --caption: {{ section.settings.caption_color }};"
 >
   <div class="ngwe-container">
@@ -74,6 +74,13 @@
   </div>
 
   <script src="{{ 'ng-why-earsafe.js' | asset_url }}" defer></script>
+  {% if section.settings.hide_on_mobile %}
+  <style>
+    @media (max-width: 749px) {
+      #ng-why-earsafe-{{ section_id }} { display: none !important; }
+    }
+  </style>
+  {% endif %}
 </section>
 
 {% schema %}
@@ -92,6 +99,7 @@
     { "type": "color", "id": "feature_active_bg", "label": "Active pill background", "default": "#3b2c0b26" },
     { "type": "color", "id": "border_color", "label": "Pill border color", "default": "#ffffff14" },
     { "type": "color", "id": "caption_color", "label": "Caption color", "default": "#dddddd" },
+    { "type": "checkbox", "id": "hide_on_mobile", "label": "Hide on mobile", "default": false },
     { "type": "range", "id": "padding_top", "min": 0, "max": 160, "step": 4, "unit": "px", "label": "Padding top", "default": 64 },
     { "type": "range", "id": "padding_bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "label": "Padding bottom", "default": 64 }
   ],
