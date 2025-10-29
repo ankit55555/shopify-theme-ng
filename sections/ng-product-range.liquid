@@ -18,10 +18,11 @@
 
 {{- html_layout[0] -}}
 <div
-  class="ng-pr ng-pr--bg-{{ section.settings.bg_style }} ng-pr--cta-{{ section.settings.cta_style }} ng-pr--cta-size-{{ section.settings.cta_size }}"
+  class="ng-pr ng-pr--cta-{{ section.settings.cta_style }} ng-pr--cta-size-{{ section.settings.cta_size }}"
   id="ng-pr-{{ section_id }}"
   data-section-id="{{ section_id }}">
   <style>
+    #ng-pr-{{ section_id }}{background-color: {{ section.settings.bg_color | default: 'transparent' }}}
     #ng-pr-{{ section_id }} .ng-pr__title{font-size: {{ section.settings.heading_fs | default: 28 }}px}
     #ng-pr-{{ section_id }} .ng-pr__desc{font-size: {{ section.settings.desc_fs | default: 14 }}px}
     {%- if section.settings.card_bg_style == 'white' -%}
@@ -243,15 +244,10 @@
           {"value":"lg","label":"Large"}
         ]
       }, {
-        "type": "select",
-        "id": "bg_style",
-        "label": "Background style",
-        "default": "none",
-        "options": [
-          {"value":"none","label":"None"},
-          {"value":"light","label":"Light"},
-          {"value":"dark","label":"Dark"}
-        ]
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color",
+        "default": "transparent"
       }, {
         "type": "select",
         "id": "layout",
