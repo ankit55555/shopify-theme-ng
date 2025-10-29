@@ -1941,6 +1941,7 @@
         "feature_active_bg": "#3b2c0b26",
         "border_color": "#ffffff14",
         "caption_color": "#dddddd",
+        "hide_on_mobile": false,
         "padding_top": 64,
         "padding_bottom": 64
       }
@@ -2030,64 +2031,104 @@
     "ng_media_carousel_XRJawM": {
       "type": "ng-media-carousel",
       "blocks": {
+        "logo_bFx9Xr": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/IANS_grey_bd0d56ca-bf1e-4519-8605-de033b3b2ac2.svg",
+            "alt": ""
+          }
+        },
         "logo_APiMdN": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/ISN_Og_color.svg",
+            "image": "shopify://shop_images/Your_story_grey_95fd3b36-99b8-4812-8a7a-d203ba53c048.svg",
             "alt": ""
           }
         },
         "logo_EX9KyQ": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/VCCIRCLE_grey.svg",
+            "image": "shopify://shop_images/VCCIRCLE_OG_Colot_72c390a3-06fd-4115-a36e-1572b049b61e.svg",
             "alt": ""
           }
         },
         "logo_zJf4Xh": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/Your_story_OG_color.svg",
+            "image": "shopify://shop_images/IANS_OG_color_9a0ca274-ff35-4bc2-b982-5b232c26f045.svg",
             "alt": ""
           }
         },
         "logo_UDbHNT": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/ENTracker_grey.svg",
+            "image": "shopify://shop_images/ISN_Og_color_69e3f8f5-1a94-43ad-9992-26e9cafaac30.svg",
             "alt": ""
           }
         },
         "logo_ze6rrY": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/IANS_OG_color.svg",
+            "image": "shopify://shop_images/ISN_grey_5bffaad1-1a5f-442d-b3f6-91417c1b5ff2.svg",
             "alt": ""
           }
         },
         "logo_M8XRhd": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/Your_story_OG_color.svg",
+            "image": "shopify://shop_images/Entreprenuur_OG_color_3333beb1-7aa9-4f9c-a08c-d121b50c0ebe.svg",
             "alt": ""
           }
         },
         "logo_XyGF7Y": {
           "type": "logo",
           "settings": {
-            "image": "shopify://shop_images/Entreprenuur_grey.svg",
+            "image": "shopify://shop_images/VCCIRCLE_grey_64782c0b-c2af-4f53-aed5-1092f7350ec2.svg",
+            "alt": ""
+          }
+        },
+        "logo_ghLxHe": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/ENTracker_og_color_5ffea1a9-ebb1-4144-b82b-fb2ffca02d4b.svg",
+            "alt": ""
+          }
+        },
+        "logo_BM34aR": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Your_story_OG_color_56e311eb-a655-41e1-b488-697692fa024d.svg",
+            "alt": ""
+          }
+        },
+        "logo_eBrmTE": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Entreprenuur_grey_59e4546b-cc91-4095-91b1-c15162e66831.svg",
+            "alt": ""
+          }
+        },
+        "logo_ann9tW": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/ENTracker_grey_fd2905eb-8253-4c8c-9b2d-5f1cffc345cf.svg",
             "alt": ""
           }
         }
       },
       "block_order": [
+        "logo_bFx9Xr",
         "logo_APiMdN",
         "logo_EX9KyQ",
         "logo_zJf4Xh",
         "logo_UDbHNT",
         "logo_ze6rrY",
         "logo_M8XRhd",
-        "logo_XyGF7Y"
+        "logo_XyGF7Y",
+        "logo_ghLxHe",
+        "logo_BM34aR",
+        "logo_eBrmTE",
+        "logo_ann9tW"
       ],
       "name": "Media Carousel",
       "settings": {
@@ -2111,7 +2152,7 @@
         "visible_desktop": 6,
         "visible_mobile": 3,
         "autoplay": true,
-        "autoplay_interval": 3000,
+        "autoplay_interval": 2000,
         "loop": true,
         "direction": "ltr",
         "show_arrows": false,
