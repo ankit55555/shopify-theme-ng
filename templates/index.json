@@ -1865,7 +1865,7 @@
       "settings": {
         "custom_liquid": "{% render 'open-earhome-new' %}",
         "layout": "t4s-container-wrap",
-        "cl_bg": "#171717",
+        "cl_bg": "#9baeb5",
         "cl_bg_gradient": "",
         "image_bg": "shopify://shop_images/Open_Ear_main_image.webp",
         "mg": "",
