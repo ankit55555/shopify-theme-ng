@@ -1715,7 +1715,7 @@
         "cta_link": "shopify://collections/all",
         "cta_style": "outline",
         "cta_size": "lg",
-        "bg_style": "light",
+        "bg_color": "#f1f2ec",
         "layout": "t4s-container-fluid",
         "heading_color": "#4e5d70",
         "desc_color": "#4e5d70",
