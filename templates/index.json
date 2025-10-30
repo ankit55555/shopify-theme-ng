@@ -1614,7 +1614,7 @@
             "button_text_color": "#ffffff",
             "button_bg_color": "#56cfe1",
             "overlay_color": "#000000",
-            "overlay_opacity": 30,
+            "overlay_opacity": 0,
             "show_scroll_hint": true,
             "scroll_text": "SCROLL TO DISCOVER"
           }
@@ -1635,7 +1635,7 @@
             "button_text_color": "#ffffff",
             "button_bg_color": "#56cfe1",
             "overlay_color": "#000000",
-            "overlay_opacity": 30,
+            "overlay_opacity": 0,
             "show_scroll_hint": true,
             "scroll_text": "SCROLL TO DISCOVER"
           }
@@ -1656,7 +1656,7 @@
             "button_text_color": "#ffffff",
             "button_bg_color": "#56cfe1",
             "overlay_color": "#000000",
-            "overlay_opacity": 30,
+            "overlay_opacity": 0,
             "show_scroll_hint": true,
             "scroll_text": "SCROLL TO DISCOVER"
           }
