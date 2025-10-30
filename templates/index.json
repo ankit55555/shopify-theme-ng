@@ -1677,19 +1677,25 @@
         "product_GHcWWq": {
           "type": "product",
           "settings": {
-            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
+            "product": "open-ear-bone-conduction-headphones-ng-ear-safe-pro-mini"
           }
         },
         "product_7cKN9a": {
           "type": "product",
           "settings": {
-            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
+            "product": "open-ear-wireless-headphones-ng-ear-safe-lite"
           }
         },
         "product_zEftQC": {
           "type": "product",
           "settings": {
-            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
+            "product": "open-ear-earbuds-wireless-ng-ear-safe-buds"
+          }
+        },
+        "product_NhgkGd": {
+          "type": "product",
+          "settings": {
+            "product": "earplugs-for-sleeping-ng-ear-safe-1-0"
           }
         }
       },
@@ -1698,7 +1704,8 @@
         "product_B4yKTh",
         "product_GHcWWq",
         "product_7cKN9a",
-        "product_zEftQC"
+        "product_zEftQC",
+        "product_NhgkGd"
       ],
       "name": "NG Product Range",
       "settings": {
