@@ -2181,7 +2181,7 @@
         "visible_desktop": 6,
         "visible_mobile": 3,
         "autoplay": true,
-        "autoplay_interval": 2000,
+        "autoplay_interval": 1500,
         "loop": true,
         "direction": "ltr",
         "show_arrows": false,
