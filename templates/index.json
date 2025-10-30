@@ -1619,6 +1619,26 @@
             "scroll_text": "SCROLL TO DISCOVER"
           }
         },
+        "slide_AU4nWC": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Pro_Homepage_top_Banner_for_earsfae_PRO_Desktop.webp",
+            "alt": "",
+            "heading": "NG EarSafe Pro",
+            "subheading": "Bone Conduction Waterproof headphones.",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://products/open-ear-bone-conduction-headphones-ng-ear-safe-pro-swimming",
+            "text_align": "left",
+            "heading_color": "#ffffff",
+            "subheading_color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_bg_color": "#222222",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "show_scroll_hint": false,
+            "scroll_text": "SCROLL TO DISCOVER"
+          }
+        },
         "slide_nTnyyy": {
           "type": "slide",
           "settings": {
@@ -1643,6 +1663,7 @@
       },
       "block_order": [
         "slide_aK96WT",
+        "slide_AU4nWC",
         "slide_nTnyyy"
       ],
       "name": "NG Hero Slideshow",
