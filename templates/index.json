@@ -1939,7 +1939,7 @@
       "settings": {
         "heading": "Why NG EarSafe",
         "subheading": "",
-        "bg_color": "#9baeb5",
+        "bg_color": "#f1f2ec",
         "heading_color": "#222222",
         "text_color": "#222222",
         "subdued_text_color": "#222222",
@@ -1948,7 +1948,7 @@
         "feature_active_bg": "#3b2c0b26",
         "border_color": "#ffffff14",
         "caption_color": "#dddddd",
-        "hide_on_mobile": false,
+        "hide_on_mobile": true,
         "padding_top": 64,
         "padding_bottom": 64
       }
@@ -1973,9 +1973,9 @@
         "container_max_width": 1280,
         "content_max_width": 510,
         "heading": "<p>Find the <strong>Right EarSafe</strong> for you.</p>",
-        "subheading": "<p>Compare from a best products and choose what is best suited for you.</p>",
+        "subheading": "<p>Choose Earsafe as per your lifestyle</p>",
         "cta_label": "Know the difference",
-        "cta_link": "shopify://blogs/bone-conduction",
+        "cta_link": "shopify://pages/best-bone-conduction-headphones",
         "cta_style": "link",
         "text_color": "#222222",
         "button_color": "#44e1e6",
