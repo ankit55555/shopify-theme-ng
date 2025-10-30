@@ -1905,7 +1905,7 @@
         "feature_r6LLtm": {
           "type": "feature",
           "settings": {
-            "title": "comfort",
+            "title": "Comfort",
             "image": "shopify://shop_images/Doctor_ciertified_Why_NG_earsafe.webp",
             "caption": ""
           }
@@ -1938,7 +1938,7 @@
       "name": "NG - Why EarSafe",
       "settings": {
         "heading": "Why NG EarSafe",
-        "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+        "subheading": "",
         "bg_color": "#9baeb5",
         "heading_color": "#222222",
         "text_color": "#222222",
