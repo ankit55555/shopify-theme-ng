@@ -1832,7 +1832,7 @@
         "mg_mb": ",,,",
         "pd_mb": "40px,20px,40px,20px",
         "heading": "Did you know?",
-        "subtext": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>",
+        "subtext": "",
         "display_mode": "cards",
         "image_desktop": "shopify://shop_images/Screenshot_2025-10-19_171146-removebg-preview.png",
         "image_mobile": "shopify://shop_images/Screenshot_2025-10-19_171752-removebg-preview.png",
