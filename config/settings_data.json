@@ -1311,7 +1311,7 @@
           "space_transparent_header": false,
           "bgnavtr": "#000000",
           "opnavtr": 0,
-          "clnavtr": "#ffffff",
+          "clnavtr": "#222222",
           "clnavtr_hover": "#ffffff",
           "fm_nav": "1",
           "fs_nav": 14,

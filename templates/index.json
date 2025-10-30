@@ -1614,7 +1614,7 @@
             "button_text_color": "#ffffff",
             "button_bg_color": "#56cfe1",
             "overlay_color": "#000000",
-            "overlay_opacity": 30,
+            "overlay_opacity": 0,
             "show_scroll_hint": true,
             "scroll_text": "SCROLL TO DISCOVER"
           }
@@ -1623,6 +1623,7 @@
           "type": "slide",
           "settings": {
             "image_desktop": "shopify://shop_images/Pro_Homepage_top_Banner_for_earsfae_PRO_Desktop.webp",
+            "image_mobile": "shopify://shop_images/Untitled-3Homepage_top_banner_PRO_mobile_0c12a18c-a5e6-4b6a-95e5-f13b15fbc9ee.webp",
             "alt": "",
             "heading": "NG EarSafe Pro",
             "subheading": "Bone Conduction Waterproof headphones.",
@@ -1632,10 +1633,10 @@
             "heading_color": "#ffffff",
             "subheading_color": "#ffffff",
             "button_text_color": "#ffffff",
-            "button_bg_color": "#222222",
+            "button_bg_color": "#56cfe1",
             "overlay_color": "#000000",
-            "overlay_opacity": 30,
-            "show_scroll_hint": false,
+            "overlay_opacity": 0,
+            "show_scroll_hint": true,
             "scroll_text": "SCROLL TO DISCOVER"
           }
         },
@@ -1655,7 +1656,7 @@
             "button_text_color": "#ffffff",
             "button_bg_color": "#56cfe1",
             "overlay_color": "#000000",
-            "overlay_opacity": 30,
+            "overlay_opacity": 0,
             "show_scroll_hint": true,
             "scroll_text": "SCROLL TO DISCOVER"
           }
@@ -2180,7 +2181,7 @@
         "visible_desktop": 6,
         "visible_mobile": 3,
         "autoplay": true,
-        "autoplay_interval": 2000,
+        "autoplay_interval": 1500,
         "loop": true,
         "direction": "ltr",
         "show_arrows": false,
