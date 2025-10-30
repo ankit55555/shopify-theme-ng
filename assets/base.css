@@ -635,7 +635,8 @@ em {
 
 .t4s-col-5 {
   flex: 0 0 auto;
-  width: 41.66666667%;
+  /* width: 41.66666667%; */
+  width: 39.666667%;
 }
 
 .t4s-col-6 {
@@ -1525,7 +1526,8 @@ em {
 
   .t4s-col-lg-5 {
     flex: 0 0 auto;
-    width: 41.66666667%;
+    /* width: 41.66666667%; */
+    width: 40.200%;
   }
 
   .t4s-col-lg-6,.t4s-col-item.t4s-col-lg-6  {
