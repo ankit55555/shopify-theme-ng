@@ -1636,7 +1636,7 @@
             "button_bg_color": "#56cfe1",
             "overlay_color": "#000000",
             "overlay_opacity": 30,
-            "show_scroll_hint": false,
+            "show_scroll_hint": true,
             "scroll_text": "SCROLL TO DISCOVER"
           }
         },
