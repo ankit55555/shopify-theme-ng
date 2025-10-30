@@ -521,7 +521,8 @@ em {
 }
 @media (min-width: 1230px) {
   .t4s-container-xl, .t4s-container-lg, .t4s-container-md, .t4s-container-sm, .t4s-container {
-    max-width: 1200px;
+    /* max-width: 1200px; */
+    max-width: 1380px;
   }
 }
 /* @media (min-width: 1400px) {
@@ -4627,4 +4628,9 @@ shopify-payment-terms {
       opacity: 1;
     }
   }
+}
+
+
+.t4s-site-nav__icons.t4s-use__kalles.is--hover2.t4s-h-cart__design1.t4s-lh-1.t4s-d-inline-flex.t4s-align-items-center {
+  gap: 25px;
 }

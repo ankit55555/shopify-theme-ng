@@ -19,8 +19,13 @@
     };
 
     var centerIndex = 0;
-    var offset = 0; // translateX in px
+    var offset = 0; // translateX in px (current)
     var timer = null;
+    var animId = null;
+    var animStartTime = 0;
+    var animStartX = 0;
+    var animTargetX = 0;
+    var animDurationMs = 450;
 
     // layout measurements
     var gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || '40');
@@ -41,7 +46,35 @@
       track.style.transform = 'translate3d(' + x + 'px,0,0)';
     }
 
-    function centerTo(index){
+    function stopAnimation(){
+      if(animId){ cancelAnimationFrame(animId); animId = null; }
+    }
+
+    function animateTo(targetX, duration){
+      stopAnimation();
+      animStartTime = performance.now();
+      animStartX = offset;
+      animTargetX = targetX;
+      animDurationMs = typeof duration === 'number' ? duration : 450;
+
+      function step(now){
+        var t = (now - animStartTime) / animDurationMs;
+        if(t >= 1){
+          offset = animTargetX;
+          translate(offset);
+          animId = null;
+          return;
+        }
+        // easeInOutCubic
+        var p = t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3)/2;
+        offset = animStartX + (animTargetX - animStartX) * p;
+        translate(offset);
+        animId = requestAnimationFrame(step);
+      }
+      animId = requestAnimationFrame(step);
+    }
+
+    function centerTo(index, smooth){
       index = clamp(index, 0, items.length - 1);
       // calculate offset so that the chosen item is centered in viewport
       var vp = viewport.getBoundingClientRect().width;
@@ -49,22 +82,28 @@
       for(var i=0;i<index;i++){ x -= itemWidth(i) + gap; }
       var currentWidth = itemWidth(index);
       x += (vp - currentWidth)/2;
-      offset = x;
+      // animate or jump
+      if(smooth){
+        animateTo(x, 500);
+      } else {
+        stopAnimation();
+        offset = x;
+        translate(offset);
+      }
       centerIndex = index;
-      translate(offset);
       setActive();
     }
 
     function next(){
       var target = centerIndex + 1;
       if(target >= items.length){ target = opts.loop ? 0 : items.length - 1; }
-      centerTo(target);
+      centerTo(target, true);
     }
 
     function prev(){
       var target = centerIndex - 1;
       if(target < 0){ target = opts.loop ? items.length - 1 : 0; }
-      centerTo(target);
+      centerTo(target, true);
     }
 
     // nav
@@ -82,7 +121,7 @@
       items.forEach(function(_,i){
         var b = document.createElement('button');
         b.type = 'button'; b.className = 'ng-media__dot';
-        b.addEventListener('click', function(){ centerTo(i); restart(); });
+        b.addEventListener('click', function(){ centerTo(i, true); restart(); });
         dotsWrap.appendChild(b); dots.push(b);
       });
     } else if(dotsWrap){ dotsWrap.style.display = 'none'; }
@@ -99,11 +138,11 @@
     function restart(){ stop(); start(); }
 
     // resize
-    var ro = new ResizeObserver(function(){ centerTo(centerIndex); });
+    var ro = new ResizeObserver(function(){ centerTo(centerIndex, false); });
     ro.observe(viewport);
 
     // init
-    centerTo(0);
+    centerTo(0, false);
     start();
   }
 
