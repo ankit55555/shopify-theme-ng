@@ -562,7 +562,7 @@
       "settings": {
         "image_desktop": "shopify://shop_images/14_light_mode_desktop.webp",
         "image_mobile": "shopify://shop_images/14_light_mode_desktopbile.webp",
-        "height_desktop": 660,
+        "height_desktop": 740,
         "height_mobile": 740,
         "vertical_align_mobile": "middle",
         "mobile_bottom_offset": 24,
@@ -593,7 +593,7 @@
       "settings": {
         "image_desktop": "shopify://shop_images/2_karaoke_mic_desktop.webp",
         "image_mobile": "shopify://shop_images/2_karaoke_mic_mobile.webp",
-        "height_desktop": 660,
+        "height_desktop": 720,
         "height_mobile": 740,
         "vertical_align_mobile": "middle",
         "mobile_bottom_offset": 24,
