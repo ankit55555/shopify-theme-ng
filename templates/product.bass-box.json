@@ -1331,65 +1331,6 @@
         "pd_mb": ""
       }
     },
-    "image_text_6wLq8M": {
-      "type": "image_text",
-      "blocks": {
-        "bl_text_dNqGmf": {
-          "type": "bl_text",
-          "settings": {
-            "col_dk": "12",
-            "col_tb": "12",
-            "text_size": "30,15",
-            "txt_align": "start",
-            "sub_heading": "",
-            "heading": "",
-            "text": "<h4><strong>Popular Searches<br/></strong></h4><p></p><p><a href=\"https://ngearsafe.com/products/ng-earsafe-comm-open-ear-headphones-with-noise-canceling-boom-mic\" target=\"_blank\" title=\"https://ngearsafe.com/products/ng-earsafe-comm-open-ear-headphones-with-noise-canceling-boom-mic\">NG EarSafe Comm Open Ear Headphones</a>‎ ‎ |‎ ‎ <a href=\"https://ngearsafe.com/products/earsafe-open-ear-bluetooth-headphones\" target=\"_blank\" title=\"https://ngearsafe.com/products/earsafe-open-ear-bluetooth-headphones\">NG EarSafe Open Ear Headphones  </a>‎ ‎ |‎ ‎ <a href=\"https://ngearsafe.com/products/ng-earsafe-lite-open-ear-headphones\" target=\"_blank\" title=\"https://ngearsafe.com/products/ng-earsafe-lite-open-ear-headphones\">NG EarSafe Lite Open Ear Headphones</a>‎ ‎ |‎ ‎ <a href=\"https://ngearsafe.com/products/ng-earsafe-pro-open-ear-bone-conduction-headphones\" target=\"_blank\" title=\"https://ngearsafe.com/products/ng-earsafe-pro-open-ear-bone-conduction-headphones\">NG EarSafe Pro Ear Headphone</a>‎ ‎ |‎ ‎ ‎<a href=\"https://ngearsafe.com/collections/open-ear-headphones\" target=\"_blank\" title=\"https://ngearsafe.com/collections/open-ear-headphones\">Open Ear Headphones  </a>‎ ‎ |‎ ‎ <a href=\"https://ngearsafe.com/products/ng-earsafe-comm-open-ear-headphones-with-noise-canceling-boom-mic\" target=\"_blank\" title=\"https://ngearsafe.com/products/ng-earsafe-comm-open-ear-headphones-with-noise-canceling-boom-mic\">Calling Headphone</a>‎ ‎ |‎ ‎ ‎<a href=\"https://help.ngearsafe.com/affiliate-collaboration\" target=\"_blank\" title=\"https://help.ngearsafe.com/affiliate-collaboration\">Affiliate Collaboration</a>‎ ‎ |‎ ‎ ‎<a href=\"https://ngearsafe.com/products/ng-earsafe-pro-open-ear-bone-conduction-headphones\" target=\"_blank\" title=\"https://ngearsafe.com/products/ng-earsafe-pro-open-ear-bone-conduction-headphones\">Bone conductor headphone<br/></a></p><h4><br/>Top Blog Search<strong><br/></strong></h4><p></p><p><a href=\"https://ngearsafe.com/blogs/open-ear-headphones/5-major-benefits-of-cycling\" target=\"_blank\" title=\"https://ngearsafe.com/blogs/open-ear-headphones/5-major-benefits-of-cycling\">5 major Benefits of Cycling</a>‎ ‎ |‎ ‎ <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/hearing-loss\" target=\"_blank\" title=\"https://ngearsafe.com/blogs/open-ear-headphones/hearing-loss\">Hearing Loss</a>‎ ‎ |‎ ‎ <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/why-should-you-use-open-ear-headphones\" target=\"_blank\" title=\"https://ngearsafe.com/blogs/open-ear-headphones/why-should-you-use-open-ear-headphones\">Why should you use Open-Ear Headphones?</a>‎ ‎ |‎ ‎ <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/difference-between-air-conduction-and-bone-conduction-technology\" target=\"_blank\" title=\"https://ngearsafe.com/blogs/open-ear-headphones/difference-between-air-conduction-and-bone-conduction-technology\">Difference between Air conduction and Bone Conduction</a>‎ ‎ |‎ ‎ ‎<a href=\"https://ngearsafe.com/blogs/open-ear-headphones/ng-earsafe-vs-ng-earsafe-comm\" target=\"_blank\" title=\"https://ngearsafe.com/blogs/open-ear-headphones/ng-earsafe-vs-ng-earsafe-comm\">NG EarSafe vs NG EarSafe Comm</a>‎ ‎ |‎ ‎ <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/ear-infection\" target=\"_blank\" title=\"https://ngearsafe.com/blogs/open-ear-headphones/ear-infection\">Ear Infections</a>‎ ‎ |‎ ‎ ‎<a href=\"https://ngearsafe.com/blogs/open-ear-headphones/what-is-active-noise-cancellation\" target=\"_blank\" title=\"https://ngearsafe.com/blogs/open-ear-headphones/what-is-active-noise-cancellation\">What is Anc</a>‎ ‎ |‎ ‎ ‎<a href=\"https://ngearsafe.com/blogs/open-ear-headphones/open-ear-vs-in-ear-vs-over-ear-headphones\" target=\"_blank\" title=\"https://ngearsafe.com/blogs/open-ear-headphones/open-ear-vs-in-ear-vs-over-ear-headphones\">Open-Ear vs. In-Ear vs. Over-Ear Headphones</a></p>",
-            "subhd_color": "#222222",
-            "hd_color": "#222222",
-            "des_color": "#878787",
-            "use_shadow": false,
-            "button_label": "Button label",
-            "button_link": "",
-            "open_link": "_blank",
-            "btn_icon": false,
-            "button_style": "default",
-            "btn_size": "large",
-            "btn_cl": "dark",
-            "button_effect": "default"
-          }
-        }
-      },
-      "block_order": [
-        "bl_text_dNqGmf"
-      ],
-      "disabled": true,
-      "custom_css": [
-        ".t4s-image-text-des p a {color: #25313c; border-bottom: 1px solid #25313c45 !important; font-size: 14px;}"
-      ],
-      "settings": {
-        "design_heading": "1",
-        "heading_align": "t4s-text-start",
-        "top_heading": "",
-        "icon_heading": "las la-gem",
-        "top_subheading": "",
-        "tophead_mb": 30,
-        "space_h_item": "20",
-        "space_v_item": "10",
-        "space_h_item_mb": "20",
-        "space_v_item_mb": "10",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,50px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": "",
-        "use_cus_css": false,
-        "code_cus_css": ""
-      }
-    },
     "custom_html_M4GiJq": {
       "type": "custom-html",
       "disabled": true,
@@ -1407,6 +1348,21 @@
         "use_cus_css": false,
         "code_cus_css": ""
       }
+    },
+    "1762018752749cd3b1": {
+      "type": "apps",
+      "blocks": {
+        "vizup_shoppable_video_carousel_videos_block_QAdPRg": {
+          "type": "shopify://apps/vizup-shoppable-video-carousel/blocks/videos-block/eaecaa7b-ab6b-40ae-8ddf-50daa867f3eb",
+          "settings": {
+            "videoc_widget_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "vizup_shoppable_video_carousel_videos_block_QAdPRg"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -1429,11 +1385,11 @@
     "14f54523-b5e7-4690-b573-83b33831d4e9",
     "77561158-d4b4-412b-a5a2-42695c15bc02",
     "accordion_4NGXHR",
+    "1762018752749cd3b1",
     "1737282429ed5d4301",
     "83a135b9-30ff-430d-a7ed-dd7da7224ef0",
     "product-recommendations",
     "recently-viewed-products",
-    "image_text_6wLq8M",
     "custom_html_M4GiJq"
   ]
 }
