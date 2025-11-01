@@ -432,10 +432,10 @@
             "font_italic": false,
             "text_shadow": false,
             "hidden_mobile": false,
-            "text_fs_mb": 16,
+            "text_fs_mb": 25,
             "text_lh_mb": 0,
             "text_ls_mb": 0,
-            "text_mgb_mobile": 10,
+            "text_mgb_mobile": 20,
             "animation": "none"
           }
         },
@@ -455,7 +455,7 @@
             "font_italic": false,
             "text_shadow": false,
             "hidden_mobile": false,
-            "text_fs_mb": 16,
+            "text_fs_mb": 14,
             "text_lh_mb": 0,
             "text_ls_mb": 0,
             "text_mgb_mobile": 10,
@@ -506,17 +506,19 @@
         "@media only screen and (max-width: 768px) {.t4s_nt_se_template--22100092911895__2f8947bb-a208-4ff1-92dd-ca00313dd658 .t4s_ratio16_9 {margin-top: -25%; display: block !important; } .t4s-container {padding: 0; } video {border-radius: 0 !important; }}"
       ],
       "settings": {
-        "se_height": "t4s_ratio16_9",
+        "se_height": "t4s_ratio_cuspx",
         "custom_dk": true,
-        "height_dk": 600,
+        "height_dk": 800,
         "custom_tb": true,
-        "height_tb": 400,
+        "height_tb": 800,
         "custom_mb": true,
-        "height_mb": 250,
+        "height_mb": 700,
         "source": "3",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "file_link": "https://cdn.shopify.com/s/files/1/0610/5209/2628/files/Share_your_brand_story_by_adding_a_video_to_your_store.mp4?v=1641630446",
         "video": "shopify://files/videos/woofers desktop.mp4",
+        "video_mobile": "shopify://files/videos/woofers mobile.mp4",
+        "file_link_mb": "",
         "text_align": "center",
         "text_align_mb": "center",
         "content_width": "auto",
@@ -544,11 +546,11 @@
         "layout": "t4s-container-wrap",
         "cl_bg": "",
         "cl_bg_gradient": "",
-        "mg": ",,50px,",
+        "mg": "",
         "pd": "",
         "mg_tb": "",
         "pd_tb": "",
-        "mg_mb": ",,30px,",
+        "mg_mb": "",
         "pd_mb": "",
         "use_cus_css": false,
         "code_cus_css": ""
@@ -643,6 +645,7 @@
     },
     "21cc52cf-8bcf-42ba-8f07-80d94e7a589e": {
       "type": "custom-liquid",
+      "disabled": true,
       "custom_css": [
         ".t4s-code__liquid {margin: 0px 10px 10px 10px;}"
       ],
