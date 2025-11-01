@@ -400,7 +400,7 @@
         "vertical_align": "middle",
         "contain_content": true,
         "container_max_width": 1280,
-        "content_max_width": 510,
+        "content_max_width": 450,
         "heading": "<p>120W Enhanced bass speaker</p>",
         "subheading": "<p><br/>Stay effortlessly connected all day with NG EarSafe Comm's 8-hour battery life. From your morning conference call to evening catch-ups, the magnetic charging ensures your headset is always ready for the next important conversation.<br/></p>",
         "cta_label": "Know the difference",
@@ -702,7 +702,7 @@
         "title_color": "#111111",
         "text_color": "#ffffff",
         "background": "#f6f7f8",
-        "section_padding": 48,
+        "section_padding": 24,
         "gap": 10
       }
     },
