@@ -1,0 +1,1311 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "top": {
+      "type": "top-collections",
+      "blocks": {
+        "69bbe0dd-0a50-42e8-986b-0d5e6c5cfa67": {
+          "type": "cat",
+          "settings": {
+            "collection": "default-3",
+            "icon": ""
+          }
+        },
+        "863873b6-012e-4a34-90e3-eead750fa3ce": {
+          "type": "cat",
+          "settings": {
+            "collection": "bag",
+            "icon": ""
+          }
+        },
+        "fc07bff9-6d08-423c-8802-9a03c34f3a31": {
+          "type": "cat",
+          "settings": {
+            "collection": "decor",
+            "icon": ""
+          }
+        },
+        "a286cc0b-0c90-4b1a-862c-a1136f283aac": {
+          "type": "cat",
+          "settings": {
+            "collection": "default-2",
+            "icon": ""
+          }
+        },
+        "23c84729-8fcb-488c-9541-00e283af6afe": {
+          "type": "cat",
+          "settings": {
+            "collection": "dress",
+            "icon": ""
+          }
+        },
+        "5f1d751a-fdac-43d4-ad9d-55da0c297244": {
+          "type": "cat",
+          "settings": {
+            "collection": "hats",
+            "icon": ""
+          }
+        },
+        "0f0e1f7c-788c-46c0-9fb4-1ec7ce88da01": {
+          "type": "cat",
+          "settings": {
+            "collection": "best-sellers",
+            "icon": ""
+          }
+        },
+        "70189b51-5562-4924-b642-a1deba7741ee": {
+          "type": "cat",
+          "settings": {
+            "collection": "sale",
+            "icon": ""
+          }
+        },
+        "560f5822-3eeb-4070-a2cd-b5738881a4c1": {
+          "type": "cat",
+          "settings": {
+            "collection": "shoes",
+            "icon": ""
+          }
+        },
+        "be9b8b8f-6cac-47ab-b809-a2fe640a75a7": {
+          "type": "cat",
+          "settings": {
+            "collection": "women",
+            "icon": ""
+          }
+        }
+      },
+      "block_order": [
+        "69bbe0dd-0a50-42e8-986b-0d5e6c5cfa67",
+        "863873b6-012e-4a34-90e3-eead750fa3ce",
+        "fc07bff9-6d08-423c-8802-9a03c34f3a31",
+        "a286cc0b-0c90-4b1a-862c-a1136f283aac",
+        "23c84729-8fcb-488c-9541-00e283af6afe",
+        "5f1d751a-fdac-43d4-ad9d-55da0c297244",
+        "0f0e1f7c-788c-46c0-9fb4-1ec7ce88da01",
+        "70189b51-5562-4924-b642-a1deba7741ee",
+        "560f5822-3eeb-4070-a2cd-b5738881a4c1",
+        "be9b8b8f-6cac-47ab-b809-a2fe640a75a7"
+      ],
+      "disabled": true,
+      "settings": {
+        "show_top_collections": true,
+        "source": "1",
+        "menu": "main-menu",
+        "sort_collections": "alphabetical_reversed",
+        "box_border": "top",
+        "content_align": "center",
+        "hidden_mobile": false,
+        "space_item": 30,
+        "fontf": "inherit",
+        "text_cl": "#222222",
+        "text_cl_hover": "#56cfe1",
+        "text_fs": 14,
+        "text_lh": 45,
+        "text_fw": 400,
+        "text_ls": 0,
+        "font_italic": false,
+        "nav_btn": true,
+        "layout": "t4s-container-fluid",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": "",
+        "pd_mb": ""
+      }
+    },
+    "heading_template": {
+      "type": "heading-template",
+      "blocks": {
+        "a61b5459-0dd8-4796-a9c8-e3f1ee42dfb9": {
+          "type": "1",
+          "settings": {
+            "heading": "Page Heading",
+            "fontf": "inherit",
+            "text_cl": "#ffffff",
+            "text_fs": 28,
+            "text_lh": 0,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "font_uppercase": false,
+            "text_shadow": false,
+            "text_mgb": 20,
+            "hidden_mobile": false,
+            "text_fs_mb": 20,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "text_mgb_mobile": 20
+          }
+        },
+        "e9f249a0-0a0f-4baf-9664-73babbd7bbe7": {
+          "type": "4",
+          "settings": {
+            "design_des": "show_all",
+            "length": 60,
+            "view_more": true,
+            "viewm_txt": "View more",
+            "fontf": "inherit",
+            "text_cl": "#ffffff",
+            "text_fs": 16,
+            "text_lh": 24,
+            "text_fw": 400,
+            "text_ls": 0,
+            "font_italic": false,
+            "font_uppercase": false,
+            "text_shadow": false,
+            "text_mgb": 20,
+            "hidden_mobile": false,
+            "text_fs_mb": 16,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "text_mgb_mobile": 10
+          }
+        },
+        "3_XjehxK": {
+          "type": "3",
+          "settings": {
+            "breadcrumb_color": "#f2f2f2",
+            "brc_mgb": 5
+          }
+        }
+      },
+      "block_order": [
+        "a61b5459-0dd8-4796-a9c8-e3f1ee42dfb9",
+        "e9f249a0-0a0f-4baf-9664-73babbd7bbe7",
+        "3_XjehxK"
+      ],
+      "settings": {
+        "heading_fullwidth": true,
+        "image": "shopify://shop_images/collection_page_top_banner.webp",
+        "use_specify_image": false,
+        "parallax": true,
+        "color": "#000000",
+        "overlay": 54,
+        "padding": 100,
+        "paddingmb": 50,
+        "mg_b": 0,
+        "mg_bmb": 0,
+        "content_align": "t4s-text-center",
+        "bg_pos": "left center",
+        "bg_repeat": "inherit",
+        "bg_size": "cover",
+        "use_cus_css": false,
+        "code_cus_css": ".SectionID {\nbackground-color:red\n}"
+      }
+    },
+    "custom_liquid_c7qVJT": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'c0-toggle-content' %}",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,0px,",
+        "pd": "50px,,50px,",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": ""
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "blocks": {
+        "filter_id": {
+          "type": "filter",
+          "settings": {
+            "style_filters": "sidebar"
+          }
+        },
+        "740319a4-8e19-4c70-b8a9-ada7cf235cbc": {
+          "type": "layout",
+          "settings": {}
+        },
+        "30594d23-d644-4653-9545-9ff769d2e6ab": {
+          "type": "sortby",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "filter_id",
+        "740319a4-8e19-4c70-b8a9-ada7cf235cbc",
+        "30594d23-d644-4653-9545-9ff769d2e6ab"
+      ],
+      "settings": {
+        "show_desc": false,
+        "position_desc": "2",
+        "product_des": "1",
+        "show_vendor": false,
+        "use_cdt": true,
+        "image_ratio": "ratio1_1",
+        "image_size": "cover",
+        "image_position": "8",
+        "content_align": "default",
+        "limit": 12,
+        "enable_listing": true,
+        "enable_listing_default": false,
+        "col_dk": "4",
+        "col_tb": "2",
+        "col_mb": "2",
+        "space_h_item": "30",
+        "space_v_item": "30",
+        "space_h_item_mb": "10",
+        "space_v_item_mb": "10",
+        "layout_des": "1",
+        "use_pagination": "default",
+        "enable_bar_lm": true,
+        "btn_icon": false,
+        "button_style": "outline",
+        "btns_size": "large",
+        "btns_cl": "primary",
+        "button_effect": "sweep-to-right",
+        "btn_pos": "t4s-text-center",
+        "type_filters": "facets",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,50px,",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": ""
+      }
+    },
+    "sidebar": {
+      "type": "sidebar-collection",
+      "blocks": {
+        "c7bdf308-8019-4991-b58c-6d3e205a52eb": {
+          "type": "category",
+          "settings": {
+            "heading": "Product Categories",
+            "cat_source": "1",
+            "cat_link_list": "",
+            "count": true
+          }
+        },
+        "9d37e80a-1eda-4a65-bb08-199e6a933a16": {
+          "type": "collection",
+          "settings": {
+            "heading": "Sale Products",
+            "collection": "best-sellers",
+            "limit_pr": 3,
+            "image_ratio": "t4s_ratioadapt",
+            "image_size": "t4s_cover",
+            "image_position": "t4s_position_8"
+          }
+        },
+        "c090f36e-d6ef-4a2a-ab04-cc78211dadb7": {
+          "type": "image",
+          "settings": {
+            "heading": "",
+            "img_effect": "zoom",
+            "b_link": "",
+            "open_link": "_self",
+            "content_align": "center",
+            "date": "2023/12/26",
+            "cdt_des": "1",
+            "countdown_pos": "2",
+            "cdt_size": "small",
+            "box_bdr": 0,
+            "bd_width": 0,
+            "space_item": 10,
+            "number_cl": "#ffffff",
+            "text_cl": "#222222",
+            "border_cl": "#000000",
+            "bg_cl": "#000000"
+          }
+        },
+        "221aa22f-5c6c-40c9-9403-6d3cd2c23e93": {
+          "type": "filter",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "c7bdf308-8019-4991-b58c-6d3e205a52eb",
+        "9d37e80a-1eda-4a65-bb08-199e6a933a16",
+        "c090f36e-d6ef-4a2a-ab04-cc78211dadb7",
+        "221aa22f-5c6c-40c9-9403-6d3cd2c23e93"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_drawer": false,
+        "space": 50,
+        "size": "medium",
+        "br_style": "none",
+        "brcolor": "#222222",
+        "sidebar_bdr": 0,
+        "sidebar_pd": 15
+      }
+    },
+    "slideshow_P3zCzh": {
+      "type": "slideshow",
+      "blocks": {
+        "image_parent_Utdian": {
+          "type": "image_parent",
+          "settings": {
+            "image": "shopify://shop_images/earsafe_b32e443f-7c60-460a-a8f9-ca1213ae716a.png",
+            "image_mb": "shopify://shop_images/earsafe_mobile_2.png",
+            "image_position": "8",
+            "cl_img": "",
+            "link_img1": "",
+            "open_link": "_blank",
+            "animate_slide": "none",
+            "text_align": "start",
+            "text_align_mb": "center",
+            "content_width": "container",
+            "cv_pos": 50,
+            "ch_pos": 50,
+            "cv_pos_mb": 30,
+            "ch_pos_mb": 50,
+            "bg_overlay": "#000000",
+            "bg_opacity": 0,
+            "bg_content_cl": "#ffffff",
+            "bg_content_op": 0,
+            "content_radius": 0,
+            "box_square": false,
+            "content_pd_tb": 15,
+            "content_pd_lr": 15,
+            "content_pd_tb_tb": 15,
+            "content_pd_lr_tb": 15,
+            "content_pd_tb_mb": 10,
+            "content_pd_lr_mb": 10,
+            "border_bl": false,
+            "br_color": "#222222",
+            "br_bg": "#ffffff",
+            "br_opacity": 50,
+            "br_style": "solid",
+            "br_pd": 20,
+            "br_pd_mb": 10,
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_pdF7hy": {
+          "type": "custom_text",
+          "settings": {
+            "text": "NG Earsafe",
+            "remove_br_tag": false,
+            "tag": "h2",
+            "fontf": "inherit",
+            "text_cl": "#ffffff",
+            "text_fs": 32,
+            "text_lh": 40,
+            "text_fw": 600,
+            "text_ls": 1,
+            "text_mgb": 15,
+            "font_italic": false,
+            "text_shadow": false,
+            "hidden_mobile": false,
+            "text_fs_mb": 32,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "text_mgb_mobile": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_MtMdkQ": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Revolutionize your listening experience with <br>NG EarSafe's open-ear design, delivering rich sound <br>while keeping you aware of your surroundings.",
+            "remove_br_tag": false,
+            "tag": "p",
+            "fontf": "inherit",
+            "text_cl": "#ffffff",
+            "text_fs": 12,
+            "text_lh": 22,
+            "text_fw": 500,
+            "text_ls": 1,
+            "text_mgb": 15,
+            "font_italic": false,
+            "text_shadow": false,
+            "hidden_mobile": false,
+            "text_fs_mb": 12,
+            "text_lh_mb": 20,
+            "text_ls_mb": 0,
+            "text_mgb_mobile": 10,
+            "animation": "none"
+          }
+        },
+        "custom_button_kU4DrM": {
+          "type": "custom_button",
+          "settings": {
+            "button_text": "BUY NOW",
+            "button_link": "shopify://products/open-ear-wireless-headphones-ng-ear-safe-lite",
+            "target_link": "_self",
+            "fontf": "inherit",
+            "button_icon_w": 0,
+            "button_style": "default",
+            "button_effect": "default",
+            "pri_cl": "#00a5b4",
+            "second_cl": "#ffffff",
+            "pri_cl_hover": "#222222",
+            "second_cl_hover": "#ffffff",
+            "fsbutton": 18,
+            "fwbutton": 500,
+            "button_ls": 1,
+            "button_mh": 42,
+            "button_bdr": 5,
+            "button_pd_lr": 30,
+            "button_mgb": 0,
+            "hidden_mobile": false,
+            "button_icon_w_mb": 50,
+            "fsbutton_mb": 15,
+            "button_mh_mb": 36,
+            "button_pd_lr_mb": 32,
+            "button_ls_mb": 0,
+            "button_mgb_mb": 0,
+            "animation": "none"
+          }
+        }
+      },
+      "block_order": [
+        "image_parent_Utdian",
+        "custom_text_pdF7hy",
+        "custom_text_MtMdkQ",
+        "custom_button_kU4DrM"
+      ],
+      "settings": {
+        "se_height": "t4s_ratioadapt",
+        "custom_dk": true,
+        "height_dk": 600,
+        "custom_tb": true,
+        "height_tb": 400,
+        "custom_mb": true,
+        "height_mb": 250,
+        "eff": "slide",
+        "loop": true,
+        "au_time": 0,
+        "au_hover": true,
+        "nav_btn": false,
+        "btn_vi": "hover",
+        "btn_owl": "default",
+        "btn_shape": "none",
+        "btn_cl": "dark",
+        "btn_size": "small",
+        "btn_hidden_mobile": false,
+        "nav_dot": false,
+        "dot_owl": "default",
+        "dots_position": "default",
+        "dots_cl": "dark",
+        "dots_round": false,
+        "dots_space": 10,
+        "dots_hidden_mobile": false,
+        "layout": "t4s-container-fluid",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,0px,",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,0px,",
+        "pd_mb": "",
+        "use_cus_css": false,
+        "code_cus_css": ""
+      }
+    },
+    "slideshow_A337zN": {
+      "type": "slideshow",
+      "blocks": {
+        "image_parent_P4zxrR": {
+          "type": "image_parent",
+          "settings": {
+            "image": "shopify://shop_images/comm.png",
+            "image_mb": "shopify://shop_images/comm_mobile_2.png",
+            "image_position": "8",
+            "cl_img": "",
+            "link_img1": "",
+            "open_link": "_blank",
+            "animate_slide": "none",
+            "text_align": "end",
+            "text_align_mb": "center",
+            "content_width": "container",
+            "cv_pos": 50,
+            "ch_pos": 50,
+            "cv_pos_mb": 30,
+            "ch_pos_mb": 50,
+            "bg_overlay": "#000000",
+            "bg_opacity": 0,
+            "bg_content_cl": "#ffffff",
+            "bg_content_op": 0,
+            "content_radius": 0,
+            "box_square": false,
+            "content_pd_tb": 15,
+            "content_pd_lr": 15,
+            "content_pd_tb_tb": 15,
+            "content_pd_lr_tb": 15,
+            "content_pd_tb_mb": 10,
+            "content_pd_lr_mb": 10,
+            "border_bl": false,
+            "br_color": "#222222",
+            "br_bg": "#ffffff",
+            "br_opacity": 50,
+            "br_style": "solid",
+            "br_pd": 20,
+            "br_pd_mb": 10,
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_pHJVxC": {
+          "type": "custom_text",
+          "settings": {
+            "text": "NG Earsafe Comm",
+            "remove_br_tag": false,
+            "tag": "h2",
+            "fontf": "inherit",
+            "text_cl": "#ffffff",
+            "text_fs": 32,
+            "text_lh": 40,
+            "text_fw": 600,
+            "text_ls": 1,
+            "text_mgb": 15,
+            "font_italic": false,
+            "text_shadow": false,
+            "hidden_mobile": false,
+            "text_fs_mb": 32,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "text_mgb_mobile": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_XUq33B": {
+          "type": "custom_text",
+          "settings": {
+            "text": "NG EarSafe Comm lets you stay in the loop without <br> tuning out the world.",
+            "remove_br_tag": false,
+            "tag": "p",
+            "fontf": "inherit",
+            "text_cl": "#ffffff",
+            "text_fs": 12,
+            "text_lh": 22,
+            "text_fw": 500,
+            "text_ls": 0,
+            "text_mgb": 15,
+            "font_italic": false,
+            "text_shadow": false,
+            "hidden_mobile": false,
+            "text_fs_mb": 12,
+            "text_lh_mb": 20,
+            "text_ls_mb": 0,
+            "text_mgb_mobile": 10,
+            "animation": "none"
+          }
+        },
+        "custom_button_KqC3LT": {
+          "type": "custom_button",
+          "settings": {
+            "button_text": "BUY NOW",
+            "button_link": "shopify://products/noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0",
+            "target_link": "_self",
+            "fontf": "inherit",
+            "button_icon_w": 0,
+            "button_style": "default",
+            "button_effect": "default",
+            "pri_cl": "#00a5b4",
+            "second_cl": "#ffffff",
+            "pri_cl_hover": "#222222",
+            "second_cl_hover": "#ffffff",
+            "fsbutton": 18,
+            "fwbutton": 500,
+            "button_ls": 1,
+            "button_mh": 42,
+            "button_bdr": 5,
+            "button_pd_lr": 30,
+            "button_mgb": 0,
+            "hidden_mobile": false,
+            "button_icon_w_mb": 50,
+            "fsbutton_mb": 15,
+            "button_mh_mb": 36,
+            "button_pd_lr_mb": 32,
+            "button_ls_mb": 0,
+            "button_mgb_mb": 0,
+            "animation": "none"
+          }
+        }
+      },
+      "block_order": [
+        "image_parent_P4zxrR",
+        "custom_text_pHJVxC",
+        "custom_text_XUq33B",
+        "custom_button_KqC3LT"
+      ],
+      "settings": {
+        "se_height": "t4s_ratioadapt",
+        "custom_dk": true,
+        "height_dk": 600,
+        "custom_tb": true,
+        "height_tb": 400,
+        "custom_mb": true,
+        "height_mb": 250,
+        "eff": "slide",
+        "loop": true,
+        "au_time": 0,
+        "au_hover": true,
+        "nav_btn": false,
+        "btn_vi": "hover",
+        "btn_owl": "default",
+        "btn_shape": "none",
+        "btn_cl": "dark",
+        "btn_size": "small",
+        "btn_hidden_mobile": false,
+        "nav_dot": false,
+        "dot_owl": "default",
+        "dots_position": "default",
+        "dots_cl": "dark",
+        "dots_round": false,
+        "dots_space": 10,
+        "dots_hidden_mobile": false,
+        "layout": "t4s-container-fluid",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,0px,",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,0px,",
+        "pd_mb": "",
+        "use_cus_css": false,
+        "code_cus_css": ""
+      }
+    },
+    "slideshow_c8CeQK": {
+      "type": "slideshow",
+      "blocks": {
+        "image_parent_fXt6bY": {
+          "type": "image_parent",
+          "settings": {
+            "image": "shopify://shop_images/lite.png",
+            "image_mb": "shopify://shop_images/lite_mobile_2.png",
+            "image_position": "8",
+            "cl_img": "",
+            "link_img1": "",
+            "open_link": "_blank",
+            "animate_slide": "none",
+            "text_align": "start",
+            "text_align_mb": "center",
+            "content_width": "container",
+            "cv_pos": 50,
+            "ch_pos": 50,
+            "cv_pos_mb": 30,
+            "ch_pos_mb": 50,
+            "bg_overlay": "#000000",
+            "bg_opacity": 0,
+            "bg_content_cl": "#ffffff",
+            "bg_content_op": 0,
+            "content_radius": 0,
+            "box_square": false,
+            "content_pd_tb": 15,
+            "content_pd_lr": 15,
+            "content_pd_tb_tb": 15,
+            "content_pd_lr_tb": 15,
+            "content_pd_tb_mb": 10,
+            "content_pd_lr_mb": 10,
+            "border_bl": false,
+            "br_color": "#222222",
+            "br_bg": "#ffffff",
+            "br_opacity": 50,
+            "br_style": "solid",
+            "br_pd": 20,
+            "br_pd_mb": 10,
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_pVtqiy": {
+          "type": "custom_text",
+          "settings": {
+            "text": "NG Earsafe Lite",
+            "remove_br_tag": false,
+            "tag": "h2",
+            "fontf": "inherit",
+            "text_cl": "#ffffff",
+            "text_fs": 32,
+            "text_lh": 40,
+            "text_fw": 600,
+            "text_ls": 1,
+            "text_mgb": 15,
+            "font_italic": false,
+            "text_shadow": false,
+            "hidden_mobile": false,
+            "text_fs_mb": 32,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "text_mgb_mobile": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_eYQpr6": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Enjoy lightweight comfort and clear sound with NG EarSafe Lite, <br>perfect for active lifestyles.",
+            "remove_br_tag": true,
+            "tag": "p",
+            "fontf": "inherit",
+            "text_cl": "#ffffff",
+            "text_fs": 12,
+            "text_lh": 22,
+            "text_fw": 500,
+            "text_ls": 0,
+            "text_mgb": 15,
+            "font_italic": false,
+            "text_shadow": false,
+            "hidden_mobile": false,
+            "text_fs_mb": 13,
+            "text_lh_mb": 20,
+            "text_ls_mb": 0,
+            "text_mgb_mobile": 10,
+            "animation": "none"
+          }
+        },
+        "custom_button_dPwbFp": {
+          "type": "custom_button",
+          "settings": {
+            "button_text": "BUY NOW",
+            "button_link": "shopify://products/open-ear-wireless-headphones-ng-ear-safe-lite",
+            "target_link": "_self",
+            "fontf": "inherit",
+            "button_icon_w": 0,
+            "button_style": "default",
+            "button_effect": "default",
+            "pri_cl": "#00a5b4",
+            "second_cl": "#ffffff",
+            "pri_cl_hover": "#222222",
+            "second_cl_hover": "#ffffff",
+            "fsbutton": 18,
+            "fwbutton": 500,
+            "button_ls": 1,
+            "button_mh": 42,
+            "button_bdr": 5,
+            "button_pd_lr": 30,
+            "button_mgb": 0,
+            "hidden_mobile": false,
+            "button_icon_w_mb": 50,
+            "fsbutton_mb": 15,
+            "button_mh_mb": 36,
+            "button_pd_lr_mb": 32,
+            "button_ls_mb": 0,
+            "button_mgb_mb": 0,
+            "animation": "none"
+          }
+        }
+      },
+      "block_order": [
+        "image_parent_fXt6bY",
+        "custom_text_pVtqiy",
+        "custom_text_eYQpr6",
+        "custom_button_dPwbFp"
+      ],
+      "settings": {
+        "se_height": "t4s_ratioadapt",
+        "custom_dk": true,
+        "height_dk": 600,
+        "custom_tb": true,
+        "height_tb": 400,
+        "custom_mb": true,
+        "height_mb": 250,
+        "eff": "slide",
+        "loop": true,
+        "au_time": 0,
+        "au_hover": true,
+        "nav_btn": false,
+        "btn_vi": "hover",
+        "btn_owl": "default",
+        "btn_shape": "none",
+        "btn_cl": "dark",
+        "btn_size": "small",
+        "btn_hidden_mobile": false,
+        "nav_dot": false,
+        "dot_owl": "default",
+        "dots_position": "default",
+        "dots_cl": "dark",
+        "dots_round": false,
+        "dots_space": 10,
+        "dots_hidden_mobile": false,
+        "layout": "t4s-container-fluid",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,0px,",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,0px,",
+        "pd_mb": "",
+        "use_cus_css": false,
+        "code_cus_css": ""
+      }
+    },
+    "slideshow_QXbqeH": {
+      "type": "slideshow",
+      "blocks": {
+        "image_parent_dGKWXn": {
+          "type": "image_parent",
+          "settings": {
+            "image": "shopify://shop_images/pro_2.png",
+            "image_mb": "shopify://shop_images/pro_mobile_2.png",
+            "image_position": "8",
+            "cl_img": "",
+            "link_img1": "",
+            "open_link": "_blank",
+            "animate_slide": "none",
+            "text_align": "end",
+            "text_align_mb": "center",
+            "content_width": "container",
+            "cv_pos": 50,
+            "ch_pos": 50,
+            "cv_pos_mb": 30,
+            "ch_pos_mb": 50,
+            "bg_overlay": "#000000",
+            "bg_opacity": 0,
+            "bg_content_cl": "#ffffff",
+            "bg_content_op": 0,
+            "content_radius": 0,
+            "box_square": false,
+            "content_pd_tb": 15,
+            "content_pd_lr": 15,
+            "content_pd_tb_tb": 15,
+            "content_pd_lr_tb": 15,
+            "content_pd_tb_mb": 10,
+            "content_pd_lr_mb": 10,
+            "border_bl": false,
+            "br_color": "#222222",
+            "br_bg": "#ffffff",
+            "br_opacity": 50,
+            "br_style": "solid",
+            "br_pd": 20,
+            "br_pd_mb": 10,
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_byB3A4": {
+          "type": "custom_text",
+          "settings": {
+            "text": "NG Earsafe Pro",
+            "remove_br_tag": false,
+            "tag": "h2",
+            "fontf": "inherit",
+            "text_cl": "#ffffff",
+            "text_fs": 32,
+            "text_lh": 40,
+            "text_fw": 600,
+            "text_ls": 1,
+            "text_mgb": 15,
+            "font_italic": false,
+            "text_shadow": false,
+            "hidden_mobile": false,
+            "text_fs_mb": 32,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "text_mgb_mobile": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_wEfjym": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Enjoy exceptional sound quality with NG EarSafe Pro's <br>bone conduction technology.",
+            "remove_br_tag": true,
+            "tag": "p",
+            "fontf": "inherit",
+            "text_cl": "#ffffff",
+            "text_fs": 12,
+            "text_lh": 22,
+            "text_fw": 500,
+            "text_ls": 0,
+            "text_mgb": 15,
+            "font_italic": false,
+            "text_shadow": false,
+            "hidden_mobile": false,
+            "text_fs_mb": 12,
+            "text_lh_mb": 20,
+            "text_ls_mb": 0,
+            "text_mgb_mobile": 10,
+            "animation": "none"
+          }
+        },
+        "custom_button_aaC8nM": {
+          "type": "custom_button",
+          "settings": {
+            "button_text": "BUY NOW",
+            "button_link": "shopify://products/open-ear-bone-conduction-headphones-ng-ear-safe-pro-swimming",
+            "target_link": "_self",
+            "fontf": "inherit",
+            "button_icon_w": 0,
+            "button_style": "default",
+            "button_effect": "default",
+            "pri_cl": "#00a5b4",
+            "second_cl": "#ffffff",
+            "pri_cl_hover": "#222222",
+            "second_cl_hover": "#ffffff",
+            "fsbutton": 18,
+            "fwbutton": 500,
+            "button_ls": 1,
+            "button_mh": 42,
+            "button_bdr": 5,
+            "button_pd_lr": 30,
+            "button_mgb": 0,
+            "hidden_mobile": false,
+            "button_icon_w_mb": 50,
+            "fsbutton_mb": 15,
+            "button_mh_mb": 36,
+            "button_pd_lr_mb": 32,
+            "button_ls_mb": 0,
+            "button_mgb_mb": 0,
+            "animation": "none"
+          }
+        }
+      },
+      "block_order": [
+        "image_parent_dGKWXn",
+        "custom_text_byB3A4",
+        "custom_text_wEfjym",
+        "custom_button_aaC8nM"
+      ],
+      "settings": {
+        "se_height": "t4s_ratioadapt",
+        "custom_dk": true,
+        "height_dk": 600,
+        "custom_tb": true,
+        "height_tb": 400,
+        "custom_mb": true,
+        "height_mb": 250,
+        "eff": "slide",
+        "loop": true,
+        "au_time": 0,
+        "au_hover": true,
+        "nav_btn": false,
+        "btn_vi": "hover",
+        "btn_owl": "default",
+        "btn_shape": "none",
+        "btn_cl": "dark",
+        "btn_size": "small",
+        "btn_hidden_mobile": false,
+        "nav_dot": false,
+        "dot_owl": "default",
+        "dots_position": "default",
+        "dots_cl": "dark",
+        "dots_round": false,
+        "dots_space": 10,
+        "dots_hidden_mobile": false,
+        "layout": "t4s-container-fluid",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,0px,",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,0px,",
+        "pd_mb": "",
+        "use_cus_css": false,
+        "code_cus_css": ""
+      }
+    },
+    "slideshow_Hz6t4T": {
+      "type": "slideshow",
+      "blocks": {
+        "image_parent_QgrxXm": {
+          "type": "image_parent",
+          "settings": {
+            "image": "shopify://shop_images/Collection_page_product_banner_desktop.webp",
+            "image_mb": "shopify://shop_images/Collection_page_product_banner_mobile.webp",
+            "image_position": "8",
+            "cl_img": "",
+            "link_img1": "",
+            "open_link": "_blank",
+            "animate_slide": "none",
+            "text_align": "start",
+            "text_align_mb": "center",
+            "content_width": "container",
+            "cv_pos": 50,
+            "ch_pos": 50,
+            "cv_pos_mb": 30,
+            "ch_pos_mb": 50,
+            "bg_overlay": "#000000",
+            "bg_opacity": 0,
+            "bg_content_cl": "#ffffff",
+            "bg_content_op": 0,
+            "content_radius": 0,
+            "box_square": false,
+            "content_pd_tb": 15,
+            "content_pd_lr": 15,
+            "content_pd_tb_tb": 15,
+            "content_pd_lr_tb": 15,
+            "content_pd_tb_mb": 10,
+            "content_pd_lr_mb": 10,
+            "border_bl": false,
+            "br_color": "#222222",
+            "br_bg": "#ffffff",
+            "br_opacity": 50,
+            "br_style": "solid",
+            "br_pd": 20,
+            "br_pd_mb": 10,
+            "time_animation": 1,
+            "animation_delay": 40
+          }
+        },
+        "custom_text_DigxVC": {
+          "type": "custom_text",
+          "settings": {
+            "text": "NG EarSafe OpenBuds",
+            "remove_br_tag": false,
+            "tag": "h2",
+            "fontf": "inherit",
+            "text_cl": "#ffffff",
+            "text_fs": 32,
+            "text_lh": 40,
+            "text_fw": 600,
+            "text_ls": 1,
+            "text_mgb": 15,
+            "font_italic": false,
+            "text_shadow": false,
+            "hidden_mobile": false,
+            "text_fs_mb": 32,
+            "text_lh_mb": 0,
+            "text_ls_mb": 0,
+            "text_mgb_mobile": 10,
+            "animation": "none"
+          }
+        },
+        "custom_text_AWtxYc": {
+          "type": "custom_text",
+          "settings": {
+            "text": "Built with premium silicon finish, experience ultimate sound <br>experience with NG EarSafe OpenBuds",
+            "remove_br_tag": true,
+            "tag": "p",
+            "fontf": "inherit",
+            "text_cl": "#ffffff",
+            "text_fs": 12,
+            "text_lh": 22,
+            "text_fw": 500,
+            "text_ls": 0,
+            "text_mgb": 15,
+            "font_italic": false,
+            "text_shadow": false,
+            "hidden_mobile": false,
+            "text_fs_mb": 13,
+            "text_lh_mb": 20,
+            "text_ls_mb": 0,
+            "text_mgb_mobile": 10,
+            "animation": "none"
+          }
+        },
+        "custom_button_RqVBDW": {
+          "type": "custom_button",
+          "settings": {
+            "button_text": "BUY NOW",
+            "button_link": "shopify://products/open-ear-earbuds-wireless-ng-ear-safe-buds",
+            "target_link": "_self",
+            "fontf": "inherit",
+            "button_icon_w": 0,
+            "button_style": "default",
+            "button_effect": "default",
+            "pri_cl": "#00a5b4",
+            "second_cl": "#ffffff",
+            "pri_cl_hover": "#222222",
+            "second_cl_hover": "#ffffff",
+            "fsbutton": 18,
+            "fwbutton": 500,
+            "button_ls": 1,
+            "button_mh": 42,
+            "button_bdr": 5,
+            "button_pd_lr": 30,
+            "button_mgb": 0,
+            "hidden_mobile": false,
+            "button_icon_w_mb": 50,
+            "fsbutton_mb": 15,
+            "button_mh_mb": 36,
+            "button_pd_lr_mb": 32,
+            "button_ls_mb": 0,
+            "button_mgb_mb": 0,
+            "animation": "none"
+          }
+        }
+      },
+      "block_order": [
+        "image_parent_QgrxXm",
+        "custom_text_DigxVC",
+        "custom_text_AWtxYc",
+        "custom_button_RqVBDW"
+      ],
+      "settings": {
+        "se_height": "t4s_ratioadapt",
+        "custom_dk": true,
+        "height_dk": 600,
+        "custom_tb": true,
+        "height_tb": 400,
+        "custom_mb": true,
+        "height_mb": 250,
+        "eff": "slide",
+        "loop": true,
+        "au_time": 0,
+        "au_hover": true,
+        "nav_btn": false,
+        "btn_vi": "hover",
+        "btn_owl": "default",
+        "btn_shape": "none",
+        "btn_cl": "dark",
+        "btn_size": "small",
+        "btn_hidden_mobile": false,
+        "nav_dot": false,
+        "dot_owl": "default",
+        "dots_position": "default",
+        "dots_cl": "dark",
+        "dots_round": false,
+        "dots_space": 10,
+        "dots_hidden_mobile": false,
+        "layout": "t4s-container-fluid",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,0px,",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,0px,",
+        "pd_mb": "",
+        "use_cus_css": false,
+        "code_cus_css": ""
+      }
+    },
+    "image_text_RVAWzk": {
+      "type": "image_text",
+      "blocks": {
+        "bl_text_xKeqbF": {
+          "type": "bl_text",
+          "settings": {
+            "col_dk": "12",
+            "col_tb": "12",
+            "text_size": "40,15",
+            "txt_align": "start",
+            "sub_heading": "",
+            "heading": "",
+            "text": "<p><strong>Open-ear headphones </strong>represent a significant advancement in listening technology, offering a blend of comfort, safety, and situational awareness that traditional in-ear or over-ear headphones can't match. By design, these headphones do not block or occlude the ear canal, allowing users to enjoy audio content without isolating them from their surroundings. This design minimizes the risk of ear canal damage and reduces ear fatigue, making them an ideal choice for prolonged use throughout the day.<br/><br/><strong>Applications of NG EarSafe Products<br/></strong><br/><strong>1. NG EarSafe<br/></strong><br/><strong>Description:</strong> The standard model in our lineup, NG EarSafe, offers balanced sound quality with our innovative open-ear design. This model is perfect for everyday use, from listening to music and podcasts to taking calls.<br/><strong>Applications: </strong>Ideal for daily commuters, fitness lovers, and anyone who enjoys background music without losing touch with their environment.</p><p><br/><strong>2. NG EarSafe Comm<br/></strong><br/><strong>Description:</strong> Designed with clear communication in mind, the EarSafe Comm features enhanced microphone clarity making it perfect for professional settings. It integrates noise-cancellation technologies to ensure your calls are crystal clear, even in noisy environments.<br/><strong>Applications:</strong> Best for remote workers, call center employees, and business professionals who need to maintain high-quality communication throughout the day.</p><p><br/><strong>3. NG EarSafe Pro<br/></strong><br/><strong>Description: </strong>The Pro version offers bone conduction technology transmitting sound directly from cheek bones to inner ear via vibrations. It is the only model which works on bone conduction technology being the safest headphones to protect your ears.<br/><strong>Applications:</strong> Suited for people with conductive hearing loss, tech enthusiasts, safe listeners, outdoor enthusiasts.</p><p><br/><strong>4. NG EarSafe Lite<br/></strong><br/><strong>Description: </strong>As the lightest and most affordable option, the EarSafe Lite is designed for casual use, providing basic open-ear listening with a focus on comfort and minimalistic design.<br/><strong>Applications:</strong> Great for individuals who are new to open-ear headphones or those seeking a no-frills audio experience, such as young learners, casual listeners, and active individuals who need lightweight headphones during exercise.<br/><br/>Each of these models is tailored to meet specific user needs while maintaining the core benefits of open-ear technology, ensuring everyone can find an NG EarSafe product that fits their lifestyle and listening preferences. Whether for professional use, casual listening, or communication-intensive tasks, NG EarSafe headphones provide a healthier, more comfortable listening experience.<br/><br/><strong><br/>5. NG EarSafe OpenBuds<br/></strong><br/><strong>Description: </strong>The NG EarSafe OpenBuds deliver the ultimate sound experience with our cutting-edge open-ear technology, offering clear and immersive audio without blocking or sealing your ear canals. These true-wireless earbuds combine superior sound quality with the safety and comfort of open-ear design, allowing you to stay aware of your surroundings. With a sleek and portable design, OpenBuds provide the perfect blend of audio excellence and all-day comfort, free from the discomfort or risk of ear canal damage.<br/><strong>Applications:</strong> Ideal for multitaskers, outdoor enthusiasts, and those on the move, OpenBuds are perfect for casual listening, commuting, daily calling because of it's Quad mic and fitness activities, ensuring high-performance sound without compromising awareness or safety.</p>",
+            "subhd_color": "#222222",
+            "hd_color": "#222222",
+            "des_color": "#615e5e",
+            "use_shadow": false,
+            "button_label": "Button label",
+            "button_link": "",
+            "open_link": "_blank",
+            "btn_icon": false,
+            "button_style": "default",
+            "btn_size": "large",
+            "btn_cl": "dark",
+            "button_effect": "default"
+          }
+        }
+      },
+      "block_order": [
+        "bl_text_xKeqbF"
+      ],
+      "settings": {
+        "design_heading": "1",
+        "heading_align": "t4s-text-center",
+        "top_heading": "",
+        "icon_heading": "las la-gem",
+        "top_subheading": "",
+        "tophead_mb": 30,
+        "space_h_item": "20",
+        "space_v_item": "10",
+        "space_h_item_mb": "20",
+        "space_v_item_mb": "10",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,0px,",
+        "pd": "50px,,50px,",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": "",
+        "use_cus_css": false,
+        "code_cus_css": ""
+      }
+    },
+    "image_text_ETT4CN": {
+      "type": "image_text",
+      "blocks": {
+        "bl_text_Br4VMY": {
+          "type": "bl_text",
+          "settings": {
+            "col_dk": "12",
+            "col_tb": "12",
+            "text_size": "30,15",
+            "txt_align": "start",
+            "sub_heading": "",
+            "heading": "",
+            "text": "<h4><strong>Popular Searches<br/></strong></h4><p></p><p><a href=\"https://ngearsafe.com/\" target=\"_blank\" title=\"https://ngearsafe.com/\">Bluetooth Headphone</a>‎ ‎ |‎ ‎ <a href=\"https://ngearsafe.com/products/ng-earsafe-comm-open-ear-headphones-with-noise-canceling-boom-mic\" target=\"_blank\" title=\"https://ngearsafe.com/products/ng-earsafe-comm-open-ear-headphones-with-noise-canceling-boom-mic\">NG EarSafe Comm Open Ear Headphones</a>‎ ‎ |‎ ‎ <a href=\"https://ngearsafe.com/products/ng-earsafe-lite-open-ear-headphones\" target=\"_blank\" title=\"https://ngearsafe.com/products/ng-earsafe-lite-open-ear-headphones\">NG EarSafe Lite Open Ear Headphones</a>‎ ‎ |‎ ‎ <a href=\"https://ngearsafe.com/products/earsafe-open-ear-bluetooth-headphones\" target=\"_blank\" title=\"https://ngearsafe.com/products/earsafe-open-ear-bluetooth-headphones\">NG EarSafe Open Ear Headphones</a>‎ ‎ |‎ ‎ ‎<a href=\"https://ngearsafe.com/products/ng-earsafe-pro-open-ear-bone-conduction-headphones\" target=\"_blank\" title=\"https://ngearsafe.com/products/ng-earsafe-pro-open-ear-bone-conduction-headphones\">Ng EarSafe Pro Ear Headphone</a>‎ ‎ |‎ ‎ <a href=\"https://ngearsafe.com/collections/open-ear-headphones\" target=\"_blank\" title=\"https://ngearsafe.com/collections/open-ear-headphones\">Open Ear Headphones online</a>‎ ‎ |‎ ‎ ‎<a href=\"https://ngearsafe.com/products/ng-earsafe-comm-open-ear-headphones-with-noise-canceling-boom-mic\" target=\"_blank\" title=\"https://ngearsafe.com/products/ng-earsafe-comm-open-ear-headphones-with-noise-canceling-boom-mic\">Calling Headphone</a>‎ ‎ |‎ ‎ ‎<a href=\"https://help.ngearsafe.com/affiliate-collaboration\" target=\"_blank\" title=\"https://help.ngearsafe.com/affiliate-collaboration\">Affiliate Collaboration</a>‎ ‎ |‎ ‎ <a href=\"https://ngearsafe.com/products/ng-earsafe-pro-open-ear-bone-conduction-headphones\" target=\"_blank\" title=\"https://ngearsafe.com/products/ng-earsafe-pro-open-ear-bone-conduction-headphones\">Bone conductor headphone</a>‎ ‎ <br/></p><h4><br/>Top Blog Search<strong><br/></strong></h4><p></p><p><a href=\"https://ngearsafe.com/blogs/open-ear-headphones/5-major-benefits-of-cycling\" target=\"_blank\" title=\"https://ngearsafe.com/blogs/open-ear-headphones/5-major-benefits-of-cycling\">5 major Benefits of Cycling</a>‎ ‎ |‎ ‎ <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/hearing-loss\" target=\"_blank\" title=\"https://ngearsafe.com/blogs/open-ear-headphones/hearing-loss\">Hearing Loss</a>‎ ‎ |‎ ‎ <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/why-should-you-use-open-ear-headphones\" target=\"_blank\" title=\"https://ngearsafe.com/blogs/open-ear-headphones/why-should-you-use-open-ear-headphones\">Why should you use Open-Ear Headphones?</a>‎ ‎ |‎ ‎ <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/difference-between-air-conduction-and-bone-conduction-technology\" target=\"_blank\" title=\"https://ngearsafe.com/blogs/open-ear-headphones/difference-between-air-conduction-and-bone-conduction-technology\">Difference between Air conduction and Bone Conduction</a>‎ ‎ |‎ ‎ ‎<a href=\"https://ngearsafe.com/blogs/open-ear-headphones/ng-earsafe-vs-ng-earsafe-comm\" target=\"_blank\" title=\"https://ngearsafe.com/blogs/open-ear-headphones/ng-earsafe-vs-ng-earsafe-comm\">NG EarSafe vs NG EarSafe Comm</a>‎ ‎ |‎ ‎ <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/ear-infection\" target=\"_blank\" title=\"https://ngearsafe.com/blogs/open-ear-headphones/ear-infection\">Ear Infections</a>‎ ‎ |‎ ‎ ‎<a href=\"https://ngearsafe.com/blogs/open-ear-headphones/what-is-active-noise-cancellation\" target=\"_blank\" title=\"https://ngearsafe.com/blogs/open-ear-headphones/what-is-active-noise-cancellation\">What is Anc</a>‎ ‎ |‎ ‎ ‎<a href=\"https://ngearsafe.com/blogs/open-ear-headphones/open-ear-vs-in-ear-vs-over-ear-headphones\" target=\"_blank\" title=\"https://ngearsafe.com/blogs/open-ear-headphones/open-ear-vs-in-ear-vs-over-ear-headphones\">Open-Ear vs. In-Ear vs. Over-Ear Headphones</a></p>",
+            "subhd_color": "#222222",
+            "hd_color": "#222222",
+            "des_color": "#878787",
+            "use_shadow": false,
+            "button_label": "Button label",
+            "button_link": "",
+            "open_link": "_blank",
+            "btn_icon": false,
+            "button_style": "default",
+            "btn_size": "large",
+            "btn_cl": "dark",
+            "button_effect": "default"
+          }
+        }
+      },
+      "block_order": [
+        "bl_text_Br4VMY"
+      ],
+      "custom_css": [
+        ".t4s-image-text-des p a {color: #25313c; border-bottom: 1px solid #25313c45 !important; font-size: 14px;}"
+      ],
+      "settings": {
+        "design_heading": "1",
+        "heading_align": "t4s-text-center",
+        "top_heading": "",
+        "icon_heading": "las la-gem",
+        "top_subheading": "",
+        "tophead_mb": 30,
+        "space_h_item": "20",
+        "space_v_item": "10",
+        "space_h_item_mb": "20",
+        "space_v_item_mb": "10",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,50px,",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": "",
+        "use_cus_css": false,
+        "code_cus_css": ""
+      }
+    }
+  },
+  "order": [
+    "top",
+    "heading_template",
+    "custom_liquid_c7qVJT",
+    "main",
+    "sidebar",
+    "slideshow_P3zCzh",
+    "slideshow_A337zN",
+    "slideshow_c8CeQK",
+    "slideshow_QXbqeH",
+    "slideshow_Hz6t4T",
+    "image_text_RVAWzk",
+    "image_text_ETT4CN"
+  ]
+}
