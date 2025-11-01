@@ -618,6 +618,94 @@
         "padding_bottom": 0
       }
     },
+    "ng_feature_grid_jT66Q4": {
+      "type": "ng-feature-grid",
+      "blocks": {
+        "feature_card_QX8tkg": {
+          "type": "feature_card",
+          "settings": {
+            "image": "shopify://shop_images/feature_6_hours_battery.webp",
+            "title": "6 Hours battery Life",
+            "subtitle": "",
+            "title_size": 36,
+            "link": "",
+            "cta_label": "Know more",
+            "text_align": "left",
+            "overlay_strength": 60
+          }
+        },
+        "feature_card_MXCqBU": {
+          "type": "feature_card",
+          "settings": {
+            "image": "shopify://shop_images/feature_Phone_Holder.webp",
+            "title": "Phone holder",
+            "subtitle": "",
+            "title_size": 36,
+            "link": "",
+            "cta_label": "Know more",
+            "text_align": "left",
+            "overlay_strength": 60
+          }
+        },
+        "feature_card_JpH7nn": {
+          "type": "feature_card",
+          "settings": {
+            "image": "shopify://shop_images/feature_TWS_Dual_speaker_mode.webp",
+            "title": "Tws Pairing",
+            "subtitle": "",
+            "title_size": 36,
+            "link": "",
+            "cta_label": "Know more",
+            "text_align": "left",
+            "overlay_strength": 60
+          }
+        },
+        "feature_card_iDFaDH": {
+          "type": "feature_card",
+          "settings": {
+            "image": "shopify://shop_images/feature_Blutoth_mic_aux_utb.etc..webp",
+            "title": "Bluetooth,Mic,Aux ,USB , TF Card Info",
+            "subtitle": "",
+            "title_size": 30,
+            "link": "",
+            "cta_label": "Know more",
+            "text_align": "left",
+            "overlay_strength": 60
+          }
+        },
+        "feature_card_BtPQ6n": {
+          "type": "feature_card",
+          "settings": {
+            "image": "shopify://shop_images/features_Type_C.webp",
+            "title": "Type C charging Port",
+            "subtitle": "",
+            "title_size": 36,
+            "link": "",
+            "cta_label": "Know more",
+            "text_align": "left",
+            "overlay_strength": 60
+          }
+        }
+      },
+      "block_order": [
+        "feature_card_QX8tkg",
+        "feature_card_MXCqBU",
+        "feature_card_JpH7nn",
+        "feature_card_iDFaDH",
+        "feature_card_BtPQ6n"
+      ],
+      "name": "NG Feature Grid",
+      "settings": {
+        "layout": "t4s-container-wrap",
+        "heading": "",
+        "subheading": "",
+        "title_color": "#111111",
+        "text_color": "#ffffff",
+        "background": "#f6f7f8",
+        "section_padding": 48,
+        "gap": 10
+      }
+    },
     "sidebar": {
       "type": "sidebar-product",
       "blocks": {
@@ -1328,6 +1416,7 @@
     "2f8947bb-a208-4ff1-92dd-ca00313dd658",
     "hero_bg_banner_nRcyWf",
     "hero_bg_banner_6tGCmC",
+    "ng_feature_grid_jT66Q4",
     "sidebar",
     "21cc52cf-8bcf-42ba-8f07-80d94e7a589e",
     "df43a99b-eda3-4c32-837f-b6640989c695",
