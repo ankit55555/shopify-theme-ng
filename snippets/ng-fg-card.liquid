@@ -1,0 +1,38 @@
+{%- assign img = block.settings.image -%}
+{%- assign title = block.settings.title -%}
+{%- assign subtitle = block.settings.subtitle -%}
+{%- assign cta_label = block.settings.cta_label | default: 'Know more' -%}
+{%- assign url = block.settings.link -%}
+{%- assign text_align = block.settings.text_align | default: 'left' -%}
+{%- assign title_size = block.settings.title_size | default: 36 -%}
+{%- assign overlay_strength = block.settings.overlay_strength | default: 60 -%}
+
+<a {% if url != blank %}href="{{ url }}"{% else %}role="link"{% endif %}
+   class="ng-fg-card" style="--ng-fg-overlay: {{ overlay_strength }}%" {{ block.shopify_attributes }}>
+  <div class="ng-fg-media">
+    {%- if placement == 'top' -%}
+      <div class="ng-fg-ratio" style="padding-top:56%"></div>
+    {%- else -%}
+      <div class="ng-fg-ratio" style="padding-top:66%"></div>
+    {%- endif -%}
+
+    {%- if img -%}
+      {{ img | image_url: width: 1920 | image_tag: loading: 'lazy', sizes: '(min-width: 990px) 50vw, 100vw', widths: '400,600,800,1200,1600,1920', alt: title }}
+    {%- else -%}
+      <div class="ng-fg-placeholder"></div>
+    {%- endif -%}
+    <div class="ng-fg-overlay"></div>
+  </div>
+
+  <div class="ng-fg-content ng-fg-content--{{ text_align }}">
+    {%- if title != blank -%}
+      <h3 class="ng-fg-title" style="color: var(--ng-fg-text-color); font-size: {{ title_size }}px;">{{ title }}</h3>
+    {%- endif -%}
+    {%- if subtitle != blank -%}
+      <p class="ng-fg-subtitle" style="color: var(--ng-fg-text-color);">{{ subtitle }}</p>
+    {%- endif -%}
+    <span class="ng-fg-cta" style="color: var(--ng-fg-text-color);">{{ cta_label }} <span class="ng-fg-arrow">&rarr;</span></span>
+  </div>
+</a>
+
+

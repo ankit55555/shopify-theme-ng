@@ -1,0 +1,117 @@
+/* NG Feature Grid - scoped styles */
+.ng-feature-grid .ng-fg-header {
+  margin-bottom: 16px;
+}
+.ng-feature-grid .ng-fg-heading {
+  margin: 0 0 6px 0;
+  line-height: 1.15;
+  font-weight: 700;
+}
+.ng-feature-grid .ng-fg-subheading {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.ng-feature-grid .ng-fg-grid {
+  border-radius: 12px;
+}
+.ng-feature-grid .ng-fg-row {
+  display: grid;
+}
+.ng-feature-grid .ng-fg-row--top {
+  grid-template-columns: 1fr 1fr;
+}
+.ng-feature-grid .ng-fg-row--bottom {
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: var(--ng-fg-gap);
+}
+
+.ng-feature-grid .ng-fg-card {
+  position: relative;
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #e9ecef;
+}
+.ng-feature-grid .ng-fg-card:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+.ng-feature-grid .ng-fg-media {
+  position: relative;
+}
+.ng-feature-grid .ng-fg-ratio {
+  width: 100%;
+}
+.ng-feature-grid .ng-fg-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.ng-feature-grid .ng-fg-placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ddd, #f3f3f3);
+}
+.ng-feature-grid .ng-fg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 35%,
+    rgba(0, 0, 0, 0.6) 85%
+  );
+  opacity: calc(var(--ng-fg-overlay, 60) / 100);
+}
+
+.ng-feature-grid .ng-fg-content {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ng-feature-grid .ng-fg-content--center {
+  text-align: center;
+  align-items: center;
+}
+.ng-feature-grid .ng-fg-content--right {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.ng-feature-grid .ng-fg-title {
+  margin: 0;
+  line-height: 1.05;
+  font-weight: 800;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+}
+.ng-feature-grid .ng-fg-subtitle {
+  margin: 0;
+  opacity: 0.9;
+}
+.ng-feature-grid .ng-fg-cta {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.ng-feature-grid .ng-fg-arrow {
+  transition: transform 0.2s ease;
+}
+.ng-feature-grid .ng-fg-card:hover .ng-fg-arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 990px) {
+  /* Flatten rows into a single two-column grid on mobile */
+  .ng-feature-grid .ng-fg-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--ng-fg-gap)}
+  .ng-feature-grid .ng-fg-row{display:contents}
+  .ng-feature-grid .ng-fg-row--bottom{margin-top:0}
+}

@@ -54,7 +54,8 @@
   {{- html_layout[0] -}}
   <div data-t4s-animate class="t4s-bg-video t4s-row t4s-row-cols-1 t4s-gx-0 {{ se_height }} t4scuspx1_{{ se_stts.custom_mb }} t4scuspx2_{{ se_stts.custom_tb }} t4scuspx3_{{ se_stts.custom_dk }}">
     <div class="t4s-col-item t4s-bg-video-item" hdt-reveal="slide-in">
-      <div class="t4s-hero-inner t4s-pr t4s-oh t4s_cover" data-video-background data-options='{ "type": "{%- if se_stts.source == "1" -%}{{ se_stts.video_url.type }}{%- else -%}html5{%- endif -%}","vid": "{{ se_stts.video_url.id }}","requestHost": "{{ request.host }}","srcDefault": {{ se_stts.file_link | default: 'https://cdn.shopify.com/s/files/1/0610/5209/2628/files/Share_your_brand_story_by_adding_a_video_to_your_store.mp4?v=1641630446' | json }},"mute": "true", "id":"#tmp-video-{{ sid }}" }'>
+      {%- comment -%} Desktop video (hidden on mobile when mobile video provided) {%- endcomment -%}
+      <div class="t4s-hero-inner t4s-pr t4s-oh t4s_cover {% if se_stts.video_mobile != blank %}t4s-d-none t4s-d-md-block{% endif %}" data-video-background data-options='{ "type": "{%- if se_stts.source == "1" -%}{{ se_stts.video_url.type }}{%- else -%}html5{%- endif -%}","vid": "{{ se_stts.video_url.id }}","requestHost": "{{ request.host }}","srcDefault": {{ se_stts.file_link | default: 'https://cdn.shopify.com/s/files/1/0610/5209/2628/files/Share_your_brand_story_by_adding_a_video_to_your_store.mp4?v=1641630446' | json }},"mute": "true", "id":"#tmp-video-{{ sid }}" }'>
         <div class="t4s_ratio t4s_position_0" {% if image != blank %} style="background: url({{ image | image_url: width: 1 }})" {%- endif -%}>
           {%- if image != blank -%}
             <img {% if image.presentation.focal_point != '50.0% 50.0%' %}style="object-position: {{ image.presentation.focal_point }}"{% endif %} class="t4s-img-video t4s-pe-none lazyloadt4s" data-src="{{ image | image_url: width: 1 }}" data-widths="[100,200,400,600,700,800,900,1000,1200,1400,1600]" data-optimumx="2" data-sizes="auto" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="{{ image.width }}" height="{{ image.height }}" alt="{{ image.alt | escape }}">
@@ -138,6 +139,92 @@
         </div>
         <a href="{{ button_link }}" target="{{ target_link }}" class="t4s-full-width-link{% if button_link == blank %} t4s-pe-none{% endif %}" style="--bg-overlay:{{ bg_overlay }};"></a>
       </div>
+
+      {%- comment -%} Mobile video (shown only when a mobile video is configured) {%- endcomment -%}
+      {%- if se_stts.video_mobile != blank -%}
+      <div class="t4s-hero-inner t4s-pr t4s-oh t4s_cover t4s-d-md-none" data-video-background data-options='{ "type": "html5","vid": "","requestHost": "{{ request.host }}","srcDefault": {{ se_stts.file_link_mb | default: '' | json }},"mute": "true", "id":"#tmp-video-{{ sid }}-mb" }'>
+        <div class="t4s_ratio t4s_position_0" {% if image != blank %} style="background: url({{ image | image_url: width: 1 }})" {%- endif -%}>
+          {%- if image != blank -%}
+            <img {% if image.presentation.focal_point != '50.0% 50.0%' %}style="object-position: {{ image.presentation.focal_point }}"{% endif %} class="t4s-img-video t4s-pe-none lazyloadt4s" data-src="{{ image | image_url: width: 1 }}" data-widths="[100,200,400,600,700,800,900,1000,1200,1400,1600]" data-optimumx="2" data-sizes="auto" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="{{ image.width }}" height="{{ image.height }}" alt="{{ image.alt | escape }}">
+          {%- else -%}
+            <div class="t4s-video-bg-placeholder t4s-img-video"></div>
+          {%- endif -%}
+          <div data-bgvideo-insert></div>
+
+          <template id="tmp-video-{{ sid }}-mb" class="t4s-d-none">{{ se_stts.video_mobile | video_tag: image_size: '1x1', autoplay: true, loop: true, muted: true, controls: false, preload: 'auto', class: 't4s_bg_vid_html5' }}</template>
+
+        </div>
+        <div class="t4s-content-wrap t4s-pe-none t4s-full-width-link t4s-z-100">
+          <div class="t4s-content-position t4s-{{ se_stts.content_width }} t4s-pa t4s-text-md-{{ se_stts.text_align }} t4s-text-{{ se_stts.text_align_mb }} t4s-bg-content-true t4s-br-content-{{ se_stts.border_bl }}" style="--time-animation:{{ se_stts.time_animation }}s;{%- render 'position_content', ch_pos: se_stts.ch_pos, cv_pos: se_stts.cv_pos, ch_pos_mb: se_stts.ch_pos_mb, cv_pos_mb: se_stts.cv_pos_mb, append_bg_content_style: append_bg_content_style, append_bg_border_style: append_bg_border_style -%}">
+            {%- for block in se_blocks -%}
+              {%- assign bk_stts = block.settings -%}
+              {%- case block.type -%}
+                {%- when 'custom_text' -%}
+                  {%- assign general_block = true -%}
+                  {%- if bk_stts.animation != 'none' -%}
+                    {%- assign use_animation = true -%}
+                  {%- endif -%}
+                  <{{ bk_stts.tag }} data-lh="{{ bk_stts.text_lh_mb }}" data-lh-md="{{ bk_stts.text_lh }}" data-lh-lg="{{ bk_stts.text_lh }}" class="t4s-bl-item t4s-animation-{{ bk_stts.animation }} t4s-text-bl t4s-fnt-fm-{{ bk_stts.fontf }} t4s-font-italic-{{ bk_stts.font_italic }} t4s-hidden-mobile-{{ bk_stts.hidden_mobile }} t4s-br-mb-{{ bk_stts.remove_br_tag }} t4s-text-shadow-{{ bk_stts.text_shadow }}" id="b_{{ block.id }}" {%- render 'bk_cus_style', type: 'custom_text', bk_stts: bk_stts, ani_delay: ani_delay -%}>{{ bk_stts.text }}</{{ bk_stts.tag }}>
+                {%- when 'space_html' -%}
+                  {%- assign general_block = true -%}
+                  {%- if bk_stts.animation != 'none' -%}
+                    {%- assign use_animation = true -%}
+                  {%- endif -%}
+                  <div class="t4s-bl-item t4s-space-html t4s-animation{{ bk_stts.animation }} t4s-hidden-mobile-{{ bk_stts.hidden_mobile }}" {%- render 'bk_cus_style', type: 'space_html' , bk_stts: bk_stts, ani_delay: ani_delay -%}></div>
+                {%- when 'html' -%}
+                  {%- assign general_block = true -%}
+                  {%- if bk_stts.animation != 'none' -%}
+                    {%- assign use_animation = true -%}
+                  {%- endif -%}
+                  <div class="t4s-bl-item t4s-animation-{{ bk_stts.animation }} t4s-raw-html t4s-rte--list t4s-hidden-mobile-{{ bk_stts.hidden_mobile }}" {%- render 'bk_cus_style', type: 'html', bk_stts: bk_stts, ani_delay: ani_delay -%}>{{ bk_stts.html_content }}</div>
+                {%- when 'image' -%}
+                  {%- assign image = bk_stts.image_child -%}
+                  {%- if image -%}
+                    {%- assign general_block = true -%}
+                    {%- if bk_stts.animation != 'none' -%}
+                      {%- assign use_animation = true -%}
+                    {%- endif -%}
+                    <div class="t4s-bl-item t4s-img-child t4s-animation-{{ bk_stts.animation }} t4s-hidden-mobile-{{ bk_stts.hidden_mobile }}" id="b_{{ block.id }}" {%- render 'bk_cus_style', type: 'image', bk_stts: bk_stts, ani_delay: ani_delay -%}>
+                      <img data-maxw="{{ bk_stts.img_width_mb }}" data-maxw-md="{{ bk_stts.img_width }}" data-maxw-lg="{{ bk_stts.img_width }}" class="lazyloadt4s t4s-lz--fadeIn" data-src="{{ image | image_url: width: 1 }}" data-widths="[100,200,400,600,700,800,900,1000,1200,1400,1600]" data-optimumx="2" data-sizes="auto" src="{% render 'img_svg', w: image.width, h: image.height %}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ image.alt | escape }}">
+                      <span class="lazyloadt4s-loader"></span>
+                    </div>
+                  {%- endif -%}
+                {%- when "countdown" -%}
+                  {%- if bk_stts.date != blank -%}
+                    {%- if bk_stts.animation != 'none' -%}
+                      {%- assign use_animation = true -%}
+                    {%- endif -%}
+                    {%- assign countdown = true -%}
+                    <div class="t4s-bl-item t4s-countdown sepr_coun_dt_wrap t4s-countdown-des-{{ bk_stts.cdt_des }} t4s-countdown-size-{{ bk_stts.cdt_size }} t4s-animation-{{ bk_stts.animation }} t4s-hidden-mobile-{{ bk_stts.hidden_mobile }}" id="b_{{ block.id }}" {%- render 'bk_cus_style', type: 'countdown', bk_stts: bk_stts, ani_delay: ani_delay -%}>
+                      <div class="time" data-countdown-t4s data-date='{{ bk_stts.date }}' data-keyid='#countdown-{{ sid }}'></div>
+                    </div>
+                  {% endif %}
+                {%- when 'custom_button' -%}
+                  {%- assign button_link = bk_stts.button_link -%}
+                  {%- if button_link != blank and bk_stts.button_text != blank -%}
+                    {%- assign use_button = true -%}
+                    {%- if bk_stts.animation != 'none' -%}
+                      {%- assign use_animation = true -%}
+                    {%- endif -%}
+                    {%- assign button_style = bk_stts.button_style -%}
+                    {%- assign target_link = bk_stts.target_link -%}
+                    <a href="{{ bk_stts.button_link }}" target="{{ target_link }}" class="t4s-bl-item t4s-animation-{{ bk_stts.animation }} t4s-btn t4s-btn-custom t4s-pe-auto t4s-fnt-fm-{{ bk_stts.fontf }} t4s-animation-{{ bk_stts.animation }} t4s-hidden-mobile-{{ bk_stts.hidden_mobile }} t4s-btn-style-{{ button_style }} {% if button_style == 'default' or button_style == 'outline' %}t4s-btn-effect-{{ bk_stts.button_effect }}{% endif %}" {%- render 'bk_cus_style', type: 'custom_button', bk_stts: bk_stts, ani_delay: ani_delay -%}>{{ bk_stts.button_text }}
+                      {%- if bk_stts.button_icon_w > 0 -%}
+                        <svg class="t4s-btn-icon" viewBox="0 0 14 10">
+                          <use xlink:href="#t4s-icon-btn"></use>
+                        </svg>
+                      {%- endif -%}
+                    </a>
+                  {%- endif -%}
+              {%- endcase -%}
+              {%- if bk_stts.animation != 'none' %}
+                {% assign ani_delay = ani_delay | plus: time_ani_delay %}{% endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+        <a href="{{ button_link }}" target="{{ target_link }}" class="t4s-full-width-link{% if button_link == blank %} t4s-pe-none{% endif %}" style="--bg-overlay:{{ bg_overlay }};"></a>
+      </div>
+      {%- endif -%}
     </div>
   </div>
   {{- html_layout[0] -}}
@@ -279,6 +366,16 @@
         "id": "video",
         "label": "A Shopify-hosted video",
         "info": "File video link from uploaded files. File size is smaller 4 mb recommended"
+      }, {
+        "type": "video",
+        "id": "video_mobile",
+        "label": "A Shopify-hosted video (Mobile)",
+        "info": "Optional mobile-specific video. If blank, desktop video will be used"
+      }, {
+        "type": "text",
+        "id": "file_link_mb",
+        "label": "Upload file (Mobile, deprecated)",
+        "info": "Optional mobile file video link. Used only if provided"
       }, {
         "type": "paragraph",
         "content": "————————————————"
@@ -459,7 +556,6 @@
         "type": "range",
         "id": "br_opacity",
         "label": "Border opacity",
-        "default": 0,
         "min": 0,
         "default": 50,
         "max": 100,
