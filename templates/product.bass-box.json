@@ -64,7 +64,7 @@
         "custom_liquid_N8y8bM": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"accordion\"><input type=\"checkbox\" id=\"accordion-toggle\"><label class=\"accordion-label\" for=\"accordion-toggle\">Product Description</label><div class=\"accordion-content\"><h6>NG EarSafe Open Ear Bluetooth Headphones: Safer, Smarter Listening</h6><p><span class=\"highlight\">Product Overview</span><br>Experience ultimate safety and comfort with NG EarSafe Open Ear Bluetooth Headphones. Featuring advanced air conduction technology, these headphones let you enjoy your favorite music while staying aware of your surroundings, making them perfect for activities like cycling, jogging, or yoga.</p><p><span class=\"highlight\">Key Features</span></p><ul><li><strong>Open-Ear Design:</strong> Stay connected to ambient sounds for enhanced safety.</li><li><strong>Ultra-Lightweight:</strong> Weighs just 24 grams for all-day comfort.</li><li><strong>Extended Battery Life:</strong> Offers up to 8+ hours of uninterrupted use.</li><li><strong>IPX4 Waterproofing:</strong> Resistant to sweat and light rain, ideal for outdoor adventures.</li><li><strong>ENT Specialist Certified:</strong> Reduces ear canal damage and minimizes infection risks associated with in-ear models.</li></ul><p><span class=\"highlight\">Style and Versatility</span><br>Available in three sleek colors, NG EarSafe headphones combine functionality and fashion. Whether commuting, working out, or relaxing, these headphones are designed to suit every lifestyle.</p><p><span class=\"highlight\">Peace of Mind</span></p><ul><li><strong>Free Shipping</strong></li><li><strong>7-Day Easy Return Policy</strong></li><li><strong>1-Year At-Home Replacement Warranty</strong></li></ul><p><span><strong>Order Now</strong></span><br>Upgrade your listening experience with NG EarSafe Open Ear Bluetooth Headphones today.</p></div></div>\n\n\n  <style>\n.accordion{width:450px;border:1px solid #ddd;border-radius:5px;overflow:hidden;margin-bottom:15px;}.accordion input{display:none}.accordion-label{display:flex;justify-content:space-between;align-items:center;padding:5px 20px;color:#252525;cursor:pointer;font-size:15px;font-weight:600;transition:background-color .3s ease}.accordion-label::after{content:'▼';font-size:16px;transition:transform 0.3s ease}.accordion input:checked+.accordion-label::after{transform:rotate(180deg)}.accordion-content{max-height:0;overflow:auto;padding:0 20px;background-color:#fff;color:#333;font-size:14px;line-height:1.6;transition:max-height 0.4s ease,padding 0.3s ease}.accordion input:checked~.accordion-content{max-height:500px;padding:15px 20px}.accordion-content h6{margin-top:0;color:#28486e}.accordion-content ul{margin:10px 0;padding-left:20px}.accordion-content ul li{list-style-type:disc;margin-bottom:8px}.accordion-content p{margin:10px 0}.accordion-content .highlight{font-weight:bold}\n@media only screen and (max-width: 768px) {.accordion{width:100%}}\n  </style>"
+            "custom_liquid": "<div class=\"accordion\">\n  <input type=\"checkbox\" id=\"accordion-toggle\" /><label\n    class=\"accordion-label\"\n    for=\"accordion-toggle\"\n    >Product Description</label\n  >\n  <div class=\"accordion-content\">\n    <h6>NG BassBox Bluetooth Party Speaker With Mic | 120 Watts</h6>\n    <p>\n      <span class=\"highlight\">Product Overview</span><br />SOUND THAT COMMANDS ATTENTION\n      Turn every space into a stage. The NG BassBox Bluetooth Party Speaker With Mic 120 delivers 120W of immersive audio with an 8” subwoofer for pure, deep bass that fills the room. Designed for those who live loud yet demand clarity, it blends power, precision, and performance effortlessly.\n      Experience seamless connectivity with Bluetooth, AUX, USB, TF Card, and Mic inputs, plus TWS pairing to double the sound. Its 14 RGB light modes elevate every beat into a spectacle. Whether it's a terrace party or a weekend getaway, dual wireless karaoke mics ensure your voice is heard as powerfully as your music.\n      Crafted with premium finish and Type-C fast charging, the BassBox 120 isn’t just a speaker—it’s your lifestyle amplifier.\n    </p>\n    <p><span class=\"highlight\">Key Features</span></p>\n    <ul>\n      <li>\n        <strong>120W Powerful Party Sound:</strong> Power-packed loudness for indoor & outdoor parties.\n      </li>\n      <li>\n        <strong>Dual Wireless Karaoke Mics Included:</strong> Sing, shout & own the stage.\n      </li>\n      <li>\n        <strong> 8” Subwoofer for Deep Bass:</strong> Feel every beat drop\n      </li>\n      <li>\n        <strong>14 RGB Party Light Modes :</strong> Match your music mood.\n      </li>\n      <li>\n        <strong> Bluetooth 5.0 + Multi-Input Connectivity:</strong>Bluetooth, AUX, USB, TF, Mic.\n      </li>\n      <li>\n        <strong> Portable Design with Type-C Fast Charging & FM Radio:</strong>Always ready to play.\n      </li>\n    </ul>\n  </div>\n</div>\n\n<style>\n  .accordion {\n    width: 450px;\n    border: 1px solid #ddd;\n    border-radius: 5px;\n    overflow: hidden;\n    margin-bottom: 15px;\n  }\n  .accordion input {\n    display: none;\n  }\n  .accordion-label {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding: 5px 20px;\n    color: #252525;\n    cursor: pointer;\n    font-size: 15px;\n    font-weight: 600;\n    transition: background-color 0.3s ease;\n  }\n  .accordion-label::after {\n    content: \"▼\";\n    font-size: 16px;\n    transition: transform 0.3s ease;\n  }\n  .accordion input:checked + .accordion-label::after {\n    transform: rotate(180deg);\n  }\n  .accordion-content {\n    max-height: 0;\n    overflow: auto;\n    padding: 0 20px;\n    background-color: #fff;\n    color: #333;\n    font-size: 14px;\n    line-height: 1.6;\n    transition: max-height 0.4s ease, padding 0.3s ease;\n  }\n  .accordion input:checked ~ .accordion-content {\n    max-height: 500px;\n    padding: 15px 20px;\n  }\n  .accordion-content h6 {\n    margin-top: 0;\n    color: #28486e;\n  }\n  .accordion-content ul {\n    margin: 10px 0;\n    padding-left: 20px;\n  }\n  .accordion-content ul li {\n    list-style-type: disc;\n    margin-bottom: 8px;\n  }\n  .accordion-content p {\n    margin: 10px 0;\n  }\n  .accordion-content .highlight {\n    font-weight: bold;\n  }\n  @media only screen and (max-width: 768px) {\n    .accordion {\n      width: 100%;\n    }\n  }\n</style>"
           }
         },
         "c917fa52-0981-4b47-a730-0915ac18a613": {
@@ -382,122 +382,35 @@
         "time": 6
       }
     },
-    "slideshow_H9HCWW": {
-      "type": "slideshow",
-      "blocks": {
-        "image_parent_QmB4mQ": {
-          "type": "image_parent",
-          "settings": {
-            "image": "shopify://shop_images/Dr_Banner_desktop_1500_x_500_2.webp",
-            "image_mb": "shopify://shop_images/Home_page_Dr_rachana_Banner_copy_c02e2c51-b3b9-48ee-89e7-0edda6c5e8d9.webp",
-            "image_position": "8",
-            "cl_img": "",
-            "link_img1": "",
-            "open_link": "_blank",
-            "animate_slide": "none",
-            "text_align": "center",
-            "text_align_mb": "center",
-            "content_width": "auto",
-            "cv_pos": 80,
-            "ch_pos": 8,
-            "cv_pos_mb": 90,
-            "ch_pos_mb": 8,
-            "bg_overlay": "#000000",
-            "bg_opacity": 0,
-            "bg_content_cl": "#ffffff",
-            "bg_content_op": 0,
-            "content_radius": 0,
-            "box_square": false,
-            "content_pd_tb": 15,
-            "content_pd_lr": 15,
-            "content_pd_tb_tb": 15,
-            "content_pd_lr_tb": 15,
-            "content_pd_tb_mb": 10,
-            "content_pd_lr_mb": 10,
-            "border_bl": false,
-            "br_color": "#222222",
-            "br_bg": "#ffffff",
-            "br_opacity": 50,
-            "br_style": "solid",
-            "br_pd": 20,
-            "br_pd_mb": 10,
-            "time_animation": 1,
-            "animation_delay": 40
-          }
-        },
-        "custom_button_VDy3hT": {
-          "type": "custom_button",
-          "settings": {
-            "button_text": "View Certificate",
-            "button_link": "shopify://pages/ent-doctor-certificate",
-            "target_link": "_blank",
-            "fontf": "inherit",
-            "button_icon_w": 18,
-            "button_style": "default",
-            "button_effect": "default",
-            "pri_cl": "#56cfe1",
-            "second_cl": "#333333",
-            "pri_cl_hover": "#333333",
-            "second_cl_hover": "#ffffff",
-            "fsbutton": 16,
-            "fwbutton": 500,
-            "button_ls": 1,
-            "button_mh": 42,
-            "button_bdr": 5,
-            "button_pd_lr": 20,
-            "button_mgb": 0,
-            "hidden_mobile": false,
-            "button_icon_w_mb": 15,
-            "fsbutton_mb": 12,
-            "button_mh_mb": 36,
-            "button_pd_lr_mb": 15,
-            "button_ls_mb": 0,
-            "button_mgb_mb": 0,
-            "animation": "none"
-          }
-        }
-      },
-      "block_order": [
-        "image_parent_QmB4mQ",
-        "custom_button_VDy3hT"
-      ],
+    "hero_bg_banner_eGPJen": {
+      "type": "hero-bg-banner",
+      "name": "Hero banner - BG image",
       "settings": {
-        "se_height": "t4s_ratioadapt",
-        "custom_dk": true,
-        "height_dk": 600,
-        "custom_tb": true,
-        "height_tb": 400,
-        "custom_mb": true,
-        "height_mb": 250,
-        "eff": "slide",
-        "loop": true,
-        "au_time": 0,
-        "au_hover": true,
-        "nav_btn": false,
-        "btn_vi": "hover",
-        "btn_owl": "default",
-        "btn_shape": "none",
-        "btn_cl": "dark",
-        "btn_size": "small",
-        "btn_hidden_mobile": false,
-        "nav_dot": false,
-        "dot_owl": "default",
-        "dots_position": "default",
-        "dots_cl": "dark",
-        "dots_round": false,
-        "dots_space": 10,
-        "dots_hidden_mobile": false,
-        "layout": "t4s-container-fluid",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": "30px,,0px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": "0px,,0px,",
-        "pd_mb": "",
-        "use_cus_css": false,
-        "code_cus_css": ""
+        "image_desktop": "shopify://shop_images/120_W_Bassspeaker_desktop.webp",
+        "image_mobile": "shopify://shop_images/120_W_Bassspeaker_mobile.webp",
+        "height_desktop": 660,
+        "height_mobile": 740,
+        "vertical_align_mobile": "middle",
+        "mobile_bottom_offset": 24,
+        "overlay_color": "#000000",
+        "overlay_opacity": 45,
+        "bg_position_desktop": "center center",
+        "bg_position_mobile": "center center",
+        "horizontal_align": "left",
+        "vertical_align": "middle",
+        "contain_content": true,
+        "container_max_width": 1280,
+        "content_max_width": 510,
+        "heading": "<p>120W Enhanced bass speaker</p>",
+        "subheading": "<p><br/>Stay effortlessly connected all day with NG EarSafe Comm's 8-hour battery life. From your morning conference call to evening catch-ups, the magnetic charging ensures your headset is always ready for the next important conversation.<br/></p>",
+        "cta_label": "Know the difference",
+        "cta_link": "",
+        "cta_style": "link",
+        "text_color": "#ffffff",
+        "button_color": "#44e1e6",
+        "button_text_color": "#0b2a2d",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "sidebar": {
@@ -587,110 +500,6 @@
         "sidebar_pd": 10
       }
     },
-    "fcc64674-be8f-4eb2-8f04-0bacf8de5771": {
-      "type": "feature_columns2",
-      "blocks": {
-        "template--20627092865303__fcc64674-be8f-4eb2-8f04-0bacf8de5771-text_block-1": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/Frame_139.png",
-            "title": "",
-            "text": "",
-            "button_label": "",
-            "button_link": "",
-            "open_link": "_blank",
-            "btn_icon": false,
-            "button_style": "default",
-            "btn_size": "large",
-            "btn_cl": "dark",
-            "button_effect": "fade",
-            "col_dk": "4",
-            "col_tb": "4",
-            "col_mb": "12"
-          }
-        },
-        "4db5dd25-f5f1-422d-8411-118c558ebe7c": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/Frame_141.png",
-            "title": "",
-            "text": "",
-            "button_label": "",
-            "button_link": "",
-            "open_link": "_blank",
-            "btn_icon": false,
-            "button_style": "default",
-            "btn_size": "large",
-            "btn_cl": "dark",
-            "button_effect": "fade",
-            "col_dk": "4",
-            "col_tb": "4",
-            "col_mb": "12"
-          }
-        },
-        "35b96fb1-2cc4-482b-ad21-40c03d836181": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/Frame_142.png",
-            "title": "",
-            "text": "",
-            "button_label": "",
-            "button_link": "",
-            "open_link": "_blank",
-            "btn_icon": false,
-            "button_style": "default",
-            "btn_size": "large",
-            "btn_cl": "dark",
-            "button_effect": "fade",
-            "col_dk": "4",
-            "col_tb": "4",
-            "col_mb": "12"
-          }
-        }
-      },
-      "block_order": [
-        "template--20627092865303__fcc64674-be8f-4eb2-8f04-0bacf8de5771-text_block-1",
-        "4db5dd25-f5f1-422d-8411-118c558ebe7c",
-        "35b96fb1-2cc4-482b-ad21-40c03d836181"
-      ],
-      "settings": {
-        "design_heading": "1",
-        "heading_align": "t4s-text-center",
-        "top_heading": "Did You Know?",
-        "icon_heading": "las la-gem",
-        "top_subheading": "",
-        "tophead_mb": 30,
-        "text_align": "center",
-        "pos_text": "default",
-        "fs_title": 22,
-        "fs_text": 14,
-        "fs_title_mb": 22,
-        "fs_text_mb": 12,
-        "image_ratio": "ratioadapt",
-        "image_size": "cover",
-        "image_position": "8",
-        "img_effect": "none",
-        "b_effect": "none",
-        "space_h_item": "30",
-        "space_v_item": "30",
-        "space_h_item_mb": "10",
-        "space_v_item_mb": "10",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "#25313c",
-        "cl_bg_gradient": "",
-        "mg": ",,50px,",
-        "pd": "50px,,50px",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": "",
-        "use_cus_css": true,
-        "code_cus_css": ".t4s_nt_se_template--22100092911895__fcc64674-be8f-4eb2-8f04-0bacf8de5771 .t4s-section-title span { color:white !important;}"
-      }
-    },
     "21cc52cf-8bcf-42ba-8f07-80d94e7a589e": {
       "type": "custom-liquid",
       "custom_css": [
@@ -730,6 +539,7 @@
         "template--20627092865303__df43a99b-eda3-4c32-837f-b6640989c695-bl_heading-1",
         "template--20627092865303__df43a99b-eda3-4c32-837f-b6640989c695-bl_subheading-1"
       ],
+      "disabled": true,
       "settings": {
         "design_heading": "1",
         "heading_align": "t4s-text-center",
@@ -746,53 +556,9 @@
         "code_cus_css": ""
       }
     },
-    "601092f3-f61a-4147-b4f4-33b069d7f348": {
-      "type": "video_featured",
-      "settings": {
-        "se_height": "t4s_ratio_cuspx",
-        "custom_dk": true,
-        "height_dk": 600,
-        "custom_tb": true,
-        "height_tb": 400,
-        "custom_mb": true,
-        "height_mb": 250,
-        "source": "2",
-        "video_url": "",
-        "video": "shopify://files/videos/NG Earsafe_Ad1_FINAL Cut v5 end slate change.mp4",
-        "au_video": true,
-        "loop_video": true,
-        "bg_overlay": "#000000",
-        "bg_opacity": 0,
-        "layout": "t4s-se-container",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,0px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,0px,",
-        "pd_mb": "",
-        "use_cus_css": true,
-        "code_cus_css": ".t4s-video video {\n    z-index: 101;\n    object-fit: unset  !important;\n    border-radius: 10px !important;\nclip-path: inset(1px 1px);\n}\n\n .t4s-video video::-webkit-media-controls {\n  display: none;\n}"
-      }
-    },
-    "a0e3c96b-09ad-4fe8-90fe-4e91deedd752": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{% render 'earsafe-features' %}",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,50px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": ""
-      }
-    },
     "617310e4-15e9-4543-82e0-1f050ae4ab1e": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "{% render 'benefits-home' %}",
         "layout": "t4s-container-fluid",
@@ -827,6 +593,7 @@
         "template--20627092865303__4bce7335-2a2b-4e8a-b006-05c8651811f8-bl_heading-1",
         "template--20627092865303__4bce7335-2a2b-4e8a-b006-05c8651811f8-bl_subheading-1"
       ],
+      "disabled": true,
       "custom_css": [
         ".t4s_nt_se_template--22100092911895__4bce7335-2a2b-4e8a-b006-05c8651811f8 .t4s-container {margin-top: 0%; display: block !important; margin-bottom: 70px;}",
         "@media only screen and (max-width: 768px) {.t4s_nt_se_template--22100092911895__4bce7335-2a2b-4e8a-b006-05c8651811f8 .t4s-top-heading-heading h3 {font-size: 20px; } .t4s_nt_se_template--22100092911895__4bce7335-2a2b-4e8a-b006-05c8651811f8 .t4s-container {margin-top: 0% !important; }}"
@@ -936,6 +703,7 @@
         "template--20627092865303__2f8947bb-a208-4ff1-92dd-ca00313dd658-custom_text-2",
         "template--20627092865303__2f8947bb-a208-4ff1-92dd-ca00313dd658-custom_button-1"
       ],
+      "disabled": true,
       "custom_css": [
         ".t4s_nt_se_template--22100092911895__2f8947bb-a208-4ff1-92dd-ca00313dd658 video {border-radius: 15px; clip-path: inset(1px -1px);}",
         ".t4s_nt_se_template--22100092911895__2f8947bb-a208-4ff1-92dd-ca00313dd658 .t4s-container {}",
@@ -992,6 +760,7 @@
     },
     "27a62662-0e46-4637-a877-1f6c3f2decbb": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "{% render 'color-slick' %}",
         "layout": "t4s-container-wrap",
@@ -1007,6 +776,7 @@
     },
     "87df8b17-dc27-449b-ba9a-eb084958bb91": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "{% render 'air-conduction' %}\n{% render 'water-resistence' %}\n{% render 'wireless-phonecall' %}",
         "layout": "t4s-container-fluid",
@@ -1022,6 +792,7 @@
     },
     "04fbdf0e-5386-4930-b05f-10d6e52f33bf": {
       "type": "custom-liquid",
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "custom_liquid": "{% render 'application-area' %}",
@@ -1038,6 +809,7 @@
     },
     "ec8915fe-2aff-44fc-b59d-72b690f5e071": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "<section id=\"shopify-section-template--20627092865303__14f54523-b5e7-4690-b573-83b33831d4e9\" class=\"shopify-section t4s-section t4s-section-all\"><!-- sections/top_heading.liquid -->\n<link href=\"//ngearsafe.com/cdn/shop/t/2/assets/section.css?v=19467530681101428381692950764\" rel=\"stylesheet\" type=\"text/css\" media=\"all\">\n<link href=\"//ngearsafe.com/cdn/shop/t/2/assets/top-head.css?v=37867058972263844251692950766\" rel=\"stylesheet\" type=\"text/css\" media=\"all\">\n<link href=\"//ngearsafe.com/cdn/shop/t/2/assets/topheading-section.css?v=61892504884498214371692950766\" rel=\"stylesheet\" type=\"text/css\" media=\"all\">\n<div class=\"t4s-section-inner t4s_nt_se_template--20627092865303__14f54523-b5e7-4690-b573-83b33831d4e9 t4s_nt_se_template--20627092865303__14f54523-b5e7-4690-b573-83b33831d4e9 t4s-container-wrap\" style=\"--bg-color: ;--bg-gradient: ;--border-cl: ;--mg-top: ;--mg-right: auto;--mg-bottom: 20px;--mg-left:auto;--pd-top: ;--pd-right: ;--pd-bottom: ;--pd-left: ;--mgtb-top: ;--mgtb-right: auto;--mgtb-bottom: 20px;--mgtb-left: auto;--pdtb-top: ;--pdtb-right: ;--pdtb-bottom: ;--pdtb-left: ;--mgmb-top: ;--mgmb-right: auto;--mgmb-bottom: 30px;--mgmb-left: auto;--pdmb-top: ;--pdmb-right: ;--pdmb-bottom: ;--pdmb-left: ;\"><div class=\"t4s-container\"><div timeline=\"\" hdt-reveal=\"slide-in\" class=\"t4s-top-heading t4s-text-center\" observed=\"\" style=\"--animation-order: 0;\"><div timeline=\"\" hdt-reveal=\"slide-in\" class=\"t4s-top-heading-heading t4s_des_title_9 t4s-text-center\" observed=\"\" style=\"--animation-order: 0;\">\n                                <h3 class=\"t4s-section-title t4s-title\"><span>What's in the box</span></h3></div></div></div></div></section>\n{% render 'whats-boxearsafe' %}",
         "layout": "t4s-container-wrap",
@@ -1072,6 +844,7 @@
         "template--20627092865303__14f54523-b5e7-4690-b573-83b33831d4e9-bl_heading-1",
         "template--20627092865303__14f54523-b5e7-4690-b573-83b33831d4e9-bl_subheading-1"
       ],
+      "disabled": true,
       "settings": {
         "design_heading": "9",
         "heading_align": "t4s-text-center",
@@ -1090,6 +863,7 @@
     },
     "77561158-d4b4-412b-a5a2-42695c15bc02": {
       "type": "custom-liquid",
+      "disabled": true,
       "custom_css": [
         ".t4s_se_template--20627092865303__77561158-d4b4-412b-a5a2-42695c15bc02 .t4s-container {padding: 0;}"
       ],
@@ -1121,6 +895,7 @@
       "block_order": [
         "accor_item_yhMLqn"
       ],
+      "disabled": true,
       "settings": {
         "design_heading": "1",
         "heading_align": "t4s-text-center",
@@ -1158,9 +933,9 @@
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
             "review_data": "sample_data",
+            "max_width": 1200,
             "show_shop_reviews": false,
-            "empty_state": "empty_widget",
-            "max_width": 1200
+            "empty_state": "empty_widget"
           }
         }
       },
@@ -1297,6 +1072,7 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
         "show": true,
         "design_heading": "1",
@@ -1436,6 +1212,7 @@
       "block_order": [
         "bl_text_dNqGmf"
       ],
+      "disabled": true,
       "custom_css": [
         ".t4s-image-text-des p a {color: #25313c; border-bottom: 1px solid #25313c45 !important; font-size: 14px;}"
       ],
@@ -1465,6 +1242,7 @@
     },
     "custom_html_M4GiJq": {
       "type": "custom-html",
+      "disabled": true,
       "settings": {
         "code": "<div class=\"t4s-text-center\" style=\"padding: 15px 0;color: #fff;\">\n    <div class=\"footer-seo\">\n        <h2>NG EarSafe Open-Ear Bluetooth Headphones: Unleash Wireless Freedom with Unmatched Comfort</h2>\n        \n        <h3>Innovative Open-Ear Technology</h3>\n        <p>\n            Crafted for those who crave both situational awareness and exceptional audio fidelity, the NG EarSafe Open-Ear Bluetooth Headphones redefine how you experience sound. Using innovative <strong>open-ear technology</strong>, these headphones rest gently above your ears, allowing ambient sounds like a passing car or a friendly greeting to filter through naturally while enveloping you in crisp, immersive audio. Whether you're navigating a bustling city street or enjoying a quiet evening at home, you’ll stay connected to your surroundings without sacrificing sound quality.\n        </p>\n        \n        <h3>Lightweight Design and Long-Lasting Battery</h3>\n        <p>\n            With a <strong>featherlight and ergonomic design</strong>, weighing just 28 grams, NG EarSafe headphones contour seamlessly to your ears, offering a barely-there feel that’s perfect for extended wear. Picture yourself powering through a marathon work session, embarking on a scenic commute, or pushing your limits at the gym. These headphones deliver all-day comfort without the pressure of traditional earbuds. Plus, their robust <strong>IPX5 water-resistant rating</strong> ensures they can withstand sweat or a sudden drizzle, making them a reliable companion for any adventure. With an impressive <strong>8-hour battery life</strong>, extendable to 24 hours with the sleek charging case, you’ll enjoy uninterrupted music, podcasts, or calls from dawn to dusk without scrambling for a charger.\n        </p>\n        \n        <h3>Advanced Connectivity and Clear Communication</h3>\n        <p>\n            Fueled by cutting-edge <strong>Bluetooth 5.0 technology</strong>, the NG EarSafe headphones provide a rock-solid wireless connection up to 33 feet, banishing frustrating dropouts and audio lag even in crowded environments. The integrated <strong>high-sensitivity microphone</strong>, enhanced with noise-canceling features, captures your voice with crystal-clear precision, transforming chaotic commutes into effortless hands-free conversations. Available in stylish shades like Midnight Black and Arctic White, these headphones don’t just perform. They make a statement. Whether you’re syncing to your favorite playlist, catching up with a friend, or unwinding with an audiobook, the NG EarSafe Open-Ear Bluetooth Headphones fuse safety, sophistication, and stellar sound into one game-changing package. Elevate your listening journey today!\n        </p>\n    </div>\n</div>\n\n<style>\n    .footer-seo {color:#ddd;padding:30px;text-align:left;border-radius:8px}\n    .footer-seo h2 {color:#fff;font-size:16px;margin-bottom:15px;text-align:left}\n    .footer-seo h3 {color:#fff;font-size:14px;margin-bottom:10px;text-align:left}\n    .footer-seo p {font-size:14px;line-height:1.6}\n</style>",
         "layout": "t4s-container-fluid",
@@ -1484,13 +1262,10 @@
   "order": [
     "breadcrumb",
     "main",
-    "slideshow_H9HCWW",
+    "hero_bg_banner_eGPJen",
     "sidebar",
-    "fcc64674-be8f-4eb2-8f04-0bacf8de5771",
     "21cc52cf-8bcf-42ba-8f07-80d94e7a589e",
     "df43a99b-eda3-4c32-837f-b6640989c695",
-    "601092f3-f61a-4147-b4f4-33b069d7f348",
-    "a0e3c96b-09ad-4fe8-90fe-4e91deedd752",
     "617310e4-15e9-4543-82e0-1f050ae4ab1e",
     "4bce7335-2a2b-4e8a-b006-05c8651811f8",
     "2f8947bb-a208-4ff1-92dd-ca00313dd658",
