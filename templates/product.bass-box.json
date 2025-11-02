@@ -113,6 +113,7 @@
         },
         "custom_liquid_N3PtUB": {
           "type": "custom_liquid",
+          "disabled": true,
           "settings": {
             "custom_liquid": "{% render 'offercard-earsafe' %}"
           }
@@ -1076,6 +1077,21 @@
         "code_cus_css": ""
       }
     },
+    "1762018752749cd3b1": {
+      "type": "apps",
+      "blocks": {
+        "vizup_shoppable_video_carousel_videos_block_QAdPRg": {
+          "type": "shopify://apps/vizup-shoppable-video-carousel/blocks/videos-block/eaecaa7b-ab6b-40ae-8ddf-50daa867f3eb",
+          "settings": {
+            "videoc_widget_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "vizup_shoppable_video_carousel_videos_block_QAdPRg"
+      ],
+      "settings": {}
+    },
     "1737282429ed5d4301": {
       "type": "apps",
       "blocks": {
@@ -1348,21 +1364,6 @@
         "use_cus_css": false,
         "code_cus_css": ""
       }
-    },
-    "1762018752749cd3b1": {
-      "type": "apps",
-      "blocks": {
-        "vizup_shoppable_video_carousel_videos_block_QAdPRg": {
-          "type": "shopify://apps/vizup-shoppable-video-carousel/blocks/videos-block/eaecaa7b-ab6b-40ae-8ddf-50daa867f3eb",
-          "settings": {
-            "videoc_widget_id": ""
-          }
-        }
-      },
-      "block_order": [
-        "vizup_shoppable_video_carousel_videos_block_QAdPRg"
-      ],
-      "settings": {}
     }
   },
   "order": [
