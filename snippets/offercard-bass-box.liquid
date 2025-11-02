@@ -1,0 +1,175 @@
+{% if product.url == '/products/outdoor-party-speakers-ng-bass-box' %}
+<style>#hide-fromall{display:none !important}</style>
+{% endif %} 
+
+{% if product.handle == 'outdoor-party-speakers-ng-bass-box' %}
+<div class="buttons-container-m">
+  <div class="buy-button-wrapper-m">
+    <div class="buy-text-m">Buy now at</div>
+    <div class="buy-button-m">
+      <a class="buyNowLink" href="https://amzn.in/d/birUl0J" target="_blank" onclick="trackBuyNowClick('amazon')">
+        <img width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/amazon_2be66c61-7548-4fa9-9f92-e7dda5d58df3.png?v=1741600351" alt="Amazon logo" class="logo-m">
+      </a>
+      <span class="arrow-m">›</span>
+    </div>
+  </div>
+</div>
+<style>
+  .buttons-container-m{display:flex;flex-wrap:wrap;gap:0;margin:0;padding:0;margin-bottom:15px;}
+.buy-button-wrapper-m{position:relative;width:auto;margin:0;margin-right:10px}
+.buy-text-m{position:absolute;top:-6px;left:14px;background-color:#fff;padding:0 5px;font-size:10px;font-weight:600;color:#333;z-index:1}
+.buy-button-m{display:flex;align-items:center;justify-content:space-between;background-color:#fff;border:1px solid #ffa41c;border-radius:10px;padding:15px 20px;height:40px;width:150px;text-decoration:none;box-sizing:border-box;margin:0}
+.logo-m{width:80%}
+.arrow-m{color:#ffa41c;font-size:24px;
+/* font-weight:700 */
+}
+.buy-button-m a{border-bottom: 0px solid currentColor !important;}
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentUrl = window.location.href;
+        let amazonUrl = "";
+        let productName = "ng-bass-box";
+
+        // Extract the path from the URL to match against both domains
+        const urlPath = new URL(currentUrl).pathname;
+
+        if (urlPath === "/products/outdoor-party-speakers-ng-bass-box") {
+            amazonUrl = "https://amzn.in/d/birUl0J";
+            productName = "ng-bass-box";
+        }
+
+        // Set Amazon URL
+        if (amazonUrl) {
+            document.querySelectorAll(".buyNowLink").forEach(link => {
+                link.href = amazonUrl;
+                link.setAttribute("data-product", productName);
+                link.setAttribute("data-store", "amazon");
+            });
+        } else {
+            // Fallback to default Amazon URL
+            const defaultAmazonUrl = "https://amzn.in/d/birUl0J";
+            document.querySelectorAll(".buyNowLink").forEach(link => {
+                link.href = defaultAmazonUrl;
+                link.setAttribute("data-product", productName);
+                link.setAttribute("data-store", "amazon");
+            });
+        }
+    });
+
+    function trackBuyNowClick(store) {
+        const linkElement = event.target.closest("a");
+        const productName = linkElement.getAttribute("data-product");
+        
+        gtag('event', 'buy_now_click', {
+            'event_category': 'Button Click',
+            'event_label': productName,
+            'event_store': store,
+            'event_value': 1
+        });
+
+        console.log("Tracked Buy Now Click:", productName, "Store:", store);
+    }
+</script>
+
+{% endif %}
+
+  <style>
+.banner-container{display: none;justify-content:space-between;align-items:center;background:linear-gradient(to right,#a8e0ff,#7fd8f8);border-radius:12px;padding:15px 20px;max-width:350px;box-shadow:0 4px 8px rgba(0,0,0,.1);font-family:Arial,sans-serif;overflow:hidden}
+.banner-text{color: #333;font-size: 14px;line-height: 1.4;flex: 1;margin-right: 10px;font-weight: 700;}
+.flip-container{perspective:1000px;width:120px;height:40px}
+.flipper{width:100%;height:100%;position:relative;transform-style:preserve-3d;animation:flip 6s infinite}
+.back,.front{width:100%;height:100%;position:absolute;backface-visibility:hidden;display:flex;align-items:center;justify-content:center;border-radius:6px;font-size:22px;font-weight:700;color:#333;background:rgba(255,255,255,.2);overflow:hidden}
+.back{transform:rotateY(180deg)}
+.back::before,.front::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.8),transparent);transform:rotate(30deg);animation:shimmer-sweep 3s infinite}
+@keyframes shimmer-sweep{
+0%{transform:translateX(-150%) rotate(30deg)}
+100%{transform:translateX(150%) rotate(30deg)}
+}
+@keyframes flip{
+0%,45%{transform:rotateY(0)}
+50%,95%{transform:rotateY(180deg)}
+100%{transform:rotateY(0)}
+}
+  </style>
+ {% if product.handle == 'outdoor-party-speakers-ng-bass-box' %}
+   <div class="banner-container">
+    <div class="banner-text">
+      Flat ₹200 instant discount<br>
+      on prepaid orders
+    </div>
+    <div class="flip-container">
+      <div class="flipper">
+        <div class="front">₹200 OFF</div>
+        <div class="back">₹200 OFF</div>
+      </div>
+    </div>
+  </div> 
+{% endif %}
+
+
+  <div id="pincode-container">
+  <iframe id="pincode-frame" src="https://help.ngearsafe.com/pincode/" loading="lazy" style="margin-top:10px; border: none; overflow: hidden;height:130px;border-radius: 12px;" onload="adjustIframeHeight()"></iframe>
+</div> 
+
+<style>
+  #pincode-frame{width:61%;} 
+  @media only screen and (max-width:768px){
+    #pincode-frame{width:100%;}
+.banner-container {max-width: 100%;}
+  }
+
+</style>
+
+<script>
+  function adjustIframeHeight() {
+    const iframe = document.getElementById("pincode-frame");
+
+    iframe.contentWindow.postMessage("getHeight", "*");
+
+    window.addEventListener("message", function (event) {
+      if (event.data.height) {
+        iframe.style.height = event.data.height + "px";
+      }
+    });
+  }
+</script>
+
+  <script>
+        // Hide pincode container for UK domain
+document.addEventListener("DOMContentLoaded", function() {
+    // Check if current domain is UK
+    if (window.location.hostname === 'ngearsafe.co.uk') {
+        
+        // Multiple possible selectors for pincode elements
+        const selectors = [
+            '.pincode-container',
+            '#pincode-container', 
+            '.pincode-check',
+            '.delivery-pincode',
+            '[data-pincode]',
+            '[class*="pincode"]',
+          '.banner-container',
+            '[id*="pincode"]'
+        ];
+        
+        selectors.forEach(selector => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(element => {
+                element.style.display = 'none';
+            });
+        });
+        
+        // Also hide parent containers that might only contain pincode
+        const pincodeParents = document.querySelectorAll('.delivery-info, .shipping-info');
+        pincodeParents.forEach(parent => {
+            const hasPincodeChild = parent.querySelector('[class*="pincode"], [id*="pincode"]');
+            if (hasPincodeChild) {
+                parent.style.display = 'none';
+            }
+        });
+    }
+});
+    </script>
+
