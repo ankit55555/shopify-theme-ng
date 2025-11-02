@@ -113,7 +113,6 @@
         },
         "custom_liquid_N3PtUB": {
           "type": "custom_liquid",
-          "disabled": true,
           "settings": {
             "custom_liquid": "{% render 'offercard-earsafe' %}"
           }
