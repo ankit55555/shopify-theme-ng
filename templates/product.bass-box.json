@@ -114,7 +114,7 @@
         "custom_liquid_N3PtUB": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{% render 'offercard-earsafe' %}"
+            "custom_liquid": "{% render 'offercard-bass-box' %}"
           }
         },
         "countdown_QA6E8T": {
