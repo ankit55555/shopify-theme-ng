@@ -111,7 +111,15 @@
 
 @media (max-width: 990px) {
   /* Flatten rows into a single two-column grid on mobile */
-  .ng-feature-grid .ng-fg-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--ng-fg-gap)}
-  .ng-feature-grid .ng-fg-row{display:contents}
-  .ng-feature-grid .ng-fg-row--bottom{margin-top:0}
+  .ng-feature-grid .ng-fg-grid {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    gap: var(--ng-fg-gap);
+  }
+  .ng-feature-grid .ng-fg-row {
+    display: contents;
+  }
+  .ng-feature-grid .ng-fg-row--bottom {
+    margin-top: 0;
+  }
 }
