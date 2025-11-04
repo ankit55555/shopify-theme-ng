@@ -186,6 +186,7 @@
         "e9f249a0-0a0f-4baf-9664-73babbd7bbe7",
         "3_XjehxK"
       ],
+      "disabled": true,
       "settings": {
         "heading_fullwidth": true,
         "image": "shopify://shop_images/NGCORP_Desktop_1512x336_bg_7f56dc2f-dec4-4dee-a156-49444fa27034.png",
@@ -228,6 +229,7 @@
         "740319a4-8e19-4c70-b8a9-ada7cf235cbc",
         "30594d23-d644-4653-9545-9ff769d2e6ab"
       ],
+      "disabled": true,
       "settings": {
         "show_desc": false,
         "position_desc": "2",
@@ -334,12 +336,245 @@
         "sidebar_bdr": 0,
         "sidebar_pd": 15
       }
+    },
+    "collections_showcase_eARiF6": {
+      "type": "collections-showcase",
+      "blocks": {
+        "showcase_item_gG3dFq": {
+          "type": "showcase_item",
+          "settings": {
+            "item_type": "product",
+            "collection": "",
+            "product": "earplugs-for-sleeping-ng-ear-safe-1-0",
+            "title": "",
+            "link_url": "",
+            "label_text": "",
+            "show_arrow": false
+          }
+        },
+        "showcase_item_ztMKpg": {
+          "type": "showcase_item",
+          "settings": {
+            "item_type": "product",
+            "collection": "",
+            "product": "open-ear-earbuds-wireless-ng-ear-safe-buds",
+            "title": "",
+            "link_url": "",
+            "label_text": "",
+            "show_arrow": false
+          }
+        },
+        "showcase_item_EmKCfy": {
+          "type": "showcase_item",
+          "settings": {
+            "item_type": "product",
+            "collection": "",
+            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0",
+            "title": "",
+            "link_url": "",
+            "label_text": "",
+            "show_arrow": false
+          }
+        },
+        "showcase_item_36hyYm": {
+          "type": "showcase_item",
+          "settings": {
+            "item_type": "product",
+            "collection": "",
+            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0",
+            "title": "",
+            "link_url": "",
+            "label_text": "",
+            "show_arrow": false
+          }
+        },
+        "showcase_item_qrRzHD": {
+          "type": "showcase_item",
+          "settings": {
+            "item_type": "product",
+            "collection": "",
+            "product": "open-ear-bone-conduction-headphones-ng-ear-safe-pro-swimming",
+            "title": "",
+            "link_url": "",
+            "label_text": "",
+            "show_arrow": false
+          }
+        },
+        "showcase_item_gq9LtP": {
+          "type": "showcase_item",
+          "settings": {
+            "item_type": "product",
+            "collection": "",
+            "product": "open-ear-bone-conduction-headphones-ng-ear-safe-pro-swimming",
+            "title": "",
+            "link_url": "",
+            "label_text": "",
+            "show_arrow": false
+          }
+        }
+      },
+      "block_order": [
+        "showcase_item_gG3dFq",
+        "showcase_item_ztMKpg",
+        "showcase_item_EmKCfy",
+        "showcase_item_36hyYm",
+        "showcase_item_qrRzHD",
+        "showcase_item_gq9LtP"
+      ],
+      "name": "Collections Showcase",
+      "settings": {
+        "design_heading": "1",
+        "heading_align": "t4s-text-start",
+        "top_heading": "Open Ear Headphones",
+        "icon_heading": "las la-gem",
+        "top_subheading": "",
+        "tophead_mb": 30,
+        "col_dk": "6",
+        "col_tb": "3",
+        "col_mb": "2",
+        "space_h_item": 20,
+        "space_h_item_tb": 15,
+        "space_h_item_mb": 10,
+        "open_link": "_self",
+        "img_effect": "zoom",
+        "border_effect": "none",
+        "item_rd": 0,
+        "item_rd_unit": "px",
+        "label_color": "#222222",
+        "label_color_hover": "#222222",
+        "label_font_size": "medium",
+        "label_font_weight": "500",
+        "arrow_text": "→",
+        "label_space_top": 15,
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,50px,",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": "",
+        "use_cus_css": false,
+        "code_cus_css": ""
+      }
+    },
+    "collections_showcase_LkzNV6": {
+      "type": "collections-showcase",
+      "blocks": {
+        "showcase_item_aCbdn9": {
+          "type": "showcase_item",
+          "settings": {
+            "item_type": "product",
+            "collection": "",
+            "product": "earsafe-comm-1-0-magnetic-charging-cable",
+            "title": "",
+            "link_url": "",
+            "label_text": "",
+            "show_arrow": false
+          }
+        },
+        "showcase_item_Q4dQej": {
+          "type": "showcase_item",
+          "settings": {
+            "item_type": "product",
+            "collection": "",
+            "product": "earsafe-pro-magnetic-charging-cable",
+            "title": "",
+            "link_url": "",
+            "label_text": "",
+            "show_arrow": false
+          }
+        },
+        "showcase_item_iT6MEk": {
+          "type": "showcase_item",
+          "settings": {
+            "item_type": "product",
+            "collection": "",
+            "product": "earsafe-type-c-charging-cable",
+            "title": "",
+            "link_url": "",
+            "label_text": "",
+            "show_arrow": false
+          }
+        },
+        "showcase_item_XbeUnA": {
+          "type": "showcase_item",
+          "settings": {
+            "item_type": "product",
+            "collection": "",
+            "product": "ng-velvet-carry-pouch",
+            "title": "",
+            "link_url": "",
+            "label_text": "",
+            "show_arrow": false
+          }
+        },
+        "showcase_item_DN68BV": {
+          "type": "showcase_item",
+          "settings": {
+            "item_type": "product",
+            "collection": "",
+            "product": "ng-hard-case-carry-pouch",
+            "title": "",
+            "link_url": "",
+            "label_text": "",
+            "show_arrow": false
+          }
+        }
+      },
+      "block_order": [
+        "showcase_item_aCbdn9",
+        "showcase_item_Q4dQej",
+        "showcase_item_iT6MEk",
+        "showcase_item_XbeUnA",
+        "showcase_item_DN68BV"
+      ],
+      "name": "Collections Showcase",
+      "settings": {
+        "design_heading": "1",
+        "heading_align": "t4s-text-start",
+        "top_heading": "Official Accessories",
+        "icon_heading": "las la-gem",
+        "top_subheading": "",
+        "tophead_mb": 30,
+        "col_dk": "5",
+        "col_tb": "3",
+        "col_mb": "2",
+        "space_h_item": 20,
+        "space_h_item_tb": 15,
+        "space_h_item_mb": 10,
+        "open_link": "_self",
+        "img_effect": "zoom",
+        "border_effect": "none",
+        "item_rd": 0,
+        "item_rd_unit": "px",
+        "label_color": "#222222",
+        "label_color_hover": "#222222",
+        "label_font_size": "medium",
+        "label_font_weight": "500",
+        "arrow_text": "→",
+        "label_space_top": 15,
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,50px,",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": "",
+        "use_cus_css": false,
+        "code_cus_css": ""
+      }
     }
   },
   "order": [
     "top",
     "heading_template",
     "main",
-    "sidebar"
+    "sidebar",
+    "collections_showcase_eARiF6",
+    "collections_showcase_LkzNV6"
   ]
 }
