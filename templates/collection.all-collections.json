@@ -337,22 +337,10 @@
         "sidebar_pd": 15
       }
     },
-    "collections_showcase_eARiF6": {
+    "collections_showcase_8M9ChL": {
       "type": "collections-showcase",
       "blocks": {
-        "showcase_item_gG3dFq": {
-          "type": "showcase_item",
-          "settings": {
-            "item_type": "product",
-            "collection": "",
-            "product": "earplugs-for-sleeping-ng-ear-safe-1-0",
-            "title": "",
-            "link_url": "",
-            "label_text": "",
-            "show_arrow": false
-          }
-        },
-        "showcase_item_ztMKpg": {
+        "showcase_item_LRi88F": {
           "type": "showcase_item",
           "settings": {
             "item_type": "product",
@@ -364,7 +352,7 @@
             "show_arrow": false
           }
         },
-        "showcase_item_EmKCfy": {
+        "showcase_item_iwhMHg": {
           "type": "showcase_item",
           "settings": {
             "item_type": "product",
@@ -376,7 +364,7 @@
             "show_arrow": false
           }
         },
-        "showcase_item_36hyYm": {
+        "showcase_item_x3m3DF": {
           "type": "showcase_item",
           "settings": {
             "item_type": "product",
@@ -387,20 +375,55 @@
             "label_text": "",
             "show_arrow": false
           }
-        },
-        "showcase_item_qrRzHD": {
-          "type": "showcase_item",
-          "settings": {
-            "item_type": "product",
-            "collection": "",
-            "product": "open-ear-bone-conduction-headphones-ng-ear-safe-pro-swimming",
-            "title": "",
-            "link_url": "",
-            "label_text": "",
-            "show_arrow": false
-          }
-        },
-        "showcase_item_gq9LtP": {
+        }
+      },
+      "block_order": [
+        "showcase_item_LRi88F",
+        "showcase_item_iwhMHg",
+        "showcase_item_x3m3DF"
+      ],
+      "name": "Collections Showcase",
+      "settings": {
+        "design_heading": "1",
+        "heading_align": "t4s-text-start",
+        "top_heading": "Air Conduction Headphones",
+        "icon_heading": "las la-gem",
+        "top_subheading": "",
+        "tophead_mb": 30,
+        "col_dk": "4",
+        "col_tb": "3",
+        "col_mb": "2",
+        "space_h_item": 20,
+        "space_h_item_tb": 15,
+        "space_h_item_mb": 10,
+        "open_link": "_self",
+        "img_effect": "zoom",
+        "border_effect": "none",
+        "item_rd": 8,
+        "item_rd_unit": "px",
+        "label_color": "#222222",
+        "label_color_hover": "#222222",
+        "label_font_size": "medium",
+        "label_font_weight": "500",
+        "arrow_text": "→",
+        "label_space_top": 15,
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,50px,",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": "",
+        "use_cus_css": false,
+        "code_cus_css": ""
+      }
+    },
+    "collections_showcase_tVgb6R": {
+      "type": "collections-showcase",
+      "blocks": {
+        "showcase_item_NNH4UG": {
           "type": "showcase_item",
           "settings": {
             "item_type": "product",
@@ -411,25 +434,90 @@
             "label_text": "",
             "show_arrow": false
           }
+        },
+        "showcase_item_dBLCHU": {
+          "type": "showcase_item",
+          "settings": {
+            "item_type": "product",
+            "collection": "",
+            "product": "open-ear-bone-conduction-headphones-ng-ear-safe-pro-swimming",
+            "title": "",
+            "link_url": "",
+            "label_text": "",
+            "show_arrow": false
+          }
         }
       },
       "block_order": [
-        "showcase_item_gG3dFq",
-        "showcase_item_ztMKpg",
-        "showcase_item_EmKCfy",
-        "showcase_item_36hyYm",
-        "showcase_item_qrRzHD",
-        "showcase_item_gq9LtP"
+        "showcase_item_NNH4UG",
+        "showcase_item_dBLCHU"
       ],
       "name": "Collections Showcase",
       "settings": {
         "design_heading": "1",
         "heading_align": "t4s-text-start",
-        "top_heading": "Open Ear Headphones",
+        "top_heading": "⁠Bone Conduction Headphones",
         "icon_heading": "las la-gem",
         "top_subheading": "",
         "tophead_mb": 30,
-        "col_dk": "6",
+        "col_dk": "4",
+        "col_tb": "3",
+        "col_mb": "2",
+        "space_h_item": 20,
+        "space_h_item_tb": 15,
+        "space_h_item_mb": 10,
+        "open_link": "_self",
+        "img_effect": "zoom",
+        "border_effect": "none",
+        "item_rd": 8,
+        "item_rd_unit": "px",
+        "label_color": "#222222",
+        "label_color_hover": "#222222",
+        "label_font_size": "medium",
+        "label_font_weight": "500",
+        "arrow_text": "→",
+        "label_space_top": 15,
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,50px,",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": "",
+        "use_cus_css": false,
+        "code_cus_css": ""
+      }
+    },
+    "collections_showcase_eARiF6": {
+      "type": "collections-showcase",
+      "blocks": {
+        "showcase_item_qrRzHD": {
+          "type": "showcase_item",
+          "settings": {
+            "item_type": "product",
+            "collection": "",
+            "product": "earplugs-for-sleeping-ng-ear-safe-1-0",
+            "title": "",
+            "link_url": "",
+            "label_text": "",
+            "show_arrow": false
+          }
+        }
+      },
+      "block_order": [
+        "showcase_item_qrRzHD"
+      ],
+      "name": "Collections Showcase",
+      "settings": {
+        "design_heading": "1",
+        "heading_align": "t4s-text-start",
+        "top_heading": "⁠Earplugs",
+        "icon_heading": "las la-gem",
+        "top_subheading": "",
+        "tophead_mb": 30,
+        "col_dk": "4",
         "col_tb": "3",
         "col_mb": "2",
         "space_h_item": 20,
@@ -574,6 +662,8 @@
     "heading_template",
     "main",
     "sidebar",
+    "collections_showcase_8M9ChL",
+    "collections_showcase_tVgb6R",
     "collections_showcase_eARiF6",
     "collections_showcase_LkzNV6"
   ]
