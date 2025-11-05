@@ -58,15 +58,107 @@
         
         assign label_text = bk_stts.label_text | default: item_title
         assign show_arrow = bk_stts.show_arrow
+        
+        # Product-specific variables
+        if item_type == 'product' and product != blank
+          assign pr_url = product.url
+          assign pid = product.id
+          assign isDefault = product.has_only_default_variant
+          assign pr_variants = product.variants
+          assign current_variant = pr_variants.first
+          assign isPreoder = false
+          
+          if product.tags contains 'isPreoder' or current_variant.inventory_policy == 'continue' and current_variant.inventory_management == 'shopify' and current_variant.inventory_quantity <= 0
+            assign isPreoder = true
+          endif
+          
+          if current_variant.inventory_management == 'shopify'
+            assign max_qty = current_variant.inventory_quantity | default: 9999
+          else
+            assign max_qty = 9999
+          endif
+          if current_variant.quantity_rule.max and max_qty > current_variant.quantity_rule.max
+            assign max_qty = current_variant.quantity_rule.max
+          endif
+          
+          assign meta_theme = product.metafields.theme
+          assign cus_qty = meta_theme.cus_qty | default: 1
+          if current_variant.quantity_rule.min and cus_qty < current_variant.quantity_rule.min
+            assign cus_qty = current_variant.quantity_rule.min
+          endif
+          
+          assign isExternal = false
+          assign external_title = meta_theme.external_title 
+          assign external_link = meta_theme.external_link
+          if external_title != blank and external_link != blank 
+            assign isExternal = true 
+          endif
+          
+          assign isGrouped = false 
+          if meta_theme.grouped != blank
+            assign isGrouped = true 
+          endif
+          
+          assign color_count = 0
+          assign size_count = 0
+          assign enable_pr_color = true
+          assign enable_pr_size = true
+          assign stt_color_ck = settings.color_ck | default: ';'
+          assign color_ck = stt_color_ck | append: ',color,colors,couleur,colour' | remove: ';,'
+          assign get_color = color_ck | downcase | replace: ' ,', ',' | replace: ', ', ',' | split: ',' | uniq
+          assign stt_size_ck = settings.size_ck | default: ';'
+          assign size_ck = stt_size_ck | append: ',size,sizes,taille' | remove: ';,'
+          assign get_size = size_ck | downcase | replace: ' ,', ',' | replace: ', ', ',' | split: ',' | uniq
+          assign show_cl_type = '1'
+          assign show_size_type = '1'
+          assign pr_size_pos = '2'
+          
+          if isDefault == false and enable_pr_color or enable_pr_size
+            assign pr_options = product.options_with_values
+            assign img_variants = pr_variants | where: "featured_image"
+            assign available_variants = product.variants | where: "available"
+            
+            for option in pr_options
+              assign name = option.name | downcase
+              
+              if enable_pr_color and get_color contains name and color_count == 0
+                assign pr_option_color = 'option' | append: forloop.index
+                assign color_variants_avai = available_variants | map: pr_option_color | uniq
+                assign featured_imgs = img_variants | map: 'featured_image'
+                assign color_variants = option.values
+                if show_cl_type == '1'
+                  assign color_count = color_variants.size
+                else
+                  if pr_options.size == 1
+                    assign color_variants = color_variants_avai
+                  endif
+                  assign color_count = color_variants_avai.size
+                endif
+              elsif enable_pr_size and get_size contains name and size_count == 0
+                assign pr_option_size = 'option' | append: forloop.index 
+                assign size_variants_avai = available_variants | map: pr_option_size | uniq
+                assign size_variants = option.values
+                if show_size_type == '1'
+                  assign size_count = size_variants.size
+                else
+                  if pr_options.size == 1
+                    assign size_variants = size_variants_avai
+                  endif
+                  assign size_count = size_variants_avai.size
+                endif
+              endif
+            endfor
+          endif
+          
+          assign enable_rating = settings.enable_rating
+          assign app_review = settings.app_review
+          assign price_varies_style = '1'
+        endif
       -%}
       
-      <div class="t4s-col-item t4s-collections-showcase-item" id="b_{{ block.id }}" {{ block.shopify_attributes }}>
+      <div class="t4s-col-item t4s-collections-showcase-item{% if item_type == 'product' and product != blank %} t4s-showcase-product{% endif %}" id="b_{{ block.id }}"{% if item_type == 'product' and product != blank %} data-product-id="{{ product.id }}"{% endif %} {{ block.shopify_attributes }}>
         <div class="t4s-showcase-item-inner t4s-eff t4s-eff-{{ se_stts.img_effect }} t4s-eff-border-{{ se_stts.border_effect }}" timeline hdt-reveal="slide-in">
-          {%- if item_url != blank -%}
-            <a href="{{ item_url }}" class="t4s-showcase-link" target="{{ se_stts.open_link }}">
-          {%- endif -%}
-          
-          <div class="t4s-showcase-image-wrap">
+          <div class="t4s-showcase-image-wrap"{% if item_type == 'product' and product != blank %} data-current-variant-id="{{ current_variant.id }}"{% endif %}>
             {%- if item_image != blank -%}
               <div class="t4s-showcase-image t4s-bg-11" style="--aspect-ratioapt: {{ item_image.aspect_ratio | default: 1.2 }}; background: url({{ item_image | image_url: width: 1 }});">
                 <img class="lazyloadt4s t4s-lz--fadeIn t4s-obj-eff" 
@@ -85,20 +177,84 @@
                 {{ 'collection-' | append: current | placeholder_svg_tag: 't4s-placeholder-svg t4s-obj-eff' }}
               </div>
             {%- endif -%}
+            
+            {%- if item_type == 'product' and product != blank -%}
+              <div class="t4s-showcase-product-btns">
+                {%- if settings.enable_quickview -%}
+                  <a data-id="{{ pid }}" href="{{ pr_url }}" data-tooltip rel="nofollow" class="t4s-pr-item-btn t4s-pr-quickview" data-action-quickview>
+                    <span class="t4s-svg-pr-icon"><svg viewBox="0 0 24 24"><use xlink:href="#t4s-icon-qv"></use></svg></span>
+                    <span class="t4s-text-pr">{{ 'products.product_card.quick_view' | t }}</span>
+                  </a>
+                {%- endif -%}
+                {%- if settings.enable_atc -%}
+                  <a href="{{ pr_url }}" class="t4s-pr-item-btn t4s-pr-addtocart" data-variant-id="{{ current_variant.id }}" data-action-atc rel="nofollow">
+                    <span class="t4s-svg-pr-icon"><svg viewBox="0 0 24 24"><use xlink:href="#t4s-icon-atc"></use></svg></span>
+                    <span class="t4s-text-pr">{% if isPreoder %}{{ 'products.product.pre_order' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endif %}</span>
+                  </a>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
           </div>
           
-          {%- if label_text != blank -%}
-            <div class="t4s-showcase-label">
-              <span class="t4s-showcase-label-text">{{ label_text }}</span>
-              {%- if show_arrow -%}
-                <span class="t4s-showcase-arrow">{{ se_stts.arrow_text | default: '→' }}</span>
+          <div class="t4s-showcase-content">
+            {%- if item_type == 'product' and product != blank -%}
+              <h3 class="t4s-showcase-product-title">
+                <a href="{{ pr_url }}">{{ item_title }}</a>
+              </h3>
+              
+              {%- assign selv = current_variant -%}
+              <div class="t4s-product-price">
+                {%- if selv.compare_at_price > selv.price -%}
+                  {%- assign discount_pct = selv.compare_at_price | minus: selv.price | times: 100 | divided_by: selv.compare_at_price | round -%}
+                  <del>{{ selv.compare_at_price | money }}</del>
+                  <ins>{{ selv.price | money }}</ins>
+                  <span class="t4s-badge-sale">-{{ discount_pct }}%</span>
+                {%- else -%}
+                  <ins>{{ selv.price | money }}</ins>
+                {%- endif -%}
+              </div>
+              
+              {%- if enable_rating -%}
+                {%- render 'product-rating', product: product, app_review: app_review -%}
               {%- endif -%}
-            </div>
-          {%- endif -%}
-          
-          {%- if item_url != blank -%}
-            </a>
-          {%- endif -%}
+              
+              {%- if color_count > 0 -%}
+                <div class="t4s-product-colors swatch_color_style_2 t4s-showcase-product-colors">
+                  {%- assign color_opt_key = pr_option_color -%}
+                  {%- for color_val in color_variants -%}
+                    {%- assign v_match = product.variants | where: color_opt_key, color_val | first -%}
+                    {%- if v_match -%}
+                      <a href="#" class="t4s-pr-color__item" aria-label="{{ color_val }}"
+                        data-variant-id="{{ v_match.id }}"
+                        data-price="{{ v_match.price }}"
+                        data-compare="{{ v_match.compare_at_price }}"
+                        data-url="{{ product.url }}?variant={{ v_match.id }}"
+                        {%- if v_match.featured_image -%}data-image="{{ v_match.featured_image | image_url: width: 1 }}" data-image-w="{{ v_match.featured_image.width }}" data-image-h="{{ v_match.featured_image.height }}"{%- endif -%}>
+                        <span class="t4s-pr-color__value bg_color_{{ color_val | handle }}"></span>
+                      </a>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
+              {%- endif -%}
+            {%- else -%}
+              {%- if item_url != blank -%}
+                <a href="{{ item_url }}" class="t4s-showcase-link" target="{{ se_stts.open_link }}">
+              {%- endif -%}
+              
+              {%- if label_text != blank -%}
+                <div class="t4s-showcase-label">
+                  <span class="t4s-showcase-label-text">{{ label_text }}</span>
+                  {%- if show_arrow -%}
+                    <span class="t4s-showcase-arrow">{{ se_stts.arrow_text | default: '→' }}</span>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+              
+              {%- if item_url != blank -%}
+                </a>
+              {%- endif -%}
+            {%- endif -%}
+          </div>
         </div>
       </div>
     {%- endfor -%}
@@ -107,6 +263,81 @@
   {%- if stt_layout == 't4s-se-container' -%}</div>{% endif -%}
   {{- html_layout[1] -}}
 </div>
+
+<script>
+  (function(){
+    var root = document.querySelector('.t4s_se_{{ sid }}');
+    if(!root) return;
+
+    function fmt(cents){
+      try {
+        if (window.Shopify && Shopify.formatMoney) return Shopify.formatMoney(cents, Shopify.money_format);
+      } catch(e) {}
+      var v = (Number(cents||0)/100);
+      return v.toLocaleString(undefined, { style: 'currency', currency: (window.Shopify && Shopify.currency && Shopify.currency.active) || 'USD' });
+    }
+
+    root.addEventListener('click', function(e){
+      var btn = e.target.closest('.t4s-pr-color__item');
+      if(!btn) return;
+      var card = btn.closest('.t4s-collections-showcase-item');
+      if(!card) return;
+
+      var variantId = btn.getAttribute('data-variant-id');
+      var price = parseInt(btn.getAttribute('data-price') || '0', 10);
+      var compare = parseInt(btn.getAttribute('data-compare') || '0', 10);
+      var url = btn.getAttribute('data-url');
+      var imgUrl = btn.getAttribute('data-image');
+      var imgW = btn.getAttribute('data-image-w');
+      var imgH = btn.getAttribute('data-image-h');
+
+      // Update ATC
+      var atc = card.querySelector('[data-action-atc]');
+      if(atc){ atc.setAttribute('data-variant-id', variantId); if(url){ atc.setAttribute('href', url); } }
+
+      // Selected state on swatches
+      var group = btn.parentElement;
+      if(group){
+        Array.prototype.forEach.call(group.querySelectorAll('.t4s-pr-color__item'), function(el){ el.classList.remove('is-swatch--selected'); });
+        btn.classList.add('is-swatch--selected');
+      }
+
+      // Update title link
+      var titleLink = card.querySelector('.t4s-showcase-product-title a');
+      if(titleLink && url){ titleLink.setAttribute('href', url); }
+
+      // Update price
+      var priceWrap = card.querySelector('.t4s-product-price');
+      if(priceWrap){
+        var html = '';
+        if(compare && compare > price){
+          var pct = Math.round((compare - price) * 100 / compare);
+          html = '<del>'+fmt(compare)+'</del><ins>'+fmt(price)+'</ins><span class="t4s-badge-sale">-'+pct+'%</span>';
+        } else {
+          html = '<ins>'+fmt(price)+'</ins>';
+        }
+        priceWrap.innerHTML = html;
+      }
+
+      // Update image
+      if(imgUrl){
+        var wrap = card.querySelector('.t4s-showcase-image-wrap');
+        var holder = card.querySelector('.t4s-showcase-image');
+        var img = card.querySelector('.t4s-showcase-image img');
+        if(holder){ holder.style.backgroundImage = 'url('+imgUrl+')'; }
+        if(img){
+          img.setAttribute('data-src', imgUrl);
+          img.setAttribute('src', imgUrl);
+          if(imgW) img.setAttribute('width', imgW);
+          if(imgH) img.setAttribute('height', imgH);
+        }
+        if(wrap){ wrap.setAttribute('data-current-variant-id', variantId); }
+      }
+
+      e.preventDefault();
+    });
+  })();
+</script>
 
 {%- schema -%}
 {
