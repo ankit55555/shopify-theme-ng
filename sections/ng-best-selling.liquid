@@ -1,12 +1,51 @@
-<!-- sections/collections-showcase.liquid -->
+<!-- sections/ng-best-selling.liquid -->
 {{ 'section.css' | asset_url | stylesheet_tag }}
 {{ 'collections-showcase.css' | asset_url | stylesheet_tag }}
 {%- liquid
   assign sid = section.id
   assign se_stts = section.settings
-  assign se_blocks = section.blocks
   assign stt_layout = se_stts.layout
   assign stt_image_bg = se_stts.image_bg
+  
+  # Determine source collection automatically (no manual picking needed)
+  assign src_collection = blank
+  if se_stts.auto_best
+    # Prefer current collection context when available
+    if se_stts.use_current_collection and collection and collection.products_count > 0
+      assign src_collection = collection
+    endif
+    # Try preferred handle from settings
+    if src_collection == blank and se_stts.best_handle != blank and collections[se_stts.best_handle]
+      assign src_collection = collections[se_stts.best_handle]
+    endif
+    # Try common best-seller handles
+    if src_collection == blank
+      assign handles_try = 'best-sellers,bestsellers,best-seller,best_sellers' | split: ','
+      for h in handles_try
+        if collections[h] and collections[h].products_count > 0
+          assign src_collection = collections[h]
+          break
+        endif
+      endfor
+    endif
+    # Fallback to all products
+    if src_collection == blank and collections['all']
+      assign src_collection = collections['all']
+    endif
+  else
+    # Manual override by collection setting
+    if se_stts.collection != blank
+      assign src_collection = collections[se_stts.collection]
+    endif
+  endif
+  
+  # Get products
+  assign limit_pr = se_stts.limit_pr | default: 8
+  assign has_products = false
+  if src_collection != blank and src_collection.products_count > 0
+    assign has_products = true
+  endif
+  
   if stt_layout == 't4s-se-container' 
     assign html_layout = '<div class="t4s-container">__</div></div>' | split: '__'
   elsif stt_layout == 't4s-container-wrap'
@@ -26,41 +65,10 @@
   
   {%- render 'section_tophead', se_stts: se_stts -%}
   
-  <div class="t4s-collections-showcase t4s-row t4s-row-cols-lg-{{ se_stts.col_dk }} t4s-row-cols-md-{{ se_stts.col_tb }} t4s-row-cols-{{ se_stts.col_mb }} t4s-g-lg-{{ se_stts.space_h_item }} t4s-g-md-{{ se_stts.space_h_item_tb }} t4s-g-{{ se_stts.space_h_item_mb }}" style="--label-color: {{ se_stts.label_color }}; --label-color-hover: {{ se_stts.label_color_hover }}; --label-font-size: {% if se_stts.label_font_size == 'small' %}14px{% elsif se_stts.label_font_size == 'large' %}20px{% else %}16px{% endif %}; --label-font-weight: {{ se_stts.label_font_weight }}; --label-space-top: {{ se_stts.label_space_top }}px; --item-rd: {{ se_stts.item_rd }}{{ se_stts.item_rd_unit }}; --space-h-item-tb: {{ se_stts.space_h_item_tb }}px; --space-h-item-mb: {{ se_stts.space_h_item_mb }}px;">
-    {%- for block in se_blocks -%}
-      {%- liquid
-        assign bk_stts = block.settings
-        assign item_type = bk_stts.item_type | default: 'collection'
-        assign collection = blank
-        assign product = blank
-        
-        if bk_stts.collection != blank
-          assign collection = collections[bk_stts.collection]
-        endif
-        
-        if bk_stts.product != blank
-          assign product = all_products[bk_stts.product]
-        endif
-        
-        if item_type == 'collection' and collection != blank
-          assign item_title = bk_stts.title | default: collection.title
-          assign item_image = bk_stts.image | default: collection.image
-          assign item_url = bk_stts.link_url | default: collection.url
-        elsif item_type == 'product' and product != blank
-          assign item_title = bk_stts.title | default: product.title
-          assign item_image = bk_stts.image | default: product.featured_image
-          assign item_url = bk_stts.link_url | default: product.url
-        else
-          assign item_title = bk_stts.title | default: 'Collection'
-          assign item_image = bk_stts.image
-          assign item_url = bk_stts.link_url
-        endif
-        
-        assign label_text = bk_stts.label_text | default: item_title
-        assign show_arrow = bk_stts.show_arrow
-        
-        # Product-specific variables
-        if item_type == 'product' and product != blank
+  {%- if has_products -%}
+    <div class="t4s-collections-showcase t4s-row t4s-row-cols-lg-{{ se_stts.col_dk }} t4s-row-cols-md-{{ se_stts.col_tb }} t4s-row-cols-{{ se_stts.col_mb }} t4s-g-lg-{{ se_stts.space_h_item }} t4s-g-md-{{ se_stts.space_h_item_tb }} t4s-g-{{ se_stts.space_h_item_mb }}" style="--label-color: {{ se_stts.label_color }}; --label-color-hover: {{ se_stts.label_color_hover }}; --label-font-size: {% if se_stts.label_font_size == 'small' %}14px{% elsif se_stts.label_font_size == 'large' %}20px{% else %}16px{% endif %}; --label-font-weight: {{ se_stts.label_font_weight }}; --label-space-top: {{ se_stts.label_space_top }}px; --item-rd: {{ se_stts.item_rd }}{{ se_stts.item_rd_unit }}; --space-h-item-tb: {{ se_stts.space_h_item_tb }}px; --space-h-item-mb: {{ se_stts.space_h_item_mb }}px;">
+      {%- for product in src_collection.products limit: limit_pr -%}
+        {%- liquid
           assign pr_url = product.url
           assign pid = product.id
           assign isDefault = product.has_only_default_variant
@@ -87,18 +95,6 @@
             assign cus_qty = current_variant.quantity_rule.min
           endif
           
-          assign isExternal = false
-          assign external_title = meta_theme.external_title 
-          assign external_link = meta_theme.external_link
-          if external_title != blank and external_link != blank 
-            assign isExternal = true 
-          endif
-          
-          assign isGrouped = false 
-          if meta_theme.grouped != blank
-            assign isGrouped = true 
-          endif
-          
           assign color_count = 0
           assign size_count = 0
           assign enable_pr_color = true
@@ -111,7 +107,6 @@
           assign get_size = size_ck | downcase | replace: ' ,', ',' | replace: ', ', ',' | split: ',' | uniq
           assign show_cl_type = '1'
           assign show_size_type = '1'
-          assign pr_size_pos = '2'
           
           if isDefault == false and enable_pr_color or enable_pr_size
             assign pr_options = product.options_with_values
@@ -124,7 +119,6 @@
               if enable_pr_color and get_color contains name and color_count == 0
                 assign pr_option_color = 'option' | append: forloop.index
                 assign color_variants_avai = available_variants | map: pr_option_color | uniq
-                assign featured_imgs = img_variants | map: 'featured_image'
                 assign color_variants = option.values
                 if show_cl_type == '1'
                   assign color_count = color_variants.size
@@ -152,33 +146,31 @@
           
           assign enable_rating = settings.enable_rating
           assign app_review = settings.app_review
-          assign price_varies_style = '1'
-        endif
-      -%}
-      
-      <div class="t4s-col-item t4s-collections-showcase-item{% if item_type == 'product' and product != blank %} t4s-showcase-product{% endif %}" id="b_{{ block.id }}"{% if item_type == 'product' and product != blank %} data-product-id="{{ product.id }}"{% endif %} {{ block.shopify_attributes }}>
-        <div class="t4s-showcase-item-inner t4s-eff t4s-eff-{{ se_stts.img_effect }} t4s-eff-border-{{ se_stts.border_effect }}" timeline hdt-reveal="slide-in">
-          <div class="t4s-showcase-image-wrap"{% if item_type == 'product' and product != blank %} data-current-variant-id="{{ current_variant.id }}"{% endif %}>
-            {%- if item_image != blank -%}
-              <div class="t4s-showcase-image t4s-bg-11" style="--aspect-ratioapt: {{ item_image.aspect_ratio | default: 1.2 }}; background: url({{ item_image | image_url: width: 1 }});">
-                <img class="lazyloadt4s t4s-lz--fadeIn t4s-obj-eff" 
-                     data-src="{{ item_image | image_url: width: 1 }}" 
-                     data-widths="[100,200,400,600,700,800,900,1000,1200,1400,1600]" 
-                     data-optimumx="2" 
-                     data-sizes="auto" 
-                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
-                     width="{{ item_image.width }}" 
-                     height="{{ item_image.height }}" 
-                     alt="{{ item_image.alt | escape }}">
-              </div>
-            {%- else -%}
-              <div class="t4s-showcase-image t4s-bg-11" style="--aspect-ratioapt: 1.2;">
-                {%- capture current -%}{%- cycle 1, 2, 3, 4, 5, 6 -%}{%- endcapture -%}
-                {{ 'collection-' | append: current | placeholder_svg_tag: 't4s-placeholder-svg t4s-obj-eff' }}
-              </div>
-            {%- endif -%}
-            
-            {%- if item_type == 'product' and product != blank -%}
+        -%}
+        
+        <div class="t4s-col-item t4s-collections-showcase-item t4s-showcase-product" data-product-id="{{ product.id }}">
+          <div class="t4s-showcase-item-inner t4s-eff t4s-eff-{{ se_stts.img_effect }} t4s-eff-border-{{ se_stts.border_effect }}" timeline hdt-reveal="slide-in">
+            <div class="t4s-showcase-image-wrap" data-current-variant-id="{{ current_variant.id }}">
+              {%- assign item_image = product.featured_image -%}
+              {%- if item_image != blank -%}
+                <div class="t4s-showcase-image t4s-bg-11" style="--aspect-ratioapt: {{ item_image.aspect_ratio | default: 1.2 }}; background: url({{ item_image | image_url: width: 1 }});">
+                  <img class="lazyloadt4s t4s-lz--fadeIn t4s-obj-eff" 
+                       data-src="{{ item_image | image_url: width: 1 }}" 
+                       data-widths="[100,200,400,600,700,800,900,1000,1200,1400,1600]" 
+                       data-optimumx="2" 
+                       data-sizes="auto" 
+                       src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+                       width="{{ item_image.width }}" 
+                       height="{{ item_image.height }}" 
+                       alt="{{ item_image.alt | escape }}">
+                </div>
+              {%- else -%}
+                <div class="t4s-showcase-image t4s-bg-11" style="--aspect-ratioapt: 1.2;">
+                  {%- capture current -%}{%- cycle 1, 2, 3, 4, 5, 6 -%}{%- endcapture -%}
+                  {{ 'collection-' | append: current | placeholder_svg_tag: 't4s-placeholder-svg t4s-obj-eff' }}
+                </div>
+              {%- endif -%}
+              
               <div class="t4s-showcase-product-btns">
                 {%- if settings.enable_quickview -%}
                   <a data-id="{{ pid }}" href="{{ pr_url }}" data-tooltip rel="nofollow" class="t4s-pr-item-btn t4s-pr-quickview" data-action-quickview>
@@ -193,13 +185,11 @@
                   </a>
                 {%- endif -%}
               </div>
-            {%- endif -%}
-          </div>
-          
-          <div class="t4s-showcase-content">
-            {%- if item_type == 'product' and product != blank -%}
+            </div>
+            
+            <div class="t4s-showcase-content">
               <h3 class="t4s-showcase-product-title">
-                <a href="{{ pr_url }}">{{ item_title }}</a>
+                <a href="{{ pr_url }}">{{ product.title }}</a>
               </h3>
               
               <div class="t4s-showcase-product-actions">
@@ -252,29 +242,16 @@
               {%- endif -%}
               
               
-            {%- else -%}
-              {%- if item_url != blank -%}
-                <a href="{{ item_url }}" class="t4s-showcase-link" target="{{ se_stts.open_link }}">
-              {%- endif -%}
-              
-              {%- if label_text != blank -%}
-                <div class="t4s-showcase-label">
-                  <span class="t4s-showcase-label-text">{{ label_text }}</span>
-                  {%- if show_arrow -%}
-                    <span class="t4s-showcase-arrow">{{ se_stts.arrow_text | default: '→' }}</span>
-                  {%- endif -%}
-                </div>
-              {%- endif -%}
-              
-              {%- if item_url != blank -%}
-                </a>
-              {%- endif -%}
-            {%- endif -%}
+            </div>
           </div>
         </div>
-      </div>
-    {%- endfor -%}
-  </div>
+      {%- endfor -%}
+    </div>
+  {%- else -%}
+    <div class="t4s-empty-collection">
+      <p>No products found in this collection.</p>
+    </div>
+  {%- endif -%}
   
   {%- if stt_layout == 't4s-se-container' -%}</div>{% endif -%}
   {{- html_layout[1] -}}
@@ -402,14 +379,54 @@
 
 {%- schema -%}
 {
-  "name": "Collections Showcase",
+  "name": "NG Best Selling Products",
   "tag": "section",
   "class": "t4s-section t4s-section-all t4s_tp_cdt t4s-collections-showcase-wrapper",
-  "max_blocks": 10,
+  "enabled_on": {
+    "templates": ["collection", "list-collections", "index", "page"]
+  },
   "settings": [
     {
       "type": "header",
-      "content": "1. Heading options"
+      "content": "1. Collection Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_best",
+      "label": "Auto-pick best sellers (no manual selection)",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "use_current_collection",
+      "label": "Prefer current collection when available",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "best_handle",
+      "label": "Preferred best-sellers collection handle",
+      "default": "best-sellers",
+      "info": "If present, this collection will be used (sorted by best-selling). Common handles: best-sellers, bestsellers."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Manual override collection",
+      "info": "Optional. Only used if Auto-pick is disabled."
+    },
+    {
+      "type": "range",
+      "id": "limit_pr",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "label": "Number of products to show",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "2. Heading options"
     },
     {
       "type": "select",
@@ -450,7 +467,7 @@
       "type": "text",
       "id": "top_heading",
       "label": "+ Heading",
-      "default": "Collections"
+      "default": "Best Selling Products"
     },
     {
       "type": "text",
@@ -473,13 +490,13 @@
     },
     {
       "type": "header",
-      "content": "2. General options"
+      "content": "3. General options"
     },
     {
       "type": "select",
       "id": "col_dk",
       "label": "Items per row (Desktop)",
-      "default": "5",
+      "default": "4",
       "options": [
         { "value": "1", "label": "1" },
         { "value": "2", "label": "2" },
@@ -542,19 +559,8 @@
       "default": 10
     },
     {
-      "type": "select",
-      "id": "open_link",
-      "info": "Works when the item has a link",
-      "options": [
-        { "value": "_self", "label": "Current window" },
-        { "value": "_blank", "label": "New window" }
-      ],
-      "label": "Open link in",
-      "default": "_self"
-    },
-    {
       "type": "header",
-      "content": "+ Image options"
+      "content": "4. Image options"
     },
     {
       "type": "select",
@@ -602,63 +608,7 @@
     },
     {
       "type": "header",
-      "content": "+ Label options"
-    },
-    {
-      "type": "color",
-      "id": "label_color",
-      "label": "Label color",
-      "default": "#222222"
-    },
-    {
-      "type": "color",
-      "id": "label_color_hover",
-      "label": "Label hover color",
-      "default": "#222222"
-    },
-    {
-      "type": "select",
-      "id": "label_font_size",
-      "label": "Label font size",
-      "default": "medium",
-      "options": [
-        { "value": "small", "label": "Small" },
-        { "value": "medium", "label": "Medium" },
-        { "value": "large", "label": "Large" }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "label_font_weight",
-      "label": "Label font weight",
-      "default": "500",
-      "options": [
-        { "value": "400", "label": "Normal" },
-        { "value": "500", "label": "Medium" },
-        { "value": "600", "label": "Semi Bold" },
-        { "value": "700", "label": "Bold" }
-      ]
-    },
-    {
-      "type": "text",
-      "id": "arrow_text",
-      "label": "Arrow text",
-      "default": "→",
-      "info": "Custom arrow symbol or text"
-    },
-    {
-      "type": "range",
-      "id": "label_space_top",
-      "min": 0,
-      "max": 50,
-      "step": 1,
-      "label": "Space above label",
-      "unit": "px",
-      "default": 15
-    },
-    {
-      "type": "header",
-      "content": "3. Design options"
+      "content": "5. Design options"
     },
     {
       "type": "select",
@@ -736,7 +686,7 @@
     },
     {
       "type": "header",
-      "content": "4. Custom css"
+      "content": "6. Custom css"
     },
     {
       "id": "use_cus_css",
@@ -752,92 +702,10 @@
       "info": "Use selector .SectionID to style css"
     }
   ],
-  "blocks": [
-    {
-      "type": "showcase_item",
-      "name": "Showcase Item",
-      "settings": [
-        {
-          "type": "select",
-          "id": "item_type",
-          "label": "Item type",
-          "default": "collection",
-          "options": [
-            { "value": "collection", "label": "Collection" },
-            { "value": "product", "label": "Product" },
-            { "value": "custom", "label": "Custom" }
-          ],
-          "info": "Choose whether to display a collection, product, or custom item"
-        },
-        {
-          "type": "paragraph",
-          "content": "——— Collection Settings ———"
-        },
-        {
-          "id": "collection",
-          "type": "collection",
-          "label": "Collection",
-          "info": "Select a collection to display"
-        },
-        {
-          "type": "paragraph",
-          "content": "——— Product Settings ———"
-        },
-        {
-          "id": "product",
-          "type": "product",
-          "label": "Product",
-          "info": "Select a product to display"
-        },
-        {
-          "type": "paragraph",
-          "content": "——— Custom Settings ———"
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image",
-          "info": "Custom image (overrides collection/product image)"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "info": "Custom title (overrides collection/product title)"
-        },
-        {
-          "type": "url",
-          "id": "link_url",
-          "label": "Link URL",
-          "info": "Custom link (overrides collection/product URL)"
-        },
-        {
-          "type": "text",
-          "id": "label_text",
-          "label": "Label text",
-          "default": "Collection →",
-          "info": "Text displayed below image (leave empty to use title)"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_arrow",
-          "label": "Show arrow",
-          "default": true
-        }
-      ]
-    }
-  ],
   "presets": [
     {
-      "name": "Collections Showcase",
-      "category": "Homepage",
-      "blocks": [
-        { "type": "showcase_item" },
-        { "type": "showcase_item" },
-        { "type": "showcase_item" },
-        { "type": "showcase_item" },
-        { "type": "showcase_item" }
-      ]
+      "name": "NG Best Selling Products",
+      "category": "Homepage"
     }
   ]
 }

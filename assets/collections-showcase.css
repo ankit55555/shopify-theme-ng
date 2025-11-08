@@ -312,9 +312,85 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 8px;
+  margin-top: 10px;
+  margin-bottom: 12px;
   /* match theme swatch sizing */
   --swatch-color-size: 18px;
+}
+
+/* Product action buttons */
+.t4s-showcase-product-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.t4s-showcase-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  min-height: 40px;
+}
+
+.t4s-showcase-btn-atc {
+  background-color: #222;
+  color: #fff;
+}
+
+.t4s-showcase-btn-atc:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.t4s-showcase-btn-buynow {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.t4s-showcase-btn-buynow:hover {
+  background-color: #c0392b;
+  color: #fff;
+}
+
+.t4s-showcase-btn[aria-disabled="true"],
+.t4s-showcase-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.t4s-showcase-btn-text {
+  display: inline-block;
+}
+
+.t4s-showcase-btn .t4s-loading__spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.t4s-showcase-btn.t4s-btn-loading .t4s-showcase-btn-text {
+  opacity: 0;
+}
+
+.t4s-showcase-btn.t4s-btn-loading .t4s-loading__spinner {
+  display: block;
+}
+
+.t4s-showcase-btn .t4s-loading__spinner[hidden] {
+  display: none;
 }
 
 /* Fallback sizing/shape so swatches always show */
@@ -348,6 +424,12 @@
   
   .t4s-showcase-product-title {
     font-size: 15px;
+  }
+  
+  .t4s-showcase-btn {
+    padding: 9px 14px;
+    font-size: 13px;
+    min-height: 38px;
   }
 }
 
@@ -389,6 +471,18 @@
   
   .t4s-showcase-product .t4s-product-price {
     font-size: 14px;
+  }
+  
+  .t4s-showcase-product-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .t4s-showcase-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+    min-height: 40px;
+    width: 100%;
   }
   
   /* use theme defaults for swatch sizing on mobile */
