@@ -360,7 +360,7 @@
         "space_h_item_mb": 10,
         "img_effect": "zoom",
         "border_effect": "none",
-        "item_rd": 0,
+        "item_rd": 7,
         "item_rd_unit": "px",
         "layout": "t4s-container-wrap",
         "cl_bg": "",
