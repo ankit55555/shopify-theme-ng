@@ -284,13 +284,23 @@
       var imgW = btn.getAttribute('data-image-w');
       var imgH = btn.getAttribute('data-image-h');
 
-      // Update ATC button
-      var atc = card.querySelector('[data-action-atc]');
-      if(atc){ atc.setAttribute('data-variant-id', variantId); if(url){ atc.setAttribute('href', url); } }
+      // Update all ATC buttons
+      var atcs = card.querySelectorAll('[data-action-atc]');
+      if(atcs && atcs.length){
+        atcs.forEach(function(el){
+          el.setAttribute('data-variant-id', variantId);
+          if(url){ el.setAttribute('href', url); }
+        });
+      }
       
-      // Update Buy Now button
-      var buyNow = card.querySelector('[data-action-buynow]');
-      if(buyNow){ buyNow.setAttribute('data-variant-id', variantId); if(url){ buyNow.setAttribute('href', url); } }
+      // Update all Buy Now buttons
+      var buyNows = card.querySelectorAll('[data-action-buynow]');
+      if(buyNows && buyNows.length){
+        buyNows.forEach(function(el){
+          el.setAttribute('data-variant-id', variantId);
+          if(url){ el.setAttribute('href', url); }
+        });
+      }
 
       // Selected state on swatches
       var group = btn.parentElement;
@@ -316,7 +326,7 @@
         priceWrap.innerHTML = html;
       }
 
-      // Update image
+      // Update image (if available)
       if(imgUrl){
         var wrap = card.querySelector('.t4s-showcase-image-wrap');
         var holder = card.querySelector('.t4s-showcase-image');
@@ -328,8 +338,11 @@
           if(imgW) img.setAttribute('width', imgW);
           if(imgH) img.setAttribute('height', imgH);
         }
-        if(wrap){ wrap.setAttribute('data-current-variant-id', variantId); }
       }
+      
+      // Always update current variant id on wrapper (even without image)
+      var wrapAlways = card.querySelector('.t4s-showcase-image-wrap');
+      if(wrapAlways){ wrapAlways.setAttribute('data-current-variant-id', variantId); }
 
       e.preventDefault();
     });
