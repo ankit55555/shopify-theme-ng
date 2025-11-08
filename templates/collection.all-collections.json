@@ -337,57 +337,18 @@
         "sidebar_pd": 15
       }
     },
-    "collections_showcase_8M9ChL": {
-      "type": "collections-showcase",
-      "blocks": {
-        "showcase_item_LRi88F": {
-          "type": "showcase_item",
-          "settings": {
-            "item_type": "product",
-            "collection": "",
-            "product": "open-ear-earbuds-wireless-ng-ear-safe-buds",
-            "title": "",
-            "link_url": "",
-            "label_text": "",
-            "show_arrow": false
-          }
-        },
-        "showcase_item_iwhMHg": {
-          "type": "showcase_item",
-          "settings": {
-            "item_type": "product",
-            "collection": "",
-            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0",
-            "title": "",
-            "link_url": "",
-            "label_text": "",
-            "show_arrow": false
-          }
-        },
-        "showcase_item_x3m3DF": {
-          "type": "showcase_item",
-          "settings": {
-            "item_type": "product",
-            "collection": "",
-            "product": "open-ear-wireless-headphones-ng-ear-safe-lite",
-            "title": "",
-            "link_url": "",
-            "label_text": "",
-            "show_arrow": false
-          }
-        }
-      },
-      "block_order": [
-        "showcase_item_LRi88F",
-        "showcase_item_iwhMHg",
-        "showcase_item_x3m3DF"
-      ],
-      "disabled": true,
-      "name": "Collections Showcase",
+    "ng_best_selling_E3kH3L": {
+      "type": "ng-best-selling",
+      "name": "NG Best Selling Products",
       "settings": {
+        "auto_best": true,
+        "use_current_collection": false,
+        "best_handle": "best-sellers",
+        "collection": "",
+        "limit_pr": 8,
         "design_heading": "1",
         "heading_align": "t4s-text-start",
-        "top_heading": "Bestsellers",
+        "top_heading": "Best Selling Products",
         "icon_heading": "las la-gem",
         "top_subheading": "",
         "tophead_mb": 30,
@@ -397,17 +358,10 @@
         "space_h_item": 20,
         "space_h_item_tb": 15,
         "space_h_item_mb": 10,
-        "open_link": "_self",
         "img_effect": "zoom",
         "border_effect": "none",
-        "item_rd": 8,
+        "item_rd": 0,
         "item_rd_unit": "px",
-        "label_color": "#222222",
-        "label_color_hover": "#222222",
-        "label_font_size": "medium",
-        "label_font_weight": "500",
-        "arrow_text": "→",
-        "label_space_top": 15,
         "layout": "t4s-container-wrap",
         "cl_bg": "",
         "cl_bg_gradient": "",
@@ -746,7 +700,7 @@
     "heading_template",
     "main",
     "sidebar",
-    "collections_showcase_8M9ChL",
+    "ng_best_selling_E3kH3L",
     "collections_showcase_whWXzz",
     "collections_showcase_tVgb6R",
     "collections_showcase_eARiF6",
