@@ -345,7 +345,7 @@
         "use_current_collection": false,
         "best_handle": "best-sellers",
         "collection": "",
-        "limit_pr": 8,
+        "limit_pr": 3,
         "design_heading": "1",
         "heading_align": "t4s-text-start",
         "top_heading": "Best Selling Products",
