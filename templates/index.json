@@ -75,7 +75,7 @@
           "type": "slide",
           "settings": {
             "image_desktop": "shopify://shop_images/buds_Homepage_top_Banner_for_earsfae_Buds_Desktop.webp",
-            "image_mobile": "shopify://shop_images/Buds_Homepage_top_banner_Buds_mobile.webp",
+            "image_mobile": "shopify://shop_images/Buds_Homepage_top_banner_Buds_mobile_3fb848f0-a180-4386-85bd-7b2a65e211b2.webp",
             "alt": "",
             "heading": "NG EarSafe OpenBuds",
             "subheading": "OWS Open Ear Buds",
@@ -411,7 +411,8 @@
         "vizup_shopable_instagram_reels_videos_block_W8tjqW": {
           "type": "shopify://apps/vizup-shoppable-video-carousel/blocks/videos-block/eaecaa7b-ab6b-40ae-8ddf-50daa867f3eb",
           "settings": {
-            "videoc_widget_id": ""
+            "videoc_widget_id": "",
+            "custom_css": ""
           }
         }
       },
