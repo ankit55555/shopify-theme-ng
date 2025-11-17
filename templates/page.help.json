@@ -192,6 +192,7 @@
       "blocks": {
         "contact_card_tH9Acd": {
           "type": "contact_card",
+          "disabled": true,
           "settings": {
             "title": "Chat With Us",
             "badge_text": "",
@@ -245,7 +246,7 @@
       "settings": {
         "heading": "Still stuck? Our team’s just a ping away.",
         "subheading": "Not seeing what you're looking for? Our experts are ready to help.",
-        "columns_desktop": 3,
+        "columns_desktop": 2,
         "columns_tablet": 2,
         "max_width": 1380,
         "background": "",
