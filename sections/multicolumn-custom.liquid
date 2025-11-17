@@ -1,0 +1,402 @@
+{% comment %}
+  Custom Multicolumn Section
+  - Responsive grid (mobile: 1, tablet: configurable, desktop: configurable)
+  - Blocks: image, title, text, link
+  - Style scoped to this section instance
+{% endcomment %}
+
+{%- assign section_id = 'multicolumn-' | append: section.id -%}
+
+<section id="{{ section_id }}" class="multicolumn-section" style="
+  {% if section.settings.background != blank %}background-color: {{ section.settings.background }};{% endif %}
+  {% if section.settings.text_color != blank %}color: {{ section.settings.text_color }};{% endif %}
+  padding-top: {{ section.settings.padding_top | default: 40 }}px;
+  padding-bottom: {{ section.settings.padding_bottom | default: 40 }}px;
+">
+  <div class="multicolumn-container">
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="multicolumn-header multicolumn-header--{{ section.settings.align }}">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="multicolumn-title">{{ section.settings.heading | escape }}</h2>
+			{%- endif -%}
+
+			{%- liquid
+				assign has_icon = false
+				if b.icon_image != blank
+					assign has_icon = true
+				elsif b.icon_preset and b.icon_preset != 'none'
+					assign has_icon = true
+				endif
+				assign icon_size = b.icon_size | default: 32
+				assign icon_color = b.icon_color | default: 'currentColor'
+				assign icon_bg = b.icon_bg | default: 'transparent'
+				assign icon_shape = b.icon_shape | default: 'none'
+				assign icon_img_width = icon_size | times: 2
+			-%}
+			{%- if has_icon -%}
+				<div class="multicolumn-icon multicolumn-icon--{{ icon_shape }}" style="--icon-size: {{ icon_size }}px; --icon-color: {{ icon_color }}; --icon-bg: {{ icon_bg }};">
+					{%- if b.icon_image != blank -%}
+						<img src="{{ b.icon_image | image_url: width: icon_img_width }}" alt="" width="{{ icon_size }}" height="{{ icon_size }}" loading="lazy" />
+					{%- elsif b.icon_preset != 'none' -%}
+						{%- case b.icon_preset -%}
+							{%- when 'headphones' -%}
+							<svg width="{{ icon_size }}" height="{{ icon_size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+								<path d="M3 13a9 9 0 0 1 18 0" />
+								<rect x="2" y="12" width="6" height="8" rx="2" />
+								<rect x="16" y="12" width="6" height="8" rx="2" />
+							</svg>
+							{%- when 'truck' -%}
+							<svg width="{{ icon_size }}" height="{{ icon_size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+								<path d="M3 7h11v8H3z" />
+								<path d="M14 9h5l2 3v3h-7" />
+								<circle cx="7" cy="18" r="2" />
+								<circle cx="18" cy="18" r="2" />
+							</svg>
+							{%- when 'shield' -%}
+							<svg width="{{ icon_size }}" height="{{ icon_size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+								<path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-4z" />
+								<path d="M9 12l2 2 4-4" />
+							</svg>
+							{%- when 'mail' -%}
+							<svg width="{{ icon_size }}" height="{{ icon_size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+								<rect x="3" y="5" width="18" height="14" rx="2" />
+								<path d="M3 7l9 6 9-6" />
+							</svg>
+							{%- when 'compare' -%}
+							<svg width="{{ icon_size }}" height="{{ icon_size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+								<path d="M10 4l-4 4 4 4" />
+								<path d="M14 20l4-4-4-4" />
+								<path d="M6 8h12" />
+								<path d="M6 16h12" />
+							</svg>
+							{%- when 'chat' -%}
+							<svg width="{{ icon_size }}" height="{{ icon_size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+								<path d="M21 12a8 8 0 1 1-4-6.9" />
+								<path d="M21 12a8 8 0 0 1-8 8H7l-4 3v-5a8 8 0 0 1 8-8" />
+							</svg>
+							{%- when 'phone' -%}
+							<svg width="{{ icon_size }}" height="{{ icon_size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+								<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72 12.5 12.5 0 0 0 .7 2.72 2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6 6l1.36-1.35a2 2 0 0 1 2.11-.45 12.5 12.5 0 0 0 2.72.7A2 2 0 0 1 22 16.92z"/>
+							</svg>
+							{%- else -%}
+							<svg width="{{ icon_size }}" height="{{ icon_size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+								<circle cx="12" cy="12" r="9" />
+								<path d="M12 8v4" />
+								<circle cx="12" cy="17" r="1" />
+							</svg>
+						{%- endcase -%}
+					{%- endif -%}
+				</div>
+			{%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <div class="multicolumn-subheading rte">
+            {{ section.settings.subheading }}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="multicolumn-grid">
+      {%- for block in section.blocks -%}
+        {%- assign b = block.settings -%}
+        <div class="multicolumn-item" {{ block.shopify_attributes }}>
+          {%- if b.image != blank -%}
+            <div class="multicolumn-media">
+					{%- liquid
+						assign img_alt = ''
+						assign target_width = 800
+						assign target_height = target_width | divided_by: b.image.aspect_ratio | round
+						if b.image.alt != blank
+							assign img_alt = b.image.alt | escape
+						endif
+					-%}
+					<img
+						src="{{ b.image | image_url: width: target_width }}"
+						alt="{{ img_alt }}"
+						loading="lazy"
+						width="{{ target_width }}"
+						height="{{ target_height }}"
+						srcset="
+							{{ b.image | image_url: width: 360 }} 360w,
+							{{ b.image | image_url: width: 540 }} 540w,
+							{{ b.image | image_url: width: 720 }} 720w,
+							{{ b.image | image_url: width: target_width }} {{ target_width }}w
+						"
+						sizes="(min-width: 1200px) 25vw, (min-width: 750px) 33vw, 100vw"
+					/>
+            </div>
+          {%- endif -%}
+          <div class="multicolumn-content multicolumn-content--{{ section.settings.align }}">
+            {%- if b.title != blank -%}
+              <h3 class="multicolumn-item-title">{{ b.title | escape }}</h3>
+            {%- endif -%}
+            {%- if b.text != blank -%}
+              <div class="multicolumn-item-text rte">{{ b.text }}</div>
+            {%- endif -%}
+            {%- if b.link_url != blank and b.link_label != blank -%}
+              <div class="multicolumn-item-action">
+                <a href="{{ b.link_url }}" class="multicolumn-link" {% if b.open_in_new %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                  {{ b.link_label | escape }}
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- else -%}
+        <div class="multicolumn-item">
+          <div class="multicolumn-content multicolumn-content--{{ section.settings.align }}">
+            <h3 class="multicolumn-item-title">Add columns</h3>
+            <div class="multicolumn-item-text">Use the theme editor to add and customize columns.</div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <style>
+    #{{ section_id }} .multicolumn-container {
+      max-width: {{ section.settings.max_width | default: 1200 }}px;
+      margin: 0 auto;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    #{{ section_id }} .multicolumn-header {
+      margin-bottom: 24px;
+      text-align: {% if section.settings.align == 'center' %}center{% else %}left{% endif %};
+    }
+    #{{ section_id }} .multicolumn-title {
+      margin: 0 0 8px 0;
+      font-size: clamp(20px, 2.8vw, 32px);
+      line-height: 1.2;
+    }
+    #{{ section_id }} .multicolumn-subheading {
+      opacity: 0.85;
+      font-size: 16px;
+    }
+
+    #{{ section_id }} .multicolumn-grid {
+      display: grid;
+      gap: {{ section.settings.gap | default: 20 }}px;
+      grid-template-columns: repeat({{ section.settings.columns_tablet | default: 2 }}, minmax(0, 1fr));
+    }
+
+    @media (min-width: 990px) {
+      #{{ section_id }} .multicolumn-grid {
+        grid-template-columns: repeat({{ section.settings.columns_desktop | default: 3 }}, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 749.98px) {
+      #{{ section_id }} .multicolumn-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    #{{ section_id }} .multicolumn-item {
+      background: {% if section.settings.card_style == 'card' %}rgba(0,0,0,0.04){% else %}transparent{% endif %};
+      border-radius: {% if section.settings.card_style == 'card' %}12px{% else %}0{% endif %};
+      padding: {% if section.settings.card_style == 'card' %}16px{% else %}0{% endif %};
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    #{{ section_id }} .multicolumn-media {
+      margin-bottom: 12px;
+      overflow: hidden;
+      border-radius: {% if section.settings.card_style == 'card' %}10px{% else %}0{% endif %};
+    }
+    #{{ section_id }} .multicolumn-media img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+		#{{ section_id }} .multicolumn-icon {
+			width: var(--icon-size);
+			height: var(--icon-size);
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--icon-color);
+			background: var(--icon-bg);
+			margin-bottom: 12px;
+		}
+		#{{ section_id }} .multicolumn-icon svg,
+		#{{ section_id }} .multicolumn-icon img {
+			width: 70%;
+			height: 70%;
+		}
+		#{{ section_id }} .multicolumn-icon--circle { border-radius: 9999px; }
+		#{{ section_id }} .multicolumn-icon--rounded { border-radius: 10px; }
+    #{{ section_id }} .multicolumn-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-align: inherit;
+    }
+    #{{ section_id }} .multicolumn-item-title {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+    #{{ section_id }} .multicolumn-item-text {
+      font-size: 15px;
+      opacity: 0.9;
+    }
+    #{{ section_id }} .multicolumn-item-action .multicolumn-link {
+      display: inline-block;
+      margin-top: 4px;
+      font-weight: 600;
+
+      color: inherit;
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Custom Multicolumn",
+  "tag": "section",
+  "class": "section-multicolumn",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Multicolumn section"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+			"label": "Subheading"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columns on desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "columns_tablet",
+      "label": "Columns on tablet",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Column gap (px)",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "default": 20
+    },
+    {
+      "type": "select",
+      "id": "align",
+      "label": "Text alignment",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "card_style",
+      "label": "Item style",
+      "default": "plain",
+      "options": [
+        { "value": "plain", "label": "Plain" },
+        { "value": "card", "label": "Card" }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding (px)",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding (px)",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "number",
+      "id": "max_width",
+      "label": "Content max width (px)",
+      "default": 1200
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+				{ "type": "select", "id": "icon_preset", "label": "Icon preset", "default": "none", "options": [
+					{ "value": "none", "label": "None" },
+					{ "value": "headphones", "label": "Headphones" },
+					{ "value": "truck", "label": "Truck" },
+					{ "value": "shield", "label": "Shield" },
+					{ "value": "mail", "label": "Mail" },
+					{ "value": "compare", "label": "Compare" },
+					{ "value": "chat", "label": "Chat" },
+					{ "value": "phone", "label": "Phone" }
+				] },
+				{ "type": "image_picker", "id": "icon_image", "label": "Custom icon image (overrides preset)" },
+				{ "type": "range", "id": "icon_size", "label": "Icon size (px)", "min": 16, "max": 96, "step": 4, "default": 32 },
+				{ "type": "color", "id": "icon_color", "label": "Icon color" },
+				{ "type": "color", "id": "icon_bg", "label": "Icon background" },
+				{ "type": "select", "id": "icon_shape", "label": "Icon background shape", "default": "none", "options": [
+					{ "value": "none", "label": "None" },
+					{ "value": "circle", "label": "Circle" },
+					{ "value": "rounded", "label": "Rounded" }
+				] },
+        { "type": "text", "id": "title", "label": "Title", "default": "Column title" },
+        { "type": "richtext", "id": "text", "label": "Text", "default": "<p>fsdfeswdafdsaf</p>" },
+        { "type": "text", "id": "link_label", "label": "Link label", "default": "adsswad" },
+        { "type": "url", "id": "link_url", "label": "Link URL" },
+        { "type": "checkbox", "id": "open_in_new", "label": "Open link in new tab", "default": false }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Custom Multicolumn",
+      "category": "Content",
+      "blocks": [
+        { "type": "column" },
+        { "type": "column" },
+        { "type": "column" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+
