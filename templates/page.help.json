@@ -93,13 +93,13 @@
             "icon_preset": "headphones",
             "icon_size": 48,
             "icon_color": "",
-            "icon_bg": "",
+            "icon_bg": "#f5f5f5",
             "icon_shape": "none",
             "title": "Choose the right product:",
             "text": "",
             "link_label": "Comparison page",
             "link_url": "shopify://pages/open-ear-headphones-product-comparison",
-            "open_in_new": false
+            "open_in_new": true
           }
         },
         "column_xiGEhP": {
@@ -146,7 +146,7 @@
         "columns_tablet": 2,
         "gap": 20,
         "align": "left",
-        "card_style": "plain",
+        "card_style": "card",
         "background": "",
         "text_color": "",
         "padding_top": 40,
