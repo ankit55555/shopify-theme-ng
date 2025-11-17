@@ -197,7 +197,7 @@
             "badge_text": "",
             "badge_color": "#ff6b35",
             "badge_text_color": "#ffffff",
-            "details": "<p>Working Hours:<br/>10:30am to 6:30pm (Monday to Saturday)</p>",
+            "details": "",
             "button_label": "Begin Chat",
             "button_link": "",
             "button_style": "filled",
