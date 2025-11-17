@@ -11,6 +11,7 @@
   "sections": {
     "heading": {
       "type": "heading-template",
+      "disabled": true,
       "settings": {
         "heading_fullwidth": false,
         "use_specify_image": true,
