@@ -105,7 +105,7 @@
             "title": "Claim Warranty",
             "text": "",
             "link_label": "Know more",
-            "link_url": "shopify://pages/warranty-claim",
+            "link_url": "shopify://pages/claim-warranty",
             "open_in_new": false
           }
         }
