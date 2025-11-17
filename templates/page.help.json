@@ -189,26 +189,75 @@
     },
     "content_card_7n4X7W": {
       "type": "content-card",
+      "blocks": {
+        "contact_card_tH9Acd": {
+          "type": "contact_card",
+          "settings": {
+            "title": "Chat With Us",
+            "badge_text": "",
+            "badge_color": "#ff6b35",
+            "badge_text_color": "#ffffff",
+            "details": "<p>Working Hours:<br/>10:30am to 6:30pm (Monday to Saturday)</p>",
+            "button_label": "Begin Chat",
+            "button_link": "",
+            "button_style": "filled",
+            "button_new_tab": false,
+            "phone_number": ""
+          }
+        },
+        "contact_card_j3CKTb": {
+          "type": "contact_card",
+          "settings": {
+            "title": "Sumbit a request",
+            "badge_text": "",
+            "badge_color": "#ff6b35",
+            "badge_text_color": "#ffffff",
+            "details": "<p>The team will respond within 24-48 hours.</p><p>Drop a message - Email id: <a href=\"mailto:admin@ngearsafe.com\"><span style=\"text-decoration:underline\">admin@ngearsafe.com</span></a></p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "filled",
+            "button_new_tab": false,
+            "phone_number": ""
+          }
+        },
+        "contact_card_iY39rz": {
+          "type": "contact_card",
+          "settings": {
+            "title": "Contact us",
+            "badge_text": "",
+            "badge_color": "#ff6b35",
+            "badge_text_color": "#ffffff",
+            "details": "<p>Email: <a href=\"mailto:support@ngearsafe.com\"><span style=\"text-decoration:underline\">support@ngearsafe.com</span></a></p><p>Contact No.: 9265573097<br/>Toll-free Contact: 080-471-65643<br/><br/></p>",
+            "button_label": "Begin Chat",
+            "button_link": "",
+            "button_style": "filled",
+            "button_new_tab": false,
+            "phone_number": ""
+          }
+        }
+      },
+      "block_order": [
+        "contact_card_tH9Acd",
+        "contact_card_j3CKTb",
+        "contact_card_iY39rz"
+      ],
       "name": "Content card",
       "settings": {
         "heading": "Still stuck? Our team’s just a ping away.",
-        "content": "<p>Contact Us:<br/>Email: <a href=\"mailto:support@ngearsafe.com\"><span style=\"text-decoration:underline\">support@ngearsafe.com</span></a></p><p>Contact No.: 9265573097<br/>Toll-free Contact: 080-471-65643<br/><br/><br/>Working Hours:<br/>10:30am to 6:30pm (Monday to Saturday)</p><p>Submit a request<br/><br/>The team will respond within 24-48 hours.</p><p>Drop a message - Email id: <a href=\"mailto:admin@ngearsafe.com\"><span style=\"text-decoration:underline\">admin@ngearsafe.com</span></a></p>",
-        "align": "left",
-        "max_width": 900,
+        "subheading": "Not seeing what you're looking for? Our experts are ready to help.",
+        "columns_desktop": 3,
+        "columns_tablet": 2,
+        "max_width": 1380,
         "background": "",
         "text_color": "",
         "padding_top": 40,
         "padding_bottom": 40,
         "card_background": "",
-        "card_border": "",
-        "radius": 12,
+        "card_radius": 12,
         "card_padding": 24,
-        "shadow": true,
-        "button_label": "",
-        "button_link": "",
-        "button_new_tab": false,
-        "button_background": "",
-        "button_color": ""
+        "button_bg": "#000000",
+        "button_text": "#ffffff",
+        "button_bg_hover": "#333333"
       }
     }
   },
