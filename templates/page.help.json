@@ -83,12 +83,83 @@
         "sidebar_bdr": 5,
         "sidebar_pd": 10
       }
+    },
+    "multicolumn_custom_GH9Nif": {
+      "type": "multicolumn-custom",
+      "blocks": {
+        "column_yt3C4i": {
+          "type": "column",
+          "settings": {
+            "icon_preset": "headphones",
+            "icon_size": 48,
+            "icon_color": "",
+            "icon_bg": "",
+            "icon_shape": "none",
+            "title": "Choose the right product:",
+            "text": "",
+            "link_label": "Comparison page",
+            "link_url": "shopify://pages/open-ear-headphones-product-comparison",
+            "open_in_new": false
+          }
+        },
+        "column_xiGEhP": {
+          "type": "column",
+          "settings": {
+            "icon_preset": "none",
+            "icon_size": 32,
+            "icon_color": "",
+            "icon_bg": "",
+            "icon_shape": "none",
+            "title": "Order Help",
+            "text": "",
+            "link_label": "Track your order",
+            "link_url": "shopify://pages/track-your-order",
+            "open_in_new": true
+          }
+        },
+        "column_XbUHde": {
+          "type": "column",
+          "settings": {
+            "icon_preset": "none",
+            "icon_size": 32,
+            "icon_color": "",
+            "icon_bg": "",
+            "icon_shape": "none",
+            "title": "Column title",
+            "text": "<p>fsdfeswdafdsaf</p>",
+            "link_label": "adsswad",
+            "link_url": "",
+            "open_in_new": false
+          }
+        }
+      },
+      "block_order": [
+        "column_yt3C4i",
+        "column_xiGEhP",
+        "column_XbUHde"
+      ],
+      "name": "Custom Multicolumn",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "columns_desktop": 3,
+        "columns_tablet": 2,
+        "gap": 20,
+        "align": "left",
+        "card_style": "plain",
+        "background": "",
+        "text_color": "",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "max_width": 1380
+      }
     }
   },
   "order": [
     "heading",
     "main",
     "custom_liquid_KgAarB",
-    "sidebar-page"
+    "sidebar-page",
+    "multicolumn_custom_GH9Nif"
   ]
 }
