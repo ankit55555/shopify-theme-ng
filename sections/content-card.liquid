@@ -1,130 +1,446 @@
 {% comment %}
-  Content Card Section
-  - Clean card to display help/contact or any rich text
-  - Customizable spacing, colors, width, alignment, border radius and shadow
-  - Styles are scoped to this section instance
+  Contact Cards Section
+  - Multiple contact cards in a grid layout
+  - Each card supports title, badge, button/link, and details
+  - Modern design with customizable styling
 {% endcomment %}
 
-{%- assign section_id = 'content-card-' | append: section.id -%}
+{%- assign section_id = 'contact-cards-' | append: section.id -%}
 
-<section id="{{ section_id }}" class="content-card-section" style="
+<section id="{{ section_id }}" class="contact-cards-section" style="
   {% if section.settings.background != blank %}background-color: {{ section.settings.background }};{% endif %}
   {% if section.settings.text_color != blank %}color: {{ section.settings.text_color }};{% endif %}
-  padding-top: {{ section.settings.padding_top | default: 40 }}px;
-  padding-bottom: {{ section.settings.padding_bottom | default: 40 }}px;
+  padding-top: {{ section.settings.padding_top | default: 60 }}px;
+  padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
 ">
-  <div class="content-card-container">
+  <div class="contact-cards-container">
     {%- if section.settings.heading != blank -%}
-      <div class="content-card-header content-card-header--{{ section.settings.align }}">
-        <h2 class="content-card-title">{{ section.settings.heading | escape }}</h2>
+      <div class="contact-cards-header">
+        <h2 class="contact-cards-title">{{ section.settings.heading | escape }}</h2>
+        {%- if section.settings.subheading != blank -%}
+          <p class="contact-cards-subheading">{{ section.settings.subheading | escape }}</p>
+        {%- endif -%}
       </div>
     {%- endif -%}
 
-    <div class="content-card-box content-card-box--{{ section.settings.align }}">
-      {%- if section.settings.content != blank -%}
-        <div class="content-card-rich rte">
-          {{ section.settings.content }}
+    <div class="contact-cards-grid">
+      {%- for block in section.blocks -%}
+        {%- assign b = block.settings -%}
+        <div class="contact-card" {{ block.shopify_attributes }}>
+          <div class="contact-card-inner">
+            {%- if b.badge_text != blank -%}
+              <div class="contact-card-badge" style="background-color: {{ b.badge_color | default: '#ff6b35' }}; color: {{ b.badge_text_color | default: '#fff' }};">
+                {{ b.badge_text | escape }}
+              </div>
+            {%- endif -%}
+            
+            <h3 class="contact-card-title">{{ b.title | escape }}</h3>
+            
+            {%- if b.details != blank -%}
+              <div class="contact-card-details rte">
+                {{ b.details }}
+              </div>
+            {%- endif -%}
+            
+            <div class="contact-card-action">
+              {%- if b.button_label != blank and b.button_link != blank -%}
+                <a href="{{ b.button_link }}" class="contact-card-button contact-card-button--{{ b.button_style }}" {% if b.button_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                  {{ b.button_label | escape }}
+                </a>
+              {%- elsif b.phone_number != blank -%}
+                <a href="tel:{{ b.phone_number | replace: ' ', '' | replace: '-', '' }}" class="contact-card-phone">
+                  {{ b.phone_number | escape }}
+                </a>
+              {%- endif -%}
+            </div>
+          </div>
         </div>
       {%- else -%}
-        <div class="content-card-rich">
-          <p>Add your content in the theme editor. This block supports headings, paragraphs, and links.</p>
+        <div class="contact-card">
+          <div class="contact-card-inner">
+            <h3 class="contact-card-title">Add contact cards</h3>
+            <p class="contact-card-details">Use the theme editor to add and customize contact cards.</p>
+          </div>
         </div>
-      {%- endif -%}
-
-      {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
-        <div class="content-card-action">
-          <a href="{{ section.settings.button_link }}" class="content-card-button" {% if section.settings.button_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}>
-            {{ section.settings.button_label | escape }}
-          </a>
-        </div>
-      {%- endif -%}
+      {%- endfor -%}
     </div>
   </div>
 
   <style>
-    #{{ section_id }} .content-card-container {
-      max-width: {{ section.settings.max_width | default: 900 }}px;
+    #{{ section_id }} .contact-cards-container {
+      max-width: {{ section.settings.max_width | default: 1200 }}px;
       margin: 0 auto;
-      padding-left: 16px;
-      padding-right: 16px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
-    #{{ section_id }} .content-card-header {
-      margin-bottom: 16px;
-      text-align: {% if section.settings.align == 'center' %}center{% else %}left{% endif %};
+
+    #{{ section_id }} .contact-cards-header {
+      text-align: center;
+      margin-bottom: 40px;
     }
-    #{{ section_id }} .content-card-title {
+
+    #{{ section_id }} .contact-cards-title {
+      margin: 0 0 12px 0;
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    #{{ section_id }} .contact-cards-subheading {
       margin: 0;
-      font-size: clamp(20px, 2.6vw, 32px);
-      line-height: 1.25;
+      font-size: clamp(16px, 1.5vw, 18px);
+      opacity: 0.8;
+      line-height: 1.5;
     }
-    #{{ section_id }} .content-card-box {
-      background: {{ section.settings.card_background | default: 'rgba(0,0,0,0.04)' }};
-      border-radius: {{ section.settings.radius | default: 12 }}px;
-      padding: {{ section.settings.card_padding | default: 24 }}px;
-      box-shadow: {% if section.settings.shadow %}0 8px 24px rgba(0,0,0,0.08){% else %}none{% endif %};
-      border: {% if section.settings.card_border != blank %}1px solid {{ section.settings.card_border }}{% else %}none{% endif %};
-      text-align: {% if section.settings.align == 'center' %}center{% else %}left{% endif %};
+
+    #{{ section_id }} .contact-cards-grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat({{ section.settings.columns_tablet | default: 2 }}, minmax(0, 1fr));
     }
-    #{{ section_id }} .content-card-rich {
-      font-size: 16px;
+
+    @media (min-width: 990px) {
+      #{{ section_id }} .contact-cards-grid {
+        grid-template-columns: repeat({{ section.settings.columns_desktop | default: 3 }}, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 749.98px) {
+      #{{ section_id }} .contact-cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    #{{ section_id }} .contact-card {
+      height: 100%;
+    }
+
+    #{{ section_id }} .contact-card-inner {
+      background: {{ section.settings.card_background | default: '#ffffff' }};
+      border-radius: {{ section.settings.card_radius | default: 12 }}px;
+      padding: {{ section.settings.card_padding | default: 32 }}px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #{{ section_id }} .contact-card-inner:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    #{{ section_id }} .contact-card-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    #{{ section_id }} .contact-card-title {
+      margin: 0 0 16px 0;
+      font-size: 20px;
+      line-height: 1.3;
+      font-weight: 700;
+      color: inherit;
+    }
+
+    #{{ section_id }} .contact-card-details {
+      font-size: 15px;
       line-height: 1.6;
-      opacity: 0.95;
+      opacity: 0.85;
+      margin-bottom: 20px;
+      flex-grow: 1;
     }
-    #{{ section_id }} .content-card-rich p {
-      margin: 0 0 10px 0;
+
+    #{{ section_id }} .contact-card-details p {
+      margin: 0 0 8px 0;
     }
-    #{{ section_id }} .content-card-action {
-      margin-top: 14px;
+
+    #{{ section_id }} .contact-card-details p:last-child {
+      margin-bottom: 0;
     }
-    #{{ section_id }} .content-card-button {
+
+    #{{ section_id }} .contact-card-action {
+      margin-top: auto;
+    }
+
+    #{{ section_id }} .contact-card-button {
       display: inline-block;
-      padding: 10px 16px;
-      border-radius: 8px;
-      background: {% if section.settings.button_background != blank %}{{ section.settings.button_background }}{% else %}#111{% endif %};
-      color: {% if section.settings.button_color != blank %}{{ section.settings.button_color }}{% else %}#fff{% endif %};
+      padding: 12px 24px;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
+      font-size: 15px;
+      transition: all 0.2s ease;
+      text-align: center;
+      min-width: 140px;
+    }
+
+    #{{ section_id }} .contact-card-button--filled {
+      background-color: {{ section.settings.button_bg | default: '#000000' }};
+      color: {{ section.settings.button_text | default: '#ffffff' }};
+      border: 2px solid {{ section.settings.button_bg | default: '#000000' }};
+    }
+
+    #{{ section_id }} .contact-card-button--filled:hover {
+      background-color: {{ section.settings.button_bg_hover | default: '#333333' }};
+      border-color: {{ section.settings.button_bg_hover | default: '#333333' }};
+    }
+
+    #{{ section_id }} .contact-card-button--outline {
+      background-color: transparent;
+      color: {{ section.settings.button_bg | default: '#000000' }};
+      border: 2px solid {{ section.settings.button_bg | default: '#000000' }};
+    }
+
+    #{{ section_id }} .contact-card-button--outline:hover {
+      background-color: {{ section.settings.button_bg | default: '#000000' }};
+      color: {{ section.settings.button_text | default: '#ffffff' }};
+    }
+
+    #{{ section_id }} .contact-card-phone {
+      display: inline-block;
+      font-size: 18px;
+      font-weight: 600;
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: opacity 0.2s ease;
+    }
+
+    #{{ section_id }} .contact-card-phone:hover {
+      opacity: 0.7;
     }
   </style>
 </section>
 
 {% schema %}
 {
-  "name": "Content card",
+  "name": "Contact Cards",
   "tag": "section",
-  "class": "section-content-card",
+  "class": "section-contact-cards",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Need help?" },
-    { "type": "richtext", "id": "content", "label": "Content", "default": "<p>Still stuck? Our team’s just a ping away.</p><p>Email: support@example.com</p><p>Working hours: 10:30am–6:30pm (Mon–Sat)</p>" },
-    { "type": "select", "id": "align", "label": "Alignment", "default": "left", "options": [
-      { "value": "left", "label": "Left" },
-      { "value": "center", "label": "Center" }
-    ] },
-    { "type": "number", "id": "max_width", "label": "Content max width (px)", "default": 900 },
-    { "type": "color", "id": "background", "label": "Section background" },
-    { "type": "color", "id": "text_color", "label": "Section text color" },
-    { "type": "range", "id": "padding_top", "label": "Top padding (px)", "min": 0, "max": 160, "step": 4, "default": 40 },
-    { "type": "range", "id": "padding_bottom", "label": "Bottom padding (px)", "min": 0, "max": 160, "step": 4, "default": 40 },
-
-    { "type": "color", "id": "card_background", "label": "Card background" },
-    { "type": "color", "id": "card_border", "label": "Card border color" },
-    { "type": "range", "id": "radius", "label": "Card corner radius (px)", "min": 0, "max": 32, "step": 2, "default": 12 },
-    { "type": "range", "id": "card_padding", "label": "Card padding (px)", "min": 8, "max": 64, "step": 4, "default": 24 },
-    { "type": "checkbox", "id": "shadow", "label": "Show shadow", "default": true },
-
-    { "type": "text", "id": "button_label", "label": "Button label" },
-    { "type": "url", "id": "button_link", "label": "Button link" },
-    { "type": "checkbox", "id": "button_new_tab", "label": "Open button in new tab", "default": false },
-    { "type": "color", "id": "button_background", "label": "Button background" },
-    { "type": "color", "id": "button_color", "label": "Button text color" }
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Connect With Our Happiness Team"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Not seeing what you're looking for? Our experts are ready to help."
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columns on desktop",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "columns_tablet",
+      "label": "Columns on tablet",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "number",
+      "id": "max_width",
+      "label": "Content max width (px)",
+      "default": 1200
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Section background color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Section text color"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding (px)",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding (px)",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 60
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Card corner radius (px)",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Card padding (px)",
+      "min": 16,
+      "max": 64,
+      "step": 4,
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_hover",
+      "label": "Button hover background",
+      "default": "#333333"
+    }
   ],
+  "blocks": [
+    {
+      "type": "contact_card",
+      "name": "Contact Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Chat With Us"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge text (e.g., RECOMMENDED)"
+        },
+        {
+          "type": "color",
+          "id": "badge_color",
+          "label": "Badge background color",
+          "default": "#ff6b35"
+        },
+        {
+          "type": "color",
+          "id": "badge_text_color",
+          "label": "Badge text color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "richtext",
+          "id": "details",
+          "label": "Details",
+          "default": "<p>9AM - 9PM EST Monday - Friday</p><p>9AM - 5PM EST Saturday</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Begin Chat"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button style",
+          "default": "filled",
+          "options": [
+            { "value": "filled", "label": "Filled (black)" },
+            { "value": "outline", "label": "Outline (white with border)" }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "button_new_tab",
+          "label": "Open button in new tab",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "phone_number",
+          "label": "Phone number (alternative to button)",
+          "info": "If provided, this will be shown instead of a button"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
   "presets": [
     {
-      "name": "Content card",
-      "category": "Content"
+      "name": "Contact Cards",
+      "category": "Content",
+      "blocks": [
+        {
+          "type": "contact_card",
+          "settings": {
+            "title": "Chat With Us",
+            "badge_text": "RECOMMENDED",
+            "badge_color": "#ff6b35",
+            "details": "<p>9AM - 9PM EST Monday - Friday</p><p>9AM - 5PM EST Saturday</p><p>24/7 AI Assistant always available</p>",
+            "button_label": "Begin Chat",
+            "button_style": "filled"
+          }
+        },
+        {
+          "type": "contact_card",
+          "settings": {
+            "title": "Submit a Request",
+            "details": "<p>Available anytime</p><p>Our team will respond within 24-48hrs</p>",
+            "button_label": "Leave A Message",
+            "button_style": "outline"
+          }
+        },
+        {
+          "type": "contact_card",
+          "settings": {
+            "title": "Call Us",
+            "details": "<p>9AM - 9PM EST Monday - Friday</p><p>9AM - 5PM EST Saturday</p>",
+            "phone_number": "737-215-4011"
+          }
+        }
+      ]
     }
   ]
 }
 {% endschema %}
-
-
