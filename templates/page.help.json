@@ -29,6 +29,37 @@
         "code_cus_css": ".SectionID {\nbackground-color:red\n}"
       }
     },
+    "hero_bg_banner_FKV9CF": {
+      "type": "hero-bg-banner",
+      "name": "Hero banner - BG image",
+      "settings": {
+        "image_desktop": "shopify://shop_images/unnamed.jpg",
+        "image_mobile": "shopify://shop_images/Screenshot_1.png",
+        "height_desktop": 360,
+        "height_mobile": 520,
+        "vertical_align_mobile": "bottom",
+        "mobile_bottom_offset": 24,
+        "overlay_color": "#000000",
+        "overlay_opacity": 45,
+        "bg_position_desktop": "center center",
+        "bg_position_mobile": "center center",
+        "horizontal_align": "center",
+        "vertical_align": "middle",
+        "contain_content": true,
+        "container_max_width": 1280,
+        "content_max_width": 640,
+        "heading": "",
+        "subheading": "",
+        "cta_label": "",
+        "cta_link": "",
+        "cta_style": "link",
+        "text_color": "#ffffff",
+        "button_color": "#44e1e6",
+        "button_text_color": "#0b2a2d",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "multicolumn_custom_GH9Nif": {
       "type": "multicolumn-custom",
       "blocks": {
@@ -101,6 +132,7 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "layout": "t4s-container-wrap",
         "cl_bg": "",
@@ -153,13 +185,39 @@
         "sidebar_bdr": 5,
         "sidebar_pd": 10
       }
+    },
+    "content_card_7n4X7W": {
+      "type": "content-card",
+      "name": "Content card",
+      "settings": {
+        "heading": "Still stuck? Our team’s just a ping away.",
+        "content": "<p>Contact Us:<br/>Email: <a href=\"mailto:support@ngearsafe.com\"><span style=\"text-decoration:underline\">support@ngearsafe.com</span></a></p><p>Contact No.: 9265573097<br/>Toll-free Contact: 080-471-65643<br/><br/><br/>Working Hours:<br/>10:30am to 6:30pm (Monday to Saturday)</p><p>Submit a request<br/><br/>The team will respond within 24-48 hours.</p><p>Drop a message - Email id: <a href=\"mailto:admin@ngearsafe.com\"><span style=\"text-decoration:underline\">admin@ngearsafe.com</span></a></p>",
+        "align": "left",
+        "max_width": 900,
+        "background": "",
+        "text_color": "",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "card_background": "",
+        "card_border": "",
+        "radius": 12,
+        "card_padding": 24,
+        "shadow": true,
+        "button_label": "",
+        "button_link": "",
+        "button_new_tab": false,
+        "button_background": "",
+        "button_color": ""
+      }
     }
   },
   "order": [
     "heading",
+    "hero_bg_banner_FKV9CF",
     "multicolumn_custom_GH9Nif",
     "main",
     "custom_liquid_KgAarB",
-    "sidebar-page"
+    "sidebar-page",
+    "content_card_7n4X7W"
   ]
 }
