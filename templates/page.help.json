@@ -125,10 +125,10 @@
             "icon_color": "",
             "icon_bg": "",
             "icon_shape": "none",
-            "title": "Column title",
-            "text": "<p>fsdfeswdafdsaf</p>",
-            "link_label": "adsswad",
-            "link_url": "",
+            "title": "Claim Warranty",
+            "text": "",
+            "link_label": "Know more",
+            "link_url": "shopify://pages/warranty-claim",
             "open_in_new": false
           }
         }
