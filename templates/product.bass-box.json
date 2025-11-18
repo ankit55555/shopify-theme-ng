@@ -402,6 +402,8 @@
         "container_max_width": 1280,
         "content_max_width": 450,
         "heading": "<p>120W Enhanced bass speaker</p>",
+        "middle_text": "",
+        "middle_text_color": "#f4b35f",
         "subheading": "<p><br/>Stay effortlessly connected all day with NG EarSafe Comm's 8-hour battery life. From your morning conference call to evening catch-ups, the magnetic charging ensures your headset is always ready for the next important conversation.<br/></p>",
         "cta_label": "Know the difference",
         "cta_link": "",
@@ -576,6 +578,8 @@
         "container_max_width": 1280,
         "content_max_width": 510,
         "heading": "<p>14 light modes for ultimate party vibes</p>",
+        "middle_text": "",
+        "middle_text_color": "#f4b35f",
         "subheading": "",
         "cta_label": "Know the difference",
         "cta_link": "",
@@ -607,6 +611,8 @@
         "container_max_width": 1280,
         "content_max_width": 510,
         "heading": "",
+        "middle_text": "",
+        "middle_text_color": "#f4b35f",
         "subheading": "",
         "cta_label": "Know the difference",
         "cta_link": "",
@@ -1082,7 +1088,8 @@
         "vizup_shoppable_video_carousel_videos_block_QAdPRg": {
           "type": "shopify://apps/vizup-shoppable-video-carousel/blocks/videos-block/eaecaa7b-ab6b-40ae-8ddf-50daa867f3eb",
           "settings": {
-            "videoc_widget_id": ""
+            "videoc_widget_id": "",
+            "custom_css": ""
           }
         }
       },
