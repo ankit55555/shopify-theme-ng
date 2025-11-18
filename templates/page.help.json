@@ -215,7 +215,7 @@
             "badge_text_color": "#ffffff",
             "details": "<p>The team will respond within 24-48 hours.</p><p>Drop a message - Email id: <a href=\"mailto:admin@ngearsafe.com\"><span style=\"text-decoration:underline\">admin@ngearsafe.com</span></a></p>",
             "button_label": "Submit Request",
-            "button_link": "mailto:admin@ngearsafe.com",
+            "button_link": "https://mail.google.com/mail/?view=cm&fs=1&to=admin@ngearsafe.com",
             "button_style": "filled",
             "button_new_tab": false,
             "phone_number": ""
