@@ -224,13 +224,13 @@
         "contact_card_iY39rz": {
           "type": "contact_card",
           "settings": {
-            "title": "Need to talk to us?",
+            "title": "Contact us",
             "badge_text": "",
             "badge_color": "#ff6b35",
             "badge_text_color": "#ffffff",
-            "details": "<p>Drop a message<br/><br/>Contact No.: 9265573097<br/>Toll-free Contact: 080-471-65643<br/><br/></p>",
-            "button_label": "Submit request",
-            "button_link": "mailto:support@ngearsafe.com",
+            "details": "<p>Email: <a href=\"mailto:support@ngearsafe.com\"><span style=\"text-decoration:underline\">support@ngearsafe.com</span></a></p><p>Contact No.: 9265573097<br/>Toll-free Contact: 080-471-65643<br/><br/></p>",
+            "button_label": "Begin Chat",
+            "button_link": "",
             "button_style": "filled",
             "button_new_tab": false,
             "phone_number": ""
