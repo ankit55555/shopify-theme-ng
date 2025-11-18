@@ -7,6 +7,9 @@
         {%- if s.heading != blank -%}
           <div class="hero-banner__heading rte">{{ s.heading }}</div>
         {%- endif -%}
+        {%- if s.middle_text != blank -%}
+          <div class="hero-banner__middle-text rte" style="color: {{ s.middle_text_color }};">{{ s.middle_text }}</div>
+        {%- endif -%}
         {%- if s.subheading != blank -%}
           <div class="hero-banner__subheading rte" style="font-weight:600;">{{ s.subheading }}</div>
         {%- endif -%}
@@ -152,6 +155,13 @@
       font-size: 56px;
       line-height: 1.1;
       font-weight: 700;
+    }
+
+    #shopify-section-{{ section.id }}
+    .hero-banner__middle-text {
+      font-size: 20px;
+      line-height: 1.4;
+      font-weight: 600;
     }
 
     #shopify-section-{{ section.id }}
@@ -450,6 +460,16 @@
         "id": "heading",
         "label": "Heading",
         "default": "<p>Find the <strong>Right EarSafe</strong> for you.</p>"
+      }, {
+        "type": "richtext",
+        "id": "middle_text",
+        "label": "Middle sentence",
+        "default": "<p>1080P Native, 4K Support</p>"
+      }, {
+        "type": "color",
+        "id": "middle_text_color",
+        "label": "Middle sentence color",
+        "default": "#f4b35f"
       }, {
         "type": "richtext",
         "id": "subheading",
