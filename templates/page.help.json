@@ -34,9 +34,9 @@
       "type": "hero-bg-banner",
       "name": "Hero banner - BG image",
       "settings": {
-        "image_desktop": "shopify://shop_images/unnamed.jpg",
-        "image_mobile": "shopify://shop_images/Screenshot_1.png",
-        "height_desktop": 360,
+        "image_desktop": "shopify://shop_images/Help_page_banner_desktop.webp",
+        "image_mobile": "shopify://shop_images/Help_page_banner_mobile.webp",
+        "height_desktop": 560,
         "height_mobile": 520,
         "vertical_align_mobile": "bottom",
         "mobile_bottom_offset": 24,
