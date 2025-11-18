@@ -50,6 +50,8 @@
         "container_max_width": 1280,
         "content_max_width": 640,
         "heading": "",
+        "middle_text": "",
+        "middle_text_color": "#f4b35f",
         "subheading": "",
         "cta_label": "",
         "cta_link": "",
