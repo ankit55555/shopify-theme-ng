@@ -394,6 +394,8 @@
         "container_max_width": 1280,
         "content_max_width": 510,
         "heading": "<p>Find the <strong>Right EarSafe</strong> for you.</p>",
+        "middle_text": "",
+        "middle_text_color": "#f4b35f",
         "subheading": "<p>Choose Earsafe as per your lifestyle</p>",
         "cta_label": "Know the difference",
         "cta_link": "shopify://pages/open-ear-headphones-product-comparison",
