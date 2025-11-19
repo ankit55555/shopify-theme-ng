@@ -2587,11 +2587,6 @@
         "disabled": false,
         "settings": {}
       },
-      "13386407466480679122": {
-        "type": "shopify://apps/interakt-whatsapp-marketing/blocks/app_embed/8ae4eea6-7869-4909-8446-2f9389fe7a63",
-        "disabled": false,
-        "settings": {}
-      },
       "5918445685253060206": {
         "type": "shopify://apps/bundler/blocks/bundler-script-append/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
         "disabled": false,
@@ -2610,6 +2605,11 @@
       "13768625480086291342": {
         "type": "shopify://apps/forms/blocks/forms/8744a304-fcb1-4347-b211-bb6b4759a76a",
         "disabled": false,
+        "settings": {}
+      },
+      "13386407466480679122": {
+        "type": "shopify://apps/interakt-whatsapp-marketing/blocks/app_embed/8ae4eea6-7869-4909-8446-2f9389fe7a63",
+        "disabled": true,
         "settings": {}
       }
     }
