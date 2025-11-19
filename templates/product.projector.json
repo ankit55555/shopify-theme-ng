@@ -608,7 +608,7 @@
       "settings": {
         "image_desktop": "shopify://shop_images/section_5_Eyesafe_desktop.webp",
         "image_mobile": "shopify://shop_images/section_5_Eyesafe_mobile.webp",
-        "height_desktop": 740,
+        "height_desktop": 650,
         "height_mobile": 760,
         "vertical_align_mobile": "top",
         "mobile_bottom_offset": 0,
