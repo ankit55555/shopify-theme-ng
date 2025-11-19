@@ -692,37 +692,6 @@
         "code_cus_css": ""
       }
     },
-    "601092f3-f61a-4147-b4f4-33b069d7f348": {
-      "type": "video_featured",
-      "disabled": true,
-      "settings": {
-        "se_height": "t4s_ratio_cuspx",
-        "custom_dk": true,
-        "height_dk": 600,
-        "custom_tb": true,
-        "height_tb": 400,
-        "custom_mb": true,
-        "height_mb": 250,
-        "source": "2",
-        "video_url": "",
-        "video": "shopify://files/videos/NG Earsafe_Ad1_FINAL Cut v5 end slate change.mp4",
-        "au_video": true,
-        "loop_video": true,
-        "bg_overlay": "#000000",
-        "bg_opacity": 0,
-        "layout": "t4s-se-container",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,0px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,0px,",
-        "pd_mb": "",
-        "use_cus_css": true,
-        "code_cus_css": ".t4s-video video {\n    z-index: 101;\n    object-fit: unset  !important;\n    border-radius: 10px !important;\nclip-path: inset(1px 1px);\n}\n\n .t4s-video video::-webkit-media-controls {\n  display: none;\n}"
-      }
-    },
     "a0e3c96b-09ad-4fe8-90fe-4e91deedd752": {
       "type": "custom-liquid",
       "disabled": true,
@@ -753,48 +722,6 @@
         "pd_tb": "",
         "mg_mb": ",,30px,",
         "pd_mb": ""
-      }
-    },
-    "4bce7335-2a2b-4e8a-b006-05c8651811f8": {
-      "type": "top_heading",
-      "blocks": {
-        "template--20627092865303__4bce7335-2a2b-4e8a-b006-05c8651811f8-bl_heading-1": {
-          "type": "bl_heading",
-          "settings": {
-            "top_heading": "Experience Safer Listening"
-          }
-        },
-        "template--20627092865303__4bce7335-2a2b-4e8a-b006-05c8651811f8-bl_subheading-1": {
-          "type": "bl_subheading",
-          "disabled": true,
-          "settings": {
-            "top_subheading": "Best theme shopify"
-          }
-        }
-      },
-      "block_order": [
-        "template--20627092865303__4bce7335-2a2b-4e8a-b006-05c8651811f8-bl_heading-1",
-        "template--20627092865303__4bce7335-2a2b-4e8a-b006-05c8651811f8-bl_subheading-1"
-      ],
-      "disabled": true,
-      "custom_css": [
-        ".t4s_nt_se_template--22100092911895__4bce7335-2a2b-4e8a-b006-05c8651811f8 .t4s-container {margin-top: 0%; display: block !important; margin-bottom: 70px;}",
-        "@media only screen and (max-width: 768px) {.t4s_nt_se_template--22100092911895__4bce7335-2a2b-4e8a-b006-05c8651811f8 .t4s-top-heading-heading h3 {font-size: 20px; } .t4s_nt_se_template--22100092911895__4bce7335-2a2b-4e8a-b006-05c8651811f8 .t4s-container {margin-top: 0% !important; }}"
-      ],
-      "settings": {
-        "design_heading": "2",
-        "heading_align": "t4s-text-center",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,0px,",
-        "pd": "0px,,0px,",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": ",,40px,",
-        "use_cus_css": false,
-        "code_cus_css": ""
       }
     },
     "27a62662-0e46-4637-a877-1f6c3f2decbb": {
@@ -1223,10 +1150,8 @@
     "hero_bg_banner_wEMkwA",
     "21cc52cf-8bcf-42ba-8f07-80d94e7a589e",
     "df43a99b-eda3-4c32-837f-b6640989c695",
-    "601092f3-f61a-4147-b4f4-33b069d7f348",
     "a0e3c96b-09ad-4fe8-90fe-4e91deedd752",
     "617310e4-15e9-4543-82e0-1f050ae4ab1e",
-    "4bce7335-2a2b-4e8a-b006-05c8651811f8",
     "27a62662-0e46-4637-a877-1f6c3f2decbb",
     "87df8b17-dc27-449b-ba9a-eb084958bb91",
     "04fbdf0e-5386-4930-b05f-10d6e52f33bf",
