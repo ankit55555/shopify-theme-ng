@@ -299,6 +299,7 @@
         },
         "bogos_io_free_gift_gift_thumbnail_view_ViqdN6": {
           "type": "shopify://apps/bogos-io-free-gift/blocks/gift-thumbnail-view/0432bba6-720a-4e95-be5a-b868386f7aa6",
+          "disabled": true,
           "settings": {}
         }
       },
@@ -531,6 +532,39 @@
         "text_color": "#ffffff",
         "button_color": "#44e1e6",
         "button_text_color": "#0b2a2d",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "hero_content_top_QWBnNg": {
+      "type": "hero-content-top",
+      "name": "Hero banner - Content top",
+      "settings": {
+        "image_desktop": "shopify://shop_images/section_3_1080_native_4k_support_desktop.webp",
+        "image_mobile": "shopify://shop_images/section_3_1080_native_4k_support_mobile.webp",
+        "height_desktop": 760,
+        "height_mobile": 800,
+        "bg_position_desktop": "center center",
+        "bg_position_mobile": "center center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 45,
+        "horizontal_align": "center",
+        "contain_content": true,
+        "container_max_width": 1280,
+        "content_max_width": 600,
+        "heading": "<p><strong>Crisp, Lifelike Detail</strong></p>",
+        "middle_text": "<p>1080P Native, 4K Support<br/></p>",
+        "middle_text_color": "#f4b35f",
+        "subheading": "<p>Enjoy native Full HD sharpness and smooth 4K playback support. Every frame bursts with clarity, bringing movies, games, and sports to life<br/><br/></p>",
+        "cta_label": "Know the difference",
+        "cta_link": "",
+        "cta_style": "link",
+        "text_color": "#ffffff",
+        "content_bg_color": "#1a1a1a",
+        "button_color": "#44e1e6",
+        "button_text_color": "#0b2a2d",
+        "content_padding_top": 40,
+        "content_padding_bottom": 0,
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -964,52 +998,6 @@
         "pd_mb": ""
       }
     },
-    "accordion_4NGXHR": {
-      "type": "accordion",
-      "blocks": {
-        "accor_item_yhMLqn": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "box",
-            "title": "Technical information",
-            "content": "{{ product.description }}"
-          }
-        }
-      },
-      "block_order": [
-        "accor_item_yhMLqn"
-      ],
-      "disabled": true,
-      "settings": {
-        "design_heading": "1",
-        "heading_align": "t4s-text-center",
-        "top_heading": "",
-        "icon_heading": "las la-gem",
-        "top_subheading": "",
-        "tophead_mb": 30,
-        "accor_des": "1",
-        "title_cl": "#222222",
-        "bg_title_cl": "#f6f6f8",
-        "title_active_cl": "#000000",
-        "bg_title_active_cl": "#f6f6f8",
-        "content_cl": "#878787",
-        "bg_content_cl": "#ffffff",
-        "content_align": "t4s-text-start",
-        "auto_active": false,
-        "layout": "t4s-container-wrap",
-        "custom_width": 1000,
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,50px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": "",
-        "use_cus_css": false,
-        "code_cus_css": ""
-      }
-    },
     "1737282429ed5d4301": {
       "type": "apps",
       "blocks": {
@@ -1347,6 +1335,7 @@
     "sidebar",
     "hero_bg_banner_9C9kj8",
     "hero_bg_banner_BKChAU",
+    "hero_content_top_QWBnNg",
     "21cc52cf-8bcf-42ba-8f07-80d94e7a589e",
     "df43a99b-eda3-4c32-837f-b6640989c695",
     "601092f3-f61a-4147-b4f4-33b069d7f348",
@@ -1360,7 +1349,6 @@
     "ec8915fe-2aff-44fc-b59d-72b690f5e071",
     "14f54523-b5e7-4690-b573-83b33831d4e9",
     "77561158-d4b4-412b-a5a2-42695c15bc02",
-    "accordion_4NGXHR",
     "1737282429ed5d4301",
     "83a135b9-30ff-430d-a7ed-dd7da7224ef0",
     "product-recommendations",
