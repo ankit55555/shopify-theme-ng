@@ -2470,11 +2470,6 @@
     },
     "content_for_index": [],
     "blocks": {
-      "4090771392943522038": {
-        "type": "shopify://apps/toastibar-sales-popup/blocks/app-embed/28a475c6-f06d-46d4-b40a-df8d869255ef",
-        "disabled": false,
-        "settings": {}
-      },
       "2538754702463810051": {
         "type": "shopify://apps/sale-by-wizz/blocks/wizz_sale/cb67c40d-1985-4671-a8ba-9fcd0d4ad990",
         "disabled": true,
@@ -2609,6 +2604,11 @@
       },
       "13386407466480679122": {
         "type": "shopify://apps/interakt-whatsapp-marketing/blocks/app_embed/8ae4eea6-7869-4909-8446-2f9389fe7a63",
+        "disabled": true,
+        "settings": {}
+      },
+      "4090771392943522038": {
+        "type": "shopify://apps/toastibar/blocks/app-embed/28a475c6-f06d-46d4-b40a-df8d869255ef",
         "disabled": true,
         "settings": {}
       }
