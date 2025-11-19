@@ -1271,6 +1271,39 @@
         "use_cus_css": false,
         "code_cus_css": ""
       }
+    },
+    "hero_bg_banner_9C9kj8": {
+      "type": "hero-bg-banner",
+      "name": "Hero banner - BG image",
+      "settings": {
+        "image_desktop": "shopify://shop_images/section_1_900_ANSI_desktop.webp",
+        "image_mobile": "shopify://shop_images/section_1_900_ANSI_mobile.webp",
+        "height_desktop": 620,
+        "height_mobile": 760,
+        "vertical_align_mobile": "top",
+        "mobile_bottom_offset": 24,
+        "overlay_color": "#000000",
+        "overlay_opacity": 45,
+        "bg_position_desktop": "center center",
+        "bg_position_mobile": "center center",
+        "horizontal_align": "left",
+        "vertical_align": "bottom",
+        "contain_content": true,
+        "container_max_width": 1280,
+        "content_max_width": 640,
+        "heading": "<p><strong>Bright, Vivid, and True to Life</strong></p>",
+        "middle_text": "<p>1080P Native, 4K Support</p>",
+        "middle_text_color": "#f4b35f",
+        "subheading": "<p>Compare from a best products and choose what is best suited for you.</p>",
+        "cta_label": "Know the difference",
+        "cta_link": "",
+        "cta_style": "link",
+        "text_color": "#ffffff",
+        "button_color": "#44e1e6",
+        "button_text_color": "#0b2a2d",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
@@ -1296,6 +1329,7 @@
     "product-recommendations",
     "recently-viewed-products",
     "image_text_6wLq8M",
-    "custom_html_M4GiJq"
+    "custom_html_M4GiJq",
+    "hero_bg_banner_9C9kj8"
   ]
 }
