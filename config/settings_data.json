@@ -1760,8 +1760,8 @@
           "e767dbef-a186-4db7-8530-c4d6b79db6ca": {
             "type": "menu",
             "settings": {
-              "title": "Why buy direct",
-              "url": "shopify://pages/why-buy-direct-from-website",
+              "title": "Warranty Support",
+              "url": "shopify://pages/claim-warranty",
               "open_link": "_self",
               "menu": "",
               "lb": "",
