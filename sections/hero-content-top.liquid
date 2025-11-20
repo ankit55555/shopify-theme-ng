@@ -56,6 +56,8 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: {{ s.bg_position_desktop }};
+        z-index: 1;
+        margin-top: -120px;
         {% if s.image_desktop != blank %}
           background-image: url('{{ s.image_desktop | img_url: '2000x' }}');
         {% endif %}
@@ -72,6 +74,9 @@
 
       #shopify-section-{{ section.id }} .hero-content-top__content-wrapper {
         width: 100%;
+        position: relative;
+        z-index: 2;
+        margin-bottom: -120px;
       }
 
       #shopify-section-{{ section.id }} .hero-content-top--contained .hero-content-top__container {
@@ -103,20 +108,29 @@
       #shopify-section-{{ section.id }} .hero-content-top__content {
         display: flex;
         flex-direction: column;
-        gap: 18px;
+        gap: 12px;
+        align-items: flex-start;
+        text-align: left;
+        margin-top: 32px;
       }
 
       #shopify-section-{{ section.id }} .hero-content-top__content--h-left {
         margin-left: 0;
         margin-right: auto;
+        align-items: flex-start;
+        text-align: left;
       }
       #shopify-section-{{ section.id }} .hero-content-top__content--h-center {
         margin-left: auto;
         margin-right: auto;
+        align-items: center;
+        text-align: center;
       }
       #shopify-section-{{ section.id }} .hero-content-top__content--h-right {
         margin-left: auto;
         margin-right: 0;
+        align-items: flex-end;
+        text-align: right;
       }
 
       #shopify-section-{{ section.id }} .hero-content-top__heading {
@@ -135,6 +149,13 @@
         font-size: 16px;
         line-height: 1.6;
         opacity: .9;
+        font-weight: 300;
+      }
+
+      #shopify-section-{{ section.id }} .hero-content-top__heading p,
+      #shopify-section-{{ section.id }} .hero-content-top__middle-text p,
+      #shopify-section-{{ section.id }} .hero-content-top__subheading p {
+        margin: 0;
       }
 
       #shopify-section-{{ section.id }} .hero-content-top__cta {
@@ -180,12 +201,16 @@
             background-image: url('{{ s.image_mobile | img_url: '1200x' }}');
           {% endif %}
         }
+        #shopify-section-{{ section.id }} .hero-content-top__content {
+          margin-top: 32px;
+        }
         #shopify-section-{{ section.id }} .hero-content-top__heading {
           font-size: 34px;
         }
         #shopify-section-{{ section.id }} .hero-content-top__subheading {
           font-size: 15px;
         }
+        
       }
     {%- endstyle -%}
   </div>
