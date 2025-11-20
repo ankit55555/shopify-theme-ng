@@ -53,10 +53,10 @@
         "description": {
           "type": "description",
           "settings": {
-            "des": "2",
-            "text": "<p>Experience the World of Open Ear Headphones that will allow you to keep your ears open & safe.</p>",
+            "des": "1",
+            "text": "",
             "length": 31,
-            "readm": false,
+            "readm": true,
             "readm_txt": "Read more"
           }
         },
