@@ -741,7 +741,7 @@
         "image_desktop": "shopify://shop_images/section_9_wifi_hdmi_lamp_life_desktop.webp",
         "image_mobile": "shopify://shop_images/section_9_wifi_hdmi_lamp_life_mobile.webp",
         "height_desktop": 650,
-        "height_mobile": 640,
+        "height_mobile": 620,
         "vertical_align_mobile": "top",
         "mobile_bottom_offset": 0,
         "overlay_color": "#000000",
