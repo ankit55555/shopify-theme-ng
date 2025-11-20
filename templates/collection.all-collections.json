@@ -702,11 +702,11 @@
           "settings": {
             "item_type": "product",
             "collection": "",
-            "product": "",
+            "product": "ng-eyesafe-beam-projector-1080p-hd-portable-home-outdoor-movie-projector-with-hdmi-usb-bluetooth-compact-white-design-built-in-speaker-compatible-with-iphone-android-laptop",
             "title": "",
             "link_url": "",
-            "label_text": "Collection →",
-            "show_arrow": true
+            "label_text": "",
+            "show_arrow": false
           }
         },
         "showcase_item_9LwG8k": {
@@ -777,9 +777,9 @@
         "icon_heading": "las la-gem",
         "top_subheading": "",
         "tophead_mb": 30,
-        "col_dk": "5",
-        "col_tb": "3",
-        "col_mb": "2",
+        "col_dk": "4",
+        "col_tb": "1",
+        "col_mb": "1",
         "space_h_item": 20,
         "space_h_item_tb": 15,
         "space_h_item_mb": 10,
