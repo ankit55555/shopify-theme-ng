@@ -1133,7 +1133,7 @@
             "type": "base",
             "settings": {
               "title": "Support",
-              "url": "https://help.ngearsafe.com/",
+              "url": "shopify://pages/help",
               "open_link": "_blank",
               "icon": "",
               "cus_cl": false,
