@@ -693,6 +693,119 @@
         "use_cus_css": false,
         "code_cus_css": ""
       }
+    },
+    "collections_showcase_KppGy4": {
+      "type": "collections-showcase",
+      "blocks": {
+        "showcase_item_Nn884x": {
+          "type": "showcase_item",
+          "settings": {
+            "item_type": "product",
+            "collection": "",
+            "product": "",
+            "title": "",
+            "link_url": "",
+            "label_text": "Collection →",
+            "show_arrow": true
+          }
+        },
+        "showcase_item_9LwG8k": {
+          "type": "showcase_item",
+          "disabled": true,
+          "settings": {
+            "item_type": "collection",
+            "collection": "",
+            "product": "",
+            "title": "",
+            "link_url": "",
+            "label_text": "Collection →",
+            "show_arrow": true
+          }
+        },
+        "showcase_item_7rdVGD": {
+          "type": "showcase_item",
+          "disabled": true,
+          "settings": {
+            "item_type": "collection",
+            "collection": "",
+            "product": "",
+            "title": "",
+            "link_url": "",
+            "label_text": "Collection →",
+            "show_arrow": true
+          }
+        },
+        "showcase_item_yACLxV": {
+          "type": "showcase_item",
+          "disabled": true,
+          "settings": {
+            "item_type": "collection",
+            "collection": "",
+            "product": "",
+            "title": "",
+            "link_url": "",
+            "label_text": "Collection →",
+            "show_arrow": true
+          }
+        },
+        "showcase_item_BHdwah": {
+          "type": "showcase_item",
+          "disabled": true,
+          "settings": {
+            "item_type": "collection",
+            "collection": "",
+            "product": "",
+            "title": "",
+            "link_url": "",
+            "label_text": "Collection →",
+            "show_arrow": true
+          }
+        }
+      },
+      "block_order": [
+        "showcase_item_Nn884x",
+        "showcase_item_9LwG8k",
+        "showcase_item_7rdVGD",
+        "showcase_item_yACLxV",
+        "showcase_item_BHdwah"
+      ],
+      "name": "Collections Showcase",
+      "settings": {
+        "design_heading": "1",
+        "heading_align": "t4s-text-start",
+        "top_heading": "Projector",
+        "icon_heading": "las la-gem",
+        "top_subheading": "",
+        "tophead_mb": 30,
+        "col_dk": "5",
+        "col_tb": "3",
+        "col_mb": "2",
+        "space_h_item": 20,
+        "space_h_item_tb": 15,
+        "space_h_item_mb": 10,
+        "open_link": "_self",
+        "img_effect": "zoom",
+        "border_effect": "none",
+        "item_rd": 0,
+        "item_rd_unit": "px",
+        "label_color": "#222222",
+        "label_color_hover": "#222222",
+        "label_font_size": "medium",
+        "label_font_weight": "500",
+        "arrow_text": "→",
+        "label_space_top": 15,
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,50px,",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": "",
+        "use_cus_css": false,
+        "code_cus_css": ""
+      }
     }
   },
   "order": [
@@ -704,6 +817,7 @@
     "collections_showcase_whWXzz",
     "collections_showcase_tVgb6R",
     "collections_showcase_eARiF6",
-    "collections_showcase_LkzNV6"
+    "collections_showcase_LkzNV6",
+    "collections_showcase_KppGy4"
   ]
 }
