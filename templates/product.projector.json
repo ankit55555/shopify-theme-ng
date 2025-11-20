@@ -52,7 +52,6 @@
         },
         "description": {
           "type": "description",
-          "disabled": true,
           "settings": {
             "des": "2",
             "text": "<p>Experience the World of Open Ear Headphones that will allow you to keep your ears open & safe.</p>",
@@ -63,6 +62,7 @@
         },
         "custom_liquid_N8y8bM": {
           "type": "custom_liquid",
+          "disabled": true,
           "settings": {
             "custom_liquid": "<div class=\"accordion\"><input type=\"checkbox\" id=\"accordion-toggle\"><label class=\"accordion-label\" for=\"accordion-toggle\">Product Description</label><div class=\"accordion-content\"><h6>NG EarSafe Open Ear Bluetooth Headphones: Safer, Smarter Listening</h6><p><span class=\"highlight\">Product Overview</span><br>Experience ultimate safety and comfort with NG EarSafe Open Ear Bluetooth Headphones. Featuring advanced air conduction technology, these headphones let you enjoy your favorite music while staying aware of your surroundings, making them perfect for activities like cycling, jogging, or yoga.</p><p><span class=\"highlight\">Key Features</span></p><ul><li><strong>Open-Ear Design:</strong> Stay connected to ambient sounds for enhanced safety.</li><li><strong>Ultra-Lightweight:</strong> Weighs just 24 grams for all-day comfort.</li><li><strong>Extended Battery Life:</strong> Offers up to 8+ hours of uninterrupted use.</li><li><strong>IPX4 Waterproofing:</strong> Resistant to sweat and light rain, ideal for outdoor adventures.</li><li><strong>ENT Specialist Certified:</strong> Reduces ear canal damage and minimizes infection risks associated with in-ear models.</li></ul><p><span class=\"highlight\">Style and Versatility</span><br>Available in three sleek colors, NG EarSafe headphones combine functionality and fashion. Whether commuting, working out, or relaxing, these headphones are designed to suit every lifestyle.</p><p><span class=\"highlight\">Peace of Mind</span></p><ul><li><strong>Free Shipping</strong></li><li><strong>7-Day Easy Return Policy</strong></li><li><strong>1-Year At-Home Replacement Warranty</strong></li></ul><p><span><strong>Order Now</strong></span><br>Upgrade your listening experience with NG EarSafe Open Ear Bluetooth Headphones today.</p></div></div>\n\n\n  <style>\n.accordion{width:450px;border:1px solid #ddd;border-radius:5px;overflow:hidden;margin-bottom:15px;}.accordion input{display:none}.accordion-label{display:flex;justify-content:space-between;align-items:center;padding:5px 20px;color:#252525;cursor:pointer;font-size:15px;font-weight:600;transition:background-color .3s ease}.accordion-label::after{content:'▼';font-size:16px;transition:transform 0.3s ease}.accordion input:checked+.accordion-label::after{transform:rotate(180deg)}.accordion-content{max-height:0;overflow:auto;padding:0 20px;background-color:#fff;color:#333;font-size:14px;line-height:1.6;transition:max-height 0.4s ease,padding 0.3s ease}.accordion input:checked~.accordion-content{max-height:500px;padding:15px 20px}.accordion-content h6{margin-top:0;color:#28486e}.accordion-content ul{margin:10px 0;padding-left:20px}.accordion-content ul li{list-style-type:disc;margin-bottom:8px}.accordion-content p{margin:10px 0}.accordion-content .highlight{font-weight:bold}\n@media only screen and (max-width: 768px) {.accordion{width:100%}}\n  </style>"
           }
@@ -114,7 +114,7 @@
         "custom_liquid_N3PtUB": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{% render 'offercard-earsafe' %}"
+            "custom_liquid": "{% render 'offercard-earsafe-projector' %}"
           }
         },
         "countdown_QA6E8T": {
