@@ -499,7 +499,7 @@
         "text_color": "#ffffff",
         "button_color": "#44e1e6",
         "button_text_color": "#0b2a2d",
-        "padding_top": 0,
+        "padding_top": 36,
         "padding_bottom": 0
       }
     },
@@ -563,7 +563,7 @@
         "content_bg_color": "#1a1a1a",
         "button_color": "#44e1e6",
         "button_text_color": "#0b2a2d",
-        "content_padding_top": 40,
+        "content_padding_top": 60,
         "content_padding_bottom": 0,
         "padding_top": 0,
         "padding_bottom": 0
@@ -598,7 +598,7 @@
         "text_color": "#ffffff",
         "button_color": "#44e1e6",
         "button_text_color": "#0b2a2d",
-        "padding_top": 0,
+        "padding_top": 44,
         "padding_bottom": 0
       }
     },
@@ -664,7 +664,7 @@
         "text_color": "#ffffff",
         "button_color": "#44e1e6",
         "button_text_color": "#0b2a2d",
-        "padding_top": 0,
+        "padding_top": 44,
         "padding_bottom": 4
       }
     },
@@ -695,7 +695,7 @@
         "content_bg_color": "#1a1a1a",
         "button_color": "#44e1e6",
         "button_text_color": "#0b2a2d",
-        "content_padding_top": 0,
+        "content_padding_top": 32,
         "content_padding_bottom": 0,
         "padding_top": 0,
         "padding_bottom": 0
@@ -764,7 +764,7 @@
         "button_color": "#44e1e6",
         "button_text_color": "#0b2a2d",
         "padding_top": 0,
-        "padding_bottom": 4
+        "padding_bottom": 0
       }
     },
     "21cc52cf-8bcf-42ba-8f07-80d94e7a589e": {
