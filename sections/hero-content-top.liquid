@@ -1,63 +1,62 @@
 {%- assign s = section.settings -%}
 
 <section class="hero-content-top hero-content-top--{{ section.id }}{% if s.contain_content %} hero-content-top--contained{% endif %}">
-  <div class="hero-content-top__content-wrapper" style="background-color: {{ s.content_bg_color }}; padding-top: {{ s.content_padding_top }}px; padding-bottom: {{ s.content_padding_bottom }}px;">
-    <div class="hero-content-top__container">
-      <div class="hero-content-top__content hero-content-top__content--h-{{ s.horizontal_align }}" style="max-width: {{ s.content_max_width }}px; color: {{ s.text_color }};">
-        {%- if s.heading != blank -%}
-          <div class="hero-content-top__heading rte">{{ s.heading }}</div>
-        {%- endif -%}
-        {%- if s.middle_text != blank -%}
-          <div class="hero-content-top__middle-text rte" style="color: {{ s.middle_text_color }};">{{ s.middle_text }}</div>
-        {%- endif -%}
-        {%- if s.subheading != blank -%}
-          <div class="hero-content-top__subheading rte" style="font-weight:600;">{{ s.subheading }}</div>
-        {%- endif -%}
-        {%- if s.cta_label != blank and s.cta_link != blank -%}
-          <a
-            href="{{ s.cta_link }}"
-            class="hero-content-top__cta hero-content-top__cta--{{ s.cta_style }}"
-            style="--cta-color: {{ s.button_color }}; --cta-text: {{ s.button_text_color }};">
-            <span>{{ s.cta_label }}</span>
-            <svg
-              class="hero-content-top__cta-icon"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true">
-              <path
-                d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20Z"
-                fill="currentColor"
-                opacity=".15" />
-              <path
-                d="M10 8l4 4-4 4"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </a>
-        {%- endif -%}
+  <div class="hero-content-top__image-wrapper">
+    <div class="hero-content-top__content-wrapper hero-content-top__content-wrapper--h-{{ s.horizontal_align }} hero-content-top__content-wrapper--v-{{ s.vertical_align }}">
+      <div class="hero-content-top__container">
+        <div class="hero-content-top__content hero-content-top__content--h-{{ s.horizontal_align }}" style="max-width: {{ s.content_max_width }}px; color: {{ s.text_color }};">
+          {%- if s.heading != blank -%}
+            <div class="hero-content-top__heading rte">{{ s.heading }}</div>
+          {%- endif -%}
+          {%- if s.middle_text != blank -%}
+            <div class="hero-content-top__middle-text rte" style="color: {{ s.middle_text_color }};">{{ s.middle_text }}</div>
+          {%- endif -%}
+          {%- if s.subheading != blank -%}
+            <div class="hero-content-top__subheading rte" style="font-weight:600;">{{ s.subheading }}</div>
+          {%- endif -%}
+          {%- if s.cta_label != blank and s.cta_link != blank -%}
+            <a
+              href="{{ s.cta_link }}"
+              class="hero-content-top__cta hero-content-top__cta--{{ s.cta_style }}"
+              style="--cta-color: {{ s.button_color }}; --cta-text: {{ s.button_text_color }};">
+              <span>{{ s.cta_label }}</span>
+              <svg
+                class="hero-content-top__cta-icon"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path
+                  d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20Z"
+                  fill="currentColor"
+                  opacity=".15" />
+                <path
+                  d="M10 8l4 4-4 4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          {%- endif -%}
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="hero-content-top__image-wrapper">
     {%- style -%}
+      #shopify-section-{{ section.id }} {
+        margin: 0;
+        padding: 0;
+      }
+      
       #shopify-section-{{ section.id }} .hero-content-top__image-wrapper {
         position: relative;
         isolation: isolate;
-        padding-top: {{ s.padding_top }}px;
-        padding-bottom: {{ s.padding_bottom }}px;
         min-height: {{ s.height_desktop }}px;
-        background-color: #000;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: {{ s.bg_position_desktop }};
-        z-index: 1;
-        margin-top: -120px;
         {% if s.image_desktop != blank %}
           background-image: url('{{ s.image_desktop | img_url: '2000x' }}');
         {% endif %}
@@ -72,33 +71,55 @@
         z-index: 0;
       }
 
+      {%- liquid
+        assign padding_top_desktop = s.content_padding_top_desktop | default: 0
+        assign padding_bottom_desktop = s.content_padding_bottom_desktop | default: 0
+      -%}
+      
       #shopify-section-{{ section.id }} .hero-content-top__content-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         width: 100%;
-        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
         z-index: 2;
-        margin-bottom: -120px;
+        padding-top: {{ padding_top_desktop }}px;
+        padding-bottom: {{ padding_bottom_desktop }}px;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+      }
+
+      #shopify-section-{{ section.id }} .hero-content-top__content-wrapper--h-left {
+        justify-content: flex-start;
+      }
+      #shopify-section-{{ section.id }} .hero-content-top__content-wrapper--h-center {
+        justify-content: center;
+      }
+      #shopify-section-{{ section.id }} .hero-content-top__content-wrapper--h-right {
+        justify-content: flex-end;
+      }
+
+      #shopify-section-{{ section.id }} .hero-content-top__content-wrapper--v-top {
+        align-items: flex-start;
+      }
+      #shopify-section-{{ section.id }} .hero-content-top__content-wrapper--v-center {
+        align-items: center;
+      }
+      #shopify-section-{{ section.id }} .hero-content-top__content-wrapper--v-bottom {
+        align-items: flex-end;
       }
 
       #shopify-section-{{ section.id }} .hero-content-top--contained .hero-content-top__container {
         width: 100%;
         max-width: {{ s.container_max_width }}px;
         margin: 0 auto;
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
-      /* Ensure contained layout honors horizontal alignment */
-      #shopify-section-{{ section.id }} .hero-content-top--contained .hero-content-top__content--h-left {
-        margin-left: 0;
-        margin-right: auto;
-      }
-      #shopify-section-{{ section.id }} .hero-content-top--contained .hero-content-top__content--h-center {
-        margin-left: auto;
-        margin-right: auto;
-      }
-      #shopify-section-{{ section.id }} .hero-content-top--contained .hero-content-top__content--h-right {
-        margin-left: auto;
-        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
       }
 
       #shopify-section-{{ section.id }} .hero-content-top__container {
@@ -111,7 +132,6 @@
         gap: 12px;
         align-items: flex-start;
         text-align: left;
-        margin-top: 32px;
       }
 
       #shopify-section-{{ section.id }} .hero-content-top__content--h-left {
@@ -193,6 +213,11 @@
         display: inline-block;
       }
 
+      {%- liquid
+        assign padding_top_mobile = s.content_padding_top_mobile | default: 0
+        assign padding_bottom_mobile = s.content_padding_bottom_mobile | default: 0
+      -%}
+      
       @media (max-width: 749px) {
         #shopify-section-{{ section.id }} .hero-content-top__image-wrapper {
           min-height: {{ s.height_mobile }}px;
@@ -201,8 +226,11 @@
             background-image: url('{{ s.image_mobile | img_url: '1200x' }}');
           {% endif %}
         }
-        #shopify-section-{{ section.id }} .hero-content-top__content {
-          margin-top: 32px;
+        #shopify-section-{{ section.id }} .hero-content-top__content-wrapper {
+          padding-top: {{ padding_top_mobile }}px;
+          padding-bottom: {{ padding_bottom_mobile }}px;
+          padding-left: 20px;
+          padding-right: 20px;
         }
         #shopify-section-{{ section.id }} .hero-content-top__heading {
           font-size: 34px;
@@ -377,6 +405,26 @@
         ]
       },
       {
+        "type": "select",
+        "id": "vertical_align",
+        "label": "Vertical content position",
+        "default": "center",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ]
+      },
+      {
         "type": "checkbox",
         "id": "contain_content",
         "label": "Contain content to page width",
@@ -482,44 +530,56 @@
         "default": "#0b2a2d"
       },
       {
-        "type": "range",
-        "id": "content_padding_top",
-        "label": "Content padding top",
-        "min": 0,
-        "max": 120,
-        "step": 4,
-        "unit": "px",
-        "default": 40
+        "type": "header",
+        "content": "== Gap between content and image (Desktop)"
       },
       {
         "type": "range",
-        "id": "content_padding_bottom",
-        "label": "Content padding bottom",
+        "id": "content_padding_top_desktop",
+        "label": "Gap from top (push content down)",
         "min": 0,
-        "max": 120,
+        "max": 200,
         "step": 4,
         "unit": "px",
-        "default": 40
+        "default": 0,
+        "info": "Increase to add more space between top of image and content. Default is 0 when vertical position is 'Top'"
       },
       {
         "type": "range",
-        "id": "padding_top",
-        "label": "Image padding top",
+        "id": "content_padding_bottom_desktop",
+        "label": "Gap from bottom (push content up)",
         "min": 0,
-        "max": 120,
+        "max": 200,
         "step": 4,
         "unit": "px",
-        "default": 0
+        "default": 0,
+        "info": "Increase to add more space between bottom of image and content. Default is 0 when vertical position is 'Bottom'"
+      },
+      {
+        "type": "header",
+        "content": "== Gap between content and image (Mobile)"
       },
       {
         "type": "range",
-        "id": "padding_bottom",
-        "label": "Image padding bottom",
+        "id": "content_padding_top_mobile",
+        "label": "Gap from top (push content down)",
         "min": 0,
-        "max": 120,
+        "max": 200,
         "step": 4,
         "unit": "px",
-        "default": 0
+        "default": 0,
+        "info": "Increase to add more space between top of image and content. Default is 0 when vertical position is 'Top'"
+      },
+      {
+        "type": "range",
+        "id": "content_padding_bottom_mobile",
+        "label": "Gap from bottom (push content up)",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "unit": "px",
+        "default": 0,
+        "info": "Increase to add more space between bottom of image and content. Default is 0 when vertical position is 'Bottom'"
       }
     ],
     "presets": [
