@@ -39,6 +39,20 @@
   flex-shrink: 0;
 }
 
+.t4s-showcase-image-link {
+  display: block;
+  position: relative;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.t4s-showcase-product .t4s-showcase-image-wrap:hover .t4s-showcase-image-link {
+  z-index: 1;
+}
+
 .t4s-showcase-image {
   position: relative;
   width: 100%;

@@ -159,6 +159,9 @@
       <div class="t4s-col-item t4s-collections-showcase-item{% if item_type == 'product' and product != blank %} t4s-showcase-product{% endif %}" id="b_{{ block.id }}"{% if item_type == 'product' and product != blank %} data-product-id="{{ product.id }}"{% endif %} {{ block.shopify_attributes }}>
         <div class="t4s-showcase-item-inner t4s-eff t4s-eff-{{ se_stts.img_effect }} t4s-eff-border-{{ se_stts.border_effect }}" timeline hdt-reveal="slide-in">
           <div class="t4s-showcase-image-wrap"{% if item_type == 'product' and product != blank %} data-current-variant-id="{{ current_variant.id }}"{% endif %}>
+            {%- if item_type == 'product' and product != blank -%}
+              <a href="{{ pr_url }}" class="t4s-showcase-image-link" aria-label="{{ item_title | escape }}">
+            {%- endif -%}
             {%- if item_image != blank -%}
               <div class="t4s-showcase-image t4s-bg-11" style="--aspect-ratioapt: {{ item_image.aspect_ratio | default: 1.2 }}; background: url({{ item_image | image_url: width: 1 }});">
                 <img class="lazyloadt4s t4s-lz--fadeIn t4s-obj-eff" 
@@ -176,6 +179,9 @@
                 {%- capture current -%}{%- cycle 1, 2, 3, 4, 5, 6 -%}{%- endcapture -%}
                 {{ 'collection-' | append: current | placeholder_svg_tag: 't4s-placeholder-svg t4s-obj-eff' }}
               </div>
+            {%- endif -%}
+            {%- if item_type == 'product' and product != blank -%}
+              </a>
             {%- endif -%}
             
             {%- if item_type == 'product' and product != blank -%}
@@ -335,6 +341,10 @@
       // Update title link
       var titleLink = card.querySelector('.t4s-showcase-product-title a');
       if(titleLink && url){ titleLink.setAttribute('href', url); }
+      
+      // Update image link
+      var imageLink = card.querySelector('.t4s-showcase-image-link');
+      if(imageLink && url){ imageLink.setAttribute('href', url); }
 
       // Update price
       var priceWrap = card.querySelector('.t4s-product-price');
