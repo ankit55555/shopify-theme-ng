@@ -733,7 +733,7 @@
         "button_text_color": "#0b2a2d",
         "content_padding_top_desktop": 0,
         "content_padding_bottom_desktop": 0,
-        "content_padding_top_mobile": 0,
+        "content_padding_top_mobile": 64,
         "content_padding_bottom_mobile": 0
       }
     },
