@@ -110,18 +110,34 @@
             "link_url": "shopify://pages/claim-warranty",
             "open_in_new": false
           }
+        },
+        "column_GBANpj": {
+          "type": "column",
+          "settings": {
+            "icon_preset": "none",
+            "icon_size": 32,
+            "icon_color": "",
+            "icon_bg": "",
+            "icon_shape": "none",
+            "title": "Return/Replacement (In Warranty)",
+            "text": "",
+            "link_label": "Know More",
+            "link_url": "https://ngearsafe.com/apps/return_prime",
+            "open_in_new": true
+          }
         }
       },
       "block_order": [
         "column_yt3C4i",
         "column_xiGEhP",
-        "column_XbUHde"
+        "column_XbUHde",
+        "column_GBANpj"
       ],
       "name": "Custom Multicolumn",
       "settings": {
         "heading": "",
         "subheading": "",
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "columns_tablet": 2,
         "gap": 20,
         "align": "left",
