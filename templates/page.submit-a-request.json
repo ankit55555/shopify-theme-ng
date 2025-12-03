@@ -1,0 +1,292 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "heading": {
+      "type": "heading-template",
+      "disabled": true,
+      "settings": {
+        "heading_fullwidth": false,
+        "use_specify_image": true,
+        "parallax": false,
+        "color": "#000000",
+        "overlay": 54,
+        "padding": 50,
+        "paddingmb": 50,
+        "mg_b": 50,
+        "mg_bmb": 50,
+        "content_align": "t4s-text-center",
+        "bg_pos": "center center",
+        "bg_repeat": "no-repeat",
+        "bg_size": "cover",
+        "use_cus_css": false,
+        "code_cus_css": ".SectionID {\nbackground-color:red\n}"
+      }
+    },
+    "hero_bg_banner_FKV9CF": {
+      "type": "hero-bg-banner",
+      "name": "Hero banner - BG image",
+      "settings": {
+        "image_desktop": "shopify://shop_images/Help_page_banner_desktop.webp",
+        "image_mobile": "shopify://shop_images/Help_page_banner_mobile.webp",
+        "height_desktop": 560,
+        "height_mobile": 520,
+        "vertical_align_mobile": "bottom",
+        "mobile_bottom_offset": 24,
+        "overlay_color": "#000000",
+        "overlay_opacity": 45,
+        "bg_position_desktop": "center center",
+        "bg_position_mobile": "center center",
+        "horizontal_align": "center",
+        "vertical_align": "middle",
+        "contain_content": true,
+        "container_max_width": 1280,
+        "content_max_width": 640,
+        "heading": "",
+        "middle_text": "",
+        "middle_text_color": "#f4b35f",
+        "subheading": "",
+        "cta_label": "",
+        "cta_link": "",
+        "cta_style": "link",
+        "text_color": "#ffffff",
+        "button_color": "#44e1e6",
+        "button_text_color": "#0b2a2d",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_custom_GH9Nif": {
+      "type": "multicolumn-custom",
+      "blocks": {
+        "column_yt3C4i": {
+          "type": "column",
+          "settings": {
+            "icon_preset": "headphones",
+            "icon_size": 48,
+            "icon_color": "",
+            "icon_bg": "#f5f5f5",
+            "icon_shape": "none",
+            "title": "Choose the right product:",
+            "text": "",
+            "link_label": "Comparison page",
+            "link_url": "shopify://pages/open-ear-headphones-product-comparison",
+            "open_in_new": true
+          }
+        },
+        "column_xiGEhP": {
+          "type": "column",
+          "settings": {
+            "icon_preset": "none",
+            "icon_size": 32,
+            "icon_color": "",
+            "icon_bg": "",
+            "icon_shape": "none",
+            "title": "Order Help",
+            "text": "",
+            "link_label": "Track your order",
+            "link_url": "shopify://pages/track-your-order",
+            "open_in_new": true
+          }
+        },
+        "column_XbUHde": {
+          "type": "column",
+          "settings": {
+            "icon_preset": "none",
+            "icon_size": 32,
+            "icon_color": "",
+            "icon_bg": "",
+            "icon_shape": "none",
+            "title": "Claim Warranty",
+            "text": "",
+            "link_label": "Know more",
+            "link_url": "shopify://pages/claim-warranty",
+            "open_in_new": false
+          }
+        },
+        "column_GBANpj": {
+          "type": "column",
+          "settings": {
+            "icon_preset": "none",
+            "icon_size": 32,
+            "icon_color": "",
+            "icon_bg": "",
+            "icon_shape": "none",
+            "title": "Return/Replacement (In Warranty)",
+            "text": "",
+            "link_label": "Know More",
+            "link_url": "https://ngearsafe.com/apps/return_prime",
+            "open_in_new": true
+          }
+        }
+      },
+      "block_order": [
+        "column_yt3C4i",
+        "column_xiGEhP",
+        "column_XbUHde",
+        "column_GBANpj"
+      ],
+      "name": "Custom Multicolumn",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "columns_desktop": 4,
+        "columns_tablet": 2,
+        "gap": 20,
+        "align": "left",
+        "card_style": "card",
+        "background": "",
+        "text_color": "",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "max_width": 1380
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "60px,,60px,",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": ""
+      }
+    },
+    "custom_liquid_KgAarB": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,50px,",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": ""
+      }
+    },
+    "sidebar-page": {
+      "type": "sidebar-page",
+      "blocks": {
+        "f69681ed-b75e-42de-be58-fdf73b3b7e08": {
+          "type": "blog_cate",
+          "settings": {
+            "title": "Blog categories",
+            "cat_link_list": "",
+            "count": true
+          }
+        }
+      },
+      "block_order": [
+        "f69681ed-b75e-42de-be58-fdf73b3b7e08"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_drawer": false,
+        "space": 50,
+        "size": "medium",
+        "br_style": "none",
+        "brcolor": "#222222",
+        "sidebar_bdr": 5,
+        "sidebar_pd": 10
+      }
+    },
+    "content_card_7n4X7W": {
+      "type": "content-card",
+      "blocks": {
+        "contact_card_tH9Acd": {
+          "type": "contact_card",
+          "disabled": true,
+          "settings": {
+            "title": "Chat With Us",
+            "badge_text": "",
+            "badge_color": "#ff6b35",
+            "badge_text_color": "#ffffff",
+            "details": "",
+            "button_label": "Begin Chat",
+            "button_link": "",
+            "button_style": "filled",
+            "button_new_tab": false,
+            "phone_number": ""
+          }
+        },
+        "contact_card_j3CKTb": {
+          "type": "contact_card",
+          "settings": {
+            "title": "Submit a request",
+            "badge_text": "",
+            "badge_color": "#ff6b35",
+            "badge_text_color": "#ffffff",
+            "details": "<p>The team will respond within 24-48 hours.</p><p>Drop a message - Email id: <a href=\"mailto:admin@ngearsafe.com\"><span style=\"text-decoration:underline\">admin@ngearsafe.com</span></a></p>",
+            "button_label": "Submit Request",
+            "button_link": "https://mail.google.com/mail/?view=cm&fs=1&to=admin@ngearsafe.com",
+            "button_style": "filled",
+            "button_new_tab": false,
+            "phone_number": ""
+          }
+        },
+        "contact_card_iY39rz": {
+          "type": "contact_card",
+          "settings": {
+            "title": "Contact us",
+            "badge_text": "",
+            "badge_color": "#ff6b35",
+            "badge_text_color": "#ffffff",
+            "details": "<p>Email: <a href=\"mailto:support@ngearsafe.com\"><span style=\"text-decoration:underline\">support@ngearsafe.com</span></a></p><p>Contact No.: 9265573097<br/>Toll-free Contact: 080-471-65643<br/><br/></p>",
+            "button_label": "Begin Chat",
+            "button_link": "",
+            "button_style": "filled",
+            "button_new_tab": false,
+            "phone_number": ""
+          }
+        }
+      },
+      "block_order": [
+        "contact_card_tH9Acd",
+        "contact_card_j3CKTb",
+        "contact_card_iY39rz"
+      ],
+      "name": "Content card",
+      "settings": {
+        "heading": "Still stuck? Our team’s just a ping away.",
+        "subheading": "Not seeing what you're looking for? Our experts are ready to help.",
+        "columns_desktop": 2,
+        "columns_tablet": 2,
+        "max_width": 1380,
+        "background": "",
+        "text_color": "",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "card_background": "",
+        "card_radius": 12,
+        "card_padding": 24,
+        "button_bg": "#000000",
+        "button_text": "#ffffff",
+        "button_bg_hover": "#333333"
+      }
+    }
+  },
+  "order": [
+    "heading",
+    "hero_bg_banner_FKV9CF",
+    "multicolumn_custom_GH9Nif",
+    "main",
+    "custom_liquid_KgAarB",
+    "sidebar-page",
+    "content_card_7n4X7W"
+  ]
+}
