@@ -31,7 +31,6 @@
     },
     "main": {
       "type": "main-page",
-      "disabled": true,
       "settings": {
         "layout": "t4s-container-wrap",
         "cl_bg": "",
