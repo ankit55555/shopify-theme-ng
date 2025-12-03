@@ -35,7 +35,7 @@
         "layout": "t4s-container-wrap",
         "cl_bg": "",
         "cl_bg_gradient": "",
-        "mg": "60px,,60px,",
+        "mg": "60px,,0px,180px",
         "pd": "",
         "mg_tb": "",
         "pd_tb": "",
