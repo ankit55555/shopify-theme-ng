@@ -2475,51 +2475,6 @@
         "disabled": true,
         "settings": {}
       },
-      "3973909653238217764": {
-        "type": "shopify://apps/bold-discounts-the-sales-app/blocks/v3_sales_clock/22ca27ee-084f-4527-b863-69a3cd4c8b2c",
-        "disabled": false,
-        "settings": {
-          "inject-clock-in": "form[action='/cart/add']",
-          "enable-sales-clock-on-other-pages": false,
-          "inject-clock-in-other": ".shopify-section.section",
-          "product_id": "0",
-          "append-at-end": false
-        }
-      },
-      "16337957280554425121": {
-        "type": "shopify://apps/bold-discounts-the-sales-app/blocks/sale-icon-product/22ca27ee-084f-4527-b863-69a3cd4c8b2c",
-        "disabled": true,
-        "settings": {
-          "icon_style": "starburst.svg",
-          "icon_height": 48,
-          "icon_width": 48,
-          "icon_position": "top-left",
-          "icon_style_custom": ".shappify-sales-icon-product {}"
-        }
-      },
-      "2076966522491132125": {
-        "type": "shopify://apps/bold-discounts-the-sales-app/blocks/sale-icon-collection/22ca27ee-084f-4527-b863-69a3cd4c8b2c",
-        "disabled": true,
-        "settings": {
-          "icon_style": "tag.svg",
-          "icon_height": 48,
-          "icon_width": 48,
-          "icon_position": "top-left",
-          "custom_badge_class_selector": ".card__badge { display: none !important; }",
-          "icon_style_custom": ".shappify-sales-icon-product {}"
-        }
-      },
-      "1602517437617170218": {
-        "type": "shopify://apps/bold-discounts-the-sales-app/blocks/v3_sales_icon/22ca27ee-084f-4527-b863-69a3cd4c8b2c",
-        "disabled": true,
-        "settings": {
-          "inject-icon-in": ".product__media.media.media--transparent",
-          "append-at-end": false,
-          "force_absolute": false,
-          "inject-icon-in-collection": ".card__media",
-          "icon_additional_css": "#bold_sales_icon {}"
-        }
-      },
       "11068332061543699368": {
         "type": "shopify://apps/booster-page-speed-optimizer/blocks/app-embed/d920faf3-7c60-423a-9636-22618b5561b5",
         "disabled": false,
@@ -2610,6 +2565,11 @@
       "4090771392943522038": {
         "type": "shopify://apps/toastibar/blocks/app-embed/28a475c6-f06d-46d4-b40a-df8d869255ef",
         "disabled": true,
+        "settings": {}
+      },
+      "12439146293631897289": {
+        "type": "shopify://apps/blockify-fraud-filter/blocks/app_embed/2e3e0ba5-0e70-447a-9ec5-3bf76b5ef12e",
+        "disabled": false,
         "settings": {}
       }
     }
