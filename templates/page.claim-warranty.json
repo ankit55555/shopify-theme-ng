@@ -108,9 +108,7 @@
       "block_order": [
         "forms_inline_mPTqQa"
       ],
-      "custom_css": [
-        "#form-container-ref {padding: 0 15px;}"
-      ],
+      "custom_css": [],
       "settings": {}
     }
   },
