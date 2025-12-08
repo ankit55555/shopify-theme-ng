@@ -225,7 +225,7 @@
         "custom_liquid_N66jqq": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{% render 'faq-earsafe-schema' %}"
+            "custom_liquid": "{% render 'faq-projector' %}"
           }
         },
         "56e67368-7424-4d73-8f14-dacdda4c59be": {
