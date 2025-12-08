@@ -1206,6 +1206,105 @@
         "use_cus_css": false,
         "code_cus_css": ""
       }
+    },
+    "accordion_pwnbRM": {
+      "type": "accordion",
+      "blocks": {
+        "accor_item_mhw4jV": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "What makes the NG EyeSafe Beam Projector the best beam projector for home?",
+            "content": "<p>The NG EyeSafe Beam Projector offers 1080p full HD clarity, bright projection, and versatile connectivity, making it one of the best beam projectors for homes, bedrooms, and small rooms. Its compact, portable design makes it ideal for everyday entertainment.<br/></p>"
+          }
+        },
+        "accor_item_j8gkG6": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "Is this a good projector for small rooms or bedrooms?",
+            "content": "<p>Yes. The NG EyeSafe Beam is a mini beam projector with high brightness and a compact form, making it ideal for small rooms, bedrooms, rented spaces, and compact home theatre setups.</p>"
+          }
+        },
+        "accor_item_cBrYi9": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "Does the NG EyeSafe Beam support 4K?",
+            "content": "<p>Yes. The NG EyeSafe Beam supports 4K content, which is downscaled to sharp 1080p output, offering excellent clarity for streaming and mirroring.</p>"
+          }
+        },
+        "accor_item_6EhJDL": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "Can I use it outdoors for movies or travel?",
+            "content": "<p>Yes. The NG EyeSafe Beam is highly portable and suitable for outdoor movie nights, camping, terrace screenings, or travel.</p>"
+          }
+        },
+        "accor_item_4qBzjw": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "What devices can I connect to this projector?",
+            "content": "<p>You can connect phones, laptops, gaming consoles, streaming devices, and Bluetooth speakers, making it suitable for movies, gaming, teaching, and presentations.</p>"
+          }
+        },
+        "accor_item_BMz3bx": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "What is the beam projector price in India for NG EyeSafe Beam?",
+            "content": "<p>The NG EyeSafe Beam is a high-value 1080p beam projector priced competitively in India. It offers smart connectivity and premium performance in the budget home projector category.</p>"
+          }
+        },
+        "accor_item_mxUYcz": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "Is this a premium home projector?",
+            "content": "<p>Yes. The NG EyeSafe Beam Projector delivers full HD clarity, smart connectivity, and a compact design, making it a premium home projector at a competitive price point.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accor_item_mhw4jV",
+        "accor_item_j8gkG6",
+        "accor_item_cBrYi9",
+        "accor_item_6EhJDL",
+        "accor_item_4qBzjw",
+        "accor_item_BMz3bx",
+        "accor_item_mxUYcz"
+      ],
+      "settings": {
+        "design_heading": "1",
+        "heading_align": "t4s-text-center",
+        "top_heading": "Frequently Asked Question",
+        "icon_heading": "las la-gem",
+        "top_subheading": "",
+        "tophead_mb": 30,
+        "accor_des": "1",
+        "title_cl": "#222222",
+        "bg_title_cl": "#f6f6f8",
+        "title_active_cl": "#000000",
+        "bg_title_active_cl": "#f6f6f8",
+        "content_cl": "#878787",
+        "bg_content_cl": "#ffffff",
+        "content_align": "t4s-text-start",
+        "auto_active": true,
+        "layout": "t4s-container-wrap",
+        "custom_width": 1000,
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "50px,,50px,",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": "",
+        "use_cus_css": false,
+        "code_cus_css": ""
+      }
     }
   },
   "order": [
@@ -1232,6 +1331,7 @@
     "product-recommendations",
     "recently-viewed-products",
     "image_text_6wLq8M",
-    "custom_html_M4GiJq"
+    "custom_html_M4GiJq",
+    "accordion_pwnbRM"
   ]
 }
