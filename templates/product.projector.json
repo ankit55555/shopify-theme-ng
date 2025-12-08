@@ -74,22 +74,6 @@
             "custom_liquid": "{% render 'diwali-offers' %}"
           }
         },
-        "bold_discounts_the_sales_app_sale_clock_iAEq7r": {
-          "type": "shopify://apps/bold-discounts-flash-sales/blocks/sale-clock/22ca27ee-084f-4527-b863-69a3cd4c8b2c",
-          "settings": {
-            "is_preview_enabled": true,
-            "templates": "template_8",
-            "text_align": "left",
-            "font_size": 16,
-            "font_color": "#000000",
-            "margin_size": 0,
-            "padding_size": 0,
-            "border_color": "#000000",
-            "border_size": 0,
-            "background_color": "rgba(0,0,0,0)",
-            "custom_css": "#shappify_count_down{letter-spacing: 1px;font-weight:500;font-size:16px;color:#25313c;text-align:left;margin:0px;border:0 solid #000;position:relative;justify-content:center;display:flex;align-items:center;padding:0 10px;background:linear-gradient(270deg,#fff 23.86%,#fff 47.06%,#e2e2e2 66.05%);margin-top:7px;margin-bottom:20px;border-radius:5px;border:1px dashed #56cfe1;width:max-content;overflow:hidden;animation:5s linear 0s infinite normal none running bgstrip}\n@keyframes bgstrip{\n0%{background-position:-1000px 0}\n}"
-          }
-        },
         "price_review": {
           "type": "price_review",
           "settings": {
@@ -310,7 +294,6 @@
         "description",
         "custom_liquid_N8y8bM",
         "c917fa52-0981-4b47-a730-0915ac18a613",
-        "bold_discounts_the_sales_app_sale_clock_iAEq7r",
         "price_review",
         "custom_liquid_mFMUnN",
         "custom_liquid_N3PtUB",
@@ -1226,7 +1209,7 @@
     "custom_html_M4GiJq": {
       "type": "custom-html",
       "settings": {
-        "code": "<div class=\"t4s-text-center\" style=\"padding: 15px 0;color: #fff;\">\n    <div class=\"footer-seo\">\n        <h2>NG EarSafe Open-Ear Bluetooth Headphones: Unleash Wireless Freedom with Unmatched Comfort</h2>\n        \n        <h3>Innovative Open-Ear Technology</h3>\n        <p>\n            Crafted for those who crave both situational awareness and exceptional audio fidelity, the NG EarSafe Open-Ear Bluetooth Headphones redefine how you experience sound. Using innovative <strong>open-ear technology</strong>, these headphones rest gently above your ears, allowing ambient sounds like a passing car or a friendly greeting to filter through naturally while enveloping you in crisp, immersive audio. Whether you're navigating a bustling city street or enjoying a quiet evening at home, you’ll stay connected to your surroundings without sacrificing sound quality.\n        </p>\n        \n        <h3>Lightweight Design and Long-Lasting Battery</h3>\n        <p>\n            With a <strong>featherlight and ergonomic design</strong>, weighing just 28 grams, NG EarSafe headphones contour seamlessly to your ears, offering a barely-there feel that’s perfect for extended wear. Picture yourself powering through a marathon work session, embarking on a scenic commute, or pushing your limits at the gym. These headphones deliver all-day comfort without the pressure of traditional earbuds. Plus, their robust <strong>IPX5 water-resistant rating</strong> ensures they can withstand sweat or a sudden drizzle, making them a reliable companion for any adventure. With an impressive <strong>8-hour battery life</strong>, extendable to 24 hours with the sleek charging case, you’ll enjoy uninterrupted music, podcasts, or calls from dawn to dusk without scrambling for a charger.\n        </p>\n        \n        <h3>Advanced Connectivity and Clear Communication</h3>\n        <p>\n            Fueled by cutting-edge <strong>Bluetooth 5.0 technology</strong>, the NG EarSafe headphones provide a rock-solid wireless connection up to 33 feet, banishing frustrating dropouts and audio lag even in crowded environments. The integrated <strong>high-sensitivity microphone</strong>, enhanced with noise-canceling features, captures your voice with crystal-clear precision, transforming chaotic commutes into effortless hands-free conversations. Available in stylish shades like Midnight Black and Arctic White, these headphones don’t just perform. They make a statement. Whether you’re syncing to your favorite playlist, catching up with a friend, or unwinding with an audiobook, the NG EarSafe Open-Ear Bluetooth Headphones fuse safety, sophistication, and stellar sound into one game-changing package. Elevate your listening journey today!\n        </p>\n    </div>\n</div>\n\n<style>\n    .footer-seo {color:#ddd;padding:30px;text-align:left;border-radius:8px}\n    .footer-seo h2 {color:#fff;font-size:16px;margin-bottom:15px;text-align:left}\n    .footer-seo h3 {color:#fff;font-size:14px;margin-bottom:10px;text-align:left}\n    .footer-seo p {font-size:14px;line-height:1.6}\n</style>",
+        "code": "<div class=\"t4s-text-center\" style=\"padding: 15px 0;color: #fff;\">\n    <div class=\"footer-seo\">\n        <h2>NG EyeSafe Beam Projector – Portable 1080p Mini Projector for Home, Gaming &amp; Office</h2>\n\n        <h3>Compact, Portable &amp; Full HD Clarity</h3>\n        <p>\n            Introducing the <strong>NG EyeSafe Beam Projector</strong> — a compact and powerful mini projector built for movie lovers, binge-watchers, gamers, and professionals. Experience stunning <strong>1080p Full HD clarity</strong> with sharp visuals, bright color reproduction, and balanced brightness levels that perform exceptionally well in bedrooms, small rooms, studios, and low-light environments. Lightweight and easy to carry, this portable projector turns any space into an instant entertainment zone.\n        </p>\n\n        <h3>Mini Design with Powerful Performance</h3>\n        <p>\n            Don’t let the small size fool you. The NG EyeSafe Beam Projector delivers performance like a full-sized home theatre device. Designed to fit in your backpack or travel bag, it’s your ideal companion for movies on the go. From cozy indoor movie nights to outdoor screenings under the stars, its <strong>portable beam build</strong> ensures you never miss a cinematic experience. Supporting both <strong>1080p HD and 4K playback</strong>, it guarantees crisp details, smooth visuals, and impressive picture quality anywhere you set it up.\n        </p>\n\n        <h3>Smart Features for Gaming, Work &amp; Entertainment</h3>\n        <p>\n            Equipped with <strong>screen mirroring, Bluetooth audio</strong>, and multiple connectivity ports compatible with gaming consoles, laptops, and smartphones, the NG EyeSafe Beam Projector adapts to every need. Whether you’re streaming videos, gaming online, sharing presentations, or projecting from your phone, it offers seamless, lag-free performance. Perfect as a <strong>projector for movies, gaming, office work, teaching, and small rooms</strong>, it even delivers a stable and bright display when used outdoors, making it an excellent choice for travel and backyard movie nights.\n        </p>\n\n        <p>\n            If you’re looking for a high-quality yet budget-friendly beam projector in India, the <strong>NG EyeSafe Beam Projector</strong> offers unbeatable value. Combining portability, performance, and affordability, it stands out as a smart beam projector for homes, gaming setups, and professional presentations. Enjoy a premium viewing experience — anytime, anywhere.\n        </p>\n    </div>\n</div>\n\n<style>\n    .footer-seo {color:#ddd;padding:30px;text-align:left;border-radius:8px}\n    .footer-seo h2 {color:#fff;font-size:16px;margin-bottom:15px;text-align:left}\n    .footer-seo h3 {color:#fff;font-size:14px;margin-bottom:10px;text-align:left}\n    .footer-seo p {font-size:14px;line-height:1.6}\n</style>",
         "layout": "t4s-container-fluid",
         "cl_bg": "#252525",
         "cl_bg_gradient": "",
