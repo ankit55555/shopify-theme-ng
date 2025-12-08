@@ -858,22 +858,6 @@
         "pd_mb": ""
       }
     },
-    "ec8915fe-2aff-44fc-b59d-72b690f5e071": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "settings": {
-        "custom_liquid": "<section id=\"shopify-section-template--20627092865303__14f54523-b5e7-4690-b573-83b33831d4e9\" class=\"shopify-section t4s-section t4s-section-all\"><!-- sections/top_heading.liquid -->\n<link href=\"//ngearsafe.com/cdn/shop/t/2/assets/section.css?v=19467530681101428381692950764\" rel=\"stylesheet\" type=\"text/css\" media=\"all\">\n<link href=\"//ngearsafe.com/cdn/shop/t/2/assets/top-head.css?v=37867058972263844251692950766\" rel=\"stylesheet\" type=\"text/css\" media=\"all\">\n<link href=\"//ngearsafe.com/cdn/shop/t/2/assets/topheading-section.css?v=61892504884498214371692950766\" rel=\"stylesheet\" type=\"text/css\" media=\"all\">\n<div class=\"t4s-section-inner t4s_nt_se_template--20627092865303__14f54523-b5e7-4690-b573-83b33831d4e9 t4s_nt_se_template--20627092865303__14f54523-b5e7-4690-b573-83b33831d4e9 t4s-container-wrap\" style=\"--bg-color: ;--bg-gradient: ;--border-cl: ;--mg-top: ;--mg-right: auto;--mg-bottom: 20px;--mg-left:auto;--pd-top: ;--pd-right: ;--pd-bottom: ;--pd-left: ;--mgtb-top: ;--mgtb-right: auto;--mgtb-bottom: 20px;--mgtb-left: auto;--pdtb-top: ;--pdtb-right: ;--pdtb-bottom: ;--pdtb-left: ;--mgmb-top: ;--mgmb-right: auto;--mgmb-bottom: 30px;--mgmb-left: auto;--pdmb-top: ;--pdmb-right: ;--pdmb-bottom: ;--pdmb-left: ;\"><div class=\"t4s-container\"><div timeline=\"\" hdt-reveal=\"slide-in\" class=\"t4s-top-heading t4s-text-center\" observed=\"\" style=\"--animation-order: 0;\"><div timeline=\"\" hdt-reveal=\"slide-in\" class=\"t4s-top-heading-heading t4s_des_title_9 t4s-text-center\" observed=\"\" style=\"--animation-order: 0;\">\n                                <h3 class=\"t4s-section-title t4s-title\"><span>What's in the box</span></h3></div></div></div></div></section>\n{% render 'whats-boxearsafe' %}",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,50px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": ""
-      }
-    },
     "77561158-d4b4-412b-a5a2-42695c15bc02": {
       "type": "custom-liquid",
       "disabled": true,
@@ -1242,7 +1226,6 @@
     "a0e3c96b-09ad-4fe8-90fe-4e91deedd752",
     "617310e4-15e9-4543-82e0-1f050ae4ab1e",
     "27a62662-0e46-4637-a877-1f6c3f2decbb",
-    "ec8915fe-2aff-44fc-b59d-72b690f5e071",
     "77561158-d4b4-412b-a5a2-42695c15bc02",
     "1737282429ed5d4301",
     "83a135b9-30ff-430d-a7ed-dd7da7224ef0",
