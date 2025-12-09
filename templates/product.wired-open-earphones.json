@@ -365,124 +365,6 @@
         "time": 6
       }
     },
-    "slideshow_H9HCWW": {
-      "type": "slideshow",
-      "blocks": {
-        "image_parent_QmB4mQ": {
-          "type": "image_parent",
-          "settings": {
-            "image": "shopify://shop_images/Dr_Banner_desktop_1500_x_500_2.webp",
-            "image_mb": "shopify://shop_images/Home_page_Dr_rachana_Banner_copy_c02e2c51-b3b9-48ee-89e7-0edda6c5e8d9.webp",
-            "image_position": "8",
-            "cl_img": "",
-            "link_img1": "",
-            "open_link": "_blank",
-            "animate_slide": "none",
-            "text_align": "center",
-            "text_align_mb": "center",
-            "content_width": "auto",
-            "cv_pos": 80,
-            "ch_pos": 8,
-            "cv_pos_mb": 90,
-            "ch_pos_mb": 8,
-            "bg_overlay": "#000000",
-            "bg_opacity": 0,
-            "bg_content_cl": "#ffffff",
-            "bg_content_op": 0,
-            "content_radius": 0,
-            "box_square": false,
-            "content_pd_tb": 15,
-            "content_pd_lr": 15,
-            "content_pd_tb_tb": 15,
-            "content_pd_lr_tb": 15,
-            "content_pd_tb_mb": 10,
-            "content_pd_lr_mb": 10,
-            "border_bl": false,
-            "br_color": "#222222",
-            "br_bg": "#ffffff",
-            "br_opacity": 50,
-            "br_style": "solid",
-            "br_pd": 20,
-            "br_pd_mb": 10,
-            "time_animation": 1,
-            "animation_delay": 40
-          }
-        },
-        "custom_button_VDy3hT": {
-          "type": "custom_button",
-          "settings": {
-            "button_text": "View Certificate",
-            "button_link": "shopify://pages/ent-doctor-certificate",
-            "target_link": "_blank",
-            "fontf": "inherit",
-            "button_icon_w": 18,
-            "button_style": "default",
-            "button_effect": "default",
-            "pri_cl": "#56cfe1",
-            "second_cl": "#333333",
-            "pri_cl_hover": "#333333",
-            "second_cl_hover": "#ffffff",
-            "fsbutton": 16,
-            "fwbutton": 500,
-            "button_ls": 1,
-            "button_mh": 42,
-            "button_bdr": 5,
-            "button_pd_lr": 20,
-            "button_mgb": 0,
-            "hidden_mobile": false,
-            "button_icon_w_mb": 15,
-            "fsbutton_mb": 12,
-            "button_mh_mb": 36,
-            "button_pd_lr_mb": 15,
-            "button_ls_mb": 0,
-            "button_mgb_mb": 0,
-            "animation": "none"
-          }
-        }
-      },
-      "block_order": [
-        "image_parent_QmB4mQ",
-        "custom_button_VDy3hT"
-      ],
-      "settings": {
-        "se_height": "t4s_ratioadapt",
-        "custom_dk": true,
-        "height_dk": 600,
-        "custom_tb": true,
-        "height_tb": 400,
-        "custom_mb": true,
-        "height_mb": 250,
-        "eff": "slide",
-        "loop": true,
-        "au_time": 0,
-        "au_hover": true,
-        "nav_btn": false,
-        "btn_vi": "hover",
-        "btn_owl": "default",
-        "btn_shape": "none",
-        "btn_cl": "dark",
-        "btn_size": "small",
-        "btn_hidden_mobile": false,
-        "nav_dot": false,
-        "dot_owl": "default",
-        "dots_position": "default",
-        "dots_cl": "dark",
-        "dots_round": false,
-        "dots_space": 10,
-        "dots_hidden_mobile": false,
-        "layout": "t4s-container-fluid",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": "30px,,0px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": "0px,,0px,",
-        "pd_mb": "",
-        "use_cus_css": false,
-        "code_cus_css": ""
-      }
-    },
     "sidebar": {
       "type": "sidebar-product",
       "blocks": {
@@ -570,165 +452,6 @@
         "sidebar_pd": 10
       }
     },
-    "fcc64674-be8f-4eb2-8f04-0bacf8de5771": {
-      "type": "feature_columns2",
-      "blocks": {
-        "template--20627092865303__fcc64674-be8f-4eb2-8f04-0bacf8de5771-text_block-1": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/Frame_139.png",
-            "title": "",
-            "text": "",
-            "button_label": "",
-            "button_link": "",
-            "open_link": "_blank",
-            "btn_icon": false,
-            "button_style": "default",
-            "btn_size": "large",
-            "btn_cl": "dark",
-            "button_effect": "fade",
-            "col_dk": "4",
-            "col_tb": "4",
-            "col_mb": "12"
-          }
-        },
-        "4db5dd25-f5f1-422d-8411-118c558ebe7c": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/Frame_141.png",
-            "title": "",
-            "text": "",
-            "button_label": "",
-            "button_link": "",
-            "open_link": "_blank",
-            "btn_icon": false,
-            "button_style": "default",
-            "btn_size": "large",
-            "btn_cl": "dark",
-            "button_effect": "fade",
-            "col_dk": "4",
-            "col_tb": "4",
-            "col_mb": "12"
-          }
-        },
-        "35b96fb1-2cc4-482b-ad21-40c03d836181": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/Frame_142.png",
-            "title": "",
-            "text": "",
-            "button_label": "",
-            "button_link": "",
-            "open_link": "_blank",
-            "btn_icon": false,
-            "button_style": "default",
-            "btn_size": "large",
-            "btn_cl": "dark",
-            "button_effect": "fade",
-            "col_dk": "4",
-            "col_tb": "4",
-            "col_mb": "12"
-          }
-        }
-      },
-      "block_order": [
-        "template--20627092865303__fcc64674-be8f-4eb2-8f04-0bacf8de5771-text_block-1",
-        "4db5dd25-f5f1-422d-8411-118c558ebe7c",
-        "35b96fb1-2cc4-482b-ad21-40c03d836181"
-      ],
-      "settings": {
-        "design_heading": "1",
-        "heading_align": "t4s-text-center",
-        "top_heading": "Did You Know?",
-        "icon_heading": "las la-gem",
-        "top_subheading": "",
-        "tophead_mb": 30,
-        "text_align": "center",
-        "pos_text": "default",
-        "fs_title": 22,
-        "fs_text": 14,
-        "fs_title_mb": 22,
-        "fs_text_mb": 12,
-        "image_ratio": "ratioadapt",
-        "image_size": "cover",
-        "image_position": "8",
-        "img_effect": "none",
-        "b_effect": "none",
-        "space_h_item": "30",
-        "space_v_item": "30",
-        "space_h_item_mb": "10",
-        "space_v_item_mb": "10",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "#25313c",
-        "cl_bg_gradient": "",
-        "mg": ",,50px,",
-        "pd": "50px,,50px",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": "",
-        "use_cus_css": true,
-        "code_cus_css": ".t4s_nt_se_template--22100092911895__fcc64674-be8f-4eb2-8f04-0bacf8de5771 .t4s-section-title span { color:white !important;}"
-      }
-    },
-    "21cc52cf-8bcf-42ba-8f07-80d94e7a589e": {
-      "type": "custom-liquid",
-      "custom_css": [
-        ".t4s-code__liquid {margin: 0px 10px 10px 10px;}"
-      ],
-      "settings": {
-        "custom_liquid": "{% render 'did-you-mobile' %}",
-        "layout": "t4s-container-fluid",
-        "cl_bg": "#25313c",
-        "cl_bg_gradient": "",
-        "mg": ",,50px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": ""
-      }
-    },
-    "df43a99b-eda3-4c32-837f-b6640989c695": {
-      "type": "top_heading",
-      "blocks": {
-        "template--20627092865303__df43a99b-eda3-4c32-837f-b6640989c695-bl_heading-1": {
-          "type": "bl_heading",
-          "settings": {
-            "top_heading": "Why Choose EarSafe ?"
-          }
-        },
-        "template--20627092865303__df43a99b-eda3-4c32-837f-b6640989c695-bl_subheading-1": {
-          "type": "bl_subheading",
-          "disabled": true,
-          "settings": {
-            "top_subheading": "Lorem Ipsum is simply dummy text"
-          }
-        }
-      },
-      "block_order": [
-        "template--20627092865303__df43a99b-eda3-4c32-837f-b6640989c695-bl_heading-1",
-        "template--20627092865303__df43a99b-eda3-4c32-837f-b6640989c695-bl_subheading-1"
-      ],
-      "settings": {
-        "design_heading": "1",
-        "heading_align": "t4s-text-center",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,30px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,20px,",
-        "pd_mb": "",
-        "use_cus_css": false,
-        "code_cus_css": ""
-      }
-    },
     "601092f3-f61a-4147-b4f4-33b069d7f348": {
       "type": "video_featured",
       "settings": {
@@ -757,77 +480,6 @@
         "pd_mb": "",
         "use_cus_css": true,
         "code_cus_css": ".t4s-video video {\n    z-index: 101;\n    object-fit: unset  !important;\n    border-radius: 10px !important;\nclip-path: inset(1px 1px);\n}\n\n .t4s-video video::-webkit-media-controls {\n  display: none;\n}"
-      }
-    },
-    "a0e3c96b-09ad-4fe8-90fe-4e91deedd752": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{% render 'earsafe-features' %}",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,50px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": ""
-      }
-    },
-    "617310e4-15e9-4543-82e0-1f050ae4ab1e": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{% render 'benefits-home' %}",
-        "layout": "t4s-container-fluid",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,50px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": ""
-      }
-    },
-    "4bce7335-2a2b-4e8a-b006-05c8651811f8": {
-      "type": "top_heading",
-      "blocks": {
-        "template--20627092865303__4bce7335-2a2b-4e8a-b006-05c8651811f8-bl_heading-1": {
-          "type": "bl_heading",
-          "settings": {
-            "top_heading": "Experience Safer Listening"
-          }
-        },
-        "template--20627092865303__4bce7335-2a2b-4e8a-b006-05c8651811f8-bl_subheading-1": {
-          "type": "bl_subheading",
-          "disabled": true,
-          "settings": {
-            "top_subheading": "Best theme shopify"
-          }
-        }
-      },
-      "block_order": [
-        "template--20627092865303__4bce7335-2a2b-4e8a-b006-05c8651811f8-bl_heading-1",
-        "template--20627092865303__4bce7335-2a2b-4e8a-b006-05c8651811f8-bl_subheading-1"
-      ],
-      "custom_css": [
-        ".t4s_nt_se_template--22100092911895__4bce7335-2a2b-4e8a-b006-05c8651811f8 .t4s-container {margin-top: 0%; display: block !important; margin-bottom: 70px;}",
-        "@media only screen and (max-width: 768px) {.t4s_nt_se_template--22100092911895__4bce7335-2a2b-4e8a-b006-05c8651811f8 .t4s-top-heading-heading h3 {font-size: 20px; } .t4s_nt_se_template--22100092911895__4bce7335-2a2b-4e8a-b006-05c8651811f8 .t4s-container {margin-top: 0% !important; }}"
-      ],
-      "settings": {
-        "design_heading": "2",
-        "heading_align": "t4s-text-center",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,0px,",
-        "pd": "0px,,0px,",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": ",,40px,",
-        "use_cus_css": false,
-        "code_cus_css": ""
       }
     },
     "2f8947bb-a208-4ff1-92dd-ca00313dd658": {
@@ -936,6 +588,7 @@
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "file_link": "https://cdn.shopify.com/s/files/1/0610/5209/2628/files/Share_your_brand_story_by_adding_a_video_to_your_store.mp4?v=1641630446",
         "video": "shopify://files/videos/NG Corps.mp4",
+        "file_link_mb": "",
         "text_align": "center",
         "text_align_mb": "center",
         "content_width": "auto",
@@ -973,36 +626,6 @@
         "code_cus_css": ""
       }
     },
-    "27a62662-0e46-4637-a877-1f6c3f2decbb": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{% render 'color-slick' %}",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,0px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": ""
-      }
-    },
-    "87df8b17-dc27-449b-ba9a-eb084958bb91": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{% render 'air-conduction' %}\n{% render 'water-resistence' %}\n{% render 'wireless-phonecall' %}",
-        "layout": "t4s-container-fluid",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,0px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,0px,",
-        "pd_mb": ""
-      }
-    },
     "04fbdf0e-5386-4930-b05f-10d6e52f33bf": {
       "type": "custom-liquid",
       "custom_css": [],
@@ -1013,76 +636,6 @@
         "cl_bg_gradient": "",
         "mg": "50px,,120px,",
         "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": ""
-      }
-    },
-    "ec8915fe-2aff-44fc-b59d-72b690f5e071": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "<section id=\"shopify-section-template--20627092865303__14f54523-b5e7-4690-b573-83b33831d4e9\" class=\"shopify-section t4s-section t4s-section-all\"><!-- sections/top_heading.liquid -->\n<link href=\"//ngearsafe.com/cdn/shop/t/2/assets/section.css?v=19467530681101428381692950764\" rel=\"stylesheet\" type=\"text/css\" media=\"all\">\n<link href=\"//ngearsafe.com/cdn/shop/t/2/assets/top-head.css?v=37867058972263844251692950766\" rel=\"stylesheet\" type=\"text/css\" media=\"all\">\n<link href=\"//ngearsafe.com/cdn/shop/t/2/assets/topheading-section.css?v=61892504884498214371692950766\" rel=\"stylesheet\" type=\"text/css\" media=\"all\">\n<div class=\"t4s-section-inner t4s_nt_se_template--20627092865303__14f54523-b5e7-4690-b573-83b33831d4e9 t4s_nt_se_template--20627092865303__14f54523-b5e7-4690-b573-83b33831d4e9 t4s-container-wrap\" style=\"--bg-color: ;--bg-gradient: ;--border-cl: ;--mg-top: ;--mg-right: auto;--mg-bottom: 20px;--mg-left:auto;--pd-top: ;--pd-right: ;--pd-bottom: ;--pd-left: ;--mgtb-top: ;--mgtb-right: auto;--mgtb-bottom: 20px;--mgtb-left: auto;--pdtb-top: ;--pdtb-right: ;--pdtb-bottom: ;--pdtb-left: ;--mgmb-top: ;--mgmb-right: auto;--mgmb-bottom: 30px;--mgmb-left: auto;--pdmb-top: ;--pdmb-right: ;--pdmb-bottom: ;--pdmb-left: ;\"><div class=\"t4s-container\"><div timeline=\"\" hdt-reveal=\"slide-in\" class=\"t4s-top-heading t4s-text-center\" observed=\"\" style=\"--animation-order: 0;\"><div timeline=\"\" hdt-reveal=\"slide-in\" class=\"t4s-top-heading-heading t4s_des_title_9 t4s-text-center\" observed=\"\" style=\"--animation-order: 0;\">\n                                <h3 class=\"t4s-section-title t4s-title\"><span>What's in the box</span></h3></div></div></div></div></section>\n{% render 'whats-boxearsafe' %}",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,50px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": ""
-      }
-    },
-    "14f54523-b5e7-4690-b573-83b33831d4e9": {
-      "type": "top_heading",
-      "blocks": {
-        "template--20627092865303__14f54523-b5e7-4690-b573-83b33831d4e9-bl_heading-1": {
-          "type": "bl_heading",
-          "settings": {
-            "top_heading": "#NGSQUAD"
-          }
-        },
-        "template--20627092865303__14f54523-b5e7-4690-b573-83b33831d4e9-bl_subheading-1": {
-          "type": "bl_subheading",
-          "disabled": true,
-          "settings": {
-            "top_subheading": "Best theme shopify"
-          }
-        }
-      },
-      "block_order": [
-        "template--20627092865303__14f54523-b5e7-4690-b573-83b33831d4e9-bl_heading-1",
-        "template--20627092865303__14f54523-b5e7-4690-b573-83b33831d4e9-bl_subheading-1"
-      ],
-      "settings": {
-        "design_heading": "9",
-        "heading_align": "t4s-text-center",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,20px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": "",
-        "use_cus_css": false,
-        "code_cus_css": ""
-      }
-    },
-    "77561158-d4b4-412b-a5a2-42695c15bc02": {
-      "type": "custom-liquid",
-      "custom_css": [
-        ".t4s_se_template--20627092865303__77561158-d4b4-412b-a5a2-42695c15bc02 .t4s-container {padding: 0;}"
-      ],
-      "settings": {
-        "custom_liquid": "{% render 'ngsquad-p' %}",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "#25313c",
-        "cl_bg_gradient": "",
-        "mg": "50px,,50px,",
-        "pd": "30px,,30px,",
         "mg_tb": "",
         "pd_tb": "",
         "mg_mb": ",,30px,",
@@ -1467,22 +1020,10 @@
   "order": [
     "breadcrumb",
     "main",
-    "slideshow_H9HCWW",
     "sidebar",
-    "fcc64674-be8f-4eb2-8f04-0bacf8de5771",
-    "21cc52cf-8bcf-42ba-8f07-80d94e7a589e",
-    "df43a99b-eda3-4c32-837f-b6640989c695",
     "601092f3-f61a-4147-b4f4-33b069d7f348",
-    "a0e3c96b-09ad-4fe8-90fe-4e91deedd752",
-    "617310e4-15e9-4543-82e0-1f050ae4ab1e",
-    "4bce7335-2a2b-4e8a-b006-05c8651811f8",
     "2f8947bb-a208-4ff1-92dd-ca00313dd658",
-    "27a62662-0e46-4637-a877-1f6c3f2decbb",
-    "87df8b17-dc27-449b-ba9a-eb084958bb91",
     "04fbdf0e-5386-4930-b05f-10d6e52f33bf",
-    "ec8915fe-2aff-44fc-b59d-72b690f5e071",
-    "14f54523-b5e7-4690-b573-83b33831d4e9",
-    "77561158-d4b4-412b-a5a2-42695c15bc02",
     "accordion_4NGXHR",
     "1737282429ed5d4301",
     "83a135b9-30ff-430d-a7ed-dd7da7224ef0",
