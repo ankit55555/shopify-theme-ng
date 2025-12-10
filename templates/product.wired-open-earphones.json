@@ -658,7 +658,7 @@
         "text_color": "#ffffff",
         "button_color": "#44e1e6",
         "button_text_color": "#0b2a2d",
-        "padding_top": 40,
+        "padding_top": 56,
         "padding_bottom": 0
       }
     },
