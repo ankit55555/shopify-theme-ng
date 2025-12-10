@@ -478,7 +478,7 @@
         "overlay_opacity": 0,
         "bg_position_desktop": "center center",
         "bg_position_mobile": "center center",
-        "horizontal_align": "right",
+        "horizontal_align": "left",
         "vertical_align": "middle",
         "contain_content": true,
         "container_max_width": 1260,
