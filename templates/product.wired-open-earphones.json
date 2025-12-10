@@ -371,7 +371,7 @@
       "settings": {
         "image_desktop": "shopify://shop_images/clear_calls.webp",
         "image_mobile": "shopify://shop_images/clear_calls_mobile.webp",
-        "height_desktop": 760,
+        "height_desktop": 860,
         "height_mobile": 800,
         "vertical_align_mobile": "top",
         "mobile_bottom_offset": 24,
