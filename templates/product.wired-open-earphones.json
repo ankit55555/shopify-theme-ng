@@ -431,6 +431,39 @@
         "padding_bottom": 0
       }
     },
+    "hero_bg_banner_YezGx8": {
+      "type": "hero-bg-banner",
+      "name": "Hero banner - BG image",
+      "settings": {
+        "image_desktop": "shopify://shop_images/type_C.webp",
+        "image_mobile": "shopify://shop_images/Apple_and_android_support_mobile.webp",
+        "height_desktop": 690,
+        "height_mobile": 800,
+        "vertical_align_mobile": "top",
+        "mobile_bottom_offset": 0,
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "bg_position_desktop": "center center",
+        "bg_position_mobile": "center center",
+        "horizontal_align": "right",
+        "vertical_align": "middle",
+        "contain_content": true,
+        "container_max_width": 1260,
+        "content_max_width": 620,
+        "heading": "<p>Type C Plug & <br/>Play Convenience</p>",
+        "middle_text": "<p><strong>No adapters, no hassle. Compatible with most<br/>modern Android & iPhone devices instantly.</strong></p>",
+        "middle_text_color": "#dddddd",
+        "subheading": "",
+        "cta_label": "Know the difference",
+        "cta_link": "",
+        "cta_style": "link",
+        "text_color": "#ffffff",
+        "button_color": "#44e1e6",
+        "button_text_color": "#0b2a2d",
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
     "sidebar": {
       "type": "sidebar-product",
       "blocks": {
@@ -898,6 +931,7 @@
     "main",
     "hero_bg_banner_CN7hmG",
     "hero_bg_banner_T6MjMr",
+    "hero_bg_banner_YezGx8",
     "sidebar",
     "accordion_4NGXHR",
     "1737282429ed5d4301",
