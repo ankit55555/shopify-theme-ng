@@ -632,6 +632,7 @@
       "block_order": [
         "accor_item_yhMLqn"
       ],
+      "disabled": true,
       "settings": {
         "design_heading": "1",
         "heading_align": "t4s-text-center",
