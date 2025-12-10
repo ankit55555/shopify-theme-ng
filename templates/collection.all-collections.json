@@ -413,12 +413,25 @@
             "label_text": "",
             "show_arrow": false
           }
+        },
+        "showcase_item_bKecxC": {
+          "type": "showcase_item",
+          "settings": {
+            "item_type": "collection",
+            "collection": "",
+            "product": "",
+            "title": "",
+            "link_url": "",
+            "label_text": "Collection →",
+            "show_arrow": true
+          }
         }
       },
       "block_order": [
         "showcase_item_Hw46HF",
         "showcase_item_LtnpQL",
-        "showcase_item_Ytew9i"
+        "showcase_item_Ytew9i",
+        "showcase_item_bKecxC"
       ],
       "name": "Collections Showcase",
       "settings": {
