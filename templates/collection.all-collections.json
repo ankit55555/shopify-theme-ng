@@ -417,13 +417,13 @@
         "showcase_item_bKecxC": {
           "type": "showcase_item",
           "settings": {
-            "item_type": "collection",
+            "item_type": "product",
             "collection": "",
-            "product": "",
+            "product": "ng-earsafe-wired-open-ear-earphones",
             "title": "",
             "link_url": "",
-            "label_text": "Collection →",
-            "show_arrow": true
+            "label_text": "",
+            "show_arrow": false
           }
         }
       },
