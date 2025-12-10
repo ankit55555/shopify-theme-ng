@@ -909,6 +909,7 @@
         "0fc5345d-97f9-47b2-8e24-8ec050136d74",
         "9319114b-7a97-4670-92b8-3039d4d2b2f1"
       ],
+      "disabled": true,
       "settings": {
         "design_heading": "1",
         "heading_align": "t4s-text-center",
