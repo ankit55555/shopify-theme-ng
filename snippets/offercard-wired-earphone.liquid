@@ -1,0 +1,114 @@
+{% if product.url == '/products/ng-earsafe-comm-open-ear-headphones-with-noise-canceling-boom-mic' %}
+<style>#hide-fromall{display:none !important}</style>
+{% endif %}
+
+{% if product.url == '/products/earsafe-open-ear-bluetooth-headphones' %}
+<style>#hide-fromall{display:none !important}</style>
+{% endif %}
+
+{% if product.url == '/products/ng-earsafe-lite-open-ear-headphones' %}
+<style>#hide-fromall{display:none !important}</style>
+{% endif %}
+
+{% unless product.handle == 'ng-ear-safe-ear-plugs-1-0-waterproof-noise-reduction' %}
+<div class="buttons-container-m">
+  <div class="buy-button-wrapper-m">
+    <div class="buy-text-m">Buy now at</div>
+    <div class="buy-button-m">
+      <a class="buyNowLink" href="https://www.amazon.in/dp/B0G5PMP4XN/ref=olp-opf-redir?aod=1&ref=sp_email" target="_blank" onclick="trackBuyNowClick('amazon')">
+        <img width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/amazon_2be66c61-7548-4fa9-9f92-e7dda5d58df3.png?v=1741600351" alt="Amazon logo" class="logo-m">
+      </a>
+      <span class="arrow-m">›</span>
+    </div>
+  </div>
+
+  <div class="buy-button-wrapper-m flipkart-wrapper">
+    <div class="buy-text-m">Buy now at</div>
+    <div class="buy-button-m">
+      <a class="buyNowLink flipkartLink" href="#" target="_blank">
+        <img width="auto" height="auto" src="https://cdn.freebiesupply.com/logos/large/2x/flipkart-logo-png-transparent.png" alt="Flipkart logo" class="logo-m">
+      </a>
+      <span class="arrow-m">›</span>
+    </div>
+  </div>
+</div>
+
+<style>
+.buttons-container-m{display:flex;flex-wrap:wrap;gap:0;margin:0;padding:0;margin-bottom:15px;}
+.buy-button-wrapper-m{position:relative;width:auto;margin:0;margin-right:10px}
+.buy-text-m{position:absolute;top:-6px;left:14px;background-color:#fff;padding:0 5px;font-size:10px;font-weight:600;color:#333;z-index:1}
+.buy-button-m{display:flex;align-items:center;justify-content:space-between;background-color:#fff;border:1px solid #ffa41c;border-radius:10px;padding:15px 20px;height:40px;width:150px;text-decoration:none;box-sizing:border-box;margin:0}
+.logo-m{width:80%}
+.arrow-m{color:#ffa41c;font-size:24px;}
+.buy-button-m a{border-bottom: 0px solid currentColor !important;}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // SET NEW AMAZON URL
+    const amazonNewURL = "https://www.amazon.in/dp/B0G5PMP4XN/ref=olp-opf-redir?aod=1&ref=sp_email";
+
+    // APPLY AMAZON URL TO ALL AMAZON BUTTONS
+    document.querySelectorAll(".buyNowLink:not(.flipkartLink)").forEach(link => {
+        link.href = amazonNewURL;
+        link.setAttribute("data-store", "amazon");
+    });
+
+    // HIDE ALL FLIPKART BUTTONS
+    document.querySelectorAll(".flipkart-wrapper").forEach(btn => {
+        btn.style.display = "none";
+    });
+
+});
+
+// TRACKING FUNCTION
+function trackBuyNowClick(store) {
+    const linkElement = event.target.closest("a");
+    const productName = linkElement.getAttribute("data-product");
+
+    gtag('event', 'buy_now_click', {
+        'event_category': 'Button Click',
+        'event_label': productName,
+        'event_store': store,
+        'event_value': 1
+    });
+
+    console.log("Tracked Buy Now Click:", productName, "Store:", store);
+}
+</script>
+{% endunless %}
+
+<style>
+.banner-container{display: none;justify-content:space-between;align-items:center;background:linear-gradient(to right,#a8e0ff,#7fd8f8);border-radius:12px;padding:15px 20px;max-width:350px;box-shadow:0 4px 8px rgba(0,0,0,.1);font-family:Arial,sans-serif;overflow:hidden}
+.banner-text{color: #333;font-size: 14px;line-height: 1.4;flex: 1;margin-right: 10px;font-weight: 700;}
+.flip-container{perspective:1000px;width:120px;height:40px}
+.flipper{width:100%;height:100%;position:relative;transform-style:preserve-3d;animation:flip 6s infinite}
+.back,.front{width:100%;height:100%;position:absolute;backface-visibility:hidden;display:flex;align-items:center;justify-content:center;border-radius:6px;font-size:22px;font-weight:700;color:#333;background:rgba(255,255,255,.2);overflow:hidden}
+.back{transform:rotateY(180deg)}
+.back::before,.front::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.8),transparent);transform:rotate(30deg);animation:shimmer-sweep 3s infinite}
+@keyframes shimmer-sweep{
+0%{transform:translateX(-150%) rotate(30deg)}
+100%{transform:translateX(150%) rotate(30deg)}
+}
+@keyframes flip{
+0%,45%{transform:rotateY(0)}
+50%,95%{transform:rotateY(180deg)}
+100%{transform:rotateY(0)}
+}
+</style>
+
+{% unless product.handle == 'ng-ear-safe-ear-plugs-1-0-waterproof-noise-reduction' %}
+<div class="banner-container">
+  <div class="banner-text">
+    Flat ₹200 instant discount<br>
+    on prepaid orders
+  </div>
+  <div class="flip-container">
+    <div class="flipper">
+      <div class="front">₹200 OFF</div>
+      <div class="back">₹200 OFF</div>
+    </div>
+  </div>
+</div>
+{% endunless %}
