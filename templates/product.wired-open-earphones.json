@@ -225,7 +225,7 @@
         "custom_liquid_N66jqq": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{% render 'faq-earsafe-schema' %}"
+            "custom_liquid": "{% render 'wired-ng-earsafe' %}"
           }
         },
         "56e67368-7424-4d73-8f14-dacdda4c59be": {
@@ -813,87 +813,6 @@
       ],
       "settings": {}
     },
-    "83a135b9-30ff-430d-a7ed-dd7da7224ef0": {
-      "type": "accordion",
-      "blocks": {
-        "template--20627092865303__83a135b9-30ff-430d-a7ed-dd7da7224ef0-accor_item-1": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": " Are these wired open ear headphones compatible with Android and iPhone?",
-            "content": "<p>Yes, they use a <strong>Type-C plug</strong>, making them compatible with most modern Android and iPhone devices.</p>"
-          }
-        },
-        "accor_item_njXQyf": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "Can I use these open ear earphones wired for calls and meetings?",
-            "content": "<p>Absolutely. The <strong>in-line mic</strong> provides clear voice pickup for calls, Zoom, gaming, and podcasts</p>"
-          }
-        },
-        "template--20627092865303__83a135b9-30ff-430d-a7ed-dd7da7224ef0-accor_item-2": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "Do these wired open ear headphones have good bass?",
-            "content": "<p>Yes, the <strong>14.2 mm dynamic drivers</strong> deliver enhanced bass with natural, open-air sound quality.</p>"
-          }
-        },
-        "template--20627092865303__83a135b9-30ff-430d-a7ed-dd7da7224ef0-accor_item-3": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "Are they comfortable for long listening sessions?",
-            "content": "<p>Yes, the <strong>open-ear lightweight design</strong> reduces pressure and fatigue — great for workouts and office use<br/></p>"
-          }
-        },
-        "8d42d8d4-8b59-4339-af47-78c859fa3f99": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "Do they work without an adapter?",
-            "content": "<p>Yes, as long as your device has a <strong>Type-C port</strong>, you can plug in and start using instantly.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "template--20627092865303__83a135b9-30ff-430d-a7ed-dd7da7224ef0-accor_item-1",
-        "accor_item_njXQyf",
-        "template--20627092865303__83a135b9-30ff-430d-a7ed-dd7da7224ef0-accor_item-2",
-        "template--20627092865303__83a135b9-30ff-430d-a7ed-dd7da7224ef0-accor_item-3",
-        "8d42d8d4-8b59-4339-af47-78c859fa3f99"
-      ],
-      "settings": {
-        "design_heading": "1",
-        "heading_align": "t4s-text-center",
-        "top_heading": "Frequently Asked Question",
-        "icon_heading": "las la-gem",
-        "top_subheading": "",
-        "tophead_mb": 30,
-        "accor_des": "1",
-        "title_cl": "#222222",
-        "bg_title_cl": "#f6f6f8",
-        "title_active_cl": "#000000",
-        "bg_title_active_cl": "#f6f6f8",
-        "content_cl": "#878787",
-        "bg_content_cl": "#ffffff",
-        "content_align": "t4s-text-start",
-        "auto_active": true,
-        "layout": "t4s-container-wrap",
-        "custom_width": 1000,
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": "50px,,50px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": "",
-        "use_cus_css": false,
-        "code_cus_css": ""
-      }
-    },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
@@ -1074,6 +993,87 @@
         "mg_tb": "",
         "pd_tb": "",
         "mg_mb": ",,0px,",
+        "pd_mb": "",
+        "use_cus_css": false,
+        "code_cus_css": ""
+      }
+    },
+    "83a135b9-30ff-430d-a7ed-dd7da7224ef0": {
+      "type": "accordion",
+      "blocks": {
+        "template--20627092865303__83a135b9-30ff-430d-a7ed-dd7da7224ef0-accor_item-1": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": " Are these wired open ear headphones compatible with Android and iPhone?",
+            "content": "<p>Yes, they use a <strong>Type-C plug</strong>, making them compatible with most modern Android and iPhone devices.</p>"
+          }
+        },
+        "accor_item_njXQyf": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "Can I use these open ear earphones wired for calls and meetings?",
+            "content": "<p>Absolutely. The <strong>in-line mic</strong> provides clear voice pickup for calls, Zoom, gaming, and podcasts</p>"
+          }
+        },
+        "template--20627092865303__83a135b9-30ff-430d-a7ed-dd7da7224ef0-accor_item-2": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "Do these wired open ear headphones have good bass?",
+            "content": "<p>Yes, the <strong>14.2 mm dynamic drivers</strong> deliver enhanced bass with natural, open-air sound quality.</p>"
+          }
+        },
+        "template--20627092865303__83a135b9-30ff-430d-a7ed-dd7da7224ef0-accor_item-3": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "Are they comfortable for long listening sessions?",
+            "content": "<p>Yes, the <strong>open-ear lightweight design</strong> reduces pressure and fatigue — great for workouts and office use<br/></p>"
+          }
+        },
+        "8d42d8d4-8b59-4339-af47-78c859fa3f99": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "Do they work without an adapter?",
+            "content": "<p>Yes, as long as your device has a <strong>Type-C port</strong>, you can plug in and start using instantly.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--20627092865303__83a135b9-30ff-430d-a7ed-dd7da7224ef0-accor_item-1",
+        "accor_item_njXQyf",
+        "template--20627092865303__83a135b9-30ff-430d-a7ed-dd7da7224ef0-accor_item-2",
+        "template--20627092865303__83a135b9-30ff-430d-a7ed-dd7da7224ef0-accor_item-3",
+        "8d42d8d4-8b59-4339-af47-78c859fa3f99"
+      ],
+      "settings": {
+        "design_heading": "1",
+        "heading_align": "t4s-text-center",
+        "top_heading": "Frequently Asked Question",
+        "icon_heading": "las la-gem",
+        "top_subheading": "",
+        "tophead_mb": 30,
+        "accor_des": "1",
+        "title_cl": "#222222",
+        "bg_title_cl": "#f6f6f8",
+        "title_active_cl": "#000000",
+        "bg_title_active_cl": "#f6f6f8",
+        "content_cl": "#878787",
+        "bg_content_cl": "#ffffff",
+        "content_align": "t4s-text-start",
+        "auto_active": true,
+        "layout": "t4s-container-wrap",
+        "custom_width": 1000,
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": "50px,,50px,",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
         "pd_mb": "",
         "use_cus_css": false,
         "code_cus_css": ""
