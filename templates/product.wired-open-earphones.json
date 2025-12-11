@@ -820,96 +820,50 @@
           "type": "accor_item",
           "settings": {
             "icon": "none",
-            "title": "If these are open ears, will people around me be able to hear the music I am listening to on my pair of NG EarSafe?",
-            "content": "<p>No, since the speaker sits near your ear, only you can hear the music you are listening to. These open ear Bluetooth headphones are designed for personal listening. However, in quiet environments and at volumes above 80%, there is a chance someone sitting close to you might hear slightly.</p>"
+            "title": " Are these wired open ear headphones compatible with Android and iPhone?",
+            "content": "<p>Yes, they use a <strong>Type-C plug</strong>, making them compatible with most modern Android and iPhone devices.</p>"
+          }
+        },
+        "accor_item_njXQyf": {
+          "type": "accor_item",
+          "settings": {
+            "icon": "none",
+            "title": "Can I use these open ear earphones wired for calls and meetings?",
+            "content": "<p>Absolutely. The <strong>in-line mic</strong> provides clear voice pickup for calls, Zoom, gaming, and podcasts</p>"
           }
         },
         "template--20627092865303__83a135b9-30ff-430d-a7ed-dd7da7224ef0-accor_item-2": {
           "type": "accor_item",
           "settings": {
             "icon": "none",
-            "title": "Can I use them while working out? Are they waterproof?",
-            "content": "<p>No, these open ear headphones are IPx4-rated water and sweat resistant, making them perfect for workouts. Whether you're using them outdoors or at the gym, their water-resistant design ensures durability.</p>"
+            "title": "Do these wired open ear headphones have good bass?",
+            "content": "<p>Yes, the <strong>14.2 mm dynamic drivers</strong> deliver enhanced bass with natural, open-air sound quality.</p>"
           }
         },
         "template--20627092865303__83a135b9-30ff-430d-a7ed-dd7da7224ef0-accor_item-3": {
           "type": "accor_item",
           "settings": {
             "icon": "none",
-            "title": "What is the Bluetooth connection range for smooth working?",
-            "content": "<p>The Bluetooth 5.0 chipset in these open ear wireless headphones provides a latency-free connection for up to 10 meters, ensuring smooth performance for streaming or calls.</p>"
+            "title": "Are they comfortable for long listening sessions?",
+            "content": "<p>Yes, the <strong>open-ear lightweight design</strong> reduces pressure and fatigue — great for workouts and office use<br/></p>"
           }
         },
         "8d42d8d4-8b59-4339-af47-78c859fa3f99": {
           "type": "accor_item",
           "settings": {
             "icon": "none",
-            "title": "How can I claim my warranty in case of any issues?",
-            "content": "<p>You are eligible to claim a warranty within 1 year of purchase for your open ear earbuds. You can mail us at <a href=\"mailto:support@ngearsafe.com\" title=\"mailto:support@ngearsafe.com\">support@ngearsafe.com</a> or fill up a form at<a href=\"https://help.ngearsafe.com/claim-warranty\"> <span style=\"text-decoration:underline\">Claim Warranty</span></a>. Warranty covers defects related to your bone conduction or air conduction headphones.</p>"
-          }
-        },
-        "a7ca32a8-e1ac-4b07-8789-786cf58f7140": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "In how many days will my NG EarSafe Headphones be delivered?",
-            "content": "<p>You can expect delivery of your open ear Bluetooth headphones within 4–5 business days once shipped. We dispatch the product a day after receiving your order.</p>"
-          }
-        },
-        "f5707af2-5e96-4991-bbf6-cd7df09ebaec": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "Can we connect this to a laptop?",
-            "content": "<p>Yes, these open earphones are compatible with phones, tablets, and laptops that have Bluetooth connectivity. You can also pair them with other devices like open back headphones for seamless integration.</p>"
-          }
-        },
-        "3d75943e-9fb9-483d-a299-2db3629ede4f": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "What are the colour options?",
-            "content": "<p>Currently, these open ear Headphones are available in black, red, and green. Choose the one that complements your style!</p>"
-          }
-        },
-        "997edcc4-6546-4b4b-9f3f-2a58893a6493": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "Which cable to be used for charging?",
-            "content": "<p>A Micro USB cable is used for charging, which comes in the box along with the headphones. This feature is consistent across most open ear wireless headphones and ensures reliable performance.</p>"
-          }
-        },
-        "0fc5345d-97f9-47b2-8e24-8ec050136d74": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "Are there any offers available?",
-            "content": "<p>Yes, enjoy ₹200 instant discount on payment with any Credit/Debit cards or UPI for these open ear headphones with mic and water-resistant features.</p>"
-          }
-        },
-        "9319114b-7a97-4670-92b8-3039d4d2b2f1": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "Is there any return policy?",
-            "content": "<p>Yes, we offer an easy 7-day easy return policy for your open ear Bluetooth headphones (physical and water damage not covered). This includes all bone conduction and air conduction models.</p>"
+            "title": "Do they work without an adapter?",
+            "content": "<p>Yes, as long as your device has a <strong>Type-C port</strong>, you can plug in and start using instantly.</p>"
           }
         }
       },
       "block_order": [
         "template--20627092865303__83a135b9-30ff-430d-a7ed-dd7da7224ef0-accor_item-1",
+        "accor_item_njXQyf",
         "template--20627092865303__83a135b9-30ff-430d-a7ed-dd7da7224ef0-accor_item-2",
         "template--20627092865303__83a135b9-30ff-430d-a7ed-dd7da7224ef0-accor_item-3",
-        "8d42d8d4-8b59-4339-af47-78c859fa3f99",
-        "a7ca32a8-e1ac-4b07-8789-786cf58f7140",
-        "f5707af2-5e96-4991-bbf6-cd7df09ebaec",
-        "3d75943e-9fb9-483d-a299-2db3629ede4f",
-        "997edcc4-6546-4b4b-9f3f-2a58893a6493",
-        "0fc5345d-97f9-47b2-8e24-8ec050136d74",
-        "9319114b-7a97-4670-92b8-3039d4d2b2f1"
+        "8d42d8d4-8b59-4339-af47-78c859fa3f99"
       ],
-      "disabled": true,
       "settings": {
         "design_heading": "1",
         "heading_align": "t4s-text-center",
