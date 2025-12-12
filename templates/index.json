@@ -94,6 +94,7 @@
         },
         "slide_WaAVYW": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image_desktop": "shopify://shop_images/OpenWire_homepage_banner_desktop_copy.webp",
             "image_mobile": "shopify://shop_images/Open_Wire_Homepage_top_banner_Buds_mobile.webp",
