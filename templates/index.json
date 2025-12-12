@@ -71,9 +71,29 @@
             "scroll_text": "SCROLL TO DISCOVER"
           }
         },
+        "slide_WaAVYW": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/OpenWire_homepage_banner_desktop_copy.webp",
+            "image_mobile": "shopify://shop_images/Open_Wire_Homepage_top_banner_Buds_mobile.webp",
+            "alt": "",
+            "heading": "NG EarSafe Pro Mini",
+            "subheading": "Compact yet powerful",
+            "button_label": "Pre-Book",
+            "button_link": "shopify://products/open-ear-headphones-wired-ng-earsafe",
+            "text_align": "left",
+            "heading_color": "#4e5d70",
+            "subheading_color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_bg_color": "#56cfe1",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "show_scroll_hint": true,
+            "scroll_text": "SCROLL TO DISCOVER"
+          }
+        },
         "slide_nTnyyy": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image_desktop": "shopify://shop_images/buds_Homepage_top_Banner_for_earsfae_Buds_Desktop.webp",
             "image_mobile": "shopify://shop_images/Buds_Homepage_top_banner_Buds_mobile_3fb848f0-a180-4386-85bd-7b2a65e211b2.webp",
@@ -92,34 +112,13 @@
             "show_scroll_hint": true,
             "scroll_text": "SCROLL TO DISCOVER"
           }
-        },
-        "slide_WaAVYW": {
-          "type": "slide",
-          "settings": {
-            "image_desktop": "shopify://shop_images/Peo_mini_black_Homepage_top_Banner_for_earsfae_Buds_Desktop.webp",
-            "image_mobile": "shopify://shop_images/Pro_mini_black_Homepage_top_banner_Buds_mobile.webp",
-            "alt": "",
-            "heading": "NG EarSafe Pro Mini",
-            "subheading": "Compact yet powerful",
-            "button_label": "SHOP NOW",
-            "button_link": "shopify://products/open-ear-bone-conduction-headphones-ng-ear-safe-pro-mini",
-            "text_align": "left",
-            "heading_color": "#4e5d70",
-            "subheading_color": "#ffffff",
-            "button_text_color": "#ffffff",
-            "button_bg_color": "#56cfe1",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0,
-            "show_scroll_hint": true,
-            "scroll_text": "SCROLL TO DISCOVER"
-          }
         }
       },
       "block_order": [
         "slide_aK96WT",
         "slide_AU4nWC",
-        "slide_nTnyyy",
-        "slide_WaAVYW"
+        "slide_WaAVYW",
+        "slide_nTnyyy"
       ],
       "name": "NG Hero Slideshow",
       "settings": {
@@ -434,7 +433,7 @@
       "type": "apps",
       "blocks": {
         "vizup_shopable_instagram_reels_videos_block_W8tjqW": {
-          "type": "shopify://apps/vizup-shoppable-video-carousel/blocks/videos-block/eaecaa7b-ab6b-40ae-8ddf-50daa867f3eb",
+          "type": "shopify://apps/vizup-videos/blocks/videos-block/eaecaa7b-ab6b-40ae-8ddf-50daa867f3eb",
           "settings": {
             "videoc_widget_id": "",
             "custom_css": ""
