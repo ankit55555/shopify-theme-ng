@@ -56,7 +56,7 @@
       background-size: cover;
       background-position: {{ s.bg_position_desktop }};
       {% if s.image_desktop != blank %}
-        background-image: url('{{ s.image_desktop | img_url: '2000x' }}');
+        background-image: url('{{ s.image_desktop | image_url: width: 1600 }}');
       {% endif %}
     }
 
@@ -216,7 +216,7 @@
         min-height: {{ s.height_mobile }}px;
         background-position: {{ s.bg_position_mobile }};
         {% if s.image_mobile != blank %}
-          background-image: url('{{ s.image_mobile | img_url: '1200x' }}');
+          background-image: url('{{ s.image_mobile | image_url: width: 960 }}');
         {% endif %}
       }
       /* Mobile-specific vertical alignment */

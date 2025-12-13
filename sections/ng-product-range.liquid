@@ -72,10 +72,17 @@
             aria-label="{{ prod.title | escape }}">
             {%- if featured -%}
               <img
-                src="{{ featured | image_url: width: 900 }}"
+                src="{{ featured | image_url: width: 720 }}"
+                srcset="
+                  {{ featured | image_url: width: 360 }} 360w,
+                  {{ featured | image_url: width: 540 }} 540w,
+                  {{ featured | image_url: width: 720 }} 720w,
+                  {{ featured | image_url: width: 900 }} 900w
+                "
+                sizes="(max-width: 749px) 70vw, 320px"
                 alt="{{ featured.alt | escape }}"
-                width="900"
-                height="675"
+                width="720"
+                height="540"
                 loading="lazy">
             {%- endif -%}
           </a>
