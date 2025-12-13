@@ -339,7 +339,7 @@
       "type": "custom-liquid",
       "name": "Custom Liquid",
       "settings": {
-        "custom_liquid": "",
+        "custom_liquid": "{% render 'bone-conduction-content' %}",
         "layout": "t4s-container-wrap",
         "cl_bg": "",
         "cl_bg_gradient": "",
