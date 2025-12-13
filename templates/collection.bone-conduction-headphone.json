@@ -334,12 +334,29 @@
         "sidebar_bdr": 0,
         "sidebar_pd": 15
       }
+    },
+    "custom_liquid_P4RDHR": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "custom_liquid": "{% render 'bone-conduction-content' %}",
+        "layout": "t4s-container-wrap",
+        "cl_bg": "",
+        "cl_bg_gradient": "",
+        "mg": ",,50px,",
+        "pd": "",
+        "mg_tb": "",
+        "pd_tb": "",
+        "mg_mb": ",,30px,",
+        "pd_mb": ""
+      }
     }
   },
   "order": [
     "top",
     "heading_template",
     "main",
-    "sidebar"
+    "sidebar",
+    "custom_liquid_P4RDHR"
   ]
 }
