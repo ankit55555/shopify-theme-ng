@@ -754,7 +754,7 @@
         "type": "back_top",
         "custom_css": [],
         "settings": {
-          "enable_backtop": false,
+          "enable_backtop": true,
           "enable_hidden_mobile": false,
           "backtop_des": "1",
           "enable_progress_bar": true,
