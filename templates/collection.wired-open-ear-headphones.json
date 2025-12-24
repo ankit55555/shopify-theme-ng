@@ -339,7 +339,7 @@
       "type": "custom-liquid",
       "name": "Custom Liquid",
       "settings": {
-        "custom_liquid": "{% render 'air-conduction-content' %}",
+        "custom_liquid": "{% render 'wired-open-earphones' %}",
         "layout": "t4s-container-wrap",
         "cl_bg": "",
         "cl_bg_gradient": "",
