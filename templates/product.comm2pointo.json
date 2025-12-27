@@ -1001,7 +1001,6 @@
     },
     "custom_liquid_JCJ4iY": {
       "type": "custom-liquid",
-      "disabled": true,
       "settings": {
         "custom_liquid": "{% render 'faq-comm2-schema' %}",
         "layout": "t4s-container-wrap",
