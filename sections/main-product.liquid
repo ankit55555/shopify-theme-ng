@@ -1004,8 +1004,10 @@ endif -%}
     {%- endcase -%}
 }
 </script>
-
-{% render 'productOffer-schema'  %}  
+{%- comment -%}
+  NOTE: Do not render a second Product JSON-LD block. The Product schema above is the canonical one.
+  Rendering `productOffer-schema` here creates a duplicate Product item in schema validators.
+{%- endcomment -%}
 
 {% if product.url contains 'products' %}
  {% render 'video-popup'  %} 
