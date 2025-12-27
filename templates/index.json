@@ -565,96 +565,6 @@
         "show_arrows": false,
         "show_dots": false
       }
-    },
-    "collection_group_RxLm4t": {
-      "type": "collection-group",
-      "blocks": {
-        "product_FPfQCm": {
-          "type": "product",
-          "settings": {
-            "heading": "",
-            "head_btn_label": "View All",
-            "head_btn_url": "shopify://collections/wired-open-ear-headphones",
-            "collection": "wired-open-ear-headphones",
-            "product_list": [],
-            "content_align": "default",
-            "limit": 3,
-            "space_v_item": "30",
-            "space_v_item_mb": "10"
-          }
-        },
-        "product_pLCPfG": {
-          "type": "product",
-          "settings": {
-            "heading": "Top product",
-            "head_btn_label": "View All",
-            "head_btn_url": "",
-            "collection": "air-conduction-headphones",
-            "product_list": [],
-            "content_align": "default",
-            "limit": 3,
-            "space_v_item": "30",
-            "space_v_item_mb": "10"
-          }
-        },
-        "product_QfEEiF": {
-          "type": "product",
-          "settings": {
-            "heading": "Top product",
-            "head_btn_label": "View All",
-            "head_btn_url": "",
-            "collection": "official-accessories",
-            "product_list": [],
-            "content_align": "default",
-            "limit": 3,
-            "space_v_item": "30",
-            "space_v_item_mb": "10"
-          }
-        }
-      },
-      "block_order": [
-        "product_FPfQCm",
-        "product_pLCPfG",
-        "product_QfEEiF"
-      ],
-      "name": "Collection group",
-      "settings": {
-        "design_heading": "1",
-        "heading_align": "t4s-text-center",
-        "top_heading": "Blog post manual",
-        "icon_heading": "las la-gem",
-        "top_subheading": "",
-        "tophead_mb": 30,
-        "block_heading_style": "1",
-        "head_btn_icon": false,
-        "head_btn_style": "default",
-        "head_btn_size": "medium",
-        "head_btn_cl": "dark",
-        "head_btn_effect": "default",
-        "head_btn_hidden_mb": false,
-        "image_ratio": "ratioadapt",
-        "image_size": "cover",
-        "image_position": "8",
-        "show_vendor": false,
-        "col_dk": "3",
-        "col_tb": "2",
-        "col_mb": "2",
-        "space_h_item": "30",
-        "space_v_item": "30",
-        "space_h_item_mb": "10",
-        "space_v_item_mb": "10",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,50px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": "",
-        "use_cus_css": false,
-        "code_cus_css": ""
-      }
     }
   },
   "order": [
@@ -666,7 +576,6 @@
     "ng_why_earsafe_nDa6AL",
     "hero_bg_banner_bjQYTE",
     "17358085378c9a29a5",
-    "ng_media_carousel_XRJawM",
-    "collection_group_RxLm4t"
+    "ng_media_carousel_XRJawM"
   ]
 }
