@@ -113,6 +113,27 @@ input {
   -ms-touch-action: manipulation;
   touch-action: manipulation; }
 
+/* Fix iOS input clicking issue - ensure all inputs are properly clickable on iOS */
+input,
+textarea,
+select {
+  pointer-events: auto !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  touch-action: manipulation;
+  cursor: text;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+input.needsclick,
+textarea.needsclick,
+select.needsclick {
+  pointer-events: auto !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  touch-action: manipulation;
+  cursor: text;
+}
+
 button,
 input,
 optgroup,

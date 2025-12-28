@@ -272,6 +272,54 @@
   {%- endstyle -%}
 
 <script>
+  // Fix iOS input clicking issue - mark all inputs with needsclick class immediately
+  (function() {
+    var isIOS = /iP(ad|hone|od)/.test(navigator.userAgent);
+    if (isIOS) {
+      function markInputs() {
+        var inputs = document.querySelectorAll('input, textarea, select');
+        for (var i = 0; i < inputs.length; i++) {
+          if (!inputs[i].classList.contains('needsclick')) {
+            inputs[i].classList.add('needsclick');
+          }
+        }
+      }
+      
+      // Mark existing inputs immediately
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', markInputs);
+      } else {
+        markInputs();
+      }
+      
+      // Watch for dynamically added inputs
+      if (window.MutationObserver) {
+        var observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            mutation.addedNodes.forEach(function(node) {
+              if (node.nodeType === 1) {
+                if (node.tagName === 'INPUT' || node.tagName === 'TEXTAREA' || node.tagName === 'SELECT') {
+                  if (!node.classList.contains('needsclick')) {
+                    node.classList.add('needsclick');
+                  }
+                }
+                if (node.querySelectorAll) {
+                  var newInputs = node.querySelectorAll('input, textarea, select');
+                  for (var i = 0; i < newInputs.length; i++) {
+                    if (!newInputs[i].classList.contains('needsclick')) {
+                      newInputs[i].classList.add('needsclick');
+                    }
+                  }
+                }
+              }
+            });
+          });
+        });
+        observer.observe(document.body || document.documentElement, { childList: true, subtree: true });
+      }
+    }
+  })();
+  
   const isBehaviorSmooth = 'scrollBehavior' in document.documentElement.style && getComputedStyle(document.documentElement).scrollBehavior === 'smooth';
   const t4sXMLHttpRequest = window.XMLHttpRequest, documentElementT4s = document.documentElement; documentElementT4s.className = documentElementT4s.className.replace('no-js', 'js');function loadImageT4s(_this) { _this.classList.add('lazyloadt4sed')};
   {%- comment -%}// We do a quick detection of some features (we could use Modernizr but for so little...){%- endcomment -%}
