@@ -89,23 +89,6 @@
             "custom_liquid": "{% render 'diwali-offers' %}"
           }
         },
-        "bold_discounts_the_sales_app_sale_clock_cmpGUn": {
-          "type": "shopify://apps/bold-discounts-flash-sales/blocks/sale-clock/22ca27ee-084f-4527-b863-69a3cd4c8b2c",
-          "disabled": true,
-          "settings": {
-            "is_preview_enabled": true,
-            "templates": "template_8",
-            "text_align": "left",
-            "font_size": 16,
-            "font_color": "#000000",
-            "margin_size": 0,
-            "padding_size": 0,
-            "border_color": "#000000",
-            "border_size": 0,
-            "background_color": "rgba(0,0,0,0)",
-            "custom_css": "#shappify_count_down{letter-spacing: 1px;font-weight:500;font-size:16px;color:#25313c;text-align:left;margin:0;border:0 solid #000;position:relative;justify-content:center;display:flex;align-items:center;padding:0 10px;background:linear-gradient(270deg,#fff 23.86%,#fff 47.06%,#e2e2e2 66.05%);margin-top:7px;margin-bottom:20px;border-radius:5px;border:1px dashed #56cfe1;width:max-content;overflow:hidden;animation:5s linear 0s infinite normal none running bgstrip}\n@keyframes bgstrip{\n0%{background-position:-1000px 0}\n}"
-          }
-        },
         "price_review": {
           "type": "price_review",
           "settings": {
@@ -255,6 +238,7 @@
         },
         "custom_liquid_ApTEjm": {
           "type": "custom_liquid",
+          "disabled": true,
           "settings": {
             "custom_liquid": "{% render 'faq-comm-schema' %}"
           }
@@ -320,7 +304,6 @@
         "description",
         "custom_liquid_Rc3fXq",
         "c917fa52-0981-4b47-a730-0915ac18a613",
-        "bold_discounts_the_sales_app_sale_clock_cmpGUn",
         "price_review",
         "custom_liquid_jifDb9",
         "custom_liquid_J4i34F",
@@ -395,9 +378,10 @@
       "type": "apps",
       "blocks": {
         "vizup_shopable_instagram_reels_videos_block_VzUEYf": {
-          "type": "shopify://apps/vizup-shoppable-video-carousel/blocks/videos-block/eaecaa7b-ab6b-40ae-8ddf-50daa867f3eb",
+          "type": "shopify://apps/vizup-videos/blocks/videos-block/eaecaa7b-ab6b-40ae-8ddf-50daa867f3eb",
           "settings": {
-            "videoc_widget_id": ""
+            "videoc_widget_id": "",
+            "custom_css": ""
           }
         }
       },
@@ -1447,7 +1431,9 @@
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
             "review_data": "sample_data",
-            "max_width": 1200
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
           }
         }
       },
