@@ -113,6 +113,7 @@
         },
         "column_GBANpj": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "icon_preset": "none",
             "icon_size": 32,
