@@ -48,19 +48,6 @@
             "pr_title_color": "#222222"
           }
         },
-        "86b7e473-b4cb-422e-aa4f-9947a6771a3c": {
-          "type": "shopify://apps/audien-reviews/blocks/star_rating/ce002b21-24e0-4d65-87ca-18c9770b24d4",
-          "disabled": true,
-          "settings": {
-            "size": 16,
-            "rating_text": "",
-            "rating_hide_text": false,
-            "widget_alignment": "left",
-            "rating_color_for_star": "#ffcb45",
-            "primary_color_for_star": "#202223",
-            "custom_css": ""
-          }
-        },
         "judge_me_reviews_preview_badge_GQERLV": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
@@ -87,22 +74,6 @@
           "disabled": true,
           "settings": {
             "custom_liquid": "{% render 'diwali-offers' %}"
-          }
-        },
-        "bold_discounts_the_sales_app_sale_clock_eKPWxA": {
-          "type": "shopify://apps/bold-discounts-flash-sales/blocks/sale-clock/22ca27ee-084f-4527-b863-69a3cd4c8b2c",
-          "settings": {
-            "is_preview_enabled": true,
-            "templates": "template_8",
-            "text_align": "left",
-            "font_size": 16,
-            "font_color": "#000000",
-            "margin_size": 0,
-            "padding_size": 0,
-            "border_color": "#000000",
-            "border_size": 0,
-            "background_color": "rgba(0,0,0,0)",
-            "custom_css": "#shappify_count_down{letter-spacing: 1px;font-weight:500;font-size:16px;color:#25313c;text-align:left;margin:0px;border:0 solid #000;position:relative;justify-content:center;display:flex;align-items:center;padding:0 10px;background:linear-gradient(270deg,#fff 23.86%,#fff 47.06%,#e2e2e2 66.05%);margin-top:7px;margin-bottom:20px;border-radius:5px;border:1px dashed #56cfe1;width:max-content;overflow:hidden;animation:5s linear 0s infinite normal none running bgstrip}\n@keyframes bgstrip{\n0%{background-position:-1000px 0}\n}"
           }
         },
         "price_review": {
@@ -339,12 +310,10 @@
       },
       "block_order": [
         "title",
-        "86b7e473-b4cb-422e-aa4f-9947a6771a3c",
         "judge_me_reviews_preview_badge_GQERLV",
         "description",
         "custom_liquid_tUwBjV",
         "c917fa52-0981-4b47-a730-0915ac18a613",
-        "bold_discounts_the_sales_app_sale_clock_eKPWxA",
         "price_review",
         "custom_liquid_TihUAe",
         "bundler_bundler_target_element_gewktp",
@@ -422,9 +391,10 @@
       "type": "apps",
       "blocks": {
         "vizup_shopable_instagram_reels_videos_block_fdtp97": {
-          "type": "shopify://apps/vizup-shoppable-video-carousel/blocks/videos-block/eaecaa7b-ab6b-40ae-8ddf-50daa867f3eb",
+          "type": "shopify://apps/vizup-videos/blocks/videos-block/eaecaa7b-ab6b-40ae-8ddf-50daa867f3eb",
           "settings": {
-            "videoc_widget_id": ""
+            "videoc_widget_id": "",
+            "custom_css": ""
           }
         }
       },
@@ -436,10 +406,10 @@
     "slideshow_hcCRgW": {
       "type": "slideshow",
       "blocks": {
-        "image_parent_GXAGtz": {
+        "image_parent_YUTQcx": {
           "type": "image_parent",
           "settings": {
-            "image": "shopify://shop_images/Dr_Banner_desktop_1500_x_500_2.webp",
+            "image": "shopify://shop_images/Gemini_Generated_Image_x0dr96x0dr96x0dr.webp",
             "image_mb": "shopify://shop_images/Home_page_Dr_rachana_Banner_copy_c02e2c51-b3b9-48ee-89e7-0edda6c5e8d9.webp",
             "image_position": "8",
             "cl_img": "",
@@ -476,41 +446,49 @@
             "animation_delay": 40
           }
         },
-        "custom_button_HpraAg": {
-          "type": "custom_button",
+        "image_parent_BEzLe6": {
+          "type": "image_parent",
           "settings": {
-            "button_text": "View Certificate",
-            "button_link": "shopify://pages/ent-doctor-certificate",
-            "target_link": "_blank",
-            "fontf": "inherit",
-            "button_icon_w": 18,
-            "button_style": "default",
-            "button_effect": "default",
-            "pri_cl": "#56cfe1",
-            "second_cl": "#333333",
-            "pri_cl_hover": "#333333",
-            "second_cl_hover": "#ffffff",
-            "fsbutton": 16,
-            "fwbutton": 500,
-            "button_ls": 1,
-            "button_mh": 42,
-            "button_bdr": 5,
-            "button_pd_lr": 20,
-            "button_mgb": 0,
-            "hidden_mobile": false,
-            "button_icon_w_mb": 15,
-            "fsbutton_mb": 12,
-            "button_mh_mb": 36,
-            "button_pd_lr_mb": 15,
-            "button_ls_mb": 0,
-            "button_mgb_mb": 0,
-            "animation": "none"
+            "image": "shopify://shop_images/Gemini_Generated_Image_1ov3wv1ov3wv1ov3.png",
+            "image_position": "8",
+            "cl_img": "",
+            "link_img1": "",
+            "open_link": "_blank",
+            "animate_slide": "none",
+            "text_align": "center",
+            "text_align_mb": "center",
+            "content_width": "auto",
+            "cv_pos": 50,
+            "ch_pos": 50,
+            "cv_pos_mb": 50,
+            "ch_pos_mb": 50,
+            "bg_overlay": "#000000",
+            "bg_opacity": 0,
+            "bg_content_cl": "#ffffff",
+            "bg_content_op": 0,
+            "content_radius": 0,
+            "box_square": false,
+            "content_pd_tb": 15,
+            "content_pd_lr": 15,
+            "content_pd_tb_tb": 15,
+            "content_pd_lr_tb": 15,
+            "content_pd_tb_mb": 10,
+            "content_pd_lr_mb": 10,
+            "border_bl": false,
+            "br_color": "#222222",
+            "br_bg": "#ffffff",
+            "br_opacity": 50,
+            "br_style": "solid",
+            "br_pd": 20,
+            "br_pd_mb": 10,
+            "time_animation": 1,
+            "animation_delay": 40
           }
         }
       },
       "block_order": [
-        "image_parent_GXAGtz",
-        "custom_button_HpraAg"
+        "image_parent_YUTQcx",
+        "image_parent_BEzLe6"
       ],
       "settings": {
         "se_height": "t4s_ratioadapt",
@@ -887,10 +865,51 @@
             "time_animation": 1,
             "animation_delay": 40
           }
+        },
+        "image_parent_CtEHEC": {
+          "type": "image_parent",
+          "settings": {
+            "image": "shopify://shop_images/Whats_in_Box_copy_1.webp",
+            "image_mb": "shopify://shop_images/Whats_in_Box_copy_Mobile_1.webp",
+            "image_position": "8",
+            "cl_img": "",
+            "link_img1": "",
+            "open_link": "_blank",
+            "animate_slide": "none",
+            "text_align": "center",
+            "text_align_mb": "center",
+            "content_width": "auto",
+            "cv_pos": 80,
+            "ch_pos": 8,
+            "cv_pos_mb": 40,
+            "ch_pos_mb": 50,
+            "bg_overlay": "#000000",
+            "bg_opacity": 0,
+            "bg_content_cl": "#ffffff",
+            "bg_content_op": 0,
+            "content_radius": 0,
+            "box_square": false,
+            "content_pd_tb": 15,
+            "content_pd_lr": 15,
+            "content_pd_tb_tb": 15,
+            "content_pd_lr_tb": 15,
+            "content_pd_tb_mb": 10,
+            "content_pd_lr_mb": 10,
+            "border_bl": false,
+            "br_color": "#222222",
+            "br_bg": "#ffffff",
+            "br_opacity": 50,
+            "br_style": "solid",
+            "br_pd": 20,
+            "br_pd_mb": 10,
+            "time_animation": 1,
+            "animation_delay": 40
+          }
         }
       },
       "block_order": [
-        "image_parent_nHkbAz"
+        "image_parent_nHkbAz",
+        "image_parent_CtEHEC"
       ],
       "settings": {
         "se_height": "t4s_ratioadapt",
@@ -1100,7 +1119,9 @@
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
             "review_data": "sample_data",
-            "max_width": 1200
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
           }
         }
       },
