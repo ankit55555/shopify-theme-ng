@@ -409,7 +409,7 @@
         "image_parent_YUTQcx": {
           "type": "image_parent",
           "settings": {
-            "image": "shopify://shop_images/Gemini_Generated_Image_x0dr96x0dr96x0dr.webp",
+            "image": "shopify://shop_images/SafeBuds_3.webp",
             "image_mb": "shopify://shop_images/Home_page_Dr_rachana_Banner_copy_c02e2c51-b3b9-48ee-89e7-0edda6c5e8d9.webp",
             "image_position": "8",
             "cl_img": "",
@@ -616,36 +616,6 @@
         "sidebar_pd": 10
       }
     },
-    "custom_liquid_4EkPbt": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{% render 'didyouknow-slick' %}",
-        "layout": "t4s-container-fluid",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,0px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,0px,",
-        "pd_mb": ""
-      }
-    },
-    "27a62662-0e46-4637-a877-1f6c3f2decbb": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{% render 'openBuds-features' %}",
-        "layout": "t4s-container-fluid",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,0px,",
-        "pd": "30px,,0px,",
-        "mg_tb": "",
-        "pd_tb": "30px,,0px,",
-        "mg_mb": "0px,,10px,",
-        "pd_mb": "10px,,10px,"
-      }
-    },
     "custom_liquid_Uz64R4": {
       "type": "custom-liquid",
       "settings": {
@@ -676,58 +646,13 @@
         "pd_mb": ""
       }
     },
-    "custom_liquid_ibd7ij": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{% render 'colorAvailable-openBuds' %}",
-        "layout": "t4s-container-fluid",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,0px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,0px,",
-        "pd_mb": ""
-      }
-    },
-    "f002f58a-df0c-4b5f-ac12-0689871af0e3": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{% render 'easy_control' %}",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,0px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,0px,",
-        "pd_mb": ""
-      }
-    },
-    "40f7c811-c40f-40df-becd-92c5ef4bf359": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{% render 'airCon-openBuds' %}\n{% render 'battery-openBuds' %}\n{% render 'extheboss_openBuds' %}\n{% render 'driver-openBuds' %}\n{% render 'quadMic-openBuds' %}",
-        "layout": "t4s-container-fluid",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,0px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,0px,",
-        "pd_mb": ""
-      }
-    },
     "slideshow_P7JALr": {
       "type": "slideshow",
       "blocks": {
         "image_parent_WGCUft": {
           "type": "image_parent",
           "settings": {
-            "image": "shopify://shop_images/Comparision_desktop_v2.svg",
+            "image": "shopify://shop_images/SafeBuds_9.webp",
             "image_mb": "shopify://shop_images/Comparision_Mobile_v2.svg",
             "image_position": "8",
             "cl_img": "",
@@ -807,69 +732,13 @@
         "code_cus_css": ""
       }
     },
-    "04fbdf0e-5386-4930-b05f-10d6e52f33bf": {
-      "type": "custom-liquid",
-      "custom_css": [],
-      "settings": {
-        "custom_liquid": "{% render 'application_openBuds' %}",
-        "layout": "t4s-container-fluid",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": "0px,,0px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,0px,",
-        "pd_mb": ""
-      }
-    },
     "slideshow_pxLHwM": {
       "type": "slideshow",
       "blocks": {
         "image_parent_nHkbAz": {
           "type": "image_parent",
           "settings": {
-            "image": "shopify://shop_images/Whats_in_Box_copy_1.webp",
-            "image_mb": "shopify://shop_images/Whats_in_Box_copy_Mobile_1.webp",
-            "image_position": "8",
-            "cl_img": "",
-            "link_img1": "",
-            "open_link": "_blank",
-            "animate_slide": "none",
-            "text_align": "center",
-            "text_align_mb": "center",
-            "content_width": "auto",
-            "cv_pos": 80,
-            "ch_pos": 8,
-            "cv_pos_mb": 40,
-            "ch_pos_mb": 50,
-            "bg_overlay": "#000000",
-            "bg_opacity": 0,
-            "bg_content_cl": "#ffffff",
-            "bg_content_op": 0,
-            "content_radius": 0,
-            "box_square": false,
-            "content_pd_tb": 15,
-            "content_pd_lr": 15,
-            "content_pd_tb_tb": 15,
-            "content_pd_lr_tb": 15,
-            "content_pd_tb_mb": 10,
-            "content_pd_lr_mb": 10,
-            "border_bl": false,
-            "br_color": "#222222",
-            "br_bg": "#ffffff",
-            "br_opacity": 50,
-            "br_style": "solid",
-            "br_pd": 20,
-            "br_pd_mb": 10,
-            "time_animation": 1,
-            "animation_delay": 40
-          }
-        },
-        "image_parent_CtEHEC": {
-          "type": "image_parent",
-          "settings": {
-            "image": "shopify://shop_images/Whats_in_Box_copy_1.webp",
+            "image": "shopify://shop_images/SafeBuds_6.webp",
             "image_mb": "shopify://shop_images/Whats_in_Box_copy_Mobile_1.webp",
             "image_position": "8",
             "cl_img": "",
@@ -908,8 +777,7 @@
         }
       },
       "block_order": [
-        "image_parent_nHkbAz",
-        "image_parent_CtEHEC"
+        "image_parent_nHkbAz"
       ],
       "settings": {
         "se_height": "t4s_ratioadapt",
@@ -952,51 +820,6 @@
     },
     "slideshow_UgELGh": {
       "type": "slideshow",
-      "blocks": {
-        "image_parent_Wzk4bB": {
-          "type": "image_parent",
-          "settings": {
-            "image": "shopify://shop_images/How_to_Wear.webp",
-            "image_mb": "shopify://shop_images/How_to_Wear_Mobile.webp",
-            "image_position": "8",
-            "cl_img": "",
-            "link_img1": "",
-            "open_link": "_blank",
-            "animate_slide": "none",
-            "text_align": "center",
-            "text_align_mb": "center",
-            "content_width": "auto",
-            "cv_pos": 80,
-            "ch_pos": 8,
-            "cv_pos_mb": 40,
-            "ch_pos_mb": 50,
-            "bg_overlay": "#000000",
-            "bg_opacity": 0,
-            "bg_content_cl": "#ffffff",
-            "bg_content_op": 0,
-            "content_radius": 0,
-            "box_square": false,
-            "content_pd_tb": 15,
-            "content_pd_lr": 15,
-            "content_pd_tb_tb": 15,
-            "content_pd_lr_tb": 15,
-            "content_pd_tb_mb": 10,
-            "content_pd_lr_mb": 10,
-            "border_bl": false,
-            "br_color": "#222222",
-            "br_bg": "#ffffff",
-            "br_opacity": 50,
-            "br_style": "solid",
-            "br_pd": 20,
-            "br_pd_mb": 10,
-            "time_animation": 1,
-            "animation_delay": 40
-          }
-        }
-      },
-      "block_order": [
-        "image_parent_Wzk4bB"
-      ],
       "settings": {
         "se_height": "t4s_ratioadapt",
         "custom_dk": true,
@@ -1423,15 +1246,9 @@
     "17373730729cffbc7f",
     "slideshow_hcCRgW",
     "sidebar",
-    "custom_liquid_4EkPbt",
-    "27a62662-0e46-4637-a877-1f6c3f2decbb",
     "custom_liquid_Uz64R4",
     "87df8b17-dc27-449b-ba9a-eb084958bb91",
-    "custom_liquid_ibd7ij",
-    "f002f58a-df0c-4b5f-ac12-0689871af0e3",
-    "40f7c811-c40f-40df-becd-92c5ef4bf359",
     "slideshow_P7JALr",
-    "04fbdf0e-5386-4930-b05f-10d6e52f33bf",
     "slideshow_pxLHwM",
     "slideshow_UgELGh",
     "ec8915fe-2aff-44fc-b59d-72b690f5e071",
