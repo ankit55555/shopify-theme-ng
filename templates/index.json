@@ -29,16 +29,16 @@
     "ng_hero_slideshow_Edej3j": {
       "type": "ng-hero-slideshow",
       "blocks": {
-        "slide_AU4nWC": {
+        "slide_aK96WT": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify://shop_images/Pro_Homepage_top_Banner_for_earsfae_PRO_Desktop.webp",
-            "image_mobile": "shopify://shop_images/Untitled-3Homepage_top_banner_PRO_mobile_0c12a18c-a5e6-4b6a-95e5-f13b15fbc9ee.webp",
+            "image_desktop": "shopify://shop_images/Comm_Homepage_top_Banner_for_earsfae_Comm_Desktop.webp",
+            "image_mobile": "shopify://shop_images/Comm_Homepage_top_banner_Comm_mobile.webp",
             "alt": "",
-            "heading": "NG EarSafe Pro",
-            "subheading": "Bone Conduction Waterproof headphones.",
+            "heading": "NG EarSafe Comm",
+            "subheading": "Experience new way of communication",
             "button_label": "SHOP NOW",
-            "button_link": "shopify://products/open-ear-bone-conduction-headphones-ng-ear-safe-pro-swimming",
+            "button_link": "shopify://products/noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0",
             "text_align": "left",
             "heading_color": "#4e5d70",
             "subheading_color": "#ffffff",
@@ -50,16 +50,16 @@
             "scroll_text": "SCROLL TO DISCOVER"
           }
         },
-        "slide_aK96WT": {
+        "slide_AU4nWC": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify://shop_images/Comm_Homepage_top_Banner_for_earsfae_Comm_Desktop.webp",
-            "image_mobile": "shopify://shop_images/Comm_Homepage_top_banner_Comm_mobile.webp",
+            "image_desktop": "shopify://shop_images/Pro_Homepage_top_Banner_for_earsfae_PRO_Desktop.webp",
+            "image_mobile": "shopify://shop_images/Untitled-3Homepage_top_banner_PRO_mobile_0c12a18c-a5e6-4b6a-95e5-f13b15fbc9ee.webp",
             "alt": "",
-            "heading": "NG EarSafe Comm",
-            "subheading": "Experience new way of communication",
+            "heading": "NG EarSafe Pro",
+            "subheading": "Bone Conduction Waterproof headphones.",
             "button_label": "SHOP NOW",
-            "button_link": "shopify://products/noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0",
+            "button_link": "shopify://products/open-ear-bone-conduction-headphones-ng-ear-safe-pro-swimming",
             "text_align": "left",
             "heading_color": "#4e5d70",
             "subheading_color": "#ffffff",
@@ -94,8 +94,8 @@
         }
       },
       "block_order": [
-        "slide_AU4nWC",
         "slide_aK96WT",
+        "slide_AU4nWC",
         "slide_nTnyyy"
       ],
       "name": "NG Hero Slideshow",
