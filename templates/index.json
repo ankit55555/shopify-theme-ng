@@ -115,10 +115,10 @@
     "ng_product_range_njWDCP": {
       "type": "ng-product-range",
       "blocks": {
-        "product_JKD4XE": {
+        "product_B4yKTh": {
           "type": "product",
           "settings": {
-            "product": "open-ear-headphones-wired-ng-earsafe"
+            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
           }
         },
         "product_r7pMgB": {
@@ -127,10 +127,10 @@
             "product": "open-ear-bone-conduction-headphones-ng-ear-safe-pro-swimming"
           }
         },
-        "product_B4yKTh": {
+        "product_7cKN9a": {
           "type": "product",
           "settings": {
-            "product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0"
+            "product": "open-ear-wireless-headphones-ng-ear-safe-lite"
           }
         },
         "product_GHcWWq": {
@@ -139,16 +139,16 @@
             "product": "open-ear-bone-conduction-headphones-ng-ear-safe-pro-mini"
           }
         },
-        "product_7cKN9a": {
-          "type": "product",
-          "settings": {
-            "product": "open-ear-wireless-headphones-ng-ear-safe-lite"
-          }
-        },
         "product_zEftQC": {
           "type": "product",
           "settings": {
             "product": "open-ear-earbuds-wireless-ng-ear-safe-buds"
+          }
+        },
+        "product_JKD4XE": {
+          "type": "product",
+          "settings": {
+            "product": "open-ear-headphones-wired-ng-earsafe"
           }
         },
         "product_NhgkGd": {
@@ -159,12 +159,12 @@
         }
       },
       "block_order": [
-        "product_JKD4XE",
-        "product_r7pMgB",
         "product_B4yKTh",
-        "product_GHcWWq",
+        "product_r7pMgB",
         "product_7cKN9a",
+        "product_GHcWWq",
         "product_zEftQC",
+        "product_JKD4XE",
         "product_NhgkGd"
       ],
       "name": "NG Product Range",
