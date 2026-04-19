@@ -605,7 +605,7 @@
         "bl_image_rCfyVr": {
           "type": "bl_image",
           "settings": {
-            "image1": "shopify://shop_images/Gemini_Generated_Image_im6whgim6whgim6w.webp",
+            "image1": "shopify://shop_images/Gemini_Generated_Image_kwa8dukwa8dukwa8.webp",
             "col_dk": "6",
             "col_tb": "6",
             "layout_des": "carousel",
@@ -640,9 +640,9 @@
             "txt_align": "end",
             "sub_heading": "",
             "heading": "Your AI assistant in your ear.",
-            "text": "<p>AI Smart Notes<strong>SphereLingo™</strong>Real-time transcription + AI-generated meeting summaries. Every decision captured automatically.</p>",
+            "text": "<p>Live Note Taking powered with <strong>SphereLingo™</strong>Real-time transcription, AI-generated meeting summaries. Every decision captured automatically.</p>",
             "subhd_color": "#222222",
-            "hd_color": "#222222",
+            "hd_color": "#102442",
             "des_color": "#878787",
             "use_shadow": false,
             "button_label": "Button label",
