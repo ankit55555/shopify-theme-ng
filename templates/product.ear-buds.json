@@ -715,7 +715,7 @@
         "bl_image_6az9ht": {
           "type": "bl_image",
           "settings": {
-            "image1": "shopify://shop_images/Gemini_Generated_Image_8noz8p8noz8p8noz.webp",
+            "image1": "shopify://shop_images/openart-image_EwEu8WrV_1776600888025_raw.webp",
             "col_dk": "6",
             "col_tb": "6",
             "layout_des": "carousel",
@@ -796,7 +796,7 @@
           "settings": {
             "enable_image": true,
             "image": "shopify://shop_images/Gemini_Generated_Image_mwvxycmwvxycmwvx.webp",
-            "title": "Never Miss a Word",
+            "title": "Ready for the World",
             "text": "<p>Crystal-clear call quality and open-safe design keep you present in every conversation — without cutting off the world around you</p>",
             "button_label": "",
             "button_link": "",
@@ -1458,8 +1458,8 @@
     "87df8b17-dc27-449b-ba9a-eb084958bb91",
     "image_text_NLQjaE",
     "image_text_Cd4xRk",
-    "feature_columns_caj86j",
     "slideshow_P7JALr",
+    "feature_columns_caj86j",
     "slideshow_pxLHwM",
     "slideshow_UgELGh",
     "custom_liquid_dQ39qt",
