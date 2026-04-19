@@ -410,7 +410,7 @@
           "type": "image_parent",
           "settings": {
             "image": "shopify://shop_images/SafeBuds_3.webp",
-            "image_mb": "shopify://shop_images/Home_page_Dr_rachana_Banner_copy_c02e2c51-b3b9-48ee-89e7-0edda6c5e8d9.webp",
+            "image_mb": "shopify://shop_images/Gemini_Generated_Image_qaf28rqaf28rqaf2.webp",
             "image_position": "8",
             "cl_img": "",
             "link_img1": "",
@@ -819,6 +819,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
+            "image": "shopify://shop_images/Gemini_Generated_Image_290a06290a06290a.webp",
             "title": "Stay in the Zone, Stay Aware",
             "text": "<p>Lightweight, iPx4 sweat-resistant, and open-ear — push your limits while staying tuned to your surroundings for a safer, more energized workout.\"</p>",
             "button_label": "",
