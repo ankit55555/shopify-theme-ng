@@ -689,30 +689,6 @@
     "image_text_Cd4xRk": {
       "type": "image_text",
       "blocks": {
-        "bl_text_WEmgeB": {
-          "type": "bl_text",
-          "settings": {
-            "col_dk": "6",
-            "col_tb": "6",
-            "text_size": "40,15",
-            "txt_align": "start",
-            "sub_heading": "",
-            "heading": "Speak to anyone.Instantly.",
-            "text": "<p>Real-time translation in your ear. 100+ languages covered for anytime, anywhere Powered with SphereLingo™ — live translation</p>",
-            "subhd_color": "#222222",
-            "hd_color": "#222222",
-            "des_color": "#878787",
-            "use_shadow": false,
-            "button_label": "Button label",
-            "button_link": "",
-            "open_link": "_blank",
-            "btn_icon": false,
-            "button_style": "default",
-            "btn_size": "large",
-            "btn_cl": "dark",
-            "button_effect": "default"
-          }
-        },
         "bl_image_6az9ht": {
           "type": "bl_image",
           "settings": {
@@ -741,11 +717,35 @@
             "dots_space": 10,
             "dots_hidden_mobile": false
           }
+        },
+        "bl_text_WEmgeB": {
+          "type": "bl_text",
+          "settings": {
+            "col_dk": "6",
+            "col_tb": "6",
+            "text_size": "40,15",
+            "txt_align": "start",
+            "sub_heading": "",
+            "heading": "Speak to anyone.Instantly.",
+            "text": "<p>Real-time translation in your ear. 100+ languages covered for anytime, anywhere Powered with SphereLingo™ — live translation</p>",
+            "subhd_color": "#222222",
+            "hd_color": "#222222",
+            "des_color": "#878787",
+            "use_shadow": false,
+            "button_label": "Button label",
+            "button_link": "",
+            "open_link": "_blank",
+            "btn_icon": false,
+            "button_style": "default",
+            "btn_size": "large",
+            "btn_cl": "dark",
+            "button_effect": "default"
+          }
         }
       },
       "block_order": [
-        "bl_text_WEmgeB",
-        "bl_image_6az9ht"
+        "bl_image_6az9ht",
+        "bl_text_WEmgeB"
       ],
       "name": "Image with text",
       "settings": {
