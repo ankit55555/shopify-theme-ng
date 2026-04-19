@@ -224,12 +224,6 @@
             "show_tags": true
           }
         },
-        "a4dc20c6-154a-4763-ba55-b0528116b0fe": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "{% render 'shipping-badges' %}"
-          }
-        },
         "custom_liquid_raBbhD": {
           "type": "custom_liquid",
           "settings": {
@@ -325,7 +319,6 @@
         "23551ebc-3be1-40d6-81b2-30f03478cccb",
         "size_delivery_ask",
         "meta",
-        "a4dc20c6-154a-4763-ba55-b0528116b0fe",
         "custom_liquid_raBbhD",
         "95d4f334-8ea7-4cd2-b609-2373b1e848b8",
         "56e67368-7424-4d73-8f14-dacdda4c59be",
