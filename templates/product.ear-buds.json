@@ -66,7 +66,7 @@
         "custom_liquid_tUwBjV": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"accordion\"><input type=\"checkbox\" id=\"accordion-toggle\"><label class=\"accordion-label\" for=\"accordion-toggle\">Product Description</label><div class=\"accordion-content\"><h6>Step into the Future of Listening with NG EarSafe OpenBuds Air Conduction Open Ear Earbuds</h6><p><span class=\"highlight\">Product Overview</span><br>Experience safety, comfort, and premium sound with NG EarSafe Open Ear Earbuds, powered by advanced air conduction technology. These open earbuds prioritize health and awareness by delivering crystal-clear audio without sealing the ear canal, reducing pressure and minimizing the risk of ear infections.</p><p><span class=\"highlight\">Key Features</span></p><ul><li><strong>Air Conduction Technology:</strong> Provides crystal-clear sound while keeping your ear canal open.</li><li><strong>Ambient Sound Awareness:</strong> Stay connected to your surroundings during commuting, workouts, or gaming.</li><li><strong>Lightweight Design:</strong> Weighing just 9 grams, ensuring all-day comfort.</li><li><strong>Premium Finish:</strong> Skin-friendly silicone adds a touch of luxury to every wear.</li><li><strong>Dynamic Drivers:</strong> 12x17mm drivers deliver immersive, powerful, and balanced audio quality.</li><li><strong>IPX4 Waterproof and Sweatproof:</strong> Perfect for sports, running, cycling, and other outdoor activities.</li></ul><p><span class=\"highlight\">Versatility and Performance</span><br>Whether for calls, workouts, or outdoor adventures, these earbuds offer seamless performance and unmatched versatility. Designed for active lifestyles, they keep you safe, comfortable, and connected in any environment.</p><p><span><strong>Order Now</strong></span><br>Transform your daily routine with NG EarSafe OpenBuds Air Conduction Open Ear Earbuds. Upgrade to the best earbuds for workouts and beyond today!</p></div></div><style>.accordion{width:450px;border:1px solid #ddd;border-radius:5px;overflow:hidden;margin-bottom:15px}.accordion input{display:none}.accordion-label{display:flex;justify-content:space-between;align-items:center;padding:5px 20px;color:#252525;cursor:pointer;font-size:15px;font-weight:600;transition:background-color .3s ease}.accordion-label::after{content:'▼';font-size:16px;transition:transform .3s ease}.accordion input:checked+.accordion-label::after{transform:rotate(180deg)}.accordion-content{max-height:0;overflow:auto;padding:0 20px;background-color:#fff;color:#333;font-size:14px;line-height:1.6;transition:max-height .4s ease,padding .3s ease}.accordion input:checked~.accordion-content{max-height:500px;padding:15px 20px}.accordion-content h6{margin-top:0;color:#28486e}.accordion-content ul{margin:10px 0;padding-left:20px}.accordion-content ul li{list-style-type:disc;margin-bottom:8px}.accordion-content p{margin:10px 0}.accordion-content .highlight{font-weight:700}@media only screen and (max-width:768px){.accordion{width:100%}}</style>"
+            "custom_liquid": "<div class=\"accordion\"><input type=\"checkbox\" id=\"accordion-toggle\"><label class=\"accordion-label\" for=\"accordion-toggle\">Product Description</label><div class=\"accordion-content\"><h6>Born to protect.\nBuilt to connect.</h6><p><span class=\"highlight\">Product Overview</span><br>Experience safety, comfort, and premium sound with NG x Wehear safebuds, Open Ear Earbuds, powered by advanced air conduction technology, packed with AI Capabilities.</p><p><span class=\"highlight\">Key Features</span></p><ul><li><strong>Air Conduction Technology:</strong> Provides crystal-clear sound while keeping your ear canal open.</li><li><strong>Ambient Sound Awareness:</strong> Stay connected to your surroundings during commuting, workouts, or gaming.</li><li><strong>Lightweight Design:</strong> Weighing just 9 grams, ensuring all-day comfort.</li><li><strong>Premium Finish:</strong> Skin-friendly silicone adds a touch of luxury to every wear.</li><li><strong>Dynamic Drivers:</strong> 12x17mm drivers deliver immersive, powerful, and balanced audio quality.</li><li><strong>IPX4 Waterproof and Sweatproof:</strong> Perfect for sports, running, cycling, and other outdoor activities.</li></ul><p><span class=\"highlight\">Packed with AI Features</span><br>100+ Languages live transalation, Live note taking, Custom EQ settings, All the AI power now in your ears.</p><p><span><strong>Order Now</strong></span><br>Transform your daily routine with NG x Wehear Safebuds Air Conduction Open Ear Earbuds. Upgrade to the best earbuds for workouts and beyond today!</p></div></div><style>.accordion{width:450px;border:1px solid #ddd;border-radius:5px;overflow:hidden;margin-bottom:15px}.accordion input{display:none}.accordion-label{display:flex;justify-content:space-between;align-items:center;padding:5px 20px;color:#252525;cursor:pointer;font-size:15px;font-weight:600;transition:background-color .3s ease}.accordion-label::after{content:'▼';font-size:16px;transition:transform .3s ease}.accordion input:checked+.accordion-label::after{transform:rotate(180deg)}.accordion-content{max-height:0;overflow:auto;padding:0 20px;background-color:#fff;color:#333;font-size:14px;line-height:1.6;transition:max-height .4s ease,padding .3s ease}.accordion input:checked~.accordion-content{max-height:500px;padding:15px 20px}.accordion-content h6{margin-top:0;color:#28486e}.accordion-content ul{margin:10px 0;padding-left:20px}.accordion-content ul li{list-style-type:disc;margin-bottom:8px}.accordion-content p{margin:10px 0}.accordion-content .highlight{font-weight:700}@media only screen and (max-width:768px){.accordion{width:100%}}</style>"
           }
         },
         "c917fa52-0981-4b47-a730-0915ac18a613": {
@@ -445,50 +445,10 @@
             "time_animation": 1,
             "animation_delay": 40
           }
-        },
-        "image_parent_BEzLe6": {
-          "type": "image_parent",
-          "settings": {
-            "image": "shopify://shop_images/Gemini_Generated_Image_1ov3wv1ov3wv1ov3.png",
-            "image_position": "8",
-            "cl_img": "",
-            "link_img1": "",
-            "open_link": "_blank",
-            "animate_slide": "none",
-            "text_align": "center",
-            "text_align_mb": "center",
-            "content_width": "auto",
-            "cv_pos": 50,
-            "ch_pos": 50,
-            "cv_pos_mb": 50,
-            "ch_pos_mb": 50,
-            "bg_overlay": "#000000",
-            "bg_opacity": 0,
-            "bg_content_cl": "#ffffff",
-            "bg_content_op": 0,
-            "content_radius": 0,
-            "box_square": false,
-            "content_pd_tb": 15,
-            "content_pd_lr": 15,
-            "content_pd_tb_tb": 15,
-            "content_pd_lr_tb": 15,
-            "content_pd_tb_mb": 10,
-            "content_pd_lr_mb": 10,
-            "border_bl": false,
-            "br_color": "#222222",
-            "br_bg": "#ffffff",
-            "br_opacity": 50,
-            "br_style": "solid",
-            "br_pd": 20,
-            "br_pd_mb": 10,
-            "time_animation": 1,
-            "animation_delay": 40
-          }
         }
       },
       "block_order": [
-        "image_parent_YUTQcx",
-        "image_parent_BEzLe6"
+        "image_parent_YUTQcx"
       ],
       "settings": {
         "se_height": "t4s_ratioadapt",
@@ -960,40 +920,40 @@
           "type": "accor_item",
           "settings": {
             "icon": "none",
-            "title": "How water-resistant and sweatproof are the OpenBuds?",
-            "content": "<p>NG EarSafe OpenBuds utilize air conduction technology and come with an IPx4 rating, ensuring water and sweat resistance. This makes them a perfect choice for workouts, cycling, and outdoor adventures.</p>"
+            "title": "Does open-ear mean poor sound quality?",
+            "content": "<p>Not at all. The 15mm NeoDynamic driver and S1 chip are engineered specifically for open-ear delivery — producing rich, full-range audio without sealing your ear canal. You get great sound and full awareness simultaneously.</p>"
           }
         },
         "template--20627092865303__83a135b9-30ff-430d-a7ed-dd7da7224ef0-accor_item-2": {
           "type": "accor_item",
           "settings": {
             "icon": "none",
-            "title": "How lightweight are the OpenBuds?",
-            "content": "<p>The OpenBuds are incredibly lightweight, weighing just 9 grams. These lightweight air conduction earbuds are designed for maximum comfort, even during extended wear, ensuring they’re perfect for <a href=\"https://ngearsafe.com/blogs/open-ear-headphones/music-to-boost-work-productivity\"><span style=\"text-decoration:underline\">music lovers</span></a> and fitness enthusiasts.</p>"
+            "title": "How does real-time translation work?",
+            "content": "<p>SphereLingo™ processes speech through the WeHear app in real time. In one-to-one mode, both speakers hear translations in their earbuds. Group mode handles multiple participants simultaneously across 100+ languages.</p>"
           }
         },
         "template--20627092865303__83a135b9-30ff-430d-a7ed-dd7da7224ef0-accor_item-3": {
           "type": "accor_item",
           "settings": {
             "icon": "none",
-            "title": "What is the finish of the OpenBuds?",
-            "content": "<p>The OpenBuds feature a premium skin-friendly silicon finish. This comfortable earbuds design ensures a smooth and irritation-free experience, perfect for all-day use.</p>"
+            "title": "Is the WeHear app free?",
+            "content": "<p>Yes — free on iOS and Android. Core features are always free. Translation and AI Smart Notes are included with no subscription required for the first year.</p>"
           }
         },
         "8d42d8d4-8b59-4339-af47-78c859fa3f99": {
           "type": "accor_item",
           "settings": {
             "icon": "none",
-            "title": "Can I connect the OpenBuds to multiple devices?",
-            "content": "<p>OpenBuds let you pair with two devices at the same time. These wireless air conduction earbuds switch smoothly, making them ideal for calls, music, and workouts.</p>"
+            "title": "What devices does PairHub™ connect to?",
+            "content": "<p>PairHub™ supports simultaneous Bluetooth 5.4 connection to phones, laptops, and tablets. Switch active audio with a single tap. Works with iOS, Android, Windows, and macOS.</p>"
           }
         },
         "a7ca32a8-e1ac-4b07-8789-786cf58f7140": {
           "type": "accor_item",
           "settings": {
             "icon": "none",
-            "title": "Is NG EarSafe OpenBuds compatible with both iPhone and Android?",
-            "content": "<p>Yes, these open ear buds are compatible with both iPhone & Android devices. They connect effortlessly to any Bluetooth-enabled device, ensuring versatility for music, calls, and workouts.</p>"
+            "title": "Return and warranty policy?",
+            "content": "<p>7-day no-questions-asked returns and 1-year manufacturer warranty</p>"
           }
         },
         "f5707af2-5e96-4991-bbf6-cd7df09ebaec": {
@@ -1011,22 +971,6 @@
             "title": "How does the quad MIC ENC calling feature work?",
             "content": "<p>The quad microphone ENC (Environmental Noise Cancellation) includes dual MEMS microphones on each side. This feature ensures clear voice capture and reduces background noise, making these open ear buds with mic excellent for calls in noisy environments.</p>"
           }
-        },
-        "997edcc4-6546-4b4b-9f3f-2a58893a6493": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "What is the warranty period?",
-            "content": "<p>We offer a 1-year replacement warranty for NG EarSafe OpenBuds. This warranty covers manufacturing defects and ensures long-lasting satisfaction with your open ear buds (physical or water damage is not covered).</p>"
-          }
-        },
-        "0fc5345d-97f9-47b2-8e24-8ec050136d74": {
-          "type": "accor_item",
-          "settings": {
-            "icon": "none",
-            "title": "What if I don’t like the product?",
-            "content": "<p>We offer an easy 7-day return policy. If you’re not satisfied with these air conduction open ear buds, you can return them within 7 days of delivery. (Note: Products with physical damage will not be accepted.)</p>"
-          }
         }
       },
       "block_order": [
@@ -1036,9 +980,7 @@
         "8d42d8d4-8b59-4339-af47-78c859fa3f99",
         "a7ca32a8-e1ac-4b07-8789-786cf58f7140",
         "f5707af2-5e96-4991-bbf6-cd7df09ebaec",
-        "3d75943e-9fb9-483d-a299-2db3629ede4f",
-        "997edcc4-6546-4b4b-9f3f-2a58893a6493",
-        "0fc5345d-97f9-47b2-8e24-8ec050136d74"
+        "3d75943e-9fb9-483d-a299-2db3629ede4f"
       ],
       "settings": {
         "design_heading": "1",
