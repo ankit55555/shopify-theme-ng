@@ -103,6 +103,7 @@
         },
         "custom_liquid_iYkKAT": {
           "type": "custom_liquid",
+          "disabled": true,
           "settings": {
             "custom_liquid": "{% render 'offercard-earsafe' %}"
           }
