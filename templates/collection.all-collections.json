@@ -337,57 +337,19 @@
         "sidebar_pd": 15
       }
     },
-    "ng_best_selling_E3kH3L": {
-      "type": "ng-best-selling",
-      "name": "NG Best Selling Products",
-      "settings": {
-        "auto_best": true,
-        "use_current_collection": false,
-        "best_handle": "best-sellers",
-        "collection": "",
-        "limit_pr": 3,
-        "design_heading": "1",
-        "heading_align": "t4s-text-start",
-        "top_heading": "Top 3 Bestsellers",
-        "icon_heading": "las la-gem",
-        "top_subheading": "",
-        "tophead_mb": 30,
-        "col_dk": "4",
-        "col_tb": "3",
-        "col_mb": "2",
-        "space_h_item": 20,
-        "space_h_item_tb": 15,
-        "space_h_item_mb": 10,
-        "img_effect": "zoom",
-        "border_effect": "none",
-        "item_rd": 7,
-        "item_rd_unit": "px",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,50px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": "",
-        "use_cus_css": false,
-        "code_cus_css": ""
-      }
-    },
     "collections_showcase_whWXzz": {
       "type": "collections-showcase",
       "blocks": {
-        "showcase_item_Hw46HF": {
+        "showcase_item_hXqJCr": {
           "type": "showcase_item",
           "settings": {
             "item_type": "product",
             "collection": "",
-            "product": "open-ear-earbuds-wireless-ng-ear-safe-buds",
+            "product": "ngwehear",
             "title": "",
             "link_url": "",
-            "label_text": "",
-            "show_arrow": false
+            "label_text": "Collection →",
+            "show_arrow": true
           }
         },
         "showcase_item_LtnpQL": {
@@ -428,7 +390,7 @@
         }
       },
       "block_order": [
-        "showcase_item_Hw46HF",
+        "showcase_item_hXqJCr",
         "showcase_item_LtnpQL",
         "showcase_item_Ytew9i",
         "showcase_item_bKecxC"
@@ -827,7 +789,6 @@
     "heading_template",
     "main",
     "sidebar",
-    "ng_best_selling_E3kH3L",
     "collections_showcase_whWXzz",
     "collections_showcase_tVgb6R",
     "collections_showcase_eARiF6",
