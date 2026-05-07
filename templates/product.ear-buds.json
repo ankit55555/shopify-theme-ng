@@ -11,6 +11,7 @@
   "sections": {
     "custom_liquid_NFLzK9": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "{% render 'trust-badges' %}",
         "layout": "t4s-container-fluid",
@@ -103,7 +104,6 @@
         },
         "custom_liquid_iYkKAT": {
           "type": "custom_liquid",
-          "disabled": true,
           "settings": {
             "custom_liquid": "{% render 'offercard-earsafe' %}"
           }
@@ -1120,9 +1120,9 @@
             "ch_pos": 50,
             "cv_pos_mb": 50,
             "ch_pos_mb": 50,
-            "bg_overlay": "#000",
+            "bg_overlay": "#000000",
             "bg_opacity": 0,
-            "bg_content_cl": "#fff",
+            "bg_content_cl": "#ffffff",
             "bg_content_op": 0,
             "content_radius": 0,
             "box_square": false,
@@ -1133,8 +1133,8 @@
             "content_pd_tb_mb": 10,
             "content_pd_lr_mb": 10,
             "border_bl": false,
-            "br_color": "#222",
-            "br_bg": "#fff",
+            "br_color": "#222222",
+            "br_bg": "#ffffff",
             "br_opacity": 50,
             "br_style": "solid",
             "br_pd": 20,
@@ -1153,10 +1153,10 @@
             "button_icon_w": 0,
             "button_style": "default",
             "button_effect": "default",
-            "pri_cl": "#222",
+            "pri_cl": "#222222",
             "second_cl": "",
             "pri_cl_hover": "#56cfe1",
-            "second_cl_hover": "#fff",
+            "second_cl_hover": "#ffffff",
             "fsbutton": 14,
             "fwbutton": 400,
             "button_ls": 0,
