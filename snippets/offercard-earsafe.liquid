@@ -10,9 +10,7 @@
 <style>#hide-fromall{display:none !important}</style>
 {% endif %} 
 
-
-
-{% unless product.handle == 'ng-ear-safe-ear-plugs-1-0-waterproof-noise-reduction' %}
+{% unless product.handle == 'ng-ear-safe-ear-plugs-1-0-waterproof-noise-reduction' or product.handle == 'ngwehear' %}
 <div class="buttons-container-m">
   <div class="buy-button-wrapper-m">
     <div class="buy-text-m">Buy now at</div>
@@ -23,25 +21,48 @@
       <span class="arrow-m">›</span>
     </div>
   </div>
-    <div class="buy-button-wrapper-m">
+  <div class="buy-button-wrapper-m">
     <div class="buy-text-m">Buy now at</div>
     <div class="buy-button-m">
-      <a class="buyNowLink flipkartLink" href="https://www.flipkart.com/ng-earplugs-waterproof-noise-reduction-25-db-swimming-sleeping-travel-ear-plug/p/itma0160f3d28f11?pid=ENPHEW9FFPBGEBYZ&lid=LSTENPHEW9FFPBGEBYZKPSZ5R&marketplace=FLIPKART&q=NG+EarPlug&store=abc%2Fbyq%2Fp7q&srno=s_1_3&otracker=search&otracker1=search&fm=Search&iid=8999e2e7-db33-4fb4-a76a-079537462a3e.ENPHEW9FFPBGEBYZ.SEARCH&ppt=sp&ppn=sp&ssid=51qcmglmsw0000001758260954272&qH=9eaf909cce3da1b2" target="_blank" onclick="trackBuyNowClick('flipkart')">
+      <a class="buyNowLink flipkartLink" href="https://www.flipkart.com/ng-earplugs-waterproof-noise-reduction-25-db-swimming-sleeping-travel-ear-plug/p/itma0160f3d28f11" target="_blank" onclick="trackBuyNowClick('flipkart')">
         <img width="auto" height="auto" src="https://cdn.freebiesupply.com/logos/large/2x/flipkart-logo-png-transparent.png" alt="Flipkart logo" class="logo-m">
       </a>
       <span class="arrow-m">›</span>
     </div>
   </div>
 </div>
+{% endunless %}
+
+{% if product.handle == 'ngwehear' %}
+<div class="buttons-container-m">
+  <div class="buy-button-wrapper-m">
+    <div class="buy-text-m">Buy now at</div>
+    <div class="buy-button-m">
+      <a class="buyNowLink" href="https://www.amazon.in/NG-Earsafe-Bluetooth-Note-Taking-Translation/dp/B0GY8LNDST" target="_blank" onclick="trackBuyNowClick('amazon')">
+        <img width="auto" height="auto" src="https://cdn.shopify.com/s/files/1/0804/5762/9975/files/amazon_2be66c61-7548-4fa9-9f92-e7dda5d58df3.png?v=1741600351" alt="Amazon logo" class="logo-m">
+      </a>
+      <span class="arrow-m">›</span>
+    </div>
+  </div>
+  <div class="buy-button-wrapper-m">
+    <div class="buy-text-m">Buy now at</div>
+    <div class="buy-button-m">
+      <a class="buyNowLink flipkartLink" href="SAFEBUDS_FLIPKART_URL_HERE" target="_blank" onclick="trackBuyNowClick('flipkart')">
+        <img width="auto" height="auto" src="https://cdn.freebiesupply.com/logos/large/2x/flipkart-logo-png-transparent.png" alt="Flipkart logo" class="logo-m">
+      </a>
+      <span class="arrow-m">›</span>
+    </div>
+  </div>
+</div>
+{% endif %}
+
 <style>
   .buttons-container-m{display:flex;flex-wrap:wrap;gap:0;margin:0;padding:0;margin-bottom:15px;}
 .buy-button-wrapper-m{position:relative;width:auto;margin:0;margin-right:10px}
 .buy-text-m{position:absolute;top:-6px;left:14px;background-color:#fff;padding:0 5px;font-size:10px;font-weight:600;color:#333;z-index:1}
 .buy-button-m{display:flex;align-items:center;justify-content:space-between;background-color:#fff;border:1px solid #ffa41c;border-radius:10px;padding:15px 20px;height:40px;width:150px;text-decoration:none;box-sizing:border-box;margin:0}
 .logo-m{width:80%}
-.arrow-m{color:#ffa41c;font-size:24px;
-/* font-weight:700 */
-}
+.arrow-m{color:#ffa41c;font-size:24px;}
 .buy-button-m a{border-bottom: 0px solid currentColor !important;}
 </style>
 
@@ -52,7 +73,6 @@
         let flipkartUrl = "";
         let productName = "";
 
-        // Extract the path from the URL to match against both domains
         const urlPath = new URL(currentUrl).pathname;
 
         if (urlPath === "/products/ng-earsafe-lite-open-ear-headphones") {
@@ -61,7 +81,7 @@
             productName = "ng-earsafe-lite";
         } else if (urlPath === "/products/ng-earsafe-openbuds-with-air-conduction-technology") {
             amazonUrl = "https://www.amazon.in/EarSafe-OpenBuds-Conduction-Immersive-Silicone/dp/B0DF342T66?ref_=automaticdeals_bs_dp&th=1&psc=1";
-            flipkartUrl = "https://www.flipkart.com/ng-earsafe-openbuds-air-conduction-open-ear-buds-bluetooth/p/itm4da83b4545a92?pid=ACCH4D9FHYRKBTYW&lid=LSTACCH4D9FHYRKBTYWVFO35J&marketplace=FLIPKART&q=ng+earsafe+open+ear+bluetooth&store=0pm%2Ffcn%2F821%2Fa7x%2F2si&srno=s_1_1&otracker=AS_QueryStore_OrganicAutoSuggest_2_11_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_2_11_na_na_na&fm=search-autosuggest&iid=b57197cf-6178-4a91-94b1-227f11cd36fc.ACCH4D9FHYRKBTYW.SEARCH&ppt=sp&ppn=sp&ssid=gxzor8zrdc0000001743398524541&qH=d2a2190054551c55";
+            flipkartUrl = "https://www.flipkart.com/ng-earsafe-openbuds-air-conduction-open-ear-buds-bluetooth/p/itm4da83b4545a92?pid=ACCH4D9FHYRKBTYW";
             productName = "ng-earsafe-openbuds";
         } else if (urlPath === "/products/earsafe-open-ear-bluetooth-headphones") {
             amazonUrl = "https://www.amazon.in/NG-EarSafe-Wireless-Bluetooth-Headphones/dp/B08C8W178M?ref_=automaticdeals_bs_dp&th=1&psc=1";
@@ -69,27 +89,33 @@
             productName = "earsafe-open-ear";
         } else if (urlPath === "/products/ng-earsafe-pro-open-ear-bone-conduction-headphones") {
             amazonUrl = "https://www.amazon.in/Conduction-Headphones-Waterproof-Bluetooth-2024/dp/B0CVXHPX37?ref_=automaticdeals_bs_dp&th=1&psc=1";
-            flipkartUrl = "https://www.flipkart.com/ng-earsafe-pro-open-ear-bone-conduction-headphones-2024-model-black-bluetooth/p/itm43be93bf3c4a4?pid=ACCH4D7TQDHZYTFN&lid=LSTACCH4D7TQDHZYTFNVVGFBB&marketplace=FLIPKART&q=ng+earsafe+open+ear+bluetooth&store=0pm%2Ffcn%2F821%2Fa7x%2F2si&srno=s_1_4&otracker=AS_QueryStore_OrganicAutoSuggest_2_11_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_2_11_na_na_na&fm=search-autosuggest&iid=b57197cf-6178-4a91-94b1-227f11cd36fc.ACCH4D7TQDHZYTFN.SEARCH&ppt=sp&ppn=sp&ssid=gxzor8zrdc0000001743398524541&qH=d2a2190054551c55";
+            flipkartUrl = "https://www.flipkart.com/ng-earsafe-pro-open-ear-bone-conduction-headphones-2024-model-black-bluetooth/p/itm43be93bf3c4a4?pid=ACCH4D7TQDHZYTFN";
             productName = "ng-earsafe-pro";
         } else if (urlPath === "/products/ng-earsafe-pro-mini-open-ear-bone-conduction-headphones-wireless") {
             amazonUrl = "https://www.amazon.in/Conduction-Headphones-2025-Resistant-Lightweight/dp/B0DS8HVPGV?ref_=automaticdeals_bs_dp";
-            flipkartUrl = "https://www.flipkart.com/ng-pro-mini-bluetooth/p/itm1337e5d6c5568?pid=ACCH9D4GBKHY7FMQ&lid=LSTACCH9D4GBKHY7FMQ93JWJU&marketplace=FLIPKART&q=ng+earsafe+open+ear+bluetooth&store=0pm%2Ffcn%2F821%2Fa7x%2F2si&srno=s_1_6&otracker=AS_QueryStore_OrganicAutoSuggest_2_11_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_2_11_na_na_na&fm=search-autosuggest&iid=b57197cf-6178-4a91-94b1-227f11cd36fc.ACCH9D4GBKHY7FMQ.SEARCH&ppt=sp&ppn=sp&ssid=gxzor8zrdc0000001743398524541&qH=d2a2190054551c55";
+            flipkartUrl = "https://www.flipkart.com/ng-pro-mini-bluetooth/p/itm1337e5d6c5568?pid=ACCH9D4GBKHY7FMQ";
             productName = "ng-earsafe-pro-mini";
         } else if (urlPath === "/products/ng-earsafe-comm-open-ear-headphones-with-noise-canceling-boom-mic") {
-            amazonUrl = "https://www.amazon.in/Communication-Bluetooth-Cancelling-Adjustable-2023/dp/B0BWY68HZ8/ref=sr_1_3?adgrpid=159969327247&dib=eyJ2IjoiMSJ9.ffxYXYsjDWLWhlrGtJGoJJGSPE-Ovkir5c4V7gJFmgi8HK2kQFlUm_MH0AF6Wdfoi-lgsPT1rXghqE0hZ-vxcAfdQqC9nsuLbBydytt8bhMvxinUBV5b4ofdMbRf98CbWhZxEcNpFJ3wh-qiVnniAQT7CXoq5NKyVaVPgTs5m2mwAhAo58wMRS1AESpAPQ7cRm_Pw8nx2RqZqwptJ1Ec1yvqWczL7KfDzwcGWOjma_4.n5zi44TeddN6XTlbdsDoOiT99Rs10iEvsyZq1JyWfNc&dib_tag=se&gad_source=1&hvadid=683353147085&hvdev=c&hvlocphy=9302138&hvnetw=g&hvqmt=b&hvrand=14196684626611940099&hvtargid=kwd-2273681724379&hydadcr=7249_2276875&keywords=ng+earsafe+comm+open+ear&mcid=b8a2a345ff16317f9dae6c03969b2891&nsdOptOutParam=true&qid=1742189166&sr=8-3";
+            amazonUrl = "https://www.amazon.in/Communication-Bluetooth-Cancelling-Adjustable-2023/dp/B0BWY68HZ8";
             flipkartUrl = "https://www.flipkart.com/ng-earsafe-comm-open-ear-communication-bluetooth-headphone-noise-cancelling/p/itm36e16e6f8d59b?pid=ACCGNZG7PBWWHKTQ";
             productName = "ng-earsafe-comm";
         } else if (urlPath === "/products/open-ear-headphones-with-mic-2-0-ng-earsafe") {
-            amazonUrl = "https://www.amazon.in/Communication-Bluetooth-Cancelling-Adjustable-2023/dp/B0BWY68HZ8/ref=sr_1_1?crid=CU6OCAD56S5G&dib=eyJ2IjoiMSJ9.LgTQv2HGG3ycfeV8gYB0aVu29B4HKMh9gIvr9IO3FUOyHKbkbJecqLumdb0MWMmEDbTkYcpvkbOGQ2zrdrrZNWeyDV3u0U8sG8081NvegAMMwRacaNErzwGe6NgnFX_c_OaJdFtQlKWfYR_GQfxftoUAp9-Vk21EkDOj0jsRIaru0W1TvHXh7i-1jP7v-FmDvyZdPvKyYtVN2AJx3rZEO5XmDH8bI53Xqa8ClSM6rgoXLyLl2vklm77SZu4Svdy_GmzUf0LmL_RvNQybEkP0Q4d2m1ioRtx8Di4nPx65Sqw.8tpoiUU3ReogZphwgZd9THfNk-pUETA5DsYjcU3yW7w&dib_tag=se&keywords=comm&qid=1745471351&s=electronics&sprefix=com%2Celectronics%2C285&sr=1-1";
+            amazonUrl = "https://www.amazon.in/Communication-Bluetooth-Cancelling-Adjustable-2023/dp/B0BWY68HZ8";
             flipkartUrl = "#";
             productName = "ng-earsafe-comm2point0";
+        } else if (urlPath === "/products/ngwehear") {
+            amazonUrl = "https://www.amazon.in/NG-Earsafe-Bluetooth-Note-Taking-Translation/dp/B0GY8LNDST";
+            flipkartUrl = "SAFEBUDS_FLIPKART_URL_HERE";
+            productName = "ng-x-wehear-safebuds";
         }
-         // Default Amazon URL fallback
-      if (!amazonUrl) {
-        amazonUrl = 'https://www.amazon.in/dp/B0FQP6Q6KW/ref=sr_1_5?crid=137QOKWUQ0ECY&dib=eyJ2IjoiMSJ9.sVKbyAXf9u4MTVKOp-n1elnH8a2Ktv_bA7IpSWxu4GHRzkjGMFB2WRKNcQwqGX2AUGhMcyK7I1Lft41vjwy6BiUIcjFy9jCj5ZfRQ6HlFOMUJ9rmZ4ZSDLqNE5zw1ypDeVUL1iMRwzYXeOTyVCod2GHkeqBtB4r-qGjhMath-QhIFzfSBnAAkT1AUIo7I3yTRlDib1SyRCY8CwW3Uad3P-mUD0-srZioa_ILfyDFaEPLHMkQq3c68sX71ljK0shSzdazPAQtobqR7dTJbuIo5MIurD5njQeJHUD7EmQpUoY.PATgTpzaKgWb4k8O-Db1aT3WebhrbFCnx8Bl3rYx69w&dib_tag=se&keywords=ng+earplugs&nsdOptOutParam=true&qid=1758260900&sprefix=%2Caps%2C248&sr=8-5';
-      }
 
-        // Set URLs for both stores
+        if (!amazonUrl) {
+            amazonUrl = 'https://www.amazon.in/dp/B0FQP6Q6KW';
+        }
+        if (!flipkartUrl || flipkartUrl === '#') {
+            flipkartUrl = 'https://www.flipkart.com/ng-earplugs-waterproof-noise-reduction-25-db-swimming-sleeping-travel-ear-plug/p/itma0160f3d28f11';
+        }
+
         if (amazonUrl) {
             document.querySelectorAll(".buyNowLink:not(.flipkartLink)").forEach(link => {
                 link.href = amazonUrl;
@@ -97,12 +123,7 @@
                 link.setAttribute("data-store", "amazon");
             });
         }
-        
-        
-      // Default Flipkart URL fallback
-      if (!flipkartUrl || flipkartUrl === '#') {
-        flipkartUrl = 'https://www.flipkart.com/ng-earplugs-waterproof-noise-reduction-25-db-swimming-sleeping-travel-ear-plug/p/itma0160f3d28f11?pid=ENPHEW9FFPBGEBYZ&lid=LSTENPHEW9FFPBGEBYZKPSZ5R&marketplace=FLIPKART&q=NG+EarPlug&store=abc%2Fbyq%2Fp7q&srno=s_1_3&otracker=search&otracker1=search&fm=Search&iid=8999e2e7-db33-4fb4-a76a-079537462a3e.ENPHEW9FFPBGEBYZ.SEARCH&ppt=sp&ppn=sp&ssid=51qcmglmsw0000001758260954272&qH=9eaf909cce3da1b2';
-      }
+
         if (flipkartUrl) {
             document.querySelectorAll(".flipkartLink").forEach(link => {
                 link.href = flipkartUrl;
@@ -115,23 +136,19 @@
     function trackBuyNowClick(store) {
         const linkElement = event.target.closest("a");
         const productName = linkElement.getAttribute("data-product");
-        
         gtag('event', 'buy_now_click', {
             'event_category': 'Button Click',
             'event_label': productName,
             'event_store': store,
             'event_value': 1
         });
-
         console.log("Tracked Buy Now Click:", productName, "Store:", store);
     }
 </script>
 
-{% endunless %}
-
-  <style>
-.banner-container{display: none;justify-content:space-between;align-items:center;background:linear-gradient(to right,#a8e0ff,#7fd8f8);border-radius:12px;padding:15px 20px;max-width:350px;box-shadow:0 4px 8px rgba(0,0,0,.1);font-family:Arial,sans-serif;overflow:hidden}
-.banner-text{color: #333;font-size: 14px;line-height: 1.4;flex: 1;margin-right: 10px;font-weight: 700;}
+<style>
+.banner-container{display:none;justify-content:space-between;align-items:center;background:linear-gradient(to right,#a8e0ff,#7fd8f8);border-radius:12px;padding:15px 20px;max-width:350px;box-shadow:0 4px 8px rgba(0,0,0,.1);font-family:Arial,sans-serif;overflow:hidden}
+.banner-text{color:#333;font-size:14px;line-height:1.4;flex:1;margin-right:10px;font-weight:700;}
 .flip-container{perspective:1000px;width:120px;height:40px}
 .flipper{width:100%;height:100%;position:relative;transform-style:preserve-3d;animation:flip 6s infinite}
 .back,.front{width:100%;height:100%;position:absolute;backface-visibility:hidden;display:flex;align-items:center;justify-content:center;border-radius:6px;font-size:22px;font-weight:700;color:#333;background:rgba(255,255,255,.2);overflow:hidden}
@@ -146,9 +163,10 @@
 50%,95%{transform:rotateY(180deg)}
 100%{transform:rotateY(0)}
 }
-  </style>
- {% unless product.handle == 'ng-ear-safe-ear-plugs-1-0-waterproof-noise-reduction' %}
-   <div class="banner-container">
+</style>
+
+{% unless product.handle == 'ng-ear-safe-ear-plugs-1-0-waterproof-noise-reduction' or product.handle == 'ngwehear' %}
+  <div class="banner-container">
     <div class="banner-text">
       Flat ₹200 instant discount<br>
       on prepaid orders
@@ -159,29 +177,21 @@
         <div class="back">₹200 OFF</div>
       </div>
     </div>
-  </div> 
+  </div>
 {% endunless %}
-
-
-  {% comment %} <div id="pincode-container">
-  <iframe id="pincode-frame" src="https://help.ngearsafe.com/pincode/" loading="lazy" style="margin-top:10px; border: none; overflow: hidden;height:130px;border-radius: 12px;" onload="adjustIframeHeight()"></iframe>
-</div>  {% endcomment %}
 
 <style>
   #pincode-frame{width:61%;} 
   @media only screen and (max-width:768px){
     #pincode-frame{width:100%;}
-.banner-container {max-width: 100%;}
+    .banner-container{max-width:100%;}
   }
-
 </style>
 
 <script>
   function adjustIframeHeight() {
     const iframe = document.getElementById("pincode-frame");
-
     iframe.contentWindow.postMessage("getHeight", "*");
-
     window.addEventListener("message", function (event) {
       if (event.data.height) {
         iframe.style.height = event.data.height + "px";
@@ -190,39 +200,16 @@
   }
 </script>
 
-  <script>
-        // Hide pincode container for UK domain
-document.addEventListener("DOMContentLoaded", function() {
-    // Check if current domain is UK
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
     if (window.location.hostname === 'ngearsafe.co.uk') {
-        
-        // Multiple possible selectors for pincode elements
-        const selectors = [
-            '.pincode-container',
-            '#pincode-container', 
-            '.pincode-check',
-            '.delivery-pincode',
-            '[data-pincode]',
-            '[class*="pincode"]',
-          '.banner-container',
-            '[id*="pincode"]'
-        ];
-        
-        selectors.forEach(selector => {
-            const elements = document.querySelectorAll(selector);
-            elements.forEach(element => {
-                element.style.display = 'none';
-            });
-        });
-        
-        // Also hide parent containers that might only contain pincode
-        const pincodeParents = document.querySelectorAll('.delivery-info, .shipping-info');
-        pincodeParents.forEach(parent => {
-            const hasPincodeChild = parent.querySelector('[class*="pincode"], [id*="pincode"]');
-            if (hasPincodeChild) {
-                parent.style.display = 'none';
-            }
-        });
+      const selectors = ['.pincode-container','#pincode-container','.pincode-check','.delivery-pincode','[data-pincode]','[class*="pincode"]','.banner-container','[id*="pincode"]'];
+      selectors.forEach(selector => {
+        document.querySelectorAll(selector).forEach(element => { element.style.display = 'none'; });
+      });
+      document.querySelectorAll('.delivery-info, .shipping-info').forEach(parent => {
+        if (parent.querySelector('[class*="pincode"], [id*="pincode"]')) { parent.style.display = 'none'; }
+      });
     }
-});
-    </script>
+  });
+</script>
