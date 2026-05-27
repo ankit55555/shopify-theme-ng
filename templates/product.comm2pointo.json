@@ -48,19 +48,6 @@
             "pr_title_color": "#222222"
           }
         },
-        "498ef57c-2404-4b5a-abe0-33f4a71f0131": {
-          "type": "shopify://apps/audien-reviews/blocks/star_rating/ce002b21-24e0-4d65-87ca-18c9770b24d4",
-          "disabled": true,
-          "settings": {
-            "size": 16,
-            "rating_text": "",
-            "rating_hide_text": false,
-            "widget_alignment": "left",
-            "rating_color_for_star": "#ffcb45",
-            "primary_color_for_star": "#202223",
-            "custom_css": ""
-          }
-        },
         "judge_me_reviews_preview_badge_8KKNMG": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
@@ -142,10 +129,6 @@
             "bg_cl": "#000000"
           }
         },
-        "bogos_io_free_gift_gift_thumbnail_view_gGah4k": {
-          "type": "shopify://apps/bogos-io-free-gift/blocks/gift-thumbnail-view/0432bba6-720a-4e95-be5a-b868386f7aa6",
-          "settings": {}
-        },
         "form": {
           "type": "form",
           "settings": {
@@ -189,7 +172,7 @@
         "dc23d79a-673c-43c9-9b8c-bb7243be8cfc": {
           "type": "text",
           "settings": {
-            "text": "<p>Delivery within 15-20 working days</p>"
+            "text": "<p>Delivery within 4-5 working days</p>"
           }
         },
         "23551ebc-3be1-40d6-81b2-30f03478cccb": {
@@ -296,7 +279,6 @@
       },
       "block_order": [
         "title",
-        "498ef57c-2404-4b5a-abe0-33f4a71f0131",
         "judge_me_reviews_preview_badge_8KKNMG",
         "description",
         "custom_liquid_Rc3fXq",
@@ -305,7 +287,6 @@
         "custom_liquid_jifDb9",
         "custom_liquid_J4i34F",
         "countdown_8xiiWB",
-        "bogos_io_free_gift_gift_thumbnail_view_gGah4k",
         "form",
         "bundler_bundler_target_element_UDVUiG",
         "dc23d79a-673c-43c9-9b8c-bb7243be8cfc",
