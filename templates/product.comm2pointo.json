@@ -99,6 +99,7 @@
         },
         "custom_liquid_J4i34F": {
           "type": "custom_liquid",
+          "disabled": true,
           "settings": {
             "custom_liquid": "{% render 'offercard-earsafe' %}"
           }
@@ -172,7 +173,7 @@
         "dc23d79a-673c-43c9-9b8c-bb7243be8cfc": {
           "type": "text",
           "settings": {
-            "text": "<p>Delivery within 4-5 working days</p>"
+            "text": "<p>Ships in 1-2 Days</p>"
           }
         },
         "23551ebc-3be1-40d6-81b2-30f03478cccb": {
