@@ -1,5 +1,5 @@
 {% liquid
-  assign product = all_products[section.settings.product]
+  assign product = all_products['ngwehear']
   assign current_variant = product.selected_or_first_available_variant
   assign faq_blocks = section.blocks | where: "type", "faq"
   assign review_blocks = section.blocks | where: "type", "review"
