@@ -1,0 +1,1158 @@
+{% liquid
+  assign product = all_products[section.settings.product]
+  assign current_variant = product.selected_or_first_available_variant
+  assign faq_blocks = section.blocks | where: "type", "faq"
+  assign review_blocks = section.blocks | where: "type", "review"
+%}
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=Lora:ital@1&display=swap" rel="stylesheet"/>
+
+<style>
+  /* Hide Kalles theme chrome — header, announcement bar, footer */
+  #shopify-section-announcement-bar,
+  #shopify-section-top-bar,
+  #shopify-section-header-inline,
+  #shopify-section-header-sidebar,
+  #shopify-section-header-bottom,
+  #shopify-section-header-categories-menu,
+  #shopify-section-header-vertical,
+  #t4s-footer { display: none !important; }
+  #MainContent { padding-top: 0 !important; margin-top: 0 !important; }
+
+  :root {
+    --navy:  #102442;
+    --ocean: #39869b;
+    --cyan:  #54c1c8;
+    --frost: #E8F6F7;
+    --chalk: #F4F4F2;
+    --muted: #4a6070;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  .sb-page { font-family: 'DM Sans', sans-serif; background: var(--chalk); color: var(--navy); -webkit-font-smoothing: antialiased; }
+  .sb-page img { display: block; max-width: 100%; }
+  .sb-page a { color: inherit; text-decoration: none; }
+  .sb-page button { font-family: inherit; cursor: pointer; border: none; }
+
+  .sb-wrap { max-width: 1160px; margin: 0 auto; padding: 0 clamp(20px,5vw,72px); }
+  .sb-sec { padding: clamp(64px,8vw,104px) 0; }
+  .sb-lbl { font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ocean); display: block; margin-bottom: 12px; }
+  .sb-page h2 { font-size: clamp(26px,4vw,46px); font-weight: 500; line-height: 1.1; letter-spacing: -.02em; }
+  .sb-page h2 em { font-style: normal; color: var(--ocean); }
+
+  /* ANNOUNCEMENT */
+  .sb-ann { background: var(--navy); color: rgba(255,255,255,.65); text-align: center; padding: 9px 16px; font-size: 13px; }
+  .sb-ann strong { color: var(--cyan); }
+
+  /* NAV */
+  .sb-nav { position: sticky; top: 0; z-index: 99; background: rgba(244,244,242,.95); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(16,36,66,.07); padding: 13px 0; }
+  .sb-nav-inner { display: flex; align-items: center; justify-content: space-between; }
+  .sb-nav-logo { font-size: 15px; font-weight: 500; }
+  .sb-nav-logo small { display: block; font-size: 10px; color: var(--ocean); letter-spacing: .06em; text-transform: uppercase; font-weight: 400; }
+  .sb-nav-right { display: flex; align-items: center; gap: 14px; }
+  .sb-nav-price { font-size: 14px; font-weight: 500; }
+  .sb-nav-btn { background: var(--navy); color: #fff; padding: 9px 22px; border-radius: 50px; font-size: 13px; font-weight: 500; transition: background .15s; cursor: pointer; border: none; }
+  .sb-nav-btn:hover { background: #1d3a60; }
+
+  /* HERO */
+  .sb-hero { background: var(--chalk); padding: clamp(48px,7vw,88px) 0 0; }
+  .sb-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px,5vw,72px); align-items: start; }
+  .sb-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--frost); border: 1px solid rgba(84,193,200,.3); border-radius: 50px; padding: 5px 14px; font-size: 12px; font-weight: 500; color: var(--ocean); margin-bottom: 22px; }
+  .sb-page h1 { font-size: clamp(34px,5vw,60px); font-weight: 500; line-height: 1.06; letter-spacing: -.025em; margin-bottom: 18px; }
+  .sb-page h1 em { font-style: normal; color: var(--ocean); }
+  .sb-hero-sub { font-size: clamp(15px,1.6vw,17px); color: var(--muted); line-height: 1.7; max-width: 460px; margin-bottom: 28px; }
+  .sb-price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
+  .sb-price-big { font-size: clamp(30px,3.5vw,40px); font-weight: 500; letter-spacing: -.02em; }
+  .sb-price-note { font-size: 13px; color: #6a8090; }
+  .sb-prepaid { display: inline-flex; align-items: center; gap: 5px; background: #edf7ed; color: #2e7d32; border-radius: 6px; padding: 4px 10px; font-size: 12px; font-weight: 500; margin-bottom: 22px; }
+  .sb-color-row { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; }
+  .sb-color-lbl { font-size: 12px; color: #6a8090; text-transform: uppercase; letter-spacing: .06em; }
+  .sw { width: 28px; height: 28px; border-radius: 50%; border: 2px solid transparent; cursor: pointer; transition: all .15s; }
+  .sw.active { border-color: var(--ocean); box-shadow: 0 0 0 2px rgba(57,134,155,.2); }
+  .sw-name { font-size: 13px; color: var(--muted); }
+  .sb-cta-stack { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+  .sb-btn-main { width: 100%; padding: 17px; background: var(--navy); color: #fff; border-radius: 12px; font-size: 16px; font-weight: 500; transition: all .2s; border: none; cursor: pointer; }
+  .sb-btn-main:hover { background: #1d3a60; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(16,36,66,.18); }
+  .sb-btn-main:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+  .sb-btn-sec { width: 100%; padding: 15px; background: var(--frost); color: var(--navy); border-radius: 12px; font-size: 15px; font-weight: 500; border: 1.5px solid rgba(16,36,66,.1); transition: all .2s; cursor: pointer; }
+  .sb-btn-sec:hover { border-color: var(--ocean); background: #fff; }
+  .sb-micro { display: flex; flex-wrap: wrap; gap: 14px; }
+  .sb-mi { display: flex; align-items: center; gap: 5px; font-size: 12.5px; color: #6a8090; }
+
+  /* Hero image side */
+  .sb-hero-img-wrap { position: relative; }
+  .sb-hero-img { width: 100%; border-radius: 16px; background: var(--frost); display: block; aspect-ratio: 1/1; object-fit: cover; }
+  .sb-hero-video { width: 100%; border-radius: 16px; display: block; aspect-ratio: 1/1; object-fit: cover; }
+  .sb-thumbs { display: flex; gap: 8px; margin-top: 10px; overflow-x: auto; }
+  .sb-thumb { width: 58px; height: 58px; border-radius: 8px; object-fit: cover; flex-shrink: 0; cursor: pointer; border: 2px solid transparent; transition: border-color .15s; background: var(--frost); }
+  .sb-thumb.active { border-color: var(--cyan); }
+  .sb-fc { position: absolute; border-radius: 12px; box-shadow: 0 8px 32px rgba(16,36,66,.15); }
+  .sb-fc-rating { top: 20px; right: -14px; background: var(--navy); color: #fff; padding: 12px 16px; text-align: center; min-width: 100px; }
+  .sb-fc-rating .num { font-size: 22px; font-weight: 500; line-height: 1; }
+  .sb-fc-rating .stars { color: var(--cyan); font-size: 12px; letter-spacing: 1px; margin: 3px 0; }
+  .sb-fc-rating .cnt { font-size: 10px; color: rgba(255,255,255,.5); }
+  .sb-fc-ent { bottom: 80px; left: -14px; background: #fff; padding: 12px 16px; display: flex; gap: 10px; align-items: center; min-width: 190px; }
+  .sb-fc-ent-ico { width: 36px; height: 36px; border-radius: 9px; background: var(--frost); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .sb-fc-ent-txt strong { display: block; font-size: 13px; }
+  .sb-fc-ent-txt span { font-size: 11px; color: #6a8090; }
+
+  /* Shark Tank badge */
+  .st-badge { display: inline-flex; align-items: center; gap: 10px; background: #fff; border: 1.5px solid rgba(16,36,66,.1); border-radius: 10px; padding: 9px 16px; margin-top: 12px; box-shadow: 0 2px 12px rgba(16,36,66,.07); }
+  .st-seen { font-size: 10px; color: #6a8090; text-transform: uppercase; letter-spacing: .08em; }
+  .st-logo { display: flex; align-items: center; gap: 6px; }
+  .st-shark { width: 28px; height: 28px; flex-shrink: 0; }
+  .st-text { line-height: 1.15; }
+  .st-text strong { display: block; font-size: 13px; font-weight: 500; color: #0a2540; letter-spacing: .01em; }
+  .st-text span { font-size: 10px; color: #e63329; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }
+
+  @media(max-width:900px) { .sb-hero-grid { grid-template-columns: 1fr; } .sb-hero-img-wrap { order: -1; } .sb-fc { display: none; } }
+
+  /* PROOF STRIP */
+  .sb-proof { background: var(--navy); padding: 22px 0; }
+  .sb-proof-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .sb-pi { display: flex; align-items: center; gap: 10px; color: #fff; flex: 1; min-width: 130px; }
+  .sb-pi strong { display: block; font-size: 16px; color: var(--cyan); font-weight: 500; }
+  .sb-pi span { font-size: 11.5px; color: rgba(255,255,255,.5); }
+  .sb-pd { width: 1px; height: 30px; background: rgba(255,255,255,.1); }
+  @media(max-width:680px) { .sb-pd { display: none; } .sb-pi { min-width: calc(50% - 8px); } }
+
+  /* FOUR PILLARS */
+  .sb-pillars { background: #fff; }
+  .sb-pillars-head { text-align: center; margin-bottom: 48px; }
+  .sb-pillars-head p { color: var(--muted); font-size: 16px; margin-top: 10px; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .sb-pillars-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+  .sb-pillar { background: var(--chalk); border-radius: 14px; padding: 28px 22px; transition: all .2s; border: 1.5px solid transparent; }
+  .sb-pillar:hover { border-color: rgba(84,193,200,.3); background: var(--frost); }
+  .sb-pillar .ic { font-size: 30px; margin-bottom: 14px; }
+  .sb-pillar strong { display: block; font-size: 16px; font-weight: 500; color: var(--navy); margin-bottom: 8px; }
+  .sb-pillar p { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+  @media(max-width:900px) { .sb-pillars-grid { grid-template-columns: 1fr 1fr; } }
+  @media(max-width:500px) { .sb-pillars-grid { grid-template-columns: 1fr; } }
+
+  /* NG × WEHEAR PARTNERSHIP */
+  .sb-partner { background: var(--navy); }
+  .sb-partner .sb-lbl { color: var(--cyan); }
+  .sb-partner h2 { color: #fff; }
+  .sb-partner-lead { color: rgba(255,255,255,.55); font-size: 16px; line-height: 1.65; margin: 16px 0 32px; max-width: 480px; }
+  .sb-partner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px,6vw,80px); align-items: start; }
+  .sb-partner-cards { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+  .sb-pcard { display: flex; gap: 16px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; padding: 18px 20px; align-items: flex-start; }
+  .sb-pcard-mark { width: 38px; height: 38px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; letter-spacing: .04em; flex-shrink: 0; margin-top: 2px; }
+  .sb-pcard-mark.ng { background: var(--ocean); color: #fff; }
+  .sb-pcard-mark.wh { background: var(--cyan); color: var(--navy); }
+  .sb-pcard strong { display: block; font-size: 15px; font-weight: 500; color: #fff; margin-bottom: 7px; }
+  .sb-pcard p { font-size: 13.5px; color: rgba(255,255,255,.45); line-height: 1.65; }
+  .shark-badge-inline { font-size: 11px; background: rgba(230,51,41,.18); color: #ff6b5b; border-radius: 4px; padding: 2px 7px; margin-left: 6px; font-weight: 500; }
+  .sb-partner-quote { border-left: 3px solid var(--cyan); padding-left: 18px; font-size: 15px; color: rgba(255,255,255,.55); line-height: 1.7; font-style: italic; }
+  .sb-partner-quote cite { display: block; margin-top: 10px; font-size: 12px; font-style: normal; color: var(--cyan); letter-spacing: .04em; }
+  .sb-partner-img-box { position: relative; background: rgba(255,255,255,.05); border-radius: 16px; overflow: hidden; margin-bottom: 20px; }
+  .sb-partner-img-box img { width: 100%; display: block; }
+  .sb-partner-stamp { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(16,36,66,.88)); padding: 36px 20px 18px; }
+  .ps-line1 { display: block; font-size: 10px; color: var(--cyan); text-transform: uppercase; letter-spacing: .1em; font-weight: 500; }
+  .ps-line2 { display: block; font-size: 22px; font-weight: 500; color: #fff; margin: 2px 0; }
+  .ps-line3 { display: block; font-size: 11px; color: rgba(255,255,255,.4); }
+  .sb-partner-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+  .sb-pstat { background: rgba(255,255,255,.06); border-radius: 10px; padding: 16px 14px; text-align: center; }
+  .sb-pstat strong { display: block; font-size: 26px; font-weight: 500; color: var(--cyan); line-height: 1; margin-bottom: 5px; }
+  .sb-pstat span { font-size: 11.5px; color: rgba(255,255,255,.4); line-height: 1.4; }
+  @media(max-width:900px) { .sb-partner-grid { grid-template-columns: 1fr; } }
+
+  /* WHO IT'S FOR */
+  .sb-audience { background: var(--chalk); }
+  .sb-audience-head { text-align: center; margin-bottom: 40px; }
+  .sb-audience-head p { color: var(--muted); margin-top: 10px; font-size: 16px; }
+  .sb-tab-bar { display: flex; background: var(--frost); border-radius: 12px; padding: 4px; max-width: 680px; margin: 0 auto 40px; overflow-x: auto; gap: 2px; }
+  .sb-tab { flex: 1; padding: 10px 12px; border-radius: 9px; font-size: 13px; font-weight: 500; color: var(--muted); background: transparent; cursor: pointer; white-space: nowrap; transition: all .2s; border: none; }
+  .sb-tab.active { background: var(--navy); color: #fff; }
+  .sb-panel { display: none; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .sb-panel.active { display: grid; }
+  .sb-panel-img { border-radius: 14px; overflow: hidden; background: var(--frost); aspect-ratio: 4/3; }
+  .sb-panel-img img { width: 100%; height: 100%; object-fit: cover; }
+  .panel-eyebrow { font-family: 'Lora', serif; font-style: italic; font-size: 15px; color: var(--ocean); display: block; margin-bottom: 10px; }
+  .sb-panel h3 { font-size: clamp(20px,2.8vw,32px); font-weight: 500; line-height: 1.2; margin-bottom: 16px; }
+  .sb-panel-scene { font-size: 14.5px; color: var(--muted); line-height: 1.75; margin-bottom: 18px; font-style: italic; border-left: 3px solid var(--cyan); padding-left: 14px; }
+  .sb-panel-body { font-size: 14.5px; line-height: 1.75; margin-bottom: 20px; color: var(--navy); }
+  .sb-panel-pts { display: flex; flex-direction: column; gap: 9px; }
+  .sb-pt { display: flex; gap: 9px; align-items: flex-start; font-size: 14px; }
+  .sb-pt-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); flex-shrink: 0; margin-top: 6px; }
+  @media(max-width:900px) { .sb-panel.active { grid-template-columns: 1fr; } .sb-panel-img { order: -1; } }
+  @media(max-width:560px) { .sb-tab-bar { flex-wrap: wrap; max-width: 100%; } .sb-tab { flex: 1 1 calc(50% - 4px); } }
+
+  /* COMPARISON */
+  .sb-cmp { background: var(--frost); }
+  .sb-cmp-head { margin-bottom: 36px; }
+  .sb-cmp-head p { color: var(--muted); font-size: 16px; margin-top: 10px; max-width: 520px; }
+  .sb-cmp-table { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 24px rgba(16,36,66,.07); }
+  .sb-cmp-row { display: grid; grid-template-columns: 1.5fr 1fr 1fr; border-bottom: 1px solid rgba(16,36,66,.06); }
+  .sb-cmp-row:last-child { border-bottom: none; }
+  .sb-cmp-row.head-row { font-size: 13px; font-weight: 500; border-bottom: 2px solid rgba(16,36,66,.08); }
+  .cc { padding: 15px 20px; font-size: 13.5px; display: flex; align-items: center; }
+  .cc:first-child { background: var(--chalk); font-weight: 500; font-size: 14px; }
+  .cc:nth-child(2) { justify-content: center; color: var(--muted); }
+  .cc:nth-child(3) { justify-content: center; background: rgba(16,36,66,.02); }
+  .head-row .cc:nth-child(3) { background: var(--navy); color: #fff; justify-content: center; flex-direction: column; align-items: center; gap: 2px; }
+  .head-row .cc:nth-child(3) small { color: var(--cyan); font-size: 11px; font-weight: 400; }
+  .good { color: #2e7d32; font-size: 13px; font-weight: 500; }
+  .bad  { color: #b71c1c; font-size: 13px; }
+  .ck { color: #2e7d32; font-size: 16px; margin-right: 4px; }
+  .xk { color: #c62828; font-size: 16px; }
+  @media(max-width:560px) { .sb-cmp-row { grid-template-columns: 1fr 1fr; } .cc:nth-child(2), .head-row .cc:nth-child(2) { display: none; } }
+
+  /* REVIEWS */
+  .sb-revs { background: #fff; }
+  .sb-revs-head { text-align: center; margin-bottom: 44px; }
+  .sb-revs-head p { color: var(--muted); margin-top: 8px; font-size: 16px; }
+  .sb-rev-sum { display: flex; align-items: center; justify-content: center; gap: 32px; margin-bottom: 36px; flex-wrap: wrap; }
+  .sb-rev-num { font-size: 52px; font-weight: 500; letter-spacing: -.03em; line-height: 1; }
+  .sb-rev-stars { color: #f5a623; font-size: 20px; letter-spacing: 3px; margin: 5px 0; }
+  .sb-rev-ct { font-size: 12px; color: #6a8090; }
+  .sb-rev-bars { max-width: 240px; flex: 1; }
+  .sb-br { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
+  .sb-br-l { font-size: 11.5px; color: #6a8090; width: 24px; }
+  .sb-br-t { flex: 1; height: 5px; background: rgba(16,36,66,.08); border-radius: 3px; overflow: hidden; }
+  .sb-br-f { height: 100%; background: var(--ocean); border-radius: 3px; }
+  .sb-br-n { font-size: 11.5px; color: #6a8090; width: 18px; }
+  .sb-rev-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+  .sb-rc { background: var(--chalk); border-radius: 12px; padding: 22px; }
+  .sb-rc .stars { color: #f5a623; font-size: 13px; letter-spacing: 1px; margin-bottom: 10px; }
+  .sb-rc p { font-size: 14px; line-height: 1.7; margin-bottom: 14px; }
+  .sb-rc-meta { display: flex; align-items: center; gap: 9px; }
+  .sb-rc-av { width: 30px; height: 30px; border-radius: 50%; background: var(--frost); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 500; color: var(--ocean); flex-shrink: 0; }
+  .sb-rc-name { font-size: 12.5px; font-weight: 500; }
+  .sb-rc-loc { font-size: 11px; color: #6a8090; }
+  .sb-rc-tag { margin-top: 10px; display: inline-block; background: var(--frost); color: var(--ocean); font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 50px; }
+  @media(max-width:760px) { .sb-rev-grid { grid-template-columns: 1fr; } }
+
+  /* FAQ */
+  .sb-faq { background: var(--chalk); }
+  .sb-faq-wrap { max-width: 680px; margin: 0 auto; }
+  .sb-faq-head { text-align: center; margin-bottom: 32px; }
+  .sb-faq-item { background: #fff; border-radius: 10px; margin-bottom: 8px; overflow: hidden; border: 1px solid rgba(16,36,66,.07); }
+  .sb-faq-q { width: 100%; background: none; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 14.5px; font-weight: 500; text-align: left; gap: 14px; transition: background .15s; color: var(--navy); cursor: pointer; border: none; }
+  .sb-faq-q:hover { background: var(--frost); }
+  .sb-faq-ic { width: 22px; height: 22px; border-radius: 50%; background: var(--frost); display: flex; align-items: center; justify-content: center; font-size: 15px; color: var(--ocean); flex-shrink: 0; transition: transform .2s, background .2s; }
+  .sb-faq-item.open .sb-faq-ic { transform: rotate(45deg); background: var(--navy); color: #fff; }
+  .sb-faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .2s; padding: 0 20px; }
+  .sb-faq-item.open .sb-faq-a { max-height: 300px; padding: 0 20px 18px; }
+  .sb-faq-a p { font-size: 14px; color: var(--muted); line-height: 1.75; }
+
+  /* FINAL CTA */
+  .sb-final { background: var(--navy); padding: clamp(72px,9vw,112px) 0; text-align: center; position: relative; overflow: hidden; }
+  .sb-final::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 500px; height: 500px; background: radial-gradient(circle, rgba(84,193,200,.08) 0%, transparent 65%); pointer-events: none; }
+  .sb-final-inner { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
+  .sb-final h2 { color: #fff; margin-bottom: 14px; }
+  .sb-final h2 em { color: var(--cyan); font-style: normal; }
+  .sb-final p { color: rgba(255,255,255,.55); font-size: 16px; line-height: 1.65; margin-bottom: 30px; }
+  .sb-final-price { font-size: clamp(34px,5vw,50px); font-weight: 500; color: #fff; letter-spacing: -.025em; margin-bottom: 4px; }
+  .sb-final-price span { color: var(--cyan); }
+  .sb-final-pre { font-size: 13.5px; color: rgba(255,255,255,.4); margin-bottom: 28px; }
+  .sb-final-pre strong { color: var(--cyan); }
+  .sb-final-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+  .sb-fbm { padding: 17px 36px; border-radius: 50px; font-size: 15px; font-weight: 500; background: var(--cyan); color: var(--navy); border: none; cursor: pointer; transition: all .2s; }
+  .sb-fbm:hover { background: #43b0b7; transform: translateY(-1px); }
+  .sb-fbo { padding: 17px 36px; border-radius: 50px; font-size: 15px; font-weight: 500; background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.3); cursor: pointer; transition: all .2s; }
+  .sb-fbo:hover { border-color: #fff; }
+  .sb-final-gs { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+  .sb-fg { font-size: 12.5px; color: rgba(255,255,255,.4); display: flex; align-items: center; gap: 5px; }
+
+  /* FOOTER */
+  .sb-footer { background: #091520; padding: 40px 0 24px; }
+  .sb-foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; margin-bottom: 36px; }
+  .sb-foot-logo { font-size: 15px; font-weight: 500; color: #fff; }
+  .sb-foot-logo small { display: block; font-size: 10px; color: var(--cyan); letter-spacing: .08em; text-transform: uppercase; margin-top: 2px; font-weight: 400; }
+  .sb-footer p.about { font-size: 13px; color: rgba(255,255,255,.35); line-height: 1.65; margin-top: 12px; max-width: 240px; }
+  .sb-foot-col h5 { font-size: 11px; color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 14px; }
+  .sb-foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .sb-foot-col a { font-size: 13px; color: rgba(255,255,255,.45); transition: color .15s; }
+  .sb-foot-col a:hover { color: #fff; }
+  .sb-foot-bottom { border-top: 1px solid rgba(255,255,255,.07); padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12px; color: rgba(255,255,255,.3); }
+  @media(max-width:640px) { .sb-foot-grid { grid-template-columns: 1fr 1fr; } }
+
+  /* REVEAL */
+  .r { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
+  .r.v { opacity: 1; transform: none; }
+</style>
+
+{% if product == empty %}
+<div style="padding:60px;text-align:center;font-family:sans-serif;background:#f4f4f2">
+  <p style="font-size:16px;color:#102442">⚠️ Open the <strong>Theme Customizer → SafeBuds LP section</strong> and select a product to display this page.</p>
+</div>
+{% else %}
+
+<div class="sb-page">
+
+<!-- ANNOUNCEMENT -->
+<div class="sb-ann"><strong>{{ section.settings.ann_highlight }}</strong> {{ section.settings.ann_body }}</div>
+
+<!-- NAV -->
+<nav class="sb-nav">
+  <div class="sb-wrap">
+    <div class="sb-nav-inner">
+      <div class="sb-nav-logo">NG EarSafe <small>Open ear since 2020</small></div>
+      <div class="sb-nav-right">
+        <span class="sb-nav-price">{{ product.price | money }}</span>
+        <button class="sb-nav-btn" onclick="sbAddToCart()">Buy Now</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="sb-hero">
+  <div class="sb-wrap">
+    <div class="sb-hero-grid">
+
+      <div class="sb-hero-copy">
+        <div class="sb-badge">✦ {{ section.settings.hero_badge }}</div>
+        <h1>{{ section.settings.hero_h1_line1 }}<br>{{ section.settings.hero_h1_prefix }} <em>{{ section.settings.hero_h1_em }}</em><br>{{ section.settings.hero_h1_line3 }}</h1>
+        <p class="sb-hero-sub">{{ section.settings.hero_sub }}</p>
+
+        <div class="sb-price-row">
+          <span class="sb-price-big">{{ product.price | money }}</span>
+          <span class="sb-price-note">{{ section.settings.price_note }}</span>
+        </div>
+        <div class="sb-prepaid">✦ {{ section.settings.prepaid_text }}</div>
+
+        <div class="sb-color-row">
+          <span class="sb-color-lbl">Colour</span>
+          {% for variant in product.variants %}
+            {% assign v_color = variant.option1 | downcase | remove: ' ' %}
+            {% if v_color == 'black' %}
+              <div class="sw {% if forloop.first %}active{% endif %}" style="background:#1a1a1a" data-variant="{{ variant.id }}" onclick="sbSetColor('{{ v_color }}',this,{{ variant.id }})"></div>
+            {% elsif v_color == 'ivory' %}
+              <div class="sw" style="background:#F5EFE0;border:1px solid #ddd" data-variant="{{ variant.id }}" onclick="sbSetColor('{{ v_color }}',this,{{ variant.id }})"></div>
+            {% endif %}
+          {% endfor %}
+          <span class="sw-name" id="sbSwName">{{ product.variants.first.option1 }}</span>
+        </div>
+
+        <div class="sb-cta-stack" id="buy">
+          <button class="sb-btn-main" onclick="sbAddToCart()">{{ section.settings.btn_atc }}</button>
+          <button class="sb-btn-sec" onclick="sbBuyNow()">{{ section.settings.btn_buy }}</button>
+        </div>
+
+        <div class="sb-micro">
+          <span class="sb-mi">{% render 'icon-check' %} 7-day returns</span>
+          <span class="sb-mi">{% render 'icon-check' %} 1-year warranty</span>
+          <span class="sb-mi">{% render 'icon-check' %} ENT certified</span>
+          <span class="sb-mi">{% render 'icon-check' %} Ships in 1–2 days</span>
+        </div>
+      </div>
+
+      <div class="sb-hero-img-wrap">
+        <div class="sb-fc sb-fc-rating">
+          <div class="num">{{ section.settings.review_score }}</div>
+          <div class="stars">★★★★★</div>
+          <div class="cnt">{{ section.settings.review_count }}</div>
+        </div>
+        <div class="sb-fc sb-fc-ent">
+          <div class="sb-fc-ent-ico">🩺</div>
+          <div class="sb-fc-ent-txt"><strong>ENT Certified</strong><span>Safe for all-day wear</span></div>
+        </div>
+
+        {% if section.settings.hero_video_url != blank %}
+          <video id="sbHeroVideo" class="sb-hero-video" autoplay muted loop playsinline>
+            <source src="{{ section.settings.hero_video_url }}" type="video/mp4"/>
+          </video>
+        {% else %}
+          <img id="sbHeroImg" class="sb-hero-img"
+               src="{{ product.featured_image | image_url: width: 900 }}"
+               alt="{{ product.title | escape }}"/>
+        {% endif %}
+
+        <div class="sb-thumbs">
+          {% for image in product.images limit: 8 %}
+            <img class="sb-thumb {% if forloop.first %}active{% endif %}"
+                 src="{{ image | image_url: width: 120 }}"
+                 onclick="sbSwp(this,'{{ image | image_url: width: 900 }}')"
+                 alt="{{ image.alt | escape }}"/>
+          {% endfor %}
+        </div>
+
+        <!-- Shark Tank Badge -->
+        <div class="st-badge">
+          <span class="st-seen">Seen on</span>
+          <div class="st-logo">
+            <svg class="st-shark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M8 27 C11 23 17 17 21 11 C24 6 29 4 34 7 C30 12 28 18 30 23 L35 27 Z" fill="#102442" opacity=".8"/>
+              <line x1="3" y1="27" x2="37" y2="27" stroke="#102442" stroke-width="2" stroke-linecap="round"/>
+              <path d="M2 30 Q9 27 16 30 Q23 33 30 30 Q34 28 38 30" stroke="#39869b" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            </svg>
+            <div class="st-text">
+              <strong>WeHear</strong>
+              <span>Shark Tank India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROOF STRIP -->
+<div class="sb-proof">
+  <div class="sb-wrap">
+    <div class="sb-proof-inner">
+      <div class="sb-pi"><span style="font-size:20px">👂</span><div><strong>Open Ear</strong><span>Nothing inside your canal</span></div></div>
+      <div class="sb-pd"></div>
+      <div class="sb-pi"><span style="font-size:20px">🔋</span><div><strong>35 Hours</strong><span>Full work week on one charge</span></div></div>
+      <div class="sb-pd"></div>
+      <div class="sb-pi"><span style="font-size:20px">⚖️</span><div><strong>9 Grams</strong><span>Forget you're wearing them</span></div></div>
+      <div class="sb-pd"></div>
+      <div class="sb-pi"><span style="font-size:20px">🌍</span><div><strong>SphereLingo™</strong><span>Live translation · AI notes</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOUR PILLARS -->
+<section class="sb-pillars sb-sec" style="background:#fff;">
+  <div class="sb-wrap">
+    <div class="sb-pillars-head r">
+      <span class="sb-lbl">What makes it different</span>
+      <h2>Four reasons. One product.</h2>
+      <p>SafeBuds isn't a feature list. It's what happens when you build audio around the ear instead of inside it.</p>
+    </div>
+    <div class="sb-pillars-grid r">
+      <div class="sb-pillar">
+        <div class="ic">{{ section.settings.pillar1_icon }}</div>
+        <strong>{{ section.settings.pillar1_title }}</strong>
+        <p>{{ section.settings.pillar1_body }}</p>
+      </div>
+      <div class="sb-pillar">
+        <div class="ic">{{ section.settings.pillar2_icon }}</div>
+        <strong>{{ section.settings.pillar2_title }}</strong>
+        <p>{{ section.settings.pillar2_body }}</p>
+      </div>
+      <div class="sb-pillar">
+        <div class="ic">{{ section.settings.pillar3_icon }}</div>
+        <strong>{{ section.settings.pillar3_title }}</strong>
+        <p>{{ section.settings.pillar3_body }}</p>
+      </div>
+      <div class="sb-pillar">
+        <div class="ic">{{ section.settings.pillar4_icon }}</div>
+        <strong>{{ section.settings.pillar4_title }}</strong>
+        <p>{{ section.settings.pillar4_body }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NG × WEHEAR PARTNERSHIP -->
+<section class="sb-partner sb-sec">
+  <div class="sb-wrap">
+    <div class="sb-partner-grid">
+      <div class="r">
+        <span class="sb-lbl">The story behind SafeBuds</span>
+        <h2>Two Indian brands.<br>One <em>breakthrough.</em></h2>
+        <p class="sb-partner-lead">India's open ear pioneer meets the AI audio company that pitched on Shark Tank India. This is what they built together.</p>
+        <div class="sb-partner-cards">
+          <div class="sb-pcard">
+            <div class="sb-pcard-mark ng">NG</div>
+            <div>
+              <strong>NG EarSafe</strong>
+              <p>Five years building India's only open-ear product line — hardware engineered around how ears actually work. Nothing inside the canal, ever.</p>
+            </div>
+          </div>
+          <div class="sb-pcard">
+            <div class="sb-pcard-mark wh">WH</div>
+            <div>
+              <strong>WeHear <span class="shark-badge-inline">🦈 Shark Tank India</span></strong>
+              <p>AI live translation and meeting transcription — built in India, speaking 100+ languages. WeHear's SphereLingo™ platform caught the attention of Shark Tank India. Then they found NG EarSafe.</p>
+            </div>
+          </div>
+        </div>
+        <blockquote class="sb-partner-quote">
+          "We built the ear. They built the brain. SafeBuds is what India gets when two product-first startups stop working in isolation."
+          <cite>— NG EarSafe × WeHear, 2025</cite>
+        </blockquote>
+      </div>
+      <div class="r">
+        <div class="sb-partner-img-box">
+          {% if section.settings.packaging_image != blank %}
+            <img src="{{ section.settings.packaging_image | image_url: width: 800 }}" alt="SafeBuds packaging"/>
+          {% elsif product.images[6] %}
+            <img src="{{ product.images[6] | image_url: width: 800 }}" alt="SafeBuds packaging"/>
+          {% endif %}
+          <div class="sb-partner-stamp">
+            <span class="ps-line1">NG × WeHear</span>
+            <span class="ps-line2">SafeBuds</span>
+            <span class="ps-line3">Born in India · Built for the world</span>
+          </div>
+        </div>
+        <div class="sb-partner-stats">
+          <div class="sb-pstat"><strong>5</strong><span>Years open ear R&D by NG</span></div>
+          <div class="sb-pstat"><strong>100+</strong><span>Languages via SphereLingo™</span></div>
+          <div class="sb-pstat"><strong>1</strong><span>Product that merges both</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="sb-audience sb-sec">
+  <div class="sb-wrap">
+    <div class="sb-audience-head r">
+      <span class="sb-lbl">Who it's for</span>
+      <h2>Different people.<br>Same open ear.</h2>
+      <p>SafeBuds fits four kinds of Indian buyers. Pick yours.</p>
+    </div>
+    <div class="sb-tab-bar r">
+      <button class="sb-tab active" onclick="sbTab(this,'sb-p-wfh')">💼 WFH Pro</button>
+      <button class="sb-tab" onclick="sbTab(this,'sb-p-bridge')">🌍 Multilingual</button>
+      <button class="sb-tab" onclick="sbTab(this,'sb-p-entertain')">🎧 Entertainment</button>
+      <button class="sb-tab" onclick="sbTab(this,'sb-p-parent')">👨‍👩‍👧 Parent</button>
+    </div>
+
+    <!-- WFH Pro -->
+    <div id="sb-p-wfh" class="sb-panel active">
+      <div class="sb-panel-img">
+        {% if section.settings.panel_wfh_image != blank %}
+          <img src="{{ section.settings.panel_wfh_image | image_url: width: 700 }}" alt="WFH professional"/>
+        {% elsif product.images.last %}
+          <img src="{{ product.images.last | image_url: width: 700 }}" alt="SafeBuds lifestyle"/>
+        {% endif %}
+      </div>
+      <div class="r">
+        <span class="panel-eyebrow">The WFH Professional</span>
+        <h3>6th meeting. Ears still fine. Notes already written.</h3>
+        <p class="sb-panel-scene">4:30pm. Gurgaon home office. You've been on calls since 10. Chai is cold. Another Teams invite just landed. Your ears don't hurt yet — that used to not be true.</p>
+        <p class="sb-panel-body">SafeBuds sit outside your ear canal, so six hours of back-to-back calls don't leave you with that pressure-and-heat buildup you've accepted as normal. And SphereLingo™ takes your meeting notes in real-time — so you stop choosing between speaking and writing.</p>
+        <div class="sb-panel-pts">
+          <div class="sb-pt"><div class="sb-pt-dot"></div><span>Open ear — no pain at 5pm, no infections from all-day use</span></div>
+          <div class="sb-pt"><div class="sb-pt-dot"></div><span>Quad ENC mic — colleagues hear you, not your kitchen sounds</span></div>
+          <div class="sb-pt"><div class="sb-pt-dot"></div><span>Auto meeting notes — transcribed and summarised after every call</span></div>
+          <div class="sb-pt"><div class="sb-pt-dot"></div><span>35 hours total battery — charge Sunday, wear all week</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Multilingual -->
+    <div id="sb-p-bridge" class="sb-panel">
+      <div class="sb-panel-img">
+        {% if section.settings.panel_bridge_image != blank %}
+          <img src="{{ section.settings.panel_bridge_image | image_url: width: 700 }}" alt="Multilingual professional"/>
+        {% elsif product.images[2] %}
+          <img src="{{ product.images[2] | image_url: width: 700 }}" alt="SafeBuds"/>
+        {% endif %}
+      </div>
+      <div class="r">
+        <span class="panel-eyebrow">The Multilingual Professional</span>
+        <h3>Mumbai meeting. Tokyo client. Zero awkward pauses.</h3>
+        <p class="sb-panel-scene">Hyderabad IT consultant. Client in Osaka, supplier in Shenzhen, manager in Dubai. Four people. Four languages. Used to mean an interpreter or Google Translate held up to a phone. Not anymore.</p>
+        <p class="sb-panel-body">SphereLingo™ translates a live conversation into your language as it's happening — directly into your ear. Whether you're an NRI dealing with family paperwork, a Delhi exporter on a Chinese supplier call, or a Bangalore startup on a US investor call, the language gap closes before it opens.</p>
+        <div class="sb-panel-pts">
+          <div class="sb-pt"><div class="sb-pt-dot"></div><span>100+ languages — Hindi, Tamil, Telugu, Marathi, Bengali + all major global languages</span></div>
+          <div class="sb-pt"><div class="sb-pt-dot"></div><span>Works on Zoom, Teams, Meet, WhatsApp calls, and in-person</span></div>
+          <div class="sb-pt"><div class="sb-pt-dot"></div><span>One-to-one and group conversation modes</span></div>
+          <div class="sb-pt"><div class="sb-pt-dot"></div><span>Translated transcript saved automatically after every session</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Entertainment -->
+    <div id="sb-p-entertain" class="sb-panel">
+      <div class="sb-panel-img">
+        {% if section.settings.panel_entertain_image != blank %}
+          <img src="{{ section.settings.panel_entertain_image | image_url: width: 700 }}" alt="Entertainment"/>
+        {% elsif product.images[1] %}
+          <img src="{{ product.images[1] | image_url: width: 700 }}" alt="SafeBuds"/>
+        {% endif %}
+      </div>
+      <div class="r">
+        <span class="panel-eyebrow">The Entertainment Audience</span>
+        <h3>Netflix chal raha hai. Ghar mein sab ko pata bhi nahi chalega.</h3>
+        <p class="sb-panel-scene">Friday night. Sacred Games cue. Dark room. SafeBuds on, volume up. The doorbell rang — you heard it. That's the point. No more missed knocks, no more "ek second" panic.</p>
+        <p class="sb-panel-body">Most earphones force a trade-off: full audio or full awareness. SafeBuds gives you both. Deep immersion in Mirzapur or a midnight BGMI session — while still hearing your phone buzz, your mom call, or your delivery boy at the door. You never have to pull one out.</p>
+        <div class="sb-panel-pts">
+          <div class="sb-pt"><div class="sb-pt-dot"></div><span>Custom EQ via WeHear app — deep bass for movies, clarity for dialogue</span></div>
+          <div class="sb-pt"><div class="sb-pt-dot"></div><span>9g open fit — wear for 4-hour binge sessions, no ear fatigue</span></div>
+          <div class="sb-pt"><div class="sb-pt-dot"></div><span>Stay aware — hear the room while staying in the scene</span></div>
+          <div class="sb-pt"><div class="sb-pt-dot"></div><span>Bluetooth 5.4 — instant pair to phone, laptop, iPad, or TV</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Parent -->
+    <div id="sb-p-parent" class="sb-panel">
+      <div class="sb-panel-img">
+        {% if section.settings.panel_parent_image != blank %}
+          <img src="{{ section.settings.panel_parent_image | image_url: width: 700 }}" alt="Safe for students"/>
+        {% elsif product.images[0] %}
+          <img src="{{ product.images[0] | image_url: width: 700 }}" alt="SafeBuds"/>
+        {% endif %}
+      </div>
+      <div class="r">
+        <span class="panel-eyebrow">The Aware Parent</span>
+        <h3>JEE prep. 8 hours a day. Earphones in. This is the one you give them.</h3>
+        <p class="sb-panel-scene">Your daughter has been studying since morning — Unacademy, YouTube, then calls with her study group. Same in-ear earphones since Class 9. You've read what prolonged canal use does. SafeBuds is the decision you make before it's too late to make it.</p>
+        <p class="sb-panel-body">The WHO estimates 1.1 billion young people globally are at risk from recreational audio use. In India, with marathon coaching sessions and screen-heavy lifestyles, the exposure is especially high. SafeBuds rests outside the ear canal entirely. Nothing goes in. No pressure, no heat, no bacteria — and they still hear you when you call them for dinner.</p>
+        <div class="sb-panel-pts">
+          <div class="sb-pt"><div class="sb-pt-dot"></div><span>Nothing inside the ear canal — eliminates the primary risk factor</span></div>
+          <div class="sb-pt"><div class="sb-pt-dot"></div><span>ENT doctor certified safe for all-day daily use</span></div>
+          <div class="sb-pt"><div class="sb-pt-dot"></div><span>9g light — comfortable for 6-hour study and class sessions</span></div>
+          <div class="sb-pt"><div class="sb-pt-dot"></div><span>They still hear ambient sound — safer, more aware at all times</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="sb-cmp sb-sec">
+  <div class="sb-wrap">
+    <div class="sb-cmp-head r">
+      <span class="sb-lbl">Why switch</span>
+      <h2>SafeBuds vs. what you have now.</h2>
+      <p>Your current earphones were designed to seal out the world. SafeBuds were built to keep you in it.</p>
+    </div>
+    <div class="sb-cmp-table r">
+      <div class="sb-cmp-row head-row">
+        <div class="cc"></div>
+        <div class="cc">AirPods / TWS</div>
+        <div class="cc">SafeBuds <small>{{ product.price | money }}</small></div>
+      </div>
+      <div class="sb-cmp-row">
+        <div class="cc">All-day ear comfort</div>
+        <div class="cc"><span class="bad">Fatigue &amp; pain after 2–3 hrs</span></div>
+        <div class="cc"><span class="good">Open fit — wear all day, no pressure</span></div>
+      </div>
+      <div class="sb-cmp-row">
+        <div class="cc">Hear your surroundings</div>
+        <div class="cc"><span class="bad">Blocked by design</span></div>
+        <div class="cc"><span class="good">Always — that's the whole point</span></div>
+      </div>
+      <div class="sb-cmp-row">
+        <div class="cc">Live translation</div>
+        <div class="cc"><span class="xk">✗</span></div>
+        <div class="cc"><span class="ck">✓</span> <span class="good">SphereLingo™ · 100+ languages</span></div>
+      </div>
+      <div class="sb-cmp-row">
+        <div class="cc">Meeting notes</div>
+        <div class="cc"><span class="xk">✗</span></div>
+        <div class="cc"><span class="ck">✓</span> <span class="good">Auto-transcribed + AI summary</span></div>
+      </div>
+      <div class="sb-cmp-row">
+        <div class="cc">Hearing health</div>
+        <div class="cc"><span class="bad">Long-term exposure risk (WHO)</span></div>
+        <div class="cc"><span class="good">ENT certified — canal stays open</span></div>
+      </div>
+      <div class="sb-cmp-row">
+        <div class="cc">Total battery</div>
+        <div class="cc">24–30 hours (with case)</div>
+        <div class="cc"><span class="good">35 hours — full work week</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sb-revs sb-sec">
+  <div class="sb-wrap">
+    <div class="sb-revs-head r">
+      <span class="sb-lbl">What they said</span>
+      <h2>82% five-star. {{ section.settings.review_count }}.</h2>
+      <p>Real people. What they actually noticed.</p>
+    </div>
+    <div class="sb-rev-sum r">
+      <div>
+        <div class="sb-rev-num">{{ section.settings.review_score }}</div>
+        <div class="sb-rev-stars">★★★★★</div>
+        <div class="sb-rev-ct">{{ section.settings.review_count }} verified</div>
+      </div>
+      <div class="sb-rev-bars">
+        <div class="sb-br"><span class="sb-br-l">5★</span><div class="sb-br-t"><div class="sb-br-f" style="width:82%"></div></div><span class="sb-br-n">31</span></div>
+        <div class="sb-br"><span class="sb-br-l">4★</span><div class="sb-br-t"><div class="sb-br-f" style="width:16%"></div></div><span class="sb-br-n">6</span></div>
+        <div class="sb-br"><span class="sb-br-l">3★</span><div class="sb-br-t"><div class="sb-br-f" style="width:3%"></div></div><span class="sb-br-n">1</span></div>
+      </div>
+    </div>
+    <div class="sb-rev-grid r">
+      {% for block in review_blocks %}
+        <div class="sb-rc" {{ block.shopify_attributes }}>
+          <div class="stars">★★★★★</div>
+          <p>{{ block.settings.body }}</p>
+          <div class="sb-rc-meta">
+            <div class="sb-rc-av">{{ block.settings.reviewer_initial }}</div>
+            <div>
+              <div class="sb-rc-name">{{ block.settings.name }}</div>
+              <div class="sb-rc-loc">{{ block.settings.location }}</div>
+            </div>
+          </div>
+          <span class="sb-rc-tag">{{ block.settings.tag }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sb-faq sb-sec">
+  <div class="sb-wrap">
+    <div class="sb-faq-wrap">
+      <div class="sb-faq-head r">
+        <span class="sb-lbl">Before you buy</span>
+        <h2>Honest answers.</h2>
+      </div>
+      <div class="r">
+        {% for block in faq_blocks %}
+          <div class="sb-faq-item" {{ block.shopify_attributes }}>
+            <button class="sb-faq-q" onclick="sbFaq(this)">{{ block.settings.question }} <span class="sb-faq-ic">+</span></button>
+            <div class="sb-faq-a"><p>{{ block.settings.answer }}</p></div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="sb-final" id="sb-final-buy">
+  <div class="sb-wrap">
+    <div class="sb-final-inner r">
+      <h2>{{ section.settings.final_h2_line1 }}<br><em>{{ section.settings.final_h2_em }}</em></h2>
+      <p>{{ section.settings.final_sub }}</p>
+      <div class="sb-final-price">{{ product.price | money }} <span>— or {{ product.price | minus: 200 | money }} prepaid</span></div>
+      <div class="sb-final-pre">Save <strong>₹200</strong> instantly on prepaid</div>
+      <div class="sb-final-btns">
+        <button class="sb-fbm" onclick="sbAddToCart()">{{ section.settings.btn_atc }}</button>
+        <button class="sb-fbo" onclick="sbBuyNow()">{{ section.settings.btn_buy }} →</button>
+      </div>
+      <div class="sb-final-gs">
+        <span class="sb-fg">🚚 Free shipping</span>
+        <span class="sb-fg">🔄 7-day returns</span>
+        <span class="sb-fg">🛡 1-year warranty</span>
+        <span class="sb-fg">🩺 ENT certified</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="sb-footer">
+  <div class="sb-wrap">
+    <div class="sb-foot-grid">
+      <div>
+        <div class="sb-foot-logo">NG EarSafe <small>Open ear since 2020</small></div>
+        <p class="about">India's open ear brand. One belief: the way we've been listening is hurting us — and there's a better way.</p>
+      </div>
+      <div class="sb-foot-col">
+        <h5>Products</h5>
+        <ul>
+          <li><a href="/products/ngwehear">SafeBuds</a></li>
+          <li><a href="/products/noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0">Comm 2.0</a></li>
+          <li><a href="/collections/all">All Products</a></li>
+        </ul>
+      </div>
+      <div class="sb-foot-col">
+        <h5>Help</h5>
+        <ul>
+          <li><a href="/pages/track-order">Track Order</a></li>
+          <li><a href="/policies/refund-policy">Returns</a></li>
+          <li><a href="/pages/warranty">Warranty</a></li>
+          <li><a href="/pages/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sb-foot-bottom">
+      <span>© {{ 'now' | date: '%Y' }} {{ shop.name }} · {{ shop.email }}</span>
+      <span>
+        <a href="{{ shop.privacy_policy.url }}" style="margin-right:12px;color:rgba(255,255,255,.3)">Privacy</a>
+        <a href="{{ shop.refund_policy.url }}" style="color:rgba(255,255,255,.3)">Returns</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+</div><!-- end .sb-page -->
+{% endif %}
+
+<script>
+  /* ── Variant data from Liquid ── */
+  const SB_VARIANTS = {
+    {% for variant in product.variants %}
+    "{{ variant.option1 | downcase | remove: ' ' }}": {
+      id: {{ variant.id }},
+      image: "{% if variant.image %}{{ variant.image | image_url: width: 900 }}{% else %}{{ product.featured_image | image_url: width: 900 }}{% endif %}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  };
+  let sbCurrentVariantId = {{ current_variant.id }};
+
+  /* ── Cart actions ── */
+  function sbAddToCart() {
+    const btn = document.querySelector('.sb-btn-main');
+    if (btn) { btn.disabled = true; btn.textContent = 'Adding…'; }
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items: [{ id: sbCurrentVariantId, quantity: 1 }] })
+    })
+    .then(r => r.json())
+    .then(() => { window.location.href = '/cart'; })
+    .catch(() => {
+      if (btn) { btn.disabled = false; btn.textContent = '{{ section.settings.btn_atc }}'; }
+      alert('Could not add to cart. Please try again.');
+    });
+  }
+
+  function sbBuyNow() {
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items: [{ id: sbCurrentVariantId, quantity: 1 }] })
+    })
+    .then(() => { window.location.href = '/checkout'; })
+    .catch(() => alert('Could not proceed to checkout. Please try again.'));
+  }
+
+  /* ── Hero image / colour swap ── */
+  function sbSwp(el, src) {
+    const hero = document.getElementById('sbHeroImg');
+    const video = document.getElementById('sbHeroVideo');
+    if (hero) { hero.src = src; }
+    if (video) { video.style.display = 'none'; if (hero) hero.style.display = 'block'; }
+    document.querySelectorAll('.sb-thumb').forEach(t => t.classList.remove('active'));
+    if (el) el.classList.add('active');
+  }
+
+  function sbSetColor(c, el, variantId) {
+    document.querySelectorAll('.sw').forEach(s => s.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('sbSwName').textContent = el.getAttribute('data-name') || (c.charAt(0).toUpperCase() + c.slice(1));
+    sbCurrentVariantId = variantId;
+    const v = SB_VARIANTS[c];
+    if (v && v.image) { sbSwp(null, v.image); }
+  }
+
+  /* ── Audience tabs ── */
+  function sbTab(btn, id) {
+    document.querySelectorAll('.sb-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.sb-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    const panel = document.getElementById(id);
+    if (panel) panel.classList.add('active');
+  }
+
+  /* ── FAQ accordion ── */
+  function sbFaq(btn) {
+    const item = btn.parentElement;
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.sb-faq-item').forEach(i => i.classList.remove('open'));
+    if (!open) item.classList.add('open');
+  }
+
+  /* ── Scroll reveal ── */
+  const sbObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('v'); sbObs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.r').forEach(el => sbObs.observe(el));
+</script>
+
+{% schema %}
+{
+  "name": "SafeBuds Landing Page",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "SafeBuds product"
+    },
+    {
+      "type": "header",
+      "content": "Announcement Bar"
+    },
+    {
+      "type": "text",
+      "id": "ann_highlight",
+      "label": "Highlight text (bold)",
+      "default": "₹200 off"
+    },
+    {
+      "type": "text",
+      "id": "ann_body",
+      "label": "Announcement body",
+      "default": "all prepaid orders · Free shipping · Delivered in 4–5 days"
+    },
+    {
+      "type": "header",
+      "content": "Hero Section"
+    },
+    {
+      "type": "text",
+      "id": "hero_badge",
+      "label": "Badge text",
+      "default": "Open ear · AI inside · 9 grams"
+    },
+    {
+      "type": "text",
+      "id": "hero_h1_line1",
+      "label": "Headline line 1",
+      "default": "Your ears open."
+    },
+    {
+      "type": "text",
+      "id": "hero_h1_prefix",
+      "label": "Headline line 2 (before emphasis)",
+      "default": "Your world"
+    },
+    {
+      "type": "text",
+      "id": "hero_h1_em",
+      "label": "Headline line 2 (emphasis — shown in teal)",
+      "default": "intact."
+    },
+    {
+      "type": "text",
+      "id": "hero_h1_line3",
+      "label": "Headline line 3",
+      "default": "35 hours."
+    },
+    {
+      "type": "textarea",
+      "id": "hero_sub",
+      "label": "Hero subtext",
+      "default": "SafeBuds rest outside your ear canal — nothing goes inside. You hear your music and your room at the same time. And with SphereLingo™ AI, they translate conversations and take your meeting notes too."
+    },
+    {
+      "type": "text",
+      "id": "price_note",
+      "label": "Price note",
+      "default": "incl. taxes"
+    },
+    {
+      "type": "text",
+      "id": "prepaid_text",
+      "label": "Prepaid offer line",
+      "default": "Pay prepaid → ₹2,799 (₹200 off instantly)"
+    },
+    {
+      "type": "text",
+      "id": "hero_video_url",
+      "label": "Hero video URL (optional — replaces static image)",
+      "info": "Paste a Shopify Files MP4 URL or leave blank to show product image. Video should be under 15s, muted, landscape."
+    },
+    {
+      "type": "header",
+      "content": "Audience Panel Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "panel_wfh_image",
+      "label": "WFH Pro panel image"
+    },
+    {
+      "type": "image_picker",
+      "id": "panel_bridge_image",
+      "label": "Multilingual panel image"
+    },
+    {
+      "type": "image_picker",
+      "id": "panel_entertain_image",
+      "label": "Entertainment panel image"
+    },
+    {
+      "type": "image_picker",
+      "id": "panel_parent_image",
+      "label": "Parent panel image"
+    },
+    {
+      "type": "image_picker",
+      "id": "packaging_image",
+      "label": "Packaging image (Partnership section)"
+    },
+    {
+      "type": "header",
+      "content": "Four Pillars"
+    },
+    {
+      "type": "text",
+      "id": "pillar1_icon",
+      "label": "Pillar 1 icon (emoji)",
+      "default": "👂"
+    },
+    {
+      "type": "text",
+      "id": "pillar1_title",
+      "label": "Pillar 1 title",
+      "default": "Open Ear Design"
+    },
+    {
+      "type": "textarea",
+      "id": "pillar1_body",
+      "label": "Pillar 1 body",
+      "default": "The hook sits over your ear. The driver rests outside your canal at the tragus. Nothing inside. No pressure. No heat. No infections. Wear it all day."
+    },
+    {
+      "type": "text",
+      "id": "pillar2_icon",
+      "label": "Pillar 2 icon (emoji)",
+      "default": "🎙"
+    },
+    {
+      "type": "text",
+      "id": "pillar2_title",
+      "label": "Pillar 2 title",
+      "default": "Call-Grade Mic"
+    },
+    {
+      "type": "textarea",
+      "id": "pillar2_body",
+      "label": "Pillar 2 body",
+      "default": "Quad ENC microphones at −32dB isolate your voice from everything around you. Your team hears you clearly on Zoom, Teams, and Meet — every call, all day."
+    },
+    {
+      "type": "text",
+      "id": "pillar3_icon",
+      "label": "Pillar 3 icon (emoji)",
+      "default": "🌐"
+    },
+    {
+      "type": "text",
+      "id": "pillar3_title",
+      "label": "Pillar 3 title",
+      "default": "SphereLingo™ AI"
+    },
+    {
+      "type": "textarea",
+      "id": "pillar3_body",
+      "label": "Pillar 3 body",
+      "default": "Live translation in 100+ languages and real-time meeting notes — powered by the free WeHear app. The only earbuds in India with this at ₹2,999."
+    },
+    {
+      "type": "text",
+      "id": "pillar4_icon",
+      "label": "Pillar 4 icon (emoji)",
+      "default": "🎵"
+    },
+    {
+      "type": "text",
+      "id": "pillar4_title",
+      "label": "Pillar 4 title",
+      "default": "Rich Open Audio"
+    },
+    {
+      "type": "textarea",
+      "id": "pillar4_body",
+      "label": "Pillar 4 body",
+      "default": "12×17mm driver delivers clear, full-range sound for music, shows, and gaming — while you still hear the world around you. Custom EQ via app."
+    },
+    {
+      "type": "header",
+      "content": "Reviews Summary"
+    },
+    {
+      "type": "text",
+      "id": "review_score",
+      "label": "Star rating score",
+      "default": "4.8"
+    },
+    {
+      "type": "text",
+      "id": "review_count",
+      "label": "Review count label",
+      "default": "38 reviews"
+    },
+    {
+      "type": "header",
+      "content": "Final CTA Section"
+    },
+    {
+      "type": "text",
+      "id": "final_h2_line1",
+      "label": "Final headline line 1",
+      "default": "Open ear. AI inside."
+    },
+    {
+      "type": "text",
+      "id": "final_h2_em",
+      "label": "Final headline line 2 (emphasis)",
+      "default": "35 hours."
+    },
+    {
+      "type": "textarea",
+      "id": "final_sub",
+      "label": "Final CTA subtext",
+      "default": "The earbuds that keep your ears open, your meetings noted, and your world audible — all at the same time. Nothing quite like it at ₹2,999."
+    },
+    {
+      "type": "header",
+      "content": "Button Labels"
+    },
+    {
+      "type": "text",
+      "id": "btn_atc",
+      "label": "Add to Cart button text",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "text",
+      "id": "btn_buy",
+      "label": "Buy Now button text",
+      "default": "Buy Now with UPI / Card"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    },
+    {
+      "type": "review",
+      "name": "Review Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "reviewer_initial",
+          "label": "Reviewer initial (shown as avatar)",
+          "default": "R"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Review text (include quotes)"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Reviewer name",
+          "default": "Rohan M."
+        },
+        {
+          "type": "text",
+          "id": "location",
+          "label": "Location + verified label",
+          "default": "Bangalore · Verified buyer"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Use-case tag",
+          "default": "All-Day Calls"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "SafeBuds Landing Page"
+    }
+  ]
+}
+{% endschema %}
