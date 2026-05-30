@@ -632,26 +632,6 @@
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="sb-faq sb-sec">
-  <div class="sb-wrap">
-    <div class="sb-faq-wrap">
-      <div class="sb-faq-head r">
-        <span class="sb-lbl">Before you buy</span>
-        <h2>Honest answers.</h2>
-      </div>
-      <div class="r">
-        {% for block in faq_blocks %}
-          <div class="sb-faq-item" {{ block.shopify_attributes }}>
-            <button class="sb-faq-q" onclick="sbFaq(this)">{{ block.settings.question }} <span class="sb-faq-ic">+</span></button>
-            <div class="sb-faq-a"><p>{{ block.settings.answer }}</p></div>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FINAL CTA -->
 <section class="sb-final" id="sb-final-buy">
   <div class="sb-wrap">
@@ -687,6 +667,61 @@
       <div class="sb-ugc-ph"><span>📸</span>UGC / Lifestyle 4</div>
       <div class="sb-ugc-ph"><span>📸</span>UGC / Lifestyle 5</div>
       <div class="sb-ugc-ph"><span>📸</span>UGC / Lifestyle 6</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sb-faq sb-sec">
+  <div class="sb-wrap">
+    <div class="sb-faq-wrap">
+      <div class="sb-faq-head r">
+        <span class="sb-lbl">Before you buy</span>
+        <h2>Honest answers.</h2>
+      </div>
+      <div class="r">
+        <div class="sb-faq-item">
+          <button class="sb-faq-q" onclick="sbFaq(this)">Will my colleagues hear me clearly on Zoom and Teams? <span class="sb-faq-ic">+</span></button>
+          <div class="sb-faq-a"><p>Yes. SafeBuds has quad ENC microphones at −32dB — isolates your voice from background noise on every call. Verified on Zoom, Teams, and Google Meet.</p></div>
+        </div>
+        <div class="sb-faq-item">
+          <button class="sb-faq-q" onclick="sbFaq(this)">Nothing is in my ear — will the sound be weak or thin? <span class="sb-faq-ic">+</span></button>
+          <div class="sb-faq-a"><p>The 12×17mm driver is built for air conduction delivery. Sound is full and clear for music, calls, and entertainment. Custom EQ in the WeHear app lets you tune bass and treble. It isn't identical to a sealed in-ear monitor — it was designed to be different, not lesser.</p></div>
+        </div>
+        <div class="sb-faq-item">
+          <button class="sb-faq-q" onclick="sbFaq(this)">Does SphereLingo™ cost extra? Is there a subscription? <span class="sb-faq-ic">+</span></button>
+          <div class="sb-faq-a"><p>No subscription. Translation and live note-taking are included. The WeHear app is free on iOS and Android.</p></div>
+        </div>
+        <div class="sb-faq-item">
+          <button class="sb-faq-q" onclick="sbFaq(this)">What if it doesn't fit my ear or I don't like it? <span class="sb-faq-ic">+</span></button>
+          <div class="sb-faq-a"><p>SafeBuds includes S/M/L silicone ear hooks so fit adapts to different ear shapes. If anything still feels off — 7-day no-questions-asked returns. Email support@ngearsafe.com, we arrange pickup and full refund. 1-year warranty covers the rest.</p></div>
+        </div>
+        <div class="sb-faq-item">
+          <button class="sb-faq-q" onclick="sbFaq(this)">Is this bone conduction? <span class="sb-faq-ic">+</span></button>
+          <div class="sb-faq-a"><p>No. SafeBuds are open-ear air conduction earbuds. The 12×17mm driver rests outside your ear canal at the tragus — not on your cheekbone. You get richer, fuller sound than bone conduction, while keeping your ears completely unblocked.</p></div>
+        </div>
+        <div class="sb-faq-item">
+          <button class="sb-faq-q" onclick="sbFaq(this)">What is the Bluetooth range and battery life? <span class="sb-faq-ic">+</span></button>
+          <div class="sb-faq-a"><p>Bluetooth 5.4 with up to 10m range. The buds carry 9 hours per charge; the case holds 26 more — 35 hours total. USB-C charging, 1 hour to full. 60-hour standby.</p></div>
+        </div>
+        <div class="sb-faq-item">
+          <button class="sb-faq-q" onclick="sbFaq(this)">How is SafeBuds different from regular open-ear sports earphones? <span class="sb-faq-ic">+</span></button>
+          <div class="sb-faq-a"><p>Most open-ear sports earphones are designed for the gym — they lack mic quality for calls and have no AI features. SafeBuds is built for all-day professional use: quad ENC mic, 35-hour battery, and SphereLingo™ AI for live translation and meeting notes. Nothing else like it at ₹2,999.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMER REVIEWS (Judge.me) -->
+<section class="sb-sec" style="background:#fff;">
+  <div class="sb-wrap">
+    <div style="text-align:center;margin-bottom:40px;" class="r">
+      <span class="sb-lbl">Verified buyers</span>
+      <h2>What customers are saying.</h2>
+    </div>
+    <div class="r">
+      {% render 'judgeme_widgets', widget_type: 'judgeme_all_reviews', concierge_install: true, product: product %}
     </div>
   </div>
 </section>
