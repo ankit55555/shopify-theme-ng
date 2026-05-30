@@ -8,17 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=Lora:ital@1&display=swap" rel="stylesheet"/>
 
 <style>
-  /* Hide Kalles theme chrome — header, announcement bar, footer */
-  #shopify-section-announcement-bar,
-  #shopify-section-top-bar,
-  #shopify-section-header-inline,
-  #shopify-section-header-sidebar,
-  #shopify-section-header-bottom,
-  #shopify-section-header-categories-menu,
-  #shopify-section-header-vertical,
-  #t4s-footer { display: none !important; }
-  #MainContent { padding-top: 0 !important; margin-top: 0 !important; }
-
   :root {
     --navy:  #102442;
     --ocean: #39869b;
@@ -44,16 +33,6 @@
   .sb-ann { background: var(--navy); color: rgba(255,255,255,.65); text-align: center; padding: 9px 16px; font-size: 13px; }
   .sb-ann strong { color: var(--cyan); }
 
-  /* NAV */
-  .sb-nav { position: sticky; top: 0; z-index: 99; background: rgba(244,244,242,.95); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(16,36,66,.07); padding: 13px 0; }
-  .sb-nav-inner { display: flex; align-items: center; justify-content: space-between; }
-  .sb-nav-logo { font-size: 15px; font-weight: 500; }
-  .sb-nav-logo small { display: block; font-size: 10px; color: var(--ocean); letter-spacing: .06em; text-transform: uppercase; font-weight: 400; }
-  .sb-nav-right { display: flex; align-items: center; gap: 14px; }
-  .sb-nav-price { font-size: 14px; font-weight: 500; }
-  .sb-nav-btn { background: var(--navy); color: #fff; padding: 9px 22px; border-radius: 50px; font-size: 13px; font-weight: 500; transition: background .15s; cursor: pointer; border: none; }
-  .sb-nav-btn:hover { background: #1d3a60; }
-
   /* HERO */
   .sb-hero { background: var(--chalk); padding: clamp(48px,7vw,88px) 0 0; }
   .sb-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px,5vw,72px); align-items: start; }
@@ -64,8 +43,7 @@
   .sb-price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
   .sb-price-big { font-size: clamp(30px,3.5vw,40px); font-weight: 500; letter-spacing: -.02em; }
   .sb-price-note { font-size: 13px; color: #6a8090; }
-  .sb-prepaid { display: inline-flex; align-items: center; gap: 5px; background: #edf7ed; color: #2e7d32; border-radius: 6px; padding: 4px 10px; font-size: 12px; font-weight: 500; margin-bottom: 22px; }
-  .sb-color-row { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; }
+.sb-color-row { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; }
   .sb-color-lbl { font-size: 12px; color: #6a8090; text-transform: uppercase; letter-spacing: .06em; }
   .sw { width: 28px; height: 28px; border-radius: 50%; border: 2px solid transparent; cursor: pointer; transition: all .15s; }
   .sw.active { border-color: var(--ocean); box-shadow: 0 0 0 2px rgba(57,134,155,.2); }
@@ -95,15 +73,6 @@
   .sb-fc-ent-ico { width: 36px; height: 36px; border-radius: 9px; background: var(--frost); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
   .sb-fc-ent-txt strong { display: block; font-size: 13px; }
   .sb-fc-ent-txt span { font-size: 11px; color: #6a8090; }
-
-  /* Shark Tank badge */
-  .st-badge { display: inline-flex; align-items: center; gap: 10px; background: #fff; border: 1.5px solid rgba(16,36,66,.1); border-radius: 10px; padding: 9px 16px; margin-top: 12px; box-shadow: 0 2px 12px rgba(16,36,66,.07); }
-  .st-seen { font-size: 10px; color: #6a8090; text-transform: uppercase; letter-spacing: .08em; }
-  .st-logo { display: flex; align-items: center; gap: 6px; }
-  .st-shark { width: 28px; height: 28px; flex-shrink: 0; }
-  .st-text { line-height: 1.15; }
-  .st-text strong { display: block; font-size: 13px; font-weight: 500; color: #0a2540; letter-spacing: .01em; }
-  .st-text span { font-size: 10px; color: #e63329; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }
 
   @media(max-width:900px) { .sb-hero-grid { grid-template-columns: 1fr; } .sb-hero-img-wrap { order: -1; } .sb-fc { display: none; } }
 
@@ -255,18 +224,19 @@
   .sb-final-gs { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
   .sb-fg { font-size: 12.5px; color: rgba(255,255,255,.4); display: flex; align-items: center; gap: 5px; }
 
-  /* FOOTER */
-  .sb-footer { background: #091520; padding: 40px 0 24px; }
-  .sb-foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; margin-bottom: 36px; }
-  .sb-foot-logo { font-size: 15px; font-weight: 500; color: #fff; }
-  .sb-foot-logo small { display: block; font-size: 10px; color: var(--cyan); letter-spacing: .08em; text-transform: uppercase; margin-top: 2px; font-weight: 400; }
-  .sb-footer p.about { font-size: 13px; color: rgba(255,255,255,.35); line-height: 1.65; margin-top: 12px; max-width: 240px; }
-  .sb-foot-col h5 { font-size: 11px; color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 14px; }
-  .sb-foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-  .sb-foot-col a { font-size: 13px; color: rgba(255,255,255,.45); transition: color .15s; }
-  .sb-foot-col a:hover { color: #fff; }
-  .sb-foot-bottom { border-top: 1px solid rgba(255,255,255,.07); padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12px; color: rgba(255,255,255,.3); }
-  @media(max-width:640px) { .sb-foot-grid { grid-template-columns: 1fr 1fr; } }
+  /* UGC COLLAGE */
+  .sb-ugc { background: var(--chalk); padding: clamp(40px,5vw,64px) 0; }
+  .sb-ugc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 28px; }
+  .sb-ugc-ph { aspect-ratio: 1/1; background: var(--frost); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; color: var(--ocean); font-size: 12px; font-weight: 500; border: 1.5px dashed rgba(57,134,155,.3); }
+  .sb-ugc-ph span { font-size: 22px; }
+  @media(max-width:600px) { .sb-ugc-grid { grid-template-columns: repeat(2,1fr); } }
+
+  /* Shark Tank logo badge */
+  .st-badge { display: inline-flex; align-items: center; gap: 10px; background: #fff; border: 1.5px solid rgba(16,36,66,.1); border-radius: 10px; padding: 9px 16px; margin-top: 12px; box-shadow: 0 2px 12px rgba(16,36,66,.07); }
+  .st-seen { font-size: 10px; color: #6a8090; text-transform: uppercase; letter-spacing: .08em; }
+  .st-logo-block { background: #000; padding: 5px 8px 4px; border-radius: 5px; line-height: 1; display: inline-block; }
+  .st-stname { font-size: 13px; font-weight: 900; background: linear-gradient(180deg, #5bbfdb 0%, #1565c0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: italic; letter-spacing: -.01em; line-height: 1.1; }
+  .st-india-txt { font-size: 13px; font-weight: 900; color: #ffe600; font-style: italic; letter-spacing: .04em; margin-top: 1px; }
 
   /* REVEAL */
   .r { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
@@ -284,19 +254,6 @@
 <!-- ANNOUNCEMENT -->
 <div class="sb-ann"><strong>{{ section.settings.ann_highlight }}</strong> {{ section.settings.ann_body }}</div>
 
-<!-- NAV -->
-<nav class="sb-nav">
-  <div class="sb-wrap">
-    <div class="sb-nav-inner">
-      <div class="sb-nav-logo">NG EarSafe <small>Open ear since 2020</small></div>
-      <div class="sb-nav-right">
-        <span class="sb-nav-price">{{ product.price | money }}</span>
-        <button class="sb-nav-btn" onclick="sbAddToCart()">Buy Now</button>
-      </div>
-    </div>
-  </div>
-</nav>
-
 <!-- HERO -->
 <section class="sb-hero">
   <div class="sb-wrap">
@@ -311,8 +268,6 @@
           <span class="sb-price-big">{{ product.price | money }}</span>
           <span class="sb-price-note">{{ section.settings.price_note }}</span>
         </div>
-        <div class="sb-prepaid">✦ {{ section.settings.prepaid_text }}</div>
-
         <div class="sb-color-row">
           <span class="sb-color-lbl">Colour</span>
           {% for variant in product.variants %}
@@ -372,16 +327,9 @@
         <!-- Shark Tank Badge -->
         <div class="st-badge">
           <span class="st-seen">Seen on</span>
-          <div class="st-logo">
-            <svg class="st-shark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M8 27 C11 23 17 17 21 11 C24 6 29 4 34 7 C30 12 28 18 30 23 L35 27 Z" fill="#102442" opacity=".8"/>
-              <line x1="3" y1="27" x2="37" y2="27" stroke="#102442" stroke-width="2" stroke-linecap="round"/>
-              <path d="M2 30 Q9 27 16 30 Q23 33 30 30 Q34 28 38 30" stroke="#39869b" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-            </svg>
-            <div class="st-text">
-              <strong>WeHear</strong>
-              <span>Shark Tank India</span>
-            </div>
+          <div class="st-logo-block">
+            <div class="st-stname">SHARK<br>TANK</div>
+            <div class="st-india-txt">INDIA</div>
           </div>
         </div>
       </div>
@@ -433,58 +381,6 @@
         <div class="ic">{{ section.settings.pillar4_icon }}</div>
         <strong>{{ section.settings.pillar4_title }}</strong>
         <p>{{ section.settings.pillar4_body }}</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- NG × WEHEAR PARTNERSHIP -->
-<section class="sb-partner sb-sec">
-  <div class="sb-wrap">
-    <div class="sb-partner-grid">
-      <div class="r">
-        <span class="sb-lbl">The story behind SafeBuds</span>
-        <h2>Two Indian brands.<br>One <em>breakthrough.</em></h2>
-        <p class="sb-partner-lead">India's open ear pioneer meets the AI audio company that pitched on Shark Tank India. This is what they built together.</p>
-        <div class="sb-partner-cards">
-          <div class="sb-pcard">
-            <div class="sb-pcard-mark ng">NG</div>
-            <div>
-              <strong>NG EarSafe</strong>
-              <p>Five years building India's only open-ear product line — hardware engineered around how ears actually work. Nothing inside the canal, ever.</p>
-            </div>
-          </div>
-          <div class="sb-pcard">
-            <div class="sb-pcard-mark wh">WH</div>
-            <div>
-              <strong>WeHear <span class="shark-badge-inline">🦈 Shark Tank India</span></strong>
-              <p>AI live translation and meeting transcription — built in India, speaking 100+ languages. WeHear's SphereLingo™ platform caught the attention of Shark Tank India. Then they found NG EarSafe.</p>
-            </div>
-          </div>
-        </div>
-        <blockquote class="sb-partner-quote">
-          "We built the ear. They built the brain. SafeBuds is what India gets when two product-first startups stop working in isolation."
-          <cite>— NG EarSafe × WeHear, 2025</cite>
-        </blockquote>
-      </div>
-      <div class="r">
-        <div class="sb-partner-img-box">
-          {% if section.settings.packaging_image != blank %}
-            <img src="{{ section.settings.packaging_image | image_url: width: 800 }}" alt="SafeBuds packaging"/>
-          {% elsif product.images[6] %}
-            <img src="{{ product.images[6] | image_url: width: 800 }}" alt="SafeBuds packaging"/>
-          {% endif %}
-          <div class="sb-partner-stamp">
-            <span class="ps-line1">NG × WeHear</span>
-            <span class="ps-line2">SafeBuds</span>
-            <span class="ps-line3">Born in India · Built for the world</span>
-          </div>
-        </div>
-        <div class="sb-partner-stats">
-          <div class="sb-pstat"><strong>5</strong><span>Years open ear R&D by NG</span></div>
-          <div class="sb-pstat"><strong>100+</strong><span>Languages via SphereLingo™</span></div>
-          <div class="sb-pstat"><strong>1</strong><span>Product that merges both</span></div>
-        </div>
       </div>
     </div>
   </div>
@@ -610,7 +506,7 @@
     <div class="sb-cmp-table r">
       <div class="sb-cmp-row head-row">
         <div class="cc"></div>
-        <div class="cc">AirPods / TWS</div>
+        <div class="cc">In-Ear Earphones</div>
         <div class="cc">SafeBuds <small>{{ product.price | money }}</small></div>
       </div>
       <div class="sb-cmp-row">
@@ -686,6 +582,51 @@
   </div>
 </section>
 
+<!-- NG × WEHEAR PARTNERSHIP -->
+<section class="sb-partner sb-sec">
+  <div class="sb-wrap">
+    <div class="sb-partner-grid">
+      <div class="r">
+        <span class="sb-lbl">The story behind SafeBuds</span>
+        <h2>Two Indian brands.<br>One <em>breakthrough.</em></h2>
+        <p class="sb-partner-lead">India's open ear pioneer meets the AI audio company that pitched on Shark Tank India. This is what they built together.</p>
+        <div class="sb-partner-cards">
+          <div class="sb-pcard">
+            <div class="sb-pcard-mark ng">NG</div>
+            <div>
+              <strong>NG EarSafe</strong>
+              <p>Five years building India's only open-ear product line — hardware engineered around how ears actually work. Nothing inside the canal, ever.</p>
+            </div>
+          </div>
+          <div class="sb-pcard">
+            <div class="sb-pcard-mark wh">WH</div>
+            <div>
+              <strong>WeHear <span class="shark-badge-inline">🦈 Shark Tank India</span></strong>
+              <p>AI live translation and meeting transcription — built in India, speaking 100+ languages. WeHear's SphereLingo™ platform caught the attention of Shark Tank India. Then they found NG EarSafe.</p>
+            </div>
+          </div>
+        </div>
+        <blockquote class="sb-partner-quote">
+          "We built the ear. They built the brain. SafeBuds is what India gets when two product-first startups stop working in isolation."
+          <cite>— NG EarSafe × WeHear, 2025</cite>
+        </blockquote>
+      </div>
+      <div class="r">
+        <div class="sb-partner-img-box" style="min-height:280px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:var(--cyan);font-size:13px;font-weight:500;">
+          <span style="font-size:32px;">🖼</span>
+          <span>Brand / Partnership image</span>
+          <span style="font-size:11px;color:rgba(255,255,255,.3);font-weight:400;">Upload via Theme Customizer → Packaging image</span>
+        </div>
+        <div class="sb-partner-stats">
+          <div class="sb-pstat"><strong>5</strong><span>Years open ear R&D by NG</span></div>
+          <div class="sb-pstat"><strong>100+</strong><span>Languages via SphereLingo™</span></div>
+          <div class="sb-pstat"><strong>1</strong><span>Product that merges both</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="sb-faq sb-sec">
   <div class="sb-wrap">
@@ -712,8 +653,7 @@
     <div class="sb-final-inner r">
       <h2>{{ section.settings.final_h2_line1 }}<br><em>{{ section.settings.final_h2_em }}</em></h2>
       <p>{{ section.settings.final_sub }}</p>
-      <div class="sb-final-price">{{ product.price | money }} <span>— or {{ product.price | minus: 200 | money }} prepaid</span></div>
-      <div class="sb-final-pre">Save <strong>₹200</strong> instantly on prepaid</div>
+      <div class="sb-final-price">{{ product.price | money }}</div>
       <div class="sb-final-btns">
         <button class="sb-fbm" onclick="sbAddToCart()">{{ section.settings.btn_atc }}</button>
         <button class="sb-fbo" onclick="sbBuyNow()">{{ section.settings.btn_buy }} →</button>
@@ -728,41 +668,23 @@
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="sb-footer">
+<!-- UGC COLLAGE -->
+<section class="sb-ugc">
   <div class="sb-wrap">
-    <div class="sb-foot-grid">
-      <div>
-        <div class="sb-foot-logo">NG EarSafe <small>Open ear since 2020</small></div>
-        <p class="about">India's open ear brand. One belief: the way we've been listening is hurting us — and there's a better way.</p>
-      </div>
-      <div class="sb-foot-col">
-        <h5>Products</h5>
-        <ul>
-          <li><a href="/products/ngwehear">SafeBuds</a></li>
-          <li><a href="/products/noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0">Comm 2.0</a></li>
-          <li><a href="/collections/all">All Products</a></li>
-        </ul>
-      </div>
-      <div class="sb-foot-col">
-        <h5>Help</h5>
-        <ul>
-          <li><a href="/pages/track-order">Track Order</a></li>
-          <li><a href="/policies/refund-policy">Returns</a></li>
-          <li><a href="/pages/warranty">Warranty</a></li>
-          <li><a href="/pages/contact">Contact</a></li>
-        </ul>
-      </div>
+    <div class="r" style="text-align:center;margin-bottom:8px;">
+      <span class="sb-lbl">Real people. Real ears.</span>
+      <h2>From our community.</h2>
     </div>
-    <div class="sb-foot-bottom">
-      <span>© {{ 'now' | date: '%Y' }} {{ shop.name }} · {{ shop.email }}</span>
-      <span>
-        <a href="{{ shop.privacy_policy.url }}" style="margin-right:12px;color:rgba(255,255,255,.3)">Privacy</a>
-        <a href="{{ shop.refund_policy.url }}" style="color:rgba(255,255,255,.3)">Returns</a>
-      </span>
+    <div class="sb-ugc-grid r">
+      <div class="sb-ugc-ph"><span>📸</span>UGC / Lifestyle 1</div>
+      <div class="sb-ugc-ph"><span>📸</span>UGC / Lifestyle 2</div>
+      <div class="sb-ugc-ph"><span>📸</span>UGC / Lifestyle 3</div>
+      <div class="sb-ugc-ph"><span>📸</span>UGC / Lifestyle 4</div>
+      <div class="sb-ugc-ph"><span>📸</span>UGC / Lifestyle 5</div>
+      <div class="sb-ugc-ph"><span>📸</span>UGC / Lifestyle 6</div>
     </div>
   </div>
-</footer>
+</section>
 
 </div><!-- end .sb-page -->
 {% endif %}
@@ -771,12 +693,14 @@
   /* ── Variant data from Liquid ── */
   const SB_VARIANTS = {
     {% for variant in product.variants %}
-    "{{ variant.option1 | downcase | remove: ' ' }}": {
-      id: {{ variant.id }},
-      image: "{% if variant.image %}{{ variant.image | image_url: width: 900 }}{% else %}{{ product.featured_image | image_url: width: 900 }}{% endif %}"
-    }{% unless forloop.last %},{% endunless %}
+    "{{ variant.option1 | downcase | remove: ' ' }}": { id: {{ variant.id }} }{% unless forloop.last %},{% endunless %}
     {% endfor %}
   };
+  const SB_ALL_IMAGES = [
+    {% for image in product.images %}
+    { src: "{{ image | image_url: width: 900 }}", thumb: "{{ image | image_url: width: 120 }}", alt: "{{ image.alt | escape }}", vids: [{% assign img_vids = image.variants | map: 'id' %}{% for vid in img_vids %}{{ vid }}{% unless forloop.last %},{% endunless %}{% endfor %}] }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
   let sbCurrentVariantId = {{ current_variant.id }};
 
   /* ── Cart actions ── */
@@ -819,10 +743,16 @@
   function sbSetColor(c, el, variantId) {
     document.querySelectorAll('.sw').forEach(s => s.classList.remove('active'));
     el.classList.add('active');
-    document.getElementById('sbSwName').textContent = el.getAttribute('data-name') || (c.charAt(0).toUpperCase() + c.slice(1));
+    document.getElementById('sbSwName').textContent = c.charAt(0).toUpperCase() + c.slice(1);
     sbCurrentVariantId = variantId;
-    const v = SB_VARIANTS[c];
-    if (v && v.image) { sbSwp(null, v.image); }
+    const imgs = SB_ALL_IMAGES.filter(img => img.vids.length === 0 || img.vids.includes(variantId));
+    if (imgs.length > 0) {
+      sbSwp(null, imgs[0].src);
+      const tc = document.querySelector('.sb-thumbs');
+      if (tc) tc.innerHTML = imgs.map((img, i) =>
+        `<img class="sb-thumb${i===0?' active':''}" src="${img.thumb}" onclick="sbSwp(this,'${img.src}')" alt="${img.alt}"/>`
+      ).join('');
+    }
   }
 
   /* ── Audience tabs ── */
