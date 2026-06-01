@@ -2452,65 +2452,46 @@
           "mg_mb": ",,30px,",
           "pd_mb": ""
         }
+      },
+      "safebuds-lp": {
+        "type": "safebuds-lp",
+        "settings": {
+          "product": "",
+          "ann_highlight": "₹200 off",
+          "ann_body": "all prepaid orders · Free shipping · Delivered in 4–5 days",
+          "hero_badge": "Open ear · AI inside · 9 grams",
+          "hero_h1_line1": "Your ears open.",
+          "hero_h1_prefix": "Your world",
+          "hero_h1_em": "intact.",
+          "hero_h1_line3": "30 hours.",
+          "hero_sub": "SafeBuds rest outside your ear canal — nothing goes inside. You hear your music and your room at the same time. And with SphereLingo™ AI, they translate conversations and take your meeting notes too.",
+          "price_note": "incl. taxes",
+          "prepaid_text": "Pay prepaid → ₹2,799 (₹200 off instantly)",
+          "hero_video_url": "",
+          "pillar1_icon": "👂",
+          "pillar1_title": "Open Ear Design",
+          "pillar1_body": "The hook sits over your ear. The driver rests outside your canal at the tragus. Nothing inside. No pressure. No heat. No infections. Wear it all day.",
+          "pillar2_icon": "🎙",
+          "pillar2_title": "Call-Grade Mic",
+          "pillar2_body": "Quad ENC microphones at −32dB isolate your voice from everything around you. Your team hears you clearly on Zoom, Teams, and Meet — every call, all day.",
+          "pillar3_icon": "🌐",
+          "pillar3_title": "SphereLingo™ AI",
+          "pillar3_body": "Live translation in 100+ languages and real-time meeting notes — powered by the free WeHear app. The only earbuds in India with this at ₹2,999.",
+          "pillar4_icon": "🎵",
+          "pillar4_title": "Rich Open Audio",
+          "pillar4_body": "12×17mm driver delivers clear, full-range sound for music, shows, and gaming — while you still hear the world around you. Custom EQ via app.",
+          "review_score": "4.8",
+          "review_count": "38 reviews",
+          "final_h2_line1": "Open ear. AI inside.",
+          "final_h2_em": "35 hours.",
+          "final_sub": "The earbuds that keep your ears open, your meetings noted, and your world audible — all at the same time. Nothing quite like it at ₹2,999.",
+          "btn_atc": "Add to Cart",
+          "btn_buy": "Buy Now with UPI / Card"
+        }
       }
     },
     "content_for_index": [],
     "blocks": {
-      "4090771392943522038": {
-        "type": "shopify://apps/toastibar-sales-popup/blocks/app-embed/28a475c6-f06d-46d4-b40a-df8d869255ef",
-        "disabled": false,
-        "settings": {}
-      },
-      "2538754702463810051": {
-        "type": "shopify://apps/sale-by-wizz/blocks/wizz_sale/cb67c40d-1985-4671-a8ba-9fcd0d4ad990",
-        "disabled": true,
-        "settings": {}
-      },
-      "3973909653238217764": {
-        "type": "shopify://apps/bold-discounts-the-sales-app/blocks/v3_sales_clock/22ca27ee-084f-4527-b863-69a3cd4c8b2c",
-        "disabled": false,
-        "settings": {
-          "inject-clock-in": "form[action='/cart/add']",
-          "enable-sales-clock-on-other-pages": false,
-          "inject-clock-in-other": ".shopify-section.section",
-          "product_id": "0",
-          "append-at-end": false
-        }
-      },
-      "16337957280554425121": {
-        "type": "shopify://apps/bold-discounts-the-sales-app/blocks/sale-icon-product/22ca27ee-084f-4527-b863-69a3cd4c8b2c",
-        "disabled": true,
-        "settings": {
-          "icon_style": "starburst.svg",
-          "icon_height": 48,
-          "icon_width": 48,
-          "icon_position": "top-left",
-          "icon_style_custom": ".shappify-sales-icon-product {}"
-        }
-      },
-      "2076966522491132125": {
-        "type": "shopify://apps/bold-discounts-the-sales-app/blocks/sale-icon-collection/22ca27ee-084f-4527-b863-69a3cd4c8b2c",
-        "disabled": true,
-        "settings": {
-          "icon_style": "tag.svg",
-          "icon_height": 48,
-          "icon_width": 48,
-          "icon_position": "top-left",
-          "custom_badge_class_selector": ".card__badge { display: none !important; }",
-          "icon_style_custom": ".shappify-sales-icon-product {}"
-        }
-      },
-      "1602517437617170218": {
-        "type": "shopify://apps/bold-discounts-the-sales-app/blocks/v3_sales_icon/22ca27ee-084f-4527-b863-69a3cd4c8b2c",
-        "disabled": true,
-        "settings": {
-          "inject-icon-in": ".product__media.media.media--transparent",
-          "append-at-end": false,
-          "force_absolute": false,
-          "inject-icon-in-collection": ".card__media",
-          "icon_additional_css": "#bold_sales_icon {}"
-        }
-      },
       "11068332061543699368": {
         "type": "shopify://apps/booster-page-speed-optimizer/blocks/app-embed/d920faf3-7c60-423a-9636-22618b5561b5",
         "disabled": false,
@@ -2543,11 +2524,6 @@
         "disabled": false,
         "settings": {}
       },
-      "11901248931489288752": {
-        "type": "shopify://apps/audien-reviews/blocks/audien-reviews/ce002b21-24e0-4d65-87ca-18c9770b24d4",
-        "disabled": true,
-        "settings": {}
-      },
       "9005256451184024879": {
         "type": "shopify://apps/uppromote-affiliate/blocks/customer-referral/64c32457-930d-4cb9-9641-e24c0d9cf1f4",
         "disabled": false,
@@ -2568,11 +2544,6 @@
         "disabled": true,
         "settings": {}
       },
-      "8605505498557855500": {
-        "type": "shopify://apps/bogos-io-free-gift/blocks/app-embed/0432bba6-720a-4e95-be5a-b868386f7aa6",
-        "disabled": false,
-        "settings": {}
-      },
       "13386407466480679122": {
         "type": "shopify://apps/interakt-whatsapp-marketing/blocks/app_embed/8ae4eea6-7869-4909-8446-2f9389fe7a63",
         "disabled": false,
@@ -2581,11 +2552,6 @@
       "5918445685253060206": {
         "type": "shopify://apps/bundler/blocks/bundler-script-append/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
         "disabled": false,
-        "settings": {}
-      },
-      "17183793864293902153": {
-        "type": "shopify://apps/rt-christmas-snowfall-effects/blocks/app-embed/0cf10f7c-3937-48ce-9253-6ac6f06bc961",
-        "disabled": true,
         "settings": {}
       },
       "12973772748516043749": {
