@@ -106,8 +106,7 @@
   .sb-partner-cards { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
   .sb-pcard { display: flex; gap: 16px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; padding: 18px 20px; align-items: flex-start; }
   .sb-pcard-mark { width: 38px; height: 38px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; letter-spacing: .04em; flex-shrink: 0; margin-top: 2px; }
-  .sb-pcard-mark.ng { background: var(--ocean); color: #fff; }
-  .sb-pcard-mark.wh { background: var(--cyan); color: var(--navy); }
+  .sb-pcard-mark.ng, .sb-pcard-mark.wh { background: transparent; padding: 0; }
   .sb-pcard strong { display: block; font-size: 15px; font-weight: 500; color: #fff; margin-bottom: 7px; }
   .sb-pcard p { font-size: 13.5px; color: rgba(255,255,255,.45); line-height: 1.65; }
   .shark-badge-inline { font-size: 11px; background: rgba(230,51,41,.18); color: #ff6b5b; border-radius: 4px; padding: 2px 7px; margin-left: 6px; font-weight: 500; }
@@ -164,7 +163,13 @@
   .bad  { color: #b71c1c; font-size: 13px; }
   .ck { color: #2e7d32; font-size: 16px; margin-right: 4px; }
   .xk { color: #c62828; font-size: 16px; }
-  @media(max-width:560px) { .sb-cmp-row { grid-template-columns: 1fr 1fr; } .cc:nth-child(2) { display: none; } }
+  @media(max-width:600px) {
+    .sb-cmp-table { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .sb-cmp-row { grid-template-columns: 140px 130px 130px; min-width: 400px; }
+    .cc { padding: 11px 12px; font-size: 12px; }
+    .cc:first-child { font-size: 12px; }
+    .sb-cmp-row.head-row { font-size: 11px; }
+  }
 
   /* REVIEWS */
   .sb-revs { background: #fff; }
@@ -324,13 +329,18 @@
         </div>
 
         <!-- Shark Tank Badge -->
-     <a class="st-badge" href="https://youtu.be/l5M6NMpJGQY?si=fxW9O770CiEKXGa1" target="_blank" rel="noopener" aria-label="Watch WeHear on Shark Tank India">
-  <span class="st-seen">Seen on</span>
-  <div class="st-logo-block">
-    <div class="st-stname">SHARK<br>TANK</div>
-    <div class="st-india-txt">INDIA</div>
+        <a class="st-badge" href="https://youtu.be/l5M6NMpJGQY?si=fxW9O770CiEKXGa1" target="_blank" rel="noopener" aria-label="Watch WeHear on Shark Tank India">
+          <span class="st-seen">Seen on</span>
+          <div class="st-logo-block">
+            <div class="st-stname">SHARK<br>TANK</div>
+            <div class="st-india-txt">INDIA</div>
+          </div>
+        </a>
+      </div>
+
+    </div>
   </div>
-</a>
+</section>
 
 <!-- PROOF STRIP -->
 <div class="sb-proof">
@@ -579,21 +589,29 @@
     <div class="sb-partner-grid">
       <div class="r">
         <span class="sb-lbl">The story behind SafeBuds</span>
-        <h2>Two Indian brands. One Vision: Safer Listening<br>One <em>breakthrough.</em></h2>
-        <p class="sb-partner-lead">India's open ear brand meets the hearing aid company that pitched on Shark Tank India. They Built, We ideate.</p>
+        <h2>Two Indian brands.<br>One Vision: <em>Safer Listening.</em></h2>
+        <p class="sb-partner-lead">India's open ear brand meets the hearing tech company that pitched on Shark Tank India. They built the brain. We built the ear.</p>
         <div class="sb-partner-cards">
           <div class="sb-pcard">
-            <div class="sb-pcard-mark ng">NG</div>
+            <div class="sb-pcard-mark ng">
+              {% if section.settings.ng_logo != blank %}
+                <img src="{{ section.settings.ng_logo | image_url: width: 76 }}" width="38" height="38" alt="NG EarSafe" style="width:38px;height:38px;object-fit:contain;border-radius:9px;"/>
+              {% else %}NG{% endif %}
+            </div>
             <div>
               <strong>NG EarSafe</strong>
               <p>Five years building India's only open-ear product line — hardware engineered around how ears actually work. Nothing inside the canal, ever.</p>
             </div>
           </div>
           <div class="sb-pcard">
-            <div class="sb-pcard-mark wh">WH</div>
+            <div class="sb-pcard-mark wh">
+              {% if section.settings.wehear_logo != blank %}
+                <img src="{{ section.settings.wehear_logo | image_url: width: 76 }}" width="38" height="38" alt="WeHear" style="width:38px;height:38px;object-fit:contain;border-radius:9px;"/>
+              {% else %}WH{% endif %}
+            </div>
             <div>
               <strong>WeHear <span class="shark-badge-inline">🦈 Shark Tank India</span></strong>
-              <p>A master engineering team at disposal, Designing PCB's to Software in India with deep expertise in Hearing Aids, Piyush Bansal Funded Shark Tank Company</p>
+              <p>A master engineering team — designing PCBs to software in India, with deep expertise in hearing tech. Piyush Bansal-funded Shark Tank company. They built SphereLingo™. We put it in your ear.</p>
             </div>
           </div>
         </div>
@@ -719,14 +737,13 @@
   /* ── Variant data from Liquid ── */
   const SB_VARIANTS = {
     {% for variant in product.variants %}
-    "{{ variant.option1 | downcase | remove: ' ' }}": { id: {{ variant.id }} }{% unless forloop.last %},{% endunless %}
+    "{{ variant.option1 | downcase | remove: ' ' }}": {
+      id: {{ variant.id }},
+      img: "{% if variant.image %}{{ variant.image | image_url: width: 900 }}{% else %}{{ product.featured_image | image_url: width: 900 }}{% endif %}",
+      thumb: "{% if variant.image %}{{ variant.image | image_url: width: 120 }}{% else %}{{ product.featured_image | image_url: width: 120 }}{% endif %}"
+    }{% unless forloop.last %},{% endunless %}
     {% endfor %}
   };
-  const SB_ALL_IMAGES = [
-    {% for image in product.images %}
-    { src: "{{ image | image_url: width: 900 }}", thumb: "{{ image | image_url: width: 120 }}", alt: "{{ image.alt | escape }}", vids: [{% assign img_vids = image.variants | map: 'id' %}{% for vid in img_vids %}{{ vid }}{% unless forloop.last %},{% endunless %}{% endfor %}] }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  ];
   let sbCurrentVariantId = {{ current_variant.id }};
 
   /* ── Cart actions ── */
@@ -771,13 +788,12 @@
     el.classList.add('active');
     document.getElementById('sbSwName').textContent = c.charAt(0).toUpperCase() + c.slice(1);
     sbCurrentVariantId = variantId;
-    const imgs = SB_ALL_IMAGES.filter(img => img.vids.length === 0 || img.vids.includes(variantId));
-    if (imgs.length > 0) {
-      sbSwp(null, imgs[0].src);
-      const tc = document.querySelector('.sb-thumbs');
-      if (tc) tc.innerHTML = imgs.map((img, i) =>
-        `<img class="sb-thumb${i===0?' active':''}" src="${img.thumb}" onclick="sbSwp(this,'${img.src}')" alt="${img.alt}"/>`
-      ).join('');
+    const v = SB_VARIANTS[c];
+    if (v && v.img) {
+      sbSwp(null, v.img);
+      document.querySelectorAll('.sb-thumb').forEach(t => {
+        t.classList.toggle('active', t.src.includes(v.thumb.split('?')[0].split('/').pop().split('_')[0]));
+      });
     }
   }
 
@@ -915,6 +931,16 @@
       "type": "image_picker",
       "id": "panel_parent_image",
       "label": "Parent panel image"
+    },
+    {
+      "type": "image_picker",
+      "id": "ng_logo",
+      "label": "NG EarSafe logo (Partnership section)"
+    },
+    {
+      "type": "image_picker",
+      "id": "wehear_logo",
+      "label": "WeHear logo (Partnership section)"
     },
     {
       "type": "image_picker",
