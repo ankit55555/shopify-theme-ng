@@ -1,7 +1,6 @@
 {% liquid
   assign product = all_products['ngwehear']
   assign current_variant = product.selected_or_first_available_variant
-  assign faq_blocks = section.blocks | where: "type", "faq"
   assign review_blocks = section.blocks | where: "type", "review"
 %}
 
@@ -405,9 +404,7 @@
     <div id="sb-p-wfh" class="sb-panel active">
       <div class="sb-panel-img">
         {% if section.settings.panel_wfh_image != blank %}
-          <img src="{{ section.settings.panel_wfh_image | image_url: width: 700 }}" alt="WFH professional"/>
-        {% elsif product.images.last %}
-          <img src="{{ product.images.last | image_url: width: 700 }}" alt="SafeBuds lifestyle"/>
+          <img src="{{ section.settings.panel_wfh_image | image_url: width: 700 }}" width="700" height="525" alt="WFH professional with SafeBuds" loading="lazy"/>
         {% endif %}
       </div>
       <div class="r">
@@ -428,9 +425,7 @@
     <div id="sb-p-bridge" class="sb-panel">
       <div class="sb-panel-img">
         {% if section.settings.panel_bridge_image != blank %}
-          <img src="{{ section.settings.panel_bridge_image | image_url: width: 700 }}" alt="Multilingual professional"/>
-        {% elsif product.images[2] %}
-          <img src="{{ product.images[2] | image_url: width: 700 }}" alt="SafeBuds"/>
+          <img src="{{ section.settings.panel_bridge_image | image_url: width: 700 }}" width="700" height="525" alt="Multilingual professional with SafeBuds" loading="lazy"/>
         {% endif %}
       </div>
       <div class="r">
@@ -451,9 +446,7 @@
     <div id="sb-p-entertain" class="sb-panel">
       <div class="sb-panel-img">
         {% if section.settings.panel_entertain_image != blank %}
-          <img src="{{ section.settings.panel_entertain_image | image_url: width: 700 }}" alt="Entertainment"/>
-        {% elsif product.images[1] %}
-          <img src="{{ product.images[1] | image_url: width: 700 }}" alt="SafeBuds"/>
+          <img src="{{ section.settings.panel_entertain_image | image_url: width: 700 }}" width="700" height="525" alt="Entertainment with SafeBuds" loading="lazy"/>
         {% endif %}
       </div>
       <div class="r">
@@ -474,9 +467,7 @@
     <div id="sb-p-parent" class="sb-panel">
       <div class="sb-panel-img">
         {% if section.settings.panel_parent_image != blank %}
-          <img src="{{ section.settings.panel_parent_image | image_url: width: 700 }}" alt="Safe for students"/>
-        {% elsif product.images[0] %}
-          <img src="{{ product.images[0] | image_url: width: 700 }}" alt="SafeBuds"/>
+          <img src="{{ section.settings.panel_parent_image | image_url: width: 700 }}" width="700" height="525" alt="Parent choosing SafeBuds for their child" loading="lazy"/>
         {% endif %}
       </div>
       <div class="r">
@@ -593,8 +584,8 @@
     <div class="sb-partner-grid">
       <div class="r">
         <span class="sb-lbl">The story behind SafeBuds</span>
-        <h2>Two Indian brands.<br>One <em>breakthrough.</em></h2>
-        <p class="sb-partner-lead">India's open ear pioneer meets the AI audio company that pitched on Shark Tank India. This is what they built together.</p>
+        <h2>Two Indian brands. One Vision: Safer Listening<br>One <em>breakthrough.</em></h2>
+        <p class="sb-partner-lead">India's open ear brand meets the hearing aid company that pitched on Shark Tank India. They Built, We ideate.</p>
         <div class="sb-partner-cards">
           <div class="sb-pcard">
             <div class="sb-pcard-mark ng">NG</div>
@@ -607,7 +598,7 @@
             <div class="sb-pcard-mark wh">WH</div>
             <div>
               <strong>WeHear <span class="shark-badge-inline">🦈 Shark Tank India</span></strong>
-              <p>AI live translation and meeting transcription — built in India, speaking 100+ languages. WeHear's SphereLingo™ platform caught the attention of Shark Tank India. Then they found NG EarSafe.</p>
+              <p>A master engineering team at disposal, Designing PCB's to Software in India with deep expertise in Hearing Aids, Shark Tank Company, Aligned mission with NG EarSafe.</p>
             </div>
           </div>
         </div>
