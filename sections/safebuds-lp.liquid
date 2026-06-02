@@ -842,11 +842,23 @@
     }, { passive: true });
     let startX = 0;
     track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-    track.addEventListener('touchmove', e => {
+        track.addEventListener('touchmove', e => {
       track.scrollLeft -= e.touches[0].clientX - startX;
       startX = e.touches[0].clientX;
     }, { passive: true });
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const v = e.target.querySelector('video.sb-ugc-video');
+          if (v && v.dataset.src) { v.src = v.dataset.src; v.play(); }
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.25 });
+    slides.forEach(s => io.observe(s));
   })();
+
 
   function sbUgcScroll(dir) {
     const track = document.getElementById('sbUgcTrack');
