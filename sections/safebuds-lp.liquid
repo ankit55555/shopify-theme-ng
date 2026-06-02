@@ -666,22 +666,22 @@
       <div class="sb-ugc-track" id="sbUgcTrack">
         {% if section.settings.ugc_vid1 != blank %}
         <div class="sb-ugc-slide">
-          <video src="{{ section.settings.ugc_vid1 }}" autoplay muted loop playsinline preload="none"></video>
+          <video data-src="{{ section.settings.ugc_vid1 }}" muted loop playsinline preload="none"class="sb-ugc-video"></video>
         </div>
         {% endif %}
         {% if section.settings.ugc_vid2 != blank %}
         <div class="sb-ugc-slide">
-          <video src="{{ section.settings.ugc_vid2 }}" autoplay muted loop playsinline preload="none"></video>
+          <video data-src="{{ section.settings.ugc_vid2 }}" muted loop playsinline preload="none"class="sb-ugc-video"></video>
         </div>
         {% endif %}
         {% if section.settings.ugc_vid3 != blank %}
         <div class="sb-ugc-slide">
-          <video src="{{ section.settings.ugc_vid3 }}" autoplay muted loop playsinline preload="none"></video>
+          <video data src="{{ section.settings.ugc_vid3 }}" muted loop playsinline preload="none"class="sb-ugc-video"></video>
         </div>
         {% endif %}
         {% if section.settings.ugc_vid4 != blank %}
         <div class="sb-ugc-slide">
-          <video src="{{ section.settings.ugc_vid4 }}" autoplay muted loop playsinline preload="none"></video>
+          <video data src="{{ section.settings.ugc_vid4 }}" muted loop playsinline preload="none"class="sb-ugc-video"></video>
         </div>
         {% endif %}
       </div>
