@@ -653,15 +653,30 @@
       <h2>From our community.</h2>
     </div>
     <div class="sb-ugc-grid r">
-      <div class="sb-ugc-ph"><span>📸</span>UGC / Lifestyle 1</div>
-      <div class="sb-ugc-ph"><span>📸</span>UGC / Lifestyle 2</div>
-      <div class="sb-ugc-ph"><span>📸</span>UGC / Lifestyle 3</div>
-      <div class="sb-ugc-ph"><span>📸</span>UGC / Lifestyle 4</div>
-      <div class="sb-ugc-ph"><span>📸</span>UGC / Lifestyle 5</div>
-      <div class="sb-ugc-ph"><span>📸</span>UGC / Lifestyle 6</div>
+      {% if section.settings.ugc_vid1 != blank %}
+      <div class="sb-ugc-item">
+        <video src="{{ section.settings.ugc_vid1 }}" autoplay muted loop playsinline preload="none"></video>
+      </div>
+      {% endif %}
+      {% if section.settings.ugc_vid2 != blank %}
+      <div class="sb-ugc-item">
+        <video src="{{ section.settings.ugc_vid2 }}" autoplay muted loop playsinline preload="none"></video>
+      </div>
+      {% endif %}
+      {% if section.settings.ugc_vid3 != blank %}
+      <div class="sb-ugc-item">
+        <video src="{{ section.settings.ugc_vid3 }}" autoplay muted loop playsinline preload="none"></video>
+      </div>
+      {% endif %}
+      {% if section.settings.ugc_vid4 != blank %}
+      <div class="sb-ugc-item">
+        <video src="{{ section.settings.ugc_vid4 }}" autoplay muted loop playsinline preload="none"></video>
+      </div>
+      {% endif %}
     </div>
   </div>
 </section>
+
 
 <!-- FAQ -->
 <section class="sb-faq sb-sec">
