@@ -652,28 +652,34 @@
       <span class="sb-lbl">NG Wehear Safebuds in action.</span>
       <h2>From our community.</h2>
     </div>
-    <div class="sb-ugc-grid r">
-      {% if section.settings.ugc_vid1 != blank %}
-      <div class="sb-ugc-item">
-        <video src="{{ section.settings.ugc_vid1 }}" autoplay muted loop playsinline preload="none"></video>
+        <div class="sb-ugc-carousel r">
+      <button class="sb-ugc-nav sb-ugc-prev" onclick="sbUgcScroll(-1)" aria-label="Previous">&#8249;</button>
+      <div class="sb-ugc-track" id="sbUgcTrack">
+        {% if section.settings.ugc_vid1 != blank %}
+        <div class="sb-ugc-slide">
+          <video src="{{ section.settings.ugc_vid1 }}" autoplay muted loop playsinline preload="none"></video>
+        </div>
+        {% endif %}
+        {% if section.settings.ugc_vid2 != blank %}
+        <div class="sb-ugc-slide">
+          <video src="{{ section.settings.ugc_vid2 }}" autoplay muted loop playsinline preload="none"></video>
+        </div>
+        {% endif %}
+        {% if section.settings.ugc_vid3 != blank %}
+        <div class="sb-ugc-slide">
+          <video src="{{ section.settings.ugc_vid3 }}" autoplay muted loop playsinline preload="none"></video>
+        </div>
+        {% endif %}
+        {% if section.settings.ugc_vid4 != blank %}
+        <div class="sb-ugc-slide">
+          <video src="{{ section.settings.ugc_vid4 }}" autoplay muted loop playsinline preload="none"></video>
+        </div>
+        {% endif %}
       </div>
-      {% endif %}
-      {% if section.settings.ugc_vid2 != blank %}
-      <div class="sb-ugc-item">
-        <video src="{{ section.settings.ugc_vid2 }}" autoplay muted loop playsinline preload="none"></video>
-      </div>
-      {% endif %}
-      {% if section.settings.ugc_vid3 != blank %}
-      <div class="sb-ugc-item">
-        <video src="{{ section.settings.ugc_vid3 }}" autoplay muted loop playsinline preload="none"></video>
-      </div>
-      {% endif %}
-      {% if section.settings.ugc_vid4 != blank %}
-      <div class="sb-ugc-item">
-        <video src="{{ section.settings.ugc_vid4 }}" autoplay muted loop playsinline preload="none"></video>
-      </div>
-      {% endif %}
+      <button class="sb-ugc-nav sb-ugc-next" onclick="sbUgcScroll(1)" aria-label="Next">&#8250;</button>
     </div>
+    <div class="sb-ugc-dots" id="sbUgcDots"></div>
+
   </div>
 </section>
 
