@@ -228,12 +228,22 @@
   .sb-final-gs { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
   .sb-fg { font-size: 12.5px; color: rgba(255,255,255,.4); display: flex; align-items: center; gap: 5px; }
 
-  /* UGC COLLAGE */
-  .sb-ugc { background: var(--chalk); padding: clamp(40px,5vw,64px) 0; }
-  .sb-ugc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 28px; }
-  .sb-ugc-ph { aspect-ratio: 1/1; background: var(--frost); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; color: var(--ocean); font-size: 12px; font-weight: 500; border: 1.5px dashed rgba(57,134,155,.3); }
-  .sb-ugc-ph span { font-size: 22px; }
-  @media(max-width:600px) { .sb-ugc-grid { grid-template-columns: repeat(2,1fr); } }
+  /* UGC CAROUSEL */
+  .sb-ugc { background: var(--chalk); padding: clamp(40px,5vw,64px) 0; overflow: hidden; }
+  .sb-ugc-carousel { position: relative; margin-top: 28px; }
+  .sb-ugc-track { display: flex; flex-wrap: nowrap; overflow-x: scroll; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none; gap: 12px; }
+  .sb-ugc-track::-webkit-scrollbar { display: none; }
+  .sb-ugc-slide { flex: 0 0 calc(33.333% - 8px); flex-shrink: 0; scroll-snap-align: start; border-radius: 14px; overflow: hidden; aspect-ratio: 9/16; background: var(--frost); }
+  .sb-ugc-slide video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .sb-ugc-dots { display: flex; justify-content: center; gap: 6px; margin-top: 16px; }
+  .sb-ugc-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(16,36,66,.2); border: none; cursor: pointer; padding: 0; transition: all .25s; }
+  .sb-ugc-dot.active { background: var(--ocean); width: 24px; border-radius: 4px; }
+  .sb-ugc-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 38px; height: 38px; border-radius: 50%; background: #fff; border: 1.5px solid rgba(16,36,66,.1); box-shadow: 0 2px 10px rgba(16,36,66,.12); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 2; font-size: 18px; color: var(--navy); line-height: 1; }
+  .sb-ugc-prev { left: 0; }
+  .sb-ugc-next { right: 0; }
+  @media(max-width:760px) { .sb-ugc-slide { flex: 0 0 calc(50% - 6px); } .sb-ugc-nav { display: none; } }
+  @media(max-width:480px) { .sb-ugc-slide { flex: 0 0 82%; } }
+
 
   /* Shark Tank logo badge */
   .st-badge { display: inline-flex; align-items: center; gap: 10px; background: #fff; border: 1.5px solid rgba(16,36,66,.1); border-radius: 10px; padding: 9px 16px; margin-top: 12px; box-shadow: 0 2px 12px rgba(16,36,66,.07); }
@@ -773,14 +783,21 @@
   }
 
   function sbBuyNow() {
-    fetch('/cart/add.js', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ items: [{ id: sbCurrentVariantId, quantity: 1 }] })
-    })
-    .then(() => { window.location.href = '/checkout'; })
-    .catch(() => alert('Could not proceed to checkout. Please try again.'));
+    if (window.gokwikSDK && typeof window.gokwikSDK.triggerPopup === 'function') {
+      window.gokwikSDK.triggerPopup({
+        lineItems: [{ variant_id: sbCurrentVariantId, quantity: 1 }]
+      });
+    } else {
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: [{ id: sbCurrentVariantId, quantity: 1 }] })
+      })
+      .then(() => { window.location.href = '/checkout'; })
+      .catch(() => alert('Could not proceed to checkout. Please try again.'));
+    }
   }
+
 
   /* ── Hero image / colour swap ── */
   function sbSwp(el, src) {
