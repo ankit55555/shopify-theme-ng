@@ -878,11 +878,6 @@
   document.querySelectorAll('.r').forEach(el => sbObs.observe(el));
 </script>
 
-  function sbUgcScroll(dir) {
-    const track = document.getElementById('sbUgcTrack');
-    const slide = track && track.querySelector('.sb-ugc-slide');
-    if (track && slide) track.scrollBy({ left: dir * (slide.offsetWidth + 12), behavior: 'smooth' });
-  }
 
 
 {% schema %}
