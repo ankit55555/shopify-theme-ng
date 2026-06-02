@@ -829,6 +829,33 @@
   }, { threshold: 0.08 });
   document.querySelectorAll('.r').forEach(el => sbObs.observe(el));
 </script>
+  /* ── UGC carousel ── */
+  (function() {
+    const track = document.getElementById('sbUgcTrack');
+    const dots  = document.getElementById('sbUgcDots');
+    if (!track || !dots) return;
+    const slides = track.querySelectorAll('.sb-ugc-slide');
+    slides.forEach((_, i) => {
+      const d = document.createElement('button');
+      d.className = 'sb-ugc-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Slide ' + (i + 1));
+      d.onclick = () => track.scrollTo({ left: slides[i].offsetLeft, behavior: 'smooth' });
+      dots.appendChild(d);
+    });
+    track.addEventListener('scroll', () => {
+      const center = track.scrollLeft + track.clientWidth / 2;
+      let active = 0;
+      slides.forEach((s, i) => { if (s.offsetLeft + s.offsetWidth / 2 <= center) active = i; });
+      dots.querySelectorAll('.sb-ugc-dot').forEach((d, i) => d.classList.toggle('active', i === active));
+    }, { passive: true });
+  })();
+
+  function sbUgcScroll(dir) {
+    const track = document.getElementById('sbUgcTrack');
+    const slide = track && track.querySelector('.sb-ugc-slide');
+    if (track && slide) track.scrollBy({ left: dir * (slide.offsetWidth + 12), behavior: 'smooth' });
+  }
+
 
 {% schema %}
 {
