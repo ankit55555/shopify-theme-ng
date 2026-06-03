@@ -782,20 +782,24 @@
   }
 
   function sbBuyNow() {
-    if (window.gokwikSDK && typeof window.gokwikSDK.triggerPopup === 'function') {
-      window.gokwikSDK.triggerPopup({
-        lineItems: [{ variant_id: sbCurrentVariantId, quantity: 1 }]
-      });
-    } else {
-      fetch('/cart/add.js', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ items: [{ id: sbCurrentVariantId, quantity: 1 }] })
-      })
-      .then(() => { window.location.href = '/checkout'; })
-      .catch(() => alert('Could not proceed to checkout. Please try again.'));
-    }
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items: [{ id: sbCurrentVariantId, quantity: 1 }] })
+    })
+    .then(() => {
+      const sdk = window.gokwikSDK;
+      if (sdk && typeof sdk.triggerPopup === 'function') {
+        sdk.triggerPopup();
+      } else if (document.getElementById('gokwik-buy-now')) {
+        document.getElementById('gokwik-buy-now').click();
+      } else {
+        window.location.href = '/checkout';
+      }
+    })
+    .catch(() => alert('Could not proceed to checkout. Please try again.'));
   }
+
 
 
   /* ── Hero image / colour swap ── */
