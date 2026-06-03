@@ -748,6 +748,10 @@
   </div>
 </section>
 
+<button id="gokwik-buy-now" type="button" onclick="onBuyNowClick(this)" style="display:none!important">
+    Buy Now
+    <div style="display:none"><div class="cir-loader">Loading..</div></div>
+  </button>
 </div><!-- end .sb-page -->
 {% endif %}
 
@@ -781,24 +785,23 @@
     });
   }
 
-  function sbBuyNow() {
+    function sbBuyNow() {
     fetch('/cart/add.js', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ items: [{ id: sbCurrentVariantId, quantity: 1 }] })
     })
     .then(() => {
-      const sdk = window.gokwikSDK;
-      if (sdk && typeof sdk.triggerPopup === 'function') {
-        sdk.triggerPopup();
-      } else if (document.getElementById('gokwik-buy-now')) {
-        document.getElementById('gokwik-buy-now').click();
+      const gkBtn = document.getElementById('gokwik-buy-now');
+      if (gkBtn) {
+        gkBtn.click();
       } else {
         window.location.href = '/checkout';
       }
     })
     .catch(() => alert('Could not proceed to checkout. Please try again.'));
   }
+
 
 
 
