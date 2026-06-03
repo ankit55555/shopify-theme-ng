@@ -791,16 +791,10 @@
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ items: [{ id: sbCurrentVariantId, quantity: 1 }] })
     })
-    .then(() => {
-      const gkBtn = document.getElementById('gokwik-buy-now');
-      if (gkBtn) {
-        gkBtn.click();
-      } else {
-        window.location.href = '/checkout';
-      }
-    })
+    .then(() => { window.location.href = '/checkout'; })
     .catch(() => alert('Could not proceed to checkout. Please try again.'));
   }
+
 
 
 
