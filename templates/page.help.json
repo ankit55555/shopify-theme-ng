@@ -247,7 +247,7 @@
             "badge_text": "",
             "badge_color": "#ff6b35",
             "badge_text_color": "#ffffff",
-            "details": "<p>Email: <a href=\"mailto:support@ngearsafe.com\"><span style=\"text-decoration:underline\">support@ngearsafe.com</span></a></p><p>Contact No.: 9265573097<br/>Toll-free Contact: 080-471-65643<br/><br/></p>",
+            "details": "<p>Email: <a href=\"mailto:support@ngearsafe.com\"><span style=\"text-decoration:underline\">support@ngearsafe.com</span></a><br/><br/>Toll-free Contact: 080-471-65643<br/><br/></p>",
             "button_label": "Begin Chat",
             "button_link": "",
             "button_style": "filled",
