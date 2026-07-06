@@ -791,7 +791,13 @@
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ items: [{ id: sbCurrentVariantId, quantity: 1 }] })
     })
-    .then(() => { window.location.href = '/checkout'; })
+    .then(() => {
+      if (window.gokwikSdk && window.merchantInfo) {
+        window.gokwikSdk.initCheckout(window.merchantInfo);
+      } else {
+        window.location.href = '/checkout';
+      }
+    })
     .catch(() => alert('Could not proceed to checkout. Please try again.'));
   }
 
