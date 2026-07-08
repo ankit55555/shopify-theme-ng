@@ -11,18 +11,6 @@
   "sections": {
     "main": {
       "type": "openwire-lp",
-      "settings": {
-        "hero_badge": "Open ear · Wired · Type-C",
-        "hero_title": "NG EarSafe OpenWire",
-        "hero_sub": "Open-ear wired earphones — pure sound, open ears, nothing to charge. Ever.",
-        "price_note": "incl. taxes · Free shipping across India",
-        "btn_buy": "Buy Now",
-        "btn_atc": "Add to Cart",
-        "review_score": "4.7",
-        "review_count": "verified reviews",
-        "final_h2": "Pure sound. Open ears.",
-        "final_sub": "Zero lag. A voice that carries. Nothing to charge, ever."
-      },
       "blocks": {
         "faq1": {
           "type": "faq",
@@ -107,8 +95,34 @@
           }
         }
       },
-      "block_order": ["faq1", "faq2", "faq3", "faq4", "faq5", "faq6", "rev1", "rev2", "rev3", "rev4"]
+      "block_order": [
+        "faq1",
+        "faq2",
+        "faq3",
+        "faq4",
+        "faq5",
+        "faq6",
+        "rev1",
+        "rev2",
+        "rev3",
+        "rev4"
+      ],
+      "settings": {
+        "product": "open-ear-headphones-wired-ng-earsafe",
+        "hero_badge": "Open ear · Wired · Type-C",
+        "hero_title": "NG EarSafe OpenWire",
+        "hero_sub": "Open-ear wired earphones — pure sound, open ears, nothing to charge. Ever.",
+        "price_note": "incl. taxes · Free shipping across India",
+        "btn_buy": "Buy Now",
+        "btn_atc": "Add to Cart",
+        "review_score": "4.7",
+        "review_count": "verified reviews",
+        "final_h2": "Pure sound. Open ears.",
+        "final_sub": "Zero lag. A voice that carries. Nothing to charge, ever."
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
