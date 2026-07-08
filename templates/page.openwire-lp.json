@@ -9,86 +9,106 @@
  */
 {
   "sections": {
-    "heading": {
-      "type": "heading-template",
-      "settings": {
-        "heading_fullwidth": false,
-        "use_specify_image": true,
-        "parallax": false,
-        "color": "#000000",
-        "overlay": 54,
-        "padding": 50,
-        "paddingmb": 50,
-        "mg_b": 50,
-        "mg_bmb": 50,
-        "content_align": "t4s-text-center",
-        "bg_pos": "center center",
-        "bg_repeat": "no-repeat",
-        "bg_size": "cover",
-        "use_cus_css": false,
-        "code_cus_css": ".SectionID {\nbackground-color:red\n}"
-      }
-    },
     "main": {
-      "type": "main-page",
+      "type": "openwire-lp",
       "settings": {
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": "60px,,60px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": ""
-      }
-    },
-    "custom_liquid_KgAarB": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "",
-        "layout": "t4s-container-wrap",
-        "cl_bg": "",
-        "cl_bg_gradient": "",
-        "mg": ",,50px,",
-        "pd": "",
-        "mg_tb": "",
-        "pd_tb": "",
-        "mg_mb": ",,30px,",
-        "pd_mb": ""
-      }
-    },
-    "sidebar-page": {
-      "type": "sidebar-page",
+        "hero_badge": "Open ear · Wired · Type-C",
+        "hero_title": "NG EarSafe OpenWire",
+        "hero_sub": "Open-ear wired earphones — pure sound, open ears, nothing to charge. Ever.",
+        "price_note": "incl. taxes · Free shipping across India",
+        "btn_buy": "Buy Now",
+        "btn_atc": "Add to Cart",
+        "review_score": "4.7",
+        "review_count": "verified reviews",
+        "final_h2": "Pure sound. Open ears.",
+        "final_sub": "Zero lag. A voice that carries. Nothing to charge, ever."
+      },
       "blocks": {
-        "f69681ed-b75e-42de-be58-fdf73b3b7e08": {
-          "type": "blog_cate",
+        "faq1": {
+          "type": "faq",
           "settings": {
-            "title": "Blog categories",
-            "cat_link_list": "",
-            "count": true
+            "question": "Nothing sits inside my ear — will the sound feel thin?",
+            "answer": "The 14.2mm dynamic driver is larger than most in-ear earphones and gets the full, uncompressed signal down the wire — rich lows, clean highs, no codec squeeze."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "How is the mic on calls?",
+            "answer": "The mic is on a direct wired line, so your voice reaches the other person without wireless compression — full, clear, and immediate."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Will it work with my phone?",
+            "answer": "OpenWire uses a Type-C connector — it works with Android phones, tablets, and laptops that have a Type-C audio port. No pairing, no case."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Does it work with iPhone?",
+            "answer": "Yes — with every iPhone that has a Type-C port: iPhone 15, 15 Plus, 15 Pro, 15 Pro Max, iPhone 16, 16 Plus, 16 Pro, 16 Pro Max, 16e, and the iPhone 17 series including 17 Air. Just plug in — no adapter, no pairing. Older iPhones with a Lightning port aren't supported."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Does it stay on during a run or workout?",
+            "answer": "Yes. The over-ear fit keeps it stable through walking, commuting, running, and workouts."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "What if it's not for me?",
+            "answer": "7-day returns. If open ear isn't your thing, email support@ngearsafe.com and we'll arrange a pickup and refund — no fuss."
+          }
+        },
+        "rev1": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "body": "\"On calls people said my voice was noticeably clearer than my Bluetooth buds. No lag while watching either. Plug in and it works.\"",
+            "reviewer_initial": "A",
+            "name": "Arjun P.",
+            "location": "Pune · Verified buyer"
+          }
+        },
+        "rev2": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "body": "\"The open-ear fit is the winner. I can hear traffic on my run and it actually stays on. And I never have to charge it.\"",
+            "reviewer_initial": "N",
+            "name": "Neha K.",
+            "location": "Bangalore · Verified buyer"
+          }
+        },
+        "rev3": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★☆",
+            "body": "\"Sound is fuller than I expected for open ear. My ears don't hurt after long hours like in-ear ones. Type-C worked instantly.\"",
+            "reviewer_initial": "R",
+            "name": "Ravi S.",
+            "location": "Hyderabad · Verified buyer"
+          }
+        },
+        "rev4": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "body": "\"No pairing, no dropouts, no dead battery mid-meeting. I forgot how good a simple direct connection feels.\"",
+            "reviewer_initial": "M",
+            "name": "Meera D.",
+            "location": "Chennai · Verified buyer"
           }
         }
       },
-      "block_order": [
-        "f69681ed-b75e-42de-be58-fdf73b3b7e08"
-      ],
-      "disabled": true,
-      "settings": {
-        "enable_drawer": false,
-        "space": 50,
-        "size": "medium",
-        "br_style": "none",
-        "brcolor": "#222222",
-        "sidebar_bdr": 5,
-        "sidebar_pd": 10
-      }
+      "block_order": ["faq1", "faq2", "faq3", "faq4", "faq5", "faq6", "rev1", "rev2", "rev3", "rev4"]
     }
   },
-  "order": [
-    "heading",
-    "main",
-    "custom_liquid_KgAarB",
-    "sidebar-page"
-  ]
+  "order": ["main"]
 }
