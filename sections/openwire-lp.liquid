@@ -179,14 +179,6 @@
   .ow-final .ow-cta-row { max-width: 420px; margin: 0 auto; }
   .ow-final-gs { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
 
-  /* ── STICKY MOBILE BUY BAR ── */
-  .ow-buybar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 95; background: rgba(255,255,255,.95); backdrop-filter: saturate(180%) blur(16px); -webkit-backdrop-filter: saturate(180%) blur(16px); border-top: 1px solid var(--ow-line); padding: 10px clamp(16px,5vw,20px) calc(10px + env(safe-area-inset-bottom)); display: none; align-items: center; justify-content: space-between; gap: 14px; transform: translateY(120%); transition: transform .25s ease; box-shadow: 0 -6px 24px rgba(27,43,58,.08); font-family: 'Poppins', sans-serif; }
-  .ow-buybar.show { transform: translateY(0); }
-  .ow-buybar-info strong { display: block; font-size: 16px; font-weight: 600; line-height: 1.1; color: var(--ow-ink); }
-  .ow-buybar-info small { font-size: 11px; color: var(--ow-muted); }
-  .ow-buybar-btn { background: #102442 !important; color: #ffffff !important; border: none !important; padding: 13px 30px; border-radius: 12px; font-size: 15px; font-weight: 600; white-space: nowrap; cursor: pointer; }
-  @media(max-width:860px){ .ow-buybar { display: flex; } }
-
   /* reveal */
   .ow-r { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
   .ow-r.v { opacity: 1; transform: none; }
@@ -471,14 +463,6 @@
 
 </div><!-- end .ow-page -->
 
-<!-- STICKY MOBILE BUY BAR -->
-<div class="ow-buybar" id="owBuybar">
-  <div class="ow-buybar-info">
-    <strong>{{ current_variant.price | money }}</strong>
-    <small>{{ product.title }} · Open ear · Zero lag</small>
-  </div>
-  <button class="ow-buybar-btn" onclick="owBuyNow()">{{ section.settings.btn_buy }}</button>
-</div>
 {% endif %}
 
 {% if product != blank %}
@@ -607,19 +591,6 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.ow-r').forEach(function(el){ owObs.observe(el); });
 
-  /* ── Sticky mobile buy bar ── */
-  (function(){
-    var buybar = document.getElementById('owBuybar');
-    var anchor = document.getElementById('owBuyAnchor');
-    if (!buybar || !anchor) return;
-    var barObs = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.boundingClientRect.top < 0 || !e.isIntersecting) buybar.classList.add('show');
-        else buybar.classList.remove('show');
-      });
-    }, { threshold: 0 });
-    barObs.observe(anchor);
-  })();
 </script>
 
 {% schema %}
