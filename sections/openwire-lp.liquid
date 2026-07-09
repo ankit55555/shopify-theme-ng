@@ -55,12 +55,13 @@
 
   .ow-cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
   .ow-cta-row button { flex: 1 1 150px; text-align: center; }
-  .ow-btn-buy { background: var(--ow-teal); color: #fff; padding: 15px 32px; border-radius: 50px; font-size: 15.5px; font-weight: 600; transition: background .18s, box-shadow .18s; box-shadow: 0 6px 20px rgba(31,138,150,.28); }
-  .ow-btn-buy:hover { background: var(--ow-teal-d); box-shadow: 0 8px 24px rgba(31,138,150,.36); }
-  .ow-btn-buy:disabled { opacity: .6; cursor: not-allowed; }
-  .ow-btn-cart { background: #fff; color: var(--ow-teal); border: 2px solid var(--ow-teal); padding: 13px 32px; border-radius: 50px; font-size: 15.5px; font-weight: 600; transition: background .18s; }
-  .ow-btn-cart:hover { background: var(--ow-mist); }
-  .ow-btn-cart:disabled { opacity: .6; cursor: not-allowed; }
+  /* SafeBuds button palette; !important guards against the theme's global button styles */
+  .ow-page .ow-btn-buy { background: #102442 !important; color: #ffffff !important; border: none !important; padding: 15px 32px; border-radius: 12px; font-size: 15.5px; font-weight: 600; transition: all .2s; cursor: pointer; }
+  .ow-page .ow-btn-buy:hover { background: #1d3a60 !important; color: #ffffff !important; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(16,36,66,.18); }
+  .ow-page .ow-btn-buy:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+  .ow-page .ow-btn-cart { background: #E8F6F7 !important; color: #102442 !important; border: 1.5px solid rgba(16,36,66,.1) !important; padding: 14px 32px; border-radius: 12px; font-size: 15.5px; font-weight: 600; transition: all .2s; cursor: pointer; }
+  .ow-page .ow-btn-cart:hover { background: #ffffff !important; color: #102442 !important; border-color: var(--ow-teal) !important; }
+  .ow-page .ow-btn-cart:disabled { opacity: .6; cursor: not-allowed; }
 
   .ow-ht { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; color: var(--ow-muted); background: #fff; border: 1px solid var(--ow-line); border-radius: 50px; padding: 6px 12px; }
 
@@ -183,7 +184,7 @@
   .ow-buybar.show { transform: translateY(0); }
   .ow-buybar-info strong { display: block; font-size: 16px; font-weight: 600; line-height: 1.1; color: var(--ow-ink); }
   .ow-buybar-info small { font-size: 11px; color: var(--ow-muted); }
-  .ow-buybar-btn { background: var(--ow-teal); color: #fff; padding: 13px 30px; border-radius: 50px; font-size: 15px; font-weight: 600; white-space: nowrap; }
+  .ow-buybar-btn { background: #102442 !important; color: #ffffff !important; border: none !important; padding: 13px 30px; border-radius: 12px; font-size: 15px; font-weight: 600; white-space: nowrap; cursor: pointer; }
   @media(max-width:860px){ .ow-buybar { display: flex; } }
 
   /* reveal */
