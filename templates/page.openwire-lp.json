@@ -11,6 +11,18 @@
   "sections": {
     "main": {
       "type": "openwire-lp",
+      "settings": {
+        "hero_badge": "Open ear · Wired · Type-C",
+        "hero_title": "NG EarSafe OpenWire — Open-Ear Wired Earphones",
+        "hero_sub": "Wired open-ear earphones with Type-C plug and inline mic — easy on your ears, nothing inside your canal, nothing to charge. Ever.",
+        "price_note": "incl. taxes · Free shipping across India",
+        "btn_buy": "Buy Now",
+        "btn_atc": "Add to Cart",
+        "review_score": "4.7",
+        "review_count": "verified reviews",
+        "final_h2": "Pure sound. Open ears.",
+        "final_sub": "Zero lag. A voice that carries. Nothing to charge, ever."
+      },
       "blocks": {
         "faq1": {
           "type": "faq",
@@ -102,49 +114,8 @@
           }
         }
       },
-      "block_order": [
-        "faq1",
-        "faq2",
-        "faq3",
-        "faq4",
-        "faq5",
-        "faq6",
-        "faq7",
-        "rev1",
-        "rev2",
-        "rev3",
-        "rev4"
-      ],
-      "settings": {
-        "product": "open-ear-headphones-wired-ng-earsafe",
-        "hero_badge": "Open ear · Wired · Type-C",
-        "hero_title": "NG EarSafe OpenWire — Open-Ear Wired Earphones",
-        "hero_sub": "Wired open-ear earphones with Type-C plug and inline mic — easy on your ears, nothing inside your canal, nothing to charge. Ever.",
-        "price_note": "incl. taxes · Free shipping across India",
-        "btn_buy": "Buy Now",
-        "btn_atc": "Add to Cart",
-        "listing_img1": "shopify://shop_images/listing1.webp",
-        "listing_img2": "shopify://shop_images/listing2.webp",
-        "listing_img3": "shopify://shop_images/listing3.webp",
-        "listing_img4": "shopify://shop_images/listing4.webp",
-        "listing_img5": "shopify://shop_images/listing5.webp",
-        "listing_img6": "shopify://shop_images/listing6.webp",
-        "showcase_img": "shopify://shop_images/showcase.jpg",
-        "ugc_img1": "shopify://shop_images/openwireugc1.webp",
-        "ugc_img2": "shopify://shop_images/openwireugc2.webp",
-        "ugc_img3": "shopify://shop_images/openwireugc3.webp",
-        "ugc_img4": "shopify://shop_images/openwireugc4.webp",
-        "review_score": "4.7",
-        "review_count": "verified reviews",
-        "show_judgeme": true,
-        "rating_value": "",
-        "rating_count": "",
-        "final_h2": "Pure sound. Open ears.",
-        "final_sub": "Zero lag. A voice that carries. Nothing to charge, ever."
-      }
+      "block_order": ["faq1", "faq2", "faq3", "faq4", "faq5", "faq6", "faq7", "rev1", "rev2", "rev3", "rev4"]
     }
   },
-  "order": [
-    "main"
-  ]
+  "order": ["main"]
 }
