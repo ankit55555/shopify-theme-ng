@@ -54,8 +54,12 @@
   .ow-tcard b { display: block; font-size: 12px; font-weight: 600; line-height: 1.25; }
   .ow-tcard span { font-size: 10.5px; color: var(--ow-muted); }
 
-  .ow-cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .ow-cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 0; }
   .ow-cta-row button { flex: 1 1 150px; text-align: center; }
+  /* Beat the theme's 'gokwik' snippet styles on #gokwik-buy-now (its own bg / uppercase / 100% width) */
+  .ow-page #gokwik-buy-now.ow-btn-buy { width: auto; height: auto; text-transform: none; line-height: normal; margin-bottom: 0; }
+  .ow-page #gokwik-buy-now.ow-btn-buy.disabled { opacity: 1; cursor: pointer; }
+  .ow-btn-buy[disabled], .ow-btn-cart[disabled] { opacity: .55; cursor: not-allowed; }
   /* SafeBuds button palette; !important guards against the theme's global button styles */
   .ow-page .ow-btn-buy { background: #102442 !important; color: #ffffff !important; border: none !important; padding: 15px 32px; border-radius: 12px; font-size: 15.5px; font-weight: 600; transition: all .2s; cursor: pointer; }
   .ow-page .ow-btn-buy:hover { background: #1d3a60 !important; color: #ffffff !important; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(16,36,66,.18); }
@@ -233,10 +237,21 @@
           <div class="ow-tcard"><span class="ic">💵</span><b>COD Available</b><span>Pay on delivery</span></div>
         </div>
 
-        <div class="ow-cta-row" id="owBuyAnchor">
-          <button class="ow-btn-buy" onclick="owBuyNow()">{{ section.settings.btn_buy }}</button>
-          <button class="ow-btn-cart" onclick="owAddToCart(this)">{{ section.settings.btn_atc }}</button>
-        </div>
+        {%- comment -%}
+          Real product form: GoKwik's merchant.integration.js reads the variant from a
+          form[action="/cart/add"] and binds its popup to the #gokwik-buy-now button.
+          Both are required — the theme's 'gokwik' snippet enables #gokwik-buy-now on gokwikLoaded.
+        {%- endcomment -%}
+        <form action="/cart/add" method="post" enctype="multipart/form-data" id="ow-product-form" class="ow-cta-row" data-ow-form>
+          <input type="hidden" name="id" value="{{ current_variant.id }}"/>
+          <input type="hidden" name="quantity" value="1"/>
+          {% if current_variant.available %}
+            <button type="button" id="gokwik-buy-now" class="ow-btn-buy">{{ section.settings.btn_buy }}</button>
+            <button type="submit" name="add" class="ow-btn-cart" onclick="return owAddToCart(this)">{{ section.settings.btn_atc }}</button>
+          {% else %}
+            <button type="button" class="ow-btn-buy" disabled>Out of Stock</button>
+          {% endif %}
+        </form>
       </div>
 
     </div>
@@ -450,8 +465,13 @@
       <div class="ow-final-price">{{ current_variant.price | money }}</div>
       <div class="ow-final-note">{{ section.settings.price_note }} · Free shipping across India</div>
       <div class="ow-cta-row">
-        <button class="ow-btn-buy" onclick="owBuyNow()">{{ section.settings.btn_buy }}</button>
-        <button class="ow-btn-cart" onclick="owAddToCart(this)">{{ section.settings.btn_atc }}</button>
+        {% if current_variant.available %}
+          {%- comment -%} Only one #gokwik-buy-now may exist; this proxies a click to it. {%- endcomment -%}
+          <button type="button" class="ow-btn-buy" onclick="owProxyBuy()">{{ section.settings.btn_buy }}</button>
+          <button type="button" class="ow-btn-cart" onclick="owProxyCart()">{{ section.settings.btn_atc }}</button>
+        {% else %}
+          <button type="button" class="ow-btn-buy" disabled>Out of Stock</button>
+        {% endif %}
       </div>
       <div class="ow-final-gs">
         <span class="ow-ht">🚚 Free shipping</span>
@@ -512,36 +532,38 @@
 <script>
   var owVariantId = {{ current_variant.id | default: 0 }};
 
-  /* ── Cart actions (GoKwik) ── */
+  /* ── Cart actions ──
+     Buy Now is handled natively by GoKwik: merchant.integration.js binds the popup to
+     #gokwik-buy-now and reads the variant from #ow-product-form. No JS needed here.
+     Add to Cart posts via AJAX, honouring HTTP status (fetch does NOT reject on 4xx/5xx —
+     that bug previously redirected an empty cart to /checkout, which bounces to the homepage). */
   function owAddToCart(btn) {
-    if (btn) { btn.disabled = true; btn.textContent = 'Adding…'; }
+    if (btn) { btn.disabled = true; btn.dataset.owLabel = btn.textContent; btn.textContent = 'Adding…'; }
     fetch('/cart/add.js', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ items: [{ id: owVariantId, quantity: 1 }] })
     })
-    .then(function(r){ return r.json(); })
+    .then(function(r){
+      if (!r.ok) { return r.json().then(function(e){ throw new Error(e.description || e.message || 'Unavailable'); }); }
+      return r.json();
+    })
     .then(function(){ window.location.href = '/cart'; })
-    .catch(function(){
-      if (btn) { btn.disabled = false; btn.textContent = '{{ section.settings.btn_atc }}'; }
-      alert('Could not add to cart. Please try again.');
+    .catch(function(err){
+      if (btn) { btn.disabled = false; btn.textContent = btn.dataset.owLabel || '{{ section.settings.btn_atc }}'; }
+      alert(err.message || 'Could not add to cart. Please try again.');
     });
+    return false; // block the form's native submit
   }
 
-  function owBuyNow() {
-    if (window.gokwikSDK && typeof window.gokwikSDK.triggerPopup === 'function') {
-      window.gokwikSDK.triggerPopup({
-        lineItems: [{ variant_id: owVariantId, quantity: 1 }]
-      });
-    } else {
-      fetch('/cart/add.js', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ items: [{ id: owVariantId, quantity: 1 }] })
-      })
-      .then(function(){ window.location.href = '/checkout'; })
-      .catch(function(){ alert('Could not proceed to checkout. Please try again.'); });
-    }
+  /* Final-CTA buttons proxy to the single GoKwik-bound button / cart button in the hero form. */
+  function owProxyBuy() {
+    var b = document.getElementById('gokwik-buy-now');
+    if (b) { b.click(); b.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+  }
+  function owProxyCart() {
+    var b = document.querySelector('#ow-product-form .ow-btn-cart');
+    if (b) b.click();
   }
 
   /* ── Gallery swap ── */
