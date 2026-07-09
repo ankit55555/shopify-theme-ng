@@ -1,0 +1,121 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "openwire-lp",
+      "settings": {
+        "hero_badge": "Open ear · Wired · Type-C",
+        "hero_title": "NG EarSafe OpenWire — Open-Ear Wired Earphones",
+        "hero_sub": "Wired open-ear earphones with Type-C plug and inline mic — easy on your ears, nothing inside your canal, nothing to charge. Ever.",
+        "price_note": "incl. taxes · Free shipping across India",
+        "btn_buy": "Buy Now",
+        "btn_atc": "Add to Cart",
+        "review_score": "4.7",
+        "review_count": "verified reviews",
+        "final_h2": "Pure sound. Open ears.",
+        "final_sub": "Zero lag. A voice that carries. Nothing to charge, ever."
+      },
+      "blocks": {
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "Nothing sits inside my ear — will the sound feel thin?",
+            "answer": "The 14.2mm dynamic driver is larger than most in-ear earphones and gets the full, uncompressed signal down the wire — rich lows, clean highs, no codec squeeze."
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "How is the mic on calls?",
+            "answer": "The mic is on a direct wired line, so your voice reaches the other person without wireless compression — full, clear, and immediate."
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Will it work with my phone?",
+            "answer": "OpenWire uses a Type-C (USB-C) connector — it works with Android phones, tablets, and laptops that have a Type-C audio port. No pairing, no case."
+          }
+        },
+        "faq4": {
+          "type": "faq",
+          "settings": {
+            "question": "Does it work with iPhone?",
+            "answer": "Yes — with every iPhone that has a Type-C port: iPhone 15, 15 Plus, 15 Pro, 15 Pro Max, iPhone 16, 16 Plus, 16 Pro, 16 Pro Max, 16e, and the iPhone 17 series including 17 Air. Just plug in — no adapter, no pairing. Older iPhones with a Lightning port aren't supported."
+          }
+        },
+        "faq5": {
+          "type": "faq",
+          "settings": {
+            "question": "Does it stay on during a run or workout?",
+            "answer": "Yes. The clip-style over-ear fit keeps it stable through walking, commuting, running, and workouts."
+          }
+        },
+        "faq6": {
+          "type": "faq",
+          "settings": {
+            "question": "Are wired earphones safe for your ears?",
+            "answer": "The open-ear design is what makes the difference. OpenWire rests outside your ear canal — no silicone tip sealing it, no pressure or heat building up over long hours, and because you still hear the room, you naturally keep volumes moderate. It's the more comfortable way to listen for people who wear earphones all day."
+          }
+        },
+        "faq7": {
+          "type": "faq",
+          "settings": {
+            "question": "What if it's not for me?",
+            "answer": "7-day returns. If open ear isn't your thing, email support@ngearsafe.com and we'll arrange a pickup and refund — no fuss."
+          }
+        },
+        "rev1": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "body": "\"On calls people said my voice was noticeably clearer than my Bluetooth buds. No lag while watching either. Plug in and it works.\"",
+            "reviewer_initial": "A",
+            "name": "Arjun P.",
+            "location": "Pune · Verified buyer"
+          }
+        },
+        "rev2": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "body": "\"The open-ear fit is the winner. I can hear traffic on my run and it actually stays on. And I never have to charge it.\"",
+            "reviewer_initial": "N",
+            "name": "Neha K.",
+            "location": "Bangalore · Verified buyer"
+          }
+        },
+        "rev3": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★☆",
+            "body": "\"Sound is fuller than I expected for open ear. My ears don't hurt after long hours like in-ear ones. Type-C worked instantly.\"",
+            "reviewer_initial": "R",
+            "name": "Ravi S.",
+            "location": "Hyderabad · Verified buyer"
+          }
+        },
+        "rev4": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "body": "\"No pairing, no dropouts, no dead battery mid-meeting. I forgot how good a simple direct connection feels.\"",
+            "reviewer_initial": "M",
+            "name": "Meera D.",
+            "location": "Chennai · Verified buyer"
+          }
+        }
+      },
+      "block_order": ["faq1", "faq2", "faq3", "faq4", "faq5", "faq6", "faq7", "rev1", "rev2", "rev3", "rev4"]
+    }
+  },
+  "order": ["main"]
+}
