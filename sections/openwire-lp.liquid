@@ -246,7 +246,16 @@
           <input type="hidden" name="id" value="{{ current_variant.id }}"/>
           <input type="hidden" name="quantity" value="1"/>
           {% if current_variant.available %}
-            <button type="button" id="gokwik-buy-now" class="ow-btn-buy">{{ section.settings.btn_buy }}</button>
+            {%- comment -%}
+              Markup mirrors snippets/gokwik-buy-now.liquid exactly. The trigger is
+              onclick="onBuyNowClick(this)" (defined by merchant.integration.js) — the id alone
+              binds nothing. Starts disabled; the theme's 'gokwik' snippet re-enables it on the
+              gokwikLoaded event, which also strips the .disabled class.
+            {%- endcomment -%}
+            <button type="button" id="gokwik-buy-now" class="ow-btn-buy disabled" disabled onclick="onBuyNowClick(this)">
+              {{ section.settings.btn_buy }}
+              <div style="display:none" class="addloadr" id="btn-loader"><div class="cir-loader">Loading..</div></div>
+            </button>
             <button type="submit" name="add" class="ow-btn-cart" onclick="return owAddToCart(this)">{{ section.settings.btn_atc }}</button>
           {% else %}
             <button type="button" class="ow-btn-buy" disabled>Out of Stock</button>
@@ -555,6 +564,22 @@
     });
     return false; // block the form's native submit
   }
+
+  /* The theme's gokwik snippet re-enables #gokwik-buy-now via jQuery, which it loads over http://
+     (blocked as mixed content on https). Enable it here too, dependency-free, so Buy Now is never
+     left permanently disabled. */
+  (function(){
+    function owEnableBuyNow(){
+      var b = document.getElementById('gokwik-buy-now');
+      if (!b) return;
+      b.disabled = false;
+      b.classList.remove('disabled');
+    }
+    window.addEventListener('gokwikLoaded', owEnableBuyNow);
+    // In case gokwikLoaded fired before this script ran:
+    if (window.gokwikSdk || window.gokwikSDK || typeof window.onBuyNowClick === 'function') owEnableBuyNow();
+    setTimeout(owEnableBuyNow, 3000);
+  })();
 
   /* Final-CTA buttons proxy to the single GoKwik-bound button / cart button in the hero form. */
   function owProxyBuy() {
