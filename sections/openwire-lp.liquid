@@ -1,5 +1,6 @@
 {% liquid
-  assign product = section.settings.product
+  # Product resolution: section setting → template context (product templates) → handle fallback
+  assign product = section.settings.product | default: product
   if product == blank
     assign product = all_products['openwire']
   endif
