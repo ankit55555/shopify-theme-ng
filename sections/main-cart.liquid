@@ -141,6 +141,36 @@
               <label for="CartSpecialInstructions" class="t4s-cart-note__label t4s-d-block"><span class="t4s-txt_add_note {{ style_add }}">{{ 'cart.tool.note' | t }}</span><span class="t4s-txt_edit_note {{ style_edit }}">{{ 'cart.tool.edit_note' | t }}</span></label>
               <textarea name="note" id="CartSpecialInstructions" class="t4s-cart-note__input" placeholder="{{ 'cart.tool.placeholder_note' | t }}">{{ cart.note }}</textarea>
            {%- endif -%}
+           {%- comment -%} NG: optional birth date + gender → cart attributes, GoKwik-safe (CRO-001 rev 2, 2026-07-06) {%- endcomment -%}
+           <div class="t4s-cart-extra-fields" style="margin-top: 15px;">
+              <label for="CartBirthDate" class="t4s-cart-note__label t4s-d-block">Birth date <span style="font-weight: normal;">(optional — for special birthday offers)</span></label>
+              <input type="date" name="attributes[Birth Date]" id="CartBirthDate" class="t4s-cart-note__input" value="{{ cart.attributes['Birth Date'] | escape }}" max="{{ 'now' | date: '%Y-%m-%d' }}" style="width: 100%; padding: 10px;">
+              <label for="CartGender" class="t4s-cart-note__label t4s-d-block" style="margin-top: 12px;">Gender <span style="font-weight: normal;">(optional)</span></label>
+              <select name="attributes[Gender]" id="CartGender" class="t4s-cart-note__input" style="width: 100%; padding: 10px;">
+                <option value="" {% if cart.attributes['Gender'] == blank %}selected{% endif %}>Select</option>
+                <option value="M" {% if cart.attributes['Gender'] == 'M' %}selected{% endif %}>M</option>
+                <option value="F" {% if cart.attributes['Gender'] == 'F' %}selected{% endif %}>F</option>
+              </select>
+           </div>
+           <script>
+             /* GoKwik intercepts the checkout click, so the form never POSTs.
+                Save each attribute to the Shopify cart the moment it changes,
+                so GoKwik picks it up from the live cart when building the order. */
+             (function () {
+               function ngSaveAttr(key, value) {
+                 var attrs = {}; attrs[key] = value;
+                 fetch('{{ routes.cart_update_url }}.js', {
+                   method: 'POST',
+                   headers: { 'Content-Type': 'application/json' },
+                   body: JSON.stringify({ attributes: attrs })
+                 });
+               }
+               var bd = document.getElementById('CartBirthDate');
+               var gd = document.getElementById('CartGender');
+               if (bd) bd.addEventListener('change', function () { ngSaveAttr('Birth Date', this.value); });
+               if (gd) gd.addEventListener('change', function () { ngSaveAttr('Gender', this.value); });
+             })();
+           </script>
            {%- if se_stts.enable_discount -%}
               <label for="CartDiscountcode" class="t4s-cart-couponcode__label t4s-d-block">{{ 'cart.tool.coupon' | t }}</label>
              <p>{{ 'cart.tool.info_coupon' | t }}</p>
