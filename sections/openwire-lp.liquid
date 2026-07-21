@@ -188,6 +188,37 @@
   .ow-r { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
   .ow-r.v { opacity: 1; transform: none; }
   @media(prefers-reduced-motion: reduce){ .ow-page * { transition: none !important; } .ow-r { opacity: 1; transform: none; } }
+
+  /* ── OTHER MODELS ── */
+  .ow-more { background: var(--ow-mist); }
+  .ow-more-head { text-align: center; max-width: 580px; margin: 0 auto 44px; }
+  .ow-more-head p { color: var(--ow-muted); font-size: 15.5px; margin-top: 12px; line-height: 1.6; }
+  .ow-more h2 em { font-style: normal; color: var(--ow-teal); }
+  .ow-more-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+  .ow-mcard { background: #fff; border: 1px solid var(--ow-line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+  .ow-mcard:hover { transform: translateY(-3px); border-color: var(--ow-teal); box-shadow: 0 16px 40px rgba(31,138,150,.12); }
+  .ow-mcard-img { aspect-ratio: 1/1; background: #fff; overflow: hidden; }
+  .ow-mcard-img img { width: 100%; height: 100%; object-fit: cover; }
+  .ow-mcard-body { padding: 20px 20px 22px; display: flex; flex-direction: column; flex: 1; }
+  .ow-mcard-name { font-size: 15px; font-weight: 600; line-height: 1.3; }
+  .ow-mcard-why { font-size: 13px; color: var(--ow-muted); line-height: 1.6; margin-top: 8px; flex: 1; }
+  .ow-mcard-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; }
+  .ow-mcard-price { font-size: 16px; font-weight: 600; }
+  .ow-mcard-link { font-size: 12.5px; font-weight: 600; color: var(--ow-teal); }
+
+  .ow-macc-head { display: flex; align-items: center; gap: 14px; margin: 44px 0 20px; }
+  .ow-macc-head span { font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ow-muted); white-space: nowrap; }
+  .ow-macc-head::after { content: ""; flex: 1; height: 1px; background: var(--ow-line); }
+  .ow-macc-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+  .ow-macc { background: #fff; border: 1px solid var(--ow-line); border-radius: 12px; padding: 12px; display: flex; align-items: center; gap: 12px; transition: border-color .2s; }
+  .ow-macc:hover { border-color: var(--ow-teal); }
+  .ow-macc-img { width: 50px; height: 50px; flex: 0 0 50px; border-radius: 8px; overflow: hidden; background: var(--ow-bg-alt); }
+  .ow-macc-img img { width: 100%; height: 100%; object-fit: cover; }
+  .ow-macc-name { font-size: 12.5px; font-weight: 600; line-height: 1.3; }
+  .ow-macc-price { font-size: 12px; color: var(--ow-muted); margin-top: 2px; }
+
+  @media(max-width:900px){ .ow-more-grid { grid-template-columns: 1fr 1fr; } .ow-macc-grid { grid-template-columns: 1fr 1fr; } }
+  @media(max-width:520px){ .ow-more-grid { grid-template-columns: 1fr 1fr; gap: 12px; } .ow-mcard-body { padding: 14px; } .ow-mcard-why { display: none; } .ow-macc-grid { grid-template-columns: 1fr; } }
 </style>
 
 {% if product == blank %}
@@ -464,6 +495,71 @@
 </section>
 {% endif %}
 
+<!-- OTHER MODELS -->
+<section class="ow-more ow-sec">
+  <div class="ow-wrap">
+    <div class="ow-more-head ow-r">
+      <span class="ow-lbl">{{ section.settings.more_eyebrow }}</span>
+      <h2>{{ section.settings.more_heading }}</h2>
+      <p>{{ section.settings.more_sub }}</p>
+    </div>
+
+    <div class="ow-more-grid ow-r">
+      {% for i in (1..3) %}
+        {%- case i -%}
+          {%- when 1 -%}{%- assign m = section.settings.more_1 -%}{%- assign why = section.settings.more_why_1 -%}
+          {%- when 2 -%}{%- assign m = section.settings.more_2 -%}{%- assign why = section.settings.more_why_2 -%}
+          {%- when 3 -%}{%- assign m = section.settings.more_3 -%}{%- assign why = section.settings.more_why_3 -%}
+        {%- endcase -%}
+        {%- if m != blank and m.handle != product.handle and m.available -%}
+          <a class="ow-mcard" href="{{ m.url }}">
+            <div class="ow-mcard-img">
+              <img src="{{ m.featured_image | image_url: width: 500 }}"
+                   alt="{{ m.featured_image.alt | escape | default: m.title }}"
+                   width="500" height="500" loading="lazy"/>
+            </div>
+            <div class="ow-mcard-body">
+              <div class="ow-mcard-name">{{ m.title }}</div>
+              <div class="ow-mcard-why">{{ why }}</div>
+              <div class="ow-mcard-foot">
+                <span class="ow-mcard-price">{{ m.price | money }}</span>
+                <span class="ow-mcard-link">View &rarr;</span>
+              </div>
+            </div>
+          </a>
+        {%- endif -%}
+      {% endfor %}
+    </div>
+
+    {%- assign acc_1 = section.settings.more_4 -%}
+    {%- assign acc_2 = section.settings.more_5 -%}
+    {%- if acc_1.available or acc_2.available -%}
+      <div class="ow-macc-head ow-r"><span>{{ section.settings.acc_label }}</span></div>
+      <div class="ow-macc-grid ow-r">
+        {% for i in (1..2) %}
+          {%- case i -%}
+            {%- when 1 -%}{%- assign a = acc_1 -%}
+            {%- when 2 -%}{%- assign a = acc_2 -%}
+          {%- endcase -%}
+          {%- if a != blank and a.available -%}
+            <a class="ow-macc" href="{{ a.url }}">
+              <div class="ow-macc-img">
+                <img src="{{ a.featured_image | image_url: width: 160 }}"
+                     alt="{{ a.featured_image.alt | escape | default: a.title }}"
+                     width="160" height="160" loading="lazy"/>
+              </div>
+              <div>
+                <div class="ow-macc-name">{{ a.title }}</div>
+                <div class="ow-macc-price">{{ a.price | money }}</div>
+              </div>
+            </a>
+          {%- endif -%}
+        {% endfor %}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
 <!-- FINAL CTA -->
 <section class="ow-final">
   <div class="ow-wrap">
@@ -679,7 +775,20 @@
     { "type": "text", "id": "rating_count", "label": "Review count (e.g. 38)" },
     { "type": "header", "content": "Final CTA" },
     { "type": "text", "id": "final_h2", "label": "Heading", "default": "Pure sound. Open ears." },
-    { "type": "textarea", "id": "final_sub", "label": "Subtext", "default": "Zero lag. A voice that carries. Nothing to charge, ever." }
+    { "type": "textarea", "id": "final_sub", "label": "Subtext", "default": "Zero lag. A voice that carries. Nothing to charge, ever." },
+    {"type": "header", "content": "Other Models (cross-sell row)"},
+    {"type": "text", "id": "more_eyebrow", "label": "Eyebrow", "default": "The rest of the range"},
+    {"type": "text", "id": "more_heading", "label": "Heading", "default": "Same open ear. <em>Other ways to wear it.</em>"},
+    {"type": "textarea", "id": "more_sub", "label": "Sub-heading", "default": "OpenWire is the simplest one — plug in and go. If you'd rather not have a wire at all, these are the other three."},
+    {"type": "product", "id": "more_1", "label": "Model 1"},
+    {"type": "text", "id": "more_why_1", "label": "Model 1 — one-liner", "default": "Wireless neckband. Same open ear, nothing to plug in."},
+    {"type": "product", "id": "more_2", "label": "Model 2"},
+    {"type": "text", "id": "more_why_2", "label": "Model 2 — one-liner", "default": "True wireless, plus AI translation and meeting notes."},
+    {"type": "product", "id": "more_3", "label": "Model 3"},
+    {"type": "text", "id": "more_why_3", "label": "Model 3 — one-liner", "default": "Mono boom-mic headset. Built for back-to-back calls."},
+    {"type": "text", "id": "acc_label", "label": "Add-ons row label", "default": "Add-ons"},
+    {"type": "product", "id": "more_4", "label": "Add-on 1"},
+    {"type": "product", "id": "more_5", "label": "Add-on 2 (spare)"}
   ],
   "blocks": [
     {
