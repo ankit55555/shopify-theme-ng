@@ -254,6 +254,37 @@
   /* REVEAL */
   .r { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
   .r.v { opacity: 1; transform: none; }
+
+  /* OTHER MODELS + ADD-ONS */
+  .sb-more { background: var(--frost); }
+  .sb-more-head { text-align: center; margin-bottom: clamp(32px,4vw,48px); }
+  .sb-more-sub { font-size: 15px; color: var(--muted); margin-top: 14px; line-height: 1.7; }
+  .sb-more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .sb-more-card { background: #fff; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform .25s ease, box-shadow .25s ease; }
+  .sb-more-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(16,36,66,.12); }
+  .sb-more-img { aspect-ratio: 1/1; background: var(--chalk); overflow: hidden; }
+  .sb-more-img img { width: 100%; height: 100%; object-fit: cover; }
+  .sb-more-body { padding: 18px 18px 20px; display: flex; flex-direction: column; flex: 1; }
+  .sb-more-name { font-size: 15px; font-weight: 500; line-height: 1.35; letter-spacing: -.01em; }
+  .sb-more-why { font-size: 13px; color: var(--muted); line-height: 1.6; margin-top: 8px; flex: 1; }
+  .sb-more-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; }
+  .sb-more-price { font-size: 16px; font-weight: 500; }
+  .sb-more-link { font-size: 13px; color: var(--ocean); font-weight: 500; }
+  .sb-more-card:hover .sb-more-link { text-decoration: underline; }
+
+  .sb-acc-head { display: flex; align-items: center; gap: 14px; margin: clamp(40px,5vw,56px) 0 22px; }
+  .sb-acc-head span { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+  .sb-acc-head::after { content: ""; flex: 1; height: 1px; background: rgba(16,36,66,.12); }
+  .sb-acc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .sb-acc-card { background: #fff; border-radius: 12px; padding: 12px; display: flex; align-items: center; gap: 12px; transition: box-shadow .2s ease; }
+  .sb-acc-card:hover { box-shadow: 0 6px 18px rgba(16,36,66,.10); }
+  .sb-acc-img { width: 52px; height: 52px; flex: 0 0 52px; border-radius: 8px; overflow: hidden; background: var(--chalk); }
+  .sb-acc-img img { width: 100%; height: 100%; object-fit: cover; }
+  .sb-acc-name { font-size: 13px; font-weight: 500; line-height: 1.3; }
+  .sb-acc-price { font-size: 13px; color: var(--muted); margin-top: 3px; }
+
+  @media(max-width:900px) { .sb-more-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } .sb-acc-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media(max-width:480px) { .sb-more-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } .sb-more-body { padding: 14px; } .sb-more-why { display: none; } .sb-acc-grid { grid-template-columns: 1fr; } }
 </style>
 
 {% if product == empty %}
@@ -752,6 +783,74 @@
     Buy Now
     <div style="display:none"><div class="cir-loader">Loading..</div></div>
   </button>
+
+<!-- OTHER MODELS + ADD-ONS -->
+<section class="sb-more sb-sec">
+  <div class="sb-wrap">
+    <div class="sb-more-head r">
+      <span class="sb-lbl">{{ section.settings.more_eyebrow }}</span>
+      <h2>{{ section.settings.more_heading }}</h2>
+      <p class="sb-more-sub">{{ section.settings.more_sub }}</p>
+    </div>
+
+    <div class="sb-more-grid r">
+      {% for i in (1..3) %}
+        {%- case i -%}
+          {%- when 1 -%}{%- assign p = section.settings.more_1 -%}{%- assign why = section.settings.more_why_1 -%}
+          {%- when 2 -%}{%- assign p = section.settings.more_2 -%}{%- assign why = section.settings.more_why_2 -%}
+          {%- when 3 -%}{%- assign p = section.settings.more_3 -%}{%- assign why = section.settings.more_why_3 -%}
+        {%- endcase -%}
+        {%- if p != blank and p.handle != product.handle and p.available -%}
+          <a class="sb-more-card" href="{{ p.url }}">
+            <div class="sb-more-img">
+              <img src="{{ p.featured_image | image_url: width: 500 }}"
+                   alt="{{ p.featured_image.alt | default: p.title | escape }}"
+                   width="500" height="500" loading="lazy">
+            </div>
+            <div class="sb-more-body">
+              <div class="sb-more-name">{{ p.title }}</div>
+              <div class="sb-more-why">{{ why }}</div>
+              <div class="sb-more-foot">
+                <span class="sb-more-price">{{ p.price | money }}</span>
+                <span class="sb-more-link">View &rarr;</span>
+              </div>
+            </div>
+          </a>
+        {%- endif -%}
+      {% endfor %}
+    </div>
+
+    {%- assign acc_1 = section.settings.more_4 -%}
+    {%- assign acc_2 = section.settings.more_5 -%}
+    {%- assign acc_3 = section.settings.more_6 -%}
+    {%- if acc_1.available or acc_2.available or acc_3.available -%}
+      <div class="sb-acc-head r"><span>{{ section.settings.acc_label }}</span></div>
+      <div class="sb-acc-grid r">
+        {% for i in (1..3) %}
+          {%- case i -%}
+            {%- when 1 -%}{%- assign a = acc_1 -%}
+            {%- when 2 -%}{%- assign a = acc_2 -%}
+            {%- when 3 -%}{%- assign a = acc_3 -%}
+          {%- endcase -%}
+          {%- if a != blank and a.available -%}
+            <a class="sb-acc-card" href="{{ a.url }}">
+              <div class="sb-acc-img">
+                <img src="{{ a.featured_image | image_url: width: 160 }}"
+                     alt="{{ a.featured_image.alt | default: a.title | escape }}"
+                     width="160" height="160" loading="lazy">
+              </div>
+              <div>
+                <div class="sb-acc-name">{{ a.title }}</div>
+                <div class="sb-acc-price">{{ a.price | money }}</div>
+              </div>
+            </a>
+          {%- endif -%}
+        {% endfor %}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
 </div><!-- end .sb-page -->
 {% endif %}
 
@@ -1168,7 +1267,21 @@
       "id": "btn_buy",
       "label": "Buy Now button text",
       "default": "Buy Now with UPI / Card"
-    }
+    },
+    {"type": "header", "content": "Other Models + Add-ons (cross-sell row)"},
+    {"type": "text", "id": "more_eyebrow", "label": "Eyebrow", "default": "The rest of the range"},
+    {"type": "text", "id": "more_heading", "label": "Heading", "default": "Not quite right? <em>We have three more.</em>"},
+    {"type": "textarea", "id": "more_sub", "label": "Sub-heading", "default": "Every NG EarSafe model keeps your ears open. They just do it differently — pick the one that fits how you listen."},
+    {"type": "product", "id": "more_1", "label": "Model 1"},
+    {"type": "text", "id": "more_why_1", "label": "Model 1 — one-liner", "default": "Mono boom-mic headset. Built for back-to-back calls, not music."},
+    {"type": "product", "id": "more_2", "label": "Model 2"},
+    {"type": "text", "id": "more_why_2", "label": "Model 2 — one-liner", "default": "The entry open-ear neckband. Same principle, lighter price."},
+    {"type": "product", "id": "more_3", "label": "Model 3"},
+    {"type": "text", "id": "more_why_3", "label": "Model 3 — one-liner", "default": "Wired open-ear. Nothing to charge, nothing to pair."},
+    {"type": "text", "id": "acc_label", "label": "Add-ons row label", "default": "Add-ons"},
+    {"type": "product", "id": "more_4", "label": "Add-on 1"},
+    {"type": "product", "id": "more_5", "label": "Add-on 2"},
+    {"type": "product", "id": "more_6", "label": "Add-on 3 (spare — Type-C cable once SafeBuds fit is confirmed)"}
   ],
   "blocks": [
     {
@@ -1230,3 +1343,4 @@
   ]
 }
 {% endschema %}
+
