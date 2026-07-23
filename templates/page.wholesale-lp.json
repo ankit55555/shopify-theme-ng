@@ -11,8 +11,44 @@
   "sections": {
     "main": {
       "type": "wholesale-lp",
-      "settings": {}
+      "settings": {
+        "hero_eyebrow": "Corporate & bulk orders",
+        "hero_heading": "Gear your team wears all day. Gifts they actually keep on.",
+        "hero_sub": "",
+        "hero_cta_primary": "Get bulk pricing",
+        "hero_cta_secondary": "See which model fits",
+        "model_1_product": "noise-cancelling-open-ear-headphones-with-mic-ng-ear-safe-comm-2-0",
+        "model_1_name": "NG EarSafe Comm 2.0",
+        "model_1_for": "Ops floors & call centers",
+        "model_1_tag": "Operational",
+        "model_1_desc": "A mono headset with a forward boom mic and an open canal, built for agents on calls 6–9 hours a day. No seal, no pressure build-up, no afternoon fatigue.",
+        "model_1_spec1": "Boom mic",
+        "model_1_spec2": "All-shift comfort",
+        "model_2_product": "ngwehear",
+        "model_2_name": "NG x WeHear SafeBuds",
+        "model_2_for": "Premium corporate gifting",
+        "model_2_tag": "Gifting",
+        "model_2_desc": "The gift that gets used, not shelved. Real-time translation across 100+ languages, meeting transcription, 9g in-ear weight and 35-hour battery.",
+        "model_2_spec1": "9g",
+        "model_2_spec2": "Live translation",
+        "model_3_product": "open-ear-wireless-headphones-ng-ear-safe-lite",
+        "model_3_name": "NG EarSafe Lite",
+        "model_3_for": "Budget-band gifting",
+        "model_3_tag": "Entry gifting",
+        "model_3_desc": "For onboarding kits and mass recognition drops in the sub-₹2,000 gifting band — the open-ear promise at a price that clears volume programs without a sign-off fight.",
+        "model_3_spec1": "Sub-₹2,000 band",
+        "model_3_spec2": "Onboarding kits",
+        "model_4_product": "open-ear-headphones-wired-ng-earsafe",
+        "model_4_name": "NG EarSafe OpenWire",
+        "model_4_for": "Highest-volume, lowest-cost gifting",
+        "model_4_tag": "Volume gifting",
+        "model_4_desc": "Wired, open-ear, and priced to gift at scale — onboarding kits, mass employee drops, and conference giveaways where per-unit cost decides the order.",
+        "model_4_spec1": "Wired",
+        "model_4_spec2": "Lowest per-unit cost"
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
